@@ -28,7 +28,7 @@
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
 | `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
-| `docs/` | GitHub Pages에 올릴 파일(`index.html`, `.nojekyll`). `build.sh`가 다시 만든다 |
+| `docs/` | GitHub Pages에 올릴 파일(`index.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)는 `make_site.py`에 있다 |
 | `reports/` | 로봇 VA VLA 모델 비교표.xlsx |
 | `research/notes/` | 주제별 조사 노트. `verification_*.md`(검증 노트)가 다른 노트보다 우선한다 |
 | `research/mobile/` | 모바일·내비 조사 명세(`SPEC.md`), 조사 원본(`new_models.json`), 검증 결과(`verify_v*.json`), 적용 스크립트(`apply.py`) |
