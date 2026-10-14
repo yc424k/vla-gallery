@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://vla-gallery.is-a.dev/</loc><lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/en/"/>
+  <url><loc>https://vla-gallery.is-a.dev/ko/</loc><lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/"/>
   </url>
-  <url><loc>https://vla-gallery.is-a.dev/en/</loc><lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/en/"/>
+  <url><loc>https://vla-gallery.is-a.dev/</loc><lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/"/>
   </url>
   <url><loc>https://vla-gallery.is-a.dev/ja/</loc><lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/"/>
   </url>
   <url><loc>https://vla-gallery.is-a.dev/zh/</loc><lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/"/>
   </url>

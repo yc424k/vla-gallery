@@ -1462,9 +1462,9 @@ addEventListener("hashchange", route);
 const langSel = document.getElementById("lang-sel");
 langSel.value = LANG;
 langSel.addEventListener("change", () => {
-  // 한국어는 사이트 맨 위, 나머지는 /en/ 같은 하위 폴더에 있다. 보던 페이지(해시)는 그대로 가져간다
-  const code = langSel.value, base = LANG === "ko" ? "./" : "../";
-  location.href = base + (code === "ko" ? "" : code + "/") + location.hash;
+  // 영어는 사이트 맨 위, 나머지는 /ko/ 같은 하위 폴더에 있다. 보던 페이지(해시)는 그대로 가져간다
+  const code = langSel.value, base = LANG === "en" ? "./" : "../";
+  location.href = base + (code === "en" ? "" : code + "/") + location.hash;
 });
 route();
 

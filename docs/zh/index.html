@@ -6,8 +6,8 @@
 <style>body{margin:0}[hidden]{display:none!important}</style>
 <title>机器人VLA模型对比图库 · 211种Vision-Language-Action模型 | VLA Gallery</title>
 <link rel="canonical" href="https://vla-gallery.is-a.dev/zh/">
-<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/">
-<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/en/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/">
 <link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/">
 <link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/">
 <link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/">
@@ -1492,9 +1492,9 @@ addEventListener("hashchange", route);
 const langSel = document.getElementById("lang-sel");
 langSel.value = LANG;
 langSel.addEventListener("change", () => {
-  // 한국어는 사이트 맨 위, 나머지는 /en/ 같은 하위 폴더에 있다. 보던 페이지(해시)는 그대로 가져간다
-  const code = langSel.value, base = LANG === "ko" ? "./" : "../";
-  location.href = base + (code === "ko" ? "" : code + "/") + location.hash;
+  // 영어는 사이트 맨 위, 나머지는 /ko/ 같은 하위 폴더에 있다. 보던 페이지(해시)는 그대로 가져간다
+  const code = langSel.value, base = LANG === "en" ? "./" : "../";
+  location.href = base + (code === "en" ? "" : code + "/") + location.hash;
 });
 route();
 

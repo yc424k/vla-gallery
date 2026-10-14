@@ -28,7 +28,7 @@
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
 | `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
-| `docs/` | GitHub Pages에 올릴 파일(`index.html`, `en/`·`ja/`·`zh/`, `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)·언어별 hreflang은 `make_site.py`에 있다 |
+| `docs/` | GitHub Pages에 올릴 파일(`index.html`(영어), `ko/`·`ja/`·`zh/`, `en/`(→ `/` 안내), `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)·언어별 hreflang은 `make_site.py`에 있다 |
 | `i18n/` | 번역 사전(`en`·`ja`·`zh.json`), 용어집, 번역 대상 목록. 아래 '다국어' 참고 |
 | `reports/` | 로봇 VA VLA 모델 비교표.xlsx |
 | `research/notes/` | 주제별 조사 노트. `verification_*.md`(검증 노트)가 다른 노트보다 우선한다 |
@@ -66,7 +66,8 @@
   - 렌더 점검 스크립트(`shot4.py`·`shot5.py`)는 `reduced_motion="reduce"`로 찍고, 요소를 찍기 전에 그 요소가 든 페이지로 해시를 옮긴다.
 
 ## 다국어 (en·ja·zh)
-- 주소: 한국어 `/`, 영어 `/en/`, 일본어 `/ja/`, 중국어(간체) `/zh/`. 메뉴의 언어 선택은 보던 페이지(해시)를 유지한 채 옮긴다.
+- 주소: 영어가 기본으로 사이트 맨 위 `/`(docs/index.html), 한국어 `/ko/`, 일본어 `/ja/`, 중국어(간체) `/zh/`. 예전 주소 `/en/`은 `/`로 넘기는 안내 페이지다. 메뉴의 언어 선택은 보던 페이지(해시)를 유지한 채 옮긴다.
+  - 기본 언어는 `make_site.py`의 `DEFAULT`와 template.html의 언어 전환 코드(`LANG === "en"`), `build.sh`의 출력 경로가 함께 정한다.
 - 방식: 로직(필터·판정)은 한국어 원문 데이터로 그대로 돌리고, 화면에 낼 때만 번역한다.
   - JS의 화면 문구는 `T("한국어")`, 숫자가 끼면 `T("모델 {0}개 중 …", n)`. 데이터 값은 `esc()`·`tx()`가 정확히 같은 문자열을 사전에서 찾아 바꾼다.
   - 데이터와 비교하는 값(분류·헤드·강화학습 상태 등)은 `T()`로 감싸지 않는다. 표시할 때만 `esc()`나 `tx()`를 쓴다.

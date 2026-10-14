@@ -1,13 +1,14 @@
 """gallery/vla-gallery.html(아티팩트용 본문)을 GitHub Pages 등에 바로 올릴 수 있는 완전한 HTML 문서로 감싼다.
-검색 노출용 메타 태그(canonical·hreflang·Open Graph·JSON-LD)를 넣고, 한국어(사이트 맨 위) 빌드 때 robots.txt와 sitemap.xml을 만든다.
-사용: make_site.py <본문 html> <출력 html> [lang]   (lang: ko(기본)·en·ja·zh)"""
+검색 노출용 메타 태그(canonical·hreflang·Open Graph·JSON-LD)를 넣고, 기본 언어(영어, 사이트 맨 위) 빌드 때 robots.txt와 sitemap.xml을 만든다.
+사용: make_site.py <본문 html> <출력 html> [lang]   (lang: ko·en·ja·zh, 기본 ko)"""
 import datetime, html as H, json, os, sys
 src, out = sys.argv[1:3]
 lang = sys.argv[3] if len(sys.argv) > 3 else "ko"
 SITE = "https://vla-gallery.is-a.dev/"
 LANGS = ["ko", "en", "ja", "zh"]
 LOCALE = {"ko": "ko_KR", "en": "en_US", "ja": "ja_JP", "zh": "zh_CN"}
-url_of = lambda l: SITE if l == "ko" else SITE + l + "/"
+DEFAULT = "en"  # 사이트 맨 위(/)에 놓는 기본 언어. 나머지는 /ko/ 같은 하위 폴더
+url_of = lambda l: SITE if l == DEFAULT else SITE + l + "/"
 URL = url_of(lang)
 s = open(src, encoding="utf-8").read()
 # 본문 시작: 첫 화면 위 진행 막대·메뉴가 있으면 거기서, 없으면 히어로에서 자른다
@@ -57,7 +58,7 @@ html = ('<!doctype html>\n<html lang="' + lang + '">\n<head>\n<meta charset="utf
 open(out, "w", encoding="utf-8").write(html)
 print(out, len(html.encode("utf-8")), "bytes")
 
-if lang == "ko":
+if lang == DEFAULT:
     d = os.path.dirname(out) or "."
     open(os.path.join(d, "robots.txt"), "w", encoding="utf-8").write("User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n" % SITE)
     links = "".join('    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>\n' % ("zh-Hans" if l == "zh" else l, url_of(l)) for l in LANGS)
