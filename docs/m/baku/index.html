@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BAKU — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="BAKU (New York University, 2024-06) — Trains an about 10M-parameter multitask policy on one consumer GPU in 6–26 h per benchmark.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/baku/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/baku/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/baku/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/baku/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/baku/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/baku/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="BAKU — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="BAKU (New York University, 2024-06) — Trains an about 10M-parameter multitask policy on one consumer GPU in 6–26 h per benchmark.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/baku/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "BAKU — Architecture, Backbone LLM, Training & Inference Memory", "description": "BAKU (New York University, 2024-06) — Trains an about 10M-parameter multitask policy on one consumer GPU in 6–26 h per benchmark.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/baku/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "BAKU", "creator": {"@type": "Organization", "name": "New York University"}}, "citation": {"@type": "ScholarlyArticle", "name": "BAKU: An Efficient Transformer for Multi-Task Policy Learning", "url": "https://arxiv.org/abs/2406.07539"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "BAKU", "item": "https://vla-gallery.is-a.dev/m/baku/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/baku/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/baku/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/baku/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/baku/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>BAKU</h1>
+<p class="by">New York University · 2024-06</p>
+<p class="kv"><span>VA</span><span>VA</span><span>About 10M</span><span>regression</span></p>
+<p class="sum">Trains an about 10M-parameter multitask policy on one consumer GPU in 6–26 h per benchmark.</p>
+<div class="acts"><a class="pri" href="/#m-baku">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2406.07539" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2406.07539" rel="noopener">BAKU: An Efficient Transformer for Multi-Task Policy Learning</a><small>arXiv 2406.07539</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-06</dd><dt>Organization</dt><dd>New York University</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>About 10M (encoder 2.1M + trunk 6.5M + head 1.4M); Table 3 variants 4.4M·10M·31M·114M</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>FiLM ResNet-18</dd><dt>Action head</dt><dd>MLP head + chunk smoothing (regression)</dd><dt>Chunk</dt><dd>10 (LIBERO) · 3 (DMC)</dd><dt>Control rate</dt><dd>10 Hz</dd><dt>Architecture (original summary)</dt><dd>FiLM-conditioned ResNet-18 vision encoder + proprioception → Transformer observation trunk; MLP action head + action chunks (LIBERO · Meta-World 10, DMC 3) · temporal smoothing, uses only the latest observation, 10 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per-benchmark multi-task models, 1× RTX A4000: LIBERO-90 600k steps·batch 64 about 10.5 hours, Meta-World 600k·64 about 8 hours, DMC 2M·128 about 26 hours, xArm 200k·64 about 6 hours</dd><dt>Data type</dt><dd>Simulation·synthetic; real-robot teleoperation</dd><dt>Data scale</dt><dd>50 (LIBERO-90)·35 (Meta-World)·500 (DMC) demos per task; real total 520 demos (average 17 per task)</dd><dt>Main datasets</dt><dd>LIBERO-90; Meta-World; DeepMind Control; in-house xArm</dd><dt>Tasks &amp; evaluation</dt><dd>LIBERO-90 (90 tasks), Meta-World 30 tasks, DeepMind Control 9 locomotion tasks, real xArm 30 tasks</dd><dt>Robot</dt><dd>xArm single arm; simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Real xArm 10 Hz closed loop; latency not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0.2 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (xArm single arm·sim)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Trains an about 10M-parameter multitask policy on one consumer GPU in 6–26 h per benchmark. Tasks are specified by frozen MiniLM sentence embeddings or goal images.</dd><dt>Notes</dt><dd>A borderline language-conditioned case using frozen MiniLM text task embeddings (no VLM backbone). Parameters (B) are the largest variant, 114M. Training time refers to per-benchmark multi-task models, not per task. Includes DMC locomotion tasks.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/hpt/"><small>← Previous</small>HPT</a><a class="nx" href="/m/vq-bet/"><small>Next →</small>VQ-BeT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CityWalker — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="CityWalker (New York University, 2024-11) — Imitation-learns a GPS-goal-conditioned urban navigation policy from thousands of hours of YouTube city walking·d…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/citywalker/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/citywalker/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/citywalker/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/citywalker/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/citywalker/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/citywalker/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="CityWalker — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="CityWalker (New York University, 2024-11) — Imitation-learns a GPS-goal-conditioned urban navigation policy from thousands of hours of YouTube city walking·d…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/citywalker/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "CityWalker — Architecture, Backbone LLM, Training & Inference Memory", "description": "CityWalker (New York University, 2024-11) — Imitation-learns a GPS-goal-conditioned urban navigation policy from thousands of hours of YouTube city walking·d…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/citywalker/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "CityWalker", "creator": {"@type": "Organization", "name": "New York University"}}, "citation": {"@type": "ScholarlyArticle", "name": "CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos", "url": "https://arxiv.org/abs/2411.17820"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "CityWalker", "item": "https://vla-gallery.is-a.dev/m/citywalker/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/citywalker/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/citywalker/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/citywalker/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/citywalker/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Navigation</p>
+<h1>CityWalker</h1>
+<p class="by">New York University · 2024-11</p>
+<p class="kv"><span>VA</span><span>Navigation</span><span>214M</span><span>regression</span></p>
+<p class="sum">Imitation-learns a GPS-goal-conditioned urban navigation policy from thousands of hours of YouTube city walking·driving videos labeled with trajectories via DPVO visual odometry.</p>
+<div class="acts"><a class="pri" href="/#m-citywalker">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2411.17820" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2411.17820" rel="noopener">CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos</a><small>arXiv 2411.17820</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Navigation</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-11</dd><dt>Organization</dt><dd>New York University</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>214M (127M trainable, DINOv2 frozen)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>DINOv2 ViT-B/14 (frozen)</dd><dt>Action head</dt><dd>5-waypoint regression + arrival prediction head (regression)</dd><dt>Chunk</dt><dd>5 waypoints</dd><dt>Control rate</dt><dd>Not disclosed (RTX 3060 laptop 1.7 fps)</dd><dt>Architecture (original summary)</dt><dd>Frozen DINOv2 ViT-B/14 encodes 5 past frames + Fourier feature embedding of goal coordinates → Transformer 16 layers·8 heads (768-dim) → action head: 5 Euclidean waypoints + arrival prediction head; modified ViNT PD controller issues velocity commands</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>2 H100</dd><dt>Pretraining duration</dt><dd>30 hours</dd><dt>Pretraining steps &amp; batch</dt><dd>10 epochs · batch 32</dd><dt>GPU/TPU-hours</dt><dd>60 (Converted · 2× H100 × 30 hours)</dd><dt>Fine-tuning</dt><dd>Fine-tuned on 6 hours of Go1 teleoperation data, lr 5e-5; GPU·time not disclosed</dd><dt>Data type</dt><dd>Web video / real-robot teleoperation</dd><dt>Data scale</dt><dd>2,000 of 2,522 total hours of YouTube walking·driving video used for training; Go1 teleoperation 15 hours (fine-tuning 6h·evaluation 9h)</dd><dt>Main datasets</dt><dd>CityWalk YouTube walking · driving playlists (DPVO labels); in-house Go1 teleoperation data (HF ai4ce/CityWalker)</dd><dt>Tasks &amp; evaluation</dt><dd>Offline urban benchmark average (fine-tuned): MAOE 15.2°·arrival rate 81.8% (ViNT 16.5°·70.5%, GNM 16.2°·68.6%, NoMaD 19.1°·68.6%); real-world Go1 success rate 77.3% (fine-tuned ViNT 57.1%, zero-shot NoMaD 42.9%, zero-shot ViNT 37.7%)</dd><dt>Robot</dt><dd>Unitree Go1 quadruped (Livox Mid-360 LiDAR·webcam)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>DINOv2 backbone 1.7 fps on an RTX 3060 laptop GPU (20 fps when replaced with EfficientNet-B0); deployment compute device not stated</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0.4 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning only (web video + DPVO trajectory labels)</dd><dt>Base control</dt><dd>Quadruped (Waypoints → tracking controller) · Policy outputs 5 waypoints → modified ViNT PD controller converts them into Go1 velocity commands</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Imitation-learns a GPS-goal-conditioned urban navigation policy from thousands of hours of YouTube city walking·driving videos labeled with trajectories via DPVO visual odometry. Trained on 1,000+ h, it outperformed fine-tuned ViNT zero-shot, and after 6 h of teleoperation fine-tuning reached a 77.3% real-world success rate on Go1 (fine-tuned ViNT 57.1%).</dd><dt>Notes</dt><dd>Share and number of driving videos not stated. Deployment compute device not stated (speed measured on an RTX 3060 laptop). Pretrained models released on GitHub releases. CVPR 2025.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/m/lelan/"><small>← Previous</small>LeLaN</a><a class="nx" href="/m/nwm/"><small>Next →</small>NWM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

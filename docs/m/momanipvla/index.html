@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoManipVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="MoManipVLA (Beijing University of Posts and Telecommunications, 2025-03) — Transfers a VLA to mobile manipulation by using bi-level optimization to find base…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/momanipvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/momanipvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/momanipvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/momanipvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/momanipvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/momanipvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="MoManipVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="MoManipVLA (Beijing University of Posts and Telecommunications, 2025-03) — Transfers a VLA to mobile manipulation by using bi-level optimization to find base…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/momanipvla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "MoManipVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "MoManipVLA (Beijing University of Posts and Telecommunications, 2025-03) — Transfers a VLA to mobile manipulation by using bi-level optimization to find base…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/momanipvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "MoManipVLA", "creator": {"@type": "Organization", "name": "Beijing University of Posts and Telecommunications·Nanyang Technological University·Tsinghua University"}}, "citation": {"@type": "ScholarlyArticle", "name": "MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation", "url": "https://arxiv.org/abs/2503.13446"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "MoManipVLA", "item": "https://vla-gallery.is-a.dev/m/momanipvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/momanipvla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/momanipvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/momanipvla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/momanipvla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>MoManipVLA</h1>
+<p class="by">Beijing University of Posts and Telecommunications·Nanyang Technological University·Tsinghua University · 2025-03</p>
+<p class="kv"><span>VLA</span><span>Mobile manipulation</span><span>7B</span><span>discrete tokens</span></p>
+<p class="sum">Transfers a VLA to mobile manipulation by using bi-level optimization to find base waypoints that make the end-effector waypoints from a fixed-base pretrained VLA feasible.</p>
+<div class="acts"><a class="pri" href="/#m-momanipvla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2503.13446" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2503.13446" rel="noopener">MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation</a><small>arXiv 2503.13446</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-03</dd><dt>Organization</dt><dd>Beijing University of Posts and Telecommunications·Nanyang Technological University·Tsinghua University</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>7B (OpenVLA-7B)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Llama 2 7B · OpenVLA-7B config</dd><dt>Vision encoder</dt><dd>DINOv2 + SigLIP (built into OpenVLA)</dd><dt>Action head</dt><dd>OpenVLA action tokens → end-effector waypoints; base waypoints·end-effector trajectory via bi-level optimization (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed (about 0.58–0.59 s per real-world step)</dd><dt>Architecture (original summary)</dt><dd>OpenVLA-7B (LoRA fine-tuned) predicts end-effector waypoints from RGB·arm proprioception·language instructions → bi-level optimization: upper level chooses base waypoints, lower level chooses end-effector trajectory (reachability·smoothness·collision costs λ 10.0·1.0·0.6, Dual Annealing + SLSQP) → arm joints via Pinocchio IK; chunk·frequency not disclosed</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A (uses the public OpenVLA-7B)</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>4 RTX 3090, LoRA 10K epochs (200 sim demo episodes), time·batch not disclosed; real environment fine-tuned on 50 expert episodes</dd><dt>Data type</dt><dd>Simulation·synthetic / real-robot teleoperation†</dd><dt>Data scale</dt><dd>200 sim pick-and-place demonstration episodes (collected with the OVMM heuristic baseline); 50 real-world expert episodes</dd><dt>Main datasets</dt><dd>OVMM sim expert trajectories (self-collected)</dd><dt>Tasks &amp; evaluation</dt><dd>OVMM (60 sim scenes) success rate 15.8%·partial success 49.4% (KUZHUM 11.6%·38.2%, UniTeam 9.2%, OVMM RL 1.2%); 3 real-world tasks, 10 trials each: Stack Block 30%, Open Drawer 10%, Put in Bowl 40%</dd><dt>Robot</dt><dd>Sim Hello Robot Stretch (OVMM); real hexman echo plus wheeled base + RM65 arm, base pose tracked with RealSense T265</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Real-world per-step latency 580–592 ms (Table 4); inference hardware not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>14 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (OpenVLA LoRA fine-tuning) + non-learned optimization</dd><dt>Base control</dt><dd>Wheeled (Motion set by planning/optimization) · Base waypoints computed by bilevel optimization drive translation·rotation; a fixed-base VLA outputs end-effector waypoints and the arm tracks them via IK</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Transfers a VLA to mobile manipulation by using bi-level optimization to find base waypoints that make the end-effector waypoints from a fixed-base pretrained VLA feasible. On OVMM it reached 15.8% success, 4.2%p above the previous best (11.6%), and real-world deployment used only 50 expert episodes.</dd><dt>Notes</dt><dd>The base is driven by optimization, not a learned policy (the learned part is OpenVLA LoRA adaptation). The abstract&#x27;s &#x27;50 training cost&#x27; means 50 expert episodes per the main text; the project page says &#x27;50% training cost&#x27;. Real-data collection method Not stated. Table 2 latency 693.1 has no unit stated. Code &#x27;Coming Soon&#x27; (checked 2026-10), weights not released. CVPR 2025. Based on: OpenVLA: An Open-Source Vision-Language-Action Model (arXiv 2406.09246) — uses pretrained OpenVLA-7B as the end-effector waypoint generator</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/m/tidybot/"><small>← Previous</small>TidyBot++</a><a class="nx" href="/m/ac-dit/"><small>Next →</small>AC-DiT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

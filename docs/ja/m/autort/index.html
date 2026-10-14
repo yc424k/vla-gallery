@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoRT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="AutoRT (Google DeepMind, 2024-01) — ロボットフリートをLLM・VLMで調整し実環境データを大規模に収集するシステムであり、モデルではない。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/autort/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/autort/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/autort/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/autort/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/autort/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/autort/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="AutoRT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="AutoRT (Google DeepMind, 2024-01) — ロボットフリートをLLM・VLMで調整し実環境データを大規模に収集するシステムであり、モデルではない。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/autort/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "AutoRT — 構造・バックボーンLLM・学習・推論メモリ", "description": "AutoRT (Google DeepMind, 2024-01) — ロボットフリートをLLM・VLMで調整し実環境データを大規模に収集するシステムであり、モデルではない。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/autort/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "AutoRT", "creator": {"@type": "Organization", "name": "Google DeepMind"}}, "citation": {"@type": "ScholarlyArticle", "name": "AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents", "url": "https://arxiv.org/abs/2401.12963"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "AutoRT", "item": "https://vla-gallery.is-a.dev/ja/m/autort/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/autort/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/autort/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/autort/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/autort/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 産業界モデル</p>
+<h1>AutoRT</h1>
+<p class="by">Google DeepMind · 2024-01</p>
+<p class="kv"><span>기타</span><span>産業界モデル</span><span>該当なし</span><span>その他</span></p>
+<p class="sum">ロボットフリートをLLM・VLMで調整し実環境データを大規模に収集するシステムであり、モデルではない。</p>
+<div class="acts"><a class="pri" href="/ja/#m-autort">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2401.12963" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2401.12963" rel="noopener">AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents</a><small>arXiv 2401.12963</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>産業界モデル</dd><dt>タイプ</dt><dd>기타</dd><dt>発表</dt><dd>2024-01</dd><dt>機関</dt><dd>Google DeepMind</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>該当なし</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>PaLI・FlexCap VLM + LLM (名前は記載なし)</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>RT-1・RT-2・スクリプト・テレオペレーション方策で収集 (その他)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>システム: VLM(PaLI, FlexCap)がシーンを記述 → LLMがタスクを提案・フィルタ → RT-1/RT-2/スクリプト/テレオペレーション方策で収集</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし(収集データでRT-1 co-finetuning、演算は非公開)</dd><dt>データ種類</dt><dd>実ロボットでの自律収集(スクリプト方策・テレオペレーション・RT-2)</dd><dt>データ規模</dt><dd>77,000 trials、6,650 unique instructions、7か月; scripted 73,293 episodes(成功21%)、teleop 3,060(82%)、RT-2 936(4.7%)</dd><dt>主要データセット</dt><dd>AutoRT収集データ(自社)</dd><dt>タスク・評価</dt><dd>RT-1 co-finetuning時、高さ汎化の把持0%→12.5%、拭き取り10%→30%</dd><dt>ロボット</dt><dd>モバイルマニピュレーター20台以上を同時運用(ブログ: 計52台)、オフィスビル4か所</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>該当なし</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · データ収集システム(RT-1・RT-2方策・スクリプト・テレオペレーションで収集)</dd><dt>ベース制御</dt><dd>固定 · ベース移動は別のナビゲーションスタック (地図ベースの目標サンプリング); 収集方策(RT-2・スクリプト・テレオペレーション)は操作のみ</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>ロボットフリートをLLM・VLMで調整し実環境データを大規模に収集するシステムであり、モデルではない。修正したAsimov原則ベースの&#x27;robot constitution&#x27;でタスクを安全性基準でふるい分ける。</dd><dt>備考</dt><dd>データ収集システム(モデルではない)のためタイプはその他。監督比率: モバイルは1人あたり3~5台、固定型は1人あたり最大8台。ブログは&#x27;instructions&#x27;ではなく&#x27;tasks&#x27;と表記。</dd><dt>検証</dt><dd>未検証</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/ja/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/ja/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/ja/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/ja/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/ja/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/ja/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/ja/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/ja/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/ja/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/ja/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/ja/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/ja/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/ja/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/ja/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/ja/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/ja/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/ja/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/ja/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/ja/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/ja/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/rt-h/"><small>← 前のモデル</small>RT-H</a><a class="nx" href="/ja/m/sara-rt/"><small>次のモデル →</small>SARA-RT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

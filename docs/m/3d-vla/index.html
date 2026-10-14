@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D-VLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="3D-VLA (UMass Amherst, 2024-03) — Combines 3D scene understanding and goal state generation (diffusion world model) with action token prediction.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/3d-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/3d-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/3d-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/3d-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/3d-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/3d-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="3D-VLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="3D-VLA (UMass Amherst, 2024-03) — Combines 3D scene understanding and goal state generation (diffusion world model) with action token prediction.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/3d-vla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "3D-VLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "3D-VLA (UMass Amherst, 2024-03) — Combines 3D scene understanding and goal state generation (diffusion world model) with action token prediction.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/3d-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "3D-VLA", "creator": {"@type": "Organization", "name": "UMass Amherst·SJTU·SCUT·Wuhan University·MIT·UCLA·MIT-IBM Watson AI Lab"}}, "citation": {"@type": "ScholarlyArticle", "name": "3D-VLA: A 3D Vision-Language-Action Generative World Model", "url": "https://arxiv.org/abs/2403.09631"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "3D-VLA", "item": "https://vla-gallery.is-a.dev/m/3d-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/3d-vla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/3d-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/3d-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/3d-vla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>3D-VLA</h1>
+<p class="by">UMass Amherst·SJTU·SCUT·Wuhan University·MIT·UCLA·MIT-IBM Watson AI Lab · 2024-03</p>
+<p class="kv"><span>VLA</span><span>Autoregressive &amp; latent-action VLA</span><span>Not disclosed</span><span>discrete tokens</span></p>
+<p class="sum">Combines 3D scene understanding and goal state generation (diffusion world model) with action token prediction.</p>
+<div class="acts"><a class="pri" href="/#m-3d-vla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2403.09631" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2403.09631" rel="noopener">3D-VLA: A 3D Vision-Language-Action Generative World Model</a><small>arXiv 2403.09631</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2024-03</dd><dt>Organization</dt><dd>UMass Amherst·SJTU·SCUT·Wuhan University·MIT·UCLA·MIT-IBM Watson AI Lab</dd><dt>Open weights</dt><dd>Partial</dd><dt>Parameters</dt><dd>Not disclosed (BLIP2-FlanT5-XL based)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>FlanT5-XL · BLIP2 config</dd><dt>Vision encoder</dt><dd>3D features (3D-LLM design)</dd><dt>Action head</dt><dd>Discrete action tokens + goal image·point cloud diffusion (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>3D-LLM design, BLIP2-FlanT5-XL; discrete action tokens (&lt;aloc0-255&gt;·&lt;arct0-255&gt;·&lt;gripper0/1&gt;) + goal image · depth · point cloud diffusion models</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>LLM: &#x27;6 × 32 V100s&#x27; (alignment stage &#x27;6 × 64 V100s&#x27;); goal LDM: 192/96 V100; Point-E: 32 V100</dd><dt>Pretraining duration</dt><dd>LLM not disclosed; RGB goal LDM 3 weeks, RGB-D LDM 2 weeks</dd><dt>Pretraining steps &amp; batch</dt><dd>LLM 30 epochs, batch 4 per node (alignment stage up to 20 epochs, batch 2); LDM 360k/100k steps; Point-E 200 epochs</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation + simulation·synthetic + human video</dd><dt>Data scale</dt><dd>2M 3D-language-action pairs; 316k episodes</dd><dt>Main datasets</dt><dd>12 OXE datasets, RLBench, CALVIN, Dobb-E, RH20T, Epic-Kitchens, HOI4D</dd><dt>Tasks &amp; evaluation</dt><dd>RLBench (Put Knife 68%, Take Umbrella 52%, Pick Cup 40%); CALVIN (single task 44.7%, 2 in a row 16.3%)</dd><dt>Robot</dt><dd>RLBench·CALVIN simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Supervised learning</dd><dt>Base control</dt><dd>Fixed · No base control (RLBench·CALVIN arm sim)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Combines 3D scene understanding and goal state generation (diffusion world model) with action token prediction. Built 2M 3D-language-action pairs from robot data and human-object interaction videos.</dd><dt>Notes</dt><dd>&#x27;6 × 32 V100s&#x27; is verbatim and ambiguous between 6 nodes × 32 and 192 in total. The goal LDM (192 V100 · 3 weeks) is a diffusion model separate from the policy, so it is not counted in the GPU-hours field. Only the diffusion goal model is released on HF.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/m/llara/"><small>← Previous</small>LLaRA</a><a class="nx" href="/m/roboflamingo/"><small>Next →</small>RoboFlamingo</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

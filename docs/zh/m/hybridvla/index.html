@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HybridVLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="HybridVLA (Peking University, BAAI, CUHK, 2025-03) — 一个LLM同时进行自回归预测与扩散动作生成，当AR token平均置信度超过0.96时采用将两种动作取平均的协同集成。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/hybridvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/hybridvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/hybridvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/hybridvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/hybridvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/hybridvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="HybridVLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="HybridVLA (Peking University, BAAI, CUHK, 2025-03) — 一个LLM同时进行自回归预测与扩散动作生成，当AR token平均置信度超过0.96时采用将两种动作取平均的协同集成。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/hybridvla/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "HybridVLA — 架构、骨干LLM、训练与推理内存", "description": "HybridVLA (Peking University, BAAI, CUHK, 2025-03) — 一个LLM同时进行自回归预测与扩散动作生成，当AR token平均置信度超过0.96时采用将两种动作取平均的协同集成。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/hybridvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "HybridVLA", "creator": {"@type": "Organization", "name": "Peking University, BAAI, CUHK"}}, "citation": {"@type": "ScholarlyArticle", "name": "HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model", "url": "https://arxiv.org/abs/2503.10631"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "HybridVLA", "item": "https://vla-gallery.is-a.dev/zh/m/hybridvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/hybridvla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/hybridvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/hybridvla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/hybridvla/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / Flow·Diffusion VLA</p>
+<h1>HybridVLA</h1>
+<p class="by">Peking University, BAAI, CUHK · 2025-03</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>LLM 7B / 2.7B两种规模</span><span>混合</span></p>
+<p class="sum">一个LLM同时进行自回归预测与扩散动作生成，当AR token平均置信度超过0.96时采用将两种动作取平均的协同集成。</p>
+<div class="acts"><a class="pri" href="/zh/#m-hybridvla">在图库中查看架构图</a><a href="https://arxiv.org/abs/2503.10631" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2503.10631" rel="noopener">HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model</a><small>arXiv 2503.10631</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>Flow·Diffusion VLA</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-03</dd><dt>机构</dt><dd>Peking University, BAAI, CUHK</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>LLM 7B / 2.7B两种规模;总量未公开</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Llama 2 7B / Phi-2 2.7B</dd><dt>视觉编码器</dt><dd>SigLIP + DINOv2 (7B) / CLIP (2.7B)</dd><dt>动作头</dt><dd>自回归token + 扩散token (4步)结合 (混合)</dd><dt>动作块</dt><dd>无 (单步)</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>在单个LLM（7B：LLaMA-2 + DINOv2·SigLIP，prism-dinosiglip-224px / 2.7B：Phi-2 + CLIP）内自回归token + diffusion token（&lt;BOD&gt;/&lt;EOD&gt;），denoising 4步（由20缩减）；单步动作</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>A800(张数未公开)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>5个epoch(35个数据集)，批量未公开</dd><dt>GPU·TPU-小时</dt><dd>10,000 (明示 · A800-小时（10K以上）)</dd><dt>微调</dt><dd>RLBench: A800×8, 300 epoch, mixed precision(时间未公开);README示例A100×8 1节点,每GPU批量32</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 仿真(RLBench微调)</dd><dt>数据规模</dt><dd>预训练760K条轨迹·33M帧，35个数据集；RLBench每任务100条轨迹；实机每任务100条演示</dd><dt>主要数据集</dt><dd>Open X-Embodiment, DROID, RoboMIND</dd><dt>任务·评估</dt><dd>RLBench 10项任务平均74%(7B);Franka FR3真机5项任务平均0.80;AgileX双臂5项任务平均0.66</dd><dt>机器人</dt><dd>Franka Research 3(单臂)，AgileX(双臂)；仿真RLBench</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>NVIDIA 4090D: HybridVLA(7B) 6.1 Hz, HybridVLA-dif(7B) 9.4 Hz, HybridVLA(2.7B) 12.3 Hz</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>14 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅使用模仿学习（行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（Franka·AgileX双臂操作·RLBench）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>一个LLM同时进行自回归预测与扩散动作生成，当AR token平均置信度超过0.96时采用将两种动作取平均的协同集成。用35个数据集760K条轨迹在A800上预训练超过10K GPU-小时。</dd><dt>备注</dt><dd>参数(B)以论文变体名HybridVLA(7B)的LLM大小为准的最大值(含视觉编码器的总计未公开)。检查点通过Baidu Netdisk公开。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/zh/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/zh/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/zh/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/zh/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/zh/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/zh/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/zh/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/zh/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/zh/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/zh/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/zh/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/zh/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/zh/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/zh/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/zh/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/zh/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/dexvla/"><small>← 上一个</small>DexVLA</a><a class="nx" href="/zh/m/dita/"><small>下一个 →</small>Dita</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

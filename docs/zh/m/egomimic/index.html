@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EgoMimic — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="EgoMimic (Georgia Institute of Technology, 2024-10) — 将用Project Aria眼镜拍摄的第一人称人类演示与机器人遥操作在一个策略中联合训练。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/egomimic/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/egomimic/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/egomimic/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/egomimic/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/egomimic/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/egomimic/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="EgoMimic — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="EgoMimic (Georgia Institute of Technology, 2024-10) — 将用Project Aria眼镜拍摄的第一人称人类演示与机器人遥操作在一个策略中联合训练。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/egomimic/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "EgoMimic — 架构、骨干LLM、训练与推理内存", "description": "EgoMimic (Georgia Institute of Technology, 2024-10) — 将用Project Aria眼镜拍摄的第一人称人类演示与机器人遥操作在一个策略中联合训练。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/egomimic/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "EgoMimic", "creator": {"@type": "Organization", "name": "Georgia Institute of Technology; Stanford University"}}, "citation": {"@type": "ScholarlyArticle", "name": "EgoMimic: Scaling Imitation Learning via Egocentric Video", "url": "https://arxiv.org/abs/2410.24221"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "EgoMimic", "item": "https://vla-gallery.is-a.dev/zh/m/egomimic/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/egomimic/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/egomimic/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/egomimic/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/egomimic/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / VA</p>
+<h1>EgoMimic</h1>
+<p class="by">Georgia Institute of Technology; Stanford University · 2024-10</p>
+<p class="kv"><span>VA</span><span>VA</span><span>未公开</span><span>回归</span></p>
+<p class="sum">将用Project Aria眼镜拍摄的第一人称人类演示与机器人遥操作在一个策略中联合训练。</p>
+<div class="acts"><a class="pri" href="/zh/#m-egomimic">在图库中查看架构图</a><a href="https://arxiv.org/abs/2410.24221" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.24221" rel="noopener">EgoMimic: Scaling Imitation Learning via Egocentric Video</a><small>arXiv 2410.24221</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>VA</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2024-10</dd><dt>机构</dt><dd>Georgia Institute of Technology; Stanford University</dd><dt>权重公开</dt><dd>未核实</dd><dt>参数</dt><dd>未公开</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>ResNet18†</dd><dt>动作头</dt><dd>SE(3)位姿 + 关节解码器 (回归)</dd><dt>动作块</dt><dd>100步†</dd><dt>控制频率</dt><dd>25 Hz (推理1 Hz)</dd><dt>架构原文摘要</dt><dd>基于ACT的共享Transformer(编码器4·解码器7层，hidden 512，FF 3200，8头；ResNet18†) + 人·机器人共用SE(3)位姿解码器 + 机器人关节解码器；动作块100†</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用(人类·机器人联合训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：A40 4张，120,000 次迭代，全局批量 128，约 24小时（&#x27;All models&#x27;）；lr 5e-5</dd><dt>数据类型</dt><dd>人类视频；真实机器人遥操作</dd><dt>数据规模</dt><dd>人类：Object-in-Bowl 1,400(60分钟)，Groceries 160(80分钟)，Laundry 590(100分钟)；机器人：270(120分钟)，300(300分钟)，430(300分钟)</dd><dt>主要数据集</dt><dd>Project Aria自行采集人类数据;自有机器人遥操作</dd><dt>任务·评估</dt><dd>Continuous Object-in-Bowl, Groceries, Laundry</dd><dt>机器人</dt><dd>ViperX 300 S双臂 + Project Aria眼镜(人类数据)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>RTX 4090台式机上推理1 Hz,控制25 Hz</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 人类·机器人数据联合模仿学习</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（ViperX固定双臂）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将用Project Aria眼镜拍摄的第一人称人类演示与机器人遥操作在一个策略中联合训练。以Object-in-Bowl为准,人类数据60分钟采集1,400条演示,机器人数据120分钟采集270条演示。</dd><dt>备注</dt><dd>ResNet18·动作块100在核验提取中未找到，无法确认(†)。采集耗时仅以分钟为单位公开，故时间(h)栏留空。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/zh/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/zh/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/zh/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/zh/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/zh/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/zh/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/zh/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/zh/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/zh/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/zh/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/zh/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/zh/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/zh/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/zh/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/zh/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/robot-utility-models/"><small>← 上一个</small>Robot Utility Models (RUM)</a><a class="nx" href="/zh/m/interact/"><small>下一个 →</small>InterACT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

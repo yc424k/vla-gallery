@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NavDP — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery</title>
+<meta name="description" content="NavDP (Shanghai AI Laboratory, 2025-05) — 시뮬레이션 데이터만으로 RGB-D 관측에서 궤적 생성(diffusion)과 궤적 평가(critic)를 한 트랜스포머로 함께 학습하며, critic은 시뮬 특권 정보(전역 ESDF)로 만든 대조 음성 궤적으로…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ko/m/navdp/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/navdp/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/navdp/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/navdp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/navdp/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/navdp/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="NavDP — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery"><meta property="og:description" content="NavDP (Shanghai AI Laboratory, 2025-05) — 시뮬레이션 데이터만으로 RGB-D 관측에서 궤적 생성(diffusion)과 궤적 평가(critic)를 한 트랜스포머로 함께 학습하며, critic은 시뮬 특권 정보(전역 ESDF)로 만든 대조 음성 궤적으로…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ko/m/navdp/"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "NavDP — 구조·백본 LLM·학습·추론 메모리", "description": "NavDP (Shanghai AI Laboratory, 2025-05) — 시뮬레이션 데이터만으로 RGB-D 관측에서 궤적 생성(diffusion)과 궤적 평가(critic)를 한 트랜스포머로 함께 학습하며, critic은 시뮬 특권 정보(전역 ESDF)로 만든 대조 음성 궤적으로…", "inLanguage": "ko", "url": "https://vla-gallery.is-a.dev/ko/m/navdp/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "NavDP", "creator": {"@type": "Organization", "name": "Shanghai AI Laboratory·Tsinghua University·Zhejiang University·The University of Hong Kong"}}, "citation": {"@type": "ScholarlyArticle", "name": "NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance", "url": "https://arxiv.org/abs/2505.08712"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 갤러리", "item": "https://vla-gallery.is-a.dev/ko/"}, {"@type": "ListItem", "position": 2, "name": "모델 목록", "item": "https://vla-gallery.is-a.dev/ko/m/"}, {"@type": "ListItem", "position": 3, "name": "NavDP", "item": "https://vla-gallery.is-a.dev/ko/m/navdp/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ko/">VLA 갤러리</a><a href="/ko/m/">모델 목록</a><a href="/ko/#gallery">갤러리</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/navdp/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/navdp/" hreflang="ko" aria-current="true">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/navdp/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/navdp/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ko/">VLA 갤러리</a> / <a href="/ko/m/">모델 목록</a> / 내비게이션</p>
+<h1>NavDP</h1>
+<p class="by">Shanghai AI Laboratory·Tsinghua University·Zhejiang University·The University of Hong Kong · 2025-05</p>
+<p class="kv"><span>VA</span><span>내비게이션</span><span>미공개</span><span>diffusion</span></p>
+<p class="sum">시뮬레이션 데이터만으로 RGB-D 관측에서 궤적 생성(diffusion)과 궤적 평가(critic)를 한 트랜스포머로 함께 학습하며, critic은 시뮬 특권 정보(전역 ESDF)로 만든 대조 음성 궤적으로 학습한다.</p>
+<div class="acts"><a class="pri" href="/ko/#m-navdp">갤러리에서 구조도 보기</a><a href="https://arxiv.org/abs/2505.08712" rel="noopener">논문 ↗</a></div>
+<h2>논문</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2505.08712" rel="noopener">NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance</a><small>arXiv 2505.08712</small></p>
+<h2>개요</h2>
+<dl><dt>분류</dt><dd>내비게이션</dd><dt>유형</dt><dd>VA</dd><dt>발표</dt><dd>2025-05</dd><dt>기관</dt><dd>Shanghai AI Laboratory·Tsinghua University·Zhejiang University·The University of Hong Kong</dd><dt>가중치 공개</dt><dd>예</dd><dt>파라미터</dt><dd>미공개</dd></dl>
+<h2>구조</h2>
+<dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>DepthAnything ViT (RGB, 사전학습) + 스크래치 ViT (깊이)</dd><dt>액션 헤드</dt><dd>웨이포인트 diffusion 헤드 (조건부 U-Net·DDPM) + critic 선택 (diffusion)</dd><dt>청크</dt><dd>웨이포인트 24개</dd><dt>제어 주기</dt><dd>&gt;10 Hz</dd><dt>구조 원문 요약</dt><dd>RGB는 사전학습 DepthAnything ViT, 깊이는 스크래치 ViT로 인코딩 → 트랜스포머 디코더가 RGB-D 512토큰을 16개 융합 토큰으로 압축 → 2층 트랜스포머 인코더(정책·critic 공유) → 조건부 U-Net·DDPM diffusion 헤드가 24스텝 웨이포인트(Δx,Δy,Δω) 배치 생성, critic(궤적은 1D conv 인코딩)이 점수화해 최선 궤적 선택; 궤적 중간점×비례계수로 선속도·각속도 산출, &gt;10 Hz</dd></dl>
+<h2>학습</h2>
+<dl><dt>사전학습 가속기</dt><dd>미공개</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>미공개</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>real-to-sim 데이터(3DGS 실험실 재구성, 약 4k 궤적) 추가 학습: 방식·가속기·시간 미공개</dd><dt>데이터 종류</dt><dd>시뮬레이션·합성</dd><dt>데이터 규모</dt><dd>궤적 56,000개 이상·RGB-D 이미지 1,000만 장·363.2 km·1,244개 장면(본문; arXiv 초록 메타데이터는 &#x27;100만 m 이상·3,000개 장면&#x27;); GPU당 하루 약 2,500 궤적 생성; real-to-sim 약 4k 궤적</dd><dt>주요 데이터셋</dt><dd>자체 시뮬 생성 데이터(3D-Front 1,176개·Matterport3D 68개 장면); 3DGS 실험실 재구성(real-to-sim)</dd><dt>태스크·평가</dt><dd>자체 IsaacSim 벤치(Dingo·Go2·R1) PointNav 시뮬 SR 81.3/83.0/75.0%, 시뮬·real-to-sim 6개 설정 평균 mSR 70.4·mSPL 58.6(ViPlanner 65.6·55.4); 무목표 탐색·ImageNav; 실로봇 제로샷, in-domain real-to-sim 데이터 추가 시 실환경 성공률 50%→80%; 시뮬 무목표 탐색 면적 Dingo 280.2·Go2 359.1·R1 300.4 (NoMaD 119.2·36.9·57.9, ViNT 38.4·37.7·61.3)</dd><dt>로봇</dt><dd>실로봇 Unitree Go2 사족, Galaxea R1, Unitree G1 휴머노이드; 시뮬 ClearPath Dingo(2륜 차동)·Go2·R1</dd></dl>
+<h2>추론</h2>
+<dl><dt>추론 장치·속도</dt><dd>GeForce RTX 5080 노트북 GPU에서 &gt;10 Hz 실시간 추론; 로봇 최대 2.0 m/s; 지연(ms)·메모리 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>RTX 5080 노트북 GPU</dd></dl>
+<h2>강화학습 · 베이스</h2>
+<dl><dt>강화학습</dt><dd>일부 (RL 하위 제어기 결합) · NavDP 자체는 모방학습(diffusion) + 시뮬 특권 정보(전역 ESDF) 기반 critic 지도학습; 시뮬 Go2 사족은 RL로 학습된 보행 정책이 궤적을 추종</dd><dt>강화학습 근거</dt><dd><a href="https://arxiv.org/html/2505.08712v3" rel="noopener">https://arxiv.org/html/2505.08712v3</a></dd><dt>베이스 제어</dt><dd>바퀴형·사족보행·휴머노이드 보행 (웨이포인트 → 추종 제어기) · 정책이 24스텝 웨이포인트 출력 → 궤적 중간점×비례계수로 선속도·각속도 변환해 베이스 명령</dd></dl>
+<h2>비고</h2>
+<dl><dt>핵심 특징</dt><dd>시뮬레이션 데이터만으로 RGB-D 관측에서 궤적 생성(diffusion)과 궤적 평가(critic)를 한 트랜스포머로 함께 학습하며, critic은 시뮬 특권 정보(전역 ESDF)로 만든 대조 음성 궤적으로 학습한다. 실로봇 데이터 없이 사족·바퀴형·휴머노이드에 제로샷 이전되고, Gaussian Splatting real-to-sim 데이터(약 4k 궤적)를 더하면 실환경 성공률이 50%에서 80%로 오른다.</dd><dt>비고</dt><dd>학습 GPU·시간·스텝·배치·파라미터 수 모두 미공개(본문·부록). 데이터 규모 상충: 본문·PDF·HF 초록은 363.2 km·1,244개 장면, 현재 arXiv 초록 메타데이터는 &#x27;100만 m 이상·3,000개 장면&#x27;. 체크포인트는 Google Form 신청 후 제공(README상 InternVLA-N1 System-1 모델), 코드 CC BY-NC-SA 4.0. RL 사후학습판 X-NavDP(2607.28560)는 별도 논문.</dd><dt>검증</dt><dd>수정 반영</dd></dl>
+<section class="rel"><h2>같은 분류의 모델</h2><ul><li><a href="/ko/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ko/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ko/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ko/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ko/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ko/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ko/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ko/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ko/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ko/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ko/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ko/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ko/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ko/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ko/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ko/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ko/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ko/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ko/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ko/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ko/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ko/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ko/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ko/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ko/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ko/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ko/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ko/m/ring/"><small>← 이전 모델</small>RING (The One RING)</a><a class="nx" href="/ko/m/navid/"><small>다음 모델 →</small>NaVid</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ko/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALOHA Unleashed — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="ALOHA Unleashed (Google DeepMind, 2024-10) — Trains a per-task diffusion transformer on thousands of teleoperation demonstrations per task, achieving precise…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/aloha-unleashed/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/aloha-unleashed/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/aloha-unleashed/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/aloha-unleashed/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/aloha-unleashed/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ALOHA Unleashed — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="ALOHA Unleashed (Google DeepMind, 2024-10) — Trains a per-task diffusion transformer on thousands of teleoperation demonstrations per task, achieving precise…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/aloha-unleashed/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ALOHA Unleashed — Architecture, Backbone LLM, Training & Inference Memory", "description": "ALOHA Unleashed (Google DeepMind, 2024-10) — Trains a per-task diffusion transformer on thousands of teleoperation demonstrations per task, achieving precise…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/aloha-unleashed/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "ALOHA Unleashed", "creator": {"@type": "Organization", "name": "Google DeepMind"}}, "citation": {"@type": "ScholarlyArticle", "name": "ALOHA Unleashed: A Simple Recipe for Robot Dexterity", "url": "https://arxiv.org/abs/2410.13126"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "ALOHA Unleashed", "item": "https://vla-gallery.is-a.dev/m/aloha-unleashed/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/aloha-unleashed/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/aloha-unleashed/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/aloha-unleashed/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>ALOHA Unleashed</h1>
+<p class="by">Google DeepMind · 2024-10</p>
+<p class="kv"><span>VA</span><span>VA</span><span>217M</span><span>diffusion</span></p>
+<p class="sum">Trains a per-task diffusion transformer on thousands of teleoperation demonstrations per task, achieving precise bimanual tasks such as shoelace tying.</p>
+<div class="acts"><a class="pri" href="/#m-aloha-unleashed">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2410.13126" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.13126" rel="noopener">ALOHA Unleashed: A Simple Recipe for Robot Dexterity</a><small>arXiv 2410.13126</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-10</dd><dt>Organization</dt><dd>Google DeepMind</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>217M (Base), 150M (Small: encoder 17M + decoder 37M)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>ResNet50 × 4 cameras</dd><dt>Action head</dt><dd>Diffusion denoiser decoder (55M) (diffusion)</dd><dt>Chunk</dt><dd>50 steps (1 s)</dd><dt>Control rate</dt><dd>50 Hz</dd><dt>Architecture (original summary)</dt><dd>Per-camera ResNet50 for 4 cameras + transformer encoder (85M) and diffusion denoiser decoder (55M); 50 diffusion training steps, 50-action chunks (1 s), target above 50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per-task models: TPUv5e 64 chips (JAX data parallel), batch 256, 2M steps (about 265 hours); Adam, weight decay 0.001, lr 1e-4 after 5000 warmup steps</dd><dt>Data type</dt><dd>Real-robot teleoperation; simulation·synthetic (sim teleoperation)</dd><dt>Data scale</dt><dd>Shirt 8,658 (Easy 5,345·Messy 3,313), Lace 5,133 (2,212·2,921), FingerReplace 5,247, GearInsert 4,005, RandomKitchen 3,198 (in-domain 216); real total 26k+ episodes; sim 2,000+ (introduction)/522·201·550 (Table 3)</dd><dt>Main datasets</dt><dd>In-house ALOHA 2 collection</dd><dt>Tasks &amp; evaluation</dt><dd>Real: ShirtEasy·ShirtMessy, LaceEasy·LaceMessy, FingerReplace, GearInsert-1·2·3, RandomKitchen (Bowl·+Cup·+Fork); sim: SingleInsertion, DoubleInsertion, MugOnPlate</dd><dt>Robot</dt><dd>ALOHA 2 bimanual (10 robots, 2 buildings)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Forward pass + iterative denoising 0.043 s (RTX 4090)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0.4 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (diffusion)</dd><dt>Base control</dt><dd>Fixed · No base control (ALOHA 2 fixed bimanual)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Trains a per-task diffusion transformer on thousands of teleoperation demonstrations per task, achieving precise bimanual tasks such as shoelace tying. 35 operators collected 26k+ episodes over 8 months with 10 robots.</dd><dt>Notes</dt><dd>The paper does not explain how the introduction&#x27;s &#x27;2,000+&#x27; sim demos relate to the per-task values in Table 3. &#x27;2,000+&#x27; is an introduction sentence, not from the abstract (correction applied). Sim demos were also collected by teleoperation.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/mobile-aloha/"><small>← Previous</small>Mobile ALOHA</a><a class="nx" href="/m/hpt/"><small>Next →</small>HPT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

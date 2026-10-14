@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StreamVLN — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery</title>
+<meta name="description" content="StreamVLN (Shanghai AI Laboratory, 2025-07) — 연속 영상을 다중 턴 대화로 처리하며 최근 대화는 슬라이딩 윈도우 KV 캐시로 재사용하고 과거 시각 정보는 3D 복셀 기반 토큰 가지치기 메모리로 압축하는 스트리밍 VLN 모델이다.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ko/m/streamvln/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/streamvln/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/streamvln/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/streamvln/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/streamvln/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/streamvln/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="StreamVLN — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery"><meta property="og:description" content="StreamVLN (Shanghai AI Laboratory, 2025-07) — 연속 영상을 다중 턴 대화로 처리하며 최근 대화는 슬라이딩 윈도우 KV 캐시로 재사용하고 과거 시각 정보는 3D 복셀 기반 토큰 가지치기 메모리로 압축하는 스트리밍 VLN 모델이다.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ko/m/streamvln/"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "StreamVLN — 구조·백본 LLM·학습·추론 메모리", "description": "StreamVLN (Shanghai AI Laboratory, 2025-07) — 연속 영상을 다중 턴 대화로 처리하며 최근 대화는 슬라이딩 윈도우 KV 캐시로 재사용하고 과거 시각 정보는 3D 복셀 기반 토큰 가지치기 메모리로 압축하는 스트리밍 VLN 모델이다.", "inLanguage": "ko", "url": "https://vla-gallery.is-a.dev/ko/m/streamvln/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "StreamVLN", "creator": {"@type": "Organization", "name": "Shanghai AI Laboratory·The University of Hong Kong·Zhejiang University·Shanghai Jiao Tong University"}}, "citation": {"@type": "ScholarlyArticle", "name": "StreamVLN: Streaming Vision-and-Language Navigation via SlowFast Context Modeling", "url": "https://arxiv.org/abs/2507.05240"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 갤러리", "item": "https://vla-gallery.is-a.dev/ko/"}, {"@type": "ListItem", "position": 2, "name": "모델 목록", "item": "https://vla-gallery.is-a.dev/ko/m/"}, {"@type": "ListItem", "position": 3, "name": "StreamVLN", "item": "https://vla-gallery.is-a.dev/ko/m/streamvln/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ko/">VLA 갤러리</a><a href="/ko/m/">모델 목록</a><a href="/ko/#gallery">갤러리</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/streamvln/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/streamvln/" hreflang="ko" aria-current="true">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/streamvln/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/streamvln/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ko/">VLA 갤러리</a> / <a href="/ko/m/">모델 목록</a> / 내비게이션</p>
+<h1>StreamVLN</h1>
+<p class="by">Shanghai AI Laboratory·The University of Hong Kong·Zhejiang University·Shanghai Jiao Tong University · 2025-07</p>
+<p class="kv"><span>VLA</span><span>내비게이션</span><span>8.03B</span><span>이산 토큰</span></p>
+<p class="sum">연속 영상을 다중 턴 대화로 처리하며 최근 대화는 슬라이딩 윈도우 KV 캐시로 재사용하고 과거 시각 정보는 3D 복셀 기반 토큰 가지치기 메모리로 압축하는 스트리밍 VLN 모델이다.</p>
+<div class="acts"><a class="pri" href="/ko/#m-streamvln">갤러리에서 구조도 보기</a><a href="https://arxiv.org/abs/2507.05240" rel="noopener">논문 ↗</a></div>
+<h2>논문</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2507.05240" rel="noopener">StreamVLN: Streaming Vision-and-Language Navigation via SlowFast Context Modeling</a><small>arXiv 2507.05240</small></p>
+<h2>개요</h2>
+<dl><dt>분류</dt><dd>내비게이션</dd><dt>유형</dt><dd>VLA</dd><dt>발표</dt><dd>2025-07</dd><dt>기관</dt><dd>Shanghai AI Laboratory·The University of Hong Kong·Zhejiang University·Shanghai Jiao Tong University</dd><dt>가중치 공개</dt><dd>예</dd><dt>파라미터</dt><dd>8.03B (HF safetensors; LLaVA-Video 7B 기반)</dd></dl>
+<h2>구조</h2>
+<dl><dt>백본 LLM</dt><dd>Qwen2-7B · LLaVA-Video 7B 구성</dd><dt>비전 인코더</dt><dd>LLaVA-Video 내장 비전 인코더 (명칭 미기재)</dd><dt>액션 헤드</dt><dd>이산 행동 텍스트 (↑ 25 cm · ←/→ 15° · STOP), 턴당 4개 (이산 토큰)</dd><dt>청크</dt><dd>행동 4개 (코드 기본값)</dd><dt>제어 주기</dt><dd>행동 4개당 0.27초 (RTX 4090)</dd><dt>구조 원문 요약</dt><dd>LLaVA-Video 7B (LLM Qwen2-7B) 기반 다중 턴 대화형 스트리밍; fast: 최근 N턴 슬라이딩 윈도우 KV 캐시 재사용, slow: 3D 복셀 기반 토큰 가지치기 메모리; 턴마다 이산 행동 텍스트 출력(↑ 전진 25 cm·←/→ 회전 15°·STOP, 코드 기본 4개)</dd></dl>
+<h2>학습</h2>
+<dl><dt>사전학습 가속기</dt><dd>A100 (장수 미공개)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>2단계: 오라클 VLN 궤적 1 에폭 → DAgger·VL 데이터 공동학습 1 에폭 추가; 스텝당 영상 클립 128개 (최대 lr LLM 2e-5·비전 인코더 5e-6)</dd><dt>GPU·TPU-시간</dt><dd>1,500 (명시 · A100-시간 (&quot;around 1500 A100 GPU hours&quot;))</dd><dt>파인튜닝</dt><dd>해당 없음 (실세계 배포용 체크포인트 별도 공개, 학습 연산 미공개)</dd><dt>데이터 종류</dt><dd>시뮬레이션·합성 / 웹 비전-언어</dd><dt>데이터 규모</dt><dd>VLN 영상 클립 450K(MP3D 60개 환경, R2R·R2R-EnvDrop·RxR) + ScaleVLN 부분집합 300K(다른 절 150k) + DAgger 240K + 영상 VQA 248K + MMC4 인터리브 230K; 혼합비 VLA 67%·일반 33%</dd><dt>주요 데이터셋</dt><dd>R2R-CE; RxR-CE; R2R-EnvDrop; ScaleVLN(HM3D, VLN-CE 변환 부분집합); LLaVA-Video-178K; ScanQA·SQA3D; MMC4</dd><dt>태스크·평가</dt><dd>R2R-CE val-unseen SR 52.8%·SPL 47.2% (추가 VLN 데이터 † SR 56.4%·SPL 50.2%); RxR-CE SR 48.6%·SPL 42.5% († SR 54.4%·SPL 45.4%); 실로봇 Go2 실내·실외 단순·장기 지시 수행</dd><dt>로봇</dt><dd>Unitree Go2 사족 + RealSense D455 (모델 입력 RGB; 깊이·오도메트리는 토큰 가지치기 역투영용)</dd></dl>
+<h2>추론</h2>
+<dl><dt>추론 장치·속도</dt><dd>원격 워크스테이션 RTX 4090; 행동 4개 추론 평균 0.27초 + 통신 0.2초(실내)·1.0초(실외); Go2가 영상을 서버로 스트리밍; 메모리 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>16.1 GB</dd><dt>실행 위치</dt><dd>원격 워크스테이션 (RTX 4090)</dd></dl>
+<h2>강화학습 · 베이스</h2>
+<dl><dt>강화학습</dt><dd>미사용 · 모방학습(SFT) + DAgger 수집 데이터 공동학습</dd><dt>베이스 제어</dt><dd>사족보행 (이산 이동 행동) · VLA가 이산 행동 열(전진 25 cm·회전 15°·정지) 출력 → 로봇 클라이언트가 ROS2로 속도 명령 발행</dd></dl>
+<h2>비고</h2>
+<dl><dt>핵심 특징</dt><dd>연속 영상을 다중 턴 대화로 처리하며 최근 대화는 슬라이딩 윈도우 KV 캐시로 재사용하고 과거 시각 정보는 3D 복셀 기반 토큰 가지치기 메모리로 압축하는 스트리밍 VLN 모델이다. 긴 영상에서도 지연을 낮게 유지하며 R2R-CE SR 56.4%(추가 VLN 데이터)를 기록하고 Unitree Go2 실로봇에서 실내·실외 지시를 수행했다.</dd><dt>비고</dt><dd>arXiv v2(2026-07) 기준; 본문 수치(R2R SR 56.9%·SPL 51.9%, RxR SR 52.9%·SPL 46.0%)와 Table I(56.4/50.2, 54.4/45.4)가 불일치; 행동 토큰 수 서술 불일치(&#x27;8 action tokens&#x27; vs &#x27;0.27s for 4 actions&#x27;), 공식 코드 기본 num_future_steps=4; ScaleVLN 300K vs 150k 불일치; GPU 장수·기간 미공개; 코드·데이터·체크포인트 2종(벤치마크용·실세계용) 공개, CC BY-NC-SA 4.0. 기반: LLaVA-Video: Video Instruction Tuning With Synthetic Data (arXiv 2410.02713) — 논문·README가 LLaVA-Video 7B 위에 구축했다고 명시</dd><dt>검증</dt><dd>확인</dd></dl>
+<section class="rel"><h2>같은 분류의 모델</h2><ul><li><a href="/ko/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ko/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ko/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ko/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ko/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ko/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ko/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ko/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ko/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ko/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ko/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ko/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ko/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ko/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ko/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ko/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ko/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ko/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ko/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ko/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ko/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ko/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ko/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ko/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ko/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ko/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ko/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ko/m/mobility-vla/"><small>← 이전 모델</small>Mobility VLA</a><a class="nx" href="/ko/m/navfom/"><small>다음 모델 →</small>NavFoM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ko/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figure Helix — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Figure Helix (Figure AI, 2025-02) — S2の潜在ベクトルをS1のトークン空間に射影して視覚特徴と連結し、1組の重みを回帰損失でend-to-end学習する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/figure-helix/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/figure-helix/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/figure-helix/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/figure-helix/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/figure-helix/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/figure-helix/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Figure Helix — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Figure Helix (Figure AI, 2025-02) — S2の潜在ベクトルをS1のトークン空間に射影して視覚特徴と連結し、1組の重みを回帰損失でend-to-end学習する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/figure-helix/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Figure Helix — 構造・バックボーンLLM・学習・推論メモリ", "description": "Figure Helix (Figure AI, 2025-02) — S2の潜在ベクトルをS1のトークン空間に射影して視覚特徴と連結し、1組の重みを回帰損失でend-to-end学習する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/figure-helix/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Figure Helix", "creator": {"@type": "Organization", "name": "Figure AI"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Figure Helix", "item": "https://vla-gallery.is-a.dev/ja/m/figure-helix/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/figure-helix/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/figure-helix/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/figure-helix/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/figure-helix/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ヒューマノイドVLA</p>
+<h1>Figure Helix</h1>
+<p class="by">Figure AI · 2025-02</p>
+<p class="kv"><span>VLA</span><span>ヒューマノイドVLA</span><span>S2 7B + S1 80M</span><span>回帰</span></p>
+<p class="sum">S2の潜在ベクトルをS1のトークン空間に射影して視覚特徴と連結し、1組の重みを回帰損失でend-to-end学習する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-figure-helix">ギャラリーで構造図を見る</a><a href="https://www.figure.ai/news/helix" rel="noopener">公式ページ ↗</a></div>
+<h2>論文</h2>
+<p class="paper">論文なし</p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ヒューマノイドVLA</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-02</dd><dt>機関</dt><dd>Figure AI</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>S2 7B + S1 80M (物流アップデートでデコーダヘッド+50%、新たな総量は非公開)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>非公開の7BオープンVLM</dd><dt>ビジョンエンコーダ</dt><dd>VLM内蔵 + 畳み込みビジョンバックボーン (S1)</dd><dt>アクションヘッド</dt><dd>S1 80Mエンコーダ・デコーダTransformer (回帰)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>200 Hz</dd><dt>構造の原文要約</dt><dd>S2: 7BオープンVLM(7~9 Hz) → 潜在ベクトル / S1: 80M cross-attentionエンコーダ・デコーダTransformer + 完全畳み込みマルチスケールビジョンバックボーン、35-DoF連続行動200 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / 人の動画</dd><dt>データ規模</dt><dd>テレオペレーション~500時間(複数ロボット・複数操作者、VLM自動ラベリング); 物流スケーリング研究10~60時間; Go-Big人間動画の規模は非公開</dd><dt>主要データセット</dt><dd>独自のテレオペレーションデータセット(非公開); Project Go-Big一人称人間動画</dd><dt>タスク・評価</dt><dd>小さな家庭用物体の把持、引き出し・冷蔵庫操作、複数ロボット間ハンドオーバー; 物流でパッケージあたり4.05秒(~5.0秒から)、バーコード成功~95%(~70%から); デモ10→60時間で処理時間~6.84秒→4.31秒、バーコード88.2%→94.4%</dd><dt>ロボット</dt><dd>Figure 02上半身(手首・指・胴体・頭)、35-DoF</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>ロボットあたり低消費電力の組込みGPU 2基にモデル並列で配備; S2 7~9 Hz、S1 200 Hz</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>14.2 GB</dd><dt>実行場所</dt><dd>オンボード (組込みGPU 2基)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>一部 (RL下位制御器との結合) · S2・S1は回帰損失の教師あり学習。2025年の歩行はシミュレーションRLで学習した別のニューラルネットが担当</dd><dt>ベース制御</dt><dd>固定 · 上半身のみ制御 (手首・指・胴体・頭部、S1 200 Hz); 脚・歩行への言及なし</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>S2の潜在ベクトルをS1のトークン空間に射影して視覚特徴と連結し、1組の重みを回帰損失でend-to-end学習する。洗濯・食洗機アップデートはモデル・ハイパーパラメータを変えずにデータのみ追加した。</dd><dt>備考</dt><dd>パラメータ(B)は7B + 80Mの合計。S1ビジョンバックボーンはシミュレーション事前学習で初期化し、S1・S2入力にデプロイ遅延分の時間オフセットを置く。物流アップデート(2025-06-07)でVision Memory・状態履歴・力フィードバックを追加。Go-Big(2025-09-18)は100%一人称人間動画で言語指示ナビゲーションを学習。2025年の歩行は別のRL制御器(別行)。Helix 02(2026-01)は範囲外。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/ja/m/gr00t-n1-5/">GR00T N1.5</a><small>2025-05</small></li><li><a href="/ja/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/ja/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/ja/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/ja/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/ja/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/ja/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/ja/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/ja/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/ja/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/ja/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/ja/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/gr00t-n1-6/"><small>← 前のモデル</small>GR00T N1.6</a><a class="nx" href="/ja/m/atlas-lbm/"><small>次のモデル →</small>Atlas LBM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NoMaD — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="NoMaD (UC Berkeley, 2023-10) — 以概率性遮盖目标图像的目标掩码，在一个扩散策略中同时处理目标导向导航和无目标探索。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/nomad/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/nomad/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/nomad/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/nomad/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/nomad/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/nomad/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="NoMaD — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="NoMaD (UC Berkeley, 2023-10) — 以概率性遮盖目标图像的目标掩码，在一个扩散策略中同时处理目标导向导航和无目标探索。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/nomad/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "NoMaD — 架构、骨干LLM、训练与推理内存", "description": "NoMaD (UC Berkeley, 2023-10) — 以概率性遮盖目标图像的目标掩码，在一个扩散策略中同时处理目标导向导航和无目标探索。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/nomad/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "NoMaD", "creator": {"@type": "Organization", "name": "UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration", "url": "https://arxiv.org/abs/2310.07896"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "NoMaD", "item": "https://vla-gallery.is-a.dev/zh/m/nomad/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/nomad/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/nomad/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/nomad/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/nomad/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>NoMaD</h1>
+<p class="by">UC Berkeley · 2023-10</p>
+<p class="kv"><span>VA</span><span>导航</span><span>19M</span><span>diffusion</span></p>
+<p class="sum">以概率性遮盖目标图像的目标掩码，在一个扩散策略中同时处理目标导向导航和无目标探索。</p>
+<div class="acts"><a class="pri" href="/zh/#m-nomad">在图库中查看架构图</a><a href="https://arxiv.org/abs/2310.07896" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2310.07896" rel="noopener">NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</a><small>arXiv 2310.07896</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2023-10</dd><dt>机构</dt><dd>UC Berkeley</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>19M</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>EfficientNet-B0 (观测 / 观测+目标)</dd><dt>动作头</dt><dd>1D条件U-Net扩散头 (K=10) + 时间距离头 (diffusion)</dd><dt>动作块</dt><dd>航点8个 (公开配置)</dd><dt>控制频率</dt><dd>未公开 (部署设置 4 Hz)</dd><dt>架构原文摘要</dt><dd>用EfficientNet-B0将观测·目标编码为256维token → Transformer 4层·4头(目标掩码p_m=0.5) → 1D条件U-Net扩散头(K=10去噪)生成未来动作序列(公开设置为8个航点) + 时间距离头；PD控制器转换为速度</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开 (致谢中仅提及Google TPU Research Cloud等计算支持)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>30个epoch · 批量256 (公开nomad.yaml为100个epoch)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>不适用</dd><dt>数据类型</dt><dd>真实机器人遥操作 / 真实机器人自主行驶日志</dd><dt>数据规模</dt><dd>GNM·SACSoN数据集100小时以上</dd><dt>主要数据集</dt><dd>GNM数据混合(RECON、GoStanford、SCAND、TartanDrive等)；SACSoN(HuRoN)</dd><dt>任务·评估</dt><dd>真实环境探索成功率98%·碰撞0.2次 (Subgoal Diffusion 77%·1.7次，Random Subgoals 70%)；目标条件导航90%；相比专用策略探索98%(Diffusion Policy 98%)·目标92%(ViNT 92%)</dd><dt>机器人</dt><dd>LoCoBot轮式 (室内·室外环境)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>面向Jetson Orin级机载运行 (论文);README部署示例LoCoBot + Jetson Orin Nano;扩散10步;延迟未公开 (部署循环设为4 Hz)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0 GB</dd><dt>运行位置</dt><dd>机载Jetson Orin级 (README：Orin Nano)</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅端到端监督模仿学习</dd><dt>底盘控制</dt><dd>轮式 (航点 → 跟踪控制器) · 扩散策略输出航点序列 → PD控制器转换为底盘速度指令 (README)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>以概率性遮盖目标图像的目标掩码，在一个扩散策略中同时处理目标导向导航和无目标探索。以19M参数在探索成功率（98% 对 77%）和碰撞（0.2次 对 1.7次）上优于335M的subgoal扩散方法。</dd><dt>备注</dt><dd>论文未注明动作序列长度·上下文·分辨率 → 按公开的nomad.yaml为航点 8个·上下文 3·96×96。训练GPU·时间未公开。在ViNT策略结构上结合目标掩码。权重在Google Drive公开。ICRA 2024。基于：ViNT: A Foundation Model for Visual Navigation (arXiv 2306.14846) — 在ViNT策略结构上结合目标掩码·扩散头（论文明示）</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/zh/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/vint/"><small>← 上一个</small>ViNT</a><a class="nx" href="/zh/m/crossformer/"><small>下一个 →</small>CrossFormer</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

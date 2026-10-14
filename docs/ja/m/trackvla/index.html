@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrackVLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="TrackVLA (Peking University, 2025-05) — 共有LLMの上に目標認識用の言語ヘッドと軌跡計画用のanchorベースdiffusionヘッドを並列に置き、認識と追跡軌跡計画を併せて学習する身体性視覚追跡VLAである。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/trackvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/trackvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/trackvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/trackvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/trackvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/trackvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="TrackVLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="TrackVLA (Peking University, 2025-05) — 共有LLMの上に目標認識用の言語ヘッドと軌跡計画用のanchorベースdiffusionヘッドを並列に置き、認識と追跡軌跡計画を併せて学習する身体性視覚追跡VLAである。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/trackvla/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "TrackVLA — 構造・バックボーンLLM・学習・推論メモリ", "description": "TrackVLA (Peking University, 2025-05) — 共有LLMの上に目標認識用の言語ヘッドと軌跡計画用のanchorベースdiffusionヘッドを並列に置き、認識と追跡軌跡計画を併せて学習する身体性視覚追跡VLAである。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/trackvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "TrackVLA", "creator": {"@type": "Organization", "name": "Peking University·Galbot·Beihang University·Beijing Normal University·BAAI"}}, "citation": {"@type": "ScholarlyArticle", "name": "TrackVLA: Embodied Visual Tracking in the Wild", "url": "https://arxiv.org/abs/2505.23189"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "TrackVLA", "item": "https://vla-gallery.is-a.dev/ja/m/trackvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/trackvla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/trackvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/trackvla/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/trackvla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>TrackVLA</h1>
+<p class="by">Peking University·Galbot·Beihang University·Beijing Normal University·BAAI · 2025-05</p>
+<p class="kv"><span>VLA</span><span>ナビゲーション</span><span>7B</span><span>diffusion</span></p>
+<p class="sum">共有LLMの上に目標認識用の言語ヘッドと軌跡計画用のanchorベースdiffusionヘッドを並列に置き、認識と追跡軌跡計画を併せて学習する身体性視覚追跡VLAである。</p>
+<div class="acts"><a class="pri" href="/ja/#m-trackvla">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2505.23189" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2505.23189" rel="noopener">TrackVLA: Embodied Visual Tracking in the Wild</a><small>arXiv 2505.23189</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-05</dd><dt>機関</dt><dd>Peking University·Galbot·Beihang University·Beijing Normal University·BAAI</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>7B (Vicuna-7Bベース; 全体の数値は記載なし)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Vicuna-7B</dd><dt>ビジョンエンコーダ</dt><dd>EVA-CLIP (凍結)</dd><dt>アクションヘッド</dt><dd>anchorベースdiffusionヘッド (DiT、DDIM 2ステップ)ウェイポイント + 言語ヘッド(認識) (diffusion)</dd><dt>チャンク</dt><dd>ウェイポイント10個</dd><dt>制御周期</dt><dd>10 FPS</dd><dt>構造の原文要約</dt><dd>EVA-CLIP(凍結) + 2層MLPプロジェクタ + Vicuna-7B; 現在フレーム64トークン・過去フレーム4トークン(32フレームウィンドウ); 追跡時はanchorベースのdiffusionヘッド(DiT 12層・hidden 768・12ヘッド、anchor 40個、DDIM 2ステップ)がウェイポイント10個(x, y, θ)を生成、認識時は言語モデリングヘッド; 実環境10 FPS</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100 24枚</dd><dt>事前学習期間</dt><dd>約15時間</dd><dt>事前学習ステップ・バッチ</dt><dd>1エポック · 総バッチ196 (lr 2e-5 コサイン)</dd><dt>GPU・TPU時間</dt><dd>360 (明示 · H100時間 (&quot;totaling 360 GPU hours&quot;))</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>シミュレーション・合成 / Web視覚言語</dd><dt>データ規模</dt><dd>計1.7M: 身体性視覚追跡855K(4.1節では885K) + 動画QA 855K(人物認識362K + オープンエンドVQA 493K)</dd><dt>主要データセット</dt><dd>EVT-Bench(Habitat 3.0、HM3D・MP3D 804シーン、人間アバター100体); SYNTH-PEDES; 公開VQA</dd><dt>タスク・評価</dt><dd>EVT-Bench SR 単一目標85.1%・妨害目標57.6%・曖昧目標50.2%; Gym-UnrealCV ゼロショットSR 1.00(単一)・0.91(妨害物)・1.00(未知物体); 実世界の難易度別10回 SR 100%・90%・70%(市販追跡ドローンDJI Flip 100%・70%・50%)</dd><dt>ロボット</dt><dd>Unitree Go2四足 + RealSense D455(640×480、HFOV 90°); pure pursuit閉ループ追従、LiDAR elastic band障害物回避</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>リモートサーバーRTX 4090、10 FPS; 行動モデル(Ours-Base) 13 ms; メモリは非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>14 GB</dd><dt>実行場所</dt><dd>リモートサーバー (RTX 4090)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(SFT)のみ</dd><dt>ベース制御</dt><dd>四足歩行 (ウェイポイント → 追従制御器) · VLAがウェイポイント軌跡を出力 → pure pursuit閉ループ追従(LiDARベースの障害物回避を併用)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>共有LLMの上に目標認識用の言語ヘッドと軌跡計画用のanchorベースdiffusionヘッドを並列に置き、認識と追跡軌跡計画を併せて学習する身体性視覚追跡VLAである。自前のEVT-Benchシミュレーション追跡データと認識データ1.7Mで学習し、ゼロショットのGym-UnrealCVと実環境で10 FPSの頑健な追跡を示した。</dd><dt>備考</dt><dd>追跡サンプル数855K vs 885Kで本文不一致; TrackVLA重みは非公開(EVT-BenchとUni-NaVidの評価コード・重みのみ公開); EVA-CLIP・Vicuna-7Bは事前学習重みで初期化; CoRL 2025。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/internvla-n1/"><small>← 前のモデル</small>InternVLA-N1</a><a class="nx" href="/ja/m/vln-r1/"><small>次のモデル →</small>VLN-R1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

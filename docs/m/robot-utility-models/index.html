@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robot Utility Models (RUM) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Robot Utility Models (RUM) (New York University, 2024-09) — Uses a $25-BoM iPhone collection tool to gather about 1,000 demos per task across about 40 enviro…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/robot-utility-models/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/robot-utility-models/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/robot-utility-models/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/robot-utility-models/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/robot-utility-models/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/robot-utility-models/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Robot Utility Models (RUM) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Robot Utility Models (RUM) (New York University, 2024-09) — Uses a $25-BoM iPhone collection tool to gather about 1,000 demos per task across about 40 enviro…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/robot-utility-models/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Robot Utility Models (RUM) — Architecture, Backbone LLM, Training & Inference Memory", "description": "Robot Utility Models (RUM) (New York University, 2024-09) — Uses a $25-BoM iPhone collection tool to gather about 1,000 demos per task across about 40 enviro…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/robot-utility-models/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Robot Utility Models (RUM)", "creator": {"@type": "Organization", "name": "New York University; Hello Robot Inc.; Meta"}}, "citation": {"@type": "ScholarlyArticle", "name": "Robot Utility Models: General Policies for Zero-Shot Deployment in New Environments", "url": "https://arxiv.org/abs/2409.05865"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Robot Utility Models (RUM)", "item": "https://vla-gallery.is-a.dev/m/robot-utility-models/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/robot-utility-models/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/robot-utility-models/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/robot-utility-models/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/robot-utility-models/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>Robot Utility Models (RUM)</h1>
+<p class="by">New York University; Hello Robot Inc.; Meta · 2024-09</p>
+<p class="kv"><span>VA</span><span>VA</span><span>Not disclosed</span><span>discrete tokens</span></p>
+<p class="sum">Uses a $25-BoM iPhone collection tool to gather about 1,000 demos per task across about 40 environments, deploying zero-shot in new environments.</p>
+<div class="acts"><a class="pri" href="/#m-robot-utility-models">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2409.05865" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2409.05865" rel="noopener">Robot Utility Models: General Policies for Zero-Shot Deployment in New Environments</a><small>arXiv 2409.05865</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-09</dd><dt>Organization</dt><dd>New York University; Hello Robot Inc.; Meta</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>ResNet34 (HPR init)</dd><dt>Action head</dt><dd>VQ action codes (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>HPR-initialized ResNet34 vision encoder + VQ-BeT policy (chosen over DP for performance·robot CPU latency); iPhone camera input</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per-task models: 2 A100, 24–48 hours (phrased as &#x27;all of our models&#x27;, so unclear whether per model), 500 epochs</dd><dt>Data type</dt><dd>Human video (handheld iPhone Stick-v2 demonstrations)</dd><dt>Data scale</dt><dd>About 1,000 demos per task, about 40 environments (about 25 per environment on average); door opening 1,200, drawer 525</dd><dt>Main datasets</dt><dd>Stick-v2 in-house collection</dd><dt>Tasks &amp; evaluation</dt><dd>Opening cabinet doors, opening drawers, picking up tissues, picking up paper bags, righting fallen objects; zero-shot deployment in unseen environments</dd><dt>Robot</dt><dd>Hello Robot Stretch (also tested on xArm 7)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Stretch onboard CPU, iPhone camera; latency not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Onboard (Stretch built-in CPU)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning. At deployment, a gpt-4o verifier detects failures and retries</dd><dt>Base control</dt><dd>Fixed · Navigation assumed to be a separate component; policy outputs only EE-relative 6D actions at the task location</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Uses a $25-BoM iPhone collection tool to gather about 1,000 demos per task across about 40 environments, deploying zero-shot in new environments. An external GPT-4o verifier detects failures and triggers retries.</dd><dt>Notes</dt><dd>The verifier gpt-4o-2024-05-13 is a component external to the policy; the policy itself takes no language input. Paper states release of code·data·models·hardware design.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/rise/"><small>← Previous</small>RISE</a><a class="nx" href="/m/egomimic/"><small>Next →</small>EgoMimic</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

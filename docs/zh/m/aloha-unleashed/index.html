@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALOHA Unleashed — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="ALOHA Unleashed (Google DeepMind, 2024-10) — 用按任务训练的扩散Transformer、每个任务数千条遥操作演示进行学习，完成了系鞋带等精细双臂作业。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/aloha-unleashed/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/aloha-unleashed/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/aloha-unleashed/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/aloha-unleashed/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ALOHA Unleashed — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="ALOHA Unleashed (Google DeepMind, 2024-10) — 用按任务训练的扩散Transformer、每个任务数千条遥操作演示进行学习，完成了系鞋带等精细双臂作业。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ALOHA Unleashed — 架构、骨干LLM、训练与推理内存", "description": "ALOHA Unleashed (Google DeepMind, 2024-10) — 用按任务训练的扩散Transformer、每个任务数千条遥操作演示进行学习，完成了系鞋带等精细双臂作业。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "ALOHA Unleashed", "creator": {"@type": "Organization", "name": "Google DeepMind"}}, "citation": {"@type": "ScholarlyArticle", "name": "ALOHA Unleashed: A Simple Recipe for Robot Dexterity", "url": "https://arxiv.org/abs/2410.13126"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "ALOHA Unleashed", "item": "https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/aloha-unleashed/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/aloha-unleashed/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/aloha-unleashed/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/aloha-unleashed/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / VA</p>
+<h1>ALOHA Unleashed</h1>
+<p class="by">Google DeepMind · 2024-10</p>
+<p class="kv"><span>VA</span><span>VA</span><span>217M</span><span>diffusion</span></p>
+<p class="sum">用按任务训练的扩散Transformer、每个任务数千条遥操作演示进行学习，完成了系鞋带等精细双臂作业。</p>
+<div class="acts"><a class="pri" href="/zh/#m-aloha-unleashed">在图库中查看架构图</a><a href="https://arxiv.org/abs/2410.13126" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.13126" rel="noopener">ALOHA Unleashed: A Simple Recipe for Robot Dexterity</a><small>arXiv 2410.13126</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>VA</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2024-10</dd><dt>机构</dt><dd>Google DeepMind</dd><dt>权重公开</dt><dd>未核实</dd><dt>参数</dt><dd>217M(Base)，150M(Small：编码器17M + 解码器37M)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>ResNet50 × 4个相机</dd><dt>动作头</dt><dd>扩散去噪解码器 (55M) (diffusion)</dd><dt>动作块</dt><dd>50步 (1秒)</dd><dt>控制频率</dt><dd>50 Hz</dd><dt>架构原文摘要</dt><dd>4台相机各用ResNet50 + Transformer编码器(85M)·扩散去噪解码器(55M)；训练扩散50步，50动作块(1秒)，目标超过50 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务模型：TPUv5e 64芯片(JAX数据并行)，批量256，2M步(约265小时)；Adam，weight decay 0.001，warmup 5000步后lr 1e-4</dd><dt>数据类型</dt><dd>真实机器人遥操作；仿真·合成(仿真远程操作)</dd><dt>数据规模</dt><dd>Shirt 8,658(Easy 5,345·Messy 3,313), Lace 5,133(2,212·2,921), FingerReplace 5,247, GearInsert 4,005, RandomKitchen 3,198(in-domain 216)；真实共26k+回合；仿真2,000+(引言)/522·201·550(Table 3)</dd><dt>主要数据集</dt><dd>自有ALOHA 2采集</dd><dt>任务·评估</dt><dd>真实：ShirtEasy·ShirtMessy，LaceEasy·LaceMessy，FingerReplace，GearInsert-1·2·3，RandomKitchen(Bowl·+Cup·+Fork)；仿真：SingleInsertion，DoubleInsertion，MugOnPlate</dd><dt>机器人</dt><dd>ALOHA 2双臂(机器人10台，2栋建筑)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>前向传播+迭代去噪0.043秒(RTX 4090)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0.4 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 模仿学习（扩散）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（ALOHA 2固定双臂）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>用按任务训练的扩散Transformer、每个任务数千条遥操作演示进行学习，完成了系鞋带等精细双臂作业。35名操作员用10台机器人在8个月内收集了26k+条回合。</dd><dt>备注</dt><dd>仿真演示数量中引言的&#x27;2,000+&#x27;与Table 3各任务值之间的关系论文未说明。&#x27;2,000+&#x27;出自引言而非摘要(已反映修正)。仿真演示也是远程操作采集。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/zh/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/zh/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/zh/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/zh/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/zh/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/zh/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/zh/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/zh/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/zh/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/zh/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/zh/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/zh/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/zh/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/zh/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/zh/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/mobile-aloha/"><small>← 上一个</small>Mobile ALOHA</a><a class="nx" href="/zh/m/hpt/"><small>下一个 →</small>HPT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

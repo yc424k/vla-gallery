@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QUAR-VLA (QUART) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="QUAR-VLA (QUART) (Westlake University, 2023-12) — Proposed the quadruped VLA task definition, in which quadruped high-level commands (velocity·gait·pose) are…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/quar-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/quar-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/quar-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/quar-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/quar-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/quar-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="QUAR-VLA (QUART) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="QUAR-VLA (QUART) (Westlake University, 2023-12) — Proposed the quadruped VLA task definition, in which quadruped high-level commands (velocity·gait·pose) are…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/quar-vla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "QUAR-VLA (QUART) — Architecture, Backbone LLM, Training & Inference Memory", "description": "QUAR-VLA (QUART) (Westlake University, 2023-12) — Proposed the quadruped VLA task definition, in which quadruped high-level commands (velocity·gait·pose) are…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/quar-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "QUAR-VLA (QUART)", "creator": {"@type": "Organization", "name": "Westlake University·Zhejiang University"}}, "citation": {"@type": "ScholarlyArticle", "name": "QUAR-VLA: Vision-Language-Action Model for Quadruped Robots", "url": "https://arxiv.org/abs/2312.14457"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "QUAR-VLA (QUART)", "item": "https://vla-gallery.is-a.dev/m/quar-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/quar-vla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/quar-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/quar-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/quar-vla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>QUAR-VLA (QUART)</h1>
+<p class="by">Westlake University·Zhejiang University · 2023-12</p>
+<p class="kv"><span>VLA</span><span>Mobile manipulation</span><span>8B</span><span>discrete tokens</span></p>
+<p class="sum">Proposed the quadruped VLA task definition, in which quadruped high-level commands (velocity·gait·pose) are output as discrete tokens from a single RGB image and language instruction, along with the QUART model and the sim·real-robot QUARD dataset.</p>
+<div class="acts"><a class="pri" href="/#m-quar-vla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2312.14457" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2312.14457" rel="noopener">QUAR-VLA: Vision-Language-Action Model for Quadruped Robots</a><small>arXiv 2312.14457</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2023-12</dd><dt>Organization</dt><dd>Westlake University·Zhejiang University</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>8B (based on Fuyu-8B; v1&#x27;s QUART-1 is about 30M)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Fuyu-8B (decoder-only VLM; no separate LLM named)</dd><dt>Vision encoder</dt><dd>Fuyu-8B takes image patches directly (no separate vision encoder)</dd><dt>Action head</dt><dd>256-bin discrete tokens (11-dim command + termination) (discrete tokens)</dd><dt>Chunk</dt><dd>None (1 step)</dd><dt>Control rate</dt><dd>2 Hz</dd><dt>Architecture (original summary)</dt><dd>Fuyu-8B VLM (single RGB + language) → 256-bin discrete tokens: 11-dim high-level command (vx · vy · ωz, gait phase 3, frequency, body height, pitch, stance width, foot height) + termination, no chunking, 2 Hz → Walk These Ways command-tracking controller generates joints</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>100K steps · batch 256 (lr 2e-5)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>N/A (single stage of joint training on QUARD sim and real data)</dd><dt>Data type</dt><dd>Simulation·synthetic / real-robot teleoperation</dd><dt>Data scale</dt><dd>QUARD total 259K episodes (table total·Fig. 2; summing table rows gives sim 246K+real 3K=249K), real robot 3K (Go to Object, teleoperated); v1 has 348K sim</dd><dt>Main datasets</dt><dd>QUARD</dd><dt>Tasks &amp; evaluation</dt><dd>QUARD sim success rates: Distinguish 0.66, Go to 0.60, Go avoid 0.53, Go through 0.41, Crawl 0.32, Unload 0.12, unseen objects 0.35·unseen language 0.33; real robot Go to 13/20 (sim 256K+real 3K) vs 3/20 (real 3K only); 4,000 evaluations total</dd><dt>Robot</dt><dd>WR-2 quadruped (12 joints, as named in paper) + front RealSense D435; sim IsaacGym</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Real world 2 Hz (v6; v1: QUART-1 5 Hz·QUART-2 1 Hz), inference hardware not stated</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>16 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (RL low-level controller) · QUART uses supervised fine-tuning only (100K steps); low-level command tracking by the Walk These Ways policy (PPO in the original paper; RL not stated in this paper)</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/abs/2212.03238" rel="noopener">https://arxiv.org/abs/2212.03238</a></dd><dt>Base control</dt><dd>Quadruped (Commands/latents → RL locomotion controller) · VLA outputs 11-dim high-level command tokens → Walk These Ways command-following controller controls joints</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Proposed the quadruped VLA task definition, in which quadruped high-level commands (velocity·gait·pose) are output as discrete tokens from a single RGB image and language instruction, along with the QUART model and the sim·real-robot QUARD dataset. 4,000 evaluations showed that co-training on large-scale sim data and a small amount of real data raised real-robot Go to success from 3/20 to 13/20.</dd><dt>Notes</dt><dd>Sim data generated by an A*/D* path + PD velocity conversion script; real data by remote control; low-level controller [23] = Walk These Ways (this paper does not state RL; the original paper uses PPO); training GPU·time not stated; a LLaVA-7B variant was also compared (similar performance); model configuration·data numbers changed across v1→v6; weights not released (QUARD released on HF via the QUART-Online page).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/m/helpful-doggybot/"><small>← Previous</small>Helpful DoggyBot</a><a class="nx" href="/m/quart-online/"><small>Next →</small>QUART-Online</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

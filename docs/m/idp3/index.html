@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iDP3 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="iDP3 (Stanford, 2024-10) — An egocentric 3D point cloud diffusion policy that performs humanoid upper-body manipulation at 15 Hz using only onboard compute.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/idp3/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/idp3/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/idp3/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/idp3/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/idp3/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/idp3/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="iDP3 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="iDP3 (Stanford, 2024-10) — An egocentric 3D point cloud diffusion policy that performs humanoid upper-body manipulation at 15 Hz using only onboard compute.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/idp3/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "iDP3 — Architecture, Backbone LLM, Training & Inference Memory", "description": "iDP3 (Stanford, 2024-10) — An egocentric 3D point cloud diffusion policy that performs humanoid upper-body manipulation at 15 Hz using only onboard compute.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/idp3/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "iDP3 (Improved 3D Diffusion Policy)", "creator": {"@type": "Organization", "name": "Stanford·SFU·UPenn·UIUC·CMU"}}, "citation": {"@type": "ScholarlyArticle", "name": "Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies", "url": "https://arxiv.org/abs/2410.10803"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "iDP3", "item": "https://vla-gallery.is-a.dev/m/idp3/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/idp3/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/idp3/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/idp3/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/idp3/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid whole-body controllers</p>
+<h1>iDP3</h1>
+<p class="full">iDP3 (Improved 3D Diffusion Policy)</p>
+<p class="by">Stanford·SFU·UPenn·UIUC·CMU · 2024-10</p>
+<p class="kv"><span>VA</span><span>Humanoid whole-body controllers</span><span>Not disclosed</span><span>diffusion</span></p>
+<p class="sum">An egocentric 3D point cloud diffusion policy that performs humanoid upper-body manipulation at 15 Hz using only onboard compute.</p>
+<div class="acts"><a class="pri" href="/#m-idp3">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2410.10803" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.10803" rel="noopener">Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies</a><small>arXiv 2410.10803</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid whole-body controllers</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-10</dd><dt>Organization</dt><dd>Stanford·SFU·UPenn·UIUC·CMU</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>Pyramid convolutional point cloud encoder</dd><dt>Action head</dt><dd>Diffusion policy (DDIM 10 steps) (diffusion)</dd><dt>Chunk</dt><dd>16 steps</dd><dt>Control rate</dt><dd>15 Hz</dd><dt>Architecture (original summary)</dt><dd>Pyramid convolutional encoder + diffusion policy (DDIM 50 training steps, 10 inference steps), prediction horizon 16; egocentric 3D point cloud (RealSense L515, 4096 points at inference) + proprioception → target joint positions, 15 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>RTX 4090 × 1 (README)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>300 epochs (AdamW)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>10 demonstrations × 10 rollouts per task, 300 episodes total over 3 tasks (20 successes per demonstration); single training scene</dd><dt>Main datasets</dt><dd>Apple Vision Pro upper-body teleoperation data (in-house)</dd><dt>Tasks &amp; evaluation</dt><dd>Training scene Pick&amp;Place 9/10, Pour 9/10, Wipe 10/10; new objects, viewpoints, scenes 9/10; over 2000 real-world evaluations (Table I 2253 episodes)</dd><dt>Robot</dt><dd>Fourier GR1 (25-DoF upper body on a height-adjustable cart)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Real-time 15 Hz with onboard robot compute only</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Onboard</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · Lower body disabled, locomotion replaced by a cart (policy outputs only upper-body 25-DoF joint targets)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>An egocentric 3D point cloud diffusion policy that performs humanoid upper-body manipulation at 15 Hz using only onboard compute. Uses a pyramid convolutional encoder, based on evidence from human data that convolutional layers produce smoother actions.</dd><dt>Notes</dt><dd>No sentence describes the diffusion backbone as a transformer, so classified as non-transformer based on the convolutional encoder. Data and 3-task checkpoints released 2024-11-04 (README). Verification covered only README values (training GPU, release date).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/hover/"><small>← Previous</small>HOVER</a><a class="nx" href="/m/exbody2/"><small>Next →</small>ExBody2</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

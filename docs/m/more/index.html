@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoRE — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="MoRE (Zhejiang University, 2025-03) — A quadruped VLA that inserts many LoRA experts into Fuyu-8B as a sparse MoE, treats the VLA as a Q-function, and trains…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/more/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/more/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/more/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/more/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/more/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/more/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="MoRE — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="MoRE (Zhejiang University, 2025-03) — A quadruped VLA that inserts many LoRA experts into Fuyu-8B as a sparse MoE, treats the VLA as a Q-function, and trains…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/more/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "MoRE — Architecture, Backbone LLM, Training & Inference Memory", "description": "MoRE (Zhejiang University, 2025-03) — A quadruped VLA that inserts many LoRA experts into Fuyu-8B as a sparse MoE, treats the VLA as a Q-function, and trains…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/more/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "MoRE", "creator": {"@type": "Organization", "name": "Zhejiang University·Westlake University(MiLAB)·Monash University·HKUST(GZ)"}}, "citation": {"@type": "ScholarlyArticle", "name": "MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models", "url": "https://arxiv.org/abs/2503.08007"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "MoRE", "item": "https://vla-gallery.is-a.dev/m/more/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/more/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/more/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/more/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/more/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>MoRE</h1>
+<p class="by">Zhejiang University·Westlake University(MiLAB)·Monash University·HKUST(GZ) · 2025-03</p>
+<p class="kv"><span>VLA</span><span>Mobile manipulation</span><span>9.82B</span><span>discrete tokens</span></p>
+<p class="sum">A quadruped VLA that inserts many LoRA experts into Fuyu-8B as a sparse MoE, treats the VLA as a Q-function, and trains it with offline RL on auto-collected data mixing successes and failures.</p>
+<div class="acts"><a class="pri" href="/#m-more">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2503.08007" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2503.08007" rel="noopener">MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models</a><small>arXiv 2503.08007</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-03</dd><dt>Organization</dt><dd>Zhejiang University·Westlake University(MiLAB)·Monash University·HKUST(GZ)</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>9.82B (Fuyu-8B + MoE-LoRA)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Fuyu-8B + MoE-LoRA experts</dd><dt>Vision encoder</dt><dd>Fuyu-8B patch input (no separate vision encoder)</dd><dt>Action head</dt><dd>Autoregressive discrete tokens (discrete Q-function) → 12-D commands (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Fuyu-8B (32 layers) with each layer&#x27;s FFN replaced by a shared FFN + LoRA expert MoE (Top-K router), LoRA on attention → autoregressive discrete action tokens (discrete Q-function) → 12-dim discrete command → Walk These Ways RL controller</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>8 × A100</dd><dt>Pretraining duration</dt><dd>About 100 h (expert data) / about 125 h (mixed-quality data)</dd><dt>Pretraining steps &amp; batch</dt><dd>3 epochs · batch 16 per GPU</dd><dt>GPU/TPU-hours</dt><dd>800 (Converted · 8× A100 × 100 hours (expert data training; the 125-hour mixed-quality run does not restate GPU count))</dd><dt>Fine-tuning</dt><dd>Additional fine-tuning on a small amount of real-robot data (data scale·resources·time not disclosed)</dd><dt>Data type</dt><dd>Simulation·synthetic</dd><dt>Data scale</dt><dd>QUARD expert 1,822,405 VLA sets (6 tasks) + QUARD-Auto 440,732 sets (failure data, 4 tasks) + small real-robot set (size not stated)</dd><dt>Main datasets</dt><dd>QUARD; QUARD-Auto</dd><dt>Tasks &amp; evaluation</dt><dd>QUARD 6-skill sim average 0.60 (QUART 0.44): Distinguish 0.82, Go to 0.80, Go avoid 0.59, Go through 0.57, Crawl 0.49, Unload 0.33; real robot only qualitative results (go to the computer, etc.)</dd><dt>Robot</dt><dd>Unitree Go2 quadruped (12 joints) + front RealSense D435; sim IsaacGym</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>19.6 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (VLA RL post-training) · A Fuyu-8B-based VLA (LoRA experts) trained with offline RL as a discrete Q-function (Bellman updates · conservative term · sparse reward of 1 on success); low level is the Walk These Ways RL policy</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/abs/2503.08007" rel="noopener">https://arxiv.org/abs/2503.08007</a></dd><dt>Base control</dt><dd>Quadruped (Commands/latents → RL locomotion controller) · VLA outputs 12-dim discrete command tokens → Walk These Ways RL policy controls joints</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A quadruped VLA that inserts many LoRA experts into Fuyu-8B as a sparse MoE, treats the VLA as a Q-function, and trains it with offline RL on auto-collected data mixing successes and failures. Its average sim success over 6 skills was 0.60, ahead of baselines such as QUART (0.44), and adding failure data improved performance through RL.</dd><dt>Notes</dt><dd>Number of experts, LoRA rank, and Top-K value not stated; descriptions of &#x27;frozen backbone, LoRA-only training&#x27; and of converting FFN→MoE are mixed; sparse reward (1 on success) + conservative regularization (α=0.5); inference speed not stated; no public code or weights link. Based on: GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot (arXiv 2403.13358) — reuses GeRM&#x27;s Q-function training loss and QUARD-Auto data as is (quadruped MoE model from the same group)</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/m/quart-online/"><small>← Previous</small>QUART-Online</a><a class="nx" href="/m/roboduet/"><small>Next →</small>RoboDuet</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

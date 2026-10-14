@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobility VLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Mobility VLA (Google DeepMind, 2024-07) — 環境デモのツアー動画全体を長コンテキストVLM(Gemini 1.5 Pro)に入れてテキスト・画像指示に合う目標フレームを探し、同じツアーで作ったトポロジカルグラフで低レベルのウェイポイントを計画する、学習不要の階層型ナビゲーシ…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/mobility-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/mobility-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/mobility-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/mobility-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/mobility-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/mobility-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Mobility VLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Mobility VLA (Google DeepMind, 2024-07) — 環境デモのツアー動画全体を長コンテキストVLM(Gemini 1.5 Pro)に入れてテキスト・画像指示に合う目標フレームを探し、同じツアーで作ったトポロジカルグラフで低レベルのウェイポイントを計画する、学習不要の階層型ナビゲーシ…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/mobility-vla/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Mobility VLA — 構造・バックボーンLLM・学習・推論メモリ", "description": "Mobility VLA (Google DeepMind, 2024-07) — 環境デモのツアー動画全体を長コンテキストVLM(Gemini 1.5 Pro)に入れてテキスト・画像指示に合う目標フレームを探し、同じツアーで作ったトポロジカルグラフで低レベルのウェイポイントを計画する、学習不要の階層型ナビゲーシ…", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/mobility-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Mobility VLA", "creator": {"@type": "Organization", "name": "Google DeepMind"}}, "citation": {"@type": "ScholarlyArticle", "name": "Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs", "url": "https://arxiv.org/abs/2407.07775"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Mobility VLA", "item": "https://vla-gallery.is-a.dev/ja/m/mobility-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/mobility-vla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/mobility-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/mobility-vla/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/mobility-vla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>Mobility VLA</h1>
+<p class="by">Google DeepMind · 2024-07</p>
+<p class="kv"><span>VLA</span><span>ナビゲーション</span><span>非公開</span><span>その他</span></p>
+<p class="sum">環境デモのツアー動画全体を長コンテキストVLM(Gemini 1.5 Pro)に入れてテキスト・画像指示に合う目標フレームを探し、同じツアーで作ったトポロジカルグラフで低レベルのウェイポイントを計画する、学習不要の階層型ナビゲーション方策である。</p>
+<div class="acts"><a class="pri" href="/ja/#m-mobility-vla">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2407.07775" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2407.07775" rel="noopener">Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs</a><small>arXiv 2407.07775</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2024-07</dd><dt>機関</dt><dd>Google DeepMind</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>非公開 (Gemini 1.5 Pro)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Gemini 1.5 Pro (クラウドAPI)</dd><dt>ビジョンエンコーダ</dt><dd>Gemini 1.5 Pro内蔵 (詳細非公開)</dd><dt>アクションヘッド</dt><dd>目標フレームインデックス → トポロジカルグラフのウェイポイント (Δx · Δy · Δθ) (その他)</dd><dt>チャンク</dt><dd>なし (1ステップウェイポイント)</dd><dt>制御周期</dt><dd>上位 クエリあたり10–30秒 · 下位 0.19秒/ステップ(シミュレーション)</dd><dt>構造の原文要約</dt><dd>上位: Gemini 1.5 Pro長文脈VLMがツアー動画948フレーム(1 Hz)全体 + マルチモーダル指示を受け取り目標フレームのインデックスを出力(クエリあたり10–30秒、クラウド) / 下位: COLMAPベースのトポロジカルグラフ最短経路 → ロボット中心のウェイポイント行動(Δx, Δy, Δθ) → MPC追従; 下位方策 0.19秒/ステップ(シミュレーション)</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし (学習なし、Gemini 1.5 Pro APIを使用)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>学習データなし; 環境コンテキストとしてゲームパッド遠隔操作のツアー動画948フレーム(約16分、1 Hz)を使用</dd><dt>主要データセット</dt><dd>学習データセットなし; 独自のMINT指示(クラウドソーシング57個など)で評価</dd><dt>タスク・評価</dt><dd>実オフィスでの目標探索SR: 推論不要 95%・推論必要 86%・小物体 42%・マルチモーダル 90%(Table 3); エンドツーエンドSR 80%・80%・40%・85%、SPL 0.59・0.69・0.38・0.64(Table 2、カテゴリ別指示5個×開始点4個); シミュレーションのエンドツーエンドSR 90%・SPL 0.84; 家庭型環境(スマートフォンによるツアー)で試験</dd><dt>ロボット</dt><dd>車輪型モバイルマニピュレーター(機種は記載なし)、RGBカメラのみ使用</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>VLMはクラウド実行(呼び出しごとにツアー画像948枚をアップロード)、目標インデックス探索クエリあたり10–30秒; 下位方策0.19±0.047秒/ステップ(シミュレーション); オンボード演算要求は小さい</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>クラウド (Gemini 1.5 Pro) + ロボットMPC</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 学習なし (Gemini 1.5 Proゼロショット + トポロジカルグラフ計画)</dd><dt>ベース制御</dt><dd>車輪型 (ウェイポイント → 追従制御器) · VLMが目標フレームを選択 → トポロジカルグラフ経路のウェイポイント(Δx・Δy・Δθ)をMPCで追従</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>環境デモのツアー動画全体を長コンテキストVLM(Gemini 1.5 Pro)に入れてテキスト・画像指示に合う目標フレームを探し、同じツアーで作ったトポロジカルグラフで低レベルのウェイポイントを計画する、学習不要の階層型ナビゲーション方策である。836 m²の実オフィスで推論が必要な指示・マルチモーダル指示の目標探索成功率86%・90%を報告し、既存手法よりそれぞれ26%・60%高めた。</dd><dt>備考</dt><dd>86%・90%は目標探索率(Table 3)で、エンドツーエンド成功率(Table 2)は推論必要80%・マルチモーダル85%と記述に差がある; アーキテクチャはGemini 1.5レポートのMoE Transformerの記述に基づく; Geminiのパラメータ・推論ハードウェアは非公開; コード・重みは非公開。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/navila/"><small>← 前のモデル</small>NaVILA</a><a class="nx" href="/ja/m/streamvln/"><small>次のモデル →</small>StreamVLN</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

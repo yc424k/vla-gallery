@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLOWER — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — VLM中間層の融合とアクション空間別のGlobal-AdaLNでパラメータを20%以上削減し、約200 H100 GPU時間で事前学習した。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/flower/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/flower/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/flower/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/flower/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/flower/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/flower/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="FLOWER — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — VLM中間層の融合とアクション空間別のGlobal-AdaLNでパラメータを20%以上削減し、約200 H100 GPU時間で事前学習した。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/flower/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "FLOWER — 構造・バックボーンLLM・学習・推論メモリ", "description": "FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — VLM中間層の融合とアクション空間別のGlobal-AdaLNでパラメータを20%以上削減し、約200 H100 GPU時間で事前学習した。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/flower/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "FLOWER", "creator": {"@type": "Organization", "name": "KIT Intuitive Robots Lab (공저자 1명 Microsoft Research)"}}, "citation": {"@type": "ScholarlyArticle", "name": "FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies", "url": "https://arxiv.org/abs/2509.04996"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "FLOWER", "item": "https://vla-gallery.is-a.dev/ja/m/flower/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/flower/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/flower/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/flower/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/flower/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / Flow·Diffusion VLA</p>
+<h1>FLOWER</h1>
+<p class="by">KIT Intuitive Robots Lab (共著者1名はMicrosoft Research) · 2025-09</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>947M</span><span>flow matching</span></p>
+<p class="sum">VLM中間層の融合とアクション空間別のGlobal-AdaLNでパラメータを20%以上削減し、約200 H100 GPU時間で事前学習した。</p>
+<div class="acts"><a class="pri" href="/ja/#m-flower">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2509.04996" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.04996" rel="noopener">FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies</a><small>arXiv 2509.04996</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>Flow·Diffusion VLA</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-09</dd><dt>機関</dt><dd>KIT Intuitive Robots Lab (共著者1名はMicrosoft Research)</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>947M(本文)/950M(アブストラクト); ViT 360M(論文)/350M(README)、VLM 205M、Flow Transformer 339M、Global-AdaLN 28.3M</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし (Florence-2 VLM 205M、デコーダ除去)</dd><dt>ビジョンエンコーダ</dt><dd>Florence-2-L ViT (360M)</dd><dt>アクションヘッド</dt><dd>Flow Transformer 339M (4–8ステップ) (flow matching)</dd><dt>チャンク</dt><dd>20ステップ</dd><dt>制御周期</dt><dd>3–50 Hz</dd><dt>構造の原文要約</dt><dd>デコーダを除去したFlorence-2-L(ViT 360M + VLM 205M、中間層融合) + 18層・1024次元 Flow Transformer(339M)、Action-Space Global-AdaLN-Zero; rectified flow、チャンク 20、denoising 4(単腕)/8(高周波双腕)、3~50 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100×4(1ノード)</dd><dt>事前学習期間</dt><dd>48 h</dd><dt>事前学習ステップ・バッチ</dt><dd>360,000ステップ(データ構成別に300k~400k)、バッチ256×grad accum 4 = 1024、lr FlowT 1e-4・VLM 1e-5</dd><dt>GPU・TPU時間</dt><dd>200 (明示 · H100時間 (約200; 4枚 × 48 h))</dd><dt>ファインチューニング</dt><dd>CALVIN GPU×4・GPUあたりバッチ8・40kステップ; LIBEROはsuite別に30k(LIBERO-90 50k); 実機キッチン50,000ステップ; 時間は非公開; リポジトリの学習は24GB+ VRAM</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>公開データセット8個で約250k軌跡(delta-EEF 74%、単腕関節26%); 実機417軌跡(人間デモ45分)</dd><dt>主要データセット</dt><dd>OXE soup: Bridge 28.62%、Fractal 24.68%、DROID 23.50%など</dd><dt>タスク・評価</dt><dd>CALVIN ABCD→D 4.67、ABC→D 4.53(アブストラクト)/4.54(README)、D→D 4.36; LIBERO-10 94.5%(README)/94.9%(論文)、LIBERO-90 93.4%、Spatial 97.2%、Object 99.3%、Goal 96.9%; SIMPLER Bridge 40.0%、Google Robot 31.9%; Aloha sim insertion 0.82; 実機キッチン平均61%</dd><dt>ロボット</dt><dd>単腕(Franka Panda 実機キッチン)、双腕(Aloha sim)、4種のエンボディメント</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>RTX 4090: 311.04 Hz、0.052 s、1,848 MB(π0の27.6%、OpenVLAの12.7%)</dd><dt>推論メモリ</dt><dd>1,848 MB (RTX 4090)</dd><dt>重み bf16(計算)</dt><dd>1.9 GB</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (Franka腕・双腕シミュレーション)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>VLM中間層の融合とアクション空間別のGlobal-AdaLNでパラメータを20%以上削減し、約200 H100 GPU時間で事前学習した。RTX 4090で311 Hzで動作し、π0のメモリの27.6%しか使わない。</dd><dt>備考</dt><dd>パラメータ(B)は本文の947M。947M/950M、ViT 360M/350M、LIBERO-Long 94.9/94.5、CALVIN ABC 4.53/4.54で出典間に差。arXiv v1の日付行は未確認(HF Papers 2025-09-05)。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/ja/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/ja/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/ja/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/ja/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/ja/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/ja/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/ja/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/ja/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/ja/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/ja/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/ja/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/ja/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/ja/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/ja/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/ja/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/ja/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/x-vla/"><small>← 前のモデル</small>X-VLA</a><a class="nx" href="/ja/m/internvla-m1/"><small>次のモデル →</small>InternVLA-M1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

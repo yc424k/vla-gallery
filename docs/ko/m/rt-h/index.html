@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RT-H — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery</title>
+<meta name="description" content="RT-H (Google DeepMind, 2024-03) — 한 모델이 &#x27;move arm forward&#x27; 같은 language motion을 먼저 예측한 뒤 행동을 예측하는 계층형 VLA다.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ko/m/rt-h/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rt-h/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rt-h/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rt-h/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rt-h/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rt-h/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RT-H — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery"><meta property="og:description" content="RT-H (Google DeepMind, 2024-03) — 한 모델이 &#x27;move arm forward&#x27; 같은 language motion을 먼저 예측한 뒤 행동을 예측하는 계층형 VLA다.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ko/m/rt-h/"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RT-H — 구조·백본 LLM·학습·추론 메모리", "description": "RT-H (Google DeepMind, 2024-03) — 한 모델이 'move arm forward' 같은 language motion을 먼저 예측한 뒤 행동을 예측하는 계층형 VLA다.", "inLanguage": "ko", "url": "https://vla-gallery.is-a.dev/ko/m/rt-h/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "RT-H", "creator": {"@type": "Organization", "name": "Google DeepMind·Stanford University"}}, "citation": {"@type": "ScholarlyArticle", "name": "RT-H: Action Hierarchies Using Language", "url": "https://arxiv.org/abs/2403.01823"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 갤러리", "item": "https://vla-gallery.is-a.dev/ko/"}, {"@type": "ListItem", "position": 2, "name": "모델 목록", "item": "https://vla-gallery.is-a.dev/ko/m/"}, {"@type": "ListItem", "position": 3, "name": "RT-H", "item": "https://vla-gallery.is-a.dev/ko/m/rt-h/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ko/">VLA 갤러리</a><a href="/ko/m/">모델 목록</a><a href="/ko/#gallery">갤러리</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rt-h/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rt-h/" hreflang="ko" aria-current="true">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rt-h/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rt-h/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ko/">VLA 갤러리</a> / <a href="/ko/m/">모델 목록</a> / 산업계 모델</p>
+<h1>RT-H</h1>
+<p class="by">Google DeepMind·Stanford University · 2024-03</p>
+<p class="kv"><span>VLA</span><span>산업계 모델</span><span>55B</span><span>이산 토큰</span></p>
+<p class="sum">한 모델이 &#x27;move arm forward&#x27; 같은 language motion을 먼저 예측한 뒤 행동을 예측하는 계층형 VLA다.</p>
+<div class="acts"><a class="pri" href="/ko/#m-rt-h">갤러리에서 구조도 보기</a><a href="https://arxiv.org/abs/2403.01823" rel="noopener">논문 ↗</a></div>
+<h2>논문</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2403.01823" rel="noopener">RT-H: Action Hierarchies Using Language</a><small>arXiv 2403.01823</small></p>
+<h2>개요</h2>
+<dl><dt>분류</dt><dd>산업계 모델</dd><dt>유형</dt><dd>VLA</dd><dt>발표</dt><dd>2024-03</dd><dt>기관</dt><dd>Google DeepMind·Stanford University</dd><dt>가중치 공개</dt><dd>아니오</dd><dt>파라미터</dt><dd>55B(PaLI-X 55B 기반)</dd></dl>
+<h2>구조</h2>
+<dl><dt>백본 LLM</dt><dd>UL2 32B · PaLI-X 55B 구성</dd><dt>비전 인코더</dt><dd>ViT (PaLI-X)</dd><dt>액션 헤드</dt><dd>language motion → 행동 토큰 (이산 토큰)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>미공개</dd><dt>구조 원문 요약</dt><dd>PaLI-X 55B(ViT 인코더 + 인코더-디코더) 단일 모델; language motion 질의 후 행동 질의, 행동 공간은 end-effector delta 위치·회전, 그리퍼, 베이스 이동</dd></dl>
+<h2>학습</h2>
+<dl><dt>사전학습 가속기</dt><dd>미공개</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>batch 1024, lr 1e-3(PaLI-X 학습 혼합과 co-training; 스텝 미공개)</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>미공개(개입 학습은 과제당 교정 30 episodes)</dd><dt>데이터 종류</dt><dd>실로봇 시연 + 웹 비전-언어(PaLI-X 학습 혼합)</dd><dt>데이터 규모</dt><dd>Kitchen 70K demos(6 semantic task categories); Diverse+Kitchen 100K demos(24 categories); 자동 라벨 language motion 2,500개 이상</dd><dt>주요 데이터셋</dt><dd>자체 Kitchen·Diverse 시연 데이터, PaLI-X training mixture</dd><dt>태스크·평가</dt><dd>8개 과제 평균 RT-2 대비 +15%; 개입 학습으로 40%→63%; RT-2-IWR 대비 50% 상회; 새 물체 65%(RT-2 55%)</dd><dt>로봇</dt><dd>모바일 매니퓰레이터(플랫폼명 미확인)</dd></dl>
+<h2>추론</h2>
+<dl><dt>추론 장치·속도</dt><dd>asynchronous querying으로 지연 완화; 하드웨어·지연·제어 주파수 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>110 GB</dd><dt>실행 위치</dt><dd>미공개</dd></dl>
+<h2>강화학습 · 베이스</h2>
+<dl><dt>강화학습</dt><dd>미사용 · 모방학습 + 사람의 language motion 교정 데이터</dd><dt>베이스 제어</dt><dd>바퀴형 (베이스 속도·자세 직접 출력) · 정책 행동 9차원 중 베이스 이동 2차원 직접 출력 (언어 모션 &#x27;turn base left&#x27; 등)</dd></dl>
+<h2>비고</h2>
+<dl><dt>핵심 특징</dt><dd>한 모델이 &#x27;move arm forward&#x27; 같은 language motion을 먼저 예측한 뒤 행동을 예측하는 계층형 VLA다. 사람이 language motion 수준에서 개입해 교정하고 그 교정 데이터로 다시 학습한다.</dd><dt>비고</dt><dd>논문에 TPU·GPU 문장 없음. arXiv v1 2024-03-04. 소속은 Google DeepMind와 Stanford University.</dd><dt>검증</dt><dd>확인</dd></dl>
+<section class="rel"><h2>같은 분류의 모델</h2><ul><li><a href="/ko/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/ko/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/ko/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/ko/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/ko/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/ko/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/ko/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/ko/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/ko/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/ko/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/ko/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/ko/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/ko/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/ko/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/ko/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/ko/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/ko/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/ko/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/ko/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/ko/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/ko/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/ko/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/ko/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/ko/m/gemini-robotics-er-1-5/"><small>← 이전 모델</small>Gemini Robotics-ER 1.5</a><a class="nx" href="/ko/m/autort/"><small>다음 모델 →</small>AutoRT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ko/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

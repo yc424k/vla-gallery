@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutureNav — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="FutureNav (Tsinghua University, 2026-06) — 将在VLM隐状态上联合学习动作预测、逆·正向动力学和未来空间状态生成的world-action建模引入VLN，推理时只用策略头以保持速度。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/futurenav/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/futurenav/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/futurenav/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/futurenav/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/futurenav/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/futurenav/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="FutureNav — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="FutureNav (Tsinghua University, 2026-06) — 将在VLM隐状态上联合学习动作预测、逆·正向动力学和未来空间状态生成的world-action建模引入VLN，推理时只用策略头以保持速度。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/futurenav/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "FutureNav — 架构、骨干LLM、训练与推理内存", "description": "FutureNav (Tsinghua University, 2026-06) — 将在VLM隐状态上联合学习动作预测、逆·正向动力学和未来空间状态生成的world-action建模引入VLN，推理时只用策略头以保持速度。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/futurenav/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "FutureNav", "creator": {"@type": "Organization", "name": "Tsinghua University·Pengcheng Laboratory·HKUST (Guangzhou)·Xiaomi EV·National University of Singapore"}}, "citation": {"@type": "ScholarlyArticle", "name": "FutureNav: Unified World-Action Modeling for Vision-and-Language Navigation", "url": "https://arxiv.org/abs/2606.30367"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "FutureNav", "item": "https://vla-gallery.is-a.dev/zh/m/futurenav/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/futurenav/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/futurenav/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/futurenav/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/futurenav/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>FutureNav</h1>
+<p class="by">Tsinghua University·Pengcheng Laboratory·HKUST (Guangzhou)·Xiaomi EV·National University of Singapore · 2026-06</p>
+<p class="kv"><span>VLA</span><span>导航</span><span>4B·8B</span><span>离散token</span></p>
+<p class="sum">将在VLM隐状态上联合学习动作预测、逆·正向动力学和未来空间状态生成的world-action建模引入VLN，推理时只用策略头以保持速度。</p>
+<div class="acts"><a class="pri" href="/zh/#m-futurenav">在图库中查看架构图</a><a href="https://arxiv.org/abs/2606.30367" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2606.30367" rel="noopener">FutureNav: Unified World-Action Modeling for Vision-and-Language Navigation</a><small>arXiv 2606.30367</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2026-06</dd><dt>机构</dt><dd>Tsinghua University·Pengcheng Laboratory·HKUST (Guangzhou)·Xiaomi EV·National University of Singapore</dd><dt>权重公开</dt><dd>部分</dd><dt>参数</dt><dd>4B·8B (以Qwen3-VL-4B·8B主干计；HF FutureNav-4B-Base含VGGT·头共5.48B，8B总量未公开)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Qwen3-VL-4B / 8B</dd><dt>视觉编码器</dt><dd>Qwen3-VL视觉编码器(冻结) + VGGT空间编码器(冻结)</dd><dt>动作头</dt><dd>离散文本动作 (STOP·MOVE_FORWARD·TURN_LEFT·TURN_RIGHT) (离散token)</dd><dt>动作块</dt><dd>无 (单步)</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen3-VL-4B/8B(视觉塔冻结) + 冻结VGGT空间编码器(中间层token,每patch 2048维 → RMSNorm·2层MLP merger,以α=0.2加到视觉token上) → LLM隐状态上接4个头(自回归动作策略、逆动力学分类、正动力学MLP、未来空间特征生成);推理仅用策略头,每步1个离散文本动作(STOP·MOVE_FORWARD·TURN_LEFT·TURN_RIGHT)</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>不适用 (从Qwen3-VL开始的单一导航训练阶段；加速器·时间未公开)</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>VLN-CE专家轨迹约2.43M样本(R2R-CE 631K + RxR-CE 1.80M，&#x27;0K&#x27;设置)；完整设置额外加入ScaleVLN·DAgger rollout外部数据10,457K(4B)/10,435K(8B)</dd><dt>主要数据集</dt><dd>R2R-CE;RxR-CE;ScaleVLN;DAgger rollout</dd><dt>任务·评估</dt><dd>R2R-CE val-unseen SR 65.4%·SPL 61.3·NE 4.24(4B全部数据;8B 64.3%·60.3), RxR-CE SR 60.9%·SPL 52.8·nDTW 68.0(8B SR 63.9%·SPL 54.8);无外部数据的0K设置4B R2R SR 55.1%;真机Go2零样本(未报告定量数值)</dd><dt>机器人</dt><dd>Go2四足(远程操作,D435i RGB相机);仿真VLN-CE智能体</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>真实机器人在H20 GPU服务器上远程推理(流式传输Go2相机RGB，每步返回1个底层动作)；延迟·Hz·内存未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>16 GB</dd><dt>运行位置</dt><dd>远程服务器 (H20)</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 监督学习(交叉熵·MSE)；DAgger rollout仅用作训练数据</dd><dt>底盘控制</dt><dd>四足 (离散移动动作) · 策略每步输出1个离散动作(停止·前进·左/右转) → 远程服务器转发给Go2执行(底层控制未注明)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将在VLM隐状态上联合学习动作预测、逆·正向动力学和未来空间状态生成的world-action建模引入VLN，推理时只用策略头以保持速度。以单目RGB·4B主干取得R2R-CE SR 65.4%·RxR-CE SR 60.9%，超过7B级JanusVLN(R2R 60.5%)等已有VLN模型。</dd><dt>备注</dt><dd>训练硬件·时间·步数·批量·lr均未公开。HF llxs/FutureNav仅公开FutureNav-4B-Base(11.7 GB)，8B·训练脚本·训练数据未公开(README TODO)。实机仅有演示，无定量结果。外部数据列(10457K等)的构成正文未说明。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/zh/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/tic-vla/"><small>← 上一个</small>TIC-VLA</a><a class="nx" href="/zh/m/uni-lavira/"><small>下一个 →</small>Uni-LaViRA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

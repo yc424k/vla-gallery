@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACT — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="ACT (Stanford University, 2023-04) — Low-cost bimanual imitation learning policy that regresses action chunks at once and averages overlapping predictions wi…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/act/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/act/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/act/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/act/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/act/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/act/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ACT — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="ACT (Stanford University, 2023-04) — Low-cost bimanual imitation learning policy that regresses action chunks at once and averages overlapping predictions wi…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/act/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ACT — Architecture, Backbone LLM, Training & Inference Memory", "description": "ACT (Stanford University, 2023-04) — Low-cost bimanual imitation learning policy that regresses action chunks at once and averages overlapping predictions wi…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/act/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "ACT", "creator": {"@type": "Organization", "name": "Stanford University; UC Berkeley; Meta"}}, "citation": {"@type": "ScholarlyArticle", "name": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware", "url": "https://arxiv.org/abs/2304.13705"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "ACT", "item": "https://vla-gallery.is-a.dev/m/act/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/act/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/act/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/act/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/act/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Reference baselines (pre-2024)</p>
+<h1>ACT</h1>
+<p class="by">Stanford University; UC Berkeley; Meta · 2023-04</p>
+<p class="kv"><span>VA</span><span>Reference baselines (pre-2024)</span><span>About 80M</span><span>CVAE</span></p>
+<p class="sum">Low-cost bimanual imitation learning policy that regresses action chunks at once and averages overlapping predictions with temporal ensembling.</p>
+<div class="acts"><a class="pri" href="/#m-act">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2304.13705" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2304.13705" rel="noopener">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a><small>arXiv 2304.13705</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Reference baselines (pre-2024)</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2023-04</dd><dt>Organization</dt><dd>Stanford University; UC Berkeley; Meta</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>About 80M</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>ResNet18</dd><dt>Action head</dt><dd>Joint-position chunk regression + temporal ensembling (CVAE)</dd><dt>Chunk</dt><dd>100 steps</dd><dt>Control rate</dt><dd>50 Hz</dd><dt>Architecture (original summary)</dt><dd>ResNet18 + CVAE Transformer (encoder 4 layers·decoder 7 layers, hidden 512, FF 3200, 8 heads, 32-dim latent); joint position chunk k=100 regression, exponentially weighted temporal ensembling, 50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per task: 1× RTX 2080 Ti (11GB), about 5 hours; batch 8, lr 1e-5, KL weight 10; epochs Not stated in paper (README: 2000 for sim example, 5000+ recommended for real)</dd><dt>Data type</dt><dd>Real-robot teleoperation; simulation·synthetic</dd><dt>Data scale</dt><dd>Real: 50 demos per task (Thread Velcro 100), episodes 8–14 s (400–700 steps), about 10–20 min per task; sim: 50 demos per task (scripted·human)</dd><dt>Main datasets</dt><dd>In-house ALOHA collection</dd><dt>Tasks &amp; evaluation</dt><dd>Real 6 tasks (Slide Ziploc, Slot Battery, Open Cup, Thread Velcro, Prep Tape, Put On Shoe); sim 2 tasks (Transfer Cube, Bimanual Insertion)</dd><dt>Robot</dt><dd>ALOHA low-cost bimanual (leader-follower teleoperation), system under $20,000</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>About 0.01 s (RTX 2080 Ti)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0.2 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (CVAE behavior cloning)</dd><dt>Base control</dt><dd>Fixed · No base control (ALOHA fixed bimanual)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Low-cost bimanual imitation learning policy that regresses action chunks at once and averages overlapping predictions with temporal ensembling. Learned precise bimanual tasks with sub-$20k ALOHA hardware and 50 demonstrations per task.</dd><dt>Notes</dt><dd>All compute figures are per task. Data length is disclosed only in minutes (about 10–20 min per task), so the hours (h) cell is empty. Code·sim data released, no checkpoints.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rt-1/">RT-1</a><small>2022-12</small></li><li><a href="/m/rt-2/">RT-2</a><small>2023-07</small></li><li><a href="/m/rt-1-x/">RT-1-X</a><small>2023-10</small></li><li><a href="/m/rt-2-x/">RT-2-X</a><small>2023-10</small></li><li><a href="/m/diffusion-policy/">Diffusion Policy (CNN)</a><small>2023-03</small></li><li><a href="/m/diffusion-policy-2/">Diffusion Policy (Transformer)</a><small>2023-03</small></li><li><a href="/m/gr-1/">GR-1</a><small>2023-12</small></li></ul></section>
+<nav class="pn"><a href="/m/rt-2-x/"><small>← Previous</small>RT-2-X</a><a class="nx" href="/m/diffusion-policy/"><small>Next →</small>Diffusion Policy (CNN)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

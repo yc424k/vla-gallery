@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutureNav — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery</title>
+<meta name="description" content="FutureNav (Tsinghua University, 2026-06) — VLM 은닉 상태 위에서 행동 예측과 역·순동역학, 미래 공간 상태 생성을 함께 학습하는 world-action 모델링을 VLN에 도입하고 추론에는 정책 헤드만 써 속도를 유지한다.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ko/m/futurenav/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/futurenav/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/futurenav/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/futurenav/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/futurenav/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/futurenav/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="FutureNav — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery"><meta property="og:description" content="FutureNav (Tsinghua University, 2026-06) — VLM 은닉 상태 위에서 행동 예측과 역·순동역학, 미래 공간 상태 생성을 함께 학습하는 world-action 모델링을 VLN에 도입하고 추론에는 정책 헤드만 써 속도를 유지한다.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ko/m/futurenav/"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "FutureNav — 구조·백본 LLM·학습·추론 메모리", "description": "FutureNav (Tsinghua University, 2026-06) — VLM 은닉 상태 위에서 행동 예측과 역·순동역학, 미래 공간 상태 생성을 함께 학습하는 world-action 모델링을 VLN에 도입하고 추론에는 정책 헤드만 써 속도를 유지한다.", "inLanguage": "ko", "url": "https://vla-gallery.is-a.dev/ko/m/futurenav/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "FutureNav", "creator": {"@type": "Organization", "name": "Tsinghua University·Pengcheng Laboratory·HKUST (Guangzhou)·Xiaomi EV·National University of Singapore"}}, "citation": {"@type": "ScholarlyArticle", "name": "FutureNav: Unified World-Action Modeling for Vision-and-Language Navigation", "url": "https://arxiv.org/abs/2606.30367"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 갤러리", "item": "https://vla-gallery.is-a.dev/ko/"}, {"@type": "ListItem", "position": 2, "name": "모델 목록", "item": "https://vla-gallery.is-a.dev/ko/m/"}, {"@type": "ListItem", "position": 3, "name": "FutureNav", "item": "https://vla-gallery.is-a.dev/ko/m/futurenav/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ko/">VLA 갤러리</a><a href="/ko/m/">모델 목록</a><a href="/ko/#gallery">갤러리</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/futurenav/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/futurenav/" hreflang="ko" aria-current="true">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/futurenav/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/futurenav/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ko/">VLA 갤러리</a> / <a href="/ko/m/">모델 목록</a> / 내비게이션</p>
+<h1>FutureNav</h1>
+<p class="by">Tsinghua University·Pengcheng Laboratory·HKUST (Guangzhou)·Xiaomi EV·National University of Singapore · 2026-06</p>
+<p class="kv"><span>VLA</span><span>내비게이션</span><span>4B·8B</span><span>이산 토큰</span></p>
+<p class="sum">VLM 은닉 상태 위에서 행동 예측과 역·순동역학, 미래 공간 상태 생성을 함께 학습하는 world-action 모델링을 VLN에 도입하고 추론에는 정책 헤드만 써 속도를 유지한다.</p>
+<div class="acts"><a class="pri" href="/ko/#m-futurenav">갤러리에서 구조도 보기</a><a href="https://arxiv.org/abs/2606.30367" rel="noopener">논문 ↗</a></div>
+<h2>논문</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2606.30367" rel="noopener">FutureNav: Unified World-Action Modeling for Vision-and-Language Navigation</a><small>arXiv 2606.30367</small></p>
+<h2>개요</h2>
+<dl><dt>분류</dt><dd>내비게이션</dd><dt>유형</dt><dd>VLA</dd><dt>발표</dt><dd>2026-06</dd><dt>기관</dt><dd>Tsinghua University·Pengcheng Laboratory·HKUST (Guangzhou)·Xiaomi EV·National University of Singapore</dd><dt>가중치 공개</dt><dd>일부</dd><dt>파라미터</dt><dd>4B·8B (Qwen3-VL-4B·8B 백본 기준; HF FutureNav-4B-Base는 VGGT·헤드 포함 총 5.48B, 8B 총량 미공개)</dd></dl>
+<h2>구조</h2>
+<dl><dt>백본 LLM</dt><dd>Qwen3-VL-4B / 8B</dd><dt>비전 인코더</dt><dd>Qwen3-VL 비전 인코더(동결) + VGGT 공간 인코더(동결)</dd><dt>액션 헤드</dt><dd>이산 텍스트 행동 (STOP·MOVE_FORWARD·TURN_LEFT·TURN_RIGHT) (이산 토큰)</dd><dt>청크</dt><dd>없음 (1스텝)</dd><dt>제어 주기</dt><dd>미공개</dd><dt>구조 원문 요약</dt><dd>Qwen3-VL-4B/8B(비전 타워 동결) + 동결 VGGT 공간 인코더(중간층 토큰, 패치당 2048차원 → RMSNorm·2층 MLP merger, α=0.2로 시각 토큰에 가산) → LLM 은닉 상태에 4개 헤드(자기회귀 행동 정책, 역동역학 분류, 순동역학 MLP, 미래 공간 특징 생성); 추론은 정책 헤드만 사용, 이산 텍스트 행동(STOP·MOVE_FORWARD·TURN_LEFT·TURN_RIGHT) 스텝당 1개</dd></dl>
+<h2>학습</h2>
+<dl><dt>사전학습 가속기</dt><dd>미공개</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>미공개</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>해당 없음 (Qwen3-VL에서 단일 내비게이션 학습 단계; 가속기·시간 미공개)</dd><dt>데이터 종류</dt><dd>시뮬레이션·합성</dd><dt>데이터 규모</dt><dd>VLN-CE 전문가 궤적 약 2.43M 샘플(R2R-CE 631K + RxR-CE 1.80M, &#x27;0K&#x27; 설정); 전체 설정은 ScaleVLN·DAgger 롤아웃 외부 데이터 10,457K(4B)/10,435K(8B) 추가</dd><dt>주요 데이터셋</dt><dd>R2R-CE; RxR-CE; ScaleVLN; DAgger 롤아웃</dd><dt>태스크·평가</dt><dd>R2R-CE val-unseen SR 65.4%·SPL 61.3·NE 4.24(4B 전체 데이터; 8B 64.3%·60.3), RxR-CE SR 60.9%·SPL 52.8·nDTW 68.0(8B SR 63.9%·SPL 54.8); 외부 데이터 없는 0K 설정 4B R2R SR 55.1%; 실로봇 Go2 제로샷(정량 수치 미보고)</dd><dt>로봇</dt><dd>Go2 사족(원격 운용, D435i RGB 카메라); 시뮬 VLN-CE 에이전트</dd></dl>
+<h2>추론</h2>
+<dl><dt>추론 장치·속도</dt><dd>실로봇은 H20 GPU 서버 원격 추론(Go2 카메라 RGB 스트리밍, 스텝당 저수준 행동 1개 반환); 지연·Hz·메모리 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>16 GB</dd><dt>실행 위치</dt><dd>원격 서버 (H20)</dd></dl>
+<h2>강화학습 · 베이스</h2>
+<dl><dt>강화학습</dt><dd>미사용 · 지도학습(교차 엔트로피·MSE); DAgger 롤아웃은 학습 데이터로만 사용</dd><dt>베이스 제어</dt><dd>사족보행 (이산 이동 행동) · 정책이 이산 행동(정지·전진·좌/우회전)을 스텝마다 1개 출력 → 원격 서버가 Go2에 전달해 실행(저수준 제어 미기재)</dd></dl>
+<h2>비고</h2>
+<dl><dt>핵심 특징</dt><dd>VLM 은닉 상태 위에서 행동 예측과 역·순동역학, 미래 공간 상태 생성을 함께 학습하는 world-action 모델링을 VLN에 도입하고 추론에는 정책 헤드만 써 속도를 유지한다. 단안 RGB·4B 백본으로 R2R-CE SR 65.4%·RxR-CE SR 60.9%를 내 7B급 JanusVLN(R2R 60.5%) 등 기존 VLN 모델을 앞섰다.</dd><dt>비고</dt><dd>학습 하드웨어·시간·스텝·배치·lr 모두 미공개. HF llxs/FutureNav에 FutureNav-4B-Base(11.7 GB)만 공개, 8B·학습 스크립트·학습 데이터 미공개(README TODO). 실로봇은 시연만 있고 정량 결과 없음. 외부 데이터 열(10457K 등) 구성은 본문 설명 없음.</dd><dt>검증</dt><dd>수정 반영</dd></dl>
+<section class="rel"><h2>같은 분류의 모델</h2><ul><li><a href="/ko/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ko/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ko/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ko/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ko/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ko/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ko/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ko/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ko/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ko/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ko/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ko/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ko/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ko/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ko/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ko/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ko/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ko/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ko/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ko/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ko/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ko/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ko/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ko/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ko/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ko/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ko/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ko/m/tic-vla/"><small>← 이전 모델</small>TIC-VLA</a><a class="nx" href="/ko/m/uni-lavira/"><small>다음 모델 →</small>Uni-LaViRA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ko/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

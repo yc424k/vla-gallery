@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RT-2-X — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="RT-2-X (Open X-Embodiment Collaboration(21개 기관), 2023-10) — RT-2を元のVLMデータとOXEロボット混合を約1:1で混ぜて共同ファインチューニングした。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/rt-2-x/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rt-2-x/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rt-2-x/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rt-2-x/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rt-2-x/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rt-2-x/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RT-2-X — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="RT-2-X (Open X-Embodiment Collaboration(21개 기관), 2023-10) — RT-2を元のVLMデータとOXEロボット混合を約1:1で混ぜて共同ファインチューニングした。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/rt-2-x/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RT-2-X — 構造・バックボーンLLM・学習・推論メモリ", "description": "RT-2-X (Open X-Embodiment Collaboration(21개 기관), 2023-10) — RT-2を元のVLMデータとOXEロボット混合を約1:1で混ぜて共同ファインチューニングした。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/rt-2-x/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "RT-2-X", "creator": {"@type": "Organization", "name": "Open X-Embodiment Collaboration(21개 기관)"}}, "citation": {"@type": "ScholarlyArticle", "name": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models", "url": "https://arxiv.org/abs/2310.08864"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "RT-2-X", "item": "https://vla-gallery.is-a.dev/ja/m/rt-2-x/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rt-2-x/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rt-2-x/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rt-2-x/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rt-2-x/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 参照ベースライン(2024年以前)</p>
+<h1>RT-2-X</h1>
+<p class="by">Open X-Embodiment Collaboration(21機関) · 2023-10</p>
+<p class="kv"><span>VLA</span><span>参照ベースライン(2024年以前)</span><span>55B</span><span>離散トークン</span></p>
+<p class="sum">RT-2を元のVLMデータとOXEロボット混合を約1:1で混ぜて共同ファインチューニングした。</p>
+<div class="acts"><a class="pri" href="/ja/#m-rt-2-x">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2310.08864" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2310.08864" rel="noopener">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</a><small>arXiv 2310.08864</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>参照ベースライン(2024年以前)</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2023-10</dd><dt>機関</dt><dd>Open X-Embodiment Collaboration(21機関)</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>55B(OXE論文Table IIには5B変形もある)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>UL2 32Bエンコーダ・デコーダ (PaLI-X 55B)</dd><dt>ビジョンエンコーダ</dt><dd>ViT (PaLI-X)</dd><dt>アクションヘッド</dt><dd>256区間のテキストトークン (離散トークン)</dd><dt>チャンク</dt><dd>なし (1ステップ)</dd><dt>制御周期</dt><dd>3–10 Hz (ロボット別)</dd><dt>構造の原文要約</dt><dd>ViT + UL2 VLMバックボーン(RT-2方式); 8次元(終了1・末端移動7)256区間テキストトークン</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開(既存VLMを使用)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開; 元のVLMデータとロボットを約1:1で混合した共同ファインチューニング</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーションなど(提供データセットごとに収集方式が異なる); Web視覚言語</dd><dt>データ規模</dt><dd>OXE学習混合(9 embodiment) + 元のVLMデータ、約1:1; OXE全体1M+ 軌跡・22 embodiment</dd><dt>主要データセット</dt><dd>OXEサブセット: RT-1, QT-Opt, Bridge, Task Agnostic Robot Play, Jaco Play, Cable Routing, RoboTurk, NYU VINN, Austin VIOLA, Berkeley Autolab UR5, TOTO, Language Table; 元のVLM学習データ</dd><dt>タスク・評価</dt><dd>ロボット6種で3,600回評価(RT-1-Xと共同); 創発スキルはRT-2比 約3倍</dd><dt>ロボット</dt><dd>学習混合は9個のマニピュレータ(OXE全体22 embodimentのうち); 評価ロボット6種</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>クラウドサービスでホスティング・ネットワーク問い合わせ、ロボット別3–10 Hz</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>110 GB</dd><dt>実行場所</dt><dd>クラウド</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · VLM・ロボットデータの共同ファインチューニング(教師あり学習)</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (行動8次元: 終了 1 + EE移動 7; Googleモバイルロボットも腕のみ)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>RT-2を元のVLMデータとOXEロボット混合を約1:1で混ぜて共同ファインチューニングした。創発スキル評価でRT-2の約3倍の性能を示した。</dd><dt>備考</dt><dd>READMEにRT-2-Xのチェックポイントなし。5Bバリアントは検証ノートの新規事実。機関表記の修正を反映。パラメータ(B)は55B。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/rt-1/">RT-1</a><small>2022-12</small></li><li><a href="/ja/m/rt-2/">RT-2</a><small>2023-07</small></li><li><a href="/ja/m/rt-1-x/">RT-1-X</a><small>2023-10</small></li><li><a href="/ja/m/act/">ACT</a><small>2023-04</small></li><li><a href="/ja/m/diffusion-policy/">Diffusion Policy (CNN)</a><small>2023-03</small></li><li><a href="/ja/m/diffusion-policy-2/">Diffusion Policy (Transformer)</a><small>2023-03</small></li><li><a href="/ja/m/gr-1/">GR-1</a><small>2023-12</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/rt-1-x/"><small>← 前のモデル</small>RT-1-X</a><a class="nx" href="/ja/m/act/"><small>次のモデル →</small>ACT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

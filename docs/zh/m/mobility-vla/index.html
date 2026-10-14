@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobility VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="Mobility VLA (Google DeepMind, 2024-07) — 将环境演示导览视频整体输入长上下文VLM(Gemini 1.5 Pro)，找到符合文本·图像指令的目标帧，并用同一导览构建的拓扑图规划底层航点的无需训练的分层导航策略。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/mobility-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/mobility-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/mobility-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/mobility-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/mobility-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/mobility-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Mobility VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="Mobility VLA (Google DeepMind, 2024-07) — 将环境演示导览视频整体输入长上下文VLM(Gemini 1.5 Pro)，找到符合文本·图像指令的目标帧，并用同一导览构建的拓扑图规划底层航点的无需训练的分层导航策略。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/mobility-vla/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Mobility VLA — 架构、骨干LLM、训练与推理内存", "description": "Mobility VLA (Google DeepMind, 2024-07) — 将环境演示导览视频整体输入长上下文VLM(Gemini 1.5 Pro)，找到符合文本·图像指令的目标帧，并用同一导览构建的拓扑图规划底层航点的无需训练的分层导航策略。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/mobility-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Mobility VLA", "creator": {"@type": "Organization", "name": "Google DeepMind"}}, "citation": {"@type": "ScholarlyArticle", "name": "Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs", "url": "https://arxiv.org/abs/2407.07775"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "Mobility VLA", "item": "https://vla-gallery.is-a.dev/zh/m/mobility-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/mobility-vla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/mobility-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/mobility-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/mobility-vla/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>Mobility VLA</h1>
+<p class="by">Google DeepMind · 2024-07</p>
+<p class="kv"><span>VLA</span><span>导航</span><span>未公开</span><span>其他</span></p>
+<p class="sum">将环境演示导览视频整体输入长上下文VLM(Gemini 1.5 Pro)，找到符合文本·图像指令的目标帧，并用同一导览构建的拓扑图规划底层航点的无需训练的分层导航策略。</p>
+<div class="acts"><a class="pri" href="/zh/#m-mobility-vla">在图库中查看架构图</a><a href="https://arxiv.org/abs/2407.07775" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2407.07775" rel="noopener">Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs</a><small>arXiv 2407.07775</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2024-07</dd><dt>机构</dt><dd>Google DeepMind</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>未公开 (Gemini 1.5 Pro)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Gemini 1.5 Pro (云端API)</dd><dt>视觉编码器</dt><dd>Gemini 1.5 Pro内置 (细节未公开)</dd><dt>动作头</dt><dd>目标帧索引 → 拓扑图航点（Δx · Δy · Δθ） (其他)</dd><dt>动作块</dt><dd>无 (单步航点)</dd><dt>控制频率</dt><dd>上层每次查询10–30秒 · 下层0.19秒/步(仿真)</dd><dt>架构原文摘要</dt><dd>上层：Gemini 1.5 Pro长上下文VLM接收导览视频全部948帧(1 Hz) + 多模态指令，输出目标帧索引(每次查询10–30秒，云端) / 下层：基于COLMAP的拓扑图最短路径 → 以机器人为中心的航点动作(Δx, Δy, Δθ) → MPC跟踪；下层策略0.19秒/步(仿真)</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用 (无训练，使用Gemini 1.5 Pro API)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>不适用</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>无训练数据；以游戏手柄遥操作导览视频948帧(约16分钟，1 Hz)作为环境上下文</dd><dt>主要数据集</dt><dd>无训练数据集；以自有MINT指令(众包57条等)评估</dd><dt>任务·评估</dt><dd>真实办公室目标搜索SR：无需推理95%·需推理86%·小物体42%·多模态90%(Table 3)；端到端SR 80%·80%·40%·85%，SPL 0.59·0.69·0.38·0.64(Table 2，每类指令5条×起点4个)；仿真端到端SR 90%·SPL 0.84；在家居式环境(智能手机导览)中测试</dd><dt>机器人</dt><dd>轮式移动操作机器人（型号未注明），仅使用RGB相机</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>VLM在云端运行(每次调用上传948张导览图像)，每次目标索引检索查询10–30秒；底层策略0.19±0.047秒/步(仿真)；机载算力需求小</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>云端 (Gemini 1.5 Pro) + 机器人MPC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 无训练 (Gemini 1.5 Pro零样本 + 拓扑图规划)</dd><dt>底盘控制</dt><dd>轮式 (航点 → 跟踪控制器) · VLM选择目标帧 → 用MPC跟踪拓扑图路径上的航点(Δx·Δy·Δθ)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将环境演示导览视频整体输入长上下文VLM(Gemini 1.5 Pro)，找到符合文本·图像指令的目标帧，并用同一导览构建的拓扑图规划底层航点的无需训练的分层导航策略。在836 m²真实办公室中报告需推理·多模态指令的目标寻找成功率86%·90%，分别比现有方法高26%·60%。</dd><dt>备注</dt><dd>86%·90%为目标搜索率(Table 3)，端到端成功率(Table 2)为需推理80%·多模态85%，与叙述有出入；架构依据Gemini 1.5报告中的MoE Transformer描述；Gemini参数·推理硬件未公开；代码·权重未公开。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/zh/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/zh/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/navila/"><small>← 上一个</small>NaVILA</a><a class="nx" href="/zh/m/streamvln/"><small>下一个 →</small>StreamVLN</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLOWER — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — Pretrained in about 200 H100 GPU-hours, cutting parameters by over 20% via VLM mid-l…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/flower/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/flower/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/flower/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/flower/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/flower/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/flower/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="FLOWER — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — Pretrained in about 200 H100 GPU-hours, cutting parameters by over 20% via VLM mid-l…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/flower/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "FLOWER — Architecture, Backbone LLM, Training & Inference Memory", "description": "FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — Pretrained in about 200 H100 GPU-hours, cutting parameters by over 20% via VLM mid-l…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/flower/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "FLOWER", "creator": {"@type": "Organization", "name": "KIT Intuitive Robots Lab (공저자 1명 Microsoft Research)"}}, "citation": {"@type": "ScholarlyArticle", "name": "FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies", "url": "https://arxiv.org/abs/2509.04996"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "FLOWER", "item": "https://vla-gallery.is-a.dev/m/flower/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/flower/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/flower/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/flower/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/flower/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
+<h1>FLOWER</h1>
+<p class="by">KIT Intuitive Robots Lab (1 co-author from Microsoft Research) · 2025-09</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>947M</span><span>flow matching</span></p>
+<p class="sum">Pretrained in about 200 H100 GPU-hours, cutting parameters by over 20% via VLM mid-layer fusion and per-action-space Global-AdaLN.</p>
+<div class="acts"><a class="pri" href="/#m-flower">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2509.04996" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.04996" rel="noopener">FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies</a><small>arXiv 2509.04996</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Flow·Diffusion VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-09</dd><dt>Organization</dt><dd>KIT Intuitive Robots Lab (1 co-author from Microsoft Research)</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>947M (body)/950M (abstract); ViT 360M (paper)/350M (README), VLM 205M, Flow Transformer 339M, Global-AdaLN 28.3M</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None (Florence-2 VLM 205M, decoder removed)</dd><dt>Vision encoder</dt><dd>Florence-2-L ViT (360M)</dd><dt>Action head</dt><dd>Flow Transformer 339M (4–8 steps) (flow matching)</dd><dt>Chunk</dt><dd>20 steps</dd><dt>Control rate</dt><dd>3–50 Hz</dd><dt>Architecture (original summary)</dt><dd>Florence-2-L with decoder removed (ViT 360M + VLM 205M, intermediate-layer fusion) + 18-layer·1024-dim Flow Transformer (339M), Action-Space Global-AdaLN-Zero; rectified flow, chunk 20, denoising 4 (single arm)/8 (high-frequency bimanual), 3~50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>H100×4 (1 node)</dd><dt>Pretraining duration</dt><dd>48 h</dd><dt>Pretraining steps &amp; batch</dt><dd>360,000 steps (300k~400k depending on data mix), batch 256 × grad accum 4 = 1024, lr FlowT 1e-4 · VLM 1e-5</dd><dt>GPU/TPU-hours</dt><dd>200 (Stated · H100-hours (about 200; 4 × 48 h))</dd><dt>Fine-tuning</dt><dd>CALVIN GPU×4 · batch 8 per GPU · 40k steps; 30k per LIBERO suite (LIBERO-90 50k); real kitchen 50,000 steps; time not disclosed; repo training needs 24GB+ VRAM</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>8 public datasets about 250k trajectories (delta-EEF 74%, single-arm joints 26%); real robot 417 trajectories (45 min of human demonstrations)</dd><dt>Main datasets</dt><dd>OXE soup: Bridge 28.62%, Fractal 24.68%, DROID 23.50%, etc.</dd><dt>Tasks &amp; evaluation</dt><dd>CALVIN ABCD→D 4.67, ABC→D 4.53 (abstract)/4.54 (README), D→D 4.36; LIBERO-10 94.5% (README)/94.9% (paper), LIBERO-90 93.4%, Spatial 97.2%, Object 99.3%, Goal 96.9%; SIMPLER Bridge 40.0%, Google Robot 31.9%; Aloha sim insertion 0.82; real kitchen average 61%</dd><dt>Robot</dt><dd>Single arm (Franka Panda real kitchen), bimanual (Aloha sim), 4 embodiments</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>RTX 4090: 311.04 Hz, 0.052 s, 1,848 MB (27.6% of π0, 12.7% of OpenVLA)</dd><dt>Inference memory</dt><dd>1,848 MB (RTX 4090)</dd><dt>Weights bf16 (calc.)</dt><dd>1.9 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (Franka arm·bimanual sim)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Pretrained in about 200 H100 GPU-hours, cutting parameters by over 20% via VLM mid-layer fusion and per-action-space Global-AdaLN. Runs at 311 Hz on RTX 4090 using only 27.6% of π0&#x27;s memory.</dd><dt>Notes</dt><dd>Parameters (B) is the in-text 947M. Sources differ: 947M/950M, ViT 360M/350M, LIBERO-Long 94.9/94.5, CALVIN ABC 4.53/4.54. arXiv v1 dateline unverified (HF Papers 2025-09-05).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/m/x-vla/"><small>← Previous</small>X-VLA</a><a class="nx" href="/m/internvla-m1/"><small>Next →</small>InternVLA-M1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

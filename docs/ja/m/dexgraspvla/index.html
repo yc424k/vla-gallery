@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DexGraspVLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="DexGraspVLA (Peking University Institute for AI, PKU-PsiBot Joint Lab, HKUST(GZ), 2025-02) — 既製のVLM plannerが目標物体を指定し、セグメンテーションマスクとDINOv2特徴を受け取るDiT controller…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/dexgraspvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/dexgraspvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/dexgraspvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/dexgraspvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/dexgraspvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/dexgraspvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="DexGraspVLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="DexGraspVLA (Peking University Institute for AI, PKU-PsiBot Joint Lab, HKUST(GZ), 2025-02) — 既製のVLM plannerが目標物体を指定し、セグメンテーションマスクとDINOv2特徴を受け取るDiT controller…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/dexgraspvla/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "DexGraspVLA — 構造・バックボーンLLM・学習・推論メモリ", "description": "DexGraspVLA (Peking University Institute for AI, PKU-PsiBot Joint Lab, HKUST(GZ), 2025-02) — 既製のVLM plannerが目標物体を指定し、セグメンテーションマスクとDINOv2特徴を受け取るDiT controller…", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/dexgraspvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "DexGraspVLA", "creator": {"@type": "Organization", "name": "Peking University Institute for AI, PKU-PsiBot Joint Lab, HKUST(GZ)"}}, "citation": {"@type": "ScholarlyArticle", "name": "DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping", "url": "https://arxiv.org/abs/2502.20900"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "DexGraspVLA", "item": "https://vla-gallery.is-a.dev/ja/m/dexgraspvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/dexgraspvla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/dexgraspvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/dexgraspvla/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/dexgraspvla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / Flow·Diffusion VLA</p>
+<h1>DexGraspVLA</h1>
+<p class="by">Peking University Institute for AI, PKU-PsiBot Joint Lab, HKUST(GZ) · 2025-02</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>controller学習可能163M</span><span>diffusion</span></p>
+<p class="sum">既製のVLM plannerが目標物体を指定し、セグメンテーションマスクとDINOv2特徴を受け取るDiT controllerがデクスタラスハンドで把持を行う。</p>
+<div class="acts"><a class="pri" href="/ja/#m-dexgraspvla">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2502.20900" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2502.20900" rel="noopener">DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping</a><small>arXiv 2502.20900</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>Flow·Diffusion VLA</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-02</dd><dt>機関</dt><dd>Peking University Institute for AI, PKU-PsiBot Joint Lab, HKUST(GZ)</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>controller学習可能163M; planner Qwen2.5-VL-72B(既製モデル)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen2.5-72B · Qwen2.5-VL-72B構成 (planner)</dd><dt>ビジョンエンコーダ</dt><dd>SAM · Cutie · DINOv2 × 2</dd><dt>アクションヘッド</dt><dd>DiT拡散controller (16ステップ) (diffusion)</dd><dt>チャンク</dt><dd>64ステップ</dd><dt>制御周期</dt><dd>20 Hz</dd><dt>構造の原文要約</dt><dd>階層型: VLM planner(Qwen-VL-Chat、付録・READMEはQwen2.5-VL-72B-Instruct) + DiT拡散controller(SAM・Cutieセグメンテーション、frozen DINOv2 2個を含むビジョンエンコーダ3個); チャンクH=64、推論16ステップ、20 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(大規模ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>controller学習: A800×8サーバー、1日未満、84エポック、GPUあたりバッチ48</dd><dt>データ種類</dt><dd>実ロボットのデモ(kinesthetic teaching)</dd><dt>データ規模</dt><dd>成功エピソード2,094件、家庭用物体36個</dd><dt>主要データセット</dt><dd>独自収集</dd><dt>タスク・評価</dt><dd>未知の物体360個・照明3種・背景6種の組み合わせ1,287件で90.8%成功</dd><dt>ロボット</dt><dd>7-DoF RealMan RM75-6Fアーム + 6-DoF PsiBotハンド</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>物体あたりの把持は平均約6 s; planner(72B)はA800×8サーバーでGPU 4枚・vLLM・speculative decoding(Qwen2.5-VL-7B)でサービング</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>リモートサーバー (planner)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (RealMan腕 + ハンド)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>既製のVLM plannerが目標物体を指定し、セグメンテーションマスクとDINOv2特徴を受け取るDiT controllerがデクスタラスハンドで把持を行う。未知の組み合わせ1,287件で90.8%成功した。</dd><dt>備考</dt><dd>パラメータ(B)はシステム総計の記載がないためnull。単一のend-to-end VLAではなく階層型で、controller学習はタスク学習に分類。plannerのサービング費用がcontrollerの学習費用より大きい。重みはcontrollerチェックポイント(plannerは既製VLM)。機関はノートのPsi-Robotなどから論文1ページ目に基づき修正。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/ja/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/ja/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/ja/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/ja/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/ja/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/ja/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/ja/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/ja/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/ja/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/ja/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/ja/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/ja/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/ja/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/ja/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/ja/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/ja/m/f1-vla/">F1-VLA</a><small>2025-09</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/f1-vla/"><small>← 前のモデル</small>F1-VLA</a><a class="nx" href="/ja/m/gemini-robotics/"><small>次のモデル →</small>Gemini Robotics</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

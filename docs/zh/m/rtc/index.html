@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>학습시 RTC — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="학습시 RTC (Physical Intelligence, 2025-12) — 训练时模拟推理延迟(实机0~10步均匀采样)来学习动作prefix条件化，因此没有推理时RTC的额外计算。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/rtc/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rtc/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rtc/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rtc/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rtc/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rtc/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="학습시 RTC — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="학습시 RTC (Physical Intelligence, 2025-12) — 训练时模拟推理延迟(实机0~10步均匀采样)来学习动作prefix条件化，因此没有推理时RTC的额外计算。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/rtc/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "학습시 RTC — 架构、骨干LLM、训练与推理内存", "description": "학습시 RTC (Physical Intelligence, 2025-12) — 训练时模拟推理延迟(实机0~10步均匀采样)来学习动作prefix条件化，因此没有推理时RTC的额外计算。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/rtc/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "학습시 RTC (Training-time RTC, π0.6)", "creator": {"@type": "Organization", "name": "Physical Intelligence"}}, "citation": {"@type": "ScholarlyArticle", "name": "Training-Time Action Conditioning for Efficient Real-Time Chunking", "url": "https://arxiv.org/abs/2512.05964"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "학습시 RTC", "item": "https://vla-gallery.is-a.dev/zh/m/rtc/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rtc/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rtc/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rtc/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rtc/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / π系列</p>
+<h1>학습시 RTC</h1>
+<p class="full">训练时RTC (Training-time RTC，π0.6)</p>
+<p class="by">Physical Intelligence · 2025-12</p>
+<p class="kv"><span>기타</span><span>π系列</span><span>基于π0.6</span><span>混合</span></p>
+<p class="sum">训练时模拟推理延迟(实机0~10步均匀采样)来学习动作prefix条件化，因此没有推理时RTC的额外计算。</p>
+<div class="acts"><a class="pri" href="/zh/#m-rtc">在图库中查看架构图</a><a href="https://arxiv.org/abs/2512.05964" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2512.05964" rel="noopener">Training-Time Action Conditioning for Efficient Real-Time Chunking</a><small>arXiv 2512.05964</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>π系列</dd><dt>类型</dt><dd>기타</dd><dt>发布</dt><dd>2025-12</dd><dt>机构</dt><dd>Physical Intelligence</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>基于π0.6(无单独数值)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Gemma 3 4B (π0.6)</dd><dt>视觉编码器</dt><dd>SigLIP 400M (π0.6)</dd><dt>动作头</dt><dd>π0.6 flow专家 (延迟仿真训练) (混合)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>π0.6原样(结构·运行时不变)；训练中模拟推理延迟，并以已执行动作prefix为条件</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用(基于π0.6)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>每项任务8,000步·批量512(硬件·时间未公开)</dd><dt>数据类型</dt><dd>真实机器人遥操作(逐任务微调数据)</dd><dt>数据规模</dt><dd>未公开</dd><dt>主要数据集</dt><dd>按任务数据(未公开)</dd><dt>任务·评估</dt><dd>组装纸箱、制作浓缩咖啡（π0.6）；仿真比较在训练算力对齐条件下进行</dd><dt>机器人</dt><dd>π0.6实机平台(50 Hz机器人)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>远程H100，denoising 5步：训练时RTC 108 ms(d≈5) vs 推理时RTC 135 ms(d≈7)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>远程服务器</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 模拟推理延迟的监督微调</dd><dt>底盘控制</dt><dd>固定 · 未提及底盘控制（组装纸箱·浓缩咖啡任务）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>训练时模拟推理延迟(实机0~10步均匀采样)来学习动作prefix条件化，因此没有推理时RTC的额外计算。在组装纸箱·意式咖啡任务中以更低延迟达到与推理时RTC相同的性能。</dd><dt>备注</dt><dd>因是基于π0.6的微调方法，类型为其他。在50 Hz机器人上支持最高200 ms延迟。仿真中以指数衰减权重采样延迟{0..4}。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/zh/m/pi0-fast/">π0-FAST (FAST 토크나이저)</a><small>2025-01</small></li><li><a href="/zh/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/zh/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/zh/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/zh/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/zh/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/zh/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/pistar0-6/"><small>← 上一个</small>π*0.6 (RECAP)</a><a class="nx" href="/zh/m/rdt-1b/"><small>下一个 →</small>RDT-1B</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

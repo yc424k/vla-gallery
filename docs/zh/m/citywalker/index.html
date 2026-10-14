@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CityWalker — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="CityWalker (New York University, 2024-11) — 为数千小时YouTube城市步行·驾驶视频用DPVO视觉里程计标注轨迹，模仿学习以GPS目标为条件的城市导航策略。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/citywalker/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/citywalker/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/citywalker/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/citywalker/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/citywalker/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/citywalker/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="CityWalker — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="CityWalker (New York University, 2024-11) — 为数千小时YouTube城市步行·驾驶视频用DPVO视觉里程计标注轨迹，模仿学习以GPS目标为条件的城市导航策略。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/citywalker/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "CityWalker — 架构、骨干LLM、训练与推理内存", "description": "CityWalker (New York University, 2024-11) — 为数千小时YouTube城市步行·驾驶视频用DPVO视觉里程计标注轨迹，模仿学习以GPS目标为条件的城市导航策略。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/citywalker/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "CityWalker", "creator": {"@type": "Organization", "name": "New York University"}}, "citation": {"@type": "ScholarlyArticle", "name": "CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos", "url": "https://arxiv.org/abs/2411.17820"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "CityWalker", "item": "https://vla-gallery.is-a.dev/zh/m/citywalker/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/citywalker/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/citywalker/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/citywalker/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/citywalker/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>CityWalker</h1>
+<p class="by">New York University · 2024-11</p>
+<p class="kv"><span>VA</span><span>导航</span><span>214M</span><span>回归</span></p>
+<p class="sum">为数千小时YouTube城市步行·驾驶视频用DPVO视觉里程计标注轨迹，模仿学习以GPS目标为条件的城市导航策略。</p>
+<div class="acts"><a class="pri" href="/zh/#m-citywalker">在图库中查看架构图</a><a href="https://arxiv.org/abs/2411.17820" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2411.17820" rel="noopener">CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos</a><small>arXiv 2411.17820</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2024-11</dd><dt>机构</dt><dd>New York University</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>214M (可训练127M，DINOv2冻结)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>DINOv2 ViT-B/14 (冻结)</dd><dt>动作头</dt><dd>航点5个回归 + 到达预测头 (回归)</dd><dt>动作块</dt><dd>航点5个</dd><dt>控制频率</dt><dd>未公开 (RTX 3060笔记本 1.7 fps)</dd><dt>架构原文摘要</dt><dd>用固定DINOv2 ViT-B/14编码过去5帧 + 目标坐标Fourier特征嵌入 → Transformer 16层·8头(768维) → 动作头：欧氏航点5个 + 到达预测头；改造ViNT PD控制器输出速度指令</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>H100 2张</dd><dt>预训练时长</dt><dd>30小时</dd><dt>预训练步数·批量</dt><dd>10个epoch · 批量32</dd><dt>GPU·TPU-小时</dt><dd>60 (换算 · H100 2张 × 30小时)</dd><dt>微调</dt><dd>用Go1遥操作6小时数据微调,lr 5e-5;GPU·时间未公开</dd><dt>数据类型</dt><dd>网络视频 / 真实机器人遥操作</dd><dt>数据规模</dt><dd>YouTube行走·驾驶视频共2,522小时中用2,000小时训练；Go1遥操作15小时(微调6h·评估9h)</dd><dt>主要数据集</dt><dd>CityWalk YouTube步行·驾驶播放列表(DPVO标注)；自有Go1遥操作数据(HF ai4ce/CityWalker)</dd><dt>任务·评估</dt><dd>离线城市基准平均(微调)：MAOE 15.2°·到达率81.8% (ViNT 16.5°·70.5%，GNM 16.2°·68.6%，NoMaD 19.1°·68.6%)；真实环境Go1成功率77.3% (微调ViNT 57.1%，零样本NoMaD 42.9%，零样本ViNT 37.7%)</dd><dt>机器人</dt><dd>Unitree Go1四足 (Livox Mid-360 LiDAR·网络摄像头)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>RTX 3060笔记本GPU上DINOv2主干1.7 fps (换成EfficientNet-B0时20 fps);部署计算设备未注明</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0.4 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅模仿学习（网络视频 + DPVO轨迹标签）</dd><dt>底盘控制</dt><dd>四足 (航点 → 跟踪控制器) · 策略输出5个航点 → 改造ViNT PD控制器转换为Go1速度指令</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>为数千小时YouTube城市步行·驾驶视频用DPVO视觉里程计标注轨迹，模仿学习以GPS目标为条件的城市导航策略。训练数据超过1,000小时时，仅零样本即优于微调后的ViNT；经6小时遥操作微调后，Go1真实环境成功率达77.3%(微调ViNT为57.1%)。</dd><dt>备注</dt><dd>驾驶视频占比·视频数量未注明。部署时计算设备未注明(速度在RTX 3060笔记本上测得)。预训练模型在GitHub releases公开。CVPR 2025。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/zh/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/zh/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/lelan/"><small>← 上一个</small>LeLaN</a><a class="nx" href="/zh/m/nwm/"><small>下一个 →</small>NWM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

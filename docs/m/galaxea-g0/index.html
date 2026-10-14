@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galaxea G0 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Galaxea G0 (Galaxea, 2025-08) — A two-tier design where a VLM planner handles high-level instructions and a VLA executor carries them out.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/galaxea-g0/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/galaxea-g0/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/galaxea-g0/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/galaxea-g0/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/galaxea-g0/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/galaxea-g0/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Galaxea G0 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Galaxea G0 (Galaxea, 2025-08) — A two-tier design where a VLM planner handles high-level instructions and a VLA executor carries them out.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/galaxea-g0/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Galaxea G0 — Architecture, Backbone LLM, Training & Inference Memory", "description": "Galaxea G0 (Galaxea, 2025-08) — A two-tier design where a VLM planner handles high-level instructions and a VLA executor carries them out.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/galaxea-g0/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Galaxea G0", "creator": {"@type": "Organization", "name": "Galaxea"}}, "citation": {"@type": "ScholarlyArticle", "name": "Galaxea Open-World Dataset and G0 Dual-System VLA Model", "url": "https://arxiv.org/abs/2509.00576"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Galaxea G0", "item": "https://vla-gallery.is-a.dev/m/galaxea-g0/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/galaxea-g0/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/galaxea-g0/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/galaxea-g0/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/galaxea-g0/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Industry models</p>
+<h1>Galaxea G0</h1>
+<p class="by">Galaxea · 2025-08</p>
+<p class="kv"><span>VLA</span><span>Industry models</span><span>Not disclosed</span><span>Not disclosed</span></p>
+<p class="sum">A two-tier design where a VLM planner handles high-level instructions and a VLA executor carries them out.</p>
+<div class="acts"><a class="pri" href="/#m-galaxea-g0">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2509.00576" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.00576" rel="noopener">Galaxea Open-World Dataset and G0 Dual-System VLA Model</a><small>arXiv 2509.00576</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Industry models</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-08</dd><dt>Organization</dt><dd>Galaxea</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Gemma (PaliGemma, execution VLA) + Qwen2.5-VL (planner)</dd><dt>Vision encoder</dt><dd>SigLIP + MLP projector</dd><dt>Action head</dt><dd>Not disclosed (Not disclosed)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>200 Hz (planning 15 Hz)</dd><dt>Architecture (original summary)</dt><dd>dual-system: G0-VLM (Qwen2.5-VL-based planner, System 2) + G0-VLA (SigLIP + MLP projector + PaliGemma language backbone executor, System 1); control 200Hz·planning 15Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed</dd><dt>Data type</dt><dd>Real robot + public robot data (OXE)</dd><dt>Data scale</dt><dd>Galaxea Open-World Dataset 500 h, 100K traj, 150 task categories, 50 scenes, 58 skills; training mix OXE about 1,000 h + Galaxea 500 h + in-house 200 h</dd><dt>Main datasets</dt><dd>Galaxea Open-World Dataset, Open X-Embodiment, in-house data</dd><dt>Tasks &amp; evaluation</dt><dd>Table Bussing, Microwave Operation, Bed Making (4-point scale), Blocks Stacking (language following); quantitative figures not extracted</dd><dt>Robot</dt><dd>Galaxea R1 Lite (23-DoF, wheeled · torso bimanual mobile)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Control 200Hz, planning 15Hz (per figure); hardware and latency not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Wheeled (Direct base velocity/pose output) · G0-VLA action chunks control chassis · torso · arms together (chassis moves during bed making); chassis command format not stated</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A two-tier design where a VLM planner handles high-level instructions and a VLA executor carries them out. Uses a 3-stage curriculum: cross-embodiment pretraining → single-embodiment pretraining → post-training.</dd><dt>Notes</dt><dd>arXiv v1 2025-08-30 (corrected from 2025-09 in notes). G0-VLA weights released 2025-09-09 on HF OpenGalaxea/G0-VLA·ModelScope (corrected from Unverified in notes; paper says planned release under CC BY-NC-SA 4.0). Data hours (h) based on Galaxea Open-World Dataset (no statement of training mixture total). Paper has no statements on GPU·parameters.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/m/gen-0/"><small>← Previous</small>GEN-0</a><a class="nx" href="/m/gigabrain-0/"><small>Next →</small>GigaBrain-0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

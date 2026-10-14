@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CogACT — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="CogACT (Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics CAS, 2024-11) — 以VLM输出的cognition token为条件，由独立DiT生成动作序列，并用Adaptive A…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/cogact/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/cogact/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/cogact/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/cogact/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/cogact/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/cogact/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="CogACT — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="CogACT (Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics CAS, 2024-11) — 以VLM输出的cognition token为条件，由独立DiT生成动作序列，并用Adaptive A…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/cogact/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "CogACT — 架构、骨干LLM、训练与推理内存", "description": "CogACT (Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics CAS, 2024-11) — 以VLM输出的cognition token为条件，由独立DiT生成动作序列，并用Adaptive A…", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/cogact/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "CogACT", "creator": {"@type": "Organization", "name": "Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics CAS"}}, "citation": {"@type": "ScholarlyArticle", "name": "CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation", "url": "https://arxiv.org/abs/2411.19650"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "CogACT", "item": "https://vla-gallery.is-a.dev/zh/m/cogact/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/cogact/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/cogact/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/cogact/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/cogact/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / Flow·Diffusion VLA</p>
+<h1>CogACT</h1>
+<p class="by">Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics CAS · 2024-11</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>7.6B</span><span>diffusion</span></p>
+<p class="sum">以VLM输出的cognition token为条件，由独立DiT生成动作序列，并用Adaptive Action Ensemble合并动作块。</p>
+<div class="acts"><a class="pri" href="/zh/#m-cogact">在图库中查看架构图</a><a href="https://arxiv.org/abs/2411.19650" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2411.19650" rel="noopener">CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation</a><small>arXiv 2411.19650</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>Flow·Diffusion VLA</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2024-11</dd><dt>机构</dt><dd>Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics CAS</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>7.6B(正文，与RT-2-X 55B对比的值)；动作DiT Small 13M/Base 89M(默认)/Large 308M(补充材料表)·最大300M(正文)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Llama 2 7B · Prismatic-7B</dd><dt>视觉编码器</dt><dd>SigLIP + DINOv2</dd><dt>动作头</dt><dd>DiT扩散动作模块 (Base 89M，DDIM 10) (diffusion)</dd><dt>动作块</dt><dd>16步</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Prismatic VLM(DINOv2+SigLIP, LLaMA-2) cognition token + DiT扩散动作模块(Small 13M/Base 89M/Large 308M);16步×7-DoF动作块(未来N=15),训练时每样本扩散8步,推理DDIM 10步·cfg 1.5</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>A100×16(FSDP)</dd><dt>预训练时长</dt><dd>约5天</dd><dt>预训练步数·批量</dt><dd>135K iter以上，批量256，lr 2e-5恒定</dd><dt>GPU·TPU-小时</dt><dd>1,920 (换算(约) · A100-小时 (16张 × 约5天))</dd><dt>微调</dt><dd>实机(Realman)：A100×16 FSDP全量微调，10K步检查点，7.5 h；README：A100×8单节点，global batch 256(每设备32)，建议约30 epoch</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>OXE子集25个数据集,0.4M轨迹·22.5M帧;真机微调Realman 391条演示,Franka每任务100条(共400条)</dd><dt>主要数据集</dt><dd>Open X-Embodiment子集(25个)</dd><dt>任务·评估</dt><dd>SIMPLER Google Robot VM 74.8%·VA 61.3%，WidowX VM 51.3%；Realman实机平均71.2%(Pick 70.8，Stack 82.3，Place 60.4)；Franka实机4项任务平均61.4%</dd><dt>机器人</dt><dd>Google Robot, WidowX, Realman, Franka(单臂)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>A6000 bf16：单次约181 ms(16个动作)，用Adaptive Action Ensemble约5.5 Hz(同一设备OpenVLA 307 ms·1个动作)；fp32约30 GB</dd><dt>推理显存</dt><dd>fp32约30 GB (A6000)</dd><dt>权重 bf16（计算）</dt><dd>15.2 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅使用模仿学习（行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（单臂 7-DoF）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>以VLM输出的cognition token为条件，由独立DiT生成动作序列，并用Adaptive Action Ensemble合并动作块。7.6B取得SIMPLER Google Robot VM 74.8%，Realman实机平均71.2%。</dd><dt>备注</dt><dd>原文未说明7.6B对应哪种DiT规模(默认动作模块为DiT-Base)。笔记中的“Franka 30K检查点”是基线(Octo·OpenVLA)的值，已删除；CogACT只测试了10K步的一个检查点。最大DiT在表中为308M/正文为300M。检查点30 GB。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/zh/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/zh/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/zh/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/zh/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/zh/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/zh/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/zh/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/zh/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/zh/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/zh/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/zh/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/zh/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/zh/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/zh/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/zh/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/zh/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/rdt2/"><small>← 上一个</small>RDT2</a><a class="nx" href="/zh/m/divla/"><small>下一个 →</small>DiVLA (Diffusion-VLA)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

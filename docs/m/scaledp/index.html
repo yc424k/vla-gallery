@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScaleDP — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="ScaleDP (East China Normal University, 2024-09†) — Reports performance gains from scaling a diffusion policy transformer from 10M to 1B.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/scaledp/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/scaledp/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/scaledp/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/scaledp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/scaledp/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/scaledp/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ScaleDP — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="ScaleDP (East China Normal University, 2024-09†) — Reports performance gains from scaling a diffusion policy transformer from 10M to 1B.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/scaledp/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ScaleDP — Architecture, Backbone LLM, Training & Inference Memory", "description": "ScaleDP (East China Normal University, 2024-09†) — Reports performance gains from scaling a diffusion policy transformer from 10M to 1B.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/scaledp/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "ScaleDP", "creator": {"@type": "Organization", "name": "East China Normal University; Midea Group AI Research Center; Shanghai University; Beijing Innovation Center of Humanoid Robotics"}}, "citation": {"@type": "ScholarlyArticle", "name": "Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic Manipulation", "url": "https://arxiv.org/abs/2409.14411"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "ScaleDP", "item": "https://vla-gallery.is-a.dev/m/scaledp/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/scaledp/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/scaledp/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/scaledp/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/scaledp/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>ScaleDP</h1>
+<p class="by">East China Normal University; Midea Group AI Research Center; Shanghai University; Beijing Innovation Center of Humanoid Robotics · 2024-09†</p>
+<p class="kv"><span>VA</span><span>VA</span><span>Ti 10M, S 33M, B 130M, L 457M, H 1B</span><span>diffusion</span></p>
+<p class="sum">Reports performance gains from scaling a diffusion policy transformer from 10M to 1B.</p>
+<div class="acts"><a class="pri" href="/#m-scaledp">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2409.14411" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2409.14411" rel="noopener">Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic Manipulation</a><small>arXiv 2409.14411</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-09†</dd><dt>Organization</dt><dd>East China Normal University; Midea Group AI Research Center; Shanghai University; Beijing Innovation Center of Humanoid Robotics</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Ti 10M, S 33M, B 130M, L 457M, H 1B</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>Not stated</dd><dt>Action head</dt><dd>DiT-style diffusion Transformer (up to 1B) (diffusion)</dd><dt>Chunk</dt><dd>Not stated</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>DiT-style diffusion Transformer (AdaLN observation · timestep conditioning, unmasked self-attention); C-step chunk of 6D actions (position x · y · z, rotation roll · pitch · yaw) (C not stated); observation encoder not stated</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed (GPU·time·epochs·steps·batch all absent from paper·project page)</dd><dt>Data type</dt><dd>Simulation·synthetic; real-robot teleoperation</dd><dt>Data scale</dt><dd>MetaWorld 20 demos per task; real 100 trajectories per task (close laptop 40)</dd><dt>Main datasets</dt><dd>MetaWorld; in-house Franka·UR5 data</dd><dt>Tasks &amp; evaluation</dt><dd>MetaWorld 50 tasks (3 seeds); real Franka 4 tasks (Close Laptop, Flip Mug, Stack Cube, Place Tennis), bimanual UR5 3 tasks (tennis ball into bag, sweep trash, bimanual cube stacking); vs DP-T MetaWorld +21.6% (project page), real single-arm +36.25%·bimanual +75% (arXiv)/real 4 tasks +22.5% (project page)</dd><dt>Robot</dt><dd>Franka (2 ZED cameras); UR5 bimanual (3 RealSense)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>2 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (Franka·UR5 bimanual)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Reports performance gains from scaling a diffusion policy transformer from 10M to 1B. Despite being a 1B model, it discloses no training compute at all.</dd><dt>Notes</dt><dd>Release month 2024-09 matches the arXiv ID prefix, but the v1 date could not be confirmed (†). The actual improvement differs between the arXiv abstract and the project page, so both are given (correction applied). The project page states ICRA 2025 acceptance; code links to DexVLA GitHub; weights not found.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/vq-bet/"><small>← Previous</small>VQ-BeT</a><a class="nx" href="/m/umi/"><small>Next →</small>UMI</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

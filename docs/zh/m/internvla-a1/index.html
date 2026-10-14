@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InternVLA-A1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="InternVLA-A1 (Shanghai AI Lab, 2026-01) — 在一个MoT中协调场景理解·视觉预测生成·动作执行。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/internvla-a1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/internvla-a1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/internvla-a1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/internvla-a1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/internvla-a1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/internvla-a1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="InternVLA-A1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="InternVLA-A1 (Shanghai AI Lab, 2026-01) — 在一个MoT中协调场景理解·视觉预测生成·动作执行。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/internvla-a1/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "InternVLA-A1 — 架构、骨干LLM、训练与推理内存", "description": "InternVLA-A1 (Shanghai AI Lab, 2026-01) — 在一个MoT中协调场景理解·视觉预测生成·动作执行。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/internvla-a1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "InternVLA-A1", "creator": {"@type": "Organization", "name": "Shanghai AI Lab"}}, "citation": {"@type": "ScholarlyArticle", "name": "InternVLA-A1: Unifying Understanding, Generation and Action for Robotic Manipulation", "url": "https://arxiv.org/abs/2601.02456"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "InternVLA-A1", "item": "https://vla-gallery.is-a.dev/zh/m/internvla-a1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/internvla-a1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/internvla-a1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/internvla-a1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/internvla-a1/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 2026年新增</p>
+<h1>InternVLA-A1</h1>
+<p class="by">Shanghai AI Lab · 2026-01</p>
+<p class="kv"><span>VLA</span><span>2026年新增</span><span>1.8B</span><span>flow matching</span></p>
+<p class="sum">在一个MoT中协调场景理解·视觉预测生成·动作执行。</p>
+<div class="acts"><a class="pri" href="/zh/#m-internvla-a1">在图库中查看架构图</a><a href="https://arxiv.org/abs/2601.02456" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2601.02456" rel="noopener">InternVLA-A1: Unifying Understanding, Generation and Action for Robotic Manipulation</a><small>arXiv 2601.02456</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>2026年新增</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2026-01</dd><dt>机构</dt><dd>Shanghai AI Lab</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>1.8B(2B型)/3.2B(3B型)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>InternVL3 2B型 · Qwen3-VL 3B型 (两个变体)</dd><dt>视觉编码器</dt><dd>VLM内置</dd><dt>动作头</dt><dd>flow matching动作专家 + 视觉预测 (MoT) (flow matching)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>MoT 3专家: 理解(InternVL3 2B型·Qwen3-VL 3B型),生成(Cosmos CI8×8连续VAE tokenizer,视觉预测),动作(动作块flow matching)</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>700K steps，批量512，LR 5×10⁻⁵固定，bf16</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>GPU·时间未公开；60,000 steps，批量128，LR 5×10⁻⁵→5×10⁻⁶</dd><dt>数据类型</dt><dd>仿真·合成(InternData-A1) + 真实机器人遥操作(AgiBot World)</dd><dt>数据规模</dt><dd>533M帧以上(合成325M + AgiBot World Beta 208M)；InternData-A1共630k条轨迹·7,433小时</dd><dt>主要数据集</dt><dd>InternData-A1, AgiBot World (Beta)</dd><dt>任务·评估</dt><dd>真实世界12项任务75.1%(3B型，π0 60.6%)；抓取移动中的食材93.3%(π0 20%)；RoboTwin 2.0 Easy 65.0%·Hard 25.4%</dd><dt>机器人</dt><dd>Genie-1, ARX Lift-2, ARX AC One</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>RTX 4090上约13 Hz(torch.compile,两个变体均是)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>6.4 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 视觉预测 + flow matching监督学习</dd><dt>强化学习依据</dt><dd><a href="https://arxiv.org/html/2601.02456v1" rel="noopener">https://arxiv.org/html/2601.02456v1</a></dd><dt>底盘控制</dt><dd>固定 · 无底盘移动任务（双臂操作；未提及底盘·升降控制）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>在一个MoT中协调场景理解·视觉预测生成·动作执行。混合合成325M帧与实机208M帧进行训练。</dd><dt>备注</dt><dd>边界案例：arXiv v1 2026-01-05(v2 2026-02-13)，但仓库创建于2025-09-18(聚合站，二手)，代码·权重可能早于2026年。合成325M行未出现在核验读取中。HF更新检查点(新增人类视频)RoboTwin 2.0 Easy 89.40%·Hard 89.64%，协议不同。训练总量以帧为单位，故数据时间(h)留空。参数(B)为大变体。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/g0plus/">G0Plus</a><small>2026-01</small></li><li><a href="/zh/m/1x-world-model/">1X World Model (1XWM) 정책</a><small>2026-01</small></li><li><a href="/zh/m/spirit-v1-5/">Spirit v1.5</a><small>2026-01</small></li><li><a href="/zh/m/being-h0-5/">Being-H0.5</a><small>2026-01</small></li><li><a href="/zh/m/cosmos-policy/">Cosmos Policy</a><small>2026-01</small></li><li><a href="/zh/m/rho-alpha/">Rho-alpha (ρα)</a><small>2026-01(2차)†</small></li><li><a href="/zh/m/lingbot-vla/">LingBot-VLA</a><small>2026-01</small></li><li><a href="/zh/m/helix-02/">Helix 02</a><small>2026-01</small></li><li><a href="/zh/m/unifolm-vla-0/">UnifoLM-VLA-0</a><small>2026-01</small></li><li><a href="/zh/m/holobrain-0/">HoloBrain-0</a><small>2026-02</small></li><li><a href="/zh/m/g0tiny/">G0Tiny</a><small>2026-02</small></li><li><a href="/zh/m/xiaomi-robotics-0/">Xiaomi-Robotics-0</a><small>2026-02</small></li><li><a href="/zh/m/dreamzero/">DreamZero</a><small>2026-02</small></li><li><a href="/zh/m/egoscale/">EgoScale</a><small>2026-02</small></li><li><a href="/zh/m/psi0/">Ψ0 (Psi-Zero)</a><small>2026-03</small></li><li><a href="/zh/m/gr00t-n1-7/">GR00T N1.7</a><small>2026-03</small></li><li><a href="/zh/m/gen-1/">GEN-1</a><small>2026-04</small></li><li><a href="/zh/m/go-2/">GO-2</a><small>2026-04(2차)</small></li><li><a href="/zh/m/being-h0-7/">Being-H0.7</a><small>2026-04</small></li><li><a href="/zh/m/pi0-7/">π0.7</a><small>2026-04</small></li><li><a href="/zh/m/molmoact-2/">MolmoAct 2</a><small>2026-05</small></li><li><a href="/zh/m/g0-5/">G0.5</a><small>2026-06</small></li><li><a href="/zh/m/syvla/">SyVLA</a><small>2026-06</small></li><li><a href="/zh/m/openhlm/">OpenHLM</a><small>2026-06</small></li><li><a href="/zh/m/galbot-astrabrain/">Galbot AstraBrain(银河星脑) 계열</a><small>2026-06(2차)</small></li><li><a href="/zh/m/internvla-a1-5/">InternVLA-A1.5</a><small>2026-07†</small></li><li><a href="/zh/m/turbovla/">TurboVLA</a><small>2026-07</small></li><li><a href="/zh/m/gemini-robotics-2/">Gemini Robotics 2</a><small>2026-07</small></li><li><a href="/zh/m/gemini-robotics-on-device-2/">Gemini Robotics On-Device 2</a><small>2026-07</small></li><li><a href="/zh/m/dyna-2/">DYNA-2</a><small>2026-08</small></li><li><a href="/zh/m/skild-s1/">Skild S1</a><small>2026-08(Skild)/2026-09(NVIDIA)</small></li><li><a href="/zh/m/gen-1-5/">GEN-1.5</a><small>2026-08</small></li><li><a href="/zh/m/omega-0/">ω-0 (OMEGA-0)</a><small>2026-08</small></li><li><a href="/zh/m/qwen-vla/">Qwen-VLA</a><small>2026-05</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/g0plus/"><small>← 上一个</small>G0Plus</a><a class="nx" href="/zh/m/1x-world-model/"><small>下一个 →</small>1X World Model (1XWM) 정책</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GMT — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="GMT (UC San Diego, 2025-06) — Adaptive sampling (motions over 10 s cut to 10 s and weighted by completion) and MoE let a single policy track diverse human mo…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/gmt/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gmt/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gmt/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gmt/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gmt/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gmt/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GMT — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="GMT (UC San Diego, 2025-06) — Adaptive sampling (motions over 10 s cut to 10 s and weighted by completion) and MoE let a single policy track diverse human mo…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/gmt/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GMT — Architecture, Backbone LLM, Training & Inference Memory", "description": "GMT (UC San Diego, 2025-06) — Adaptive sampling (motions over 10 s cut to 10 s and weighted by completion) and MoE let a single policy track diverse human mo…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/gmt/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "GMT (General Motion Tracking)", "creator": {"@type": "Organization", "name": "UC San Diego·Simon Fraser University"}}, "citation": {"@type": "ScholarlyArticle", "name": "GMT: General Motion Tracking for Humanoid Whole-Body Control", "url": "https://arxiv.org/abs/2506.14770"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "GMT", "item": "https://vla-gallery.is-a.dev/m/gmt/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gmt/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gmt/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gmt/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gmt/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid whole-body controllers</p>
+<h1>GMT</h1>
+<p class="full">GMT (General Motion Tracking)</p>
+<p class="by">UC San Diego·Simon Fraser University · 2025-06</p>
+<p class="kv"><span>VA</span><span>Humanoid whole-body controllers</span><span>Not disclosed</span><span>RL policy</span></p>
+<p class="sum">Adaptive sampling (motions over 10 s cut to 10 s and weighted by completion) and MoE let a single policy track diverse human motions.</p>
+<div class="acts"><a class="pri" href="/#m-gmt">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2506.14770" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.14770" rel="noopener">GMT: General Motion Tracking for Humanoid Whole-Body Control</a><small>arXiv 2506.14770</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid whole-body controllers</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2025-06</dd><dt>Organization</dt><dd>UC San Diego·Simon Fraser University</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Joint targets (RL policy)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>50 Hz</dd><dt>Architecture (original summary)</dt><dd>Motion Mixture-of-Experts MLP (set of expert networks + gating network) + convolutional motion encoder (future frames → 128-dim latent); student trained with DAgger on 20-step proprioceptive history; sim 500 Hz·control 50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>RTX 4090 × 1</dd><dt>Pretraining duration</dt><dd>Teacher about 3 days + student about 1 day</dd><dt>Pretraining steps &amp; batch</dt><dd>4096 parallel env (IsaacGym); steps not disclosed</dd><dt>GPU/TPU-hours</dt><dd>96 (Converted · RTX 4090-hours (1 × (about 3 days + about 1 day) × 24 h))</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Motion capture</dd><dt>Data scale</dt><dd>AMASS · LAFAN1 subset 8925 clips · 33.12 hours</dd><dt>Main datasets</dt><dd>AMASS, LAFAN1</dd><dt>Tasks &amp; evaluation</dt><dd>MPKPE·MPJPE·velocity tracking error evaluated; general motion tracking on real Unitree G1</dd><dt>Robot</dt><dd>Unitree G1 (23 DoF, height 1.32 m)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Control 50 Hz</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (RL controller training) · RL teacher (about 3 days) → DAgger student (about 1 day), single RTX 4090</dd><dt>Base control</dt><dd>Humanoid legged (RL policy drives joints directly) · Whole-body motion tracking policy follows reference motion and directly outputs 23-DoF joint targets (walking, running, kicking, side-stepping)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Adaptive sampling (motions over 10 s cut to 10 s and weighted by completion) and MoE let a single policy track diverse human motions. Trained on a single RTX 4090: teacher about 3 days, student about 1 day.</dd><dt>Notes</dt><dd>The &#x27;33 days&#x27;·&#x27;11 day&#x27;·&#x27;89,258 clips&#x27; in the HTML extraction are misreads; PDF values are correct. Pretrained checkpoints for MuJoCo sim2sim released.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/amo/"><small>← Previous</small>AMO</a><a class="nx" href="/m/sonic/"><small>Next →</small>SONIC</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

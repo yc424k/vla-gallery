@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galaxea G0 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Galaxea G0 (Galaxea, 2025-08) — 高レベル指示をVLM plannerが処理し、VLA executorが実行する2階層構造である。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/galaxea-g0/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/galaxea-g0/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/galaxea-g0/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/galaxea-g0/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/galaxea-g0/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/galaxea-g0/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Galaxea G0 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Galaxea G0 (Galaxea, 2025-08) — 高レベル指示をVLM plannerが処理し、VLA executorが実行する2階層構造である。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/galaxea-g0/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Galaxea G0 — 構造・バックボーンLLM・学習・推論メモリ", "description": "Galaxea G0 (Galaxea, 2025-08) — 高レベル指示をVLM plannerが処理し、VLA executorが実行する2階層構造である。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/galaxea-g0/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Galaxea G0", "creator": {"@type": "Organization", "name": "Galaxea"}}, "citation": {"@type": "ScholarlyArticle", "name": "Galaxea Open-World Dataset and G0 Dual-System VLA Model", "url": "https://arxiv.org/abs/2509.00576"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Galaxea G0", "item": "https://vla-gallery.is-a.dev/ja/m/galaxea-g0/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/galaxea-g0/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/galaxea-g0/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/galaxea-g0/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/galaxea-g0/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 産業界モデル</p>
+<h1>Galaxea G0</h1>
+<p class="by">Galaxea · 2025-08</p>
+<p class="kv"><span>VLA</span><span>産業界モデル</span><span>非公開</span><span>非公開</span></p>
+<p class="sum">高レベル指示をVLM plannerが処理し、VLA executorが実行する2階層構造である。</p>
+<div class="acts"><a class="pri" href="/ja/#m-galaxea-g0">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2509.00576" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.00576" rel="noopener">Galaxea Open-World Dataset and G0 Dual-System VLA Model</a><small>arXiv 2509.00576</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>産業界モデル</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-08</dd><dt>機関</dt><dd>Galaxea</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>非公開</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Gemma (PaliGemma、実行VLA) + Qwen2.5-VL (planner)</dd><dt>ビジョンエンコーダ</dt><dd>SigLIP + MLP projector</dd><dt>アクションヘッド</dt><dd>非公開 (非公開)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>200 Hz (計画 15 Hz)</dd><dt>構造の原文要約</dt><dd>dual-system: G0-VLM(Qwen2.5-VLベースのplanner、System 2) + G0-VLA(SigLIP + MLP projector + PaliGemma言語バックボーンのexecutor、System 1); 制御200Hz・計画15Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>実ロボット + 公開ロボットデータ(OXE)</dd><dt>データ規模</dt><dd>Galaxea Open-World Dataset 500 h、100K traj、150 task categories、50 scenes、58 skills; 学習混合 OXE 約1,000 h + Galaxea 500 h + 社内200 h</dd><dt>主要データセット</dt><dd>Galaxea Open-World Dataset、Open X-Embodiment、社内データ</dd><dt>タスク・評価</dt><dd>Table Bussing、Microwave Operation、Bed Making(4段階評価)、Blocks Stacking(言語追従); 定量値は未抽出</dd><dt>ロボット</dt><dd>Galaxea R1 Lite(23-DoF、ホイール・胴体付き双腕モバイル)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>制御200Hz、計画15Hz(図の表記); ハードウェア・遅延は非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>車輪型 (ベース速度・姿勢を直接出力) · G0-VLAの行動チャンクがシャーシ・トルソ・腕を同時に制御 (ベッドメイキングでシャーシ移動); シャーシ指令の形式は記載なし</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>高レベル指示をVLM plannerが処理し、VLA executorが実行する2階層構造である。cross-embodiment事前学習 → single-embodiment事前学習 → 事後学習の3段階カリキュラムを使う。</dd><dt>備考</dt><dd>arXiv v1 2025-08-30(ノートの2025-09から修正)。G0-VLAの重みは2025-09-09にHF OpenGalaxea/G0-VLA・ModelScopeで公開(ノートの未確認から修正; 論文はCC BY-NC-SA 4.0で公開予定と表記)。データ時間(h)はGalaxea Open-World Dataset基準(学習混合の合計に関する記述なし)。論文にGPU・パラメータの記述なし。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/ja/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/ja/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/ja/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/ja/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/ja/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/ja/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/ja/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/ja/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/ja/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/ja/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/ja/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/ja/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/ja/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/ja/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/ja/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/ja/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/ja/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/ja/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/ja/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/ja/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/gen-0/"><small>← 前のモデル</small>GEN-0</a><a class="nx" href="/ja/m/gigabrain-0/"><small>次のモデル →</small>GigaBrain-0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

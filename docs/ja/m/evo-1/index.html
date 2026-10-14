@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evo-1 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Evo-1 (MINT-SJTU (GitHub 조직명), 2025-11†) — ロボットデータの事前学習なしに0.77BでMeta-World 80.6%、RoboTwin 37.8%を達成し、SmolVLA・π0より高いと報告する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/evo-1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/evo-1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/evo-1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/evo-1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/evo-1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/evo-1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Evo-1 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Evo-1 (MINT-SJTU (GitHub 조직명), 2025-11†) — ロボットデータの事前学習なしに0.77BでMeta-World 80.6%、RoboTwin 37.8%を達成し、SmolVLA・π0より高いと報告する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/evo-1/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Evo-1 — 構造・バックボーンLLM・学習・推論メモリ", "description": "Evo-1 (MINT-SJTU (GitHub 조직명), 2025-11†) — ロボットデータの事前学習なしに0.77BでMeta-World 80.6%、RoboTwin 37.8%を達成し、SmolVLA・π0より高いと報告する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/evo-1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Evo-1", "creator": {"@type": "Organization", "name": "MINT-SJTU (GitHub 조직명)"}}, "citation": {"@type": "ScholarlyArticle", "name": "Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment", "url": "https://arxiv.org/abs/2511.04555"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Evo-1", "item": "https://vla-gallery.is-a.dev/ja/m/evo-1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/evo-1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/evo-1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/evo-1/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/evo-1/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / Flow·Diffusion VLA</p>
+<h1>Evo-1</h1>
+<p class="by">MINT-SJTU (GitHub組織名) · 2025-11†</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>0.77B</span><span>flow matching</span></p>
+<p class="sum">ロボットデータの事前学習なしに0.77BでMeta-World 80.6%、RoboTwin 37.8%を達成し、SmolVLA・π0より高いと報告する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-evo-1">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2511.04555" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2511.04555" rel="noopener">Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment</a><small>arXiv 2511.04555</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>Flow·Diffusion VLA</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-11†</dd><dt>機関</dt><dd>MINT-SJTU (GitHub組織名)</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>0.77B</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen2.5-0.5B · InternVL3-1B構成</dd><dt>ビジョンエンコーダ</dt><dd>InternViT-300M</dd><dt>アクションヘッド</dt><dd>flow matching DiT (flow matching)</dd><dt>チャンク</dt><dd>50ステップ</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>InternVL3-1B(InternViT-300M + Qwen2.5-0.5B) + flow matching Diffusion Transformerアクションヘッド; チャンク H=50</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボットデータ事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>A100×8; Stage 1 10kステップ・バッチ16(VLM凍結)、Stage 2 65kステップ・バッチ16(全体)、lr 1×10⁻⁵; 総時間は非公開</dd><dt>データ種類</dt><dd>シミュレーション + 実ロボットのテレオペレーション(タスク別)</dd><dt>データ規模</dt><dd>Meta-Worldタスクあたり50デモ×50タスク、RoboTwinタスクあたり50軌跡、実機タスクあたり100テレオペレーションデモ</dd><dt>主要データセット</dt><dd>Meta-World、LIBERO、RoboTwin、独自xArm6データ</dd><dt>タスク・評価</dt><dd>Meta-World 80.6%(SmolVLA 68.2%)、LIBERO 94.8%、RoboTwin 37.8%(π0 30.9%)、xArm6実機4タスク78%</dd><dt>ロボット</dt><dd>xArm6(単腕)実機; RoboTwin双腕シミュレーション</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>RTX 4090d 2.3 GB、16.4 Hz; Jetson Orin配備の案内(2026-04、README)</dd><dt>推論メモリ</dt><dd>2.3 GB (RTX 4090d)</dd><dt>重み bf16(計算)</dt><dd>1.5 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (xArm6腕・RoboTwin双腕シミュレーション)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>ロボットデータの事前学習なしに0.77BでMeta-World 80.6%、RoboTwin 37.8%を達成し、SmolVLA・π0より高いと報告する。RTX 4090dで2.3 GB、16.4 Hzである。</dd><dt>備考</dt><dd>検証ノートは発表月のみ試みて確認不可、残りの数値は未検証。発表月はarXiv日付行が確認不可†(README初出2025-11-06)。LeRobotネイティブ方策一覧にEVO1として収録。メモリ削減はevo1-flashブランチ。</dd><dt>検証</dt><dd>未検証</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/ja/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/ja/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/ja/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/ja/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/ja/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/ja/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/ja/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/ja/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/ja/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/ja/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/ja/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/ja/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/ja/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/ja/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/ja/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/ja/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/graspvla/"><small>← 前のモデル</small>GraspVLA</a><a class="nx" href="/ja/m/nora-1-5/"><small>次のモデル →</small>NORA-1.5</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

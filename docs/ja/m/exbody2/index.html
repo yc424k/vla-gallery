@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExBody2 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="ExBody2 (UC San Diego, 2024-12) — 追跡誤差しきい値τ* = 0.150で学習モーションを自動選別し、表現力のある全身動作を追従する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/exbody2/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/exbody2/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/exbody2/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/exbody2/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/exbody2/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/exbody2/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ExBody2 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="ExBody2 (UC San Diego, 2024-12) — 追跡誤差しきい値τ* = 0.150で学習モーションを自動選別し、表現力のある全身動作を追従する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/exbody2/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ExBody2 — 構造・バックボーンLLM・学習・推論メモリ", "description": "ExBody2 (UC San Diego, 2024-12) — 追跡誤差しきい値τ* = 0.150で学習モーションを自動選別し、表現力のある全身動作を追従する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/exbody2/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "ExBody2", "creator": {"@type": "Organization", "name": "UC San Diego·UC Berkeley·MIT"}}, "citation": {"@type": "ScholarlyArticle", "name": "ExBody2: Advanced Expressive Humanoid Whole-Body Control", "url": "https://arxiv.org/abs/2412.13196"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "ExBody2", "item": "https://vla-gallery.is-a.dev/ja/m/exbody2/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/exbody2/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/exbody2/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/exbody2/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/exbody2/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ヒューマノイド全身制御器</p>
+<h1>ExBody2</h1>
+<p class="by">UC San Diego·UC Berkeley·MIT · 2024-12</p>
+<p class="kv"><span>VA</span><span>ヒューマノイド全身制御器</span><span>非公開</span><span>RL方策</span></p>
+<p class="sum">追跡誤差しきい値τ* = 0.150で学習モーションを自動選別し、表現力のある全身動作を追従する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-exbody2">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2412.13196" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.13196" rel="noopener">ExBody2: Advanced Expressive Humanoid Whole-Body Control</a><small>arXiv 2412.13196</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ヒューマノイド全身制御器</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2024-12</dd><dt>機関</dt><dd>UC San Diego·UC Berkeley·MIT</dd><dt>重み公開</dt><dd>未確認</dd><dt>パラメータ</dt><dd>非公開 (生徒 MLP [1024, 1024, 512])</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>関節PD目標 (RL方策)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>50 Hz (低レベル 500 Hz)</dd><dt>構造の原文要約</dt><dd>MLP: 教師actor・value [512, 256, 128]、学生 [1024, 1024, 512]、固有感覚の履歴10; モーション目標 + 固有感覚 → 関節PD目標、方策50 Hz・低レベル500 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開 (IsaacGym)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開 (env数は非公開)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>モーションキャプチャ</dd><dt>データ規模</dt><dd>CMUモーションキャプチャ1,919シーケンス(選別前); 選別後の規模は非公開</dd><dt>主要データセット</dt><dd>CMU motion capture</dd><dt>タスク・評価</dt><dd>MPKPE・MPJPE追跡誤差をベースライン4つと比較</dd><dt>ロボット</dt><dd>Unitree G1(23 DoF)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>方策50 Hz、低レベル500 Hz、通信遅延18~30 ms; オンボードJetson Orin NX</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>オンボード (Jetson Orin NX)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>使用 (RL制御器の学習) · RL教師(特権情報、actor-critic) → 学生に蒸留</dd><dt>ベース制御</dt><dd>ヒューマノイド歩行 (RL方策が直接駆動) · 全身キーポイント・ルート速度目標を追従し、脚を含む23次元関節PD目標を出力 (歩行・しゃがみ・ダンス)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>追跡誤差しきい値τ* = 0.150で学習モーションを自動選別し、表現力のある全身動作を追従する。Jetson Orin NXのオンボードで駆動する。</dd><dt>備考</dt><dd>選別誤差 e(s) = 0.1·E_key + 0.9·E_dof (extraction)。検証ファイルの対象外。</dd><dt>検証</dt><dd>未検証</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/ja/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/ja/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/ja/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/ja/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/ja/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/ja/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/ja/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/ja/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/ja/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/ja/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/ja/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/ja/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/ja/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/ja/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/ja/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/ja/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/idp3/"><small>← 前のモデル</small>iDP3</a><a class="nx" href="/ja/m/twist/"><small>次のモデル →</small>TWIST</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

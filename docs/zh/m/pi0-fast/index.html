@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>π0-FAST (FAST 토크나이저) — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — 用DCT与BPE压缩动作块，使高频连续控制可以作为自回归token学习。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/pi0-fast/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/pi0-fast/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/pi0-fast/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/pi0-fast/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/pi0-fast/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/pi0-fast/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="π0-FAST (FAST 토크나이저) — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — 用DCT与BPE压缩动作块，使高频连续控制可以作为自回归token学习。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/pi0-fast/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "π0-FAST (FAST 토크나이저) — 架构、骨干LLM、训练与推理内存", "description": "π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — 用DCT与BPE压缩动作块，使高频连续控制可以作为自回归token学习。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/pi0-fast/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "π0-FAST (FAST 토크나이저)", "creator": {"@type": "Organization", "name": "Physical Intelligence, UC Berkeley, Stanford"}}, "citation": {"@type": "ScholarlyArticle", "name": "FAST: Efficient Action Tokenization for Vision-Language-Action Models", "url": "https://arxiv.org/abs/2501.09747"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "π0-FAST (FAST 토크나이저)", "item": "https://vla-gallery.is-a.dev/zh/m/pi0-fast/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/pi0-fast/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/pi0-fast/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/pi0-fast/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/pi0-fast/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / π系列</p>
+<h1>π0-FAST (FAST 토크나이저)</h1>
+<p class="by">Physical Intelligence, UC Berkeley, Stanford · 2025-01</p>
+<p class="kv"><span>VLA</span><span>π系列</span><span>3B</span><span>离散token</span></p>
+<p class="sum">用DCT与BPE压缩动作块，使高频连续控制可以作为自回归token学习。</p>
+<div class="acts"><a class="pri" href="/zh/#m-pi0-fast">在图库中查看架构图</a><a href="https://arxiv.org/abs/2501.09747" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2501.09747" rel="noopener">FAST: Efficient Action Tokenization for Vision-Language-Action Models</a><small>arXiv 2501.09747</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>π系列</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-01</dd><dt>机构</dt><dd>Physical Intelligence, UC Berkeley, Stanford</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>3B (基于PaliGemma-3B的VLA)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Gemma 2B · PaliGemma 3B配置</dd><dt>视觉编码器</dt><dd>SigLIP 400M</dd><dt>动作头</dt><dd>FAST token自回归 (词表1024) (离散token)</dd><dt>动作块</dt><dd>1秒 (DROID 15步)</dd><dt>控制频率</dt><dd>5–50 Hz (因任务而异)</dd><dt>架构原文摘要</dt><dd>PaliGemma-3B,无动作专家;FAST离散动作token(DCT+BPE, rounding 10,词表1024)自回归解码,1秒动作块(DROID 15步),评估5~50 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>通用模型未公开；DROID单独策略（从PaliGemma开始）H100×8</dd><dt>预训练时长</dt><dd>通用模型未公开（GPU-小时比π0少5倍）；DROID单独策略约 4天</dd><dt>预训练步数·批量</dt><dd>通用模型未公开；DROID单独策略 240k iter·批量 256（3 epoch）</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>openpi pi0_fast_full_droid_finetune：H100×8约2天，100k步·批量256；pi0_fast_libero 30k步(LoRA版相同)。LeRobot LIBERO：H100×8，40k步·批量256(二手)</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>机器人数据 10k h；FAST+ tokenizer 1秒动作块约 100万个（正文）/1M条轨迹（摘要）；DROID 75k条回合·21M样本；LIBERO 270k样本</dd><dt>主要数据集</dt><dd>PI自有数据(903M timesteps), BRIDGE v2, DROID, OXE(占混合的9.1%)</dd><dt>任务·评估</dt><dd>Table bussing(UR5, 20 Hz), T-shirt folding(双臂ARX, 50 Hz), Grocery bagging, Toast(双臂Trossen, 50 Hz), Laundry folding; DROID零样本16项任务·44 trials(3个校区); openpi LIBERO 96.4/96.8/88.6/60.2, 平均85.5</dd><dt>机器人</dt><dd>UR5/UR5e，双臂ARX，双臂Trossen，DROID Franka；FAST+训练：ARX, AgileX, Fibocom Mobile, Franka FR3, UR5, Trossen, Mobile Trossen</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>RTX 4090每个动作块约750 ms(解码30~60个动作token);π0在同一GPU上100 ms以内</dd><dt>推理显存</dt><dd>&gt; 8 GB (openpi README通用)</dd><dt>权重 bf16（计算）</dt><dd>6 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · FAST token模仿学习</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（评估仅为固定操作臂；FAST+训练数据中含移动数据）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>用DCT与BPE压缩动作块，使高频连续控制可以作为自回归token学习。相比π0训练GPU-小时减少5倍，但动作块推理约750 ms，较慢。</dd><dt>备注</dt><dd>压缩比BridgeV2 1.75×，DROID 3.6×，Bussing 5.0×，T-shirt 13.2×。FAST+分词器以Apache-2.0在HF公开。openpi pi0_fast_droid默认horizon为10，与论文DROID的15步不同。openpi README_train中的&#x27;约5天&#x27;(从PaliGemma起240k iter)以pi05_full_droid_finetune为准。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/zh/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/zh/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/zh/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/zh/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/zh/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/zh/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li><li><a href="/zh/m/rtc/">학습시 RTC</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/pi0/"><small>← 上一个</small>π0</a><a class="nx" href="/zh/m/hi-robot/"><small>下一个 →</small>Hi Robot</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

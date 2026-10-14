@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>학습시 RTC — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="학습시 RTC (Physical Intelligence, 2025-12) — 推論遅延(実機0~10ステップの一様サンプル)を学習時に模倣してアクションprefix条件付けを学ぶため、推論時RTCの追加演算がない。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/rtc/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rtc/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rtc/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rtc/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rtc/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rtc/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="학습시 RTC — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="학습시 RTC (Physical Intelligence, 2025-12) — 推論遅延(実機0~10ステップの一様サンプル)を学習時に模倣してアクションprefix条件付けを学ぶため、推論時RTCの追加演算がない。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/rtc/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "학습시 RTC — 構造・バックボーンLLM・学習・推論メモリ", "description": "학습시 RTC (Physical Intelligence, 2025-12) — 推論遅延(実機0~10ステップの一様サンプル)を学習時に模倣してアクションprefix条件付けを学ぶため、推論時RTCの追加演算がない。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/rtc/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "학습시 RTC (Training-time RTC, π0.6)", "creator": {"@type": "Organization", "name": "Physical Intelligence"}}, "citation": {"@type": "ScholarlyArticle", "name": "Training-Time Action Conditioning for Efficient Real-Time Chunking", "url": "https://arxiv.org/abs/2512.05964"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "학습시 RTC", "item": "https://vla-gallery.is-a.dev/ja/m/rtc/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rtc/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rtc/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rtc/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rtc/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / πシリーズ</p>
+<h1>학습시 RTC</h1>
+<p class="full">学習時RTC (Training-time RTC, π0.6)</p>
+<p class="by">Physical Intelligence · 2025-12</p>
+<p class="kv"><span>기타</span><span>πシリーズ</span><span>π0.6ベース</span><span>ハイブリッド</span></p>
+<p class="sum">推論遅延(実機0~10ステップの一様サンプル)を学習時に模倣してアクションprefix条件付けを学ぶため、推論時RTCの追加演算がない。</p>
+<div class="acts"><a class="pri" href="/ja/#m-rtc">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2512.05964" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2512.05964" rel="noopener">Training-Time Action Conditioning for Efficient Real-Time Chunking</a><small>arXiv 2512.05964</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>πシリーズ</dd><dt>タイプ</dt><dd>기타</dd><dt>発表</dt><dd>2025-12</dd><dt>機関</dt><dd>Physical Intelligence</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>π0.6ベース(個別の数値なし)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Gemma 3 4B (π0.6)</dd><dt>ビジョンエンコーダ</dt><dd>SigLIP 400M (π0.6)</dd><dt>アクションヘッド</dt><dd>π0.6 flowエキスパート (遅延シミュレーション学習) (ハイブリッド)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>π0.6そのまま(構造・ランタイム変更なし); 学習中に推論遅延をシミュレーションし、実行済みアクションprefixに条件付け</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(π0.6ベース)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別に8,000ステップ・バッチ512(ハードウェア・時間は非公開)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション(タスク別ファインチューニングデータ)</dd><dt>データ規模</dt><dd>非公開</dd><dt>主要データセット</dt><dd>タスク別データ(非公開)</dd><dt>タスク・評価</dt><dd>箱の組み立て、エスプレッソ作り(π0.6); シミュレーション比較は学習計算量を揃えた条件</dd><dt>ロボット</dt><dd>π0.6実機プラットフォーム(50 Hzロボット)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>リモートH100、denoising 5ステップ: 学習時RTC 108 ms(d≈5) vs 推論時RTC 135 ms(d≈7)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>リモートサーバー</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 推論遅延をシミュレートした教師ありファインチューニング</dd><dt>ベース制御</dt><dd>固定 · ベース制御の言及なし (箱組み立て・エスプレッソタスク)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>推論遅延(実機0~10ステップの一様サンプル)を学習時に模倣してアクションprefix条件付けを学ぶため、推論時RTCの追加演算がない。箱組立・エスプレッソで推論時RTCと同等の性能をより低い遅延で達成した。</dd><dt>備考</dt><dd>π0.6ベースのファインチューニング手法のため種別はその他。50 Hzロボットで最大200 msの遅延をサポート。シミュレーションは遅延{0..4}を指数減衰重みでサンプリング。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/ja/m/pi0-fast/">π0-FAST (FAST 토크나이저)</a><small>2025-01</small></li><li><a href="/ja/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/ja/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/ja/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/ja/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/ja/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/ja/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/pistar0-6/"><small>← 前のモデル</small>π*0.6 (RECAP)</a><a class="nx" href="/ja/m/rdt-1b/"><small>次のモデル →</small>RDT-1B</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

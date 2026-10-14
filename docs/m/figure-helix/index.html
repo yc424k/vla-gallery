@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figure Helix — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Figure Helix (Figure AI, 2025-02) — Projects the S2 latent vector into the S1 token space, concatenates it with visual features, and trains a single set of w…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/figure-helix/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/figure-helix/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/figure-helix/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/figure-helix/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/figure-helix/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/figure-helix/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Figure Helix — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Figure Helix (Figure AI, 2025-02) — Projects the S2 latent vector into the S1 token space, concatenates it with visual features, and trains a single set of w…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/figure-helix/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Figure Helix — Architecture, Backbone LLM, Training & Inference Memory", "description": "Figure Helix (Figure AI, 2025-02) — Projects the S2 latent vector into the S1 token space, concatenates it with visual features, and trains a single set of w…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/figure-helix/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Figure Helix", "creator": {"@type": "Organization", "name": "Figure AI"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Figure Helix", "item": "https://vla-gallery.is-a.dev/m/figure-helix/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/figure-helix/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/figure-helix/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/figure-helix/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/figure-helix/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid VLA</p>
+<h1>Figure Helix</h1>
+<p class="by">Figure AI · 2025-02</p>
+<p class="kv"><span>VLA</span><span>Humanoid VLA</span><span>S2 7B + S1 80M</span><span>regression</span></p>
+<p class="sum">Projects the S2 latent vector into the S1 token space, concatenates it with visual features, and trains a single set of weights end-to-end with a regression loss.</p>
+<div class="acts"><a class="pri" href="/#m-figure-helix">View architecture diagram in the gallery</a><a href="https://www.figure.ai/news/helix" rel="noopener">Official page ↗</a></div>
+<h2>Paper</h2>
+<p class="paper">No paper</p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-02</dd><dt>Organization</dt><dd>Figure AI</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>S2 7B + S1 80M (logistics update added +50% to decoder head, new total not disclosed)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Undisclosed 7B open VLM</dd><dt>Vision encoder</dt><dd>VLM built-in + convolutional vision backbone (S1)</dd><dt>Action head</dt><dd>S1 80M encoder-decoder Transformer (regression)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>200 Hz</dd><dt>Architecture (original summary)</dt><dd>S2: 7B open VLM (7~9 Hz) → latent vector / S1: 80M cross-attention encoder-decoder Transformer + fully convolutional multiscale vision backbone, 35-DoF continuous actions 200 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation / human video</dd><dt>Data scale</dt><dd>~500 hours of teleoperation (multiple robots and operators, VLM auto-labeling); logistics scaling study 10~60 hours; Go-Big human video scale not disclosed</dd><dt>Main datasets</dt><dd>In-house teleoperation dataset (private); Project Go-Big egocentric human video</dd><dt>Tasks &amp; evaluation</dt><dd>Picking small household objects, drawer and fridge manipulation, multi-robot handover; logistics 4.05 s per package (from ~5.0 s), barcode success ~95% (from ~70%); going from 10 to 60 hours of demonstrations, handling time ~6.84 s→4.31 s, barcode 88.2%→94.4%</dd><dt>Robot</dt><dd>Figure 02 upper body (wrists · fingers · torso · head), 35-DoF</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Model-parallel deployment on 2 low-power embedded GPUs per robot; S2 7~9 Hz, S1 200 Hz</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>14.2 GB</dd><dt>Where it runs</dt><dd>Onboard (2 embedded GPUs)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (RL low-level controller) · S2·S1 trained by supervised learning with regression loss. 2025 locomotion handled by a separate neural network trained with sim RL</dd><dt>Base control</dt><dd>Fixed · Upper-body control only (wrists·fingers·torso·head, S1 200 Hz); no mention of legs·locomotion</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Projects the S2 latent vector into the S1 token space, concatenates it with visual features, and trains a single set of weights end-to-end with a regression loss. The laundry·dishwasher updates only added data, without model·hyperparameter changes.</dd><dt>Notes</dt><dd>Parameters (B) is the sum of 7B + 80M. The S1 vision backbone is initialized from sim pretraining, and S1/S2 inputs are offset in time by the deployment latency. The logistics update (2025-06-07) added Vision Memory, state history, and force feedback. Go-Big (2025-09-18) learned language-instructed navigation from 100% egocentric human video. 2025 locomotion is a separate RL controller (separate row). Helix 02 (2026-01) is out of scope.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/m/gr00t-n1-5/">GR00T N1.5</a><small>2025-05</small></li><li><a href="/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/m/gr00t-n1-6/"><small>← Previous</small>GR00T N1.6</a><a class="nx" href="/m/atlas-lbm/"><small>Next →</small>Atlas LBM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

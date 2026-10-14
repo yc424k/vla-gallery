@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WholeBodyVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="WholeBodyVLA (Fudan University, 2025-12) — Large-space loco-manipulation through unified latent learning from low-cost egocentric video without action labels.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/wholebodyvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/wholebodyvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/wholebodyvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/wholebodyvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/wholebodyvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/wholebodyvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="WholeBodyVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="WholeBodyVLA (Fudan University, 2025-12) — Large-space loco-manipulation through unified latent learning from low-cost egocentric video without action labels.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/wholebodyvla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "WholeBodyVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "WholeBodyVLA (Fudan University, 2025-12) — Large-space loco-manipulation through unified latent learning from low-cost egocentric video without action labels.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/wholebodyvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "WholeBodyVLA", "creator": {"@type": "Organization", "name": "Fudan University·OpenDriveLab & MMLab(HKU)·AgiBot·SII"}}, "citation": {"@type": "ScholarlyArticle", "name": "WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control", "url": "https://arxiv.org/abs/2512.11047"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "WholeBodyVLA", "item": "https://vla-gallery.is-a.dev/m/wholebodyvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/wholebodyvla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/wholebodyvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/wholebodyvla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/wholebodyvla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid VLA</p>
+<h1>WholeBodyVLA</h1>
+<p class="by">Fudan University·OpenDriveLab &amp; MMLab(HKU)·AgiBot·SII · 2025-12</p>
+<p class="kv"><span>VLA</span><span>Humanoid VLA</span><span>Prismatic-7B-based</span><span>latent actions</span></p>
+<p class="sum">Large-space loco-manipulation through unified latent learning from low-cost egocentric video without action labels.</p>
+<div class="acts"><a class="pri" href="/#m-wholebodyvla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2512.11047" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2512.11047" rel="noopener">WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control</a><small>arXiv 2512.11047</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-12</dd><dt>Organization</dt><dd>Fudan University·OpenDriveLab &amp; MMLab(HKU)·AgiBot·SII</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Prismatic-7B-based (total not disclosed)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Llama 2 7B · Prismatic-7B config</dd><dt>Vision encoder</dt><dd>DINOv2 LAM + Prismatic vision</dd><dt>Action head</dt><dd>Latent action decoder (manipulation, locomotion) (latent actions)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Prismatic-7B VLA + DINOv2-based VQ-VAE latent action models (separate manipulation·locomotion LAMs); latent actions decoded at about 10 Hz into bimanual joint actions and locomotion commands, locomotion commands executed by the LMO RL policy at 50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>H100 × 8 (LAM·VLA); LMO RL on H100 × 1</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>VLA 20,000 steps · batch 1,024; LAM 30,000 steps · batch 256</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>10,000 steps · batch 64 (GPU within the H100 × 8 sentence scope), time not disclosed</dd><dt>Data type</dt><dd>Human video / real-robot teleoperation</dd><dt>Data scale</dt><dd>About 300 hours of egocentric walking video; AgiBot World manipulation data (scale not disclosed); 50 teleoperation runs per task</dd><dt>Main datasets</dt><dd>In-house egocentric walking video, AgiBot World</dd><dt>Tasks &amp; evaluation</dt><dd>Bag Packing · Box Loading · Cart Pushing average 78.0%; +21.3% over previous baselines</dd><dt>Robot</dt><dd>AgiBot X2 (7-DoF arms + Omnipicker gripper, 6-DoF legs, 1-DoF waist)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>VLA on RTX 4090 workstation (about 10 Hz), LMO RL on onboard NanoPi (50 Hz)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Local PC (VLA) + onboard (LMO)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (RL low-level controller) · VLA by supervised learning of latent actions; locomotion commands executed by LMO RL policy (trained on 1 H100)</dd><dt>Base control</dt><dd>Humanoid legged (Commands/latents → RL locomotion controller) · VLA outputs upper-body joint angles + locomotion commands (3-axis discrete directives for forward/back·left/right·turn + posture height) → LMO RL policy outputs lower-body torques (50 Hz)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Large-space loco-manipulation through unified latent learning from low-cost egocentric video without action labels. 21.3% higher than prior baselines.</dd><dt>Notes</dt><dd>Fine-tuning settings and deployment hardware corrected from the notes&#x27; &#x27;Not disclosed&#x27; in verification; LAM settings are NEW. Data hours of 300 are walking video only. Parameters (B) is null because total parameters are Not disclosed. LMO simulator·env·time Not disclosed.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/m/gr00t-n1-5/">GR00T N1.5</a><small>2025-05</small></li><li><a href="/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/m/figure-helix/">Figure Helix</a><small>2025-02</small></li><li><a href="/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/m/hat/">HAT</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/hat/"><small>← Previous</small>HAT</a><a class="nx" href="/m/humanplus-hst/"><small>Next →</small>HumanPlus HST</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LeVERB — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="LeVERB (UC Berkeley, 2025-06) — Hierarchical VLA that links a vision-language layer and a whole-body control layer through a latent action vocabulary (latent…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/leverb/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/leverb/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/leverb/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/leverb/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/leverb/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/leverb/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="LeVERB — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="LeVERB (UC Berkeley, 2025-06) — Hierarchical VLA that links a vision-language layer and a whole-body control layer through a latent action vocabulary (latent…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/leverb/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "LeVERB — Architecture, Backbone LLM, Training & Inference Memory", "description": "LeVERB (UC Berkeley, 2025-06) — Hierarchical VLA that links a vision-language layer and a whole-body control layer through a latent action vocabulary (latent…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/leverb/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "LeVERB (Latent Vision-Language-Encoded Robot Behavior)", "creator": {"@type": "Organization", "name": "UC Berkeley·NTNU·Simon Fraser University·Carnegie Mellon University"}}, "citation": {"@type": "ScholarlyArticle", "name": "LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction", "url": "https://arxiv.org/abs/2506.13751"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "LeVERB", "item": "https://vla-gallery.is-a.dev/m/leverb/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/leverb/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/leverb/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/leverb/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/leverb/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid VLA</p>
+<h1>LeVERB</h1>
+<p class="full">LeVERB (Latent Vision-Language-Encoded Robot Behavior)</p>
+<p class="by">UC Berkeley·NTNU·Simon Fraser University·Carnegie Mellon University · 2025-06</p>
+<p class="kv"><span>VLA</span><span>Humanoid VLA</span><span>System 2 trainable parameters 102.56M</span><span>latent actions</span></p>
+<p class="sum">Hierarchical VLA that links a vision-language layer and a whole-body control layer through a latent action vocabulary (latent verbs); trained only in sim and transferred zero-shot to G1.</p>
+<div class="acts"><a class="pri" href="/#m-leverb">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2506.13751" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.13751" rel="noopener">LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</a><small>arXiv 2506.13751</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-06</dd><dt>Organization</dt><dd>UC Berkeley·NTNU·Simon Fraser University·Carnegie Mellon University</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>System 2 trainable parameters 102.56M; System 1 not disclosed (2 layers·128-dim)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None (ViT-B vision·text encoder)</dd><dt>Vision encoder</dt><dd>ViT-B vision·text encoders (frozen)</dd><dt>Action head</dt><dd>Latent verbs → transformer student policy (latent actions)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>50 Hz</dd><dt>Architecture (original summary)</dt><dd>System 2 (LeVERB-VL): frozen ViT-Base vision·text encoders (768-dim each) → 256-dim latent &#x27;verb&#x27;, 10 Hz / System 1 (LeVERB-A): 2-layer·4-head·hidden 128 Transformer student, joint position actions 50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Ada 6000 × 2 (System 2)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Steps not disclosed · global batch 512 (System 2)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Simulation·synthetic / motion capture</dd><dt>Data scale</dt><dd>Photoreal rollouts of 154 trajectories each randomized 100 times, 17.1 hours; language-only 2.7 hours (500 trajectories)</dd><dt>Main datasets</dt><dd>LeVERB-Bench (IsaacSim ray-traced rendering of retargeted motion capture)</dd><dt>Tasks &amp; evaluation</dt><dd>LeVERB-Bench (10 categories, 150+ tasks); simple visual navigation 80%, overall 58.5%; 7.8× over a naive hierarchical whole-body VLA</dd><dt>Robot</dt><dd>Unitree G1 whole body (visual navigation·loco-manipulation)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>System 2 10 Hz, System 1 50 Hz; hardware not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (RL low-level controller) · System 2 trained by supervised learning; System 1 distills an RL teacher policy via DAgger</dd><dt>Base control</dt><dd>Humanoid legged (Commands/latents → RL locomotion controller) · LeVERB-VL latent verbs (10 Hz) → LeVERB-A directly outputs whole-body joint positions for walking·turning·sitting (visual navigation)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Hierarchical VLA that links a vision-language layer and a whole-body control layer through a latent action vocabulary (latent verbs); trained only in sim and transferred zero-shot to G1. System 1 distills a vision-language-agnostic RL teacher via DAgger.</dd><dt>Notes</dt><dd>Data hours cover only 17.1 h of photorealistic rollouts (language-only 2.7 h separate). Parameters (B) is null because total parameters are Not disclosed. Simulator·env·GPU for System 1 teacher RL Not disclosed (verification NOT FOUND); see separate LeVERB-A row. arXiv v3 2025-09-25.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/m/gr00t-n1-5/">GR00T N1.5</a><small>2025-05</small></li><li><a href="/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/m/figure-helix/">Figure Helix</a><small>2025-02</small></li><li><a href="/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/m/humanoid-vla/"><small>← Previous</small>Humanoid-VLA</a><a class="nx" href="/m/uh-1/"><small>Next →</small>UH-1 (Humanoid-X)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

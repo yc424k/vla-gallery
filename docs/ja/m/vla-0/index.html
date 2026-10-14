@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLA-0 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="VLA-0 (NVIDIA, 2025-10) — VLMの構造と語彙を変えずに、アクションを通常のテキスト数値として出力させる設計である。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/vla-0/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vla-0/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vla-0/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vla-0/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vla-0/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vla-0/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="VLA-0 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="VLA-0 (NVIDIA, 2025-10) — VLMの構造と語彙を変えずに、アクションを通常のテキスト数値として出力させる設計である。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/vla-0/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "VLA-0 — 構造・バックボーンLLM・学習・推論メモリ", "description": "VLA-0 (NVIDIA, 2025-10) — VLMの構造と語彙を変えずに、アクションを通常のテキスト数値として出力させる設計である。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/vla-0/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "VLA-0", "creator": {"@type": "Organization", "name": "NVIDIA"}}, "citation": {"@type": "ScholarlyArticle", "name": "VLA-0: Building State-of-the-Art VLAs with Zero Modification", "url": "https://arxiv.org/abs/2510.13054"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "VLA-0", "item": "https://vla-gallery.is-a.dev/ja/m/vla-0/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vla-0/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vla-0/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vla-0/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vla-0/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 自己回帰・潜在アクションVLA</p>
+<h1>VLA-0</h1>
+<p class="by">NVIDIA · 2025-10</p>
+<p class="kv"><span>VLA</span><span>自己回帰・潜在アクションVLA</span><span>3B</span><span>離散トークン</span></p>
+<p class="sum">VLMの構造と語彙を変えずに、アクションを通常のテキスト数値として出力させる設計である。</p>
+<div class="acts"><a class="pri" href="/ja/#m-vla-0">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2510.13054" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2510.13054" rel="noopener">VLA-0: Building State-of-the-Art VLAs with Zero Modification</a><small>arXiv 2510.13054</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>自己回帰・潜在アクションVLA</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-10</dd><dt>機関</dt><dd>NVIDIA</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>3B</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B構成</dd><dt>ビジョンエンコーダ</dt><dd>Qwen2.5-VL ViT</dd><dt>アクションヘッド</dt><dd>整数テキストアクション (アクションヘッドなし) (離散トークン)</dd><dt>チャンク</dt><dd>マルチステップ + アンサンブル</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>改変していないQwen2.5-VL-3B; アクションを整数テキスト(例: 0–1000)で出力、複数ステップ予測 + 時点間アンサンブル、語彙変更・アクションヘッドなし</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>A100 8枚 約32 h、64 epochs、batch 192、lr 5e-6</dd><dt>データ種類</dt><dd>シミュレーション・合成 + 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>LIBEROデモ; 実機SO-100デモ100本</dd><dt>主要データセット</dt><dd>LIBERO</dd><dt>タスク・評価</dt><dd>LIBERO平均94.7%; 実機SO-100 4タスク(SmolVLA比 +12.5%p)</dd><dt>ロボット</dt><dd>SO-100、LIBEROシミュレーション</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>RTX 5090デスクトップで4 Hz(README: TensorRT-LLMで6 Hz可能)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>6 GB</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (SO-100腕・LIBERO)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>VLMの構造と語彙を変えずに、アクションを通常のテキスト数値として出力させる設計である。大規模ロボット事前学習なしでLIBERO 94.7%を報告した。</dd><dt>備考</dt><dd>ロボット学習全体がファインチューニング1段階である(A100 8枚 × 約32 h、換算(約) 256 A100時間)。ベースモデルのライセンスはQwen Research Licenseである。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/ja/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/ja/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/ja/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/ja/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/ja/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/ja/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/ja/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/ja/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/ja/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/ja/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/ja/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/ja/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/ja/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/ja/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/ja/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/ja/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/ja/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/ja/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/ja/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/ja/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/ja/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/ja/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/villa-x/"><small>← 前のモデル</small>villa-X</a><a class="nx" href="/ja/m/vla-adapter/"><small>次のモデル →</small>VLA-Adapter</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

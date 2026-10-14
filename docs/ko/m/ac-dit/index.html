@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC-DiT — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery</title>
+<meta name="description" content="AC-DiT (Peking University, 2025-07) — 베이스 행동만으로 먼저 학습한 경량 모빌리티 헤드의 잠재 표현을 전신 행동 생성의 조건으로 넣고(mobility-to-body), 단계별 필요에 따라 2D 이미지와 3D 점군의 가중치를 조절한다.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ko/m/ac-dit/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/ac-dit/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/ac-dit/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/ac-dit/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/ac-dit/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/ac-dit/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="AC-DiT — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery"><meta property="og:description" content="AC-DiT (Peking University, 2025-07) — 베이스 행동만으로 먼저 학습한 경량 모빌리티 헤드의 잠재 표현을 전신 행동 생성의 조건으로 넣고(mobility-to-body), 단계별 필요에 따라 2D 이미지와 3D 점군의 가중치를 조절한다.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ko/m/ac-dit/"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "AC-DiT — 구조·백본 LLM·학습·추론 메모리", "description": "AC-DiT (Peking University, 2025-07) — 베이스 행동만으로 먼저 학습한 경량 모빌리티 헤드의 잠재 표현을 전신 행동 생성의 조건으로 넣고(mobility-to-body), 단계별 필요에 따라 2D 이미지와 3D 점군의 가중치를 조절한다.", "inLanguage": "ko", "url": "https://vla-gallery.is-a.dev/ko/m/ac-dit/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "AC-DiT", "creator": {"@type": "Organization", "name": "Peking University·Nanjing University·CUHK·Beijing Academy of Artificial Intelligence(BAAI)"}}, "citation": {"@type": "ScholarlyArticle", "name": "AC-DiT: Adaptive Coordination Diffusion Transformer for Mobile Manipulation", "url": "https://arxiv.org/abs/2507.01961"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 갤러리", "item": "https://vla-gallery.is-a.dev/ko/"}, {"@type": "ListItem", "position": 2, "name": "모델 목록", "item": "https://vla-gallery.is-a.dev/ko/m/"}, {"@type": "ListItem", "position": 3, "name": "AC-DiT", "item": "https://vla-gallery.is-a.dev/ko/m/ac-dit/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ko/">VLA 갤러리</a><a href="/ko/m/">모델 목록</a><a href="/ko/#gallery">갤러리</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/ac-dit/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/ac-dit/" hreflang="ko" aria-current="true">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/ac-dit/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/ac-dit/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ko/">VLA 갤러리</a> / <a href="/ko/m/">모델 목록</a> / 모바일 매니퓰레이션</p>
+<h1>AC-DiT</h1>
+<p class="by">Peking University·Nanjing University·CUHK·Beijing Academy of Artificial Intelligence(BAAI) · 2025-07</p>
+<p class="kv"><span>VLA</span><span>모바일 매니퓰레이션</span><span>미공개</span><span>diffusion</span></p>
+<p class="sum">베이스 행동만으로 먼저 학습한 경량 모빌리티 헤드의 잠재 표현을 전신 행동 생성의 조건으로 넣고(mobility-to-body), 단계별 필요에 따라 2D 이미지와 3D 점군의 가중치를 조절한다.</p>
+<div class="acts"><a class="pri" href="/ko/#m-ac-dit">갤러리에서 구조도 보기</a><a href="https://arxiv.org/abs/2507.01961" rel="noopener">논문 ↗</a></div>
+<h2>논문</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2507.01961" rel="noopener">AC-DiT: Adaptive Coordination Diffusion Transformer for Mobile Manipulation</a><small>arXiv 2507.01961</small></p>
+<h2>개요</h2>
+<dl><dt>분류</dt><dd>모바일 매니퓰레이션</dd><dt>유형</dt><dd>VLA</dd><dt>발표</dt><dd>2025-07</dd><dt>기관</dt><dd>Peking University·Nanjing University·CUHK·Beijing Academy of Artificial Intelligence(BAAI)</dd><dt>가중치 공개</dt><dd>아니오</dd><dt>파라미터</dt><dd>미공개 (모빌리티 헤드 170M; 본 DiT는 공식 코드상 RDT-1B 구성)</dd></dl>
+<h2>구조</h2>
+<dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>SigLIP so400m (손목·가슴 RGB 3시점) + Lift3D식 점군 토크나이저(LoRA)</dd><dt>액션 헤드</dt><dd>전신 행동 diffusion DiT 헤드 (DDPM, 추론 5스텝·코드) (diffusion)</dd><dt>청크</dt><dd>2스텝 (시뮬)</dd><dt>제어 주기</dt><dd>미공개 (실 시연 30 fps)</dd><dt>구조 원문 요약</dt><dd>SigLIP(so400m) 이미지·텍스트 인코더 + Lift3D식 점군 토크나이저(LoRA) → 언어-시각 코사인 유사도로 2D·3D 토큰 가중 → DiT 액션 헤드(공식 코드: RDT-1B 구성 hidden 2048·28층, RDT-1B 초기화); 사전학습 모빌리티 헤드(DiT 170M)의 잠재 베이스 표현을 조건으로 전신 행동 생성; 베이스 속도(절대) + 팔 관절(시뮬은 상대 변화), 청크 2(시뮬), DDPM 추론 5스텝(코드)</dd></dl>
+<h2>학습</h2>
+<dl><dt>사전학습 가속기</dt><dd>해당 없음 (공식 코드는 외부 RDT-1B 가중치로 초기화)</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>논문 미기재(모빌리티 헤드는 &#x27;몇 에폭&#x27; 선학습). 공식 코드(ManiSkill-HAB): 모빌리티 헤드 30,000 스텝·GPU당 배치 24·lr 1e-4 → AC-DiT 20,000 스텝·GPU당 배치 16·lr 1e-5·bf16, 두 스크립트 모두 GPU 8개 설정(기종·시간 미기재)</dd><dt>데이터 종류</dt><dd>시뮬레이션·합성 / 실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>ManiSkill-HAB 과제당 성공 시연 1,000개(RL 에이전트 생성); RoboTwin 과제당 1,000개(모션 플래닝); 실로봇 과제당 100개(30 fps)</dd><dt>주요 데이터셋</dt><dd>ManiSkill-HAB 생성 시연; RoboTwin; 자체 Cobot Magic 시연</dd><dt>태스크·평가</dt><dd>ManiSkill-HAB 7개 서브과제 평균 55.6%(표 1; 본문 48.7%) vs RDT 42.9%·DP 28.8%·3DP 21.6%; RoboTwin 양팔 6과제 평균 90.1(표 2); 실 4개 장기 과제(Cucumber in Basket·Store Breads·Hang Towel·Clean Table) 17회 평가, ACT·π0 대비 최고</dd><dt>로봇</dt><dd>실 Agilex Cobot Magic(Piper 팔 4개 + Tracer 바퀴형 베이스; 손목·가슴 Orbbec Dabai 3대 + 머리 RealSense L515); 시뮬 ManiSkill-HAB(Fetch, MS-HAB 기준)·RoboTwin 고정 양팔</dd></dl>
+<h2>추론</h2>
+<dl><dt>추론 장치·속도</dt><dd>미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>미공개</dd></dl>
+<h2>강화학습 · 베이스</h2>
+<dl><dt>강화학습</dt><dd>일부 (RL 데이터 활용) · ManiSkill-HAB 학습 시연을 RL 에이전트(열기·닫기 PPO, 집기·놓기 SAC)로 생성; AC-DiT 자체는 모방학습</dd><dt>강화학습 근거</dt><dd><a href="https://arxiv.org/abs/2507.01961" rel="noopener">https://arxiv.org/abs/2507.01961</a></dd><dt>베이스 제어</dt><dd>바퀴형 (베이스 속도·자세 직접 출력) · 정책이 베이스 속도(절대값)를 팔 관절 행동과 함께 직접 출력</dd></dl>
+<h2>비고</h2>
+<dl><dt>핵심 특징</dt><dd>베이스 행동만으로 먼저 학습한 경량 모빌리티 헤드의 잠재 표현을 전신 행동 생성의 조건으로 넣고(mobility-to-body), 단계별 필요에 따라 2D 이미지와 3D 점군의 가중치를 조절한다. ManiSkill-HAB에서 RDT·DP·3DP보다 높았고 실 Cobot Magic 4개 장기 과제에서 ACT·π0를 앞섰다.</dd><dt>비고</dt><dd>논문에 학습·추론 하드웨어와 총 파라미터 미기재; RDT-1B 초기화·스텝·배치는 공식 GitHub 스크립트 기준. ManiSkill-HAB 평균이 표(55.6)와 본문(48.7%)에서 불일치. 코드 2026-02 공개, 학습된 AC-DiT 가중치 미제공. NeurIPS 2025. 기반: RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (arXiv 2410.07864) — RDT 프레임워크(교차 어텐션 조건 주입)를 따르고 공식 코드가 RDT-1B 가중치로 초기화</dd><dt>검증</dt><dd>확인</dd></dl>
+<section class="rel"><h2>같은 분류의 모델</h2><ul><li><a href="/ko/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/ko/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/ko/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/ko/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/ko/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/ko/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/ko/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/ko/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/ko/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/ko/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/ko/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/ko/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/ko/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/ko/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/ko/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/ko/m/momanipvla/"><small>← 이전 모델</small>MoManipVLA</a><a class="nx" href="/ko/m/sg-vla/"><small>다음 모델 →</small>SG-VLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ko/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

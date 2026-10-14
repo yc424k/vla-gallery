@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qwen-RobotNav — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Qwen-RobotNav (Qwen Team, 2026-06) — タスクモードと観測コンテキスト(トークン予算・時間減衰・カメラ重み)をパラメータ化して学習時にランダム化し、1つのモデルがVLN・物体探索・追跡・自動運転を上位エージェントプランナーのツールとして実行する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/qwen-robotnav/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/qwen-robotnav/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/qwen-robotnav/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Qwen-RobotNav — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Qwen-RobotNav (Qwen Team, 2026-06) — タスクモードと観測コンテキスト(トークン予算・時間減衰・カメラ重み)をパラメータ化して学習時にランダム化し、1つのモデルがVLN・物体探索・追跡・自動運転を上位エージェントプランナーのツールとして実行する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Qwen-RobotNav — 構造・バックボーンLLM・学習・推論メモリ", "description": "Qwen-RobotNav (Qwen Team, 2026-06) — タスクモードと観測コンテキスト(トークン予算・時間減衰・カメラ重み)をパラメータ化して学習時にランダム化し、1つのモデルがVLN・物体探索・追跡・自動運転を上位エージェントプランナーのツールとして実行する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Qwen-RobotNav", "creator": {"@type": "Organization", "name": "Qwen Team"}}, "citation": {"@type": "ScholarlyArticle", "name": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System", "url": "https://arxiv.org/abs/2606.18112"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Qwen-RobotNav", "item": "https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/qwen-robotnav/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/qwen-robotnav/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>Qwen-RobotNav</h1>
+<p class="by">Qwen Team · 2026-06</p>
+<p class="kv"><span>VLA</span><span>ナビゲーション</span><span>4B・8B</span><span>回帰</span></p>
+<p class="sum">タスクモードと観測コンテキスト(トークン予算・時間減衰・カメラ重み)をパラメータ化して学習時にランダム化し、1つのモデルがVLN・物体探索・追跡・自動運転を上位エージェントプランナーのツールとして実行する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-qwen-robotnav">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2606.18112" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2606.18112" rel="noopener">Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System</a><small>arXiv 2606.18112</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2026-06</dd><dt>機関</dt><dd>Qwen Team</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>4B・8B (Qwen3-VLベース; 総量の記述なし、アブストラクトは2B–8Bのスケーリングに言及)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen3-VL-8B (4Bバリアントを含む)</dd><dt>ビジョンエンコーダ</dt><dd>SigLIP-2 ViT (Qwen3-VL内蔵、DeepStack)</dd><dt>アクションヘッド</dt><dd>4層MLPウェイポイント回帰 (hidden 512) (回帰)</dd><dt>チャンク</dt><dd>ウェイポイント8個</dd><dt>制御周期</dt><dd>4.9–5.1 Hz (Go2実機デプロイ)</dd><dt>構造の原文要約</dt><dd>Qwen3-VL(4B・8B; SigLIP-2 ViT・2D-RoPE動的解像度・DeepStack) + 4層MLP行動ヘッド(hidden 512) → ウェイポイント8個(x,y,θ)を連続回帰(MSE); タスクモード(VLN・PointNav・ObjNav・Tracking)と視覚トークン予算(2048–4096)・時間減衰・カメラ重み・フレームサンプリングを推論時に調整、上位プランナーがツールのように呼び出す; 実配備で約5 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100 (枚数非公開)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>8B グローバルバッチ256、lr 2e-5(ViT・LLM)・1e-4(行動ヘッド); ステップ・エポックは非公開</dd><dt>GPU・TPU時間</dt><dd>2,816 (明示 · H100時間 (&quot;a total of 2,816 H100 GPU hours&quot;、8Bモデル))</dd><dt>ファインチューニング</dt><dd>該当なし (Qwen3-VLから単一段階のエンドツーエンド学習)</dd><dt>データ種類</dt><dd>シミュレーション・合成 / 実ロボットの自律走行ログ / Web視覚言語</dd><dt>データ規模</dt><dd>15.6Mサンプル(軌跡85%・VL 15%): 指示追従 5.63M(R2R 1,491K・RxR 4,140K)、PointNav 984K、ObjectNav 2,000K、追跡 1,486K(EVT-Bench)、自動運転 約3.2M(nuScenes 78K・OpenScene 3,138K)、動画生成器データ 40K; VL一般 約1.0M + ナビ推論 約873K</dd><dt>主要データセット</dt><dd>VLN-CE R2R・RxR; Matterport3D・HM3D(Habitat); EVT-Bench; nuScenes; OpenScene(NAVSIM); NavGPT-2方式の推論データ; VQAv2・RefCOCOなど一般VL</dd><dt>タスク・評価</dt><dd>R2R-CE val-unseen SR 72.1%・SPL 66.6(8Bパノラマ; 単眼8B 65.7%・4B 66.9%)、RxR-CE SR 76.5%・SPL 65.7; HM3Dv2 ObjectNav SR 75.6%(4B); EVT-Bench TR 90.0%(4B); NAVSIM PDMS 91.4(4B); エージェントEQA HM-EQA 76.7%(Qwen3.6-Plusプランナー); 実ロボットGo2ゼロショットで21.78 m往復VLN</dd><dt>ロボット</dt><dd>Unitree Go2四足(内蔵の低解像度カメラのみ使用)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>Unitree Go2(4Bモデル): リモートサーバー平均196 ms(5.1 Hz)、Jetson Thorオンデバイス(FP8・TensorRT)204 ms(4.9 Hz)(論文); READMEはJetson Thorオンデバイス196 ms(5.1 Hz)と記載; メモリは非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>16 GB</dd><dt>実行場所</dt><dd>オンボード Jetson Thor (FP8・TensorRT) またはリモートサーバー</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 軌跡MSE + VL次トークン教師あり学習(軌跡:VL 85:15 の共同学習)</dd><dt>ベース制御</dt><dd>四足歩行 (ウェイポイント → 追従制御器) · モデルがウェイポイント8個(x,y,θ)を出力 → Go2が追従(低レベル制御器は記載なし); 上位プランナーがタスクモード・文脈設定を変えて呼び出し</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>タスクモードと観測コンテキスト(トークン予算・時間減衰・カメラ重み)をパラメータ化して学習時にランダム化し、1つのモデルがVLN・物体探索・追跡・自動運転を上位エージェントプランナーのツールとして実行する。15.6Mサンプルで学習した8BがR2R-CE SR 72.1%・RxR-CE SR 76.5%(パノラマ)を達成し、Go2でJetson Thorオンデバイス4.9 Hzでゼロショット走行した。</dd><dt>備考</dt><dd>README: &#x27;There is currently no plan to release the model weights&#x27;。遅延値が食い違う: 論文はリモート196 ms・オンデバイス204 ms、READMEはオンデバイス196 ms。単眼結果(R2R SR 65.7%)はLightNav-0比較表と一致。「実ロボット自律走行ログ」は車両走行データ(nuScenes・OpenScene)。要旨の2Bバリアントは結果表にない。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/qwen-vla/"><small>← 前のモデル</small>Qwen-VLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

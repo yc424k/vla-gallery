@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SG-VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="SG-VLA (Lambda, Inc., 2026-03) — 将还原机器人全局位姿·关节构型·抓取成功·目标物体位姿·分割掩码的辅助解码器与VLA分阶段联合训练，强化空间grounding。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/sg-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/sg-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/sg-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/sg-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/sg-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/sg-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="SG-VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="SG-VLA (Lambda, Inc., 2026-03) — 将还原机器人全局位姿·关节构型·抓取成功·目标物体位姿·分割掩码的辅助解码器与VLA分阶段联合训练，强化空间grounding。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/sg-vla/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "SG-VLA — 架构、骨干LLM、训练与推理内存", "description": "SG-VLA (Lambda, Inc., 2026-03) — 将还原机器人全局位姿·关节构型·抓取成功·目标物体位姿·分割掩码的辅助解码器与VLA分阶段联合训练，强化空间grounding。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/sg-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "SG-VLA", "creator": {"@type": "Organization", "name": "Lambda, Inc.·UC San Diego"}}, "citation": {"@type": "ScholarlyArticle", "name": "SG-VLA: Learning Spatially-Grounded Vision-Language-Action Models for Mobile Manipulation", "url": "https://arxiv.org/abs/2603.22760"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "SG-VLA", "item": "https://vla-gallery.is-a.dev/zh/m/sg-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/sg-vla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/sg-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/sg-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/sg-vla/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 移动操作</p>
+<h1>SG-VLA</h1>
+<p class="by">Lambda, Inc.·UC San Diego · 2026-03</p>
+<p class="kv"><span>VLA</span><span>移动操作</span><span>1.3B</span><span>离散token</span></p>
+<p class="sum">将还原机器人全局位姿·关节构型·抓取成功·目标物体位姿·分割掩码的辅助解码器与VLA分阶段联合训练，强化空间grounding。</p>
+<div class="acts"><a class="pri" href="/zh/#m-sg-vla">在图库中查看架构图</a><a href="https://arxiv.org/abs/2603.22760" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2603.22760" rel="noopener">SG-VLA: Learning Spatially-Grounded Vision-Language-Action Models for Mobile Manipulation</a><small>arXiv 2603.22760</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>移动操作</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2026-03</dd><dt>机构</dt><dd>Lambda, Inc.·UC San Diego</dd><dt>权重公开</dt><dd>未核实</dd><dt>参数</dt><dd>1.3B (基于Qwen2.5-0.5B的Prismatic VLM；可选flow专家100M另计)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Qwen2.5-0.5B · Prismatic VLM配置</dd><dt>视觉编码器</dt><dd>DINOv2 + SigLIP (Prismatic；RGB·深度多视角)</dd><dt>动作头</dt><dd>离散动作token + 辅助解码器5种；可选flow matching专家100M (10步) (离散token)</dd><dt>动作块</dt><dd>未公开（token路径）/ flow头 8步中执行2步</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Prismatic VLM(DINOv2 + SigLIP融合编码器, Qwen2.5-0.5B LLM);输入头部·手部多视角RGB·深度·过去4步历史;将13维动作(底盘位姿ΔX 3·躯干高度1·手臂关节Δq 7·夹爪2)预测为离散动作token;可选flow matching专家100M(动作块8中执行2,去噪10步);联合训练5种辅助解码器</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用 (从预训练Prismatic VLM直接用任务数据训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>A100 8张，3阶段(解码器适配→联合精炼→冻结VLM后单独训练动作头)，6个子任务10个epoch(分割解码器模型pick·place为5个epoch)·全局批量512·Adam lr 2e-5固定，时间未公开</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>44K回合·1.4M transition</dd><dt>主要数据集</dt><dd>ManiSkill-HAB数据生成流水线(TidyHouse·PrepareGroceries·SetTable)</dd><dt>任务·评估</dt><dd>ManiSkill-HAB(TidyHouse·PrepareGroceries·SetTable → Pick·Place·Open·Close)每任务30次: 平均0.73(无辅助任务0.60,简单联合训练0.51,flow头0.69;OpenVLA 0.04,多视角+深度OpenVLA 0.32);无真机实验</dd><dt>机器人</dt><dd>ManiSkill-HAB仿真移动操作机器人(按MS-HAB为Fetch;SG-VLA论文未注明机器人名),底盘·躯干·7关节手臂·夹爪13维控制</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>2.6 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>部分 (利用RL数据) · 训练数据由ManiSkill-HAB生成流程(RL策略演示 + 基于规则的过滤)生成；策略本身为模仿学习</dd><dt>强化学习依据</dt><dd><a href="https://arxiv.org/abs/2412.13211" rel="noopener">https://arxiv.org/abs/2412.13211</a></dd><dt>底盘控制</dt><dd>轮式 (直接输出底盘速度/位姿) · 策略将底盘位姿变化(ΔX 3维)与躯干·手臂·夹爪一起作为13维动作直接输出(仿真)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将还原机器人全局位姿·关节构型·抓取成功·目标物体位姿·分割掩码的辅助解码器与VLA分阶段联合训练，强化空间grounding。ManiSkill-HAB家务任务平均成功率0.73，比无辅助任务的多视角·深度模型（0.60）高22%，大幅超过OpenVLA（0.04）。</dd><dt>备注</dt><dd>仅仿真(结论中将真实世界应用列为未来工作)。论文未提及代码·权重公开，检索也未找到仓库。历史长度的表述&#x27;4 timesteps&#x27;与&#x27;4 actions&#x27;混用。训练时长·推理速度未公开。算力由Lambda支持。基础：Prismatic VLMs: Investigating the Design Space of Visually-Conditioned Language Models (arXiv 2402.07865) — 以预训练Prismatic VLM为主干</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/zh/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/zh/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/zh/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/zh/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/zh/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/zh/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/zh/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/zh/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/zh/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/zh/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/zh/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/zh/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/zh/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/zh/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/ac-dit/"><small>← 上一个</small>AC-DiT</a><a class="nx" href="/zh/m/panovla/"><small>下一个 →</small>PanoVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

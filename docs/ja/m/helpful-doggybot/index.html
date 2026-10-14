@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helpful DoggyBot — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Helpful DoggyBot (Stanford University, 2024-09) — 前面下部に1-DoFグリッパを付けたGo2に、シミュレーションRLで学習した一人称深度ベースの俊敏な制御器と事前学習VLMによる認識・比例制御を組み合わせたモジュール型の屋内物体取ってくるシステムである。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/helpful-doggybot/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/helpful-doggybot/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/helpful-doggybot/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/helpful-doggybot/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Helpful DoggyBot — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Helpful DoggyBot (Stanford University, 2024-09) — 前面下部に1-DoFグリッパを付けたGo2に、シミュレーションRLで学習した一人称深度ベースの俊敏な制御器と事前学習VLMによる認識・比例制御を組み合わせたモジュール型の屋内物体取ってくるシステムである。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Helpful DoggyBot — 構造・バックボーンLLM・学習・推論メモリ", "description": "Helpful DoggyBot (Stanford University, 2024-09) — 前面下部に1-DoFグリッパを付けたGo2に、シミュレーションRLで学習した一人称深度ベースの俊敏な制御器と事前学習VLMによる認識・比例制御を組み合わせたモジュール型の屋内物体取ってくるシステムである。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Helpful DoggyBot", "creator": {"@type": "Organization", "name": "Stanford University·UC San Diego"}}, "citation": {"@type": "ScholarlyArticle", "name": "Helpful DoggyBot: Open-World Object Fetching using Legged Robots and Vision-Language Models", "url": "https://arxiv.org/abs/2410.00231"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Helpful DoggyBot", "item": "https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/helpful-doggybot/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/helpful-doggybot/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/helpful-doggybot/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / モバイルマニピュレーション</p>
+<h1>Helpful DoggyBot</h1>
+<p class="by">Stanford University·UC San Diego · 2024-09</p>
+<p class="kv"><span>기타</span><span>モバイルマニピュレーション</span><span>非公開</span><span>RL方策</span></p>
+<p class="sum">前面下部に1-DoFグリッパを付けたGo2に、シミュレーションRLで学習した一人称深度ベースの俊敏な制御器と事前学習VLMによる認識・比例制御を組み合わせたモジュール型の屋内物体取ってくるシステムである。</p>
+<div class="acts"><a class="pri" href="/ja/#m-helpful-doggybot">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2410.00231" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.00231" rel="noopener">Helpful DoggyBot: Open-World Object Fetching using Legged Robots and Vision-Language Models</a><small>arXiv 2410.00231</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>モバイルマニピュレーション</dd><dt>タイプ</dt><dd>기타</dd><dt>発表</dt><dd>2024-09</dd><dt>機関</dt><dd>Stanford University·UC San Diego</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>非公開</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>深度CNN+GRU(制御器) · Florence-2・SAM2 · GroundingDINO・MobileSAM・Cutie(認識)</dd><dt>アクションヘッド</dt><dd>RL方策の関節目標 → Unitree PD (RL方策)</dd><dt>チャンク</dt><dd>なし (1ステップ)</dd><dt>制御周期</dt><dd>50 Hz (深度 10 Hz)</dd><dt>構造の原文要約</dt><dd>学習制御器: 深度CNN+GRU推定器(ROA蒸留) + RL方策 → 関節目標(PDゲインと共に送信) 50 Hz、深度エンコーダ10 Hz; 指令 = 並進速度・角速度・ピッチ; 上位はFlorence-2・SAM2(天井カメラ)・GroundingDINO・MobileSAM・Cutieによる認識 + 比例制御</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>シミュレーションRL(IsaacGym Preview 4): 特権(oracle)方策 6,144ロボット・400地形 20k iter 10時間(RTX 4090 1枚)、深度蒸留 384ロボット 5k iter 6時間; VLMは事前学習モデルをそのまま使用</dd><dt>データ種類</dt><dd>シミュレーション・合成</dd><dt>データ規模</dt><dd>シミュレーションRLロールアウト(6,144・384並列ロボット); 実データなし</dd><dt>主要データセット</dt><dd>なし(シミュレーション地形400個)</dd><dt>タスク・評価</dt><dd>実環境の未学習2か所での初回試行成功率(各10回): ベッド+おもちゃ 60%、ソファ+瓶 60%、床+ボール 70%; シミュレーション指標は200回平均</dd><dt>ロボット</dt><dd>Unitree Go2四足(12-DoF) + 下部前面1-DoFグリッパー(Dynamixel)、一人称RealSense D435、天井魚眼カメラ</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>制御器: オンボードJetson(Orin) 50 Hz、深度エンコーダ10 Hz; VLM: 別のワークステーション(SAM2追跡10 Hz); 把持用認識(GroundingDINO・MobileSAM 0.2 Hz、Cutie 10 Hz)はオンボード(on-device)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>オンボードJetson(制御器) + ワークステーション(VLM)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>使用 (RL制御器の学習) · 唯一の学習方策である低レベル深度制御器をPPO(特権教師)→ROA深度生徒で学習; 上位の認識・指令は学習なし</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/abs/2410.00231" rel="noopener">https://arxiv.org/abs/2410.00231</a></dd><dt>ベース制御</dt><dd>四足歩行 (指令・潜在 → RL歩行制御器) · VLMの検出位置から比例制御器が線速度(0.8 m/s)・ヨー・ピッチ指令を生成 → 深度ベースRL方策が関節を制御</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>前面下部に1-DoFグリッパを付けたGo2に、シミュレーションRLで学習した一人称深度ベースの俊敏な制御器と事前学習VLMによる認識・比例制御を組み合わせたモジュール型の屋内物体取ってくるシステムである。実データの収集・学習なしで初見の家2軒において、ベッドの上に登っておもちゃを取ってくるなど60–70%の成功率を示した。</dd><dt>備考</dt><dd>学習されるのは低レベルRL制御器のみで、検出・追跡は事前学習モデル、移動・把持指令はルールベースの比例制御(並進速度0.8 m/s固定); 天井カメラへの依存を限界として明記; 自然言語での物体指定はFlorence-2プロンプト; コード公開(GitHub)、重みは非公開。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/ja/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/ja/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/ja/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/ja/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/ja/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/ja/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/ja/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/ja/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/ja/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/ja/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/ja/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/ja/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/ja/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/vbc/"><small>← 前のモデル</small>VBC</a><a class="nx" href="/ja/m/quar-vla/"><small>次のモデル →</small>QUAR-VLA (QUART)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

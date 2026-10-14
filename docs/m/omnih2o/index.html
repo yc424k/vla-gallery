@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniH2O — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="OmniH2O (Carnegie Mellon University, 2024-06) — A tracker for whole-body teleoperation via VR·RGB keypoints, and a platform for training autonomous policies…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/omnih2o/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/omnih2o/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/omnih2o/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/omnih2o/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/omnih2o/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/omnih2o/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="OmniH2O — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="OmniH2O (Carnegie Mellon University, 2024-06) — A tracker for whole-body teleoperation via VR·RGB keypoints, and a platform for training autonomous policies…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/omnih2o/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "OmniH2O — Architecture, Backbone LLM, Training & Inference Memory", "description": "OmniH2O (Carnegie Mellon University, 2024-06) — A tracker for whole-body teleoperation via VR·RGB keypoints, and a platform for training autonomous policies…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/omnih2o/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "OmniH2O", "creator": {"@type": "Organization", "name": "Carnegie Mellon University·Shanghai Jiao Tong University"}}, "citation": {"@type": "ScholarlyArticle", "name": "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning", "url": "https://arxiv.org/abs/2406.08858"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "OmniH2O", "item": "https://vla-gallery.is-a.dev/m/omnih2o/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/omnih2o/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/omnih2o/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/omnih2o/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/omnih2o/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid whole-body controllers</p>
+<h1>OmniH2O</h1>
+<p class="by">Carnegie Mellon University·Shanghai Jiao Tong University · 2024-06</p>
+<p class="kv"><span>VA</span><span>Humanoid whole-body controllers</span><span>Not disclosed</span><span>RL policy</span></p>
+<p class="sum">A tracker for whole-body teleoperation via VR·RGB keypoints, and a platform for training autonomous policies from the collected demonstrations.</p>
+<div class="acts"><a class="pri" href="/#m-omnih2o">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2406.08858" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2406.08858" rel="noopener">OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning</a><small>arXiv 2406.08858</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid whole-body controllers</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-06</dd><dt>Organization</dt><dd>Carnegie Mellon University·Shanghai Jiao Tong University</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Not disclosed (MLP [512, 256, 128])</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Joint targets (RL policy)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>50 Hz (PD 200 Hz)</dd><dt>Architecture (original summary)</dt><dd>MLP [512, 256, 128] (GRU·LSTM student variants tested), student 25-step history; VR or RGB keypoint input → joint targets, policy 50 Hz·PD 200 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed (Isaac Gym preview 4, repo)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>4096 env (repo training command)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Motion capture / real-robot teleoperation</dd><dt>Data scale</dt><dd>Retargeted·augmented AMASS 14k sequences (sim evaluation set); OmniH2O-6 real teleoperation demonstrations totaling 40 min (8,535~18,436 frames per task)</dd><dt>Main datasets</dt><dd>AMASS (retargeting · augmentation), OmniH2O-6</dd><dt>Tasks &amp; evaluation</dt><dd>Sim tracking metrics; real autonomous 6 tasks (OmniH2O-6, Diffusion Policy·ResNet BC)</dd><dt>Robot</dt><dd>Unitree H1 + hands</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Policy 50 Hz, PD controller 200 Hz</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (RL controller training) · RL teacher (privileged information) → DAgger student distillation</dd><dt>Base control</dt><dd>Humanoid legged (RL policy drives joints directly) · Whole-body RL policy takes keypoint/joystick goals and outputs joint targets including legs (joystick forward/backward walking, &#x27;Walk forward 0.5m&#x27;)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A tracker for whole-body teleoperation via VR·RGB keypoints, and a platform for training autonomous policies from the collected demonstrations. Also demonstrated autonomous behavior linked with GPT-4o.</dd><dt>Notes</dt><dd>README commands also include short_history_length 0/5/50 variants. Code CC BY-NC 4.0, checkpoints unverified. arXiv v1 2024-06-13, CoRL 2024. Data hours null because given in minutes (40 minutes). Verification covered only repo values (Isaac Gym·env·license·history).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/leverb-a/"><small>← Previous</small>LeVERB-A</a><a class="nx" href="/m/hover/"><small>Next →</small>HOVER</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

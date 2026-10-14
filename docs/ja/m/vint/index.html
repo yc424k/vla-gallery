@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ViNT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="ViNT (UC Berkeley, 2023-06) — GNMデータ混合を拡張したマルチロボット走行データで31M Transformer方策を学習し、目標トークンをGPS座標・経路指令など他の目標モダリティ用のsoft promptに置き換えて適応する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/vint/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vint/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vint/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vint/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vint/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vint/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ViNT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="ViNT (UC Berkeley, 2023-06) — GNMデータ混合を拡張したマルチロボット走行データで31M Transformer方策を学習し、目標トークンをGPS座標・経路指令など他の目標モダリティ用のsoft promptに置き換えて適応する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/vint/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ViNT — 構造・バックボーンLLM・学習・推論メモリ", "description": "ViNT (UC Berkeley, 2023-06) — GNMデータ混合を拡張したマルチロボット走行データで31M Transformer方策を学習し、目標トークンをGPS座標・経路指令など他の目標モダリティ用のsoft promptに置き換えて適応する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/vint/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "ViNT", "creator": {"@type": "Organization", "name": "UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "ViNT: A Foundation Model for Visual Navigation", "url": "https://arxiv.org/abs/2306.14846"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "ViNT", "item": "https://vla-gallery.is-a.dev/ja/m/vint/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vint/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vint/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vint/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vint/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>ViNT</h1>
+<p class="by">UC Berkeley · 2023-06</p>
+<p class="kv"><span>VA</span><span>ナビゲーション</span><span>31M</span><span>回帰</span></p>
+<p class="sum">GNMデータ混合を拡張したマルチロボット走行データで31M Transformer方策を学習し、目標トークンをGPS座標・経路指令など他の目標モダリティ用のsoft promptに置き換えて適応する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-vint">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2306.14846" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2306.14846" rel="noopener">ViNT: A Foundation Model for Visual Navigation</a><small>arXiv 2306.14846</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2023-06</dd><dt>機関</dt><dd>UC Berkeley</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>31M (方策; 拡散subgoalモデル318Mは別)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>EfficientNet-B0 (観測 / 観測+目標 early fusion)</dd><dt>アクションヘッド</dt><dd>ウェイポイント5個 + 時間的距離のMLP回帰 (回帰)</dd><dt>チャンク</dt><dd>ウェイポイント5個</dd><dt>制御周期</dt><dd>4 Hz</dd><dt>構造の原文要約</dt><dd>EfficientNet-B0観測エンコーダ + 観測・目標チャネル結合(early fusion)の目標エンコーダ → デコーダ型Transformer 4層・4ヘッド(512次元、過去5+現在の観測トークン + 目標トークン) → MLP: 相対ウェイポイント5個 + 時間的距離; 85×64 RGB; 4 Hzで実行・PD追従; 探索時は318M画像拡散モデルがsubgoalを提案 + トポロジカルグラフ</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>V100 8枚 (表6、代表構成); 拡散モデルはTPU v4-8ボード</dd><dt>事前学習期間</dt><dd>30時間 (方策); 拡散モデル 30時間</dd><dt>事前学習ステップ・バッチ</dt><dd>30エポック · バッチ300 (方策); 拡散 250kステップ · バッチ128</dd><dt>GPU・TPU時間</dt><dd>240 (換算 · V100 8枚 × 30時間 (表6「代表構成」の脚注; 拡散モデルTPU v4-8 × 30時間は別))</dd><dt>ファインチューニング</dt><dd>新環境・エンボディメント・目標モダリティ(GPS・経路命令)への適応: lr 1e-4・5エポック、1時間前後のデータ; GPU・時間は非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / 実ロボットの自律走行ログ</dd><dt>データ規模</dt><dd>表7: データセット11個の保有160hのうち学習に80h使用; ロボットプラットフォーム8種(本文)</dd><dt>主要データセット</dt><dd>RECON; GoStanford; SCAND; TartanDrive; NeBula; SACSoN; BDD; CoryHall; Berkeley; Seattle</dd><dt>タスク・評価</dt><dd>無方向の目標到達成功率 屋内 0.94・屋外 1.00 (End-to-End BC 0.72・0.44); 衛星誘導探索 成功 1.00・SPL 0.94 (ViKiNG 0.77・0.68); 適応成功率 画像 0.82・位置 0.89・経路指令 0.72</dd><dt>ロボット</dt><dd>Vizbot・LoCoBot・Clearpath Jackal車輪型、Unitree Go1四足 (本文はドローンを含む5種に言及); Go1・LoCoBotは学習データに含まれない</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>4 Hzで実行、PD制御器がウェイポイントを追従 (論文); READMEのデプロイ例はLoCoBot + Jetson Orin Nano; 遅延は非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0.1 GB</dd><dt>実行場所</dt><dd>オンボード Jetson Orin Nano (LoCoBot、README)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 最尤模倣学習のみ (RLはベースラインにのみ登場)</dd><dt>ベース制御</dt><dd>車輪型·四足歩行 (ウェイポイント → 追従制御器) · 方策がウェイポイント5個を出力 → PD制御器が4 Hzで追従し速度指令を生成; ロボットには低レベル速度追従制御器のみ必要</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>GNMデータ混合を拡張したマルチロボット走行データで31M Transformer方策を学習し、目標トークンをGPS座標・経路指令など他の目標モダリティ用のsoft promptに置き換えて適応する。拡散subgoal提案とグラフ探索を組み合わせてキロメートル規模の探索を行い、学習データになかったGo1四足・LoCoBotでもゼロショットで動作した。</dd><dt>備考</dt><dd>表6の学習リソースは「代表構成」で、複数のGPU構成を使ったと脚注に明記。データ規模の表記が異なる(要旨&#x27;hundreds of hours&#x27;、本文100時間以上、表7キャプション150時間以上、合計160h/使用80h)。公開vint.yamlは100エポック・バッチ256で論文と異なる。重みをGoogle Driveで公開。CoRL 2023。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/gnm/"><small>← 前のモデル</small>GNM</a><a class="nx" href="/ja/m/nomad/"><small>次のモデル →</small>NoMaD</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

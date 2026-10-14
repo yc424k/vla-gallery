@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="OpenVLA (Stanford, 2024-06) — An open 7B VLA trained on 970k OXE trajectories; ECoT·TraceVLA·OpenVLA-OFT·UniVLA and others build on this stack.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/openvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/openvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/openvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/openvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/openvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/openvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="OpenVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="OpenVLA (Stanford, 2024-06) — An open 7B VLA trained on 970k OXE trajectories; ECoT·TraceVLA·OpenVLA-OFT·UniVLA and others build on this stack.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/openvla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "OpenVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "OpenVLA (Stanford, 2024-06) — An open 7B VLA trained on 970k OXE trajectories; ECoT·TraceVLA·OpenVLA-OFT·UniVLA and others build on this stack.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/openvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "OpenVLA", "creator": {"@type": "Organization", "name": "Stanford·UC Berkeley·TRI·Google DeepMind·Physical Intelligence·MIT"}}, "citation": {"@type": "ScholarlyArticle", "name": "OpenVLA: An Open-Source Vision-Language-Action Model", "url": "https://arxiv.org/abs/2406.09246"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "OpenVLA", "item": "https://vla-gallery.is-a.dev/m/openvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/openvla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/openvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/openvla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/openvla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>OpenVLA</h1>
+<p class="by">Stanford·UC Berkeley·TRI·Google DeepMind·Physical Intelligence·MIT · 2024-06</p>
+<p class="kv"><span>VLA</span><span>Autoregressive &amp; latent-action VLA</span><span>7B</span><span>discrete tokens</span></p>
+<p class="sum">An open 7B VLA trained on 970k OXE trajectories; ECoT·TraceVLA·OpenVLA-OFT·UniVLA and others build on this stack.</p>
+<div class="acts"><a class="pri" href="/#m-openvla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2406.09246" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2406.09246" rel="noopener">OpenVLA: An Open-Source Vision-Language-Action Model</a><small>arXiv 2406.09246</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2024-06</dd><dt>Organization</dt><dd>Stanford·UC Berkeley·TRI·Google DeepMind·Physical Intelligence·MIT</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>7B (paper)/7.5B (README); Table 1 Full FT 7,188.1M; vision 600M + Llama 2 7B</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Llama 2 7B · Prismatic-7B</dd><dt>Vision encoder</dt><dd>SigLIP + DINOv2 (600M)</dd><dt>Action head</dt><dd>7 discrete tokens of 256 bins (discrete tokens)</dd><dt>Chunk</dt><dd>None (1 step)</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Prismatic-7B (SigLIP+DINOv2 600M → 2-layer MLP → Llama 2 7B); 256-bin discrete tokens per action dimension (last 256 of vocabulary), no chunks, 224×224 input</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>64 × A100</dd><dt>Pretraining duration</dt><dd>14 days (paper)/15 days (project page)</dd><dt>Pretraining steps &amp; batch</dt><dd>27 epochs, batch 2048, fixed lr 2e-5 (public checkpoint name is step-295000-epoch-40)</dd><dt>GPU/TPU-hours</dt><dd>21,500 (Stated · A100-hours)</dd><dt>Fine-tuning</dt><dd>LoRA r=32 (1.4% of parameters trained): single A100 10–15 h (minimum about 27 GB; batch 16 is 59.7 GB (paper)/about 72 GB (README)); full FT: 8 A100 (FSDP) 5–15 h per task</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>970k trajectories</dd><dt>Main datasets</dt><dd>OXE &#x27;Open-X Magic Soup++&#x27; (Fractal 12.7%, Kuka 12.7%, Bridge 13.3%, DROID 10.0%, etc.); DROID excluded in the last 1/3 of training</dd><dt>Tasks &amp; evaluation</dt><dd>BridgeData V2 WidowX · Google robot generalization evaluation; Franka-Tabletop · Franka-DROID fine-tuning (10–150 demos); LIBERO average 76.5% (84.7/88.4/79.2/53.7)</dd><dt>Robot</dt><dd>WidowX, Google robot, Franka</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>RTX 4090 about 6 Hz, bf16 15 GB; int8 10.2 GB·A5000 1.2 Hz; int4 7.0 GB·A5000 3 Hz; A100 4.2 Hz (secondary, measured by OpenVLA-OFT)</dd><dt>Inference memory</dt><dd>bf16 15 GB · int8 10.2 GB · int4 7.0 GB (paper)</dd><dt>Weights bf16 (calc.)</dt><dd>14 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning by action token prediction</dd><dt>Base control</dt><dd>Fixed · No base control (arm only: 7-dim EE displacement·gripper)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>An open 7B VLA trained on 970k OXE trajectories; ECoT·TraceVLA·OpenVLA-OFT·UniVLA and others build on this stack. Pretraining compute stated as 21,500 A100-hours.</dd><dt>Notes</dt><dd>Training duration differs: 14 days in the paper, 15 days on the project page. The Full FT 163.3 GB in Table 1 is the total for batch 16 split across 2 GPUs with FSDP. The LIBERO fine-tuning appendix (App E) could not be checked. Parameters (B) is the paper value 7B.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/m/octo/"><small>← Previous</small>Octo</a><a class="nx" href="/m/openvla-oft/"><small>Next →</small>OpenVLA-OFT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

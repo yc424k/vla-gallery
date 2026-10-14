@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InterACT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="InterACT (UC Davis, 2024-09†) — 双腕間の相互依存を階層的アテンションとアームごとのデコーダ同期でモデル化したACT系の方策である。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/interact/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/interact/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/interact/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/interact/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/interact/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/interact/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="InterACT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="InterACT (UC Davis, 2024-09†) — 双腕間の相互依存を階層的アテンションとアームごとのデコーダ同期でモデル化したACT系の方策である。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/interact/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "InterACT — 構造・バックボーンLLM・学習・推論メモリ", "description": "InterACT (UC Davis, 2024-09†) — 双腕間の相互依存を階層的アテンションとアームごとのデコーダ同期でモデル化したACT系の方策である。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/interact/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "InterACT", "creator": {"@type": "Organization", "name": "UC Davis; UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "InterACT: Inter-dependency Aware Action Chunking with Hierarchical Attention Transformers for Bimanual Manipulation", "url": "https://arxiv.org/abs/2409.07914"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "InterACT", "item": "https://vla-gallery.is-a.dev/ja/m/interact/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/interact/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/interact/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/interact/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/interact/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / VA</p>
+<h1>InterACT</h1>
+<p class="by">UC Davis; UC Berkeley · 2024-09†</p>
+<p class="kv"><span>VA</span><span>VA</span><span>非公開</span><span>回帰</span></p>
+<p class="sum">双腕間の相互依存を階層的アテンションとアームごとのデコーダ同期でモデル化したACT系の方策である。</p>
+<div class="acts"><a class="pri" href="/ja/#m-interact">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2409.07914" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2409.07914" rel="noopener">InterACT: Inter-dependency Aware Action Chunking with Hierarchical Attention Transformers for Bimanual Manipulation</a><small>arXiv 2409.07914</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>VA</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2024-09†</dd><dt>機関</dt><dd>UC Davis; UC Berkeley</dd><dt>重み公開</dt><dd>未確認</dd><dt>パラメータ</dt><dd>非公開</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>ResNet18</dd><dt>アクションヘッド</dt><dd>マルチアームデコーダ (同期ブロック) (回帰)</dd><dt>チャンク</dt><dd>50ステップ</dd><dt>制御周期</dt><dd>50 Hz</dd><dt>構造の原文要約</dt><dd>ResNet18 + 階層的アテンションエンコーダ(セグメント内3層・セグメント間3層、セグメント別CLSトークン) + マルチアームデコーダ(並列2経路4層、同期ブロック1層); hidden 512、8ヘッド、FF 3200; チャンク50、関節位置・RGB 50 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: GPU・時間・エポックは非公開; バッチ 8、lr 1e-5</dd><dt>データ種類</dt><dd>シミュレーション・合成; 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>タスクあたり50デモ</dd><dt>主要データセット</dt><dd>独自収集(シミュレーション・実機)</dd><dt>タスク・評価</dt><dd>シミュレーション3タスク(Transfer Cube, Peg Insertion, Slot Insertion); 実機6タスク(Slide Ziploc, Thread Velcro, Insert Plug, Click Pen, Sweep, Unscrew Cap)</dd><dt>ロボット</dt><dd>双腕(機種はノートに記載なし)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (双腕)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>双腕間の相互依存を階層的アテンションとアームごとのデコーダ同期でモデル化したACT系の方策である。タスクあたり50デモで学習する。</dd><dt>備考</dt><dd>タスク区分の修正を反映(シミュレーション3 + 実機6)。発表月v1は確認不可(†、arXiv ID 2409と一致)。採用度が低いためACT系のデータポイントとして収録。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/ja/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/ja/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/ja/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/ja/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/ja/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/ja/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/ja/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/ja/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/ja/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/ja/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/ja/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/ja/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/ja/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/ja/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/ja/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/egomimic/"><small>← 前のモデル</small>EgoMimic</a><a class="nx" href="/ja/m/carp/"><small>次のモデル →</small>CARP</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

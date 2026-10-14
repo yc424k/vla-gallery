@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EgoMimic — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="EgoMimic (Georgia Institute of Technology, 2024-10) — Co-trains one policy on first-person human demos captured with Project Aria glasses and robot teleopera…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/egomimic/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/egomimic/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/egomimic/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/egomimic/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/egomimic/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/egomimic/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="EgoMimic — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="EgoMimic (Georgia Institute of Technology, 2024-10) — Co-trains one policy on first-person human demos captured with Project Aria glasses and robot teleopera…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/egomimic/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "EgoMimic — Architecture, Backbone LLM, Training & Inference Memory", "description": "EgoMimic (Georgia Institute of Technology, 2024-10) — Co-trains one policy on first-person human demos captured with Project Aria glasses and robot teleopera…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/egomimic/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "EgoMimic", "creator": {"@type": "Organization", "name": "Georgia Institute of Technology; Stanford University"}}, "citation": {"@type": "ScholarlyArticle", "name": "EgoMimic: Scaling Imitation Learning via Egocentric Video", "url": "https://arxiv.org/abs/2410.24221"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "EgoMimic", "item": "https://vla-gallery.is-a.dev/m/egomimic/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/egomimic/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/egomimic/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/egomimic/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/egomimic/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>EgoMimic</h1>
+<p class="by">Georgia Institute of Technology; Stanford University · 2024-10</p>
+<p class="kv"><span>VA</span><span>VA</span><span>Not disclosed</span><span>regression</span></p>
+<p class="sum">Co-trains one policy on first-person human demos captured with Project Aria glasses and robot teleoperation.</p>
+<div class="acts"><a class="pri" href="/#m-egomimic">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2410.24221" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.24221" rel="noopener">EgoMimic: Scaling Imitation Learning via Egocentric Video</a><small>arXiv 2410.24221</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-10</dd><dt>Organization</dt><dd>Georgia Institute of Technology; Stanford University</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>ResNet18†</dd><dt>Action head</dt><dd>SE(3) pose + joint decoder (regression)</dd><dt>Chunk</dt><dd>100 steps†</dd><dt>Control rate</dt><dd>25 Hz (inference 1 Hz)</dd><dt>Architecture (original summary)</dt><dd>ACT-based shared Transformer (4 encoder · 7 decoder layers, hidden 512, FF 3200, 8 heads; ResNet18†) + SE(3) pose decoder shared by human and robot + robot joint decoder; chunk 100†</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A (human-robot co-training)</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per task: 4× A40, 120,000 iterations, global batch 128, about 24 hours (&#x27;All models&#x27;); lr 5e-5</dd><dt>Data type</dt><dd>Human video; real-robot teleoperation</dd><dt>Data scale</dt><dd>Human: Object-in-Bowl 1,400 (60 min), Groceries 160 (80 min), Laundry 590 (100 min); robot: 270 (120 min), 300 (300 min), 430 (300 min)</dd><dt>Main datasets</dt><dd>Self-collected human data with Project Aria; in-house robot teleoperation</dd><dt>Tasks &amp; evaluation</dt><dd>Continuous Object-in-Bowl, Groceries, Laundry</dd><dt>Robot</dt><dd>ViperX 300 S bimanual + Project Aria glasses (human data)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Inference 1 Hz, control 25 Hz on an RTX 4090 desktop</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Joint imitation learning on human·robot data</dd><dt>Base control</dt><dd>Fixed · No base control (ViperX fixed bimanual)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Co-trains one policy on first-person human demos captured with Project Aria glasses and robot teleoperation. On Object-in-Bowl, human data yields 1,400 demos in 60 minutes vs 270 robot demos in 120 minutes.</dd><dt>Notes</dt><dd>ResNet18·chunk 100 not found in verification extraction, so unverifiable (†). Collection time disclosed only in minutes, so the hours (h) cell is left blank.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/robot-utility-models/"><small>← Previous</small>Robot Utility Models (RUM)</a><a class="nx" href="/m/interact/"><small>Next →</small>InterACT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

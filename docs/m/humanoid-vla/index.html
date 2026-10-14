@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Humanoid-VLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Humanoid-VLA (Westlake University, 2025-02) — A hierarchical structure that generates whole-body motion from language and egocentric vision, executed by an R…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/humanoid-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/humanoid-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/humanoid-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/humanoid-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/humanoid-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/humanoid-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Humanoid-VLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Humanoid-VLA (Westlake University, 2025-02) — A hierarchical structure that generates whole-body motion from language and egocentric vision, executed by an R…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/humanoid-vla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Humanoid-VLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "Humanoid-VLA (Westlake University, 2025-02) — A hierarchical structure that generates whole-body motion from language and egocentric vision, executed by an R…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/humanoid-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Humanoid-VLA", "creator": {"@type": "Organization", "name": "Westlake University·Westlake Robotics·Zhejiang University"}}, "citation": {"@type": "ScholarlyArticle", "name": "Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration", "url": "https://arxiv.org/abs/2502.14795"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Humanoid-VLA", "item": "https://vla-gallery.is-a.dev/m/humanoid-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/humanoid-vla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/humanoid-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/humanoid-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/humanoid-vla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid VLA</p>
+<h1>Humanoid-VLA</h1>
+<p class="by">Westlake University·Westlake Robotics·Zhejiang University · 2025-02</p>
+<p class="kv"><span>VLA</span><span>Humanoid VLA</span><span>Llama3-70B-based</span><span>discrete tokens</span></p>
+<p class="sum">A hierarchical structure that generates whole-body motion from language and egocentric vision, executed by an RL tracker.</p>
+<div class="acts"><a class="pri" href="/#m-humanoid-vla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2502.14795" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2502.14795" rel="noopener">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</a><small>arXiv 2502.14795</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-02</dd><dt>Organization</dt><dd>Westlake University·Westlake Robotics·Zhejiang University</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Llama3-70B-based (training·total parameters not disclosed)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Llama 3 70B</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Per-body-part VQ motion tokens (5 parts) (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Llama3-70B-based; hierarchical VQ motion tokenizer (5 body-part tokens: left·right legs, torso, left·right arms, codebook 1,024); vision via cross-attention with language tokens as queries; generated motion converted to joint commands by an IsaacGym PPO goal-conditioned RL policy</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>H100 × 8</dd><dt>Pretraining duration</dt><dd>216 hours</dd><dt>Pretraining steps &amp; batch</dt><dd>Steps not disclosed · per-device batch 4 (lr 2e-5, cosine, warmup 0.01)</dd><dt>GPU/TPU-hours</dt><dd>1,728 (Converted · H100-hours (8 × 216 h))</dd><dt>Fine-tuning</dt><dd>Not disclosed; low-level RL tracker uses IsaacGym (env count·GPU·time Not disclosed)</dd><dt>Data type</dt><dd>Motion capture / human video / simulation·synthetic</dd><dt>Data scale</dt><dd>Motion capture 29K clips·0.3M frames·4.1 h; online video 0.8M clips·541M frames·7515.7 h; synthetic 100K clips·16M frames·227.7 h; Total 0.929M clips·557.3M frames·7790.2 h</dd><dt>Main datasets</dt><dd>Built in-house (motion capture, online video, synthetic motion); evaluation on HumanML3D, Humanoid-S</dd><dt>Tasks &amp; evaluation</dt><dd>Real Unitree G1 8 tasks × 10 trials (ball kick 9/10; obstacle avoidance·turning toward object·object grasping·hand waving·jumping·dancing·punching); HumanML3D FID 0.467±.018, DIV 4.585±.086; new Humanoid-S benchmark (4,646 manually annotated videos)</dd><dt>Robot</dt><dd>Unitree G1 whole body</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed (control rate Not disclosed)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (RL low-level controller) · LLM motion token generation is supervised; execution by an IsaacGym PPO goal-conditioned RL tracker</dd><dt>Base control</dt><dd>Humanoid legged (Commands/latents → RL locomotion controller) · VLA generates per-part motion tokens including legs → goal-conditioned RL whole-body controller converts them to PD joint targets (obstacle-avoiding movement·jumping·kicking)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A hierarchical structure that generates whole-body motion from language and egocentric vision, executed by an RL tracker. &lt;Track&gt;·&lt;Time&gt;·&lt;Occlusion&gt;·&lt;State&gt; self-supervised augmentation produces 25× more data than prior work without manual labels.</dd><dt>Notes</dt><dd>Total row was missing from notes but verification confirmed it exists in both HTML·PDF (NEW). Source Total hours 7790.2 h does not match the sum of the three rows&#x27; hours (clip·frame sums match); copied as in source. Parameters (B) null since total parameters not disclosed (base LLM Llama3-70B).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/m/gr00t-n1-5/">GR00T N1.5</a><small>2025-05</small></li><li><a href="/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/m/figure-helix/">Figure Helix</a><small>2025-02</small></li><li><a href="/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/m/being-h0/"><small>← Previous</small>Being-H0</a><a class="nx" href="/m/leverb/"><small>Next →</small>LeVERB</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

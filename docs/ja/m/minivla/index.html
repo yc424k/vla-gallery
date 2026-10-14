@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MiniVLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="MiniVLA (Stanford(ILIAD), 2024-12) — OpenVLAを7Bから約1Bに縮小し、VQアクションチャンクと履歴入力を加えた。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/minivla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/minivla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/minivla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/minivla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/minivla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/minivla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="MiniVLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="MiniVLA (Stanford(ILIAD), 2024-12) — OpenVLAを7Bから約1Bに縮小し、VQアクションチャンクと履歴入力を加えた。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/minivla/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "MiniVLA — 構造・バックボーンLLM・学習・推論メモリ", "description": "MiniVLA (Stanford(ILIAD), 2024-12) — OpenVLAを7Bから約1Bに縮小し、VQアクションチャンクと履歴入力を加えた。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/minivla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "MiniVLA", "creator": {"@type": "Organization", "name": "Stanford(ILIAD)"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "MiniVLA", "item": "https://vla-gallery.is-a.dev/ja/m/minivla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/minivla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/minivla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/minivla/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/minivla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 自己回帰・潜在アクションVLA</p>
+<h1>MiniVLA</h1>
+<p class="by">Stanford(ILIAD) · 2024-12</p>
+<p class="kv"><span>VLA</span><span>自己回帰・潜在アクションVLA</span><span>約1B</span><span>離散トークン</span></p>
+<p class="sum">OpenVLAを7Bから約1Bに縮小し、VQアクションチャンクと履歴入力を加えた。</p>
+<div class="acts"><a class="pri" href="/ja/#m-minivla">ギャラリーで構造図を見る</a><a href="https://ai.stanford.edu/blog/minivla/" rel="noopener">公式ページ ↗</a></div>
+<h2>論文</h2>
+<p class="paper">論文なし · 関連 <a href="https://arxiv.org/abs/2406.09246" rel="noopener">OpenVLA: An Open-Source Vision-Language-Action Model</a></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>自己回帰・潜在アクションVLA</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2024-12</dd><dt>機関</dt><dd>Stanford(ILIAD)</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>約1B</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen2.5 0.5B</dd><dt>ビジョンエンコーダ</dt><dd>SigLIP + DINOv2</dd><dt>アクションヘッド</dt><dd>256-binトークン + 残差VQチャンク (離散トークン)</dd><dt>チャンク</dt><dd>8 (VQチャンクの例)</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>Qwen2.5 0.5B + OpenVLAと同じDINOv2+SigLIP ViT; 256-bin追加トークン、残差VQアクションチャンク(例: horizon 8、コードブック256)</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開(READMEの例は1ノードGPU 8枚)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>シミュレーション・合成 + 実ロボットのテレオペレーション + Web視覚言語</dd><dt>データ規模</dt><dd>非公開</dd><dt>主要データセット</dt><dd>LIBERO-90、BridgeData V2、LLaVA-1.5-Instruct VQA(ベースVLM)</dd><dt>タスク・評価</dt><dd>LIBERO-90 82%(VQ h8 + 履歴); SimplerEnv 4タスク 44–70%; 実機Bridge V2</dd><dt>ロボット</dt><dd>LIBERO・SimplerEnvシミュレーション、Bridge V2実ロボットデータ</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>L40s 1枚で12.5 Hz(OpenVLA 5 Hz)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>2 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (腕のみ、シミュレーション・Bridge)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>OpenVLAを7Bから約1Bに縮小し、VQアクションチャンクと履歴入力を加えた。L40sで12.5 HzとOpenVLA(5 Hz)より2.5倍速い。</dd><dt>備考</dt><dd>arXiv論文がないためStanford AI Labブログ(2024-12-12)を一次出典とした。履歴2フレーム入力は約5%の向上をもたらした。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/ja/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/ja/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/ja/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/ja/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/ja/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/ja/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/ja/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/ja/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/ja/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/ja/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/ja/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/ja/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/ja/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/ja/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/ja/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/ja/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/ja/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/ja/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/ja/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/ja/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/ja/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/ja/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/openvla-oft/"><small>← 前のモデル</small>OpenVLA-OFT</a><a class="nx" href="/ja/m/tinyvla/"><small>次のモデル →</small>TinyVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

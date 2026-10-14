@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Humanoid Locomotion as Next Token Prediction — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Humanoid Locomotion as Next Token Prediction (UC Berkeley, 2024-02) — Treats real-world locomotion as next-token prediction and jointly trains on trajectorie…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/humanoid-locomotion-as-next-token-prediction/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/humanoid-locomotion-as-next-token-prediction/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/humanoid-locomotion-as-next-token-prediction/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/humanoid-locomotion-as-next-token-prediction/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/humanoid-locomotion-as-next-token-prediction/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/humanoid-locomotion-as-next-token-prediction/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Humanoid Locomotion as Next Token Prediction — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Humanoid Locomotion as Next Token Prediction (UC Berkeley, 2024-02) — Treats real-world locomotion as next-token prediction and jointly trains on trajectorie…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/humanoid-locomotion-as-next-token-prediction/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Humanoid Locomotion as Next Token Prediction — Architecture, Backbone LLM, Training & Inference Memory", "description": "Humanoid Locomotion as Next Token Prediction (UC Berkeley, 2024-02) — Treats real-world locomotion as next-token prediction and jointly trains on trajectorie…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/humanoid-locomotion-as-next-token-prediction/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Humanoid Locomotion as Next Token Prediction", "creator": {"@type": "Organization", "name": "UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "Humanoid Locomotion as Next Token Prediction", "url": "https://arxiv.org/abs/2402.19469"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Humanoid Locomotion as Next Token Prediction", "item": "https://vla-gallery.is-a.dev/m/humanoid-locomotion-as-next-token-prediction/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/humanoid-locomotion-as-next-token-prediction/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/humanoid-locomotion-as-next-token-prediction/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/humanoid-locomotion-as-next-token-prediction/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/humanoid-locomotion-as-next-token-prediction/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid whole-body controllers</p>
+<h1>Humanoid Locomotion as Next Token Prediction</h1>
+<p class="by">UC Berkeley · 2024-02</p>
+<p class="kv"><span>VA</span><span>Humanoid whole-body controllers</span><span>1M / 2M / 8M</span><span>regression</span></p>
+<p class="sum">Treats real-world locomotion as next-token prediction and jointly trains on trajectories from RL policies·model-based controllers·motion capture·YouTube videos.</p>
+<div class="acts"><a class="pri" href="/#m-humanoid-locomotion-as-next-token-prediction">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2402.19469" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2402.19469" rel="noopener">Humanoid Locomotion as Next Token Prediction</a><small>arXiv 2402.19469</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid whole-body controllers</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-02</dd><dt>Organization</dt><dd>UC Berkeley</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>1M / 2M / 8M (embedding 144/192/384, heads 3/4/12, blocks 4/4/6)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Next-token prediction (observations·actions) (regression)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Autoregressive transformer (default hidden 192, 4 layers), sequence of observation and action tokens, context 16 (32 and 48 also tested); next-token prediction within the same modality, missing actions filled with mask token [M] and excluded from the loss</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Simulation·synthetic / motion capture / human video</dd><dt>Data scale</dt><dd>10k neural-network policy trajectories (10 s each, flat ground), 2 sets of 10k model-based controller trajectories (10 s each), ~1k of ~4k KIT motion capture clips, YouTube videos (PHALP-processed, count not disclosed)</dd><dt>Main datasets</dt><dd>Agility Robotics simulator trajectories, KIT motion capture, YouTube</dd><dt>Tasks &amp; evaluation</dt><dd>Zero-shot walking for one week at multiple locations in San Francisco; distance·success counts not disclosed</dd><dt>Robot</dt><dd>Agility Digit</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Control rate not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (RL-generated data) · Next-token prediction (supervised learning). Part of the training data is 10k simulation trajectories from a large-scale RL policy</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/html/2402.19469" rel="noopener">https://arxiv.org/html/2402.19469</a></dd><dt>Base control</dt><dd>Humanoid legged (Direct whole-body joint/pose output) · Transformer autoregressively outputs joint position actions for omnidirectional velocity-command-tracking locomotion (Digit, real walking in San Francisco)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Treats real-world locomotion as next-token prediction and jointly trains on trajectories from RL policies·model-based controllers·motion capture·YouTube videos. Transfers to the real world with only 27 h of locomotion data.</dd><dt>Notes</dt><dd>Parameters (B) is the largest variant, 8M. &#x27;27 hours of walking data&#x27; describes a training condition and there is no total data-hours figure, so data hours is null. All training compute not disclosed (confirmed in verification).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/humanplus-hit/"><small>← Previous</small>HumanPlus HIT</a><a class="nx" href="/m/challenging-terrain-transformer/"><small>Next →</small>Challenging-Terrain Transformer</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

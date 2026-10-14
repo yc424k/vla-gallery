@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PanoVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="PanoVLA (Beihang University, 2026-08) — A Mixture-of-Transformers inserting a panorama expert into π0.5 fuses global spatial context from a 360° panorama wit…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/panovla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/panovla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/panovla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/panovla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/panovla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/panovla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="PanoVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="PanoVLA (Beihang University, 2026-08) — A Mixture-of-Transformers inserting a panorama expert into π0.5 fuses global spatial context from a 360° panorama wit…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/panovla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "PanoVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "PanoVLA (Beihang University, 2026-08) — A Mixture-of-Transformers inserting a panorama expert into π0.5 fuses global spatial context from a 360° panorama wit…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/panovla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "PanoVLA", "creator": {"@type": "Organization", "name": "Beihang University·Beijing Institute for General Artificial Intelligence(BIGAI)·Shandong University·Johns Hopkins University·Delta Intelligence"}}, "citation": {"@type": "ScholarlyArticle", "name": "Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation", "url": "https://arxiv.org/abs/2608.02257"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "PanoVLA", "item": "https://vla-gallery.is-a.dev/m/panovla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/panovla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/panovla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/panovla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/panovla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>PanoVLA</h1>
+<p class="by">Beihang University·Beijing Institute for General Artificial Intelligence(BIGAI)·Shandong University·Johns Hopkins University·Delta Intelligence · 2026-08</p>
+<p class="kv"><span>VLA</span><span>Mobile manipulation</span><span>Not disclosed</span><span>flow matching</span></p>
+<p class="sum">A Mixture-of-Transformers inserting a panorama expert into π0.5 fuses global spatial context from a 360° panorama with local camera views, and collects wheeled bimanual robot data via single VR whole-body teleoperation.</p>
+<div class="acts"><a class="pri" href="/#m-panovla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2608.02257" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2608.02257" rel="noopener">Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation</a><small>arXiv 2608.02257</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2026-08</dd><dt>Organization</dt><dd>Beihang University·Beijing Institute for General Artificial Intelligence(BIGAI)·Shandong University·Johns Hopkins University·Delta Intelligence</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Not disclosed (panorama expert 100M; π0.5 backbone Gemma-2B)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Gemma-2B · π0.5 VLM config</dd><dt>Vision encoder</dt><dd>SigLIP (local view) + MTPano (panorama, frozen)</dd><dt>Action head</dt><dd>flow matching action expert (inherited from π0.5) (flow matching)</dd><dt>Chunk</dt><dd>32 steps</dd><dt>Control rate</dt><dd>Not disclosed (data at 25 Hz)</dd><dt>Architecture (original summary)</dt><dd>π0.5-based 3-expert Mixture-of-Transformers: VLM expert (SigLIP local view + Gemma-2B) + panorama expert 100M (dual fisheye → equirectangular panorama, frozen MTPano features) + flow matching action expert; 17-dim relative actions (bimanual joints·grippers 14 + base planar velocity·yaw rate 3) 32-step chunk; data 25 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A (fine-tuned from π0.5)</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>4 × A100, 30K steps · batch 64 per GPU (bf16, lr fixed at 5e-5 after 5K-step warmup), LM · MTPano frozen, training time not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>4 tasks × 200 = 800 trajectories, about 5.5 hours · about 500k frames (25 Hz, 20–30 s per trajectory)</dd><dt>Main datasets</dt><dd>In-house VR whole-body teleoperation dataset (Move Pen, Move Block, Open Curtain, Wipe Table)</dd><dt>Tasks &amp; evaluation</dt><dd>Real 4 tasks, 15 trials each: Move Pen SR 86.7%, Move Block 93.3%, Open Curtain 66.7%, Wipe Table 46.7%; average SCR 91.3%·SR 73.4% (π0.5 58.6%·30.0%, π0.5 w/ Pano 80.8%·56.7%)</dd><dt>Robot</dt><dd>Wheeled bimanual: RANGER MINI 3 base + two Agilex PIPER 6-DoF arms·parallel grippers; top 360° panorama camera·front RGB·2 wrist cameras</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Closed-loop execution on 1 RTX 4090 during real-robot evaluation; latency·control frequency not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Single RTX 4090</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (flow matching) only</dd><dt>Base control</dt><dd>Wheeled (Direct base velocity/pose output) · Policy directly outputs base planar velocity and yaw rate (3-DoF) together with both arms&#x27; joints as 32-step chunks</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A Mixture-of-Transformers inserting a panorama expert into π0.5 fuses global spatial context from a 360° panorama with local camera views, and collects wheeled bimanual robot data via single VR whole-body teleoperation. On 4 real tasks it reached an average stage completion of 91.3%·end-to-end success of 73.4%, well ahead of π0.5 (58.6%·30.0%).</dd><dt>Notes</dt><dd>Teleoperation: VR headset, two hand controllers, 3 waist/ankle trackers → SMPL reconstruction → GMR retargeting (base is a 3-DoF planar virtual floating base). π0.5 checkpoint name, total parameters, denoising steps, and training time not disclosed. The paper does not mention releasing code, data, or weights. Based on: π0.5: a Vision-Language-Action Model with Open-World Generalization (arXiv 2504.16054) — built by inserting a panoramic expert into the π0.5 dual-expert backbone</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/m/sg-vla/"><small>← Previous</small>SG-VLA</a><a class="nx" href="/m/harmonicmm/"><small>Next →</small>HarmonicMM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

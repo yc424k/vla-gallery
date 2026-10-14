@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SONIC — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="SONIC (NVIDIA, 2025-11) — 是将动作跟踪按数据·模型·算力规模扩展的通用token全身控制器。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/sonic/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/sonic/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/sonic/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/sonic/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/sonic/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/sonic/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="SONIC — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="SONIC (NVIDIA, 2025-11) — 是将动作跟踪按数据·模型·算力规模扩展的通用token全身控制器。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/sonic/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "SONIC — 架构、骨干LLM、训练与推理内存", "description": "SONIC (NVIDIA, 2025-11) — 是将动作跟踪按数据·模型·算力规模扩展的通用token全身控制器。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/sonic/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "SONIC (Supersizing Motion Tracking for Natural Humanoid Whole-Body Control)", "creator": {"@type": "Organization", "name": "NVIDIA"}}, "citation": {"@type": "ScholarlyArticle", "name": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control", "url": "https://arxiv.org/abs/2511.07820"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "SONIC", "item": "https://vla-gallery.is-a.dev/zh/m/sonic/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/sonic/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/sonic/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/sonic/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/sonic/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 人形机器人全身控制器</p>
+<h1>SONIC</h1>
+<p class="full">SONIC (Supersizing Motion Tracking for Natural Humanoid Whole-Body Control)</p>
+<p class="by">NVIDIA · 2025-11</p>
+<p class="kv"><span>VA</span><span>人形机器人全身控制器</span><span>1.2M~42M</span><span>RL策略</span></p>
+<p class="sum">是将动作跟踪按数据·模型·算力规模扩展的通用token全身控制器。</p>
+<div class="acts"><a class="pri" href="/zh/#m-sonic">在图库中查看架构图</a><a href="https://arxiv.org/abs/2511.07820" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2511.07820" rel="noopener">SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control</a><small>arXiv 2511.07820</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>人形机器人全身控制器</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2025-11</dd><dt>机构</dt><dd>NVIDIA</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>1.2M~42M (最新版1.2M/16M/42M)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>MLP控制解码器 (RL策略)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>50 Hz</dd><dt>架构原文摘要</dt><dd>将VR·视频·文本·音乐·VLA输入量化为FSQ通用token(64维潜在运动token)；MLP编码器(v1 [2048, 1024, 512, 512]) + 控制解码器(v1 [2048, 2048, 1024, 1024, 512, 512]；2025-12-8版 [4096, 4096, 2048, 2048, 1024, 1024, 512, 512]) → 29维对角高斯动作，50 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>GPU 128张(型号未公开)；最新版扩展实验16·32·128张</dd><dt>预训练时长</dt><dd>v1：128 GPU训练3天；v1 &#x27;3~7天收敛&#x27;(不确定指控制器还是规划器)；最新版&#x27;7天&#x27;†</dd><dt>预训练步数·批量</dt><dd>50k次迭代 · 每GPU并行env 4,096 (Isaac Lab)</dd><dt>GPU·TPU-小时</dt><dd>21,000 (明示 · GPU-小时（GPU型号未公开）；最新版（v4）21k，v1摘要 9k·v1 §2.1 32,000（各版本冲突）)</dd><dt>微调</dt><dd>不适用 (控制器)；微调GR00T N1.5以输出SONIC token，GPU未公开</dd><dt>数据类型</dt><dd>动作捕捉</dd><dt>数据规模</dt><dd>v1：内部700小时·100M+帧(50 Hz)·170人；最新版重定向后611小时·训练片段317,189个·子类别8,447个</dd><dt>主要数据集</dt><dd>内部动作捕捉；公开子集BONES-SEED（142K+动作，约 288小时，2026-03-16公开）</dd><dt>任务·评估</dt><dd>42M test-content成功率99.6%·MPJPE-L 23.8 mm(1.2M 98.0%·27.7 mm)；真实124条序列99.2%†；与GR00T N1.5联动的移动操作5个任务平均75%</dd><dt>机器人</dt><dd>Unitree G1</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>策略50 Hz，运动学规划器10 Hz，用户输入100 Hz，电机500 Hz；规划器延迟笔记本不到5 ms·Jetson Orin 12 ms；C++·TensorRT部署</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0.1 GB</dd><dt>运行位置</dt><dd>机载 (Jetson Orin，规划器12 ms)</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>使用 (RL控制器训练) · Isaac Lab大规模RL动作跟踪(GPU 128张,每GPU 4,096个环境)</dd><dt>底盘控制</dt><dd>人形双足 (RL策略直接驱动) · 通用动作token → 控制解码器直接输出29维关节目标实现行走（速度指令 0–6 m/s）；与VLA联动时VLA输出导航指令</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>是将动作跟踪按数据·模型·算力规模扩展的通用token全身控制器。不用Transformer，而将MLP从1.2M扩大到42M，test-content成功率从98.0%提升到99.6%。</dd><dt>备注</dt><dd>数据时长为v1内部数据集700小时（最新版重定向后611小时）。GPU-小时各版本冲突：v1摘要 9k vs v1 §2.1 32,000（&#x27;128 GPUs over 3 days&#x27;），最新版将16·32·128 GPU均训练至50k次迭代，约 2k·9k·21k。VLA数据 3,900条轨迹（物体13个 × 300）·多物体 1,000条轨迹†；v1系列PDF用遥操作演示300条微调GR00T N1.5。2025年公开时无权重，检查点 2026-02-19·训练代码 2026-04-10（权重 NVIDIA Open Model License，代码 Apache 2.0）。2026训练指南建议64+ GPU（非2025论文值）。v4 2026-08-13（Science Robotics 11(117) eaed4592）。运动学规划器为&#x27;Transformers or Conv1D&#x27;。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/zh/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/zh/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/zh/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/zh/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/zh/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/zh/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/zh/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/zh/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/zh/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/zh/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/zh/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/zh/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/zh/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/zh/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/zh/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/zh/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/gmt/"><small>← 上一个</small>GMT</a><a class="nx" href="/zh/m/viral/"><small>下一个 →</small>VIRAL</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

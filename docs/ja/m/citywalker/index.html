@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CityWalker — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="CityWalker (New York University, 2024-11) — 数千時間のYouTubeの都市歩行・走行動画にDPVO視覚オドメトリで軌跡ラベルを付け、GPS目標条件付きの都市ナビゲーション方策を模倣学習する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/citywalker/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/citywalker/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/citywalker/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/citywalker/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/citywalker/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/citywalker/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="CityWalker — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="CityWalker (New York University, 2024-11) — 数千時間のYouTubeの都市歩行・走行動画にDPVO視覚オドメトリで軌跡ラベルを付け、GPS目標条件付きの都市ナビゲーション方策を模倣学習する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/citywalker/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "CityWalker — 構造・バックボーンLLM・学習・推論メモリ", "description": "CityWalker (New York University, 2024-11) — 数千時間のYouTubeの都市歩行・走行動画にDPVO視覚オドメトリで軌跡ラベルを付け、GPS目標条件付きの都市ナビゲーション方策を模倣学習する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/citywalker/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "CityWalker", "creator": {"@type": "Organization", "name": "New York University"}}, "citation": {"@type": "ScholarlyArticle", "name": "CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos", "url": "https://arxiv.org/abs/2411.17820"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "CityWalker", "item": "https://vla-gallery.is-a.dev/ja/m/citywalker/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/citywalker/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/citywalker/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/citywalker/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/citywalker/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>CityWalker</h1>
+<p class="by">New York University · 2024-11</p>
+<p class="kv"><span>VA</span><span>ナビゲーション</span><span>214M</span><span>回帰</span></p>
+<p class="sum">数千時間のYouTubeの都市歩行・走行動画にDPVO視覚オドメトリで軌跡ラベルを付け、GPS目標条件付きの都市ナビゲーション方策を模倣学習する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-citywalker">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2411.17820" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2411.17820" rel="noopener">CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos</a><small>arXiv 2411.17820</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2024-11</dd><dt>機関</dt><dd>New York University</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>214M (学習可能127M、DINOv2固定)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>DINOv2 ViT-B/14 (固定)</dd><dt>アクションヘッド</dt><dd>ウェイポイント5個の回帰 + 到着予測ヘッド (回帰)</dd><dt>チャンク</dt><dd>ウェイポイント5個</dd><dt>制御周期</dt><dd>非公開 (RTX 3060ノートPC 1.7 fps)</dd><dt>構造の原文要約</dt><dd>固定DINOv2 ViT-B/14で過去5フレームをエンコード + 目標座標のFourier特徴埋め込み → Transformer 16層・8ヘッド(768次元) → 行動ヘッド: ユークリッドウェイポイント5個 + 到着予測ヘッド; ViNT PD制御器を改造して速度指令</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100 2枚</dd><dt>事前学習期間</dt><dd>30時間</dd><dt>事前学習ステップ・バッチ</dt><dd>10エポック · バッチ32</dd><dt>GPU・TPU時間</dt><dd>60 (換算 · H100 2枚 × 30時間)</dd><dt>ファインチューニング</dt><dd>Go1テレオペレーション6時間のデータでファインチューニング、lr 5e-5; GPU・時間は非公開</dd><dt>データ種類</dt><dd>Web動画 / 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>YouTubeの歩行・走行動画計2,522時間のうち2,000時間を学習; Go1テレオペレーション15時間(ファインチューニング6h・評価9h)</dd><dt>主要データセット</dt><dd>CityWalk YouTube歩行・走行プレイリスト(DPVOラベル); 自社Go1テレオペレーションデータ(HF ai4ce/CityWalker)</dd><dt>タスク・評価</dt><dd>オフライン都市ベンチ平均(ファインチューニング): MAOE 15.2°・到着率81.8% (ViNT 16.5°・70.5%、GNM 16.2°・68.6%、NoMaD 19.1°・68.6%); 実環境Go1成功率77.3% (ファインチューニングViNT 57.1%、ゼロショットNoMaD 42.9%、ゼロショットViNT 37.7%)</dd><dt>ロボット</dt><dd>Unitree Go1四足 (Livox Mid-360 LiDAR・Webカメラ)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>RTX 3060ノートPC GPUでDINOv2バックボーン1.7 fps (EfficientNet-B0に置換時20 fps); 配備の演算装置は記載なし</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0.4 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習のみ (Web動画 + DPVO軌跡ラベル)</dd><dt>ベース制御</dt><dd>四足歩行 (ウェイポイント → 追従制御器) · 方策がウェイポイント5個を出力 → ViNT PD制御器を改造してGo1速度指令に変換</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>数千時間のYouTubeの都市歩行・走行動画にDPVO視覚オドメトリで軌跡ラベルを付け、GPS目標条件付きの都市ナビゲーション方策を模倣学習する。1,000時間以上の学習ではゼロショットのみでファインチューニングしたViNTより高い性能を示し、6時間のテレオペレーションでファインチューニングした後、Go1の実環境成功率77.3%(ファインチューニングしたViNT 57.1%)を記録した。</dd><dt>備考</dt><dd>走行動画の比率・動画数は記載なし。デプロイ時の演算装置は記載なし(速度はRTX 3060ノートPCで測定)。事前学習モデルをGitHub releasesで公開。CVPR 2025。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/lelan/"><small>← 前のモデル</small>LeLaN</a><a class="nx" href="/ja/m/nwm/"><small>次のモデル →</small>NWM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoboFlamingo — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="RoboFlamingo (ByteDance Research, 2023-11) — A continuous-action VLA that freezes the VLM and trains only the resampler·cross-attention·policy head.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/roboflamingo/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/roboflamingo/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/roboflamingo/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/roboflamingo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/roboflamingo/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/roboflamingo/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RoboFlamingo — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="RoboFlamingo (ByteDance Research, 2023-11) — A continuous-action VLA that freezes the VLM and trains only the resampler·cross-attention·policy head.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/roboflamingo/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RoboFlamingo — Architecture, Backbone LLM, Training & Inference Memory", "description": "RoboFlamingo (ByteDance Research, 2023-11) — A continuous-action VLA that freezes the VLM and trains only the resampler·cross-attention·policy head.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/roboflamingo/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "RoboFlamingo", "creator": {"@type": "Organization", "name": "ByteDance Research·Tsinghua University·SJTU·NUS"}}, "citation": {"@type": "ScholarlyArticle", "name": "Vision-Language Foundation Models as Effective Robot Imitators", "url": "https://arxiv.org/abs/2311.01378"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "RoboFlamingo", "item": "https://vla-gallery.is-a.dev/m/roboflamingo/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/roboflamingo/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/roboflamingo/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/roboflamingo/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/roboflamingo/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>RoboFlamingo</h1>
+<p class="by">ByteDance Research·Tsinghua University·SJTU·NUS · 2023-11</p>
+<p class="kv"><span>VLA</span><span>Autoregressive &amp; latent-action VLA</span><span>OpenFlamingo 3B/4B/9B</span><span>regression</span></p>
+<p class="sum">A continuous-action VLA that freezes the VLM and trains only the resampler·cross-attention·policy head.</p>
+<div class="acts"><a class="pri" href="/#m-roboflamingo">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2311.01378" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2311.01378" rel="noopener">Vision-Language Foundation Models as Effective Robot Imitators</a><small>arXiv 2311.01378</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2023-11</dd><dt>Organization</dt><dd>ByteDance Research·Tsinghua University·SJTU·NUS</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>OpenFlamingo 3B/4B/9B; 1B trainable parameters (Table 2)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>MPT·RedPajama family · OpenFlamingo 3B/9B</dd><dt>Vision encoder</dt><dd>CLIP ViT-L/14</dd><dt>Action head</dt><dd>LSTM policy head (continuous 6-DoF) (regression)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>OpenFlamingo (CLIP ViT-L/14 + MPT·RedPajama LLM) + LSTM policy head; continuous actions (6-DoF relative pose MSE + gripper BCE)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A (uses OpenFlamingo VLM weights)</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>1 server with 8 × A100 (80G), batch 6 per GPU; MPT-3B 13 h per epoch (best at epoch 3), MPT-9B 26 h per epoch (best at epoch 4)</dd><dt>Data type</dt><dd>Simulation·synthetic</dd><dt>Data scale</dt><dd>CALVIN play data, 1% language annotation (about 24k steps)</dd><dt>Main datasets</dt><dd>CALVIN</dd><dt>Tasks &amp; evaluation</dt><dd>CALVIN ABCD→D average length 4.09 (HULC 3.06, RT-1 2.45); ABC→D 2.475 (README)</dd><dt>Robot</dt><dd>CALVIN simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Hz not disclosed; open-loop action sequence prediction reduces compute</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>18 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (CALVIN arm sim)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A continuous-action VLA that freezes the VLM and trains only the resampler·cross-attention·policy head. Trained without robot pretraining on CALVIN data with only 1% language annotation.</dd><dt>Notes</dt><dd>Announced 2023-11, outside the 2024~2025 range, but included as an assigned model. A continuous regression VLA rather than discrete tokens; parameters (B) are based on the largest 9B variant.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/m/3d-vla/"><small>← Previous</small>3D-VLA</a><a class="nx" href="/m/spatialvla/"><small>Next →</small>SpatialVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

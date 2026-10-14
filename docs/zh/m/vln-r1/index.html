@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLN-R1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="VLN-R1 (The University of Hong Kong, 2025-06) — 将通用VLM（Qwen2-VL）在基于第一人称视频的VLN上SFT后，以使用时间衰减奖励（TDR）的GRPO强化微调（RFT）改进多步动作预测。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/vln-r1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vln-r1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vln-r1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vln-r1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vln-r1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vln-r1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="VLN-R1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="VLN-R1 (The University of Hong Kong, 2025-06) — 将通用VLM（Qwen2-VL）在基于第一人称视频的VLN上SFT后，以使用时间衰减奖励（TDR）的GRPO强化微调（RFT）改进多步动作预测。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/vln-r1/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "VLN-R1 — 架构、骨干LLM、训练与推理内存", "description": "VLN-R1 (The University of Hong Kong, 2025-06) — 将通用VLM（Qwen2-VL）在基于第一人称视频的VLN上SFT后，以使用时间衰减奖励（TDR）的GRPO强化微调（RFT）改进多步动作预测。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/vln-r1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "VLN-R1", "creator": {"@type": "Organization", "name": "The University of Hong Kong·Shanghai AI Laboratory"}}, "citation": {"@type": "ScholarlyArticle", "name": "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning", "url": "https://arxiv.org/abs/2506.17221"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "VLN-R1", "item": "https://vla-gallery.is-a.dev/zh/m/vln-r1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vln-r1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vln-r1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vln-r1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vln-r1/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>VLN-R1</h1>
+<p class="by">The University of Hong Kong·Shanghai AI Laboratory · 2025-06</p>
+<p class="kv"><span>VLA</span><span>导航</span><span>2B / 7B</span><span>离散token</span></p>
+<p class="sum">将通用VLM（Qwen2-VL）在基于第一人称视频的VLN上SFT后，以使用时间衰减奖励（TDR）的GRPO强化微调（RFT）改进多步动作预测。</p>
+<div class="acts"><a class="pri" href="/zh/#m-vln-r1">在图库中查看架构图</a><a href="https://arxiv.org/abs/2506.17221" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.17221" rel="noopener">VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning</a><small>arXiv 2506.17221</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-06</dd><dt>机构</dt><dd>The University of Hong Kong·Shanghai AI Laboratory</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>2B / 7B (Qwen2-VL-2B·7B)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Qwen2-VL-7B / 2B (内置LLM名称未注明)</dd><dt>视觉编码器</dt><dd>Qwen2-VL内置视觉编码器 (细节未注明)</dd><dt>动作头</dt><dd>后续6个离散动作文本（选项字母 + 说明） (离散token)</dd><dt>动作块</dt><dd>6个动作</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen2-VL-2B/7B全量微调;第一人称视频(每实例16张图像,最多65,536像素,约4.1K token) + 指令输入;以选项字母+说明文本输出接下来6个离散动作(FORWARD·TURN-LEFT·TURN-RIGHT·STOP,例&#x27;C. Turn right 30 degrees&#x27;)</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>A800 8张 (7B SFT，DeepSpeed ZeRO-3)</dd><dt>预训练时长</dt><dd>36小时 (SFT 1个epoch)</dd><dt>预训练步数·批量</dt><dd>SFT 1个epoch · 全局批量64 (每GPU 2×累积4，lr 5e-6)</dd><dt>GPU·TPU-小时</dt><dd>288 (换算 · A800 8张 × 36小时 (7B SFT 1 epoch))</dd><dt>微调</dt><dd>RFT(GRPO): 每epoch约12小时(epoch数未注明), lr 1e-6,每提示8个样本, KL β 0.04,每GPU批量1, 20K样本 (7B为A800 8张环境)</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>VLN-Ego：R2R 630K + RxR 1.2M训练样本(SFT 1.8M)；RFT每个数据集10K，共20K</dd><dt>主要数据集</dt><dd>VLN-Ego (由Habitat·MP3D生成；基于R2R 7,189条路径·RxR 42,023条轨迹)</dd><dt>任务·评估</dt><dd>R2R-CE val-unseen SR 30.2%·SPL 21.8%(7B), SR 25.6%·SPL 20.5%(2B);RxR-CE SR 22.3%(7B)·21.4%(2B);跨域(R2R SFT→RxR RFT) RxR SR 22.7%(7B)</dd><dt>机器人</dt><dd>无真实机器人 (Habitat仿真智能体)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>未公开 (仅Habitat仿真评估)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>14 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>使用 (VLA RL后训练) · SFT后基于GRPO的RFT阶段(用Time-Decayed Reward奖励多阶段动作)</dd><dt>强化学习依据</dt><dd><a href="https://arxiv.org/abs/2506.17221" rel="noopener">https://arxiv.org/abs/2506.17221</a></dd><dt>底盘控制</dt><dd>仅仿真 (离散移动动作) · 无真实机器人：Habitat VLN-CE仿真智能体执行离散动作(前进·旋转·停止)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将通用VLM（Qwen2-VL）在基于第一人称视频的VLN上SFT后，以使用时间衰减奖励（TDR）的GRPO强化微调（RFT）改进多步动作预测。经RFT的2B模型超过仅SFT的7B模型，表明小型VLM同样可从RL后训练中获益。</dd><dt>备注</dt><dd>权重未公开(仅公开VLN-Ego训练数据·数据生成代码，SFT·RFT·评估代码准备中)；2B训练硬件未注明；各表数值部分不一致(Table 1与Table 3)；无真实机器人实验(作为局限明确说明)。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/zh/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/zh/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/trackvla/"><small>← 上一个</small>TrackVLA</a><a class="nx" href="/zh/m/abot-n0/"><small>下一个 →</small>ABot-N0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figure RL 보행 제어기 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="Figure RL 보행 제어기 (Figure AI, 2025-03) — 并行仿真物理参数各不相同的数千台Figure 02，在几小时内学习数年量的仿真演示。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/figure-rl/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/figure-rl/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/figure-rl/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/figure-rl/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/figure-rl/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/figure-rl/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Figure RL 보행 제어기 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="Figure RL 보행 제어기 (Figure AI, 2025-03) — 并行仿真物理参数各不相同的数千台Figure 02，在几小时内学习数年量的仿真演示。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/figure-rl/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Figure RL 보행 제어기 — 架构、骨干LLM、训练与推理内存", "description": "Figure RL 보행 제어기 (Figure AI, 2025-03) — 并行仿真物理参数各不相同的数千台Figure 02，在几小时内学习数年量的仿真演示。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/figure-rl/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Figure RL 보행 제어기 (Reinforcement Learning Walking)", "creator": {"@type": "Organization", "name": "Figure AI"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "Figure RL 보행 제어기", "item": "https://vla-gallery.is-a.dev/zh/m/figure-rl/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/figure-rl/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/figure-rl/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/figure-rl/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/figure-rl/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 人形机器人全身控制器</p>
+<h1>Figure RL 보행 제어기</h1>
+<p class="full">Figure RL行走控制器 (Reinforcement Learning Walking)</p>
+<p class="by">Figure AI · 2025-03</p>
+<p class="kv"><span>VA</span><span>人形机器人全身控制器</span><span>未公开</span><span>RL策略</span></p>
+<p class="sum">并行仿真物理参数各不相同的数千台Figure 02，在几小时内学习数年量的仿真演示。</p>
+<div class="acts"><a class="pri" href="/zh/#m-figure-rl">在图库中查看架构图</a><a href="https://www.figure.ai/news/reinforcement-learning-walking" rel="noopener">官方页面 ↗</a></div>
+<h2>论文</h2>
+<p class="paper">无论文</p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>人形机器人全身控制器</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2025-03</dd><dt>机构</dt><dd>Figure AI</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>未公开</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>kHz级扭矩反馈控制 (RL策略)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>用RL训练的end-to-end神经网络(类型未公开);在机器人上做kHz级力矩反馈控制</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开 (GPU加速仿真，名称未公开)</dd><dt>预训练时长</dt><dd>&#x27;几小时&#x27;(相当于数年的仿真演示)</dd><dt>预训练步数·批量</dt><dd>未公开 (Figure 02数千台并行仿真)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>人类行走参考轨迹 + 并行仿真经验(规模未公开)</dd><dt>主要数据集</dt><dd>未公开</dd><dt>任务·评估</dt><dd>10台Figure 02用同一个RL神经网络行走</dd><dt>机器人</dt><dd>Figure 02</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>在机器人上进行kHz级力矩反馈控制</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>机载</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>使用 (RL控制器训练) · 经仿真RL训练的端到端行走神经网络</dd><dt>底盘控制</dt><dd>人形双足 (RL策略直接驱动) · RL策略直接控制Figure 02行走 (仿真RL训练,输出以kHz力矩闭环执行)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>并行仿真物理参数各不相同的数千台Figure 02，在几小时内学习数年量的仿真演示。通过域随机化迁移到实机，10台Figure 02用同一个RL神经网络行走。</dd><dt>备注</dt><dd>与Helix无关的2025年行走控制器。仿真器·网络类型·GPU未公开。博客2025-03-25。不属于核验文件对象。</dd><dt>核验</dt><dd>未验证</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/zh/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/zh/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/zh/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/zh/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/zh/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/zh/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/zh/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/zh/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/zh/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/zh/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/zh/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/zh/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/zh/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/zh/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/zh/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/zh/m/bumblebee/">BumbleBee</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/bumblebee/"><small>← 上一个</small>BumbleBee</a><a class="nx" href="/zh/m/g0plus/"><small>下一个 →</small>G0Plus</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

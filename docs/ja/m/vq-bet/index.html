@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VQ-BeT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="VQ-BeT (New York University, 2024-03) — 連続行動を階層的な残差VQコードに変換し、反復デノイジングなしで一度に予測する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/vq-bet/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vq-bet/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vq-bet/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vq-bet/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vq-bet/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vq-bet/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="VQ-BeT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="VQ-BeT (New York University, 2024-03) — 連続行動を階層的な残差VQコードに変換し、反復デノイジングなしで一度に予測する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/vq-bet/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "VQ-BeT — 構造・バックボーンLLM・学習・推論メモリ", "description": "VQ-BeT (New York University, 2024-03) — 連続行動を階層的な残差VQコードに変換し、反復デノイジングなしで一度に予測する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/vq-bet/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "VQ-BeT", "creator": {"@type": "Organization", "name": "New York University; Seoul National University"}}, "citation": {"@type": "ScholarlyArticle", "name": "Behavior Generation with Latent Actions", "url": "https://arxiv.org/abs/2403.03181"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "VQ-BeT", "item": "https://vla-gallery.is-a.dev/ja/m/vq-bet/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vq-bet/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vq-bet/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vq-bet/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vq-bet/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / VA</p>
+<h1>VQ-BeT</h1>
+<p class="by">New York University; Seoul National University · 2024-03</p>
+<p class="kv"><span>VA</span><span>VA</span><span>非公開</span><span>離散トークン</span></p>
+<p class="sum">連続行動を階層的な残差VQコードに変換し、反復デノイジングなしで一度に予測する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-vq-bet">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2403.03181" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2403.03181" rel="noopener">Behavior Generation with Latent Actions</a><small>arXiv 2403.03181</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>VA</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2024-03</dd><dt>機関</dt><dd>New York University; Seoul National University</dd><dt>重み公開</dt><dd>一部</dd><dt>パラメータ</dt><dd>非公開</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>ResNet18 (凍結)</dd><dt>アクションヘッド</dt><dd>残差VQ行動コード + オフセット (離散トークン)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>minGPT(6層・6ヘッド・120次元; BlockPushは4・4・72) + 2層残差VQ行動コード(VQ-VAE潜在512、BlockPush 256; コードブック8–16) + オフセット、シングルパスデコーディング; 画像タスクは凍結ResNet18埋め込み</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: GPU・時間・バッチは非公開; エポック Kitchen 1000、Ant 300、BlockPush 1500、UR3 300、PushT 2000、NuScenes 1000、実機 600; 2段階学習(残差VQトークナイザ → Transformer)</dd><dt>データ種類</dt><dd>シミュレーション・合成; 実ロボットのデモ(収集方式はノートに記載なし); その他(nuScenes走行)</dd><dt>データ規模</dt><dd>PushT 206、Kitchen 566、BlockPush 1,000軌跡、nuScenes 684シーン; 実機タスクあたり45デモ(80%を学習)</dd><dt>主要データセット</dt><dd>Push-T; Franka Kitchen; BlockPush; UR3 BlockPush; Multimodal Ant; nuScenes</dd><dt>タスク・評価</dt><dd>PushT, Image PushT, Kitchen, Image Kitchen, UR3 BlockPush, BlockPush, Multimodal Ant, nuScenes; 実機Stretchの単一段階5・多段階3・長期4タスク</dd><dt>ロボット</dt><dd>Hello Robot Stretch(実機); シミュレーション; nuScenes走行</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>実ロボット: VQ-BeT 18.06 ms(RTX A4000)・207.25 ms(4コアCPU) vs DP-T 573.49・5,243.82 ms</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(行動クローニング)のみ使用</dd><dt>ベース制御</dt><dd>固定 · ベース制御の言及なし (Stretch操作実験; nuScenesはオフライン軌跡予測)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>連続行動を階層的な残差VQコードに変換し、反復デノイジングなしで一度に予測する。実ロボットでの推論が拡散方策より25倍(シミュレーションでは5倍)速いと報告した。</dd><dt>備考</dt><dd>実機実験はStretchモバイルマニピュレーター。目標条件は任意、言語なし。Table 13 BlockPush列の構造値の修正を反映。READMEは目標条件付きKitchenの重みのみ提供。ICML 2024。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/ja/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/ja/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/ja/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/ja/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/ja/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/ja/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/ja/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/ja/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/ja/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/ja/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/ja/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/ja/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/ja/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/ja/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/ja/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/baku/"><small>← 前のモデル</small>BAKU</a><a class="nx" href="/ja/m/scaledp/"><small>次のモデル →</small>ScaleDP</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

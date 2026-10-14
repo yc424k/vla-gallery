@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TidyBot++ — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="TidyBot++ (Princeton University, 2024-11) — 用全向(holonomic)动力脚轮底盘和手机遥操作演示，按任务训练Diffusion Policy，同时输出底盘目标位姿与手臂末端目标。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/tidybot/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/tidybot/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/tidybot/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/tidybot/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/tidybot/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/tidybot/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="TidyBot++ — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="TidyBot++ (Princeton University, 2024-11) — 用全向(holonomic)动力脚轮底盘和手机遥操作演示，按任务训练Diffusion Policy，同时输出底盘目标位姿与手臂末端目标。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/tidybot/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "TidyBot++ — 架构、骨干LLM、训练与推理内存", "description": "TidyBot++ (Princeton University, 2024-11) — 用全向(holonomic)动力脚轮底盘和手机遥操作演示，按任务训练Diffusion Policy，同时输出底盘目标位姿与手臂末端目标。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/tidybot/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "TidyBot++ (diffusion policy)", "creator": {"@type": "Organization", "name": "Princeton University·Stanford University·Dexterity"}}, "citation": {"@type": "ScholarlyArticle", "name": "TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning", "url": "https://arxiv.org/abs/2412.10447"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "TidyBot++", "item": "https://vla-gallery.is-a.dev/zh/m/tidybot/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/tidybot/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/tidybot/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/tidybot/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/tidybot/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 移动操作</p>
+<h1>TidyBot++</h1>
+<p class="full">TidyBot++ (diffusion policy)</p>
+<p class="by">Princeton University·Stanford University·Dexterity · 2024-11</p>
+<p class="kv"><span>VA</span><span>移动操作</span><span>未公开</span><span>diffusion</span></p>
+<p class="sum">用全向(holonomic)动力脚轮底盘和手机遥操作演示，按任务训练Diffusion Policy，同时输出底盘目标位姿与手臂末端目标。</p>
+<div class="acts"><a class="pri" href="/zh/#m-tidybot">在图库中查看架构图</a><a href="https://arxiv.org/abs/2412.10447" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.10447" rel="noopener">TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning</a><small>arXiv 2412.10447</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>移动操作</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2024-11</dd><dt>机构</dt><dd>Princeton University·Stanford University·Dexterity</dd><dt>权重公开</dt><dd>部分</dd><dt>参数</dt><dd>未公开</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>robomimic CNN编码器(ResNet-18†) · 底座·腕部相机84×84</dd><dt>动作头</dt><dd>DDIM diffusion头 (训练100·推理16步) (diffusion)</dd><dt>动作块</dt><dd>horizon 16中执行8步</dd><dt>控制频率</dt><dd>10 Hz</dd><dt>架构原文摘要</dt><dd>Diffusion Policy(U-Net hybrid image，官方代码设置)：用robomimic CNN编码器(ResNet-18†)编码底盘·腕部相机84×84 + 底盘位姿·臂状态 → 1D时间轴U-Net，DDIM(训练100·推理16步)；动作为13维绝对目标(底盘x·y·θ + 臂末端位置·6D旋转 + 夹爪)，horizon 16·执行8步，10 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务从头训练：GPU笔记本(README：负责训练·推理)，500个epoch(代码默认批量64)，训练时间未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>6个任务：open fridge 100次·其余5个任务各50次(共350次)；采集50次需1–2小时(含复位)</dd><dt>主要数据集</dt><dd>自有手机遥操作演示(真实公寓)</dd><dt>任务·评估</dt><dd>真实公寓6项任务各10次：open fridge 10/10，wipe countertop 9/10，load dishwasher 7/10，take out trash 10/10，load laundry 7/10，water plant 6/10；差速驱动约束策略wipe countertop 4/10</dd><dt>机器人</dt><dd>TidyBot++：动力脚轮全向轮式底盘(底盘$5–6k) + Kinova Gen3 7-DoF机械臂，Intel NUC迷你PC</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>GPU笔记本推理115 ms(RTX 4080 Laptop，README)，提前200 ms计算下一个动作块以隐藏延迟；策略10 Hz；实时控制在机载Intel NUC</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>GPU笔记本(RTX 4080 Laptop)推理 + 机载Intel NUC控制</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅模仿学习（按任务的Diffusion Policy）</dd><dt>底盘控制</dt><dd>轮式 (直接输出底盘速度/位姿) · 策略同时输出底盘目标位姿(x·y·θ)与手臂目标 → 全向底盘底层控制器跟踪</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>用全向(holonomic)动力脚轮底盘和手机遥操作演示，按任务训练Diffusion Policy，同时输出底盘目标位姿与手臂末端目标。在真实公寓6项任务中成功6/10~10/10，同等条件下受差速驱动约束的策略在拖地任务中仅为4/10(全向9/10)。</dd><dt>备注</dt><dd>论文仅将策略描述为&#x27;diffusion policy&#x27;，结构·频率·延迟以官方GitHub代码·README为准。硬件设计·遥操作·训练·控制代码开源；权重仅公开仿真sim-v1策略检查点（真实任务策略未公开）。模型大小·训练GPU型号·时间未公开。基于：Diffusion Policy: Visuomotor Policy Learning via Action Diffusion (arXiv 2303.04137) — 论文·README在策略训练中直接使用Diffusion Policy（real-stanford/diffusion_policy代码）</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/zh/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/zh/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/zh/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/zh/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/zh/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/zh/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/zh/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/zh/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/zh/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/zh/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/zh/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/zh/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/zh/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/zh/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/gen-1-5/"><small>← 上一个</small>GEN-1.5</a><a class="nx" href="/zh/m/momanipvla/"><small>下一个 →</small>MoManipVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

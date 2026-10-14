@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spirit v1.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Spirit v1.5 (Spirit AI, 2026-01) — Trained on diverse, loosely controlled collected data instead of curated data.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/spirit-v1-5/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/spirit-v1-5/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/spirit-v1-5/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/spirit-v1-5/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/spirit-v1-5/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/spirit-v1-5/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Spirit v1.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Spirit v1.5 (Spirit AI, 2026-01) — Trained on diverse, loosely controlled collected data instead of curated data.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/spirit-v1-5/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Spirit v1.5 — Architecture, Backbone LLM, Training & Inference Memory", "description": "Spirit v1.5 (Spirit AI, 2026-01) — Trained on diverse, loosely controlled collected data instead of curated data.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/spirit-v1-5/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Spirit v1.5", "creator": {"@type": "Organization", "name": "Spirit AI"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Spirit v1.5", "item": "https://vla-gallery.is-a.dev/m/spirit-v1-5/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/spirit-v1-5/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/spirit-v1-5/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/spirit-v1-5/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/spirit-v1-5/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / New in 2026</p>
+<h1>Spirit v1.5</h1>
+<p class="by">Spirit AI · 2026-01</p>
+<p class="kv"><span>VLA</span><span>New in 2026</span><span>5B</span><span>Not disclosed</span></p>
+<p class="sum">Trained on diverse, loosely controlled collected data instead of curated data.</p>
+<div class="acts"><a class="pri" href="/#m-spirit-v1-5">View architecture diagram in the gallery</a><a href="https://huggingface.co/Spirit-AI-robotics/Spirit-v1.5" rel="noopener">Hugging Face ↗</a></div>
+<h2>Paper</h2>
+<p class="paper">No paper</p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>New in 2026</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2026-01</dd><dt>Organization</dt><dd>Spirit AI</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>5B (HF label)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Qwen3 · Qwen3-VL-4B config</dd><dt>Vision encoder</dt><dd>Qwen3-VL ViT</dd><dt>Action head</dt><dd>DiT action head (latent action tokens, secondary) (Not disclosed)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Qwen3-VL-4B-Instruct VLM + DiT action head (latent action token prediction, secondary)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed (README recommends 8× A100 80GB)</dd><dt>Data type</dt><dd>Real-robot teleoperation (diverse·loosely controlled collection)</dd><dt>Data scale</dt><dd>Not disclosed (hours·episodes)</dd><dt>Main datasets</dt><dd>Not disclosed</dd><dt>Tasks &amp; evaluation</dt><dd>RoboChallenge Table30 (30 tasks) 1st place; overall 66.09, success rate 50.33% (secondary)</dd><dt>Robot</dt><dd>Not disclosed</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Tested on A100 80GB (README)</dd><dt>Inference memory</dt><dd>Tested on A100 80GB (README)</dd><dt>Weights bf16 (calc.)</dt><dd>10 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not disclosed · Training method not disclosed</dd><dt>Base control</dt><dd>Fixed · No base control (RoboChallenge Table30 tabletop manipulation; explicitly excludes non-manipulation scenarios)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Trained on diverse, loosely controlled collected data instead of curated data. Ranked 1st on RoboChallenge Table30 as of 2026-01-11.</dd><dt>Notes</dt><dd>License conflict: HF apache-2.0, GitHub LICENSE MIT. README &#x27;[2026-01] Initial Release&#x27;; date 2026-01-12 is secondary. Effect of collection method (secondary): effective collection time per person up about 200%, expert input down about 60%, fine-tuning iterations down about 40% at the same pretraining scale.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/g0plus/">G0Plus</a><small>2026-01</small></li><li><a href="/m/internvla-a1/">InternVLA-A1</a><small>2026-01</small></li><li><a href="/m/1x-world-model/">1X World Model (1XWM) 정책</a><small>2026-01</small></li><li><a href="/m/being-h0-5/">Being-H0.5</a><small>2026-01</small></li><li><a href="/m/cosmos-policy/">Cosmos Policy</a><small>2026-01</small></li><li><a href="/m/rho-alpha/">Rho-alpha (ρα)</a><small>2026-01(2차)†</small></li><li><a href="/m/lingbot-vla/">LingBot-VLA</a><small>2026-01</small></li><li><a href="/m/helix-02/">Helix 02</a><small>2026-01</small></li><li><a href="/m/unifolm-vla-0/">UnifoLM-VLA-0</a><small>2026-01</small></li><li><a href="/m/holobrain-0/">HoloBrain-0</a><small>2026-02</small></li><li><a href="/m/g0tiny/">G0Tiny</a><small>2026-02</small></li><li><a href="/m/xiaomi-robotics-0/">Xiaomi-Robotics-0</a><small>2026-02</small></li><li><a href="/m/dreamzero/">DreamZero</a><small>2026-02</small></li><li><a href="/m/egoscale/">EgoScale</a><small>2026-02</small></li><li><a href="/m/psi0/">Ψ0 (Psi-Zero)</a><small>2026-03</small></li><li><a href="/m/gr00t-n1-7/">GR00T N1.7</a><small>2026-03</small></li><li><a href="/m/gen-1/">GEN-1</a><small>2026-04</small></li><li><a href="/m/go-2/">GO-2</a><small>2026-04(2차)</small></li><li><a href="/m/being-h0-7/">Being-H0.7</a><small>2026-04</small></li><li><a href="/m/pi0-7/">π0.7</a><small>2026-04</small></li><li><a href="/m/molmoact-2/">MolmoAct 2</a><small>2026-05</small></li><li><a href="/m/g0-5/">G0.5</a><small>2026-06</small></li><li><a href="/m/syvla/">SyVLA</a><small>2026-06</small></li><li><a href="/m/openhlm/">OpenHLM</a><small>2026-06</small></li><li><a href="/m/galbot-astrabrain/">Galbot AstraBrain(银河星脑) 계열</a><small>2026-06(2차)</small></li><li><a href="/m/internvla-a1-5/">InternVLA-A1.5</a><small>2026-07†</small></li><li><a href="/m/turbovla/">TurboVLA</a><small>2026-07</small></li><li><a href="/m/gemini-robotics-2/">Gemini Robotics 2</a><small>2026-07</small></li><li><a href="/m/gemini-robotics-on-device-2/">Gemini Robotics On-Device 2</a><small>2026-07</small></li><li><a href="/m/dyna-2/">DYNA-2</a><small>2026-08</small></li><li><a href="/m/skild-s1/">Skild S1</a><small>2026-08(Skild)/2026-09(NVIDIA)</small></li><li><a href="/m/gen-1-5/">GEN-1.5</a><small>2026-08</small></li><li><a href="/m/omega-0/">ω-0 (OMEGA-0)</a><small>2026-08</small></li><li><a href="/m/qwen-vla/">Qwen-VLA</a><small>2026-05</small></li></ul></section>
+<nav class="pn"><a href="/m/1x-world-model/"><small>← Previous</small>1X World Model (1XWM) 정책</a><a class="nx" href="/m/being-h0-5/"><small>Next →</small>Being-H0.5</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

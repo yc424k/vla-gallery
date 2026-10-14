@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UH-1 (Humanoid-X) — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="UH-1 (Humanoid-X) (USC, 2024-12) — 是无视觉输入、将语言转换为人形机器人动作的VLA相邻模型。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/uh-1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/uh-1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/uh-1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/uh-1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/uh-1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/uh-1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="UH-1 (Humanoid-X) — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="UH-1 (Humanoid-X) (USC, 2024-12) — 是无视觉输入、将语言转换为人形机器人动作的VLA相邻模型。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/uh-1/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "UH-1 (Humanoid-X) — 架构、骨干LLM、训练与推理内存", "description": "UH-1 (Humanoid-X) (USC, 2024-12) — 是无视觉输入、将语言转换为人形机器人动作的VLA相邻模型。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/uh-1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "UH-1 (Humanoid-X)", "creator": {"@type": "Organization", "name": "USC·UC Berkeley·Toyota Research Institute"}}, "citation": {"@type": "ScholarlyArticle", "name": "Learning from Massive Human Videos for Universal Humanoid Pose Control", "url": "https://arxiv.org/abs/2412.14172"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "UH-1 (Humanoid-X)", "item": "https://vla-gallery.is-a.dev/zh/m/uh-1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/uh-1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/uh-1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/uh-1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/uh-1/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 人形机器人VLA</p>
+<h1>UH-1 (Humanoid-X)</h1>
+<p class="by">USC·UC Berkeley·Toyota Research Institute · 2024-12</p>
+<p class="kv"><span>기타</span><span>人形机器人VLA</span><span>未公开</span><span>离散token</span></p>
+<p class="sum">是无视觉输入、将语言转换为人形机器人动作的VLA相邻模型。</p>
+<div class="acts"><a class="pri" href="/zh/#m-uh-1">在图库中查看架构图</a><a href="https://arxiv.org/abs/2412.14172" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.14172" rel="noopener">Learning from Massive Human Videos for Universal Humanoid Pose Control</a><small>arXiv 2412.14172</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>人形机器人VLA</dd><dt>类型</dt><dd>기타</dd><dt>发布</dt><dd>2024-12</dd><dt>机构</dt><dd>USC·UC Berkeley·Toyota Research Institute</dd><dt>权重公开</dt><dd>未核实</dd><dt>参数</dt><dd>未公开 (18层·16头·1,024维)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>VQ-VAE动作token (离散token)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>50 fps</dd><dt>架构原文摘要</dt><dd>18层·16头·1,024维Transformer + VQ-VAE动作分词器(码本2048 × 512，下采样k=4)；文本→关键点(目标条件RL策略，闭环)或文本→关节目标(开环，下肢用单独的行走策略)，动作序列50 fps</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>RTX 6000 Ada × 1</dd><dt>预训练时长</dt><dd>完整Humanoid-X：tokenizer约40小时 + Transformer约400小时 (HumanoidML3D子集：约8小时 + 约30小时)</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>440 (换算 · RTX 6000 Ada-小时 (1 × (约40 h + 约400 h)，完整Humanoid-X))</dd><dt>微调</dt><dd>不适用；下层RL策略为Isaac Gym 6192 env，PPO(γ 0.99，λ 0.95)，GPU·时间未公开</dd><dt>数据类型</dt><dd>人类视频 / 动作捕捉</dd><dt>数据规模</dt><dd>Humanoid-X 163.8K动作样本·240.3小时视频·20.7M帧,词表3206词</dd><dt>主要数据集</dt><dd>Humanoid-X(AIST, AMASS, Charades, EgoBody, GRAB, HAA500, HuMMan, IDEA400, Kinetics700, MotionX Video, YouTube;字幕 Video-LLaMA)</dd><dt>任务·评估</dt><dd>真实Unitree H1-2语言指令12条 × 10次，两种模式均&#x27;接近100%&#x27;(Table 3各任务80~100%)</dd><dt>机器人</dt><dd>Unitree H1-2全身姿态控制</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>部分 (结合RL底层控制器) · Transformer为监督学习，关键点模式执行由IsaacGym PPO目标条件RL策略完成(环境6,192个)</dd><dt>底盘控制</dt><dd>固定 · 真实机器人以文本→动作开环仅控制上半身位姿，下半身为独立的预训练行走策略 (评估任务中无行走)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>是无视觉输入、将语言转换为人形机器人动作的VLA相邻模型。用将互联网人类视频重定向为人形机器人动作的Humanoid-X训练。</dd><dt>备注</dt><dd>是无视觉输入的VLA相邻模型，因此类型为&#x27;其他&#x27;。发布时数据·代码未公开（&#x27;will fully release in the future&#x27;），当前状态未核实。HTML提取中的词汇量&#x27;11,897&#x27;有误，PDF原文为3206。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/zh/m/gr00t-n1-5/">GR00T N1.5</a><small>2025-05</small></li><li><a href="/zh/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/zh/m/figure-helix/">Figure Helix</a><small>2025-02</small></li><li><a href="/zh/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/zh/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/zh/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/zh/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/zh/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/zh/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/zh/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/zh/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/zh/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/leverb/"><small>← 上一个</small>LeVERB</a><a class="nx" href="/zh/m/egovla/"><small>下一个 →</small>EgoVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

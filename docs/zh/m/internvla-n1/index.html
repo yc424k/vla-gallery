@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InternVLA-N1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="InternVLA-N1 (Shanghai AI Laboratory (Intern Robotics), 2025-07) — 异步双系统导航基础模型：基于VLM的System 2以低频输出图像上的像素目标·潜在规划，基于diffusion的System 1以此为条件生成高频轨迹。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/internvla-n1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/internvla-n1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/internvla-n1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/internvla-n1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/internvla-n1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/internvla-n1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="InternVLA-N1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="InternVLA-N1 (Shanghai AI Laboratory (Intern Robotics), 2025-07) — 异步双系统导航基础模型：基于VLM的System 2以低频输出图像上的像素目标·潜在规划，基于diffusion的System 1以此为条件生成高频轨迹。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/internvla-n1/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "InternVLA-N1 — 架构、骨干LLM、训练与推理内存", "description": "InternVLA-N1 (Shanghai AI Laboratory (Intern Robotics), 2025-07) — 异步双系统导航基础模型：基于VLM的System 2以低频输出图像上的像素目标·潜在规划，基于diffusion的System 1以此为条件生成高频轨迹。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/internvla-n1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "InternVLA-N1", "creator": {"@type": "Organization", "name": "Shanghai AI Laboratory (Intern Robotics)"}}, "citation": {"@type": "ScholarlyArticle", "name": "InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans", "url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "InternVLA-N1", "item": "https://vla-gallery.is-a.dev/zh/m/internvla-n1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/internvla-n1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/internvla-n1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/internvla-n1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/internvla-n1/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>InternVLA-N1</h1>
+<p class="by">Shanghai AI Laboratory (Intern Robotics) · 2025-07</p>
+<p class="kv"><span>VLA</span><span>导航</span><span>8.39B</span><span>diffusion</span></p>
+<p class="sum">异步双系统导航基础模型：基于VLM的System 2以低频输出图像上的像素目标·潜在规划，基于diffusion的System 1以此为条件生成高频轨迹。</p>
+<div class="acts"><a class="pri" href="/zh/#m-internvla-n1">在图库中查看架构图</a><a href="https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf" rel="noopener">报告 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf" rel="noopener">InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans</a><small>报告</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-07</dd><dt>机构</dt><dd>Shanghai AI Laboratory (Intern Robotics)</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>8.39B (HF Preview safetensors) / 8.38B (HF DualVLN)；System 2为Qwen2.5-VL 7B</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Qwen2.5-VL-7B (System 2)</dd><dt>视觉编码器</dt><dd>Qwen2.5-VL视觉编码器 (S2) + DepthAnything RGB编码器 (S1)</dd><dt>动作头</dt><dd>S2像素目标·潜在规划 → S1 diffusion轨迹 (DualVLN航点32个) (diffusion)</dd><dt>动作块</dt><dd>轨迹（DualVLN 密集航点 32个）</dd><dt>控制频率</dt><dd>S2 2 Hz · S1 30 Hz · 控制200 Hz</dd><dt>架构原文摘要</dt><dd>System 2：Qwen2.5-VL-7B根据过去·当前RGB和指令以2 Hz输出图像上的像素目标(或学习型潜在规划token)·停止·原地旋转 / System 1：NavDP系diffusion策略(DepthAnything RGB编码器，含critic；DualVLN为DiT 12层·hidden 384)以30 Hz生成短程轨迹(DualVLN密集航点32个) → MPC跟踪，底层控制器200 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>报告：S2 SFT 1 epoch；DualVLN论文：S2 14,000步·批量 128（lr 2e-5），S1 15,000步·批量 128（lr 1e-4）</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>2阶段联合调整(S2冻结，潜在规划token + S1异步微调)算力未公开；使用world model扩展(Wan2.1 1.3B)时R2R-CE最优epoch 4→2</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>InternData-N1: 3,154个场景·4,839.9 km·1,344小时·53.5M图像·0.8M指令 (VLN-N1 3,000+场景·40M图像·600k指令;VLN-CE 332,179回合·856个场景;VLN-PE 8,679回合);S2对齐样本5M以上</dd><dt>主要数据集</dt><dd>InternData-N1 (VLN-N1: Replica·MP3D·Gibson·3D-Front·HSSD·HM3D;VLN-CE: R2R·RxR·EnvDrop·ScaleVLN回放;VLN-PE: InternUtopia物理仿真)</dd><dt>任务·评估</dt><dd>技术报告：R2R-CE val-unseen SR 55.4%（S2）·58.2%（S1+S2），RxR-CE SR 49.5%·53.5%；在VLN-PE（H1）零样本中SR比VLN-PE训练模型高17%以上；DualVLN：R2R-CE SR 64.3%·SPL 58.5%，RxR-CE SR 61.4%·SPL 51.8%，VLN-PE R2R unseen SR 51.6%；真实世界办公室·餐厅·街道等</dd><dt>机器人</dt><dd>Turtlebot4轮式，Unitree Go2四足，Unitree G1人形机器人；RealSense D455(向下15°)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>远程RTX 4090 1块，GPU内存约20GB；通过复用S2轨迹token KV缓存从约1.1秒→0.7秒；S1用TensorRT生成32条轨迹约0.03秒；S2 2 Hz·S1 30 Hz</dd><dt>推理显存</dt><dd>约20GB</dd><dt>权重 bf16（计算）</dt><dd>16.8 GB</dd><dt>运行位置</dt><dd>远程服务器 (RTX 4090)</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅模仿学习（SFT·diffusion）；S1 critic为监督学习</dd><dt>底盘控制</dt><dd>轮式·四足·人形双足 (航点 → 跟踪控制器) · S2像素目标·潜在规划 → S1输出轨迹 → 按里程计转换为世界坐标后由MPC跟踪</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>异步双系统导航基础模型：基于VLM的System 2以低频输出图像上的像素目标·潜在规划，基于diffusion的System 1以此为条件生成高频轨迹。用仅仿真的InternData-N1(53.5M图像·4,839.9 km)训练，在VLN-CE·VLN-PE上达到最高水平，并零样本迁移到轮式·四足·人形真实机器人。</dd><dt>备注</dt><dd>发布以HF InternVLA-N1-Preview仓库创建（2025-07-21）为准，技术报告为2025-09-11，DualVLN论文 arXiv 2512.08186（2025-12）；HF变体：Preview（同步，约 2 Hz）→ wo-dagger（首个正式版更名）→ w-NavDP*·DualVLN（推荐，仅RGB）；训练GPU·时间未公开；数据规模标注50M以上/53M/53.5M混杂；许可证 CC BY-NC-SA 4.0；2025-12公开训练代码。基于：NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance (arXiv 2505.08712) — 报告明示System 1沿用与NavDP相似的结构</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/zh/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/zh/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/navfom/"><small>← 上一个</small>NavFoM</a><a class="nx" href="/zh/m/trackvla/"><small>下一个 →</small>TrackVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

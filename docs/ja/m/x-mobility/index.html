@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X-Mobility — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="X-Mobility (NVIDIA, 2024-10) — 自己回帰潜在world modelで環境動力学を先に学習し、その潜在状態の上で行動方策を分離して学習することで、シミュレーションデータのみで汎化するエンドツーエンドのナビゲーションモデルである。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/x-mobility/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/x-mobility/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/x-mobility/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/x-mobility/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/x-mobility/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/x-mobility/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="X-Mobility — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="X-Mobility (NVIDIA, 2024-10) — 自己回帰潜在world modelで環境動力学を先に学習し、その潜在状態の上で行動方策を分離して学習することで、シミュレーションデータのみで汎化するエンドツーエンドのナビゲーションモデルである。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/x-mobility/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "X-Mobility — 構造・バックボーンLLM・学習・推論メモリ", "description": "X-Mobility (NVIDIA, 2024-10) — 自己回帰潜在world modelで環境動力学を先に学習し、その潜在状態の上で行動方策を分離して学習することで、シミュレーションデータのみで汎化するエンドツーエンドのナビゲーションモデルである。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/x-mobility/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "X-Mobility", "creator": {"@type": "Organization", "name": "NVIDIA·UT Austin·UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "X-MOBILITY: End-To-End Generalizable Navigation via World Modeling", "url": "https://arxiv.org/abs/2410.17491"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "X-Mobility", "item": "https://vla-gallery.is-a.dev/ja/m/x-mobility/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/x-mobility/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/x-mobility/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/x-mobility/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/x-mobility/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>X-Mobility</h1>
+<p class="by">NVIDIA·UT Austin·UC Berkeley · 2024-10</p>
+<p class="kv"><span>VA</span><span>ナビゲーション</span><span>非公開</span><span>回帰</span></p>
+<p class="sum">自己回帰潜在world modelで環境動力学を先に学習し、その潜在状態の上で行動方策を分離して学習することで、シミュレーションデータのみで汎化するエンドツーエンドのナビゲーションモデルである。</p>
+<div class="acts"><a class="pri" href="/ja/#m-x-mobility">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2410.17491" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.17491" rel="noopener">X-MOBILITY: End-To-End Generalizable Navigation via World Modeling</a><small>arXiv 2410.17491</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2024-10</dd><dt>機関</dt><dd>NVIDIA·UT Austin·UC Berkeley</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>非公開 (合計は記載なし; 構成要素: 画像エンコーダ 22.1M・状態推定 5.5M・予測 2.3M・融合 28.5M・行動/経路デコーダ 各10.5M・セマンティックデコーダ 34.2M・RGB diffuser 962M)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>DINOv2 (22.1M、微調整)</dd><dt>アクションヘッド</dt><dd>MLP行動デコーダ: 6次元速度 + 経路5ポーズ (回帰)</dd><dt>チャンク</dt><dd>なし (1ステップ速度; 経路5ポーズを補助)</dd><dt>制御周期</dt><dd>非公開 (Jetson P50 38.6 ms)</dd><dt>構造の原文要約</dt><dd>DINOv2画像エンコーダ(22.1M) + 速度エンコーダ → GRUベースの潜在状態推定・予測(自己回帰world model) → 経路(route)埋め込みとself-attentionで融合 → MLP: 6次元速度指令(線・角速度) + 経路5ポーズ; 学習時はセマンティック・RGB(LDM)デコーダでworld modelを監督</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100 8枚</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>world model 100エポック(ランダム行動データ) → 方策と同時学習100エポック · バッチ32</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし (実ロボット微調整なし)</dd><dt>データ種類</dt><dd>シミュレーション・合成</dd><dt>データ規模</dt><dd>Isaac Sim倉庫4種、5 Hzで記録: Nav2教師100Kフレーム + ランダム行動160Kフレーム</dd><dt>主要データセット</dt><dd>x_mobility_isaac_sim_nav2_100k; x_mobility_isaac_sim_random_160k (HF nvidia/X-Mobilityデータセット)</dd><dt>タスク・評価</dt><dd>Isaac Sim倉庫の成功率96% (BC 92%、Nav2 58%、MILE 34%); ランダム障害物68% (BC 56%、Nav2 34%、MILE 26%); 実機Nova Carterで単一障害物10/10・複数障害物8/9 (通常・暗い照明)</dd><dt>ロボット</dt><dd>NVIDIA Nova Carter 車輪型(実機・シミュレーション)、Forklift 車輪型(Ackermann駆動、シミュレーション); Unitree Go2 四足・G1 ヒューマノイド(シミュレーション、RL歩行方策と結合)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>Jetson AGX Orin: 方策のみP50 38.6 ms・P95 41.96 ms・GPU 594 MB; 方策+セマンティックP50 55.55 ms・804 MB; ONNX・TensorRT変換をサポート(README)</dd><dt>推論メモリ</dt><dd>594 MB (方策のみ) / 804 MB (方策+セマンティック)</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>オンボード Jetson AGX Orin</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>一部 (RL下位制御器との結合) · シミュレーションのGo2・G1デモでのみIsaac Lab RL歩行方策が速度指令を関節制御に変換; X-Mobility自体はNav2教師の模倣学習</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/html/2410.17491" rel="noopener">https://arxiv.org/html/2410.17491</a></dd><dt>ベース制御</dt><dd>車輪型·四足歩行·ヒューマノイド歩行 (ベース速度・姿勢を直接出力) · 方策が並進速度・角速度指令を直接出力(Nova Carter実機・シミュレーション); Go2・G1はシミュレーションでIsaac Lab RL歩行方策が速度指令を関節制御に変換</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>自己回帰潜在world modelで環境動力学を先に学習し、その潜在状態の上で行動方策を分離して学習することで、シミュレーションデータのみで汎化するエンドツーエンドのナビゲーションモデルである。Isaac Simの倉庫で成功率96%(Nav2 58%)を示し、ファインチューニングなしで実機Nova Carterにゼロショット配備した。</dd><dt>備考</dt><dd>2段階学習(ランダム行動でworld modelを事前学習 → Nav2教師データで方策を追加)。総パラメータ・学習時間は非公開。HFチェックポイント1.44GB(x_mobility-nav2-semantic_action_path.ckpt)、Apache 2.0コード。後続COMPASSの基盤方策。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/nwm/"><small>← 前のモデル</small>NWM</a><a class="nx" href="/ja/m/compass/"><small>次のモデル →</small>COMPASS</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>
