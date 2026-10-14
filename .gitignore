@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 shots/
 .DS_Store
+
+# 조사 원자료(로컬 전용, 저장소에 올리지 않음)
+research/

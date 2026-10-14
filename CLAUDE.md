@@ -36,6 +36,7 @@
 | `research/drafts/` | 초기 보고서 섹션 초안 |
 | `.claude/settings.json` | 커밋·PR에 Claude 서명이 붙지 않게 하는 설정(아래 Git 규칙) |
 
+- `research/`는 `.gitignore`에 들어 있어 저장소에 올리지 않는다(로컬 전용). 빌드에는 필요 없다.
 - `research/mobile/apply.py`는 조사 원본에 검증 수정을 적용해 네 파일을 만든 기록이다. 만드는 파일은 `gallery/new_models.json`, `parts/rows_w8.jsonl`, `parts/sources_w8.md`, `gallery/base_existing.json`이다.
   - 지금 돌리면 현재 파일과 똑같이 재현된다.
   - 이 네 파일을 직접 고친 뒤에는 돌리지 않는다(덮어쓴다).
