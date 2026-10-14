@@ -30,6 +30,8 @@ HTML
 touch docs/.nojekyll
 # 모델별 정적 페이지(검색 노출용)와 sitemap.xml
 python3 build/make_pages.py gallery/data.json i18n docs
+# 링크 미리보기 이미지(언어별 홈 첫 화면). Playwright가 없으면 건너뛴다
+python3 build/make_og.py docs
 # 엑셀용 신규 모델 행은 gallery/new_models.json에서 다시 뽑는다
 python3 -c "import json;R=json.load(open('gallery/new_models.json',encoding='utf-8'));open('parts/rows_w8.jsonl','w',encoding='utf-8').write(''.join(json.dumps(r['row'],ensure_ascii=False)+'\n' for r in R))"
 python3 build/make_xlsx2.py parts "reports/로봇 VA VLA 모델 비교표.xlsx" gallery/data.json

@@ -10,6 +10,7 @@ LOCALE = {"ko": "ko_KR", "en": "en_US", "ja": "ja_JP", "zh": "zh_CN"}
 DEFAULT = "en"  # 사이트 맨 위(/)에 놓는 기본 언어. 나머지는 /ko/ 같은 하위 폴더
 url_of = lambda l: SITE if l == DEFAULT else SITE + l + "/"
 URL = url_of(lang)
+OG = SITE + "assets/og-%s.png" % lang  # 링크 미리보기 이미지(build/make_og.py가 찍는다)
 s = open(src, encoding="utf-8").read()
 # 본문 시작: 첫 화면 위 진행 막대·메뉴가 있으면 거기서, 없으면 히어로에서 자른다
 i = min(s.index(x) for x in ('<div class="progress"', '<header class="hero">') if x in s)
@@ -47,8 +48,10 @@ seo = ("<link rel=\"canonical\" href=\"%s\">\n" % URL + alts
        + meta("property", "og:title", title) + meta("property", "og:description", desc)
        + meta("property", "og:url", URL) + meta("property", "og:locale", LOCALE[lang])
        + "".join(meta("property", "og:locale:alternate", LOCALE[l]) for l in LANGS if l != lang)
-       + meta("name", "twitter:card", "summary") + meta("name", "twitter:title", title)
-       + meta("name", "twitter:description", desc)
+       + meta("property", "og:image", OG) + meta("property", "og:image:width", "1200")
+       + meta("property", "og:image:height", "630") + meta("property", "og:image:alt", title)
+       + meta("name", "twitter:card", "summary_large_image") + meta("name", "twitter:title", title)
+       + meta("name", "twitter:description", desc) + meta("name", "twitter:image", OG)
        + '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>\n")
 head = head.replace("</title>\n", "</title>\n" + seo, 1)
 

@@ -161,11 +161,12 @@ def build(l):
                 '<meta property="og:type" content="%s"><meta property="og:site_name" content="VLA Gallery">\n'
                 '<meta property="og:title" content="%s"><meta property="og:description" content="%s">\n'
                 '<meta property="og:url" content="%s"><meta property="og:locale" content="%s">\n'
-                '<meta name="twitter:card" content="summary">\n'
+                '<meta property="og:image" content="%sassets/og-%s.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n'
+                '<meta name="twitter:card" content="summary_large_image">\n'
                 '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
                 "%s\n<link rel=\"stylesheet\" href=\"/assets/model.css\">\n%s\n"
                 '<script type="application/ld+json">%s</script>\n</head>\n<body>\n') % (
-            l, e(title), e(desc), url, alts, kind, e(title), e(desc), url, LOCALE[l], font_link(), HEAD_JS,
+            l, e(title), e(desc), url, alts, kind, e(title), e(desc), url, LOCALE[l], SITE, l, font_link(), HEAD_JS,
             json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"))
 
     def top(alt_urls):

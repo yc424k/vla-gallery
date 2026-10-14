@@ -27,8 +27,8 @@
 | `gallery/base_existing.json` | 기존 165개의 베이스 제어(types·how·cat) |
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
-| `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_pages.py`(모델별 정적 페이지·sitemap.xml), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
-| `docs/` | GitHub Pages에 올릴 파일(`index.html`(영어), `ko/`·`ja/`·`zh/`, `en/`(→ `/` 안내), 모델별 페이지 `m/`·`<lang>/m/`, `assets/model.css`, `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)·언어별 hreflang은 `make_site.py`에 있다 |
+| `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_pages.py`(모델별 정적 페이지·sitemap.xml), `make_og.py`(링크 미리보기 이미지), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
+| `docs/` | GitHub Pages에 올릴 파일(`index.html`(영어), `ko/`·`ja/`·`zh/`, `en/`(→ `/` 안내), 모델별 페이지 `m/`·`<lang>/m/`, `assets/model.css`, `assets/og-<lang>.png`(링크 미리보기), `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)·언어별 hreflang은 `make_site.py`에 있다 |
 | `i18n/` | 번역 사전(`en`·`ja`·`zh.json`), 용어집, 번역 대상 목록. 아래 '다국어' 참고 |
 | `reports/` | 로봇 VA VLA 모델 비교표.xlsx |
 | `research/notes/` | 주제별 조사 노트. `verification_*.md`(검증 노트)가 다른 노트보다 우선한다 |
@@ -79,6 +79,11 @@
   2. 빠진 키를 `python3 build/i18n_check.py i18n/source.json i18n/en.json`으로 확인하고, 용어집을 따라 `i18n/<lang>.json`에 번역을 추가한다.
   3. 여러 개를 나눠 번역할 때는 `i18n/work/`(git 제외)에 `<lang>_*.json`으로 두고 `python3 build/i18n_merge.py <lang>`으로 합친다. `build/i18n_align.py`로 키와 번역이 어긋나지 않았는지 확인한다.
 - 엑셀 비교표는 한국어만 있다.
+
+## 링크 미리보기 이미지
+- 링크를 메신저·SNS에 붙이면 뜨는 미리보기 이미지는 언어별 홈 첫 화면(라이트 테마)을 1200×630으로 찍은 `docs/assets/og-<lang>.png`다.
+- `build/make_og.py`가 `./build.sh` 중에 다시 찍는다. Playwright가 없으면 건너뛰고 커밋된 이미지를 그대로 쓴다.
+- 홈과 모델별 페이지 모두 `og:image`·`twitter:image`(`summary_large_image`)로 같은 언어의 이미지를 가리킨다.
 
 ## 모델별 페이지 (검색 노출용)
 - 주소: 영어 `/m/<모델 id>/`, 다른 언어 `/<lang>/m/<모델 id>/`(`/ko/m/…` 등), 모델 목록 `/m/`·`/<lang>/m/`. `build/make_pages.py`가 `data.json`에서 JS 없는 정적 HTML로 만든다.
