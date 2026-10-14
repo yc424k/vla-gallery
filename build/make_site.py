@@ -10,7 +10,8 @@ LOCALE = {"ko": "ko_KR", "en": "en_US", "ja": "ja_JP", "zh": "zh_CN"}
 url_of = lambda l: SITE if l == "ko" else SITE + l + "/"
 URL = url_of(lang)
 s = open(src, encoding="utf-8").read()
-i = s.index('<header class="hero">')
+# 본문 시작: 첫 화면 위 진행 막대·메뉴가 있으면 거기서, 없으면 히어로에서 자른다
+i = min(s.index(x) for x in ('<div class="progress"', '<header class="hero">') if x in s)
 head, body = s[:i], s[i:]
 
 def meta(attr, key, val):
