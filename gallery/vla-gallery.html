@@ -383,8 +383,23 @@ html.motion :is(section,footer)>.wrap>:not(#grid,#compact,#empty),html.motion .f
 html.motion :is(section,footer)>.wrap>.in:not(#grid),html.motion .factor.in{opacity:1;transform:none}
 html.motion .factor:nth-child(2){transition-delay:.08s} html.motion .factor:nth-child(3){transition-delay:.16s} html.motion .factor:nth-child(4){transition-delay:.24s}
 html.motion .factor.in:hover,html.motion .factor.done{transition-delay:0s}
-html.motion .chart svg{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s var(--ease-out) .15s}
-html.motion .chart.in svg{clip-path:inset(0 0 0 0)}
+/* 추론 메모리 그래프: 눈금 → 장치 선 → bf16 선 → 점(파라미터 작은 순) → 양자화 점 */
+@keyframes c-fade{from{opacity:0}to{opacity:1}}
+@keyframes c-sweep{from{transform:scaleX(0)}to{transform:none}}
+@keyframes c-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes c-pop{0%{opacity:0;transform:scale(0)}60%{opacity:1;transform:scale(1.25)}100%{opacity:1;transform:none}}
+@keyframes c-drop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+html.motion #mem-chart:not(.play) :is(.c-grid,.c-tick,.c-ref,.c-ref+.c-t,.c-acc,.c-acc-t,.c-pg,.c-qg){opacity:0}
+html.motion #mem-chart.play :is(.c-grid,.c-tick){animation:c-fade .5s ease-out both}
+html.motion #mem-chart.play .c-ref{transform-box:fill-box;transform-origin:0 50%;animation:c-sweep .7s var(--ease-out) .2s both}
+html.motion #mem-chart.play .c-ref+.c-t{animation:c-fade .4s ease-out .55s both}
+html.motion #mem-chart.play .c-acc{stroke-dasharray:1;animation:c-draw .9s var(--ease-out) .45s both}
+html.motion #mem-chart.play .c-acc-t{animation:c-fade .4s ease-out 1.1s both}
+html.motion #mem-chart.play .c-pg{animation:c-fade .35s ease-out calc(.9s + var(--d,0ms)) both}
+html.motion #mem-chart.play .c-pg .c-pt,html.motion #mem-chart.play .c-pg .arrh{transform-box:fill-box;transform-origin:50% 50%;animation:c-pop .45s var(--ease-out) calc(.9s + var(--d,0ms)) both}
+html.motion #mem-chart.play .c-qg{animation:c-drop .45s var(--ease-out) calc(2.1s + var(--d,0ms) * .3) both}
+#mem-chart .c-pt{transition:r .15s}
+#mem-chart .c-pg:hover .c-pt{r:7}
 html.motion .card:not(.in){opacity:0;transform:translateY(8px)}
 html.motion .card{transition:opacity .4s var(--ease-out),transform .4s var(--ease-out),border-color .15s}
 html.motion .card.in .fig svg>g,html.motion .card.in .fig svg>path,html.motion .mini .fig svg>g,html.motion .mini .fig svg>path{animation:blk .45s var(--ease-out) both;animation-delay:calc(var(--i,0) * 55ms + 120ms);transform-box:fill-box}
@@ -902,6 +917,8 @@ document.getElementById("legend").innerHTML = [["in",T("입력")],["vis",T("비�
   const X = v => x0 + v / 10 * (x1 - x0), Y = v => yBot - v / 26 * (yBot - yTop);
   const LAB = {"turbovla":[0,0,"start",180,405],"evo-1":[-4,-15,"middle"],"flower":[0,0,"start",180,389],"eo-1":[-17,10,"end"],"go-1":[-10,4,"end"],"nora":[-12,0,"end"],
     "pi0":[9,16,"start"],"spatialvla":[0,-15,"middle"],"internvla-m1":[-9,-4,"end"],"molmoact-2":[9,-10,"start"],"openvla":[-10,4,"end"],"openvla-oft":[-10,-2,"end"],"magma":[-10,2,"end"],"navfom":[-10,-2,"end"],"navila":[0,0,"end",520,191]};
+  const ord = {}; pts.slice().sort((a, b) => a.pb - b.pb || a.mg - b.mg).forEach((m, i) => { ord[m.id] = i; });
+  const step = Math.min(45, 1100 / Math.max(pts.length, 1)), si = m => ' style="--d:' + Math.round(ord[m.id] * step) + 'ms"';
   const out = [];
   out.push('<text class="c-title" x="24" y="30">' + T('보고된 추론 메모리는 bf16 가중치 계산값과 같거나 최대 약 4 GB 크다') + '</text>');
   out.push('<text class="c-sub" x="24" y="52">' + T('채운 점 = 보고값 · 빈 점 = 양자화 보고값 · ▲ = 최소 요구량 · 점선 = 장치 메모리') + '</text>');
@@ -912,32 +929,40 @@ document.getElementById("legend").innerHTML = [["in",T("입력")],["vis",T("비�
   [[8,"8 GB"],[16,"16 GB · Jetson Orin NX"],[24,"24 GB · RTX 4090"]].forEach(r => {
     out.push('<line class="c-ref" x1="' + x0 + '" x2="' + x1 + '" y1="' + Y(r[0]) + '" y2="' + Y(r[0]) + '"/><text class="c-t" x="' + (x0 + 6) + '" y="' + (Y(r[0]) - 5) + '">' + r[1] + "</text>");
   });
-  out.push('<line class="c-acc" x1="' + X(0) + '" y1="' + Y(0) + '" x2="' + X(10) + '" y2="' + Y(20) + '"/>');
+  out.push('<line class="c-acc" pathLength="1" x1="' + X(0) + '" y1="' + Y(0) + '" x2="' + X(10) + '" y2="' + Y(20) + '"/>');
   out.push('<text class="c-acc-t" x="' + (X(10) - 16) + '" y="' + (Y(20) - 14) + T('" text-anchor="end">bf16 가중치 = 파라미터 × 2 바이트') + '</text>');
   out.push('<g>');
   pts.forEach(m => {
     const px = X(m.pb), py = Y(m.mg);
     (m.mq || []).forEach(q => {
       const qy = Y(q[1]);
-      out.push('<line class="c-ql" x1="' + px + '" x2="' + px + '" y1="' + (py + 5) + '" y2="' + (qy - 5) + '"/><circle class="c-q" cx="' + px + '" cy="' + qy + '" r="4.5"><title>' + esc(shortName(m.name).s + " " + q[0] + ": " + q[1] + " GB") + "</title></circle>");
+      out.push('<g class="c-qg"' + si(m) + '><line class="c-ql" x1="' + px + '" x2="' + px + '" y1="' + (py + 5) + '" y2="' + (qy - 5) + '"/><circle class="c-q" cx="' + px + '" cy="' + qy + '" r="4.5"><title>' + esc(shortName(m.name).s + " " + q[0] + ": " + q[1] + " GB") + "</title></circle>");
       if (m.id === "openvla" || m.id === "magma" || m.id === "navila") out.push('<text class="c-lab-s" x="' + (px + 9) + '" y="' + (qy + 4) + '">' + esc(q[0] + " " + q[1]) + "</text>");
+      out.push("</g>");
     });
   });
   pts.forEach(m => {
     const px = X(m.pb), py = Y(m.mg), L = LAB[m.id] || [9, 4, "start"];
-    out.push('<circle class="c-pt" cx="' + px + '" cy="' + py + '" r="5"><title>' + esc(shortName(m.name).s + ": " + m.pb + "B, " + (m.mem ? tx(m.mem) : m.mg + " GB")) + "</title></circle>");
+    out.push('<g class="c-pg"' + si(m) + '><circle class="c-pt" cx="' + px + '" cy="' + py + '" r="5"><title>' + esc(shortName(m.name).s + ": " + m.pb + "B, " + (m.mem ? tx(m.mem) : m.mg + " GB")) + "</title></circle>");
     if (m.mge) out.push('<path class="arrh" d="M' + (px - 4) + " " + (py - 8) + "L" + (px + 4) + " " + (py - 8) + "L" + px + " " + (py - 14) + 'Z"/>');
-    if (m.id === "ecot") return;
+    if (m.id === "ecot"){ out.push("</g>"); return; }
     let name = shortName(m.name).s;
     if (m.id === "openvla-oft") name = "OpenVLA-OFT · ECoT";
     let lx = px + L[0], ly = py + L[1];
     if (L[3] != null){ lx = L[3]; ly = L[4];
       const endA = L[2] === "end";
       out.push('<line class="c-ql" x1="' + (endA ? px - 5 : px + 5) + '" y1="' + py + '" x2="' + (endA ? lx + 4 : lx - 4) + '" y2="' + (ly - 4) + '"/>'); }
-    out.push('<text class="c-lab" x="' + lx + '" y="' + ly + '" text-anchor="' + L[2] + '">' + esc(name) + ' <tspan class="c-lab-s">' + esc((m.mge ? "≥" : "") + fmt(m.mg)) + "</tspan></text>");
+    out.push('<text class="c-lab" x="' + lx + '" y="' + ly + '" text-anchor="' + L[2] + '">' + esc(name) + ' <tspan class="c-lab-s">' + esc((m.mge ? "≥" : "") + fmt(m.mg)) + "</tspan></text></g>");
   });
   out.push("</g>");
   document.getElementById("mem-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + T('" role="img" aria-label="보고된 추론 메모리는 bf16 가중치 계산값과 같거나 최대 약 4 GB 크다">') + out.join("") + "</svg>";
+  if (MOTION){
+    const ch = document.getElementById("mem-chart");
+    new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting || ch.dataset.played) return;
+      ch.dataset.played = "1"; ch.classList.remove("play"); void ch.offsetWidth; ch.classList.add("play");
+    }), {threshold: 0.25}).observe(ch);
+  }
   const mx = pts.reduce((a, m) => m.mg > a.mg ? m : a), mn = pts.reduce((a, m) => m.mg < a.mg ? m : a);
   document.getElementById("infer-lead").textContent = T("보고된 추론 메모리는 {0} GB({1})부터 {2} GB({3})까지이고, bf16 가중치 계산값보다 0~4 GB 큽니다. 7B급은 bf16으로 15~17 GB라 24 GB GPU 1장이면 되고, 4-bit 양자화하면 5~7 GB로 줄어듭니다.", fmt(mn.mg), tx(shortName(mn.name).s), fmt(mx.mg), tx(shortName(mx.name).s));
 })();
@@ -1447,6 +1472,7 @@ function route(){
   const h = decodeURIComponent(location.hash.slice(1));
   const page = h.startsWith("m-") ? "gallery" : (PBY[h] ? h : "home");
   const first = curPage === null, changed = page !== curPage;
+  if (changed && page !== "infer"){ const ch = document.getElementById("mem-chart"); delete ch.dataset.played; ch.classList.remove("play"); }
   curPage = page; root.setAttribute("data-page", page);
   navLinks.forEach(a => { if (a.getAttribute("href") === "#" + page) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
   const cur = navLinks.find(a => a.hasAttribute("aria-current")), bar = navLinks[0].parentElement;
