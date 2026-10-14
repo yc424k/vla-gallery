@@ -4216,7 +4216,7 @@
 "트랜스포머 대신 Mamba 상태공간 모델을 LLM으로 쓴 VLA다. 조작 파인튜닝은 수십 분이며, 기존 VLA보다 추론이 3배 빠르다고 보고했다.": "VLA that uses a Mamba state-space model as the LLM instead of a transformer. Manipulation fine-tuning takes tens of minutes, and it reports 3× faster inference than existing VLAs.",
 "트랜스포머 상태 인코더 3층 + 인과 디코더 3층 (512차원)": "Transformer state encoder 3 layers + causal decoder 3 layers (512-dim)",
 "트랜스포머 액션 전문가 (cross-attention 6층)": "Transformer action expert (6 cross-attention layers)",
-"트랜스포머 이후 로봇 제어에 쓰인 VA·VLA 모델, 휴머노이드 전신 제어기, 모바일 매니퓰레이션·내비게이션 모델을 구조도 카드로 모았습니다. 카드마다 논문 링크, 백본 LLM, 액션 헤드, 학습 GPU·시간, 학습 데이터, 추론 장치·속도·메모리, 강화학습, 베이스 제어 방식을 적었습니다.": "Architecture-diagram cards for VA and VLA models used in robot control since the Transformer, humanoid whole-body controllers, and mobile manipulation and navigation models. Each card lists the paper link, backbone LLM, action head, training GPUs and time, training data, inference device, speed and memory, reinforcement learning, and base control method.",
+"트랜스포머 이후 로봇 제어에 쓰인 VA·VLA 모델, 휴머노이드 전신 제어기, 모바일 매니퓰레이션·내비게이션 모델을 구조도 카드로 모았습니다. 카드마다 논문 링크, 백본 LLM, 액션 헤드, 학습 GPU·시간, 학습 데이터, 추론 장치·속도·메모리, 강화학습, 베이스 제어 방식을 적었습니다.": "Architecture-diagram cards for robot VA and VLA models from the Transformer era onward, including humanoid whole-body controllers and mobile manipulation and navigation models. Each card lists the paper, backbone LLM, action head, training compute and data, inference hardware, speed and memory, use of reinforcement learning, and how the mobile base is controlled.",
 "트랜스포머 인코더 (85M)": "Transformer encoder (85M)",
 "트랜스포머 트렁크 (Base 93M)": "Transformer trunk (Base 93M)",
 "트랜스포머 학생 (2층·128)": "Transformer student (2 layers, 128)",
