@@ -1,0 +1,1507 @@
+{
+"1": {
+"types": [
+"바퀴형"
+],
+"how": "정책이 베이스 x·y·yaw 이동을 256구간 이산 토큰으로 직접 출력 (모드 토큰으로 팔·베이스·종료 전환)",
+"src": "https://arxiv.org/pdf/2212.06817",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"2": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (모바일 매니퓰레이터지만 행동은 EE 6-DoF 변위·그리퍼·종료만)",
+"src": "https://arxiv.org/pdf/2307.15818",
+"checked": true,
+"cat": null
+},
+"3": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (행동 8차원: 종료 1 + EE 이동 7; Google 모바일 로봇도 팔만)",
+"src": "https://arxiv.org/pdf/2310.08864",
+"checked": true,
+"cat": null
+},
+"4": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (행동 8차원: 종료 1 + EE 이동 7; Google 모바일 로봇도 팔만)",
+"src": "https://arxiv.org/pdf/2310.08864",
+"checked": true,
+"cat": null
+},
+"5": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (ALOHA 고정 양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"6": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (UR5·Franka 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"7": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (UR5 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"8": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Kinova 단일 팔·CALVIN 시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"9": {
+"types": [
+"바퀴형"
+],
+"how": "정책 출력에 베이스 목표 선속도·각속도 포함 (16차원 중 2차원)",
+"src": "https://arxiv.org/pdf/2401.02117",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"10": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (ALOHA 2 고정 양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"11": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (실제 파인튜닝은 단일 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"12": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (xArm 단일 팔·시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"13": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 언급 없음 (Stretch 조작 실험; nuScenes는 오프라인 궤적 예측)",
+"src": "https://arxiv.org/pdf/2403.03181",
+"checked": true,
+"cat": null
+},
+"14": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka·UR5 양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"15": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔만; 데이터는 핸드헬드 그리퍼 수집)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"16": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka 팔 + 손·그리퍼)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"17": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"18": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Flexiv 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"19": {
+"types": [
+"고정"
+],
+"how": "내비게이션은 별도 구성요소로 가정; 정책은 작업 위치에서 EE 상대 6D 행동만 출력",
+"src": "https://arxiv.org/pdf/2409.05865",
+"checked": true,
+"cat": null
+},
+"20": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (ViperX 고정 양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"21": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"22": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (UR5e 단일 팔·시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"23": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Flexiv 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"24": {
+"types": [
+"고정"
+],
+"how": "베이스 이동은 Fetch 내장 LiDAR 내비게이션(별도 스택); 정책은 EE 절대 자세만",
+"src": "https://arxiv.org/pdf/2506.09990",
+"checked": true,
+"cat": null
+},
+"25": {
+"types": [
+"바퀴형"
+],
+"how": "WB-VIMA가 전방향 베이스 행동(3 DoF)을 전용 확산 헤드로 직접 출력, 토르소·팔과 자기회귀 디코딩",
+"src": "https://arxiv.org/pdf/2503.05652",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"26": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔 EE 행동; RT-1 로봇도 팔만)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"27": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔만: 7차원 EE 변위·그리퍼)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"28": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (LIBERO 단일 팔·ALOHA 고정 양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"29": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔만, 시뮬·Bridge)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"30": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka·UR5 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"31": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (WidowX 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"32": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (xArm 팔·시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"33": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (RLBench·CALVIN 팔 시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"34": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (CALVIN 팔 시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"35": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔만: EE 행동)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"36": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (탁상 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"37": {
+"types": [
+"고정",
+"시뮬 전용"
+],
+"how": "실로봇은 고정 Piper 팔; 내비게이션은 R2R VLN-CE 시뮬 에이전트에 잠재 행동을 이산 이동 행동으로 디코딩해 출력",
+"src": "https://arxiv.org/pdf/2505.06111",
+"checked": true,
+"cat": "이산 이동 행동"
+},
+"38": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔만; UI 에이전트는 로봇 아님)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"39": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (WidowX 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"40": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (WidowX·Franka 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"41": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (WidowX 팔·LIBERO)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"42": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka 팔·시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"43": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (LIBERO 팔 시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"44": {
+"types": [
+"고정"
+],
+"how": "로봇 실험은 고정 양팔(ALOHA); 자율주행 차량 주행 평가는 별도(로봇 베이스 아님)",
+"src": "https://arxiv.org/abs/2506.19850",
+"checked": true,
+"cat": null
+},
+"45": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔만: SIMPLER Google 로봇은 팔 행동만)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"46": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔·손)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"47": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (SO-100 팔·LIBERO)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"48": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (LIBERO·CALVIN 팔 시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"49": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (팔 EE 자세 회귀)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"50": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "모바일 구성에서 베이스 행동이 정책 출력에 포함 (Trossen·ARX 2차원, Fibocom 3차원); 그 외 고정 팔",
+"src": "https://arxiv.org/pdf/2410.24164",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"51": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (평가는 고정 매니퓰레이터만; FAST+ 학습 데이터엔 모바일 포함)",
+"src": "https://arxiv.org/pdf/2501.09747",
+"checked": true,
+"cat": null
+},
+"52": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "하위 π0 정책 출력에 모바일 ARX 베이스 2차원 포함 (grocery shopping); 상위 VLM은 언어 명령만",
+"src": "https://arxiv.org/pdf/2502.19417",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"53": {
+"types": [
+"바퀴형"
+],
+"how": "정책이 베이스 목표 속도(선속도 2D·각속도 1D)를 50 Hz 청크로 직접 출력 (조작·내비게이션 end-to-end)",
+"src": "https://arxiv.org/pdf/2504.16054",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"54": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "모바일 양팔 과제(Make bed·Laundry in basket 등)에 이동 포함; 베이스 행동 차원 구성은 논문 미기재(π0.5 방식)",
+"src": "https://arxiv.org/pdf/2505.23705",
+"checked": true,
+"cat": "형식 미기재"
+},
+"55": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "π0.5 모바일 양팔 과제 2종(Make bed·Dishes in sink)에 RTC 적용; 베이스 속도 포함 여부는 논문 미기재(π0.5 기준)",
+"src": "https://arxiv.org/pdf/2506.07339",
+"checked": true,
+"cat": "형식 미기재"
+},
+"56": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "모바일 양팔 과제(세탁물 바구니·침대 정리·식기 싱크대 등) 포함; 베이스 행동 형식은 모델카드 미기재",
+"src": "https://website.pi-asset.com/pi06star/PI06_model_card.pdf",
+"checked": true,
+"cat": "형식 미기재"
+},
+"57": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (정적 양팔, 관절 위치 50 Hz)",
+"src": "https://arxiv.org/pdf/2511.14759",
+"checked": true,
+"cat": null
+},
+"58": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 언급 없음 (상자 조립·에스프레소 과제)",
+"src": "https://arxiv.org/pdf/2512.05964",
+"checked": true,
+"cat": null
+},
+"59": {
+"types": [
+"고정"
+],
+"how": "통합 128차원 행동 공간에 베이스 속도 슬롯이 있으나 평가(Mobile ALOHA 양팔 과제)에 베이스 이동 언급 없음",
+"src": "https://arxiv.org/pdf/2410.07864",
+"checked": true,
+"cat": null
+},
+"60": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (UMI 그리퍼 인터페이스, UR5e·Franka 고정 양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"61": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (단일 팔 7-DoF)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"62": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka·AgileX 양팔 조작)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"63": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (AgileX 14차원 관절 상태·행동, 모바일 섀시 미사용)",
+"src": "https://raw.githubusercontent.com/juruobenruo/DexVLA/main/evaluate/smart_eval_agilex.py",
+"checked": true,
+"cat": null
+},
+"64": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka·AgileX 양팔 조작·RLBench)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"65": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka 단일 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"66": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (SO100·SO101 저가형 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"67": {
+"types": [
+"고정"
+],
+"how": "로봇 실험은 말단 자세만(베이스 없음); NAVSIM 자율주행 폐루프 평가는 별도(로봇 베이스 아님)",
+"src": "https://arxiv.org/pdf/2510.10274",
+"checked": true,
+"cat": null
+},
+"68": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka 팔·양팔 시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"69": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (단일 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"70": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "Collect-waste 과제에서 모델이 쓰레기통까지 이동; 베이스 명령 형식은 논문 미기재(DoF 템플릿 마스킹)",
+"src": "https://arxiv.org/pdf/2509.11766",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"71": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (AgiBot G-1 포함 4개 플랫폼 조작 과제)",
+"src": "https://raw.githubusercontent.com/EO-Robotics/EO1/main/README.md",
+"checked": true,
+"cat": null
+},
+"72": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka·UR5e 팔 파지)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"73": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (xArm6 팔·RoboTwin 양팔 시뮬)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"74": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Galaxea A1 단일 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"75": {
+"types": [
+"고정"
+],
+"how": "베이스 이동 언급 없음 (Genie-1·ARX LIFT II 조작; 동적 과제는 컨베이어 벨트)",
+"src": "https://raw.githubusercontent.com/InternRobotics/F1-VLA/main/README.md",
+"checked": true,
+"cat": null
+},
+"76": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (RealMan 팔 + 손)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"77": {
+"types": [
+"고정"
+],
+"how": "베이스·다리 제어 없음 (ALOHA 2 양팔; Apollo 휴머노이드는 조작 과제만, 보행 언급 없음)",
+"src": "https://arxiv.org/pdf/2503.20020",
+"checked": true,
+"cat": null
+},
+"78": {
+"types": [
+"고정"
+],
+"how": "행동 직접 출력 없음 (포인트·bbox·궤적·코드 생성); 베이스 제어 없음",
+"src": "https://arxiv.org/pdf/2503.20020",
+"checked": true,
+"cat": null
+},
+"79": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 제어 없음 (양팔 조작 모델; Apollo 적응도 조작만)",
+"src": "https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/",
+"checked": true,
+"cat": null
+},
+"80": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 제어 언급 없음 (ALOHA·bi-arm Franka·Apollo 조작 과제)",
+"src": "https://arxiv.org/pdf/2510.03342",
+"checked": true,
+"cat": null
+},
+"81": {
+"types": [
+"고정"
+],
+"how": "행동 출력 없음 (오케스트레이터로 텍스트·좌표·도구 호출만 출력)",
+"src": "https://arxiv.org/pdf/2510.03342",
+"checked": true,
+"cat": null
+},
+"82": {
+"types": [
+"바퀴형"
+],
+"how": "정책 행동 9차원 중 베이스 이동 2차원 직접 출력 (언어 모션 'turn base left' 등)",
+"src": "https://arxiv.org/pdf/2403.01823",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"83": {
+"types": [
+"고정"
+],
+"how": "베이스 이동은 별도 내비게이션 스택 (지도 기반 목표 샘플링); 수집 정책(RT-2·스크립트·텔레옵)은 조작만",
+"src": "https://arxiv.org/pdf/2401.12963",
+"checked": true,
+"cat": null
+},
+"84": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (RT-2 행동 공간: EE 변위·그리퍼·종료; PCT는 Kuka 팔 파지)",
+"src": "https://arxiv.org/pdf/2312.01990",
+"checked": true,
+"cat": null
+},
+"85": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Kinova 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"86": {
+"types": [
+"바퀴형"
+],
+"how": "정책 청크가 모바일 베이스 포함 로봇을 end-to-end 제어(리프트·헤드 제외 19 DoF); 테이블 정리·옷 걸기에서 베이스 이동·회전",
+"src": "https://arxiv.org/pdf/2507.15493",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"87": {
+"types": [
+"고정"
+],
+"how": "베이스 이동 언급 없음 (신발끈 끼우기 양팔 정밀 조작)",
+"src": "https://arxiv.org/abs/2512.01801",
+"checked": true,
+"cat": null
+},
+"88": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka 고정 양팔 + 손)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"89": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (고정 양팔 Franka 스테이션)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"90": {
+"types": [
+"고정"
+],
+"how": "베이스(섀시)·허리 행동 언급 없음 (평가 과제는 탁상 조작; 섀시는 텔레옵 수집에서만 언급)",
+"src": "https://arxiv.org/pdf/2503.06669",
+"checked": true,
+"cat": null
+},
+"91": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (상체 탁상 조작에 한정, 전신 보행 미포함을 논문이 명시)",
+"src": "https://arxiv.org/pdf/2508.05635",
+"checked": true,
+"cat": null
+},
+"92": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (물류창고 피킹 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"93": {
+"types": [
+"고정",
+"사족보행",
+"휴머노이드 보행"
+],
+"how": "상위 조작·내비게이션 정책 → 하위 고주파 정책이 관절각·모터 토크 출력 (사족·휴머노이드 보행; 모바일 매니퓰레이터 베이스 형식 미기재)",
+"src": "https://www.skild.ai/blogs/building-the-general-purpose-robotic-brain",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"94": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 언급 없음 (양팔 냅킨·수건 접기 등 조작)",
+"src": "https://www.dyna.co/research/dyna-1",
+"checked": true,
+"cat": null
+},
+"95": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 제어 언급 없음 (6·7 DoF 팔, 16+DoF 반휴머노이드)",
+"src": "https://generalistai.com/blog/nov-04-2025-GEN-0",
+"checked": true,
+"cat": null
+},
+"96": {
+"types": [
+"바퀴형"
+],
+"how": "G0-VLA 행동 청크가 섀시·토르소·팔을 함께 제어 (침대 정리에서 섀시 이동); 섀시 명령 형식 미기재",
+"src": "https://arxiv.org/pdf/2509.00576",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"97": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "이동 조작 과제(상자·세탁 바구니 옮기기, AgiBot G1)에서 모델이 장애물 회피 이동·베이스 위치 조정; 베이스 명령 형식 미기재; PiPER 양팔은 고정",
+"src": "https://arxiv.org/pdf/2510.19430",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"98": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (SO-100 단일 팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"99": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 제어 없음 (Z1 팔·G1 Dex1 탁상 조작)",
+"src": "https://github.com/unitreerobotics/unifolm-world-model-action",
+"checked": true,
+"cat": null
+},
+"100": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka 팔, MPC 계획)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"101": {
+"types": [
+"고정"
+],
+"how": "상체만 제어 (팔·손·허리·목), 이동 없음; RoboCasa도 EE·그리퍼만 출력",
+"src": "https://arxiv.org/pdf/2503.14734",
+"checked": true,
+"cat": null
+},
+"102": {
+"types": [
+"고정"
+],
+"how": "보행 명령 언급 없음 (GR-1·G1 집기·놓기 등 상체 조작)",
+"src": "https://research.nvidia.com/labs/gear/gr00t-n1_5/",
+"checked": true,
+"cat": null
+},
+"103": {
+"types": [
+"고정",
+"바퀴형",
+"휴머노이드 보행"
+],
+"how": "G1: VLA가 navigate_command·base_height_command 출력 → RL 하체 WBC가 보행; 시뮬 R1 Pro(BEHAVIOR)는 base 행동 직접 출력",
+"src": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/n1d6/gr00t/configs/data/embodiment_configs.py",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기",
+"bycat": {
+"바퀴형": "베이스 속도·자세 직접 출력"
+}
+},
+"104": {
+"types": [
+"고정"
+],
+"how": "상체만 제어 (손목·손가락·몸통·머리, S1 200 Hz); 다리·보행 언급 없음",
+"src": "https://www.figure.ai/news/helix",
+"checked": true,
+"cat": null
+},
+"105": {
+"types": [
+"고정",
+"휴머노이드 보행"
+],
+"how": "정책이 발 자세·토르소 자세·그리퍼 관절 출력 → 텔레옵과 같은 MPC 제어 인터페이스로 실행(걸음·쪼그려 앉기); 조작 테스트 스탠드는 상체만",
+"src": "https://bostondynamics.com/blog/large-behavior-models-atlas-find-new-footing/",
+"checked": true,
+"cat": "전신 관절·자세 직접 출력"
+},
+"106": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "VLA가 팔·손 명령과 함께 보행 명령 예측 (내비게이션·조작 공동 계획); 하위 보행 제어기 언급 없음",
+"src": "https://www.1x.tech/discover/redwood-ai",
+"checked": true,
+"cat": "형식 미기재"
+},
+"107": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "이족 휴머노이드의 균형·내비게이션 소프트웨어 스택만 언급; 보행 담당 신경망 구조·명령 방식 미공개",
+"src": "https://www.tesla.com/AI",
+"checked": true,
+"cat": "형식 미기재"
+},
+"108": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (Franka FR3 + Inspire 손, EE 자세·손 관절만)",
+"src": "https://arxiv.org/pdf/2507.15597",
+"checked": true,
+"cat": null
+},
+"109": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "VLA가 다리 포함 부위별 모션 토큰 생성 → 목표조건 RL 전신 제어기가 PD 관절 목표로 변환 (장애물 회피 이동·점프·킥)",
+"src": "https://arxiv.org/pdf/2502.14795",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"110": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "LeVERB-VL 잠재 동사(10 Hz) → LeVERB-A가 전신 관절 위치를 직접 출력해 보행·회전·착석 (시각 내비게이션)",
+"src": "https://arxiv.org/pdf/2506.13751",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"111": {
+"types": [
+"고정"
+],
+"how": "실로봇은 텍스트→행동 개루프로 상체 자세만 제어, 하체는 별도 사전학습 보행 정책 (평가 과제에 보행 없음)",
+"src": "https://arxiv.org/pdf/2412.14172",
+"checked": true,
+"cat": null
+},
+"112": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (상체만: 팔 EE IK + 손 관절, 36차원; 시뮬 H1 다리 미제어)",
+"src": "https://arxiv.org/pdf/2507.12440",
+"checked": true,
+"cat": null
+},
+"113": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (하체 미구동 명시; 머리·손목·손끝 54차원만)",
+"src": "https://arxiv.org/pdf/2503.13441",
+"checked": true,
+"cat": null
+},
+"114": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "VLA가 상체 관절각 + 보행 명령(전후·좌우·회전 3축 이산 지시 + 자세 높이) 출력 → LMO RL 정책이 하체 토크(50 Hz)",
+"src": "https://arxiv.org/pdf/2512.11047",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"115": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "HST가 목표 전후·좌우·yaw 속도·관절 목표를 받아 다리 포함 19차원 관절 위치 직접 출력 (보행·쪼그려 앉기)",
+"src": "https://arxiv.org/pdf/2406.10454",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"116": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "HIT가 목표 자세 청크를 HST에 비동기 전달 → HST가 다리 포함 전신 관절 실행 (자율 '신발 신고 걷기'에서 전진 보행)",
+"src": "https://arxiv.org/pdf/2406.10454",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"117": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "트랜스포머가 관절 위치 행동을 자기회귀 출력해 전방향 속도 명령 추종 보행 (Digit, 샌프란시스코 실보행)",
+"src": "https://arxiv.org/pdf/2402.19469",
+"checked": true,
+"cat": "전신 관절·자세 직접 출력"
+},
+"118": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "트랜스포머가 속도 명령을 받아 관절 목표·PD 게인을 50 Hz로 직접 출력해 험지 보행 (Digit)",
+"src": "https://arxiv.org/pdf/2410.03654",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"119": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "추적 정책이 참조 모션을 따라 전신 관절 PD 목표 직접 출력(보행·달리기·옆돌기); 확산 정책은 조이스틱 속도·웨이포인트 비용 유도로 보행 생성",
+"src": "https://arxiv.org/pdf/2508.08241",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"120": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "잠재 동사 입력 → 전신 관절 위치 행동(50 Hz)을 직접 출력해 보행·착석 (RL 교사 정책 증류)",
+"src": "https://arxiv.org/pdf/2506.13751",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"121": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "전신 RL 정책이 키포인트·조이스틱 목표를 받아 다리 포함 관절 목표 출력 (조이스틱 전후 보행, 'Walk forward 0.5m')",
+"src": "https://arxiv.org/pdf/2406.08858",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"122": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "다중 모드 명령(루트 속도·높이·자세, 키포인트, 관절각) → 전신 19 DoF 관절 목표 출력, 실환경 전진 보행 시연",
+"src": "https://arxiv.org/pdf/2410.21229",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"123": {
+"types": [
+"고정"
+],
+"how": "하체 비활성화, 이동은 카트로 대체 (정책은 상체 25 DoF 관절 목표만 출력)",
+"src": "https://arxiv.org/pdf/2410.10803",
+"checked": true,
+"cat": null
+},
+"124": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "전신 키포인트·루트 속도 목표를 추적해 다리 포함 23차원 관절 PD 목표 출력 (보행·웅크리기·춤)",
+"src": "https://arxiv.org/pdf/2412.13196",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"125": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "모캡 참조(관절 위치·루트 속도) 추적 → 전신 관절 위치 명령 50 Hz (옆걸음·뒷걸음·웅크려 통과·킥)",
+"src": "https://arxiv.org/pdf/2505.02833",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"126": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "자율 확산 정책이 루트 운동·전신 관절 명령 출력 → 저수준 추적기가 다리 포함 관절 실행 (킥·한 걸음; 이동 조작은 텔레옵만)",
+"src": "https://arxiv.org/pdf/2511.02832",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"127": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "자율 ACT 정책이 상체 관절 + 하체용 속도·자세·높이 명령 출력 → AMO·RL 하체 정책이 다리 관절 목표 생성 (보행·회전)",
+"src": "https://arxiv.org/pdf/2505.03738",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"128": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "전신 모션 추적 정책이 참조 모션을 따라 23 DoF 관절 목표 직접 출력 (보행·달리기·킥·옆걸음)",
+"src": "https://arxiv.org/pdf/2506.14770",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"129": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "범용 모션 토큰 → 제어 디코더가 29차원 관절 목표를 직접 출력해 보행(속도 명령 0–6 m/s); VLA 연동 시 VLA는 내비게이션 명령 출력",
+"src": "https://arxiv.org/pdf/2511.07820",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"130": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "정책이 WBC 명령 델타(Δv·Δω_yaw·팔·손가락) 출력 → HOMIE WBC가 하체 보행 (테이블 사이 보행·회전)",
+"src": "https://arxiv.org/pdf/2511.15200",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"131": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "제너럴리스트 정책이 참조 모션을 추적해 G1 23 DoF 관절 PD 목표 직접 출력 (보행·조깅·점프 포함)",
+"src": "https://arxiv.org/pdf/2506.12779",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"132": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "RL 정책이 Figure 02 보행을 직접 제어 (시뮬 RL 학습, 출력은 kHz 토크 폐루프로 실행)",
+"src": "https://www.figure.ai/news/reinforcement-learning-walking",
+"checked": true,
+"cat": "RL 정책이 직접 구동"
+},
+"133": {
+"types": [
+"바퀴형"
+],
+"how": "R1 Lite 행동에 섀시 속도(chassis.velocities)·토르소 속도를 팔·그리퍼와 함께 직접 출력 (공식 파인튜닝 설정)",
+"src": "https://raw.githubusercontent.com/OpenGalaxea/GalaxeaVLA/13a16a9049aee8f1d799b56fccc0c5832a75fc2f/configs/data/r1lite/arm_torso_velocity_chassis.yaml",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"134": {
+"types": [
+"고정"
+],
+"how": "베이스 이동 과제 없음 (양팔 조작; 섀시·리프트 제어 언급 없음)",
+"src": "https://arxiv.org/pdf/2601.02456",
+"checked": true,
+"cat": null
+},
+"135": {
+"types": [
+"고정"
+],
+"how": "보행·이동 언급 없음 (IDM이 생성 영상에서 행동 궤적 추출, 양손 조작 과제)",
+"src": "https://www.1x.tech/discover/world-model-self-learning",
+"checked": true,
+"cat": null
+},
+"136": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (RoboChallenge Table30 탁상 조작; 조작 외 시나리오는 대상 아님 명시)",
+"src": "https://raw.githubusercontent.com/Spirit-AI-Team/spirit-v1.5/main/README.md",
+"checked": true,
+"cat": null
+},
+"137": {
+"types": [
+"고정"
+],
+"how": "통합 행동 공간에 베이스 속도·방향 슬롯 정의는 있으나 실험(G1 포함)은 상체·팔만 제어",
+"src": "https://arxiv.org/pdf/2601.12993",
+"checked": true,
+"cat": null
+},
+"138": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (LIBERO·RoboCasa 시뮬 팔, 실제 ALOHA 고정 양팔)",
+"src": null,
+"checked": false,
+"cat": null
+},
+"139": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 언급 없음 (촉각 양팔 UR5e 중심; 휴머노이드는 평가 플랫폼으로만 언급)",
+"src": "https://www.microsoft.com/en-us/research/?p=1159224",
+"checked": true,
+"cat": null
+},
+"140": {
+"types": [
+"고정"
+],
+"how": "평가 과제는 섀시·허리를 고정한 탁상 조작으로 명시 (팔·그리퍼)",
+"src": "https://arxiv.org/pdf/2601.18692",
+"checked": true,
+"cat": null
+},
+"141": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "S1이 다리 포함 전신 관절 목표 출력 → S0 학습형 전신 제어기(1 kHz)가 균형·접촉 처리; 방 단위 보행+조작",
+"src": "https://www.figure.ai/news/helix-02",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"142": {
+"types": [
+"고정"
+],
+"how": "보행 제어 없음 (G1 상체 탁상 조작 12종)",
+"src": "https://raw.githubusercontent.com/unitreerobotics/unifolm-vla/main/README.md",
+"checked": true,
+"cat": null
+},
+"143": {
+"types": [
+"고정"
+],
+"how": "실제 과제 모두 고정 베이스 탁상 조작 명시 (AgiBot G1 바퀴 베이스 미제어, 상체만)",
+"src": "https://arxiv.org/pdf/2602.12062",
+"checked": true,
+"cat": null
+},
+"144": {
+"types": [
+"고정"
+],
+"how": "섀시 제어 없음 (R1 Pro EE 자세·토르소만 출력; 데모는 섀시를 테이블에 맞춰 정지)",
+"src": "https://raw.githubusercontent.com/OpenGalaxea/GalaxeaVLA/13a16a9049aee8f1d799b56fccc0c5832a75fc2f/configs/data/r1pro/eef_torso.yaml",
+"checked": true,
+"cat": null
+},
+"145": {
+"types": [
+"고정"
+],
+"how": "베이스 언급 없음 (6-DoF 양팔 로봇)",
+"src": "https://arxiv.org/pdf/2602.12684",
+"checked": true,
+"cat": null
+},
+"146": {
+"types": [
+"고정"
+],
+"how": "평가 과제에 베이스 이동 명시 없음 (AgiBot G1 상대 관절 위치 행동; 학습 데이터엔 내비게이션 포함)",
+"src": "https://arxiv.org/pdf/2602.15922",
+"checked": true,
+"cat": null
+},
+"147": {
+"types": [
+"고정"
+],
+"how": "R1 Pro 베이스·토르소 고정 명시(팔 상대 EE + 손); G1은 상체 목표만 출력, 하체 균형·보행은 별도 HOMIE 정책",
+"src": "https://arxiv.org/pdf/2602.16710",
+"checked": true,
+"cat": null
+},
+"148": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "VLA가 손·팔 관절 + 하체 8-DoF 명령(토르소 rpy·높이·vx·vy·vyaw·방향) 출력 → AMO RL 추적 정책이 다리·허리 15 DoF 관절 생성 (회전·보행·쪼그려 앉기)",
+"src": "https://arxiv.org/pdf/2603.12263",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"149": {
+"types": [
+"고정",
+"휴머노이드 보행"
+],
+"how": "G1(SONIC 태그): VLA가 잠재 행동 토큰 출력 → SONIC 학습형 WBC가 다리 포함 전신 관절로 디코딩해 보행·조작",
+"src": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/main/README.md",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"150": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 언급 없음 (로봇 손 조작, 기종 미기재)",
+"src": "https://generalistai.com/blog/apr-02-2026-GEN-1",
+"checked": true,
+"cat": null
+},
+"151": {
+"types": [
+"고정"
+],
+"how": "섀시·보행 제어 언급 없음 (적용 기종 미기재)",
+"src": "https://agibot.com/article/231/detail/56.html",
+"checked": true,
+"cat": null
+},
+"152": {
+"types": [
+"고정"
+],
+"how": "상체 행동만 출력(G1 26 DoF 상체 인터페이스); 하체·허리는 별도 균형 WBC 모듈이 생성, 보행 언급 없음",
+"src": "https://arxiv.org/html/2605.00078",
+"checked": true,
+"cat": null
+},
+"153": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "모바일 양팔(3 DoF 전방향 베이스) 평가 포함('driving through a door'); 행동은 PD 제어기로 적용, 베이스 행동 형식 미기재",
+"src": "https://arxiv.org/pdf/2604.15483",
+"checked": true,
+"cat": "형식 미기재"
+},
+"154": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (양팔 YAM·Franka·SO100/101 매니퓰레이터만)",
+"src": "https://arxiv.org/abs/2605.02881",
+"checked": true,
+"cat": null
+},
+"155": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "BEHAVIOR-1K(시뮬 R1 Pro)에서 내비게이션을 조작과 분리된 토큰 그룹으로 출력; 실로봇 R1 클라이언트는 팔·토르소·그리퍼만 발행",
+"src": "https://arxiv.org/html/2608.11739",
+"checked": true,
+"cat": "베이스 속도·자세 직접 출력"
+},
+"156": {
+"types": [
+"고정"
+],
+"how": "베이스 언급 없음 (Cobot Magic 팔 관절 위치 행동; LIBERO 시뮬)",
+"src": "https://arxiv.org/html/2606.09009",
+"checked": true,
+"cat": null
+},
+"157": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "VLA가 32-D 전신 명령(루트 roll·pitch·yaw 각속도 + 다리 포함 29관절 목표) 청크 출력 → SONIC 추적기가 실행 (테이블까지 걷기·카트 밀기)",
+"src": "https://arxiv.org/pdf/2606.22174",
+"checked": true,
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"158": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "AstraBrain-WBC(휴머노이드 전신 실시간 운동 제어 모델)가 이족 ET1 전신 제어(2차); 공식 페이지는 전신 end-to-end만 명시",
+"src": "https://www.galbot.com/",
+"checked": false,
+"cat": "형식 미기재"
+},
+"159": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (RoboTwin 2.0·LIBERO·SimplerEnv 등 조작 벤치마크와 실제 조작)",
+"src": "https://raw.githubusercontent.com/InternRobotics/InternVLA-A1/master/README.md",
+"checked": true,
+"cat": null
+},
+"160": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (LIBERO·RoboTwin 2.0 조작 벤치마크만)",
+"src": "https://arxiv.org/abs/2607.27205",
+"checked": true,
+"cat": null
+},
+"161": {
+"types": [
+"고정",
+"휴머노이드 보행"
+],
+"how": "VLA가 Apollo 2 전신을 발끝~손끝까지 직접 제어해 보행·웅크리기 수행 (별도 보행 제어기 언급 없음); Franka Duo는 고정 양팔",
+"src": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+"checked": true,
+"cat": "전신 관절·자세 직접 출력"
+},
+"162": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (양팔 대상; 모바일 플랫폼·전신 제어는 범위 밖으로 명시)",
+"src": "https://deepmind.google/models/model-cards/gemini-robotics-on-device-2/",
+"checked": true,
+"cat": null
+},
+"163": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (정지형 양팔 YAM; 반휴머노이드 시제품도 이동 언급 없음)",
+"src": "https://www.dyna.co/dyna-2",
+"checked": true,
+"cat": null
+},
+"164": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 언급 없음 (양팔 조작으로 보임, 기종 미기재)",
+"src": "https://www.skild.ai/blogs/s1",
+"checked": true,
+"cat": null
+},
+"165": {
+"types": [
+"고정"
+],
+"how": "베이스·보행 언급 없음 (양손 조작, 100 Hz 행동 궤적)",
+"src": "https://generalistai.com/blog/gen-1.5",
+"checked": true,
+"cat": null
+}
+}

@@ -1,0 +1,326 @@
+[
+  {
+    "id": "jetson-orin-nano-super",
+    "name": "Jetson Orin Nano Super 8GB",
+    "tier": "임베디드",
+    "mem_gb": 8,
+    "bw_gbs": 102,
+    "bf16_tflops": 17,
+    "src": [
+      "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/",
+      "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/nano-super-developer-kit/",
+      "https://developer.nvidia.com/blog/nvidia-jetpack-6-2-brings-super-mode-to-nvidia-jetson-orin-nano-and-jetson-orin-nx-modules",
+      "https://forums.developer.nvidia.com/t/suboptimal-pytorch-performance-on-jetson-orin-nano-super/359638"
+    ],
+    "note": "GPU-only figure from NVIDIA's Jetson Orin compute comparison: GPU Tensor Core FP16 = 33 sparse / 17 dense TFLOPS (MAXN SUPER, GPU 1020 MHz; the Orin Nano has no DLA), i.e. 67 sparse INT8 TOPS / 4 = 16.75. NVIDIA does not say which accumulate precision; BF16 assumed to run at the FP16 rate. A forum PyTorch 8192x8192 GEMM measured about 9.1 TFLOPS BF16."
+  },
+  {
+    "id": "jetson-orin-nx-16",
+    "name": "Jetson Orin NX 16GB",
+    "tier": "임베디드",
+    "mem_gb": 16,
+    "bw_gbs": 102.4,
+    "bf16_tflops": 19,
+    "src": [
+      "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/",
+      "https://developer.nvidia.com/blog/nvidia-jetpack-6-2-brings-super-mode-to-nvidia-jetson-orin-nano-and-jetson-orin-nx-modules"
+    ],
+    "note": "GPU-only figure from NVIDIA's Jetson Orin compute comparison for Orin NX 16GB (Super): GPU Tensor Core FP16 = 38 sparse / 19 dense TFLOPS, i.e. GPU 77 of the 157 sparse INT8 TOPS (DLA 80 excluded) / 4 = 19.25, at MAXN SUPER (JetPack 6.2, GPU 1173 MHz). In the original non-Super mode (100 TOPS, of which DLA 40; GPU 918 MHz) it would be (100 - 40) / 4 = 15. BF16 assumed to run at the FP16 rate."
+  },
+  {
+    "id": "jetson-agx-orin-64",
+    "name": "Jetson AGX Orin 64GB",
+    "tier": "임베디드",
+    "mem_gb": 64,
+    "bw_gbs": 204.8,
+    "bf16_tflops": 43,
+    "src": [
+      "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/"
+    ],
+    "note": "GPU-only figure from NVIDIA's Jetson Orin compute comparison: GPU Tensor Core FP16 = 85 sparse / 43 dense TFLOPS (GPU 1.3 GHz), i.e. GPU 170 of the 275 sparse INT8 TOPS (DLA 105 excluded) / 4 = 42.5. BF16 assumed to run at the FP16 rate."
+  },
+  {
+    "id": "jetson-agx-thor",
+    "name": "Jetson AGX Thor (T5000)",
+    "tier": "임베디드",
+    "mem_gb": 128,
+    "bw_gbs": 273,
+    "bf16_tflops": 258.5,
+    "src": [
+      "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/",
+      "https://developer.nvidia.com/blog/introducing-nvidia-jetson-thor-the-ultimate-platform-for-physical-ai/",
+      "https://static.generation-robots.com/media/datasheet-jetson-thor-module-t5000-t4000-nvidia.pdf",
+      "https://forums.developer.nvidia.com/t/thor-torch-mm-benchmark-results-float32-float16-float8-e3m2fn/344399"
+    ],
+    "note": "Derived: NVIDIA's Thor launch blog (Table 1, preliminary) lists 2070 TFLOPS sparse FP4, 1035 dense FP4 / sparse FP8, and 517 dense FP8 / sparse FP16. Dense FP16 = 517 / 2 = 258.5 (equivalently 2070 / 8). BF16 is assumed to run at the FP16 rate with full-rate FP32 accumulate. Peak is at the 1.57 GHz max GPU clock in the 130 W mode. A community torch.mm FP16 test in MAXN reached about 160 TFLOPS."
+  },
+  {
+    "id": "rtx-4060-laptop",
+    "name": "RTX 4060 Laptop",
+    "tier": "노트북",
+    "mem_gb": 8,
+    "bw_gbs": 256,
+    "bf16_tflops": 29.1,
+    "src": [
+      "https://www.nvidia.com/en-us/geforce/laptops/compare/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf",
+      "https://www.notebookcheck.net/NVIDIA-GeForce-RTX-4060-Laptop-GPU-Benchmarks-and-Specs.675692.0.html"
+    ],
+    "note": "Derived: 24 SMs (3072 CUDA cores) x 512 FLOP/clk/SM x 2.37 GHz max boost = 29.1. The 512 FLOP/clk/SM rate is Ada GeForce FP16/BF16 with FP32 accumulate, from the Ada whitepaper (RTX 4090: 165.2 TFLOPS = 128 SM x 2.52 GHz). This matches NVIDIA's 233 AI TOPS (sparse FP8) / 8. It assumes the highest-TGP (115 W) configuration; at the 1.47 GHz low end of the boost range it is about 18."
+  },
+  {
+    "id": "rtx-4090-laptop",
+    "name": "RTX 4090 Laptop",
+    "tier": "노트북",
+    "mem_gb": 16,
+    "bw_gbs": 576,
+    "bf16_tflops": 79.4,
+    "src": [
+      "https://www.nvidia.com/en-us/geforce/laptops/compare/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf",
+      "https://www.notebookcheck.net/NVIDIA-GeForce-RTX-4090-Laptop-GPU-Benchmarks-and-Specs.675091.0.html",
+      "https://www.eatyourbytes.com/es/gpu-details/nvidia_geforce_rtx_4090_laptop/"
+    ],
+    "note": "Derived: 76 SMs (9728 CUDA cores) x 512 FLOP/clk/SM (Ada GeForce, FP32 accumulate) x 2.04 GHz max boost = 79.4. NVIDIA's 686 AI TOPS / 8 = 85.8 would imply about 2.2 GHz, above the listed 1455-2040 MHz boost range. Bandwidth is 256-bit x 18 Gbps = 576 GB/s; Notebookcheck and LaptopMedia also print 20 Gbps, which would give 640 GB/s."
+  },
+  {
+    "id": "rtx-5080-laptop",
+    "name": "RTX 5080 Laptop",
+    "tier": "노트북",
+    "mem_gb": 16,
+    "bw_gbs": 896,
+    "bf16_tflops": 70.3,
+    "src": [
+      "https://www.nvidia.com/en-us/geforce/laptops/compare/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf",
+      "https://www.notebookcheck.net/Nvidia-GeForce-RTX-5080-Laptop-Benchmarks-and-Specs.934946.0.html",
+      "https://laptopmedia.com/video-card/nvidia-geforce-rtx-5080-laptop/"
+    ],
+    "note": "Derived: 60 SMs (7680 CUDA cores) x 512 FLOP/clk/SM x 2.287 GHz max boost = 70.3. The per-SM rate is Blackwell GeForce FP16/BF16 with FP32 accumulate (RTX 5080 desktop: 112.6 TFLOPS = 84 SM x 2.617 GHz in the RTX Blackwell whitepaper). NVIDIA's 1334 AI TOPS (sparse FP4) / 16 = 83.4 would imply about 2.7 GHz, above the listed 1500-2287 MHz boost range. Bandwidth is 256-bit x 28 Gbps GDDR7."
+  },
+  {
+    "id": "rtx-3060-12",
+    "name": "RTX 3060 12GB",
+    "tier": "데스크톱",
+    "mem_gb": 12,
+    "bw_gbs": 360,
+    "bf16_tflops": 25.5,
+    "src": [
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3060-3060ti/",
+      "https://nvidianews.nvidia.com/news/nvidia-introduces-geforce-rtx-3060-next-generation-of-the-worlds-most-popular-gpu",
+      "https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf",
+      "https://www.techspot.com/specs/gpu/223291-nvidia-geforce-rtx-3060-12gb.html"
+    ],
+    "note": "Derived: 28 SMs (3584 CUDA cores) x 512 FLOP/clk/SM x 1.78 GHz boost = 25.5. The 512 FLOP/clk/SM rate is GA10x GeForce FP16/BF16 with FP32 accumulate, from the GA102 whitepaper (RTX 3090: 71 TFLOPS = 82 SM x 1.695 GHz). Cross-check: NVIDIA's launch figure of 101 Tensor-TFLOPS (sparse, FP16 accumulate) / 4 = 25.3."
+  },
+  {
+    "id": "rtx-3090",
+    "name": "RTX 3090",
+    "tier": "데스크톱",
+    "mem_gb": 24,
+    "bw_gbs": 936,
+    "bf16_tflops": 71.2,
+    "src": [
+      "https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf"
+    ],
+    "note": ""
+  },
+  {
+    "id": "rtx-4060ti-16",
+    "name": "RTX 4060 Ti 16GB",
+    "tier": "데스크톱",
+    "mem_gb": 16,
+    "bw_gbs": 288,
+    "bf16_tflops": 44.1,
+    "src": [
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/",
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf",
+      "https://www.techspot.com/specs/gpu/280961-nvidia-geforce-rtx-4060-ti-16gb.html"
+    ],
+    "note": "Derived: NVIDIA's 353 AI TOPS (sparse FP8/INT8) / 8 = 44.1. The /8 ratio is the Ada GeForce ratio from the whitepaper (RTX 4090: 1321.2 sparse FP8 vs 165.2 dense BF16 with FP32 accumulate). Cross-check: 34 SMs x 512 FLOP/clk/SM x 2.54 GHz = 44.2."
+  },
+  {
+    "id": "rtx-4070tis",
+    "name": "RTX 4070 Ti SUPER",
+    "tier": "데스크톱",
+    "mem_gb": 16,
+    "bw_gbs": 672,
+    "bf16_tflops": 88.2,
+    "src": [
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4070-family/",
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf",
+      "https://www.techspot.com/specs/gpu/290250-nvidia-geforce-rtx-4070-ti-super.html"
+    ],
+    "note": "Derived: NVIDIA's 706 AI TOPS (sparse FP8/INT8) / 8 = 88.25, using the Ada GeForce ratio from the whitepaper. Cross-check: 66 SMs (8448 CUDA cores) x 512 FLOP/clk/SM x 2.61 GHz = 88.2."
+  },
+  {
+    "id": "rtx-4090",
+    "name": "RTX 4090",
+    "tier": "데스크톱",
+    "mem_gb": 24,
+    "bw_gbs": 1008,
+    "bf16_tflops": 165.2,
+    "src": [
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf"
+    ],
+    "note": ""
+  },
+  {
+    "id": "rtx-5080",
+    "name": "RTX 5080",
+    "tier": "데스크톱",
+    "mem_gb": 16,
+    "bw_gbs": 960,
+    "bf16_tflops": 112.6,
+    "src": [
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf",
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/"
+    ],
+    "note": ""
+  },
+  {
+    "id": "rtx-5090",
+    "name": "RTX 5090",
+    "tier": "데스크톱",
+    "mem_gb": 32,
+    "bw_gbs": 1792,
+    "bf16_tflops": 209.5,
+    "src": [
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf",
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/"
+    ],
+    "note": ""
+  },
+  {
+    "id": "rtx-a6000",
+    "name": "RTX A6000",
+    "tier": "워크스테이션",
+    "mem_gb": 48,
+    "bw_gbs": 768,
+    "bf16_tflops": 154.8,
+    "src": [
+      "https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf",
+      "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/NVIDIA-RTX-Blackwell-PRO-GPU-Architecture-v1.0.pdf"
+    ],
+    "note": ""
+  },
+  {
+    "id": "rtx-6000-ada",
+    "name": "RTX 6000 Ada",
+    "tier": "워크스테이션",
+    "mem_gb": 48,
+    "bw_gbs": 960,
+    "bf16_tflops": 364,
+    "src": [
+      "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/NVIDIA-RTX-Blackwell-PRO-GPU-Architecture-v1.0.pdf",
+      "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/rtx-6000/proviz-print-rtx6000-datasheet-web-2504660.pdf",
+      "https://www.nvidia.com/en-us/design-visualization/rtx-6000/"
+    ],
+    "note": ""
+  },
+  {
+    "id": "rtx-pro-6000",
+    "name": "RTX PRO 6000 Blackwell",
+    "tier": "워크스테이션",
+    "mem_gb": 96,
+    "bw_gbs": 1792,
+    "bf16_tflops": 503.8,
+    "src": [
+      "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/NVIDIA-RTX-Blackwell-PRO-GPU-Architecture-v1.0.pdf",
+      "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/"
+    ],
+    "note": ""
+  },
+  {
+    "id": "l40",
+    "name": "L40",
+    "tier": "데이터센터",
+    "mem_gb": 48,
+    "bw_gbs": 864,
+    "bf16_tflops": 181.05,
+    "src": [
+      "https://images.nvidia.com/content/Solutions/data-center/vgpu-L40-datasheet.pdf",
+      "https://www.nvidia.com/en-us/data-center/l40/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf"
+    ],
+    "note": ""
+  },
+  {
+    "id": "l40s",
+    "name": "L40S",
+    "tier": "데이터센터",
+    "mem_gb": 48,
+    "bw_gbs": 864,
+    "bf16_tflops": 362.05,
+    "src": [
+      "https://www.nvidia.com/en-us/data-center/l40s/"
+    ],
+    "note": ""
+  },
+  {
+    "id": "a100-40",
+    "name": "A100 40GB SXM",
+    "tier": "데이터센터",
+    "mem_gb": 40,
+    "bw_gbs": 1555,
+    "bf16_tflops": 312,
+    "src": [
+      "https://nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf"
+    ],
+    "note": "SXM4 variant. The datasheet gives the 40GB PCIe card the same 312 TFLOPS dense BF16 and 1,555 GB/s, at a 250 W TDP versus 400 W."
+  },
+  {
+    "id": "a100-80",
+    "name": "A100 80GB SXM",
+    "tier": "데이터센터",
+    "mem_gb": 80,
+    "bw_gbs": 2039,
+    "bf16_tflops": 312,
+    "src": [
+      "https://www.nvidia.com/en-us/data-center/a100/",
+      "https://nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf"
+    ],
+    "note": ""
+  },
+  {
+    "id": "h100-sxm",
+    "name": "H100 SXM",
+    "tier": "데이터센터",
+    "mem_gb": 80,
+    "bw_gbs": 3350,
+    "bf16_tflops": 989.5,
+    "src": [
+      "https://www.nvidia.com/en-us/data-center/h100/"
+    ],
+    "note": "The product page lists 1,979 TFLOPS BF16, footnoted 'with sparsity'; halved to get the dense figure."
+  },
+  {
+    "id": "h200",
+    "name": "H200 SXM",
+    "tier": "데이터센터",
+    "mem_gb": 141,
+    "bw_gbs": 4800,
+    "bf16_tflops": 989.5,
+    "src": [
+      "https://www.nvidia.com/en-us/data-center/h200/"
+    ],
+    "note": "The product page lists 1,979 TFLOPS BF16, footnoted 'with sparsity'; halved to get the dense figure."
+  },
+  {
+    "id": "b200",
+    "name": "B200",
+    "tier": "데이터센터",
+    "mem_gb": 180,
+    "bw_gbs": 8000,
+    "bf16_tflops": 2250,
+    "src": [
+      "https://www.nvidia.com/en-us/data-center/hgx/",
+      "https://www.nvidia.com/en-us/data-center/dgx-b200/"
+    ],
+    "note": "Per GPU, from 8-GPU system specs. HGX B200 FP16/BF16 is 36 PFLOPS sparse ('dense is 1/2'), so 18 PFLOPS dense / 8 GPUs = 2.25 PFLOPS. Memory and bandwidth come from DGX B200's 1,440 GB and 64 TB/s HBM3e totals, divided by 8."
+  }
+]

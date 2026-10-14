@@ -1,0 +1,6262 @@
+[
+{
+"row": {
+"모델": "TidyBot++ (diffusion policy)",
+"구분": "모바일 매니퓰레이션",
+"유형": "VA",
+"도메인": "모바일 매니퓰레이션",
+"발표": "2024-11",
+"기관": "Princeton University·Stanford University·Dexterity",
+"가중치 공개": "일부",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "Diffusion Policy(U-Net hybrid image, 공식 코드 설정): robomimic CNN 인코더(ResNet-18†)로 베이스·손목 카메라 84×84 + 베이스 자세·팔 상태 인코딩 → 1D 시간축 U-Net, DDIM(학습 100·추론 16스텝); 행동 13차원 절대 목표(베이스 x·y·θ + 팔 말단 위치·6D 회전 + 그리퍼), horizon 16·실행 8스텝, 10 Hz",
+"핵심 특징": "전방향(holonomic) 파워드 캐스터 베이스와 휴대폰 텔레옵 시연으로 과제별 Diffusion Policy를 학습해 베이스 목표 자세와 팔 말단 목표를 함께 출력한다. 실제 아파트 6과제에서 6/10~10/10을 성공했고, 같은 조건의 차동구동 제약 정책은 걸레질 과제에서 4/10(전방향 9/10)에 그쳤다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "과제별 처음부터 학습: GPU 노트북(README: 학습·추론 담당), 500 에폭(코드 기본 배치 64), 학습 시간 미공개",
+"추론": "GPU 노트북 추론 115 ms(RTX 4080 Laptop, README), 다음 청크를 200 ms 앞서 계산해 지연 은닉; 정책 10 Hz; 실시간 제어는 온보드 Intel NUC",
+"태스크·벤치마크": "실제 아파트 6과제 각 10회: open fridge 10/10, wipe countertop 9/10, load dishwasher 7/10, take out trash 10/10, load laundry 7/10, water plant 6/10; 차동구동 제약 정책 wipe countertop 4/10",
+"로봇·엠바디먼트": "TidyBot++: 파워드 캐스터 전방향 바퀴형 베이스(베이스 $5–6k) + Kinova Gen3 7-DoF 팔, Intel NUC 미니 PC",
+"데이터 종류": "실로봇 텔레옵",
+"데이터 규모": "6과제: open fridge 100회·나머지 5과제 각 50회(총 350회); 50회 수집에 1–2시간(리셋 포함)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "자체 휴대폰 텔레옵 시연(실제 아파트)",
+"비고": "논문은 정책을 'diffusion policy'로만 기술하며 구조·주파수·지연은 공식 GitHub 코드·README 기준. 하드웨어 설계·텔레옵·학습·제어 코드 오픈소스; 가중치는 시뮬 sim-v1 정책 체크포인트만 공개(실과제 정책 미공개). 모델 크기·학습 GPU 기종·시간 미공개. 기반: Diffusion Policy: Visuomotor Policy Learning via Action Diffusion (arXiv 2303.04137) — 논문·README가 정책 학습에 Diffusion Policy(real-stanford/diffusion_policy 코드)를 그대로 사용",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2412.10447"
+},
+"fields": {
+"v": "robomimic CNN 인코더(ResNet-18†) · 베이스·손목 카메라 84×84",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "1D 시간축 CNN U-Net (down_dims 256·512·1024)",
+"h": "DDIM diffusion 헤드 (학습 100·추론 16스텝)",
+"hk": "diffusion",
+"ck": "horizon 16 중 8스텝 실행",
+"hz": "10 Hz",
+"dep": "GPU 노트북(RTX 4080 Laptop) 추론 + 온보드 Intel NUC 제어",
+"inp": "RGB(베이스·손목) · 베이스 자세 · 팔 상태",
+"tags": [
+"모바일 매니퓰레이션",
+"diffusion",
+"전방향 베이스",
+"오픈소스 하드웨어"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습만(과제별 Diffusion Policy)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2412.10447",
+"t": "TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning",
+"u": "https://arxiv.org/abs/2412.10447",
+"n": "하드웨어·텔레옵 시스템 논문, 학습 정책은 Diffusion Policy 적용"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "정책이 베이스 목표 자세(x·y·θ)를 팔 목표와 함께 출력 → 전방향 베이스 저수준 제어기가 추종",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "데이터 규모",
+"quote": "We collected 100 demonstrations for the shorter open fridge task and 50 for all others.",
+"url": "https://arxiv.org/html/2412.10447"
+},
+{
+"field": "데이터 규모",
+"quote": "Data collection for each task took between 1 and 2 hours for 50 episodes",
+"url": "https://arxiv.org/html/2412.10447"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "We trained each policy for 500 epochs",
+"url": "https://arxiv.org/html/2412.10447"
+},
+{
+"field": "추론",
+"quote": "This hides the policy inference latency (115 ms on an \"RTX 4080 Laptop\" GPU)",
+"url": "https://github.com/jimmyyhwu/tidybot2"
+},
+{
+"field": "추론",
+"quote": "POLICY_CONTROL_FREQ = 10",
+"url": "https://github.com/jimmyyhwu/tidybot2/blob/main/constants.py"
+},
+{
+"field": "백본·액션 표현",
+"quote": "num_inference_steps: 16",
+"url": "https://github.com/jimmyyhwu/tidybot2/blob/main/diffusion-policy.patch"
+},
+{
+"field": "백본·액션 표현",
+"quote": "horizon: 16",
+"url": "https://github.com/real-stanford/diffusion_policy/blob/548a52bbb105518058e27bf34dcf90bf6f73681a/diffusion_policy/config/train_diffusion_unet_real_hybrid_workspace.yaml"
+},
+{
+"field": "가중치 공개",
+"quote": "We provide sample data and pretrained weights so that you can easily run all commands.",
+"url": "https://github.com/jimmyyhwu/tidybot2"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "the differential drive policy only achieves 4/10 success rate",
+"url": "https://arxiv.org/html/2412.10447"
+}
+],
+"_src": "out_m1.jsonl"
+},
+{
+"row": {
+"모델": "MoManipVLA",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "모바일 매니퓰레이션",
+"발표": "2025-03",
+"기관": "Beijing University of Posts and Telecommunications·Nanyang Technological University·Tsinghua University",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "OpenVLA-7B(LoRA 미세조정)가 RGB·팔 고유감각·언어 지시로 말단 waypoint 예측 → 이중(bi-level) 최적화: 상위는 베이스 waypoint, 하위는 말단 궤적 선택(도달성·평활성·충돌 비용 λ 10.0·1.0·0.6, Dual Annealing + SLSQP) → 팔 관절은 Pinocchio IK; 청크·주파수 미공개",
+"핵심 특징": "고정 베이스용 사전학습 VLA가 낸 말단 waypoint를 실현 가능하게 만드는 베이스 waypoint를 이중 최적화로 찾아 VLA를 모바일 매니퓰레이션으로 이전한다. OVMM에서 성공률 15.8%로 기존 최고(11.6%)보다 4.2%p 높았고 실환경 배치에는 전문가 에피소드 50개만 썼다.",
+"파라미터": "7B (OpenVLA-7B)",
+"파라미터(B)": 7,
+"사전학습 가속기": "해당 없음 (공개 OpenVLA-7B 사용)",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "RTX 3090 4장, LoRA 10K 에폭(시뮬 시연 200 에피소드), 시간·배치 미공개; 실환경은 전문가 에피소드 50개로 미세조정",
+"추론": "실환경 스텝당 지연 580–592 ms(표 4); 추론 하드웨어 미공개",
+"태스크·벤치마크": "OVMM(시뮬 장면 60개) 성공률 15.8%·부분 성공 49.4% (KUZHUM 11.6%·38.2%, UniTeam 9.2%, OVMM RL 1.2%); 실환경 3과제 각 10회: Stack Block 30%, Open Drawer 10%, Put in Bowl 40%",
+"로봇·엠바디먼트": "시뮬 Hello Robot Stretch(OVMM); 실 hexman echo plus 바퀴형 베이스 + RM65 팔, RealSense T265로 베이스 자세 추적",
+"데이터 종류": "시뮬레이션·합성 / 실로봇 텔레옵†",
+"데이터 규모": "시뮬 pick-and-place 시연 200 에피소드(OVMM 휴리스틱 기준선으로 수집); 실환경 전문가 에피소드 50개",
+"데이터 시간(h)": null,
+"주요 데이터셋": "OVMM 시뮬 전문가 궤적(자체 수집)",
+"비고": "베이스는 학습 정책이 아니라 최적화로 구동(학습 부분은 OpenVLA LoRA 적응). 초록의 '50 training cost'는 본문상 전문가 에피소드 50개이며 프로젝트 페이지는 '50% training cost'로 표기. 실데이터 수집 방식 미기재. 표 2 지연 693.1은 단위 미기재. 코드 'Coming Soon'(2026-10 확인), 가중치 미공개. CVPR 2025. 기반: OpenVLA: An Open-Source Vision-Language-Action Model (arXiv 2406.09246) — 사전학습 OpenVLA-7B를 말단 waypoint 생성기로 사용",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2503.13446"
+},
+"fields": {
+"v": "DINOv2 + SigLIP (OpenVLA 내장)",
+"l": "Llama 2 7B · OpenVLA-7B 구성",
+"lb": 7,
+"fam": "Llama",
+"h": "OpenVLA 행동 토큰 → 말단 waypoint; 베이스 waypoint·말단 궤적은 이중 최적화",
+"hk": "이산 토큰",
+"ck": "미공개",
+"hz": "미공개 (실환경 스텝당 약 0.58–0.59초)",
+"dep": null,
+"inp": "RGB · 팔 고유감각 · 언어 지시",
+"pipe": [
+[
+"in",
+"RGB · 언어 지시 · 팔 상태",
+""
+],
+[
+"llm",
+"OpenVLA-7B (LoRA)",
+"말단 waypoint 예측"
+],
+[
+"ctrl",
+"이중 최적화",
+"베이스 waypoint · 말단 궤적"
+],
+[
+"ctrl",
+"Pinocchio IK",
+"팔 관절 해"
+],
+[
+"out",
+"바퀴형 베이스 + 팔",
+""
+]
+],
+"tags": [
+"모바일 매니퓰레이션",
+"VLA 이전",
+"모션 최적화"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(OpenVLA LoRA 미세조정) + 비학습 최적화",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2503.13446",
+"t": "MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation",
+"u": "https://arxiv.org/abs/2503.13446",
+"n": "CVPR 2025"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "베이스 waypoint를 이중 최적화로 계산해 병진·회전 구동, 고정 베이스용 VLA가 말단 waypoint를 내고 팔은 IK로 추종",
+"cat": "계획·최적화로 이동 결정"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "We employ OpenVLA-7B to generate fine-grained interaction trajectories.",
+"url": "https://arxiv.org/html/2503.13446"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "efficiently fine-tune 10K epochs with LORA on 4 RTX 3090 GPUs",
+"url": "https://arxiv.org/html/2503.13446"
+},
+{
+"field": "데이터 규모",
+"quote": "We collect 200 pick-and-place demonstration episodes",
+"url": "https://arxiv.org/html/2503.13446"
+},
+{
+"field": "데이터 규모",
+"quote": "50 samples to complete the fine-tuning and achieves 40% success rate",
+"url": "https://arxiv.org/html/2503.13446"
+},
+{
+"field": "추론",
+"quote": "Real-world results. We tested each task 10 times.",
+"url": "https://arxiv.org/html/2503.13446"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "MoManipVLA achieves a 4.2% higher success rate than the state-of-the-art mobile manipulation",
+"url": "https://arxiv.org/abs/2503.13446"
+},
+{
+"field": "백본·액션 표현",
+"quote": "We acquire the overall objectives by combining the reachability, smoothness and collision costs.",
+"url": "https://arxiv.org/html/2503.13446"
+}
+],
+"_src": "out_m1.jsonl"
+},
+{
+"row": {
+"모델": "AC-DiT",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "모바일 매니퓰레이션",
+"발표": "2025-07",
+"기관": "Peking University·Nanjing University·CUHK·Beijing Academy of Artificial Intelligence(BAAI)",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "SigLIP(so400m) 이미지·텍스트 인코더 + Lift3D식 점군 토크나이저(LoRA) → 언어-시각 코사인 유사도로 2D·3D 토큰 가중 → DiT 액션 헤드(공식 코드: RDT-1B 구성 hidden 2048·28층, RDT-1B 초기화); 사전학습 모빌리티 헤드(DiT 170M)의 잠재 베이스 표현을 조건으로 전신 행동 생성; 베이스 속도(절대) + 팔 관절(시뮬은 상대 변화), 청크 2(시뮬), DDPM 추론 5스텝(코드)",
+"핵심 특징": "베이스 행동만으로 먼저 학습한 경량 모빌리티 헤드의 잠재 표현을 전신 행동 생성의 조건으로 넣고(mobility-to-body), 단계별 필요에 따라 2D 이미지와 3D 점군의 가중치를 조절한다. ManiSkill-HAB에서 RDT·DP·3DP보다 높았고 실 Cobot Magic 4개 장기 과제에서 ACT·π0를 앞섰다.",
+"파라미터": "미공개 (모빌리티 헤드 170M; 본 DiT는 공식 코드상 RDT-1B 구성)",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음 (공식 코드는 외부 RDT-1B 가중치로 초기화)",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "논문 미기재(모빌리티 헤드는 '몇 에폭' 선학습). 공식 코드(ManiSkill-HAB): 모빌리티 헤드 30,000 스텝·GPU당 배치 24·lr 1e-4 → AC-DiT 20,000 스텝·GPU당 배치 16·lr 1e-5·bf16, 두 스크립트 모두 GPU 8개 설정(기종·시간 미기재)",
+"추론": "미공개",
+"태스크·벤치마크": "ManiSkill-HAB 7개 서브과제 평균 55.6%(표 1; 본문 48.7%) vs RDT 42.9%·DP 28.8%·3DP 21.6%; RoboTwin 양팔 6과제 평균 90.1(표 2); 실 4개 장기 과제(Cucumber in Basket·Store Breads·Hang Towel·Clean Table) 17회 평가, ACT·π0 대비 최고",
+"로봇·엠바디먼트": "실 Agilex Cobot Magic(Piper 팔 4개 + Tracer 바퀴형 베이스; 손목·가슴 Orbbec Dabai 3대 + 머리 RealSense L515); 시뮬 ManiSkill-HAB(Fetch, MS-HAB 기준)·RoboTwin 고정 양팔",
+"데이터 종류": "시뮬레이션·합성 / 실로봇 텔레옵",
+"데이터 규모": "ManiSkill-HAB 과제당 성공 시연 1,000개(RL 에이전트 생성); RoboTwin 과제당 1,000개(모션 플래닝); 실로봇 과제당 100개(30 fps)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "ManiSkill-HAB 생성 시연; RoboTwin; 자체 Cobot Magic 시연",
+"비고": "논문에 학습·추론 하드웨어와 총 파라미터 미기재; RDT-1B 초기화·스텝·배치는 공식 GitHub 스크립트 기준. ManiSkill-HAB 평균이 표(55.6)와 본문(48.7%)에서 불일치. 코드 2026-02 공개, 학습된 AC-DiT 가중치 미제공. NeurIPS 2025. 기반: RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (arXiv 2410.07864) — RDT 프레임워크(교차 어텐션 조건 주입)를 따르고 공식 코드가 RDT-1B 가중치로 초기화",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2507.01961"
+},
+"fields": {
+"v": "SigLIP so400m (손목·가슴 RGB 3시점) + Lift3D식 점군 토크나이저(LoRA)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"txt": "SigLIP 텍스트 인코더",
+"t": "DiT (공식 코드: RDT-1B 구성 2048·28층) + 모빌리티 헤드 DiT 170M",
+"h": "전신 행동 diffusion DiT 헤드 (DDPM, 추론 5스텝·코드)",
+"hk": "diffusion",
+"ck": "2스텝 (시뮬)",
+"hz": "미공개 (실 시연 30 fps)",
+"dep": null,
+"inp": "RGB 3시점 · 점군 · 언어 · 로봇 상태",
+"pipe": [
+[
+"in",
+"RGB 3시점 · 점군 · 언어",
+""
+],
+[
+"vis",
+"SigLIP + 3D 토크나이저",
+"2D·3D 적응 가중"
+],
+[
+"pol",
+"모빌리티 헤드 DiT 170M",
+"잠재 베이스 표현"
+],
+[
+"head",
+"AC-DiT diffusion 헤드",
+"베이스 속도 + 팔 관절"
+],
+[
+"out",
+"바퀴형 양팔 로봇",
+""
+]
+],
+"tags": [
+"모바일 매니퓰레이션",
+"diffusion",
+"2D·3D 융합",
+"베이스-팔 협응"
+]
+},
+"rl": [
+"일부",
+"RL 데이터 활용",
+"ManiSkill-HAB 학습 시연을 RL 에이전트(열기·닫기 PPO, 집기·놓기 SAC)로 생성; AC-DiT 자체는 모방학습",
+"https://arxiv.org/abs/2507.01961"
+],
+"paper": {
+"k": "논문",
+"id": "2507.01961",
+"t": "AC-DiT: Adaptive Coordination Diffusion Transformer for Mobile Manipulation",
+"u": "https://arxiv.org/abs/2507.01961",
+"n": "NeurIPS 2025"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "정책이 베이스 속도(절대값)를 팔 관절 행동과 함께 직접 출력",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "comprising N stacked DiT blocks followed by a final MLP with a total of only 170 million parameters",
+"url": "https://arxiv.org/html/2507.01961v3"
+},
+{
+"field": "데이터 규모",
+"quote": "For each task, we collect 100 spatially generalized demonstration trajectories at a frequency of 30 fps.",
+"url": "https://arxiv.org/html/2507.01961v3"
+},
+{
+"field": "데이터 규모",
+"quote": "We generate 1000 successful demonstrations for each task",
+"url": "https://arxiv.org/html/2507.01961v3"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "with a mean success rate of 48.7%, outperforming all baselines by a significant margin",
+"url": "https://arxiv.org/html/2507.01961v3"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "BACKBONE_NAME = f'robotics-diffusion-transformer/rdt-1b'",
+"url": "https://github.com/PKU-HMI-Lab/AC-DiT/blob/main/scripts/finetune_mshab_acdit.py"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "'--max_train_steps=20000',",
+"url": "https://github.com/PKU-HMI-Lab/AC-DiT/blob/main/scripts/finetune_mshab_acdit.py"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3,4,5,6,7'",
+"url": "https://github.com/PKU-HMI-Lab/AC-DiT/blob/main/scripts/finetune_mshab_acdit.py"
+},
+{
+"field": "백본·액션 표현",
+"quote": "action_chunk_size: 2",
+"url": "https://github.com/PKU-HMI-Lab/AC-DiT/blob/main/configs/config.yaml"
+},
+{
+"field": "백본·액션 표현",
+"quote": "num_inference_timesteps: 5",
+"url": "https://github.com/PKU-HMI-Lab/AC-DiT/blob/main/configs/config.yaml"
+},
+{
+"field": "가중치 공개",
+"quote": "[2026/02/23] AC-DiT has gone open source!",
+"url": "https://github.com/PKU-HMI-Lab/AC-DiT"
+}
+],
+"_src": "out_m1.jsonl"
+},
+{
+"row": {
+"모델": "SG-VLA",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "모바일 매니퓰레이션",
+"발표": "2026-03",
+"기관": "Lambda, Inc.·UC San Diego",
+"가중치 공개": "미확인",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Prismatic VLM(DINOv2 + SigLIP 융합 인코더, Qwen2.5-0.5B LLM); 헤드·손 멀티뷰 RGB·깊이·과거 4스텝 이력 입력; 13차원 행동(베이스 자세 ΔX 3·토르소 높이 1·팔 관절 Δq 7·그리퍼 2)을 이산 행동 토큰으로 예측; 선택형 flow matching 전문가 100M(청크 8 중 2 실행, 디노이징 10스텝); 보조 디코더 5종 공동학습",
+"핵심 특징": "로봇 전역 자세·관절 구성·파지 성공·목표 물체 자세·분할 마스크를 복원하는 보조 디코더를 VLA와 단계적으로 공동학습해 공간 grounding을 강화한다. ManiSkill-HAB 가정 과제 평균 성공률 0.73으로 보조과제 없는 멀티뷰·깊이 모델(0.60)보다 22% 높았고 OpenVLA(0.04)를 크게 앞섰다.",
+"파라미터": "1.3B (Qwen2.5-0.5B 기반 Prismatic VLM; 선택형 flow 전문가 100M 별도)",
+"파라미터(B)": 1.3,
+"사전학습 가속기": "해당 없음 (사전학습 Prismatic VLM에서 과제 데이터로 바로 학습)",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "A100 8장, 3단계(디코더 적응→공동 정제→VLM 동결 후 액션 헤드 단독), 6개 서브과제 10 에폭(분할 디코더 모델은 pick·place 5 에폭)·전역 배치 512·Adam lr 2e-5 고정, 시간 미공개",
+"추론": "미공개",
+"태스크·벤치마크": "ManiSkill-HAB(TidyHouse·PrepareGroceries·SetTable → Pick·Place·Open·Close) 과제당 30회: 평균 0.73(보조과제 없음 0.60, 단순 공동학습 0.51, flow 헤드 0.69; OpenVLA 0.04, 멀티뷰+깊이 OpenVLA 0.32); 실로봇 실험 없음",
+"로봇·엠바디먼트": "ManiSkill-HAB 시뮬 모바일 매니퓰레이터(MS-HAB 기준 Fetch; SG-VLA 논문은 로봇명 미기재), 베이스·토르소·7관절 팔·그리퍼 13차원 제어",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "44K 에피소드·1.4M transition",
+"데이터 시간(h)": null,
+"주요 데이터셋": "ManiSkill-HAB 데이터 생성 파이프라인(TidyHouse·PrepareGroceries·SetTable)",
+"비고": "시뮬 전용(결론에서 실세계 적용을 향후 과제로 언급). 논문에 코드·가중치 공개 언급 없고 검색에서도 저장소 미발견. 이력 길이 표기가 '4 timesteps'와 '4 actions'로 혼재. 학습 시간·추론 속도 미공개. 컴퓨트는 Lambda 지원. 기반: Prismatic VLMs: Investigating the Design Space of Visually-Conditioned Language Models (arXiv 2402.07865) — 사전학습 Prismatic VLM을 백본으로 사용",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2603.22760"
+},
+"fields": {
+"v": "DINOv2 + SigLIP (Prismatic; RGB·깊이 멀티뷰)",
+"l": "Qwen2.5-0.5B · Prismatic VLM 구성",
+"lb": 0.5,
+"fam": "Qwen",
+"h": "이산 행동 토큰 + 보조 디코더 5종; 선택형 flow matching 전문가 100M (10스텝)",
+"hk": "이산 토큰",
+"ck": "미공개(토큰 경로) / flow 헤드 8스텝 중 2 실행",
+"hz": "미공개",
+"dep": null,
+"inp": "멀티뷰 RGB · 깊이 · 이력 · 언어 지시",
+"tags": [
+"모바일 매니퓰레이션",
+"보조 과제 공동학습",
+"시뮬 전용"
+]
+},
+"rl": [
+"일부",
+"RL 데이터 활용",
+"학습 데이터를 ManiSkill-HAB 생성 파이프라인(RL 정책 시연 + 규칙 기반 필터링)으로 생성; 정책 자체는 모방학습",
+"https://arxiv.org/abs/2412.13211"
+],
+"paper": {
+"k": "논문",
+"id": "2603.22760",
+"t": "SG-VLA: Learning Spatially-Grounded Vision-Language-Action Models for Mobile Manipulation",
+"u": "https://arxiv.org/abs/2603.22760",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "정책이 베이스 자세 변화(ΔX 3차원)를 토르소·팔·그리퍼와 함께 13차원 행동으로 직접 출력(시뮬)",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "SG-VLA is a lightweight 1.3B parameter model consisting of a pre-trained Prismatic VLM",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "파라미터",
+"quote": "a large language model backbone (Qwen2.5-0.5B",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "trained on 8 NVIDIA A100 GPUs.",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "Global batch size is set to 512.",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "while the others are train on all 6 subtasks for 10 epochs.",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "데이터 규모",
+"quote": "totaling 44K episodes with 1.4M transitions.",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "achieves 0.73 average success rate, representing a 22% improvement",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "For each task, we run 30 episodes and calculate the mean success rate.",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "백본·액션 표현",
+"quote": "Additionally, we incorporate an optional 100M parameters Flow Matching",
+"url": "https://arxiv.org/html/2603.22760"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The action head is trained to predict action chunk of size 8, among which the first 2 actions are executed.",
+"url": "https://arxiv.org/html/2603.22760"
+}
+],
+"_src": "out_m1.jsonl"
+},
+{
+"row": {
+"모델": "PanoVLA",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "모바일 매니퓰레이션",
+"발표": "2026-08",
+"기관": "Beihang University·Beijing Institute for General Artificial Intelligence(BIGAI)·Shandong University·Johns Hopkins University·Delta Intelligence",
+"가중치 공개": "미확인",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "π0.5 기반 3-전문가 Mixture-of-Transformers: VLM 전문가(SigLIP 로컬 뷰 + Gemma-2B) + 파노라마 전문가 100M(이중 어안 → 등장방형 파노라마, 동결 MTPano 특징) + flow matching 액션 전문가; 17차원 상대 행동(양팔 관절·그리퍼 14 + 베이스 평면 속도·yaw 속도 3) 32스텝 청크; 데이터 25 Hz",
+"핵심 특징": "π0.5에 파노라마 전문가를 끼운 Mixture-of-Transformers로 360° 파노라마의 전역 공간 맥락을 로컬 카메라 뷰와 융합하고, 단일 VR 전신 텔레옵으로 바퀴형 양팔 로봇 데이터를 모은다. 실 4과제에서 평균 단계 완료율 91.3%·종단 성공률 73.4%로 π0.5(58.6%·30.0%)를 크게 앞섰다.",
+"파라미터": "미공개 (파노라마 전문가 100M; π0.5 백본 Gemma-2B)",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음 (π0.5에서 미세조정)",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "A100 4장, 30K 스텝·GPU당 배치 64(bf16, lr 5K 스텝 워밍업 후 5e-5 고정), LM·MTPano 동결, 학습 시간 미공개",
+"추론": "실로봇 평가 시 RTX 4090 1장에서 폐루프 실행; 지연·제어 주파수 미공개",
+"태스크·벤치마크": "실 4과제 각 15회: Move Pen SR 86.7%, Move Block 93.3%, Open Curtain 66.7%, Wipe Table 46.7%; 평균 SCR 91.3%·SR 73.4% (π0.5 58.6%·30.0%, π0.5 w/ Pano 80.8%·56.7%)",
+"로봇·엠바디먼트": "바퀴형 양팔: RANGER MINI 3 베이스 + Agilex PIPER 6-DoF 팔 2개·평행 그리퍼; 상단 360° 파노라마 카메라·전방 RGB·손목 카메라 2대",
+"데이터 종류": "실로봇 텔레옵",
+"데이터 규모": "4과제 × 200 = 800 궤적, 약 5.5시간·약 500k 프레임(25 Hz, 궤적당 20–30초)",
+"데이터 시간(h)": 5.5,
+"주요 데이터셋": "자체 VR 전신 텔레옵 데이터셋(Move Pen·Move Block·Open Curtain·Wipe Table)",
+"비고": "텔레옵: VR 헤드셋·양손 컨트롤러·허리/발목 트래커 3개 → SMPL 복원 → GMR 리타깃(베이스는 3-DoF 평면 가상 floating base). π0.5 체크포인트명·총 파라미터·디노이징 스텝·학습 시간 미공개. 논문에 코드·데이터·가중치 공개 언급 없음. 기반: π0.5: a Vision-Language-Action Model with Open-World Generalization (arXiv 2504.16054) — π0.5 이중 전문가 백본에 파노라마 전문가를 삽입해 구성",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2608.02257"
+},
+"fields": {
+"v": "SigLIP (로컬 뷰) + MTPano (파노라마, 동결)",
+"l": "Gemma-2B · π0.5 VLM 구성",
+"lb": 2,
+"fam": "Gemma",
+"t": "파노라마 전문가 100M (MoT)",
+"h": "flow matching 액션 전문가 (π0.5 계승)",
+"hk": "flow matching",
+"ck": "32스텝",
+"hz": "미공개 (데이터 25 Hz)",
+"dep": "RTX 4090 1장",
+"inp": "로컬 RGB · 360° 파노라마 · 언어 · 로봇 상태",
+"pipe": [
+[
+"in",
+"로컬 RGB · 파노라마 · 언어",
+""
+],
+[
+"vis",
+"SigLIP + MTPano",
+"로컬 · 파노라마 인코딩"
+],
+[
+"llm",
+"Gemma-2B VLM 전문가",
+"+ 파노라마 전문가 100M"
+],
+[
+"head",
+"flow matching 액션 전문가",
+"32스텝 청크"
+],
+[
+"out",
+"양팔 + 바퀴형 베이스",
+"17차원"
+]
+],
+"tags": [
+"모바일 매니퓰레이션",
+"파노라마",
+"flow matching",
+"전신 텔레옵"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(flow matching)만",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2608.02257",
+"t": "Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation",
+"u": "https://arxiv.org/abs/2608.02257",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "정책이 베이스 평면 속도·yaw 속도(3-DoF)를 양팔 관절과 함께 32스텝 청크로 직접 출력",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "Training is performed in bfloat16 precision on four NVIDIA A100 GPUs with a per-GPU batch size of 64.",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "The model is trained for 30K optimization steps.",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "데이터 시간(h)",
+"quote": "The trajectories span approximately 5.5 hours in total.",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "데이터 규모",
+"quote": "Each trajectory lasts about 20–30 seconds and is recorded at 25 Hz, yielding roughly 500k synchronized frames.",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "데이터 규모",
+"quote": "we collect 200 demonstration trajectories for each of the four real-world mobile manipulation tasks",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "파라미터",
+"quote": "a 100M-parameter panorama expert for panoramic representation",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "파라미터",
+"quote": "using Gemma-2B as the language backbone and SigLIP for local camera observations",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "추론",
+"quote": "During real-robot evaluation, the policy runs in closed loop on a single NVIDIA RTX 4090 GPU.",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "백본·액션 표현",
+"quote": "At each time, the policy predicts a 32-step action chunk for the arm and base,",
+"url": "https://arxiv.org/html/2608.02257"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "PanoVLA achieves an average stage completion rate of 91.3%",
+"url": "https://arxiv.org/html/2608.02257"
+}
+],
+"_src": "out_m1.jsonl"
+},
+{
+"row": {
+"모델": "HarmonicMM",
+"구분": "모바일 매니퓰레이션",
+"유형": "VA",
+"도메인": "모바일 매니퓰레이션",
+"발표": "2023-12",
+"기관": "UC San Diego·Allen Institute for AI(PRIOR)·University of Washington",
+"가중치 공개": "아니오",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "사전학습 DINOv2(dinov2_vits14) 특징(Nav·Manip RGB 카메라 2대) → 카메라별 1×1 Conv 2층(16채널) + 고유감각 → GRU 1층(512) → 정책·가치 FC(512); 5차원 연속 행동(베이스 병진·회전, 팔 높이·신장, 손목 회전; 문·냉장고 과제는 파지 1차원 추가), 청크 없음",
+"핵심 특징": "내비게이션과 조작 모듈을 나누지 않고 RGB만으로 베이스와 팔을 함께 움직이는 단일 정책을 ProcTHOR 시뮬에서 DD-PPO로 끝단간 학습한다. 시뮬 4과제 평균 성공률 47%로 ReLMoGen 등 기준선을 앞섰고 미세조정 없이 처음 보는 실제 아파트에서 문 열기·테이블 청소를 수행했다.",
+"파라미터": "미공개 (DINOv2 ViT-S/14 인코더 + GRU 512)",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "과제별 RL 학습: DD-PPO(AllenAct) 10^7 스텝, 병렬 환경 20개·반복당 샘플 640, 시드 3개; GPU·학습 시간 미공개",
+"추론": "미공개",
+"태스크·벤치마크": "시뮬(미학습 하우스 350개) 성공률: Cleaning Table 36.7%, Opening Door Push 80.0%·Pull 51.2%, Opening Fridge 20.0% (평균 47%; ReLMoGen 25.1%·51.7%·40.7%·0%); 실환경: 문 당기기 9/15, 밀기 7/10, 테이블 청소 8/12(표면 66.6%)",
+"로봇·엠바디먼트": "Hello Robot Stretch(바퀴형 베이스, 팔 높이·신장 제어), RealSense D455 RGB",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "ProcTHOR 하우스: 문 700·테이블 2,000·냉장고 1,400개; 과제당 10^7 환경 스텝",
+"데이터 시간(h)": null,
+"주요 데이터셋": "ProcTHOR(AI2-THOR) 절차 생성 하우스",
+"비고": "2024 이전 참고 기준(anchor). 과제별 별도 정책이며 언어·목표 입력 없음. 시각 인코더는 ViT(DINOv2)지만 정책 트렁크가 GRU라 비트랜스포머로 분류. 실로봇 문손잡이 파지는 휴리스틱 보조. 코드 공개(GitHub), 체크포인트 미제공. IROS 2024 Best Paper on Mobile Manipulation.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2312.06639"
+},
+"fields": {
+"v": "DINOv2 ViT-S/14 (Nav·Manip 카메라 2대)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "1×1 Conv 인코더 + GRU 1층 (512)",
+"h": "액터-크리틱 FC (5차원 연속 행동 + 파지)",
+"hk": "RL 정책",
+"ck": "없음 (1스텝)",
+"hz": "미공개",
+"dep": null,
+"inp": "RGB 2시점 · 고유감각",
+"tags": [
+"모바일 매니퓰레이션",
+"RL",
+"sim-to-real",
+"문 열기"
+]
+},
+"rl": [
+"사용",
+"RL 제어기 학습",
+"정책 전체를 ProcTHOR 시뮬에서 DD-PPO로 과제별 처음부터 학습(10^7 스텝) 후 실환경 zero-shot 이전",
+"https://arxiv.org/abs/2312.06639"
+],
+"paper": {
+"k": "논문",
+"id": "2312.06639",
+"t": "Harmonic Mobile Manipulation",
+"u": "https://arxiv.org/abs/2312.06639",
+"n": "IROS 2024"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "정책이 베이스 병진·회전을 팔 높이·신장·손목 회전과 함께 5차원 연속 행동으로 직접 출력",
+"cat": "RL 정책이 직접 구동"
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "We trained the policies for all methods for each task using DD-PPO( [48]) for 10^7 steps using AllenAct[49].",
+"url": "https://arxiv.org/html/2312.06639v3"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "| Parallel Environment | 20 |",
+"url": "https://arxiv.org/html/2312.06639v3"
+},
+{
+"field": "백본·액션 표현",
+"quote": "| Pretrained Visual Encoder | dinov2_vits14 |",
+"url": "https://arxiv.org/html/2312.06639v3"
+},
+{
+"field": "백본·액션 표현",
+"quote": "| GRU | 1 GRU layer with 512 units |",
+"url": "https://arxiv.org/html/2312.06639v3"
+},
+{
+"field": "백본·액션 표현",
+"quote": "leveraging a 5-dim continuous action space for integrated base and arm movements",
+"url": "https://arxiv.org/html/2312.06639v3"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Our experiment results demonstrate that HARMONICMM achieves an average success rate of 47% across all tasks",
+"url": "https://arxiv.org/html/2312.06639v3"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Our controller successfully pulled the door fully open in 9 out of 15 attempts in three different rooms.",
+"url": "https://arxiv.org/html/2312.06639v3"
+},
+{
+"field": "데이터 규모",
+"quote": "Our evaluations were conducted in 350 unseen houses with novel layouts.",
+"url": "https://arxiv.org/html/2312.06639v3"
+}
+],
+"_src": "out_m1.jsonl"
+},
+{
+"row": {
+"모델": "ACT-1",
+"구분": "모바일 매니퓰레이션",
+"유형": "VA",
+"도메인": "모바일 매니퓰레이션",
+"발표": "2025-11",
+"기관": "Sunday (Sunday Robotics)",
+"가중치 공개": "아니오",
+"아키텍처": "미공개",
+"백본·액션 표현": "미공개; 장기 조작과 3D 지도 조건 내비게이션을 하나의 end-to-end 모델로 결합, 밀리미터 단위 조작부터 미터 단위 이동까지 가변 granularity 행동 생성",
+"핵심 특징": "Skill Capture Glove로 모은 사람 시연을 Skill Transform으로 로봇 데이터로 바꿔, 텔레옵 로봇 궤적 없이 장기 조작과 3D 지도 조건 내비게이션을 하나의 end-to-end 모델로 학습한다. 물체 21개·정밀 상호작용 68회(33종)·130 ft 이상 이동이 필요한 식탁→식기세척기 과제를 자율 수행했고 처음 보는 Airbnb 집에도 배치했다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "미공개",
+"추론": "미공개 (홈페이지는 'onboard AI'로만 표현)",
+"태스크·벤치마크": "식탁 정리→식기세척기 적재(고유 33종·총 68회 정밀 상호작용, 물체 21개, 130 ft 이상 이동); Airbnb 미학습 가정 배치; 양말 짝 찾아 개기; 에스프레소 머신 조작; 성공률 미공개",
+"로봇·엠바디먼트": "Sunday Memo 가정용 로봇(팔로 바닥~7 ft 도달, 평소 높이 4 ft; 바퀴형 베이스(2차))",
+"데이터 종류": "사람 영상",
+"데이터 규모": "Skill Capture Glove 착용 사람 시연, 텔레옵 궤적 0(공식); 글러브 수천 개 배포(공식 홈페이지); 500가구 이상·약 1,000만 에피소드·수천 시간(2차)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "자체 Skill Capture Glove 가정 데이터",
+"비고": "공식 블로그로만 공개(논문 없음): 구조·파라미터·컴퓨트·성공률 미공개. 글러브→로봇 데이터 변환(Skill Transform) 성공률 90%. 언어 지시 입력 여부 미공개(공식 글은 3D 지도 조건만 명시)라 유형은 잠정 VA. 후속 ACT-2 Preview(2026-07) 발표.",
+"검증": "확인",
+"1차 출처 URL": "https://www.sunday.ai/blog/no-robot-data"
+},
+"fields": {
+"v": "미공개",
+"l": "미공개",
+"lb": null,
+"fam": "미공개",
+"h": "미공개 (조작~내비게이션 가변 granularity 행동)",
+"hk": "미공개",
+"ck": "미공개",
+"hz": "미공개",
+"dep": null,
+"inp": "관측(세부 미공개) · 3D 지도",
+"tags": [
+"모바일 매니퓰레이션",
+"사람 데이터",
+"글러브 데이터",
+"가정용"
+]
+},
+"rl": [
+"미공개",
+"미공개",
+"공식 글에 학습 방식 미기재",
+null
+],
+"paper": {
+"k": "없음",
+"id": null,
+"t": null,
+"u": null,
+"n": "공식 블로그로만 공개 ('ACT-1: A Robot Foundation Model Trained on Zero Robot Data')"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "단일 end-to-end 모델이 3D 지도 조건 내비게이션 행동까지 직접 생성(베이스 명령 형식 미공개; 바퀴형은 2차 출처)",
+"cat": "형식 미기재"
+},
+"evidence": [
+{
+"field": "모델",
+"quote": "We have trained our first foundation model, ACT-1 (act one)",
+"url": "https://www.sunday.ai/blog/no-robot-data"
+},
+{
+"field": "데이터 규모",
+"quote": "all without a single trajectory of teleoperation data",
+"url": "https://www.sunday.ai/blog/no-robot-data"
+},
+{
+"field": "비고",
+"quote": "We convert glove data into equivalent robot data with a 90% success rate.",
+"url": "https://www.sunday.ai/blog/no-robot-data"
+},
+{
+"field": "백본·액션 표현",
+"quote": "we condition it on 3D maps of its environment during training",
+"url": "https://www.sunday.ai/blog/no-robot-data"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "33 unique and 68 total dexterous interactions with 21 different objects",
+"url": "https://www.sunday.ai/blog/no-robot-data"
+},
+{
+"field": "데이터 규모",
+"quote": "We've shipped thousands of gloves to our Memory Developers.",
+"url": "https://www.sunday.ai/"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "Memo can lower to touch the ground or reach as tall as 7 feet with its arms.",
+"url": "https://www.sunday.ai/"
+},
+{
+"field": "데이터 규모",
+"quote": "This effort produced around 10 million episodes of genuine household routines.",
+"url": "https://www.eweek.com/news/sunday-memo-home-robot/"
+},
+{
+"field": "데이터 규모",
+"quote": "The company gathered daily routine information from more than 500 homes.",
+"url": "https://www.eweek.com/news/sunday-memo-home-robot/"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "Memo doesn’t walk, it rolls. It uses a wheeled base instead of legs for better stability and balance.",
+"url": "https://www.eweek.com/news/sunday-memo-home-robot/"
+}
+],
+"_src": "out_m1.jsonl"
+},
+{
+"row": {
+"모델": "UMI on Legs",
+"구분": "모바일 매니퓰레이션",
+"유형": "VA",
+"도메인": "사족보행 모바일 매니퓰레이션",
+"발표": "2024-07",
+"기관": "Stanford University·Columbia University·Google DeepMind",
+"가중치 공개": "일부",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "Diffusion Policy(U-Net·DDIM, 사전학습 CLIP 비전 인코더) → 카메라 좌표 말단 자세 궤적(3D 위치+6D 회전) 64스텝(던지기)·32(밀기)·16(컵), 5–12 Hz 실행 → 태스크 좌표 변환 → RL MLP WBC가 다리 12·팔 6관절 위치 목표 50 Hz",
+"핵심 특징": "UMI 핸드헬드 시연으로 학습한 diffusion 조작 정책이 태스크 좌표 말단 궤적을 내면, 시뮬 RL로 학습한 조작 중심 전신 제어기(WBC)가 이를 추종해 사족+팔로 실행한다. 고정 팔용 UMI 공개 정책을 수정 없이 사족에 이식했고 던지기·밀기·컵 재배치 모두 실로봇 70% 이상 성공했다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "과제별 학습: WBC는 시뮬 RL(legged_gym PPO·IsaacGym, 시뮬 비교 실험 4000 iter), 조작 DP는 과제별 BC(던지기 500·밀기 25 궤적; 컵은 UMI 공개 체크포인트 재사용); GPU·시간 미공개",
+"추론": "DP: 원격 데스크톱 RTX 4090(인터넷 연결), 과제별 5–12 Hz 실행(1–5 Hz 저주파 정책 설계); WBC: Go2 온보드 CPU에서 MLP 순전파 약 0.06 ms, 50 Hz",
+"태스크·벤치마크": "실로봇 과제당 20회: 동적 던지기 75%(모캡)/70%(iPhone), 전신 밀기(10 lb 케틀벨) 95%/90%, 컵 재배치 85%/80%(UMI 정책 무수정 이식)",
+"로봇·엠바디먼트": "Unitree Go2 사족(12-DoF) + ARX5 6-DoF 팔(Finray 그리퍼·GoPro); 위치추정은 모캡 또는 iPhone 15 Pro ARKit",
+"데이터 종류": "사람 영상 / 시뮬레이션·합성",
+"데이터 규모": "UMI 핸드헬드 시연 던지기 500·밀기 25 궤적; 컵 재배치는 UMI 데이터 1,400 궤적으로 학습된 공개 체크포인트; WBC는 시뮬에서 UMI 말단 궤적 추적 학습",
+"데이터 시간(h)": null,
+"주요 데이터셋": "UMI 시연(던지기·밀기 자체 수집; 컵 재배치 UMI 공개 데이터)",
+"비고": "WBC의 GPU·병렬 환경 수·학습 시간은 논문 미기재(README: legged_gym PPO·IsaacGym 기반); CLIP 인코더 변형 미기재(UMI 원 논문 컵 정책은 ViT-B/16); 코드·WBC 체크포인트·궤적 데이터 공개, 던지기·밀기 DP 체크포인트 공개는 미확인; CoRL 2024. 기반: Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots (arXiv 2402.10329) — UMI 시연 데이터·정책·코드를 사족 플랫폼으로 확장(논문·README 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2407.10353"
+},
+"fields": {
+"v": "CLIP 비전 인코더(사전학습, 변형 미기재; 손목 GoPro)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "Diffusion Policy U-Net(DDIM)",
+"h": "말단 자세 궤적 diffusion(위치 3+6D 회전, 최대 64스텝) → RL WBC",
+"hk": "diffusion",
+"ck": "64스텝(던지기)·32(밀기)·16(컵), 실행 40·10·8",
+"hz": "정책 5–12 Hz, WBC 50 Hz",
+"dep": "원격 RTX 4090(정책) + Go2 온보드(WBC)",
+"inp": "손목 GoPro RGB · 말단 고유감각",
+"pipe": [
+[
+"in",
+"손목 GoPro RGB · 말단 자세",
+""
+],
+[
+"vis",
+"CLIP 비전 인코더",
+""
+],
+[
+"pol",
+"Diffusion Policy U-Net",
+"말단 궤적 최대 64스텝"
+],
+[
+"ctrl",
+"RL 전신 제어기 (MLP)",
+"관절 목표 · 50 Hz"
+],
+[
+"out",
+"Go2 다리 12 + ARX5 팔 6",
+""
+]
+],
+"tags": [
+"사족보행",
+"diffusion",
+"RL 전신 제어기",
+"교차 엠바디먼트"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"조작 정책은 BC(diffusion)만; 다리+팔 WBC만 시뮬 RL(legged_gym PPO)로 말단 궤적 추적 학습",
+"https://arxiv.org/abs/2407.10353"
+],
+"paper": {
+"k": "논문",
+"id": "2407.10353",
+"t": "UMI on Legs: Making Manipulation Policies Mobile with Manipulation-Centric Whole-body Controllers",
+"u": "https://arxiv.org/abs/2407.10353",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "정책이 태스크 좌표 말단 궤적 출력 → RL WBC가 다리·팔 관절 목표 생성(베이스 이동은 WBC가 결정)",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "추론",
+"quote": "RTX 4090 over an internet connection",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "백본·액션 표현",
+"quote": "outputs joint position targets at 50Hz",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "백본·액션 표현",
+"quote": "We use a longer action horizon of 64",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "추론",
+"quote": "a low-frequency manipulation policy (1-5Hz)",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "추론",
+"quote": "A forward pass for this controller takes ≈0.06ms",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "데이터 규모",
+"quote": "we collected 500 episodes of human demonstration",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "All approaches were trained for 4000 iterations",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "rl",
+"quote": "train a whole body controller with reinforcement learning in simulation",
+"url": "https://arxiv.org/html/2407.10353"
+},
+{
+"field": "rl",
+"quote": "implementation of PPO and Gym environment wrapper around IsaacGym",
+"url": "https://github.com/real-stanford/umi-on-legs"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "over 70% success rate on all tasks",
+"url": "https://arxiv.org/abs/2407.10353"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "VBC (Visual Whole-Body Control)",
+"구분": "모바일 매니퓰레이션",
+"유형": "VA",
+"도메인": "사족보행 모바일 매니퓰레이션",
+"발표": "2024-03",
+"기관": "UC San Diego",
+"가중치 공개": "일부",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "고수준 학생: 분할 깊이 CNN(2층)+2층 MLP(교사는 PointNet 물체 인코더, DAgger 증류) → 9차원(말단 자세 증분 6·전진·요 속도 2·그리퍼 1), 6–8 Hz / 저수준: 3층 MLP(128)+이력 적응 모듈 RL 정책 → 다리 12관절 목표 50 Hz, 팔은 말단 명령 IK",
+"핵심 특징": "시각 고수준 정책이 베이스 속도와 말단 자세 목표를 내고 다리 관절을 쓰는 RL 저수준 정책이 이를 추종하는 계층형 사족+팔 전신 제어 프레임워크다. 특권 상태 RL 교사를 깊이 기반 학생으로 DAgger 증류해 실데이터 수집·파인튜닝 없이 여러 높이·형상의 물체 집기를 실로봇에서 수행했다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "과제별 시뮬 학습(IsaacGym): 고수준 교사 RL 10,240 env 약 36시간, 학생 DAgger 240 env 약 48시간(GTX4090 기준 단일 GPU; GTX3090도 사용); 저수준 정책 학습 자원·시간 미기재",
+"추론": "고수준: 외부 Jetson Orin 64GB에서 6–8 Hz(마스크 추적 포함); 저수준·팔 IK: B1 내장 컴퓨터, 50 Hz",
+"태스크·벤치마크": "시뮬 YCB 33종(7범주) 집기 학생 성공률 0.42–0.74(교사 0.76–0.93, 비계층 기준선 0.0); 실로봇 14개 물체 × 3높이(지면·상자 약 0.3 m·테이블 약 0.5 m) 각 5회, 전 설정에서 기준선 우세(수치는 Fig. 7 그래프)",
+"로봇·엠바디먼트": "Unitree B1 사족 + Unitree Z1 팔, RealSense D435 2대(머리·그리퍼 부근)",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "시뮬 RL 롤아웃만(교사 10,240·학생 240 병렬 env), YCB 33종 물체; 실데이터 없음",
+"데이터 시간(h)": null,
+"주요 데이터셋": "YCB 물체 모델(시뮬)",
+"비고": "실로봇 평가 시 목표 물체 마스크를 사람이 TrackingSAM으로 지정; 실로봇 성공률은 그래프로만 제시; 교사 표의 '81.87'은 원문 표기 그대로; 코드와 저수준 가중치만 공개(GitHub), 고수준 가중치 미공개; CoRL 2024 Oral.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2403.16967"
+},
+"fields": {
+"v": "분할 깊이 CNN 2층(학생) · PointNet 물체 인코더(교사)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"h": "9차원 회귀(말단 증분 6·전진/요 속도·그리퍼) → RL 저수준 정책",
+"hk": "RL 정책",
+"ck": "없음 (1스텝)",
+"hz": "고수준 6–8 Hz, 저수준 50 Hz",
+"dep": "온보드 Jetson Orin(고수준) + B1 내장 컴퓨터(저수준)",
+"inp": "분할 깊이 · 고유감각",
+"pipe": [
+[
+"in",
+"깊이 2대 · 물체 마스크",
+""
+],
+[
+"vis",
+"깊이 CNN 인코더",
+"TrackingSAM 마스크"
+],
+[
+"pol",
+"고수준 학생 정책 (MLP)",
+"DAgger 증류 · 6–8 Hz"
+],
+[
+"ctrl",
+"RL 저수준 전신 정책",
+"다리 관절 50 Hz · 팔 IK"
+],
+[
+"out",
+"B1 사족 + Z1 팔",
+""
+]
+],
+"tags": [
+"사족보행",
+"RL 교사-학생",
+"모바일 매니퓰레이션",
+"깊이 입력"
+]
+},
+"rl": [
+"사용",
+"RL 제어기 학습",
+"저수준 다리 정책과 고수준 상태 기반 교사 모두 시뮬 RL(PPO), 깊이 학생은 교사에서 DAgger 증류",
+"https://arxiv.org/abs/2403.16967"
+],
+"paper": {
+"k": "논문",
+"id": "2403.16967",
+"t": "Visual Whole-Body Control for Legged Loco-Manipulation",
+"u": "https://arxiv.org/abs/2403.16967",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "고수준 정책이 베이스 전진·요 속도 + 말단 자세 증분 출력 → RL 저수준 정책이 다리 관절 제어(팔은 IK)",
+"cat": "RL 정책이 직접 구동"
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "The teacher policy takes around 36 hours for training, and the student policy consumes around 48 hours",
+"url": "https://arxiv.org/pdf/2403.16967v5"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "we train 10240 environments in parallel",
+"url": "https://arxiv.org/pdf/2403.16967v5"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "Experiments are trained on a single GPU (we use GTX4090 and GTX3090).",
+"url": "https://arxiv.org/pdf/2403.16967v5"
+},
+{
+"field": "추론",
+"quote": "limits the control frequency of the high-level policy to 6-8Hz",
+"url": "https://arxiv.org/pdf/2403.16967v5"
+},
+{
+"field": "추론",
+"quote": "the low-level policy that controls the quadruped works at a frequency of 50Hz",
+"url": "https://arxiv.org/pdf/2403.16967v5"
+},
+{
+"field": "백본·액션 표현",
+"quote": "three-layer MLP, where each layer has 128 dimensions and ELU activations",
+"url": "https://arxiv.org/pdf/2403.16967v5"
+},
+{
+"field": "백본·액션 표현",
+"quote": "our low-level policy outputs the target joint angles for all 12 leg joints",
+"url": "https://arxiv.org/html/2403.16967"
+},
+{
+"field": "가중치 공개",
+"quote": "Low-level model weights:",
+"url": "https://github.com/Ericonaldo/visual_wholebody"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "Helpful DoggyBot",
+"구분": "모바일 매니퓰레이션",
+"유형": "기타",
+"도메인": "사족보행 모바일 매니퓰레이션(물체 가져오기)",
+"발표": "2024-09",
+"기관": "Stanford University·UC San Diego",
+"가중치 공개": "아니오",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "학습 제어기: 깊이 CNN+GRU 추정기(ROA 증류) + RL 정책 → 관절 목표(PD 게인과 함께 전송) 50 Hz, 깊이 인코더 10 Hz; 명령 = 선속도·각속도·피치; 상위는 Florence-2·SAM2(천장 카메라)·GroundingDINO·MobileSAM·Cutie 인식 + 비례 제어",
+"핵심 특징": "전면 하단 1-DoF 그리퍼를 단 Go2에 시뮬 RL로 학습한 1인칭 깊이 기반 민첩 제어기와 사전학습 VLM 인식·비례 제어를 결합한 모듈형 실내 물체 가져오기 시스템이다. 실데이터 수집·학습 없이 처음 보는 집 2곳에서 침대 위로 올라가 장난감을 가져오는 등 60–70% 성공률을 보였다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "시뮬 RL(IsaacGym Preview 4): 특권(oracle) 정책 6,144 로봇·400 지형 20k iter 10시간(RTX 4090 1장), 깊이 증류 384 로봇 5k iter 6시간; VLM은 사전학습 모델 그대로 사용",
+"추론": "제어기: 온보드 Jetson(Orin) 50 Hz, 깊이 인코더 10 Hz; VLM: 별도 워크스테이션(SAM2 추적 10 Hz); 파지용 인식(GroundingDINO·MobileSAM 0.2 Hz, Cutie 10 Hz)은 온보드(on-device)",
+"태스크·벤치마크": "실환경 미학습 2곳 첫 시도 성공률(각 10회): 침대+장난감 60%, 소파+병 60%, 바닥+공 70%; 시뮬 지표 200회 평균",
+"로봇·엠바디먼트": "Unitree Go2 사족(12-DoF) + 하부 전면 1-DoF 그리퍼(Dynamixel), 1인칭 RealSense D435, 천장 어안 카메라",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "시뮬 RL 롤아웃(6,144·384 병렬 로봇); 실데이터 없음",
+"데이터 시간(h)": null,
+"주요 데이터셋": "없음(시뮬 지형 400개)",
+"비고": "학습되는 부분은 저수준 RL 제어기뿐이고, 검출·추적은 사전학습 모델, 이동·파지 명령은 규칙 비례 제어(선속도 0.8 m/s 고정); 천장 카메라 의존을 한계로 명시; 자연어 물체 지정은 Florence-2 프롬프트; 코드 공개(GitHub), 가중치 미공개.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2410.00231"
+},
+"fields": {
+"v": "깊이 CNN+GRU(제어기) · Florence-2·SAM2 · GroundingDINO·MobileSAM·Cutie(인식)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"txt": "Florence-2 오픈보캐 검출(자연어 물체명)",
+"h": "RL 정책 관절 목표 → Unitree PD",
+"hk": "RL 정책",
+"ck": "없음 (1스텝)",
+"hz": "50 Hz (깊이 10 Hz)",
+"dep": "온보드 Jetson(제어기) + 워크스테이션(VLM)",
+"inp": "1인칭 깊이 · 고유감각 · 속도/피치 명령",
+"pipe": [
+[
+"in",
+"천장 어안 RGB · 자연어 물체명",
+""
+],
+[
+"vis",
+"Florence-2 · SAM2",
+"로봇·목표 검출·추적"
+],
+[
+"pol",
+"규칙 비례 제어",
+"선속도·각속도·피치 명령"
+],
+[
+"ctrl",
+"깊이 기반 RL 제어기",
+"관절 목표 · 50 Hz"
+],
+[
+"out",
+"Go2 + 1-DoF 그리퍼",
+""
+]
+],
+"tags": [
+"사족보행",
+"VLM 모듈형",
+"RL 제어기",
+"물체 가져오기"
+]
+},
+"rl": [
+"사용",
+"RL 제어기 학습",
+"유일한 학습 정책인 저수준 깊이 제어기를 PPO(특권 교사)→ROA 깊이 학생으로 학습; 상위 인식·명령은 학습 없음",
+"https://arxiv.org/abs/2410.00231"
+],
+"paper": {
+"k": "논문",
+"id": "2410.00231",
+"t": "Helpful DoggyBot: Open-World Object Fetching using Legged Robots and Vision-Language Models",
+"u": "https://arxiv.org/abs/2410.00231",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLM 검출 위치로 비례 제어기가 선속도(0.8 m/s)·요·피치 명령 생성 → 깊이 기반 RL 정책이 관절 제어",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "For Oracle policy, we trained 20k iterations in 10 hours on a single GeForce RTX 4090 GPU.",
+"url": "https://arxiv.org/html/2410.00231"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "For distilled policy, we trained 5k iterations in 6 hours.",
+"url": "https://arxiv.org/html/2410.00231"
+},
+{
+"field": "데이터 규모",
+"quote": "we use Isaac Gym Preview 4 to train 6144 robots in 400 terrains.",
+"url": "https://arxiv.org/html/2410.00231"
+},
+{
+"field": "추론",
+"quote": "The main process executes the distilled policy at 50 Hz",
+"url": "https://arxiv.org/html/2410.00231"
+},
+{
+"field": "rl",
+"quote": "we train a policy using PPO",
+"url": "https://arxiv.org/html/2410.00231"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "with a 60% success rate",
+"url": "https://arxiv.org/abs/2410.00231"
+},
+{
+"field": "비고",
+"quote": "The system maintains a constant linear velocity of 0.8 m/s towards the waypoint",
+"url": "https://arxiv.org/html/2410.00231"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "QUAR-VLA (QUART)",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "사족보행 VLA(내비게이션·지형 보행·전신 조작)",
+"발표": "2023-12",
+"기관": "Westlake University·Zhejiang University",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Fuyu-8B VLM(단일 RGB+언어) → 256구간 이산 토큰: 11차원 고수준 명령(vx·vy·ωz, 보행 위상 3, 주파수, 몸 높이, 피치, 발 간격, 발 높이)+종료, 청크 없음, 2 Hz → Walk These Ways 명령 추종 제어기가 관절 생성",
+"핵심 특징": "단일 RGB와 언어 지시로 사족 고수준 명령(속도·보행·자세)을 이산 토큰으로 내는 사족 VLA 과제 정의와 QUART 모델, 시뮬·실로봇 QUARD 데이터셋을 제안했다. 4,000회 평가로 대규모 시뮬 데이터와 소량 실데이터 공동학습이 실로봇 Go to 성공을 3/20에서 13/20으로 높임을 보였다.",
+"파라미터": "8B (Fuyu-8B 기반; v1의 QUART-1은 약 30M)",
+"파라미터(B)": 8,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "100K 스텝 · 배치 256 (lr 2e-5)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "해당 없음 (QUARD 시뮬·실데이터 공동학습 단일 단계)",
+"추론": "실환경 2 Hz(v6; v1은 QUART-1 5 Hz·QUART-2 1 Hz), 추론 하드웨어 미기재",
+"태스크·벤치마크": "QUARD 시뮬 성공률: Distinguish 0.66, Go to 0.60, Go avoid 0.53, Go through 0.41, Crawl 0.32, Unload 0.12, 미지 물체 0.35·미지 언어 0.33; 실로봇 Go to 13/20(시뮬 256K+실 3K) vs 3/20(실 3K만); 총 4,000회 평가",
+"로봇·엠바디먼트": "WR-2 사족(12관절, 논문 표기) + 전면 RealSense D435; 시뮬 IsaacGym",
+"데이터 종류": "시뮬레이션·합성 / 실로봇 텔레옵",
+"데이터 규모": "QUARD 합계 259K 에피소드(표 합계·Fig. 2 표기; 표 행 합산은 시뮬 246K+실 3K=249K), 실로봇 3K(Go to Object, 원격 조종); v1은 시뮬 348K",
+"데이터 시간(h)": null,
+"주요 데이터셋": "QUARD",
+"비고": "시뮬 데이터는 A*/D* 경로+PD 속도 변환 스크립트로 생성, 실데이터는 원격 조종; 하위 제어기 [23]=Walk These Ways(본 논문은 RL 명시 없음, 원 논문 PPO); 학습 GPU·시간 미기재; LLaVA-7B 변형도 비교(성능 유사); v1→v6 모델 구성·데이터 수치 변경; 가중치 미공개(QUARD는 QUART-Online 페이지에서 HF 공개).",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2312.14457"
+},
+"fields": {
+"v": "Fuyu-8B 이미지 패치 직접 입력(별도 비전 인코더 없음)",
+"l": "Fuyu-8B (디코더 전용 VLM; LLM 별도 명시 없음)",
+"lb": 8,
+"fam": "기타",
+"h": "256구간 이산 토큰 (11차원 명령+종료)",
+"hk": "이산 토큰",
+"ck": "없음 (1스텝)",
+"hz": "2 Hz",
+"dep": null,
+"inp": "RGB · 언어 지시",
+"pipe": [
+[
+"in",
+"전면 RGB · 언어 지시",
+""
+],
+[
+"llm",
+"QUART (Fuyu-8B)",
+"명령 토큰 · 2 Hz"
+],
+[
+"ctrl",
+"Walk These Ways 제어기",
+"명령 추종 · 관절"
+],
+[
+"out",
+"사족 보행·전신 동작",
+""
+]
+],
+"tags": [
+"사족보행",
+"VLA",
+"이산 토큰"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"QUART는 지도 미세조정(100K 스텝)만; 하위 명령 추종은 Walk These Ways 정책(원 논문 PPO, 본 논문에 RL 명시 없음)",
+"https://arxiv.org/abs/2212.03238"
+],
+"paper": {
+"k": "논문",
+"id": "2312.14457",
+"t": "QUAR-VLA: Vision-Language-Action Model for Quadruped Robots",
+"u": "https://arxiv.org/abs/2312.14457",
+"n": "최신 v6(2025-02) 기준; v1은 QUART-1·QUART-2 두 모델"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 11차원 고수준 명령 토큰 출력 → Walk These Ways 명령 추종 제어기가 관절 제어",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "derived from 8B pre-trained VLM models",
+"url": "https://arxiv.org/html/2312.14457"
+},
+{
+"field": "파라미터",
+"quote": "QUART-1 is a relatively small model with about 30 million parameters",
+"url": "https://arxiv.org/html/2312.14457v1"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "learning rate 2e-5 and batch size 256 to fine-tune the model for 100K gradient steps",
+"url": "https://arxiv.org/html/2312.14457"
+},
+{
+"field": "백본·액션 표현",
+"quote": "discretize all continuous dimensions into 256 uniformly sized bins",
+"url": "https://arxiv.org/html/2312.14457"
+},
+{
+"field": "추론",
+"quote": "at a processing rate of 2Hz in actual scenarios",
+"url": "https://arxiv.org/html/2312.14457"
+},
+{
+"field": "데이터 규모",
+"quote": "simulation data (259K episodes) and a small amount of real-world data (3K episodes)",
+"url": "https://arxiv.org/html/2312.14457"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "The robot used to collect the trajectory data is WR-2",
+"url": "https://arxiv.org/html/2312.14457"
+},
+{
+"field": "rl",
+"quote": "We train policies using Proximal Policy Optimization",
+"url": "https://arxiv.org/pdf/2212.03238"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "QUART-Online",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "사족보행 VLA(내비게이션·지형 보행·전신 조작)",
+"발표": "2024-12",
+"기관": "Westlake University(MiLAB)·Zhejiang University·Beijing University of Posts and Telecommunications",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Fuyu-8B MLLM(이미지+언어) → ACD 압축 행동 토큰(잔차 VQ, 코드북 512·양자화기 2, 1D conv 인코더) → 10스텝 연속 명령 청크 디코딩(종료·vx·vy·요·몸 높이·주파수·보행 3·발 높이·피치·발 간격), 유효 50 Hz → Walk These Ways 하위 제어기",
+"핵심 특징": "연속 행동 청크를 잔차 VQ 코드로 압축하는 ACD로 MLLM이 한 번 추론에 여러 스텝 명령을 내도록 미세조정해 파라미터 축소 없이 지연을 없앤 사족 VLA다. 2 Hz였던 QUART를 하위 제어 주기 50 Hz에 맞추면서 과제 성공률을 65% 높였다.",
+"파라미터": "8B(논문 Table I)/9B(HF 메타데이터)",
+"파라미터(B)": 8,
+"사전학습 가속기": "GPU 4장(README 학습 스크립트; 기종 미기재)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "100K 스텝 · 배치 256 · 10 에폭(논문)/배치 128 = 32×GPU 4장(README)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "해당 없음; ACD RVQ 토크나이저 별도 학습(lr 3e-4; README: 배치 1024·50 에폭), 자원·시간 미공개",
+"추론": "제어 주파수 = 청크 길이 × MLLM 추론 주파수(Eq. 10), QUART-Online-10 50 Hz(Table II); README: A100 fp16 행동당 약 20 ms, VRAM fp16 >19GB·fp32 >37GB",
+"태스크·벤치마크": "QUARD 시뮬(과제당 50회) 평균 성공률 미지 시각 0.68·미지 언어 0.79 vs QUART 0.37·0.52; 초록 기준 성공률 65% 향상; 실로봇 실험은 그림만, 수치 미보고",
+"로봇·엠바디먼트": "IsaacGym 사족 시뮬(QUARD); 실로봇 기종 미기재",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "QUARD 사용(논문에 규모 미기재); 50 Hz 데이터를 5 Hz로 다운샘플(README)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "QUARD",
+"비고": "파라미터 축소(5.3B·2.7B) 시 성공률 급락(0.74→0.22·0.11)을 보이고 대안으로 ACD 제안; 실로봇 상세 없음; 배치(256 vs 128)·파라미터(8B vs 9B) 출처별 상이; 코드(MIT)·가중치·QUARD 데이터 HF 공개; ICRA 2025(프로젝트 페이지). 기반: QUAR-VLA: Vision-Language-Action Model for Quadruped Robots (arXiv 2312.14457) — 2 Hz QUART를 저지연화한 후속 모델(논문 명시), QUARD 데이터 사용",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2412.15576"
+},
+"fields": {
+"v": "Fuyu-8B 패치 토크나이즈(별도 비전 인코더 없음, README)",
+"l": "Persimmon 디코더 · Fuyu-8B 구성 (README)",
+"lb": 8,
+"fam": "기타",
+"h": "ACD 잔차 VQ 행동 토큰 → 10스텝 명령 청크 디코딩",
+"hk": "이산 토큰",
+"ck": "10스텝 (-1·-5 변형도 실험)",
+"hz": "유효 50 Hz",
+"dep": "GPU 서버 (README 기준 A100)",
+"mem": ">19GB (fp16) / >37GB (fp32), README",
+"mg": 19,
+"mge": true,
+"mc": false,
+"inp": "RGB · 언어 지시",
+"pipe": [
+[
+"in",
+"RGB · 언어 지시",
+""
+],
+[
+"llm",
+"QUART-Online (Fuyu-8B)",
+"압축 행동 토큰"
+],
+[
+"head",
+"RVQ 디코더 (ACD)",
+"10스텝 명령 청크"
+],
+[
+"ctrl",
+"Walk These Ways 제어기",
+"명령 추종 · 50 Hz"
+],
+[
+"out",
+"사족 보행 (시뮬 중심)",
+""
+]
+],
+"tags": [
+"사족보행",
+"VLA",
+"행동 청크 양자화",
+"저지연"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"MLLM·ACD는 지도학습만; 하위 Walk These Ways 제어기(원 논문 PPO, 본 논문에 RL 명시 없음)가 명령 실행",
+"https://arxiv.org/abs/2212.03238"
+],
+"paper": {
+"k": "논문",
+"id": "2412.15576",
+"t": "QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot Learning",
+"u": "https://arxiv.org/abs/2412.15576",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 10스텝 고수준 명령 청크(RVQ 토큰) 출력 → Walk These Ways 제어기가 하위 제어 주기(50 Hz)로 관절 제어",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "we adopt the lightweight Fuyu-8b as our pre-trained base",
+"url": "https://arxiv.org/html/2412.15576"
+},
+{
+"field": "파라미터",
+"quote": "9B params",
+"url": "https://huggingface.co/Tong314/Quart-Online"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "a learning rate of 2e-5, AdamW optimizer, 10 epochs, 100K gradient steps",
+"url": "https://arxiv.org/html/2412.15576"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "Batch size: 32 × 4 GPUs = 128 effective",
+"url": "https://github.com/yuan48/QUART-Online"
+},
+{
+"field": "추론",
+"quote": "achieving real-time inference at 50Hz in sync with the underlying controller frequency",
+"url": "https://arxiv.org/abs/2412.15576"
+},
+{
+"field": "추론",
+"quote": "~20ms per action (float16 on A100)",
+"url": "https://github.com/yuan48/QUART-Online"
+},
+{
+"field": "추론",
+"quote": ">19GB (float16) or >37GB (float32)",
+"url": "https://github.com/yuan48/QUART-Online"
+},
+{
+"field": "백본·액션 표현",
+"quote": "codebook embedding layer with 512 dimensions and 512 quantizers",
+"url": "https://arxiv.org/html/2412.15576"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "MoRE",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "사족보행 VLA(내비게이션·지형 보행·전신 조작)",
+"발표": "2025-03",
+"기관": "Zhejiang University·Westlake University(MiLAB)·Monash University·HKUST(GZ)",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Fuyu-8B(32층) 각 층 FFN을 공유 FFN+LoRA 전문가 MoE(Top-K 라우터)로, 어텐션에 LoRA → 자기회귀 이산 행동 토큰(이산 Q-함수) → 12차원 이산 명령 → Walk These Ways RL 제어기",
+"핵심 특징": "Fuyu-8B에 다수 LoRA 전문가를 희소 MoE로 넣고 VLA를 Q-함수로 보아 성공·실패가 섞인 자동 수집 데이터로 오프라인 RL 학습한 사족 VLA다. 6개 스킬 시뮬 평균 성공률 0.60으로 QUART(0.44) 등 기준선을 앞섰고 실패 데이터 추가가 RL을 통해 성능을 높였다.",
+"파라미터": "9.82B (Fuyu-8B + MoE-LoRA)",
+"파라미터(B)": 9.82,
+"사전학습 가속기": "A100 8장",
+"사전학습 기간": "약 100시간(전문가 데이터) / 약 125시간(혼합 품질 데이터)",
+"사전학습 스텝·배치": "3 에폭 · GPU당 배치 16",
+"사전학습 GPU·TPU-시간": 800,
+"시간 근거·단위": "환산 · A100 8장 × 100시간 (전문가 데이터 학습; 125시간 혼합 품질 런은 GPU 수 재기술 없음)",
+"파인튜닝 가속기·시간": "실로봇 소량 데이터 추가 파인튜닝(데이터 규모·자원·시간 미공개)",
+"추론": "미공개",
+"태스크·벤치마크": "QUARD 6개 스킬 시뮬 평균 0.60(QUART 0.44): Distinguish 0.82, Go to 0.80, Go avoid 0.59, Go through 0.57, Crawl 0.49, Unload 0.33; 실로봇은 정성 결과(go to the computer 등)만",
+"로봇·엠바디먼트": "Unitree Go2 사족(12관절) + 전면 RealSense D435; 시뮬 IsaacGym",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "QUARD 전문가 1,822,405 VLA 세트(6과제) + QUARD-Auto 440,732 세트(실패 데이터, 4과제) + 실로봇 소량(규모 미기재)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "QUARD; QUARD-Auto",
+"비고": "전문가 수·LoRA rank·Top-K 값 미기재; '백본 동결·LoRA만 학습' 서술과 FFN→MoE 전환 서술 혼재; 희소 보상(성공 시 1)+보수적 정규화(α=0.5); 추론 속도 미기재; 코드·가중치 공개 링크 없음. 기반: GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot (arXiv 2403.13358) — GeRM의 Q-함수 학습 손실과 QUARD-Auto 데이터를 그대로 활용(같은 그룹 사족 MoE 모델)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2503.08007"
+},
+"fields": {
+"v": "Fuyu-8B 패치 입력(별도 비전 인코더 없음)",
+"l": "Fuyu-8B + MoE-LoRA 전문가",
+"lb": 8,
+"fam": "기타",
+"h": "자기회귀 이산 토큰(이산 Q-함수) → 12차원 명령",
+"hk": "이산 토큰",
+"ck": "미공개",
+"hz": "미공개",
+"dep": null,
+"inp": "RGB · 언어 지시",
+"pipe": [
+[
+"in",
+"전면 RGB · 언어 지시",
+""
+],
+[
+"llm",
+"MoRE (Fuyu-8B MoE)",
+"Q-함수형 행동 토큰"
+],
+[
+"ctrl",
+"Walk These Ways RL 제어기",
+"명령 추종 · 관절"
+],
+[
+"out",
+"Go2 사족",
+""
+]
+],
+"tags": [
+"사족보행",
+"VLA",
+"오프라인 RL",
+"MoE"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"Fuyu-8B 기반 VLA(LoRA 전문가)를 이산 Q-함수로 오프라인 RL 학습(벨만 업데이트·보수적 항·성공 시 1 희소 보상); 하위는 Walk These Ways RL 정책",
+"https://arxiv.org/abs/2503.08007"
+],
+"paper": {
+"k": "논문",
+"id": "2503.08007",
+"t": "MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models",
+"u": "https://arxiv.org/abs/2503.08007",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 12차원 이산 명령 토큰 출력 → Walk These Ways RL 정책이 관절 제어",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "our model was trained using 8 NVIDIA A100 GPUs over 3 epochs",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "사전학습 기간",
+"quote": "which required approximately 100 hours",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "사전학습 기간",
+"quote": "with the total training time amounting to approximately 125 hours",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "The batch size per device was set to 16.",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "파라미터",
+"quote": "9.82B",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "데이터 규모",
+"quote": "with a total of 1,822,405 vision-language-action sets",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "데이터 규모",
+"quote": "includes a total of 440,732 vision-language-action sets",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "rl",
+"quote": "We train on an offline dataset pre-collected by other behavior policies.",
+"url": "https://arxiv.org/html/2503.08007"
+},
+{
+"field": "rl",
+"quote": "We use the RL policy trained in walk-these-ways [39] as the low-level controller for our robot.",
+"url": "https://arxiv.org/html/2503.08007"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "RoboDuet",
+"구분": "모바일 매니퓰레이션",
+"유형": "기타",
+"도메인": "사족보행 전신 로코-매니퓰레이션 제어",
+"발표": "2024-03",
+"기관": "Tsinghua University·Shanghai Qi Zhi Institute·Shanghai AI Laboratory·UC San Diego·Jianghuai Advance Technology Center",
+"가중치 공개": "아니오",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "보행·팔 2개 MLP(512·256·128, ELU) PPO 정책; 보행 정책 → 다리 12관절 목표, 팔 정책 → 팔 6관절 오프셋 + 몸체 피치·롤 지시 2, 50 Hz; 입력은 고유감각 + 속도 명령 + 말단 9차원 목표",
+"핵심 특징": "보행 정책과 팔 정책 두 RL 정책이 협력하며(팔 정책이 몸체 피치·롤을 지시) 사족+팔의 베이스 이동과 말단 6D 자세 추종을 동시에 수행하는 2단계 학습 전신 제어 프레임워크다. 기준선 대비 23% 높은 과제 성공률과 Go1에서 Go2로의 무학습 교차 엠바디먼트 이식을 보였다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "시뮬 RL(IsaacGym, PPO 비대칭 actor-critic): 4,096 병렬 에이전트, 1단계 10k + 2단계 40k iter(3 시드), RTX 4090; 학습 시간 미공개",
+"추론": "정책 50 Hz; Go2 배포 코드는 Jetson Orin 또는 PC에서 실행(README), Go1은 Docker 배포",
+"태스크·벤치마크": "실로봇 물체 운반(높이 0·20·60·100 cm) 성공 39/60(AFB+ID 32/60, FB+IK 10/60), 성공률 23% 향상(논문 표기); 극단 6D 자세 자기충돌률 5%(FB+IK 50%); 시뮬 Go1·Go2·A1+ARX5 교차 이식",
+"로봇·엠바디먼트": "Unitree Go1 Edu + ARX5 6-DoF 팔(평행 그리퍼, 그리퍼 위 RealSense D435i); Go2+ARX5 무학습 이식",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "시뮬 4,096 병렬 에이전트 RL 롤아웃, 총 50k iter",
+"데이터 시간(h)": null,
+"주요 데이터셋": "없음(시뮬 RL)",
+"비고": "시각 입력 없는 고유감각 RL 제어기로, 실험의 베이스 속도·말단 자세는 VR 텔레옵(Meta Quest 3)이 지시(상위 학습 정책 없음); 23%는 39/60 vs 32/60과 계산 근거 불명확; 논문 소속 표기는 'University of San Diego'(프로젝트 페이지는 UC San Diego); 코드(Walk These Ways 기반)·배포 코드 공개, 가중치 미공개; RA-L 2025. 기반: Walk These Ways: Tuning Robot Control for Generalization with Multiplicity of Behavior (arXiv 2212.03238) — README에 기본 구현을 walk-these-ways에서 차용했다고 명시",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2403.17367"
+},
+"fields": {
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"h": "다리 12·팔 6관절 목표 + 몸체 피치·롤 지시",
+"hk": "RL 정책",
+"ck": "없음 (1스텝)",
+"hz": "50 Hz",
+"dep": "온보드 (Go2는 Jetson Orin 또는 PC, README)",
+"inp": "고유감각 · 속도 · 말단 6D 목표",
+"pipe": [
+[
+"in",
+"VR 텔레옵: 속도·말단 6D 자세",
+""
+],
+[
+"pol",
+"팔 정책 (MLP, PPO)",
+"팔 6관절 + 피치·롤 지시"
+],
+[
+"ctrl",
+"보행 정책 (MLP, PPO)",
+"다리 12관절 · 50 Hz"
+],
+[
+"out",
+"Go1/Go2 + ARX5",
+""
+]
+],
+"tags": [
+"사족보행",
+"RL 전신 제어",
+"교차 엠바디먼트"
+]
+},
+"rl": [
+"사용",
+"RL 제어기 학습",
+"보행·팔 협력 정책 전체를 IsaacGym PPO(비대칭 actor-critic, 2단계)로 학습; 상위 정책 없음(텔레옵 명령)",
+"https://arxiv.org/abs/2403.17367"
+],
+"paper": {
+"k": "논문",
+"id": "2403.17367",
+"t": "RoboDuet: Learning a Cooperative Policy for Whole-body Legged Loco-Manipulation",
+"u": "https://arxiv.org/abs/2403.17367",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "텔레옵 베이스 속도·말단 자세 명령 → 협력 RL 정책(보행·팔)이 다리·팔 관절 목표 직접 출력",
+"cat": "RL 정책이 직접 구동"
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "We train 4096 parallel agents using the IsaacGym simulator",
+"url": "https://arxiv.org/html/2403.17367"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "All training is performed on NVIDIA RTX 4090 GPUs.",
+"url": "https://arxiv.org/html/2403.17367"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "with the two-stage training comprising 10,000 iterations for stage 1 and 40,000 for stage 2",
+"url": "https://arxiv.org/html/2403.17367"
+},
+{
+"field": "추론",
+"quote": "The control frequency is set to 50 Hz for both training and deployment.",
+"url": "https://arxiv.org/html/2403.17367"
+},
+{
+"field": "백본·액션 표현",
+"quote": "three layers with 512, 256, and 128 neurons",
+"url": "https://arxiv.org/html/2403.17367"
+},
+{
+"field": "rl",
+"quote": "the Proximal Policy Optimization (PPO) algorithm",
+"url": "https://arxiv.org/html/2403.17367"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "RoboDuet achieves a 23% improvement in success rate",
+"url": "https://arxiv.org/html/2403.17367"
+},
+{
+"field": "비고",
+"quote": "controlled via the right VR handle, while the end-effector is operated with the left handle",
+"url": "https://arxiv.org/html/2403.17367"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "Learning Visual Quadrupedal Loco-Manipulation from Demonstrations",
+"구분": "모바일 매니퓰레이션",
+"유형": "VA",
+"도메인": "사족보행 다리 매니퓰레이션(로코-매니퓰레이션)",
+"발표": "2024-03",
+"기관": "Shanghai Qi Zhi Institute·HKUST(GZ)·UC Berkeley·Tsinghua University(IIIS)",
+"가중치 공개": "아니오",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "고수준: DP3(월드 좌표 점군 768점+고유감각) diffusion → 6차 유리 베지어 제어점·가중치, 시작/끝 자세(SLERP), 조작 다리 플래그, 10 Hz / 저수준: PPO 정책(15스텝 고유감각 이력) → 다리 12관절 목표(저역통과+PD) 50 Hz",
+"핵심 특징": "앞발 하나로 매개변수화된 베지어 궤적을 추종하며 나머지 세 다리로 보행하는 RL 저수준 제어기와, 점군 기반 DP3 diffusion 플래너가 궤적 파라미터를 내는 계층형 다리 조작 정책이다. 팔 없이 다리만으로 버튼 누르기·문 밀기·이동 중 바구니 들기 등을 시뮬과 실로봇(Aliengo)에서 수행했다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "과제별 시뮬 학습(IsaacGym): 저수준 PPO 30억 타임스텝, 고수준 DP3 시각 데이터 2만 타임스텝; GPU·시간 미공개",
+"추론": "저수준 50 Hz·플래너 10 Hz, 추론 하드웨어 미기재(확산 추론 속도를 한계로 언급)",
+"태스크·벤치마크": "시뮬 9과제(3시드 평균): 버튼 92.3%, 문 밀기 85.3%, 손잡이 당기기 82.3%, 바구니 들기 59.3%, 밸브 돌리기 52.3%, 식기세척기 닫기 50.3%, 축구공 차기 26.0%, 물체 당기기 12.7%, 식기세척기 열기 5.7%; 실로봇은 정성 시연만",
+"로봇·엠바디먼트": "Unitree Aliengo 사족(팔 없음, 앞발로 조작), RealSense D435 깊이 카메라 + 외부 AprilTag 위치추정 카메라",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "과제당 시뮬 전문가 궤적 100개(각 200 타임스텝, 약 3분 수집); 저수준 RL 30억 타임스텝",
+"데이터 시간(h)": null,
+"주요 데이터셋": "자체 시뮬 전문가 궤적(IsaacGym)",
+"비고": "시연은 사람 텔레옵이 아니라 설계한 전문가 궤적 파라미터를 RL 제어기가 시뮬에서 추적해 생성; 플래너는 베이스 속도를 직접 내지 않고 월드 좌표 목표(4 m×4 m 범위로 학습)로 이동 유도; 실로봇 정량 결과 없음; 코드·가중치 미공개. 기반: 3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (arXiv 2403.03954) — 고수준 플래너 백본으로 DP3 사용(논문 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2403.20328"
+},
+"fields": {
+"v": "DP3 점군 인코더(768점, 월드 좌표)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"h": "DP3 diffusion → 베지어 궤적 파라미터",
+"hk": "diffusion",
+"ck": "미공개",
+"hz": "플래너 10 Hz, 저수준 50 Hz",
+"dep": null,
+"inp": "깊이 점군 · 고유감각",
+"pipe": [
+[
+"in",
+"깊이 점군 · 고유감각",
+""
+],
+[
+"vis",
+"DP3 점군 인코더",
+"768점"
+],
+[
+"pol",
+"DP3 diffusion 플래너",
+"궤적 파라미터 · 10 Hz"
+],
+[
+"ctrl",
+"RL 저수준 제어기",
+"3족 보행+발 추종 · 50 Hz"
+],
+[
+"out",
+"Aliengo 다리 조작",
+""
+]
+],
+"tags": [
+"사족보행",
+"다리 조작",
+"diffusion",
+"계층형"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"고수준 DP3 플래너는 BC; 저수준 발끝 궤적 추종·3족 보행 제어기는 IsaacGym PPO(시연도 이 제어기로 시뮬에서 생성)",
+"https://arxiv.org/abs/2403.20328"
+],
+"paper": {
+"k": "논문",
+"id": "2403.20328",
+"t": "Learning Visual Quadrupedal Loco-Manipulation from Demonstrations",
+"u": "https://arxiv.org/abs/2403.20328",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "DP3 플래너가 월드 좌표 발끝 궤적 파라미터 출력 → RL 제어기가 3족 보행하며 추종(별도 베이스 속도 명령 없음)",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "Our approach utilized 3 billion timesteps of robot state data to train the low-level controller",
+"url": "https://arxiv.org/html/2403.20328"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "and 20k timesteps of visual data to train the high-level planner.",
+"url": "https://arxiv.org/html/2403.20328"
+},
+{
+"field": "데이터 규모",
+"quote": "with 100 trajectories collected per task",
+"url": "https://arxiv.org/html/2403.20328"
+},
+{
+"field": "추론",
+"quote": "This control policy runs at 50 Hz",
+"url": "https://arxiv.org/html/2403.20328"
+},
+{
+"field": "추론",
+"quote": "The frequency of the high-level planner is 10 Hz.",
+"url": "https://arxiv.org/html/2403.20328"
+},
+{
+"field": "백본·액션 표현",
+"quote": "we randomly sample n=768 points to form the point clouds",
+"url": "https://arxiv.org/html/2403.20328"
+},
+{
+"field": "prel",
+"quote": "utilizes DP3 [33] as the backbone",
+"url": "https://arxiv.org/html/2403.20328"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "ω-0 (OMEGA-0)",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "휴머노이드 로코-매니퓰레이션",
+"발표": "2026-08",
+"기관": "NTU(MARS Lab)·Peking University·BAAI·HKUST(GZ)",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3-VL-2B 전신 행동 VLM(FAST 토큰 사전학습) + V-JEPA 2.1(동결)·T5 → 공동 비디오-행동 잠재 예측기(미래 Wan 잠재 L2) → 행동 DiT diffusion(x0 예측, DDIM) → 66차원(SONIC 전신 잠재 64+손 2) 청크 H=25 중 8 실행, >7 Hz → SONIC 제어기",
+"핵심 특징": "언어·1인칭/3인칭 영상·고유감각으로 미래 관측 임베딩을 예측하면서 행동 DiT로 SONIC 호환 전신 행동 잠재를 생성하는 휴머노이드 잠재 예측 world action model이다. 실환경 11개 가사 로코-매니퓰레이션 과제에서 성공률 81.8%로 ψ-0(44.5%)·π0.5(27.3%) 등 기준선을 크게 앞섰다.",
+"파라미터": "약 4B(HF 메타데이터; VLM Qwen3-VL-2B, 행동 DiT 0.45B(논문 그림 2), 총합 논문 미기재)",
+"파라미터(B)": 4,
+"사전학습 가속기": "H100 8장 (1·2단계; 3단계도 동일)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "3단계 실데이터 파인튜닝(11과제 약 2,220 궤적, VLM·V-JEPA·Wan 동결) H100 8장, 시간·스텝 미공개(공개 config 기본값: 배치 32·80k 스텝·lr 1e-4)",
+"추론": "1회 순전파 약 0.14초(>7 Hz), 청크 H=25 중 K=8 실행 + RTC식 워밍스타트·겹침 블렌딩; 추론 서버 GPU 기종 미기재, SONIC은 워크스테이션 또는 G1 Orin(README)",
+"태스크·벤치마크": "실환경 11개 가사 로코-매니퓰레이션(과제당 10회): 성공률 81.8%(Omni)/79.1%(Ego), 점수 36.7/41, 진행률 90.3%; 기준선 ψ-0 44.5%, DiT4DiT 43.6%, Fast-WAM 37.1%, InternVLA-M1 31.8%, π0.5 27.3%, GR00T-N1.7 22.7%",
+"로봇·엠바디먼트": "Unitree G1 휴머노이드(README; 논문 표기 'G1') + Inspire DexHand, 머리 ZED Mini 1인칭 카메라; 수집 시 외부 ZED 깊이 카메라",
+"데이터 종류": "실로봇 텔레옵 / 사람 영상 / 시뮬레이션·합성",
+"데이터 규모": "ω-HOME 40.3시간·4,827 에피소드·24과제(30 Hz); 다운스트림 11과제 약 2,220 궤적(과제당 약 200); 공개 사람 데이터(ARCTIC·Xperience-10M·Motion-X) 규모 미기재",
+"데이터 시간(h)": 40.3,
+"주요 데이터셋": "ω-HOME; ARCTIC; Xperience-10M; Motion-X",
+"비고": "공개 사람 모션을 SONIC 시뮬 재생으로 로봇 실행 가능한 행동 잠재·상태로 변환하고 추적 실패 궤적은 제거; 텔레옵은 Pico 4 Ultra·Pico 트래커로 SONIC 구동; 청크 25(논문) vs 공개 config 30; 코드(GitHub MIT, HF 카드는 Apache-2.0)·가중치(keycharon/Omega-zero)·ω-HOME(HF 38.2GB) 공개; arXiv v2 2026-08-09. 기반: SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control (arXiv 2511.07820) — SONIC 행동 잠재 공간·제어기로 실행하고 공개 모션을 SONIC 재생으로 잠재화(논문 명시)",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2608.06375"
+},
+"fields": {
+"v": "V-JEPA 2.1 이미지 인코더(동결) + Qwen3-VL 내장 비전",
+"l": "Qwen3-VL-2B-Instruct (전신 행동 VLM; LLM 별도 명시 없음)",
+"lb": 2,
+"fam": "Qwen",
+"txt": "T5 인코더",
+"w": "미래 관측 임베딩 예측(비디오 쿼리 → Wan 잠재 L2, 픽셀 재구성 없음)",
+"t": "공동 비디오-행동 잠재 예측기(듀얼 쿼리 어텐션)",
+"h": "행동 DiT diffusion(x0 예측, DDIM 소수 스텝) → 66차원 잠재(SONIC 64+손 2)",
+"hk": "diffusion",
+"ck": "25스텝(8 실행) — 공개 config 30",
+"hz": ">7 Hz (순전파 약 0.14초)",
+"dep": "워크스테이션 GPU 추론 서버(기종 미기재) + SONIC(워크스테이션 또는 G1 Orin)",
+"inp": "1인칭/3인칭 RGB(·깊이) · 언어 · 고유감각",
+"pipe": [
+[
+"in",
+"RGB(ego/exo) · 언어 · 상태",
+""
+],
+[
+"vis",
+"V-JEPA 2.1 (동결)",
+""
+],
+[
+"llm",
+"Qwen3-VL-2B 전신 VLM",
+"FAST 토큰 사전학습"
+],
+[
+"world",
+"미래 관측 잠재 예측",
+"Wan 잠재 L2"
+],
+[
+"head",
+"행동 DiT",
+"66차원 잠재 청크 25"
+],
+[
+"ctrl",
+"SONIC 전신 추적 제어기",
+"RL(PPO) 학습"
+],
+[
+"out",
+"G1 휴머노이드 보행+조작",
+""
+]
+],
+"tags": [
+"휴머노이드",
+"world action model",
+"로코-매니퓰레이션",
+"diffusion"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"ω-0 자체는 모방학습(FAST 토큰 NTP + diffusion x0 예측); PPO로 학습된 SONIC 추적 제어기가 잠재를 실행하고, 공개 모션의 SONIC 시뮬 재생으로 학습용 행동 잠재 생성",
+"https://arxiv.org/abs/2511.07820"
+],
+"paper": {
+"k": "논문",
+"id": "2608.06375",
+"t": "ω-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation",
+"u": "https://arxiv.org/abs/2608.06375",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"휴머노이드 보행"
+],
+"how": "VLA가 SONIC 호환 전신 행동 잠재(64차원)+손 명령 청크 출력 → SONIC RL 추적 제어기가 보행·전신 관절 제어",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "All three training stages are conducted on 8 NVIDIA H100 GPUs.",
+"url": "https://gentlefress.github.io/OMEGA-0_page/assets/2608.06375v1.pdf"
+},
+{
+"field": "추론",
+"quote": "A single forward pass takes approximately 0.14 seconds, corresponding to more than 7 Hz policy inference.",
+"url": "https://gentlefress.github.io/OMEGA-0_page/assets/2608.06375v1.pdf"
+},
+{
+"field": "백본·액션 표현",
+"quote": "predicts an action chunk of length H = 25",
+"url": "https://gentlefress.github.io/OMEGA-0_page/assets/2608.06375v1.pdf"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The action representation has 66 dimensions.",
+"url": "https://gentlefress.github.io/OMEGA-0_page/assets/2608.06375v1.pdf"
+},
+{
+"field": "데이터 규모",
+"quote": "40.3 hours of demonstrations, 4,827 episodes, and 24 tasks recorded at 30 Hz",
+"url": "https://gentlefress.github.io/OMEGA-0_page/assets/2608.06375v1.pdf"
+},
+{
+"field": "데이터 규모",
+"quote": "approximately 200 demonstrations per task and 2220 trajectories in total",
+"url": "https://gentlefress.github.io/OMEGA-0_page/assets/2608.06375v1.pdf"
+},
+{
+"field": "파라미터",
+"quote": "4B params",
+"url": "https://huggingface.co/keycharon/Omega-zero"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "81.8% real-world success",
+"url": "https://gentlefress.github.io/OMEGA-0_page/"
+},
+{
+"field": "비고",
+"quote": "uses 30-step action chunks with 66-dimensional targets",
+"url": "https://github.com/gentlefress/Omega-0"
+},
+{
+"field": "rl",
+"quote": "We trained the policy using proximal policy optimization (PPO)",
+"url": "https://arxiv.org/html/2511.07820"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "SLIM",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "사족보행 모바일 매니퓰레이션",
+"발표": "2025-01",
+"기관": "Horizon Robotics",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "160×90 RGB 5프레임 → FiLM U-Net(분할·깊이 보조 예측)+ResNet 5블록+트랜스포머 5층(8헤드), 언어는 바이트 토큰 2층 트랜스포머 → MLP actor(512×3): 팔 관절 증분·그리퍼 목표·전진/각속도 명령 10 Hz → PPO 저수준 보행 정책 다리 관절 목표 50 Hz",
+"핵심 특징": "손목 RGB 한 대와 언어 지시로 탐색·접근·집기·운반·투하 장기 과제를 수행하는 사족+팔 정책을 MuJoCo 시뮬 RL(특권 교사→시각 학생)만으로 학습해 실로봇에 무학습 배포했다. 19M 미만 파라미터로 실환경 전체 과제 성공률 78.3%를 기록해 전문가 텔레옵(75.0%)과 비슷하면서 약 1.5배 빨랐다.",
+"파라미터": "19M 미만 (저수준 3M + 학생 고수준 16M; 교사 10M은 미배포)",
+"파라미터(B)": 0.019,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "시뮬 RL(MuJoCo)만: 교사(다중과제 SAC) GPU 4장 약 1주(120 env·4M iter), 학생(SAC+KL 증류) GPU 4장 약 2주(60 env·1.3M iter), 저수준(PPO+ROA) GPU 1장 약 3일(5,000 env·4B env 스텝); V100급 GPU",
+"추론": "노트북 RTX 3070Ti(i9-12900H, RAM 16GB)에서 고수준 10 Hz·저수준 50 Hz 비동기 추론; 로봇 측 Raspberry Pi는 드라이버 구동",
+"태스크·벤치마크": "실환경 Lobby 표준 배치 전체 과제 성공 78.3±5.8%(3시드×20회) vs 전문가 텔레옵 75.0±5.0%; 평균 43.8초(텔레옵 65.5초); 실내외 총 400 에피소드 평가",
+"로봇·엠바디먼트": "Unitree Go1 사족 + WidowX-250S 팔, 손목 RealSense D435(RGB만 사용)",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "시뮬 RL: 교사 약 60M·학생 약 40M env 스텝, 저수준 4B env 스텝; 실데이터 없음",
+"데이터 시간(h)": null,
+"주요 데이터셋": "없음(MuJoCo 시뮬 환경)",
+"비고": "목록 외 추가(2025 사족 모바일 매니퓰레이션 VLA); 실데이터·파인튜닝 없이 무학습 배포; 언어 인코더는 사전학습 LM 없는 바이트 토큰 트랜스포머; 학습 GPU 'V100 또는 유사'; 코드는 공개 예정만 언급.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2501.09905"
+},
+"fields": {
+"v": "FiLM U-Net(분할·깊이 보조) + ResNet 5블록, 160×90 RGB 5프레임",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "트랜스포머 5층·8헤드",
+"txt": "바이트 토큰 2층 트랜스포머(최대 100토큰)",
+"h": "MLP actor: 팔 관절 증분·그리퍼·전진/각속도",
+"hk": "RL 정책",
+"ck": "없음 (1스텝)",
+"hz": "고수준 10 Hz, 저수준 50 Hz",
+"dep": "노트북 RTX 3070Ti",
+"inp": "손목 RGB · 언어 지시 · 고유감각",
+"pipe": [
+[
+"in",
+"손목 RGB · 언어 지시",
+""
+],
+[
+"vis",
+"U-Net·ResNet + 트랜스포머",
+"FiLM 언어 조건"
+],
+[
+"pol",
+"학생 고수준 정책 (SAC)",
+"팔·그리퍼·속도 · 10 Hz"
+],
+[
+"ctrl",
+"PPO 저수준 보행 정책",
+"다리 관절 · 50 Hz"
+],
+[
+"out",
+"Go1 + WidowX-250S",
+""
+]
+],
+"tags": [
+"사족보행",
+"시뮬-투-리얼 RL",
+"교사-학생",
+"모바일 매니퓰레이션"
+]
+},
+"rl": [
+"사용",
+"RL 제어기 학습",
+"고수준 교사(다중과제 SAC)·시각 학생(SAC+KL 증류)·저수준 보행(PPO+ROA) 모두 MuJoCo 시뮬 RL, 실데이터 없음",
+"https://arxiv.org/abs/2501.09905"
+],
+"paper": {
+"k": "논문",
+"id": "2501.09905",
+"t": "SLIM: Sim-to-Real Legged Instructive Manipulation via Long-Horizon Visuomotor Learning",
+"u": "https://arxiv.org/abs/2501.09905",
+"n": "목록 외 추가 모델(2025 사족 모바일 매니퓰레이션)"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "고수준 정책이 전진·각속도 명령 + 팔 관절 증분·그리퍼 출력 → PPO 저수준 보행 정책이 다리 관절 제어",
+"cat": "RL 정책이 직접 구동"
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "With four GPUs, the training of the teacher policy takes about 1 week.",
+"url": "https://arxiv.org/html/2501.09905"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "With four GPUs, the training of the student policy takes about 2 weeks, with a total of 1.3M iterations.",
+"url": "https://arxiv.org/html/2501.09905"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "With a single GPU, it takes about three days for training the low-level policy with a total of 4B environment steps.",
+"url": "https://arxiv.org/html/2501.09905"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "All the modules (teacher, student and low-level) were trained with V100 or similar GPUs.",
+"url": "https://arxiv.org/html/2501.09905"
+},
+{
+"field": "파라미터",
+"quote": "has a total parameter count of less than 19M",
+"url": "https://arxiv.org/html/2501.09905"
+},
+{
+"field": "추론",
+"quote": "NVIDIA RTX 3070Ti laptop GPU, and 16GB of RAM",
+"url": "https://arxiv.org/html/2501.09905"
+},
+{
+"field": "추론",
+"quote": "at a frequency of 10 and 50 Hz, respectively",
+"url": "https://arxiv.org/html/2501.09905"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "achieving nearly 80% real-world success",
+"url": "https://arxiv.org/abs/2501.09905"
+},
+{
+"field": "rl",
+"quote": "we train the teacher policy using a multi-task variant of SAC algorithm",
+"url": "https://arxiv.org/html/2501.09905"
+}
+],
+"_src": "out_m2.jsonl"
+},
+{
+"row": {
+"모델": "GNM",
+"구분": "내비게이션",
+"유형": "VA",
+"도메인": "이미지 목표 내비게이션 (교차 로봇)",
+"발표": "2022-10",
+"기관": "UC Berkeley·Toyota Motor North America",
+"가중치 공개": "예",
+"아키텍처": "비트랜스포머(비교용)",
+"백본·액션 표현": "MobileNetV2 인코더 2개(과거 5프레임 스택 관측 / 관측+목표 이미지) → 임베딩 연결·FC 3층 → 헤드 2개: 정규화 상대 웨이포인트 5개(x, y, yaw 변화) 회귀 + 목표까지 시간적 거리; 85×64 RGB; 로봇별 저수준 제어기가 추종",
+"핵심 특징": "6종 로봇에서 모은 이질적 주행 데이터를 정규화 행동 공간과 시간 컨텍스트로 통합해 하나의 이미지 목표 조건 내비게이션 정책을 학습한다. 학습에 없던 Tello 쿼드로터를 포함한 4개 로봇을 로봇별 미세조정 없이 구동했고 단일 데이터셋 정책보다 일부 경우 최대 5배 높은 성능을 보였다.",
+"파라미터": "8.7M (학습 가능 파라미터; GNM 논문 미기재, 같은 연구진의 ViNT 논문 부록 기재)",
+"파라미터(B)": 0.0087,
+"사전학습 가속기": "멀티 GPU (종류·수 미공개)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "배치 400–1200 (논문); 공개 gnm_large 설정 30 에폭 · 배치 400",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "해당 없음 (로봇별 미세조정 없이 배포)",
+"추론": "논문 미기재; 공식 배포 설정 관측 4 Hz (robot.yaml), 웨이포인트는 로봇별 저수준 제어기가 추종",
+"태스크·벤치마크": "실로봇 이미지 목표 내비 성공률(GNM-Mid): LoCoBot 0.96·Tello 0.99·Vizbot 0.93·Jackal 0.94 (단일 데이터셋 GS 0.26·0.21·0.51·0.31, RECON 0.62·0.79·0.26·0.68); 위상 그래프 기반 장거리 내비",
+"로봇·엠바디먼트": "평가: LoCoBot·Vizbot·Clearpath Jackal 바퀴형, DJI Tello 쿼드로터(지상 1m 수평면 제한, 비행 데이터 학습 없음); 학습 데이터: 6종 로봇 플랫폼",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그",
+"데이터 규모": "60시간 이상(초록·본문)/70시간(표 I); 6개 로봇 플랫폼; 데이터셋 8개(본문)/9개(표 I)",
+"데이터 시간(h)": 60,
+"주요 데이터셋": "GoStanford; RECON; CoryHall; Berkeley; SCAND; Seattle; TartanDrive; NeBula",
+"비고": "데이터 시간 본문 60h·표 I 70h 불일치, 데이터셋 수도 8/9개로 상이. 파라미터 수는 GNM 논문에 없고 같은 연구진의 ViNT 논문 부록에 8.7M으로 기재. Small/Mid/Large는 사용 데이터셋 2/4/6개 차이이며 모델 크기 차이가 아님. 체크포인트 Google Drive 공개, 코드는 visualnav-transformer로 통합(README는 LoCoBot+Jetson Orin Nano 배포 예시). ICRA 2023.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2210.03370"
+},
+"fields": {
+"v": "MobileNetV2 ×2 (관측 컨텍스트 / 관측+목표)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "MLP (임베딩 연결 후 FC 3층)",
+"h": "웨이포인트 5개(x, y, yaw) 회귀 + 시간적 거리 헤드",
+"hk": "회귀",
+"ck": "웨이포인트 5개",
+"hz": "4 Hz (배포 설정; 논문 미기재)",
+"dep": null,
+"inp": "RGB 관측 5프레임 · 목표 이미지",
+"tags": [
+"내비게이션",
+"교차 엠바디먼트",
+"이미지 목표"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"지도 모방학습만 (행동·거리 두 헤드 공동 지도학습)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2210.03370",
+"t": "GNM: A General Navigation Model to Drive Any Robot",
+"u": "https://arxiv.org/abs/2210.03370",
+"n": "ICRA 2023"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"비행"
+],
+"how": "정책이 정규화 상대 웨이포인트 5개 출력 → 로봇별 저수준 제어기(PID·MPPI 등)가 추종; Tello 드론은 지상 1m 수평면으로 제한",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "데이터 규모",
+"quote": "The GNM dataset contains over 60 hours of real-world navigation trajectories",
+"url": "https://arxiv.org/pdf/2210.03370"
+},
+{
+"field": "데이터 규모",
+"quote": "contains 70 hours of navigation data in diverse environments across 6 different robots",
+"url": "https://arxiv.org/pdf/2210.03370"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "We use multi-GPU training with batch sizes between 400–1200",
+"url": "https://arxiv.org/pdf/2210.03370"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "batch_size: 400",
+"url": "https://raw.githubusercontent.com/PrieureDeSion/drive-any-robot/main/train/config/gnm/gnm_large.yaml"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "epochs: 30",
+"url": "https://raw.githubusercontent.com/PrieureDeSion/drive-any-robot/main/train/config/gnm/gnm_large.yaml"
+},
+{
+"field": "파라미터",
+"quote": "Note that GNM has 8.7M trainable parameters, compared to ViNT's 31M.",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "추론",
+"quote": "frame_rate: 4 # Hz",
+"url": "https://raw.githubusercontent.com/PrieureDeSion/drive-any-robot/main/deployment/config/robot.yaml"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "We deploy the GNM on four distinct robotic platforms, including a quadrotor",
+"url": "https://arxiv.org/pdf/2210.03370"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "ViNT",
+"구분": "내비게이션",
+"유형": "VA",
+"도메인": "이미지 목표 내비게이션·탐색",
+"발표": "2023-06",
+"기관": "UC Berkeley",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "EfficientNet-B0 관측 인코더 + 관측·목표 채널 결합(early fusion) 목표 인코더 → 디코더형 트랜스포머 4층·4헤드(512차원, 과거 5+현재 관측 토큰 + 목표 토큰) → MLP: 상대 웨이포인트 5개 + 시간적 거리; 85×64 RGB; 4 Hz 실행·PD 추종; 탐색 시 318M 이미지 확산 모델이 subgoal 제안 + 위상 그래프",
+"핵심 특징": "GNM 데이터 혼합을 확장한 다로봇 주행 데이터로 31M 트랜스포머 정책을 학습하고 목표 토큰을 GPS 좌표·경로 명령 등 다른 목표 모달리티용 soft prompt로 바꿔 적응한다. 확산 subgoal 제안과 그래프 탐색을 결합해 킬로미터 규모 탐색을 수행했고 학습 데이터에 없던 Go1 사족·LoCoBot에서도 제로샷으로 동작했다.",
+"파라미터": "31M (정책; 확산 subgoal 모델 318M 별도)",
+"파라미터(B)": 0.031,
+"사전학습 가속기": "V100 8장 (표 6, 대표 구성); 확산 모델 TPU v4-8 보드",
+"사전학습 기간": "30시간 (정책); 확산 모델 30시간",
+"사전학습 스텝·배치": "30 에폭 · 배치 300 (정책); 확산 250k 스텝 · 배치 128",
+"사전학습 GPU·TPU-시간": 240,
+"시간 근거·단위": "환산 · V100 8장 × 30시간 (표 6 '대표 구성' 각주; 확산 모델 TPU v4-8 × 30시간 별도)",
+"파인튜닝 가속기·시간": "새 환경·엠바디먼트·목표 모달리티(GPS·경로 명령) 적응: lr 1e-4·5 에폭, 1시간 내외 데이터; GPU·시간 미공개",
+"추론": "4 Hz로 실행, PD 제어기가 웨이포인트 추종 (논문); README 배포 예시 LoCoBot + Jetson Orin Nano; 지연 미공개",
+"태스크·벤치마크": "무방향 목표 도달 성공률 실내 0.94·실외 1.00 (End-to-End BC 0.72·0.44); 위성 유도 탐색 성공 1.00·SPL 0.94 (ViKiNG 0.77·0.68); 적응 성공률 이미지 0.82·위치 0.89·경로 명령 0.72",
+"로봇·엠바디먼트": "Vizbot·LoCoBot·Clearpath Jackal 바퀴형, Unitree Go1 사족 (본문은 드론 포함 5종 언급); Go1·LoCoBot은 학습 데이터에 없음",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그",
+"데이터 규모": "표 7: 데이터셋 11개 보유 160h 중 학습 80h 사용; 로봇 플랫폼 8종(본문)",
+"데이터 시간(h)": 80,
+"주요 데이터셋": "RECON; GoStanford; SCAND; TartanDrive; NeBula; SACSoN; BDD; CoryHall; Berkeley; Seattle",
+"비고": "표 6 학습 자원은 '대표 구성'이며 여러 GPU 구성을 썼다고 각주에 명시. 데이터 규모 표기 상이(초록 'hundreds of hours', 본문 100시간 이상, 표 7 캡션 150시간 이상, 합계 160h/사용 80h). 공개 vint.yaml은 100 에폭·배치 256으로 논문과 다름. 가중치 Google Drive 공개. CoRL 2023.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2306.14846"
+},
+"fields": {
+"v": "EfficientNet-B0 (관측 / 관측+목표 early fusion)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "트랜스포머 4층·4헤드 (512차원 토큰)",
+"h": "웨이포인트 5개 + 시간적 거리 MLP 회귀",
+"hk": "회귀",
+"ck": "웨이포인트 5개",
+"hz": "4 Hz",
+"dep": "온보드 Jetson Orin Nano (LoCoBot, README)",
+"inp": "RGB 관측 6프레임 · 목표 이미지",
+"tags": [
+"내비게이션",
+"교차 엠바디먼트",
+"이미지 목표",
+"탐색"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"최대우도 모방학습만 (RL은 기준선에만 등장)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2306.14846",
+"t": "ViNT: A Foundation Model for Visual Navigation",
+"u": "https://arxiv.org/abs/2306.14846",
+"n": "CoRL 2023"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행"
+],
+"how": "정책이 웨이포인트 5개 출력 → PD 제어기가 4 Hz로 추종해 속도 명령 생성; 로봇에는 저수준 속도 추종 제어기만 필요",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "Our 31M-parameter model, ViNT, is built on the Transformer architecture",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "사전학습 가속기",
+"quote": "Compute Resources | 8 × V100",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "사전학습 기간",
+"quote": "Training Time | 30 hours",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "# Epochs n_ep | 30",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "Batch Size | 300",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "시간 근거·단위",
+"quote": "We used a variety of workstations equipped with different GPU configurations over the course of this research",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "파라미터",
+"quote": "# Parameters | 318M",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "사전학습 가속기",
+"quote": "Compute Resources | v4-8 TPU board",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "Train Steps | 250,000",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "데이터 규모",
+"quote": "Total | | | 160h | 80h | |",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "추론",
+"quote": "we run the model at 4Hz, and use a PD controller to track the predicted waypoints",
+"url": "https://arxiv.org/pdf/2306.14846"
+},
+{
+"field": "추론",
+"quote": "deploy it on the open-source LoCoBot indoor robot platform with a NVIDIA Jetson Orin Nano",
+"url": "https://raw.githubusercontent.com/robodhruv/visualnav-transformer/main/README.md"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "NoMaD",
+"구분": "내비게이션",
+"유형": "VA",
+"도메인": "이미지 목표 내비게이션·무목표 탐색",
+"발표": "2023-10",
+"기관": "UC Berkeley",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "EfficientNet-B0로 관측·목표를 256차원 토큰화 → 트랜스포머 4층·4헤드(목표 마스킹 p_m=0.5) → 1D 조건부 U-Net 확산 헤드(K=10 디노이징)로 미래 행동 시퀀스 생성(공개 설정 웨이포인트 8개) + 시간적 거리 헤드; PD 제어기가 속도로 변환",
+"핵심 특징": "목표 이미지를 확률적으로 가리는 목표 마스킹으로 목표 지향 내비게이션과 무목표 탐색을 하나의 확산 정책에서 처리한다. 19M 파라미터로 335M subgoal 확산 방식보다 탐색 성공률(98% 대 77%)과 충돌(0.2회 대 1.7회)을 개선했다.",
+"파라미터": "19M",
+"파라미터(B)": 0.019,
+"사전학습 가속기": "미공개 (감사의 글에 Google TPU Research Cloud 등 컴퓨팅 지원만 언급)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "30 에폭 · 배치 256 (공개 nomad.yaml은 100 에폭)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "해당 없음",
+"추론": "Jetson Orin급 온보드 실행 지향 (논문); README 배포 예시 LoCoBot + Jetson Orin Nano; 확산 10스텝; 지연 미공개 (배포 루프 4 Hz 설정)",
+"태스크·벤치마크": "실환경 탐색 성공률 98%·충돌 0.2회 (Subgoal Diffusion 77%·1.7회, Random Subgoals 70%); 목표 조건 내비 90%; 전용 정책 대비 탐색 98%(Diffusion Policy 98%)·목표 92%(ViNT 92%)",
+"로봇·엠바디먼트": "LoCoBot 바퀴형 (실내·실외 환경)",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그",
+"데이터 규모": "GNM·SACSoN 데이터셋 100시간 이상",
+"데이터 시간(h)": 100,
+"주요 데이터셋": "GNM 데이터 혼합(RECON, GoStanford, SCAND, TartanDrive 등); SACSoN(HuRoN)",
+"비고": "논문에 행동 시퀀스 길이·컨텍스트·해상도 미기재 → 공개 nomad.yaml 기준 웨이포인트 8개·컨텍스트 3·96×96. 학습 GPU·시간 미공개. ViNT 정책 구조에 목표 마스킹을 결합. 가중치 Google Drive 공개. ICRA 2024. 기반: ViNT: A Foundation Model for Visual Navigation (arXiv 2306.14846) — ViNT 정책 구조에 목표 마스킹·확산 헤드를 결합 (논문 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2310.07896"
+},
+"fields": {
+"v": "EfficientNet-B0 (관측 / 관측+목표)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "트랜스포머 4층·4헤드 (256차원, 목표 마스킹)",
+"h": "1D 조건부 U-Net 확산 헤드 (K=10) + 시간적 거리 헤드",
+"hk": "diffusion",
+"ck": "웨이포인트 8개 (공개 설정)",
+"hz": "미공개 (배포 설정 4 Hz)",
+"dep": "온보드 Jetson Orin급 (README: Orin Nano)",
+"inp": "RGB 관측 · 목표 이미지(마스킹 가능)",
+"tags": [
+"내비게이션",
+"diffusion",
+"탐색",
+"이미지 목표"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"종단간 지도 모방학습만",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2310.07896",
+"t": "NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration",
+"u": "https://arxiv.org/abs/2310.07896",
+"n": "ICRA 2024"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "확산 정책이 웨이포인트 시퀀스 출력 → PD 제어기가 베이스 속도 명령으로 변환 (README)",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "NoMaD | 19M | 98% | 0.2 | 90%",
+"url": "https://arxiv.org/pdf/2310.07896"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "train NoMaD for 30 epochs with a batch size of 256",
+"url": "https://arxiv.org/pdf/2310.07896"
+},
+{
+"field": "백본·액션 표현",
+"quote": "K = 10 denoising steps",
+"url": "https://arxiv.org/pdf/2310.07896"
+},
+{
+"field": "데이터 규모",
+"quote": "spanning over 100 hours of real-world trajectories",
+"url": "https://arxiv.org/pdf/2310.07896"
+},
+{
+"field": "추론",
+"quote": "that can run directly on the less powerful onboard computers (e.g., NVIDIA Jetson Orin)",
+"url": "https://arxiv.org/pdf/2310.07896"
+},
+{
+"field": "사전학습 가속기",
+"quote": "compute from Google TPU Research Cloud, NSF CloudBank, and the Berkeley Research Computing program",
+"url": "https://arxiv.org/pdf/2310.07896"
+},
+{
+"field": "백본·액션 표현",
+"quote": "len_traj_pred: 8",
+"url": "https://raw.githubusercontent.com/robodhruv/visualnav-transformer/main/train/config/nomad.yaml"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "CrossFormer",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "교차 엠바디먼트(매니퓰레이션·내비게이션·보행·비행)",
+"발표": "2024-08",
+"기관": "UC Berkeley·Carnegie Mellon University",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "ResNet-26 이미지 토크나이저(언어 FiLM 조건) + 고유감각 선형 투영 → 인과 트랜스포머 12층·8헤드(512차원, 엠바디먼트별 readout 토큰) → L1 회귀 헤드: 내비 2D 웨이포인트 4개(4 Hz), 단일 팔 EEF 4스텝(5–15 Hz), 양팔 관절 100스텝(20 Hz), 사족 12차원 관절 위치 1스텝(20 Hz)",
+"핵심 특징": "20종 엠바디먼트의 900K 궤적을 관측·행동 공간 정렬 없이 하나의 130M 트랜스포머로 학습해 단일·양팔, 바퀴형, 사족, 쿼드콥터를 모두 제어한다. 6개 로봇 평균 성공률 73%로 단일 로봇 전용 정책(67%)과 기존 최고 교차 엠바디먼트 방법(51%)보다 높았다.",
+"파라미터": "130M",
+"파라미터(B)": 0.13,
+"사전학습 가속기": "TPU v5e-256 pod",
+"사전학습 기간": "47시간(본문 3.4절·README)/80시간(부록 B)",
+"사전학습 스텝·배치": "300k 스텝 · 배치 512",
+"사전학습 GPU·TPU-시간": 12032,
+"시간 근거·단위": "환산 · TPU v5e 256칩 × 47시간 (부록 B의 80시간 적용 시 20,480)",
+"파인튜닝 가속기·시간": "해당 없음 (평가는 사전학습 모델 그대로; README에 미세조정 스크립트 제공)",
+"추론": "내비·드론: 별도 서버에서 추론 후 무선 전송; 매니퓰레이션: RTX 4090급 로컬 GPU; 내비 4 Hz·사족 20 Hz; 지연 미공개 (추론 속도를 한계로 언급)",
+"태스크·벤치마크": "6개 로봇 평균 성공률 73% (단일 로봇 정책 67%, 기존 최고 51%); LoCoBot 장애물 회피 0.95·코너 0.95·급코너 0.88 (기존 최고 방법 0.30·0.85·0.30); Tello 코너 0.82 (기준선 0.68)",
+"로봇·엠바디먼트": "WidowX·Franka 단일 팔, ALOHA 양팔 (고정); LoCoBot 바퀴형; Unitree Go1 사족; DJI Tello 쿼드콥터 (비행 데이터 학습 없음)",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그",
+"데이터 규모": "900K 궤적·20개 엠바디먼트 (그림 1은 30); GNM 내비 60시간(샘플링 비중 17%), ALOHA 7K 궤적, Go1 보행 25분",
+"데이터 시간(h)": null,
+"주요 데이터셋": "Open X-Embodiment(Octo 단일 팔 혼합); DROID; ALOHA-multi-task; GNM; Go1-walk; Franka-tabletop",
+"비고": "학습 시간 본문·README 47h와 부록 B 80h 불일치. 엠바디먼트 수 본문 20·그림 1 30 불일치. Go1 데이터는 시뮬 RL 전문가 정책 롤아웃. 언어 인코더는 논문 미명시(공식 설정은 Universal Sentence Encoder). HF 체크포인트 519MB(300k 스텝), MIT 라이선스. LoCoBot 내비는 위상 그래프·목표 이미지 조건. 총 데이터 시간 미기재. 기반: Octo: An Open-Source Generalist Robot Policy (arXiv 2405.12213) — Octo 코드베이스 기반 (README 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2408.11812"
+},
+"fields": {
+"v": "ResNet-26 (ImageNet 초기화, FiLM 언어 조건)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "트랜스포머 12층·8헤드 (512차원, readout 토큰)",
+"txt": "Universal Sentence Encoder (공식 설정)",
+"h": "엠바디먼트별 L1 회귀 헤드 (내비 웨이포인트 4개·사족 관절 12차원 등)",
+"hk": "회귀",
+"ck": "내비 웨이포인트 4개 (팔 4·양팔 100·사족 1)",
+"hz": "내비 4 Hz · 사족 20 Hz · 양팔 20 Hz · 팔 5–15 Hz",
+"dep": "원격 서버 (내비·드론, 무선 전송)",
+"inp": "카메라 이미지 · 고유감각 · 목표 이미지/언어",
+"pipe": [
+[
+"in",
+"이미지 · 고유감각 · 목표",
+""
+],
+[
+"vis",
+"ResNet-26 토크나이저",
+"FiLM 언어 조건"
+],
+[
+"pol",
+"트랜스포머 12층",
+"130M · readout 토큰"
+],
+[
+"head",
+"엠바디먼트별 L1 헤드",
+"내비 웨이포인트 4개"
+],
+[
+"out",
+"팔·바퀴형·사족·드론",
+""
+]
+],
+"tags": [
+"교차 엠바디먼트",
+"내비게이션",
+"사족보행",
+"비행"
+]
+},
+"rl": [
+"일부",
+"RL 데이터 활용",
+"Go1 보행 데이터만 시뮬 RL 전문가 정책 롤아웃으로 수집; CrossFormer 자체는 L1 모방학습",
+"https://arxiv.org/pdf/2408.11812"
+],
+"paper": {
+"k": "논문",
+"id": "2408.11812",
+"t": "Scaling Cross-Embodied Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation",
+"u": "https://arxiv.org/abs/2408.11812",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"고정",
+"바퀴형",
+"사족보행",
+"비행"
+],
+"how": "내비 헤드가 2D 상대 웨이포인트 4개 출력(LoCoBot은 위상 그래프 subgoal 추종, Tello는 고도 고정) / 사족 헤드가 12차원 다리 관절 위치를 20 Hz로 직접 출력 / 팔 헤드는 EEF·관절 목표",
+"cat": "웨이포인트 → 추종 제어기",
+"bycat": {
+"사족보행": "전신 관절·자세 직접 출력"
+}
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "our model has 130M parameters.",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "사전학습 기간",
+"quote": "We trained for 300K gradient steps with a batch size of 512 which took 47 hours on a TPU V5e-256 pod.",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "사전학습 기간",
+"quote": "Training took 80 hours on a TPU V5e-256 pod.",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "사전학습 기간",
+"quote": "Pre-training takes 47 hours on a TPUv5-256 pod.",
+"url": "https://raw.githubusercontent.com/rail-berkeley/crossformer/main/README.md"
+},
+{
+"field": "데이터 규모",
+"quote": "900K trajectories across 20 different robot embodiments",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "데이터 규모",
+"quote": "60 hours of navigation from the GNM dataset",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "추론",
+"quote": "we ran the models on a separate server and sent actions over a wireless network",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "추론",
+"quote": "We predict only 1 action and execute on a quadruped at 20Hz.",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "CrossFormer has a 73% success rate, while the single-robot dataset baseline has a 67% success rate.",
+"url": "https://arxiv.org/pdf/2408.11812"
+},
+{
+"field": "비고",
+"quote": "300000/default/checkpoint (519021888 bytes)",
+"url": "https://huggingface.co/api/models/rail-berkeley/crossformer/tree/main/300000/default"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "LeLaN",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "언어 목표 물체 내비게이션",
+"발표": "2024-10",
+"기관": "UC Berkeley·Toyota Motor North America",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "고정 CLIP 텍스트 인코더(ViT-B/32) + 프롬프트 FiLM 조건 ResNet 시각 인코더(이력 사용 변형은 EfficientNet-B0) → 트랜스포머 + MLP → 선속도·각속도 24스텝 시퀀스 회귀, 첫 스텝만 실행(receding horizon)",
+"핵심 특징": "YouTube 투어·사람 보행 영상과 로봇 주행 데이터에 SAM·VLM(CogVLM)·GPT-3.5로 물체 지시문을 붙이고 깊이 추정으로 물체 위치를 라벨링해 언어 조건 물체 내비게이션 정책을 학습한다. 실환경 제로샷 성공률 0.89로 OWL-v2+ZoeDepth(0.67)·CoW(0.58) 등 모듈형 기준선보다 높았고 Jetson Orin에서 행동당 0.054초로 동작한다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "RTX 4090 1장 (i9·96GB RAM 워크스테이션)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "배치 256 (에폭·스텝 미공개; 공개 lelan.yaml 100 에폭)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "충돌 회피 변형: 충돌 손실 없이 사전학습 후 NoMaD 감독 충돌 손실로 미세조정 (README); GPU·시간 미공개",
+"추론": "Jetson Orin(AGX) 온보드에서 관측당 행동 생성 0.054초; 24스텝 중 첫 스텝 실행",
+"태스크·벤치마크": "실환경 언어 지정 물체 도달 성공률 0.89 (OWL-v2+ZoeDepth 0.67, CoW 0.58, OWL-ViT+ViNT 0.47, OpenFMNav 0.43); 노이즈 프롬프트 0.88; 동적 물체 0.83; 장애물 환경 충돌 손실 적용 0.60 (OWL-v2+ZoeDepth 0.40)",
+"로봇·엠바디먼트": "바퀴형 로봇(README: Roomba 기반 Vizbot; RICOH Theta S 전방 어안), Unitree Go1 사족; D435i 등 카메라 교차 시험",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그 / 웹 영상 / 사람 영상",
+"데이터 규모": "표 1: 실내 로봇 31.0h(이미지 111,570) · YouTube 투어 82.5h(593,727) · 사람 보행 15.7h(113,277); 프롬프트 3.4M·14.6M·2.3M",
+"데이터 시간(h)": 130,
+"주요 데이터셋": "GO Stanford 2·4; SACSoN(HuRoN); YouTube Tour(32개국); Human-walking(자체 수집, 3개국 11개 도시)",
+"비고": "데이터 총합 초록 130시간 이상(기여 목록 120시간 이상; 표 1 세 항목 합 129.2h). 파라미터·학습 시간 미공개. README의 arXiv 배지는 다른 논문(2407.08693)을 가리키며 실제 논문은 2410.03603. 장거리 목표는 OWL-ViT2 노드 검색 + ViNT 위상 그래프와 결합(README). 데이터·가중치 공개. CoRL 2024.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2410.03603"
+},
+"fields": {
+"v": "ResNet-FiLM (프롬프트 조건; 이력 변형 EfficientNet-B0)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"txt": "CLIP ViT-B/32 텍스트 인코더 (고정)",
+"t": "트랜스포머 + MLP",
+"h": "선속도·각속도 24스텝 회귀",
+"hk": "회귀",
+"ck": "24스텝 (첫 스텝 실행)",
+"hz": "미공개 (행동당 0.054초)",
+"dep": "온보드 Jetson Orin AGX",
+"inp": "RGB 관측 · 언어 프롬프트",
+"tags": [
+"내비게이션",
+"언어 목표",
+"웹 영상"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"지도학습만 (NoMaD 충돌 회피 궤적을 손실로 증류)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2410.03603",
+"t": "LeLaN: Learning A Language-Conditioned Navigation Policy from In-the-Wild Videos",
+"u": "https://arxiv.org/abs/2410.03603",
+"n": "CoRL 2024"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행"
+],
+"how": "정책이 선속도·각속도 24스텝 시퀀스를 출력하고 첫 스텝만 /cmd_vel로 실행 (receding horizon)",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "on a workstation with a Intel i9 CPU, 96GB RAM, and an NVIDIA RTX 4090 GPU.",
+"url": "https://arxiv.org/html/2410.03603v1"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "we randomly choose 256 observations from our whole dataset",
+"url": "https://arxiv.org/html/2410.03603v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "generate a sequence of the velocity commands for N(=24) steps.",
+"url": "https://arxiv.org/html/2410.03603v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "We encode the prompt l with a frozen CLIP text encoder.",
+"url": "https://arxiv.org/html/2410.03603v1"
+},
+{
+"field": "추론",
+"quote": "on Nvidia Jetson Orin to generate an action given the current observation",
+"url": "https://arxiv.org/html/2410.03603v1"
+},
+{
+"field": "추론",
+"quote": "We test our policy on Nvidia Jetson Orin AGX",
+"url": "https://raw.githubusercontent.com/NHirose/learning-language-navigation/main/README.md"
+},
+{
+"field": "데이터 규모",
+"quote": "YouTube Tour (YT) Dataset [59] ... 82.5 ... 593,727",
+"url": "https://arxiv.org/html/2410.03603v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Our method (YT 100.0%, HW 100.0%) | 0.89",
+"url": "https://arxiv.org/html/2410.03603v1"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "CityWalker",
+"구분": "내비게이션",
+"유형": "VA",
+"도메인": "도시 내비게이션 (GPS 목표)",
+"발표": "2024-11",
+"기관": "New York University",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "고정 DINOv2 ViT-B/14로 과거 5프레임 인코딩 + 목표 좌표 Fourier 특징 임베딩 → 트랜스포머 16층·8헤드(768차원) → 행동 헤드: 유클리드 웨이포인트 5개 + 도착 예측 헤드; ViNT PD 제어기를 개조해 속도 명령",
+"핵심 특징": "수천 시간의 YouTube 도시 보행·주행 영상에 DPVO 시각 주행거리계로 궤적 라벨을 붙여 GPS 목표 조건 도시 내비게이션 정책을 모방학습한다. 1,000시간 이상 학습 시 제로샷만으로 미세조정 ViNT보다 높은 성능을 냈고 6시간 텔레옵 미세조정 후 Go1 실환경 성공률 77.3%(미세조정 ViNT 57.1%)를 기록했다.",
+"파라미터": "214M (학습 가능 127M, DINOv2 고정)",
+"파라미터(B)": 0.214,
+"사전학습 가속기": "H100 2장",
+"사전학습 기간": "30시간",
+"사전학습 스텝·배치": "10 에폭 · 배치 32",
+"사전학습 GPU·TPU-시간": 60,
+"시간 근거·단위": "환산 · H100 2장 × 30시간",
+"파인튜닝 가속기·시간": "Go1 텔레옵 6시간 데이터로 미세조정, lr 5e-5; GPU·시간 미공개",
+"추론": "RTX 3060 노트북 GPU에서 DINOv2 백본 1.7 fps (EfficientNet-B0 교체 시 20 fps); 배포 연산 장치 미기재",
+"태스크·벤치마크": "오프라인 도시 벤치 평균(미세조정): MAOE 15.2°·도착률 81.8% (ViNT 16.5°·70.5%, GNM 16.2°·68.6%, NoMaD 19.1°·68.6%); 실환경 Go1 성공률 77.3% (미세조정 ViNT 57.1%, 제로샷 NoMaD 42.9%, 제로샷 ViNT 37.7%)",
+"로봇·엠바디먼트": "Unitree Go1 사족 (Livox Mid-360 LiDAR·웹캠)",
+"데이터 종류": "웹 영상 / 실로봇 텔레옵",
+"데이터 규모": "YouTube 보행·주행 영상 총 2,522시간 중 2,000시간 학습; Go1 텔레옵 15시간(미세조정 6h·평가 9h)",
+"데이터 시간(h)": 2000,
+"주요 데이터셋": "CityWalk YouTube 보행·주행 플레이리스트(DPVO 라벨); 자체 Go1 텔레옵 데이터(HF ai4ce/CityWalker)",
+"비고": "주행 영상 비중·영상 수 미기재. 배포 시 연산 장치 미기재(속도는 RTX 3060 노트북 측정). 사전학습 모델 GitHub releases 공개. CVPR 2025.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2411.17820"
+},
+"fields": {
+"v": "DINOv2 ViT-B/14 (고정)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "트랜스포머 16층·8헤드 (768차원)",
+"h": "웨이포인트 5개 회귀 + 도착 예측 헤드",
+"hk": "회귀",
+"ck": "웨이포인트 5개",
+"hz": "미공개 (RTX 3060 노트북 1.7 fps)",
+"dep": null,
+"inp": "RGB 영상 5프레임 · GPS 목표 좌표",
+"tags": [
+"내비게이션",
+"웹 영상",
+"사족보행"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습만 (웹 영상 + DPVO 궤적 라벨)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2411.17820",
+"t": "CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos",
+"u": "https://arxiv.org/abs/2411.17820",
+"n": "CVPR 2025"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "정책이 웨이포인트 5개 출력 → ViNT PD 제어기를 개조해 Go1 속도 명령으로 변환",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "Compute Resources | 2 × H100",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "사전학습 기간",
+"quote": "Training Walltime | 30 hours",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "파라미터",
+"quote": "Total # Parameters | 214M",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "파라미터",
+"quote": "Trainable # Parameters | 127M",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "데이터 규모",
+"quote": "The full sourced videos have a total length of 2522 hours.",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "데이터 시간(h)",
+"quote": "We use 2000 hours of them for training.",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "allocating 6 hours for fine-tuning and 9 hours for testing",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "추론",
+"quote": "our model with DiNOv2 backbone only has 1.7 fps inference speed on a RTX 3060 laptop",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "추론",
+"quote": "this can be boosted to 20 fps by switching to EfficientNetB0 backbone",
+"url": "https://arxiv.org/html/2411.17820"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Ours† | 77.3 | 100.0 | 62.5 | 66.7",
+"url": "https://arxiv.org/html/2411.17820"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "NWM (Navigation World Models)",
+"구분": "내비게이션",
+"유형": "기타",
+"도메인": "내비게이션 world model·계획",
+"발표": "2024-12",
+"기관": "Meta FAIR·New York University·UC Berkeley",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Stable Diffusion VAE 잠재 + CDiT-XL(1B): 과거 4프레임 컨텍스트, 행동(이동·yaw)·시간 이동 k·확산 스텝 임베딩 합을 AdaLN 조건으로 미래 프레임 생성(디노이징 250스텝, 증류 시 6); 계획: CEM으로 8스텝 행동 시퀀스 최적화(후보 N=120) 또는 NoMaD 샘플 랭킹",
+"핵심 특징": "로봇 주행 영상과 행동으로 1B 조건부 확산 트랜스포머(CDiT) world model을 학습해 행동 시퀀스의 미래 영상을 상상하고 목표 이미지와의 유사도로 궤적을 계획·평가한다. RECON에서 단독 계획 ATE 1.13·RPE 0.35로 NoMaD(1.93·0.52)보다 정확했고 라벨 없는 Ego4D 영상 추가로 미지 환경 예측을 개선했다.",
+"파라미터": "1B (CDiT-XL; S 50M·B 200M·L 700M 변형 공개)",
+"파라미터(B)": 1.0,
+"사전학습 가속기": "H100 64장 (8노드 × 8)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "100k 스텝 (HF 카드; Ego4D 포함판 200k) · 최종 배치 4,096 (1,024 × 목표 4개)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "해당 없음",
+"추론": "RTX 6000 Ada에서 궤적 1개 시뮬레이션 30.3초 → Time Skip 14.7초 → 증류(250→6 디노이징) 0.4초; 4-bit 양자화 0.1초는 추정치; 2–10 Hz 실시간 적용 가능 주장",
+"태스크·벤치마크": "RECON 계획 ATE 1.13·RPE 0.35 (NoMaD 1.93·0.52); NoMaD 샘플 ×32 랭킹 ATE 1.78·RPE 0.48 (×16 1.83·0.50); 단일 스텝·궤적 영상 예측(LPIPS·DreamSim·FID) 평가",
+"로봇·엠바디먼트": "실로봇 배포 없음 (오프라인 평가); 학습 데이터는 여러 로봇의 주행 영상",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그 / 사람 영상",
+"데이터 규모": "SCAND 8.7h·TartanDrive 5h·RECON 40h·HuRoN 75h 이상 + Ego4D 영상 1,619개·908h 이상(행동 라벨 없음)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "SCAND; TartanDrive; RECON; HuRoN(SACSoN); Ego4D(무라벨); 평가 GO Stanford(미지 환경)",
+"비고": "학습 기간 미공개. HF 공개 모델은 얼굴 블러 데이터로 재학습돼 논문 수치와 다를 수 있음(게이트, CC BY-NC 4.0). 실로봇 구동 없이 오프라인 계획 평가만 수행. 총 데이터 시간 미기재. CVPR 2025 Oral.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2412.03572"
+},
+"fields": {
+"v": "Stable Diffusion VAE (잠재 인코딩)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"w": "CDiT-XL 1B 영상 world model",
+"h": "CEM 계획 / NoMaD 샘플 랭킹 (목표 유사도 에너지)",
+"hk": "영상 world model",
+"ck": "8스텝 행동 시퀀스 (CEM)",
+"hz": "미공개 (증류 시 궤적당 0.4초)",
+"dep": null,
+"inp": "과거 4프레임 · 행동 · 시간 이동",
+"pipe": [
+[
+"in",
+"과거 4프레임 · 후보 행동",
+""
+],
+[
+"vis",
+"SD VAE",
+"잠재 인코딩"
+],
+[
+"world",
+"CDiT-XL 1B",
+"미래 프레임 상상"
+],
+[
+"pol",
+"CEM / NoMaD 랭킹",
+"목표 유사도 에너지"
+],
+[
+"out",
+"행동 시퀀스 선택",
+"오프라인 평가"
+]
+],
+"tags": [
+"world model",
+"내비게이션",
+"diffusion",
+"계획"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"확산 world model 지도학습 + CEM 계획 (RL 미사용)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2412.03572",
+"t": "Navigation World Models",
+"u": "https://arxiv.org/abs/2412.03572",
+"n": "CVPR 2025 Oral"
+},
+"prel": null,
+"base": {
+"types": [
+"시뮬 전용"
+],
+"how": "실로봇 구동 없음: 기록된 주행 데이터에서 world model로 (이동·yaw) 행동 시퀀스를 CEM 계획하거나 NoMaD 샘플을 순위화해 오프라인 평가",
+"cat": "계획·최적화로 이동 결정"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "scaled up to 1 billion parameters",
+"url": "https://arxiv.org/abs/2412.03572"
+},
+{
+"field": "사전학습 가속기",
+"quote": "XL sized model are trained on 8 H100 machines, each with 8 GPUs.",
+"url": "https://arxiv.org/pdf/2412.03572"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "leading to a final total batch size of 4096",
+"url": "https://arxiv.org/html/2412.03572"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "CDiT/XL | 1B | 100k",
+"url": "https://huggingface.co/facebook/nwm"
+},
+{
+"field": "데이터 규모",
+"quote": "We use a total 1619 videos of over 908 hours for training only.",
+"url": "https://arxiv.org/pdf/2412.03572"
+},
+{
+"field": "추론",
+"quote": "Runtime (seconds) on an NVIDIA RTX 6000 Ada card.",
+"url": "https://arxiv.org/pdf/2412.03572"
+},
+{
+"field": "추론",
+"quote": "30.3 ± 0.2 14.7 ± 0.1 0.4 ± 0.1 0.1 (est. [12])",
+"url": "https://arxiv.org/pdf/2412.03572"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "NWM (planning) 1.13 ± 0.02 0.35 ± 0.01",
+"url": "https://arxiv.org/pdf/2412.03572"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "NoMaD 1.93 ± 0.04 0.52 ± 0.00",
+"url": "https://arxiv.org/pdf/2412.03572"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "X-Mobility",
+"구분": "내비게이션",
+"유형": "VA",
+"도메인": "경로 목표 내비게이션 (world model 기반)",
+"발표": "2024-10",
+"기관": "NVIDIA·UT Austin·UC Berkeley",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "DINOv2 이미지 인코더(22.1M) + 속도 인코더 → GRU 기반 잠재 상태 추정·예측(자기회귀 world model) → 경로(route) 임베딩과 self-attention 융합 → MLP: 6차원 속도 명령(선·각속도) + 경로 5포즈; 학습 시 시맨틱·RGB(LDM) 디코더로 world model 감독",
+"핵심 특징": "자기회귀 잠재 world model로 환경 동역학을 먼저 학습하고 그 잠재 상태 위에서 행동 정책을 분리 학습해 시뮬 데이터만으로 일반화하는 종단간 내비게이션 모델이다. Isaac Sim 창고에서 성공률 96%(Nav2 58%)를 보였고 미세조정 없이 실제 Nova Carter에 제로샷 배포했다.",
+"파라미터": "미공개 (총합 미기재; 구성요소: 이미지 인코더 22.1M·상태 추정 5.5M·예측 2.3M·융합 28.5M·행동/경로 디코더 각 10.5M·시맨틱 디코더 34.2M·RGB diffuser 962M)",
+"파라미터(B)": null,
+"사전학습 가속기": "H100 8장",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "world model 100 에폭(무작위 행동 데이터) → 정책 동시 학습 100 에폭 · 배치 32",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "해당 없음 (실로봇 미세조정 없음)",
+"추론": "Jetson AGX Orin: 정책만 P50 38.6 ms·P95 41.96 ms·GPU 594 MB; 정책+시맨틱 P50 55.55 ms·804 MB; ONNX·TensorRT 변환 지원(README)",
+"태스크·벤치마크": "Isaac Sim 창고 성공률 96% (BC 92%, Nav2 58%, MILE 34%); 무작위 장애물 68% (BC 56%, Nav2 34%, MILE 26%); 실 Nova Carter 단일 장애물 10/10·다중 장애물 8/9 (정상·어두운 조명)",
+"로봇·엠바디먼트": "NVIDIA Nova Carter 바퀴형(실·시뮬), Forklift 바퀴형(Ackermann 구동, 시뮬); Unitree Go2 사족·G1 휴머노이드(시뮬, RL 보행 정책 결합)",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "Isaac Sim 창고 4종, 5 Hz 기록: Nav2 교사 100K 프레임 + 무작위 행동 160K 프레임",
+"데이터 시간(h)": null,
+"주요 데이터셋": "x_mobility_isaac_sim_nav2_100k; x_mobility_isaac_sim_random_160k (HF nvidia/X-Mobility 데이터셋)",
+"비고": "2단계 학습(무작위 행동으로 world model 사전학습 → Nav2 교사 데이터로 정책 추가). 총 파라미터·학습 시간 미공개. HF 체크포인트 1.44GB(x_mobility-nav2-semantic_action_path.ckpt), Apache 2.0 코드. 후속 COMPASS의 기반 정책.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2410.17491"
+},
+"fields": {
+"v": "DINOv2 (22.1M, 미세조정)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"w": "잠재 상태 자기회귀 world model (GRU 추정·예측)",
+"t": "self-attention 융합기 (28.5M)",
+"h": "MLP 행동 디코더: 6차원 속도 + 경로 5포즈",
+"hk": "회귀",
+"ck": "없음 (1스텝 속도; 경로 5포즈 보조)",
+"hz": "미공개 (Jetson P50 38.6 ms)",
+"dep": "온보드 Jetson AGX Orin",
+"mem": "594 MB (정책만) / 804 MB (정책+시맨틱)",
+"mg": 0.594,
+"mc": true,
+"inp": "RGB · 속도 · 경로(route)",
+"pipe": [
+[
+"in",
+"RGB · 속도 · 경로",
+""
+],
+[
+"vis",
+"DINOv2",
+"22.1M"
+],
+[
+"world",
+"잠재 world model",
+"GRU 상태 추정·예측"
+],
+[
+"pol",
+"self-attn 융합 + MLP",
+"행동·경로 디코더"
+],
+[
+"out",
+"속도 명령 (6차원)",
+"Nova Carter"
+]
+],
+"tags": [
+"world model",
+"내비게이션",
+"sim-to-real"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"시뮬 Go2·G1 시연에서만 Isaac Lab RL 보행 정책이 속도 명령을 관절 제어로 변환; X-Mobility 자체는 Nav2 교사 모방학습",
+"https://arxiv.org/html/2410.17491"
+],
+"paper": {
+"k": "논문",
+"id": "2410.17491",
+"t": "X-MOBILITY: End-To-End Generalizable Navigation via World Modeling",
+"u": "https://arxiv.org/abs/2410.17491",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행",
+"휴머노이드 보행"
+],
+"how": "정책이 선속도·각속도 명령 직접 출력(Nova Carter 실·시뮬); Go2·G1은 시뮬에서 Isaac Lab RL 보행 정책이 속도 명령을 관절 제어로 변환",
+"cat": "베이스 속도·자세 직접 출력",
+"bycat": {
+"사족보행": "명령·잠재 → RL 보행 제어기",
+"휴머노이드 보행": "명령·잠재 → RL 보행 제어기"
+}
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "distributed across 8 H100 GPUs.",
+"url": "https://arxiv.org/html/2410.17491"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "The world model was first trained for 100 epochs using the random action dataset, with a batch size of 32",
+"url": "https://arxiv.org/html/2410.17491"
+},
+{
+"field": "데이터 규모",
+"quote": "In total, we gathered 100K frames from the Nav2 policy and 160K frames from the random action policy",
+"url": "https://arxiv.org/html/2410.17491"
+},
+{
+"field": "데이터 규모",
+"quote": "Data was recorded at 5Hz across four distinct warehouse environments",
+"url": "https://arxiv.org/html/2410.17491"
+},
+{
+"field": "추론",
+"quote": "Policy Only | 38.6 | 41.96 | 594",
+"url": "https://arxiv.org/html/2410.17491"
+},
+{
+"field": "파라미터",
+"quote": "RGB diffuser | 962M",
+"url": "https://arxiv.org/html/2410.17491"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "X-MOBILITY | 96 | 37.7 | 0.206 | 68 | 40.21 | 0.186",
+"url": "https://arxiv.org/html/2410.17491"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "We successfully deployed X-MOBILITY on a Nova Carter robot without any fine-tuning,",
+"url": "https://arxiv.org/html/2410.17491"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "COMPASS",
+"구분": "내비게이션",
+"유형": "VA",
+"도메인": "교차 엠바디먼트 내비게이션 (경로 목표)",
+"발표": "2025-02",
+"기관": "NVIDIA·UC Berkeley·UT Austin",
+"가중치 공개": "일부",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "고정 X-Mobility(DINOv2·잠재 world model) 기반 정책 + 엠바디먼트별 잔차 RL(PPO) 전문가 → 원-핫 엠바디먼트 임베딩 조건 MLP generalist로 증류(평균 예측 + 전역 분산); 출력 속도 명령(v, ω), 다리형은 RL 보행 정책이 관절 제어",
+"핵심 특징": "모방학습 기반 정책 위에 엠바디먼트별 잔차 RL 전문가를 학습한 뒤 이를 엠바디먼트 조건 정책 하나로 증류해 바퀴형·사족·휴머노이드 내비게이션을 통합한다. 시뮬 벤치에서 X-Mobility 대비 성공률을 약 5배 높였고(예: H1 22.0%→84.4%) Jetson AGX Orin에서 29 ms로 실행된다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음 (X-Mobility 사전학습 체크포인트 재사용)",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "잔차 RL: L40 2장·병렬 환경 64개·전문가당 1,000 에피소드(Carter 300); 증류: H100 4장; 시간 미공개",
+"추론": "AGX Jetson Orin TensorRT: P50 29.34 ms·P95 29.38 ms·GPU 422 MB",
+"태스크·벤치마크": "Isaac Lab 4개 환경×640회: Combined 성공률 X-Mobility→generalist Carter 50.3→85.3%, H1 22.0→84.4%, Spot 11.7→77.9%, G1 10.0→90.6%; 전문가는 성공률 5–40배·가중 이동시간 평균 3배 개선",
+"로봇·엠바디먼트": "시뮬: Nova Carter 바퀴형, Unitree H1·G1 휴머노이드, Spot 사족; 실로봇(v3): Carter·Unitree G1 (Jetson Orin, 무작위 장애물 20회 성공률 약 80%)",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "증류 데이터: 엠바디먼트당 320 궤적 × 128스텝 ≈ 40k 프레임 (HF 카드: 총 160,000 프레임)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "Isaac Lab 창고·사무실 환경 잔차 RL 전문가 롤아웃",
+"비고": "초기 판은 실세계 배포를 그림 1 캡션에만 언급하고 Sim2Real을 향후 과제로 뒀으나 v3(2025-10)에 Carter·Unitree G1 실로봇 배포(Jetson Orin, 20회 성공률 약 80%) 추가. HF(nvidia/COMPASS, 게이트)에 Carter용 ONNX·JIT 정책과 GR00T 사후학습 자료 공개, 다중 엠바디먼트 generalist 체크포인트는 파일 목록에서 확인 안 됨. 증류 데이터로 GR00T VLA에 내비 기능을 붙이는 워크플로 제공(공식 문서). 파라미터·학습 시간 미공개. NVIDIA Open Model License. 기반: X-MOBILITY: End-To-End Generalizable Navigation via World Modeling (arXiv 2410.17491) — X-Mobility를 기반 정책으로 고정해 사용 (논문·HF 카드 명시)",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2502.16372"
+},
+"fields": {
+"v": "DINOv2 (X-Mobility 인코더)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"w": "X-Mobility 잠재 world model (고정)",
+"t": "엠바디먼트 임베딩 조건 MLP",
+"h": "가우시안 MLP 정책 (평균 + 전역 분산) → 속도 명령",
+"hk": "RL 정책",
+"ck": "없음 (1스텝)",
+"hz": "미공개 (Jetson P50 29.3 ms)",
+"dep": "Jetson AGX Orin (TensorRT)",
+"mem": "422 MB (Jetson AGX Orin, TensorRT)",
+"mg": 0.422,
+"mc": true,
+"inp": "RGB · 로봇 상태 · 경로 · 엠바디먼트 종류",
+"pipe": [
+[
+"in",
+"RGB · 상태 · 경로 · 엠바디먼트",
+""
+],
+[
+"world",
+"X-Mobility (고정)",
+"모방학습 기반 정책"
+],
+[
+"pol",
+"잔차 RL → generalist 증류",
+"PPO 전문가 · MLP"
+],
+[
+"ctrl",
+"RL 보행 정책",
+"H1·G1·Spot (시뮬)"
+],
+[
+"out",
+"속도 명령 (v, ω)",
+"바퀴형은 직접 구동"
+]
+],
+"tags": [
+"교차 엠바디먼트",
+"RL 미세조정",
+"증류",
+"내비게이션"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"X-Mobility(모방학습) 정책 위 엠바디먼트별 잔차 PPO로 정책 자체를 RL 미세조정 후 generalist로 증류; 다리형은 하위 RL 보행 정책도 결합",
+"https://arxiv.org/html/2502.16372"
+],
+"paper": {
+"k": "논문",
+"id": "2502.16372",
+"t": "COMPASS: Cross-embodiment Mobility Policy via Residual RL and Skill Synthesis",
+"u": "https://arxiv.org/abs/2502.16372",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행",
+"휴머노이드 보행"
+],
+"how": "generalist 정책이 속도 명령(v, ω) 출력 → Carter는 직접 구동, H1·G1·Spot은 Isaac Lab RL 보행 정책이 관절 제어 (시뮬)",
+"cat": "베이스 속도·자세 직접 출력",
+"bycat": {
+"사족보행": "명령·잠재 → RL 보행 제어기",
+"휴머노이드 보행": "명령·잠재 → RL 보행 제어기"
+}
+},
+"evidence": [
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "We train each embodiment specialist for 1,000 episodes with 64 environments in parallel using 2 Nvidia L40 GPUs",
+"url": "https://arxiv.org/html/2502.16372"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "We then perform policy distillation using 4 Nvidia H100 GPUs",
+"url": "https://arxiv.org/html/2502.16372"
+},
+{
+"field": "데이터 규모",
+"quote": "Each trajectory spans 128 steps, yielding approximately 40k frames per embodiment.",
+"url": "https://arxiv.org/html/2502.16372"
+},
+{
+"field": "데이터 규모",
+"quote": "160,000 total frames using RL fine-tuned mobility policy",
+"url": "https://huggingface.co/nvidia/COMPASS"
+},
+{
+"field": "추론",
+"quote": "| Distilled Generalist | 29.3389 | 29.3767 | 422 |",
+"url": "https://arxiv.org/html/2502.16372"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "a success rate approximately 5X higher than the pre-trained IL policy",
+"url": "https://arxiv.org/html/2502.16372"
+},
+{
+"field": "백본·액션 표현",
+"quote": "We freeze this checkpoint, which then serves as the base network for subsequent RL refinements.",
+"url": "https://arxiv.org/html/2502.16372"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "OmniVLA",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "다중 목표 모달리티 내비게이션 (언어·이미지·2D 위치)",
+"발표": "2025-09",
+"기관": "UC Berkeley·Toyota Motor North America·Princeton University",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "OpenVLA 7B(Llama 2-7B + DINOv2·SigLIP, 총 7.5B)에 현재·목표 이미지, 2D 목표 위치, 언어 입력(modality dropout으로 목표 조합 마스킹) → LLM 출력의 선형 행동 헤드(OpenVLA-OFT식)로 웨이포인트 8개(3 Hz, 2.4초) 회귀 → 선속도·각속도 명령; 경량판 OmniVLA-edge 50M(ViNT 기반, EfficientNet-B0·CLIP·FiLM)",
+"핵심 특징": "언어·목표 이미지·2D 목표 위치를 단독 또는 조합으로 받는 옴니모달 내비게이션 VLA로, OpenVLA 7B를 10개 플랫폼 9,500시간 데이터로 LoRA 학습했다. 실로봇에서 언어 목표 성공률 0.73(LeLaN 0.43)·2D 위치 0.95·목표 이미지 1.00으로 모달리티별 전용 정책과 같거나 높았다.",
+"파라미터": "7.5B (OpenVLA 기반; OmniVLA-edge 50M)",
+"파라미터(B)": 7.5,
+"사전학습 가속기": "H100 80GB 8장 (README는 'across 8 nodes' 표기)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "GPU당 배치 7 × 기울기 누적 4 = 유효 배치 224; 스텝 미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "CAST 데이터 미세조정판 공개 (GPU·시간 미공개)",
+"추론": "현장 배포: RTX 4090 로컬 PC가 인터넷으로 전방 영상·위치를 받아 속도 명령 송신; 지연·제어 주기 미공개",
+"태스크·벤치마크": "실로봇 성공률: 언어 0.73 (OmniVLA-edge 0.60, LeLaN 0.43, CounterfactualVLA 0.33, MiniVLA 0.23, SmolVLA 0.10); 2D 위치 0.95 (MBRA 0.86, NoMaD 0.33); 목표 이미지 1.00 (MBRA 1.00, NoMaD 0.63, ViNT 0.50)",
+"로봇·엠바디먼트": "FrodoBots EarthRover Zero 바퀴형, VizBot 바퀴형, Unitree Go1 사족",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그 / 웹 영상 / 사람 영상",
+"데이터 규모": "9,500시간·10개 플랫폼 (사용 시간: GNM 62.0h, LeLaN 128.7h, FrodoBots-2K 700h, BDD-V 8,680h)",
+"데이터 시간(h)": 9500,
+"주요 데이터셋": "GNM 혼합; LeLaN 혼합; FrodoBots-2K(MBRA 재라벨); BDD-V(MBRA 재라벨); CAST(미세조정)",
+"비고": "LoRA로 학습 파라미터 약 5%로 제한. FrodoBots·BDD-V는 MBRA, LeLaN은 NoMaD 합성 행동 라벨. HF 페이지 자동 표기 '8B params'(논문 7.5B), BF16 safetensors 약 15.1GB. 학습 시간·추론 지연 미공개. ICRA 2026. 기반: OpenVLA: An Open-Source Vision-Language-Action Model (arXiv 2406.09246) — OpenVLA 7B 체크포인트에서 학습 시작, OpenVLA-OFT 코드베이스 기반 (README)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2509.19480"
+},
+"fields": {
+"v": "DINOv2 + SigLIP",
+"l": "Llama 2-7B · OpenVLA 구성",
+"lb": 7,
+"fam": "Llama",
+"h": "선형 행동 헤드 (웨이포인트 8개 회귀, OFT식)",
+"hk": "회귀",
+"ck": "웨이포인트 8개 (3 Hz · 2.4초)",
+"hz": "행동 3 Hz 간격 (실행 주기 미공개)",
+"dep": "원격 로컬 PC RTX 4090 (인터넷 경유)",
+"inp": "RGB · 언어 · 목표 이미지 · 2D 목표 위치",
+"tags": [
+"VLA",
+"내비게이션",
+"옴니모달",
+"LoRA"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습만 (MBRA·NoMaD 합성 행동 라벨 포함)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2509.19480",
+"t": "OmniVLA: An Omni-Modal Vision-Language-Action Model for Robot Navigation",
+"u": "https://arxiv.org/abs/2509.19480",
+"n": "ICRA 2026"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행"
+],
+"how": "VLA가 웨이포인트 8개 출력 → 선택 웨이포인트를 선속도·각속도 명령으로 변환해 로봇에 전송",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "OmniVLA | Llama2-7B | DINOv2+SigLIP | 7.5B",
+"url": "https://arxiv.org/html/2509.19480"
+},
+{
+"field": "파라미터",
+"quote": "a 50M-parameter navigation transformer",
+"url": "https://arxiv.org/html/2509.19480"
+},
+{
+"field": "사전학습 가속기",
+"quote": "In training OmniVLA with OpenVLA checkpoints on eight H100 GPUs, we use a per-GPU batch size of 7",
+"url": "https://arxiv.org/html/2509.19480"
+},
+{
+"field": "사전학습 가속기",
+"quote": "we use 8 Nvidia H100 GPUs (80 GB each) across 8 nodes",
+"url": "https://raw.githubusercontent.com/NHirose/OmniVLA/main/README.md"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "yielding an effective batch size of 224 (=7×8×4).",
+"url": "https://arxiv.org/html/2509.19480"
+},
+{
+"field": "데이터 규모",
+"quote": "Our training mixture consists of 9,500 hours across 10 different platforms",
+"url": "https://arxiv.org/html/2509.19480"
+},
+{
+"field": "백본·액션 표현",
+"quote": "We set the action chunk size N to 8 at 3 Hz, corresponding to 2.4 seconds for all models.",
+"url": "https://arxiv.org/html/2509.19480"
+},
+{
+"field": "추론",
+"quote": "Our local PC with an NVIDIA RTX 4090 receives front-camera images and pose signals",
+"url": "https://arxiv.org/html/2509.19480"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "RING (The One RING)",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "언어 지정 물체 목표 내비게이션 (교차 엠바디먼트)",
+"발표": "2024-12",
+"기관": "Allen Institute for AI·University of Washington",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "고정 SigLIP-ViT-B/16 이미지·텍스트 인코더(768→512 투영) → 트랜스포머 상태 인코더 3층 + 인과 트랜스포머 디코더 3층(512차원·8헤드, 컨텍스트 100스텝) → 선형 actor-critic 헤드: 공통 이산 행동(MoveBase ±20cm, RotateBase ±6°·±30°, Done)",
+"핵심 특징": "시뮬에서 카메라 위치·화각·충돌체 크기 등을 무작위화한 100만 개 엠바디먼트의 전문가 궤적으로 모방학습한 뒤 DD-PPO로 RL 미세조정해 형상에 무관한 실내 물체 탐색 정책을 만든다. 시뮬 5개 엠바디먼트 평균 성공률 72.1%, 실제 Stretch RE-1·LoCoBot·Go1 등 4개 플랫폼에서 제로샷 78.9%를 기록했다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "H100 80GB 8장 (IL)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "80k 반복 · 배치 240 궤적(표 10은 224), 컨텍스트 100스텝",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "DD-PPO RL 미세조정: H100 8장 × 4대, 40M 스텝(병렬 환경 64·롤아웃 128), 시간 미공개",
+"추론": "미공개 (사람 평가에서는 서버가 정책 실행)",
+"태스크·벤치마크": "시뮬 ObjectNav 5개 엠바디먼트 평균 성공률 72.1% (FLaRe 44.8%, PoliFormer 55.4%, SPOC-2.3M 35.5%; CHORES-S 16.7%p 향상); 실세계 Stretch 83.3%·Stretch(공장 구성) 72.2%·LoCoBot 80.0%·Go1 80.0% (평균 78.9%)",
+"로봇·엠바디먼트": "실세계: Stretch RE-1(2가지 카메라 구성)·LoCoBot 바퀴형, Unitree Go1 사족, RB-Y1 바퀴형 휴머노이드(정성 평가); 시뮬: Stretch·LoCoBot·Unitree A1 등",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "무작위 엠바디먼트 100만 개·ProcTHOR 집 50k의 전문가 궤적 (서론은 150k 집 언급)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "ProcTHOR 절차 생성 집 + Objaverse 물체 (AI2-THOR); HF allenai/ring-data",
+"비고": "목록 외 추가: 2024–2026 교차 엠바디먼트·언어 목표 내비 일반화 정책의 대표 사례. IL 배치 본문 240·표 10 224, RL lr 본문 2e-5·표 10 2e-4 불일치. 파라미터·학습 시간·추론 장치 미공개. HF 체크포인트 587MB(ring_model_step_40356421).",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2412.14401"
+},
+"fields": {
+"v": "SigLIP-ViT-B/16 (고정)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"txt": "SigLIP 텍스트 인코더 (고정)",
+"t": "트랜스포머 상태 인코더 3층 + 인과 디코더 3층 (512차원)",
+"h": "선형 actor-critic 헤드 (이산 행동 로짓 + 가치)",
+"hk": "이산 토큰",
+"ck": "없음 (1스텝 이산 행동)",
+"hz": "미공개",
+"dep": null,
+"inp": "RGB(카메라 2대) · 언어 지시",
+"tags": [
+"교차 엠바디먼트",
+"언어 목표",
+"RL 미세조정",
+"시뮬 학습"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"전문가 궤적 모방학습 후 DD-PPO로 정책 자체를 RL 미세조정 (40M 스텝)",
+"https://arxiv.org/html/2412.14401v2"
+],
+"paper": {
+"k": "논문",
+"id": "2412.14401",
+"t": "The One RING: a Robotic Indoor Navigation Generalist",
+"u": "https://arxiv.org/abs/2412.14401",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행"
+],
+"how": "모든 엠바디먼트 공통 이산 행동(MoveBase ±20cm·RotateBase ±6°/±30°·Done)을 내면 로봇별 하위 제어기가 실행",
+"cat": "이산 이동 행동"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "Training is conducted on 8× H100 GPUs (80 GB each)",
+"url": "https://arxiv.org/pdf/2412.14401"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "for 80k iterations",
+"url": "https://arxiv.org/html/2412.14401v2"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "We use a batch size of 240 trajectories",
+"url": "https://arxiv.org/html/2412.14401v2"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "finetuning with RL for an additional 40M steps on the randomized embodiments",
+"url": "https://arxiv.org/html/2412.14401v2"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "We use DD-PPO with 64 parallel environments and 128 rollout steps across 4 machines",
+"url": "https://arxiv.org/html/2412.14401v2"
+},
+{
+"field": "데이터 규모",
+"quote": "expert trajectories collected from 1M randomized embodiments across 50k procedurally generated PROC-THOR houses",
+"url": "https://arxiv.org/html/2412.14401v2"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "72.1% average success rate across 5 simulated embodiments",
+"url": "https://arxiv.org/html/2412.14401v2"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "78.9% across 4 realworld platforms, including Stretch RE-1, LoCoBot, and Unitree Go1",
+"url": "https://arxiv.org/html/2412.14401v2"
+}
+],
+"_src": "out_n1.jsonl"
+},
+{
+"row": {
+"모델": "NavDP",
+"구분": "내비게이션",
+"유형": "VA",
+"도메인": "내비게이션 (지도 없는 국소 계획: 점·이미지 목표, 무목표 탐색)",
+"발표": "2025-05",
+"기관": "Shanghai AI Laboratory·Tsinghua University·Zhejiang University·The University of Hong Kong",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "RGB는 사전학습 DepthAnything ViT, 깊이는 스크래치 ViT로 인코딩 → 트랜스포머 디코더가 RGB-D 512토큰을 16개 융합 토큰으로 압축 → 2층 트랜스포머 인코더(정책·critic 공유) → 조건부 U-Net·DDPM diffusion 헤드가 24스텝 웨이포인트(Δx,Δy,Δω) 배치 생성, critic(궤적은 1D conv 인코딩)이 점수화해 최선 궤적 선택; 궤적 중간점×비례계수로 선속도·각속도 산출, >10 Hz",
+"핵심 특징": "시뮬레이션 데이터만으로 RGB-D 관측에서 궤적 생성(diffusion)과 궤적 평가(critic)를 한 트랜스포머로 함께 학습하며, critic은 시뮬 특권 정보(전역 ESDF)로 만든 대조 음성 궤적으로 학습한다. 실로봇 데이터 없이 사족·바퀴형·휴머노이드에 제로샷 이전되고, Gaussian Splatting real-to-sim 데이터(약 4k 궤적)를 더하면 실환경 성공률이 50%에서 80%로 오른다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "real-to-sim 데이터(3DGS 실험실 재구성, 약 4k 궤적) 추가 학습: 방식·가속기·시간 미공개",
+"추론": "GeForce RTX 5080 노트북 GPU에서 >10 Hz 실시간 추론; 로봇 최대 2.0 m/s; 지연(ms)·메모리 미공개",
+"태스크·벤치마크": "자체 IsaacSim 벤치(Dingo·Go2·R1) PointNav 시뮬 SR 81.3/83.0/75.0%, 시뮬·real-to-sim 6개 설정 평균 mSR 70.4·mSPL 58.6(ViPlanner 65.6·55.4); 무목표 탐색·ImageNav; 실로봇 제로샷, in-domain real-to-sim 데이터 추가 시 실환경 성공률 50%→80%; 시뮬 무목표 탐색 면적 Dingo 280.2·Go2 359.1·R1 300.4 (NoMaD 119.2·36.9·57.9, ViNT 38.4·37.7·61.3)",
+"로봇·엠바디먼트": "실로봇 Unitree Go2 사족, Galaxea R1, Unitree G1 휴머노이드; 시뮬 ClearPath Dingo(2륜 차동)·Go2·R1",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "궤적 56,000개 이상·RGB-D 이미지 1,000만 장·363.2 km·1,244개 장면(본문; arXiv 초록 메타데이터는 '100만 m 이상·3,000개 장면'); GPU당 하루 약 2,500 궤적 생성; real-to-sim 약 4k 궤적",
+"데이터 시간(h)": null,
+"주요 데이터셋": "자체 시뮬 생성 데이터(3D-Front 1,176개·Matterport3D 68개 장면); 3DGS 실험실 재구성(real-to-sim)",
+"비고": "학습 GPU·시간·스텝·배치·파라미터 수 모두 미공개(본문·부록). 데이터 규모 상충: 본문·PDF·HF 초록은 363.2 km·1,244개 장면, 현재 arXiv 초록 메타데이터는 '100만 m 이상·3,000개 장면'. 체크포인트는 Google Form 신청 후 제공(README상 InternVLA-N1 System-1 모델), 코드 CC BY-NC-SA 4.0. RL 사후학습판 X-NavDP(2607.28560)는 별도 논문.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2505.08712"
+},
+"fields": {
+"v": "DepthAnything ViT (RGB, 사전학습) + 스크래치 ViT (깊이)",
+"l": "없음",
+"lb": null,
+"fam": "없음",
+"t": "융합 트랜스포머 디코더(512→16토큰) + 2층 트랜스포머 인코더",
+"h": "웨이포인트 diffusion 헤드 (조건부 U-Net·DDPM) + critic 선택",
+"hk": "diffusion",
+"ck": "웨이포인트 24개",
+"hz": ">10 Hz",
+"dep": "RTX 5080 노트북 GPU",
+"mc": true,
+"inp": "RGB-D 관측 · 목표(점·이미지·무목표)",
+"pipe": [
+[
+"in",
+"RGB-D · 목표",
+""
+],
+[
+"vis",
+"DepthAnything·깊이 ViT",
+"16개 융합 토큰"
+],
+[
+"pol",
+"2층 트랜스포머",
+"정책·critic 공유"
+],
+[
+"head",
+"diffusion 헤드 + critic",
+"웨이포인트 24개 생성·선택"
+],
+[
+"ctrl",
+"비례 속도 변환",
+"선속도·각속도"
+],
+[
+"out",
+"바퀴형·사족·휴머노이드",
+""
+]
+],
+"tags": [
+"내비게이션",
+"diffusion",
+"sim-to-real",
+"교차 엠바디먼트"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"NavDP 자체는 모방학습(diffusion) + 시뮬 특권 정보(전역 ESDF) 기반 critic 지도학습; 시뮬 Go2 사족은 RL로 학습된 보행 정책이 궤적을 추종",
+"https://arxiv.org/html/2505.08712v3"
+],
+"paper": {
+"k": "논문",
+"id": "2505.08712",
+"t": "NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance",
+"u": "https://arxiv.org/abs/2505.08712",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행",
+"휴머노이드 보행"
+],
+"how": "정책이 24스텝 웨이포인트 출력 → 궤적 중간점×비례계수로 선속도·각속도 변환해 베이스 명령",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "데이터 규모",
+"quote": "results in a large-scale navigation dataset with 363.2km trajectories across 1244 scenes",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "데이터 규모",
+"quote": "our dataset comprises over 56,000 trajectories and 10 million rendered RGB-D images",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "데이터 규모",
+"quote": "over one million meters of navigation experience across 3,000 scenes",
+"url": "https://arxiv.org/abs/2505.08712"
+},
+{
+"field": "데이터 규모",
+"quote": "about 2,500 trajectories/GPU per day",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "백본·액션 표현",
+"quote": "Our diffusion policy head generates 24-step future waypoints",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "추론",
+"quote": "our end-to-end policy can achieve real-time inference (>10Hz) with a GeForce RTX 5080 laptop",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "generate a small proportion of in-domain navigation data (~4k trajectories)",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "the success rate in real-world evaluation increases from 50% to 80%",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "가중치 공개",
+"quote": "Please fill this form to access the link to download the latest model checkpoint.",
+"url": "https://github.com/InternRobotics/NavDP"
+},
+{
+"field": "데이터 규모",
+"quote": "our dataset comprises over 56,000 trajectories and 10 million rendered RGB-D images",
+"url": "https://arxiv.org/html/2505.08712v1"
+},
+{
+"field": "데이터 규모",
+"quote": "results in a large-scale navigation dataset with 363.2km trajectories across 1244 scenes",
+"url": "https://arxiv.org/html/2505.08712v1"
+},
+{
+"field": "추론",
+"quote": "our end-to-end policy can achieve real-time inference (>10Hz) with a GeForce RTX 5080 laptop",
+"url": "https://arxiv.org/html/2505.08712v1"
+},
+{
+"field": "추론",
+"quote": "The robot can operate at a maximum speed at 2.0m/s.",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "백본·액션 표현",
+"quote": "generates 24-step future waypoints by predicting a sequences of relative pose change",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "we deploy our trained NavDP policy without any fine-tuning on three real robots",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "generate a small proportion of in-domain navigation data (~4k trajectories)",
+"url": "https://arxiv.org/html/2505.08712v3"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "the success rate in real-world evaluation increases from 50% to 80%",
+"url": "https://arxiv.org/html/2505.08712v3"
+}
+],
+"_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "NaVid",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "시각-언어 내비게이션(VLN)",
+"발표": "2024-02",
+"기관": "Peking University·BAAI·CASIA·University of Adelaide·Australian National University·Galbot",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "EVA-CLIP 비전 인코더 + 지시 질의 토큰·지시 무관 토큰(현재 프레임 64개, 과거 프레임당 4개) + Vicuna-7B (LLaMA-VID 기반); 다음 1개 행동을 텍스트로 출력(FORWARD+이동 거리, TURN-LEFT/RIGHT+회전 각도, STOP), 정규식 파서로 추출; 단안 RGB 영상만 입력, 행동당 1.2–1.5초",
+"핵심 특징": "단안 RGB 영상 이력과 언어 지시만으로 다음 행동을 언어로 출력하는 영상 VLM 기반 VLN 에이전트로, 지도·오도메트리·깊이 없이 연속 환경(VLN-CE)에서 동작한다. 시뮬 510k 샘플과 웹 데이터 763k로 공동학습해 R2R-CE SR 37.4%와 실내 200개 지시 실로봇 시험에서 sim-to-real 일반화를 보였다.",
+"파라미터": "7B (Vicuna-7B 기반; 전체 수치 미기재)",
+"파라미터(B)": 7,
+"사전학습 가속기": "A100 24장 (LLaMA-VID 가중치에서 NaVid 학습)",
+"사전학습 기간": "약 28시간",
+"사전학습 스텝·배치": "1 에폭 (배치 미공개)",
+"사전학습 GPU·TPU-시간": 672,
+"시간 근거·단위": "명시 · A100-시간 (\"totaling 672 GPU hours\")",
+"파인튜닝 가속기·시간": "해당 없음 (내비게이션·웹 데이터 단일 공동학습 단계)",
+"추론": "원격 서버 A100 1장에서 실행, 로봇은 압축 이미지 전송·파싱된 명령 수신; 행동당 약 1.2–1.5초; 메모리 미공개",
+"태스크·벤치마크": "R2R-CE val-unseen SR 37.4%·SPL 35.9%·NE 5.47; RxR-CE 교차 데이터셋(R2R 학습) SR 23.8%·SPL 21.2%; 실내 4개 장면(Meeting room·Office·Lab·Lounge) 단순·복합 지시 총 200건 실로봇 시험",
+"로봇·엠바디먼트": "TurtleBot 4 바퀴형 + Azure Kinect DK (모델은 RGB만 사용; LiDAR·Nav2는 오도메트리 필요한 기준 모델용)",
+"데이터 종류": "시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "내비게이션 510k 샘플(MP3D 61개 장면 오라클 스텝 320k + 비오라클 180k + 지시 추론 보조 10k 궤적) + 웹 데이터 763k(영상 캡션 등)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "VLN-CE R2R (MP3D 61개 장면); 웹 영상-캡션 데이터 763k (세부 출처 미기재)",
+"비고": "README 공개 체크포인트(HF Jzzhang/NaVid, CC BY-NC 4.0)는 R2R·RxR 학습 분할로 Uni-NaVid 학습 전략에 따라 재학습한 버전으로 R2R val SR 41.9%·RxR val SR 45.7%(README 표)이며 논문 수치와 다름; 평가 코드 공개; 사전학습 칸은 LLaMA-VID 초기화 후 NaVid 학습 단계(LLaMA·텍스트 인코더만 학습) 기준; 배치·학습률 미공개; RSS 2024. 기반: LLaMA-VID: An Image is Worth 2 Tokens in Large Language Models (arXiv 2311.17043) — 논문이 영상 VLM LLaMA-VID 위에 구축했다고 명시",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2402.15852"
+},
+"fields": {
+"v": "EVA-CLIP (EVA-ViT-G 가중치)",
+"l": "Vicuna-7B · LLaMA-VID 구성",
+"lb": 7,
+"fam": "Llama",
+"h": "다음 행동 텍스트 (FORWARD+거리 · TURN+각도 · STOP, 정규식 파싱)",
+"hk": "이산 토큰",
+"ck": "없음 (1스텝)",
+"hz": "행동당 1.2–1.5초",
+"dep": "원격 서버 (A100)",
+"inp": "RGB 영상 · 언어 지시",
+"tags": [
+"VLN",
+"영상 VLM",
+"이산 행동"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(SFT)만; 비오라클 궤적 데이터 수집 포함",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2402.15852",
+"t": "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation",
+"u": "https://arxiv.org/abs/2402.15852",
+"n": "RSS 2024"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "VLM이 이산 행동(전진 거리·회전 각도·정지)을 텍스트로 출력 → 로봇이 명령을 실행하며 회전·전진 추종 확인",
+"cat": "이산 이동 행동"
+},
+"evidence": [
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "NaVid is trained on a cluster server with 24 NVIDIA A100 GPUs for approximately 28 hours, totaling 672 GPU hours.",
+"url": "https://arxiv.org/abs/2402.15852"
+},
+{
+"field": "파라미터",
+"quote": "We build NaVid on top of a general-purpose video-based VLM named LLaMA-VID",
+"url": "https://arxiv.org/abs/2402.15852"
+},
+{
+"field": "백본·액션 표현",
+"quote": "we set the number of instruction-agnostic tokens to 64 for the current frame while 4 for each historical frame",
+"url": "https://arxiv.org/abs/2402.15852"
+},
+{
+"field": "데이터 규모",
+"quote": "We train NaVid with 510k navigation samples collected from continuous environments",
+"url": "https://arxiv.org/abs/2402.15852"
+},
+{
+"field": "데이터 규모",
+"quote": "along with 763k large-scale web data",
+"url": "https://arxiv.org/abs/2402.15852"
+},
+{
+"field": "추론",
+"quote": "During navigation, the agent requires about 1.2 to 1.5 seconds to output one action per frame.",
+"url": "https://arxiv.org/abs/2402.15852"
+},
+{
+"field": "추론",
+"quote": "NaVid is deployed on a server with an A100 GPU, which receives compressed images from the robot",
+"url": "https://arxiv.org/abs/2402.15852"
+},
+{
+"field": "가중치 공개",
+"quote": "download the [finetuned NaVid model](https://huggingface.co/Jzzhang/NaVid/tree/main)",
+"url": "https://github.com/jzhzhang/NaVid-VLN-CE"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "Uni-NaVid",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "범용 내비게이션 (VLN·ObjectNav·EQA·사람 추종)",
+"발표": "2024-12",
+"기관": "Peking University·Galbot·BAAI",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "EVA-CLIP + 2층 MLP 프로젝터 + Vicuna-7B (LLaMA-VID·NaVid 계열); 온라인 시각 토큰 병합(현재 64개·단기 메모리 4개·장기 메모리 1개/프레임 그룹); 다음 4개 이산 행동 토큰(FORWARD 25 cm·TURN-LEFT/RIGHT 30°·STOP) 또는 텍스트 답변(EQA); 원격 A100에서 약 5 Hz",
+"핵심 특징": "VLN·ObjectNav·EQA·사람 추종 4개 내비게이션 과제의 입출력 형식을 통일해 하나의 영상 VLA로 학습하고, 온라인 토큰 병합과 4스텝 행동 예측으로 약 5 Hz 비차단 실배포를 구현했다. 3.6M 내비게이션 샘플의 과제 간 시너지로 R2R-CE SR 47.0%, HM3D ObjectNav SR 73.7% 등 여러 벤치마크에서 당시 최고 수준을 보고했다.",
+"파라미터": "7B (Vicuna-7B 기반; 전체 수치 미기재)",
+"파라미터(B)": 7,
+"사전학습 가속기": "H800 40장",
+"사전학습 기간": "약 35시간",
+"사전학습 스텝·배치": "1 에폭 (배치 미공개)",
+"사전학습 GPU·TPU-시간": 1400,
+"시간 근거·단위": "명시 · H800-시간 (\"totaling 1400 GPU hours\")",
+"파인튜닝 가속기·시간": "해당 없음 (2단계 학습: 1단계 프로젝터만 정렬 학습·2단계 내비·영상 QA 공동학습; README는 Uni-NaVid 기반 추가 미세조정 스크립트 제공)",
+"추론": "원격 서버 A100 1장에서 추론 약 0.2초(약 5 Hz) + 인터넷 통신(이미지 전송·명령 수신) 약 0.3초; README는 양자화 시 추가 가속 가능하다고 언급; 메모리 미공개",
+"태스크·벤치마크": "R2R-CE val-unseen SR 47.0%·SPL 42.7%; RxR-CE SR 48.7%·SPL 40.9%; HM3D ObjectNav SR 73.7%·SPL 37.1%; MP3D-EQA ACC 47.3%(GT 궤적 시 54.4%); 사람 추종(Habitat 3.0 자체 벤치) SR 61.21%; 실세계 복합 지시 시연",
+"로봇·엠바디먼트": "Unitree Go2 사족 + 머리 장착 RealSense D455 (모델 입력은 단안 RGB; 내장 LiDAR-L1은 국소 모션 계획 전용)",
+"데이터 종류": "시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "내비게이션 3.6M 샘플(VLN 2.4M, ObjectNav 483k, EQA 영상-행동 240k + 영상-답변 10k, 사람 추종 544k) + 영상 QA 2.3M",
+"데이터 시간(h)": null,
+"주요 데이터셋": "VLN-CE R2R·RxR; HM3D ObjectNav; MP3D-EQA; Habitat 3.0 사람 추종(자체 수집); 공개 영상 QA 2.3M",
+"비고": "공개 가중치(HF Jzzhang/Uni-NaVid, uninavid-7b-full-224-video-fps-1-grid-2)는 라이선스 문제로 일부 기능을 재작성한 오픈소스 버전이며 ObjectNav용 L3MVN 데이터 미사용; README 표 R2R val SR 51.8%·RxR val SR 56.1%는 논문 수치와 다름; 학습·평가 코드 공개; 배치·학습률 미공개; RSS 2025. 기반: NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation (arXiv 2402.15852) — README: 코드가 LLaMA-VID·NaVid 기반",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2412.06224"
+},
+"fields": {
+"v": "EVA-CLIP",
+"l": "Vicuna-7B",
+"lb": 7,
+"fam": "Llama",
+"h": "이산 행동 토큰 4개 (전진 25 cm · 좌우 회전 30° · 정지) 또는 텍스트 답변",
+"hk": "이산 토큰",
+"ck": "행동 4개",
+"hz": "약 5 Hz (추론 0.2초)",
+"dep": "원격 서버 (A100)",
+"inp": "RGB 영상 · 언어 지시",
+"tags": [
+"다중 과제",
+"토큰 병합",
+"이산 행동"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(SFT)만",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2412.06224",
+"t": "Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks",
+"u": "https://arxiv.org/abs/2412.06224",
+"n": "RSS 2025"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 이산 행동 4개(전진 25 cm·회전 30°·정지)를 출력 → 로봇이 비차단 방식으로 순차 실행 (LiDAR는 국소 모션 계획용)",
+"cat": "이산 이동 행동"
+},
+"evidence": [
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "Uni-NaVid is trained on a cluster server with 40 NVIDIA H800 GPUs for approximately 35 hours, totaling 1400 GPU hours.",
+"url": "https://arxiv.org/abs/2412.06224"
+},
+{
+"field": "파라미터",
+"quote": "Vicuna-7B",
+"url": "https://arxiv.org/abs/2412.06224"
+},
+{
+"field": "백본·액션 표현",
+"quote": "the forward action corresponds to a movement of 25 cm",
+"url": "https://arxiv.org/abs/2412.06224"
+},
+{
+"field": "백본·액션 표현",
+"quote": "the turning actions represent a 30◦rotation",
+"url": "https://arxiv.org/abs/2412.06224"
+},
+{
+"field": "데이터 규모",
+"quote": "we collect 3.6 million navigation data samples across different navigation tasks",
+"url": "https://arxiv.org/abs/2412.06224"
+},
+{
+"field": "데이터 규모",
+"quote": "using 2.3M video question-answering data from publicly available datasets",
+"url": "https://arxiv.org/abs/2412.06224"
+},
+{
+"field": "추론",
+"quote": "achieving an average of 0.2 seconds per inference",
+"url": "https://arxiv.org/abs/2412.06224"
+},
+{
+"field": "추론",
+"quote": "Our model is deployed on a remote server equipped with an NVIDIA A100 GPU.",
+"url": "https://arxiv.org/pdf/2412.06224v1"
+},
+{
+"field": "추론",
+"quote": "requiring approximately 0.2 seconds for inference, while Internet communication (image transmission and command reception) takes about 0.3 seconds.",
+"url": "https://arxiv.org/pdf/2412.06224v1"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "Our robotic dog is Unitree GO2 and we mount a RealSense D455 camera on the head of the robotic dog.",
+"url": "https://arxiv.org/pdf/2412.06224v1"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "NaVILA",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "다리형 로봇 시각-언어 내비게이션(VLN)",
+"발표": "2024-12",
+"기관": "UC San Diego·USC·NVIDIA",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "VILA 기반 8B VLM (README 체크포인트명: SigLIP 비전 인코더 + Llama 3 8B) + MLP 프로젝터, 프레임당 196토큰·실배포 8프레임 메모리; 중간 수준 언어 행동('move forward 75 cm', 'turn right 30 degrees', 'stop') → 고정 속도(0.5 m/s, ±π/6 rad/s, 0)로 해당 시간만큼 실행 → RL 보행 정책(LiDAR 높이맵 + 고유감각)이 관절 위치 목표 출력",
+"핵심 특징": "VLA가 저수준 관절 명령 대신 거리·각도를 담은 중간 수준 언어 행동을 출력하고, LiDAR 높이맵을 쓰는 RL 보행 정책이 이를 장애물 회피와 함께 실행하는 2단계 구조다. YouTube 투어 영상 2K개에서 만든 궤적 20K를 포함한 데이터로 학습해 R2R-CE SR 54.0%를 내고 실세계 25개 지시에서 성공률 88%를 보였다.",
+"파라미터": "8B (NaVILA-8B)",
+"파라미터(B)": 8,
+"사전학습 가속기": "A100 4노드 (VLA instruction-tuning 단계; VILA 상속 1·2단계는 A100 16노드, 노드당 8 GPU)",
+"사전학습 기간": "18시간 (instruction-tuning 단계)",
+"사전학습 스텝·배치": "1 에폭 (lr 1e-4 코사인 감쇠·warm-up 0.03; 배치 미공개)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (최종 단계 GPU 수 미명시: 'A100 4노드 × 18시간')",
+"파인튜닝 가속기·시간": "VLA 별도 미세조정 없음; RL 보행 정책은 Isaac Lab PPO, RTX 4090 1장에서 60K FPS 이상 처리량 (학습 시간 미공개)",
+"추론": "VLA는 RTX 4090 1장에서 약 1 FPS; FP16 594.58 ms·18.5 GB, AWQ W4A16 367.80 ms·8.6 GB (1,737 컨텍스트 토큰); 실행 위치 미명시(양자화로 로봇 직접 배포 시 이미지 전송 시간을 없앨 수 있다고 언급)",
+"태스크·벤치마크": "R2R-CE val-unseen SR 54.0%·SPL 49.0%; RxR-CE SR 49.3%·SPL 44.0%; 자체 VLN-CE-Isaac 벤치(R2R val-unseen 1,077 궤적) 도입; 실세계 Workspace·Home·Outdoor 25개 지시×3회 SR 88%, 복합 지시 75%",
+"로봇·엠바디먼트": "Unitree Go2 사족(LiDAR); Unitree H1·Booster T1 휴머노이드",
+"데이터 종류": "시뮬레이션·합성 / 웹 영상 / 웹 비전-언어",
+"데이터 규모": "YouTube 1인칭 투어 영상 2K개 → 궤적 20K(MASt3R 자세 추정으로 행동 라벨); R2R·RxR·EnvDrop·ScanQA·일반 VQA 규모는 미기재",
+"데이터 시간(h)": null,
+"주요 데이터셋": "R2R-CE; RxR-CE; R2R-EnvDrop; ScanQA; YouTube Human Touring(자체); 일반 영상 VQA(video_chatgpt·sharegpt_video·sharegpt4v_sft, README)",
+"비고": "LLM·비전 인코더 명칭은 논문 미기재, README 체크포인트명(navila-siglip-llama3-8b-v1.5-pretrain, navila-llama3-8b-8f) 기준; VILA 1·2단계(커넥터 초기화 4시간·VL 사전학습 30시간)는 상속; RL 보행 정책 제어 주파수 미기재(LiDAR 15 Hz); 가중치·학습 코드·데이터 주석 공개(YouTube 원본은 영상 ID만); RSS 2025. 기반: VILA: On Pre-training for Visual Language Models (arXiv 2312.07533) — 논문이 VILA 위에 구축하고 1·2단계를 VILA에서 상속했다고 명시",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2412.04453"
+},
+"fields": {
+"v": "SigLIP (README 체크포인트명)",
+"l": "Llama 3 8B · VILA 구성 (README 체크포인트명)",
+"lb": 8,
+"fam": "Llama",
+"h": "중간 언어 행동 텍스트 (전진 cm · 회전 도 · 정지) → 고정 속도 명령",
+"hk": "이산 토큰",
+"ck": "없음 (1스텝)",
+"hz": "VLA 약 1 FPS (RTX 4090)",
+"dep": "RTX 4090 1장 (로봇 탑재 여부 미명시)",
+"mem": "18.5 GB (FP16)",
+"mg": 18.5,
+"mq": [
+[
+"W4A16",
+8.6
+]
+],
+"mc": true,
+"inp": "RGB 영상 · 언어 지시",
+"pipe": [
+[
+"in",
+"RGB 영상 · 언어 지시",
+""
+],
+[
+"vis",
+"SigLIP 인코더",
+"프레임당 196토큰"
+],
+[
+"llm",
+"VLA (VILA 8B)",
+"중간 언어 행동 출력"
+],
+[
+"pol",
+"고정 속도 명령 변환",
+"0.5 m/s · ±π/6 rad/s"
+],
+[
+"ctrl",
+"RL 보행 정책 (PPO)",
+"높이맵 → 관절 위치"
+],
+[
+"out",
+"사족·휴머노이드 이동",
+""
+]
+],
+"tags": [
+"VLN",
+"사족보행",
+"휴머노이드",
+"RL 하위 제어기"
+]
+},
+"rl": [
+"일부",
+"RL 하위 제어기 결합",
+"VLA는 SFT, 하위 보행 정책은 Isaac Lab에서 PPO로 학습(LiDAR 높이맵, 관절 위치 출력)",
+"https://arxiv.org/abs/2412.04453"
+],
+"paper": {
+"k": "논문",
+"id": "2412.04453",
+"t": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+"u": "https://arxiv.org/abs/2412.04453",
+"n": "RSS 2025"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행",
+"휴머노이드 보행"
+],
+"how": "VLA가 중간 언어 명령(거리·각도·정지) 출력 → 고정 속도 명령으로 변환 → RL 보행 정책이 관절 위치 제어",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "The final visual instruction-tuning stage is experimented on 4 A100 GPU nodes, taking 18 hours.",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "사전학습 가속기",
+"quote": "The first two stages of NaVILA are inherited from VILA [13], which is trained on 16 A100 GPU nodes,",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "파라미터",
+"quote": "The training times for each stage of our 8B model are as follows:",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "추론",
+"quote": "the VLA model in NaVILA can be served using a single RTX 4090 GPU with roughly 1 FPS.",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "추론",
+"quote": "NaVILA (FP16) 594.58 18.5",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "추론",
+"quote": "NaVILA (W4A16) 367.80 8.6",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "데이터 규모",
+"quote": "2K egocentric touring videos from YouTube",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "our vision-based RL policy training achieves a high throughput over 60K FPS on an RTX 4090 GPU.",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "백본·액션 표현",
+"quote": "For real-world experiments, we use an 8-frame memory size due to latency constraints.",
+"url": "https://arxiv.org/abs/2412.04453"
+},
+{
+"field": "fields.l",
+"quote": "Download the checkpoint from [a8cheng/navila-llama3-8b-8f]",
+"url": "https://github.com/AnjieCheng/NaVILA"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "Mobility VLA",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "멀티모달 지시 내비게이션(MINT)",
+"발표": "2024-07",
+"기관": "Google DeepMind",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "상위: Gemini 1.5 Pro 장문맥 VLM이 투어 영상 948프레임(1 Hz) 전체 + 멀티모달 지시를 받아 목표 프레임 인덱스 출력(질의당 10–30초, 클라우드) / 하위: COLMAP 기반 위상 그래프 최단경로 → 로봇 중심 웨이포인트 행동(Δx, Δy, Δθ) → MPC 추종; 하위 정책 0.19초/스텝(시뮬)",
+"핵심 특징": "환경 시연 투어 영상 전체를 장문맥 VLM(Gemini 1.5 Pro)에 넣어 텍스트·이미지 지시에 맞는 목표 프레임을 찾고, 같은 투어로 만든 위상 그래프로 저수준 웨이포인트를 계획하는 학습 없는 계층형 내비게이션 정책이다. 836 m² 실제 사무실에서 추론 필요·멀티모달 지시의 목표 탐색 성공률 86%·90%를 보고해 기존 방법보다 각각 26%·60% 높였다.",
+"파라미터": "미공개 (Gemini 1.5 Pro)",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음 (학습 없음, Gemini 1.5 Pro API 사용)",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "해당 없음",
+"추론": "VLM은 클라우드 실행(호출마다 투어 이미지 948장 업로드), 목표 인덱스 탐색 질의당 10–30초; 하위 정책 0.19±0.047초/스텝(시뮬); 온보드 연산 요구는 적음",
+"태스크·벤치마크": "실사무실 목표 탐색 SR: 추론 불필요 95%·추론 필요 86%·작은 물체 42%·멀티모달 90%(Table 3); 종단 SR 80%·80%·40%·85%, SPL 0.59·0.69·0.38·0.64(Table 2, 범주별 지시 5개×시작점 4개); 시뮬 종단 SR 90%·SPL 0.84; 가정형 환경(스마트폰 투어) 시험",
+"로봇·엠바디먼트": "바퀴형 모바일 매니퓰레이터(기종 미기재), RGB 카메라만 사용",
+"데이터 종류": "실로봇 텔레옵",
+"데이터 규모": "학습 데이터 없음; 환경 문맥으로 게임패드 원격조작 투어 영상 948프레임(약 16분, 1 Hz) 사용",
+"데이터 시간(h)": null,
+"주요 데이터셋": "학습 데이터셋 없음; 자체 MINT 지시(크라우드소싱 57개 등) 평가",
+"비고": "86%·90%는 목표 탐색률(Table 3)이고 종단 성공률(Table 2)은 추론 필요 80%·멀티모달 85%로 서술과 차이; 아키텍처는 Gemini 1.5 보고서의 MoE 트랜스포머 기술 기준; Gemini 파라미터·추론 하드웨어 비공개; 코드·가중치 미공개.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2407.07775"
+},
+"fields": {
+"v": "Gemini 1.5 Pro 내장 (세부 미공개)",
+"l": "Gemini 1.5 Pro (클라우드 API)",
+"lb": null,
+"fam": "Gemini",
+"h": "목표 프레임 인덱스 → 위상 그래프 웨이포인트 (Δx · Δy · Δθ)",
+"hk": "기타",
+"ck": "없음 (1스텝 웨이포인트)",
+"hz": "상위 질의당 10–30초 · 하위 0.19초/스텝(시뮬)",
+"dep": "클라우드 (Gemini 1.5 Pro) + 로봇 MPC",
+"inp": "투어 영상 · 멀티모달 지시(텍스트·이미지)",
+"pipe": [
+[
+"in",
+"투어 영상 · 멀티모달 지시",
+""
+],
+[
+"llm",
+"Gemini 1.5 Pro",
+"목표 프레임 선택 · 10–30초"
+],
+[
+"pol",
+"위상 그래프 (COLMAP)",
+"최단경로 웨이포인트"
+],
+[
+"ctrl",
+"MPC 추종",
+"Δx · Δy · Δθ"
+],
+[
+"out",
+"바퀴형 베이스 이동",
+""
+]
+],
+"tags": [
+"멀티모달 지시",
+"장문맥 VLM",
+"위상 그래프",
+"학습 없음"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"학습 없음 (Gemini 1.5 Pro 제로샷 + 위상 그래프 계획)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2407.07775",
+"t": "Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs",
+"u": "https://arxiv.org/abs/2407.07775",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "VLM이 목표 프레임 선택 → 위상 그래프 경로의 웨이포인트(Δx·Δy·Δθ)를 MPC로 추종",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "We use Gemini 1.5 Pro [17] as our long-context multimodal VLM.",
+"url": "https://arxiv.org/abs/2407.07775"
+},
+{
+"field": "추론",
+"quote": "spends 10-30s to find a goal index",
+"url": "https://arxiv.org/abs/2407.07775"
+},
+{
+"field": "추론",
+"quote": "the onboard compute requirement is light (VLMs run on clouds) and only requires RGB camera observations.",
+"url": "https://arxiv.org/abs/2407.07775"
+},
+{
+"field": "데이터 규모",
+"quote": "roughly 16 minutes long (948 frames @ 1Hz)",
+"url": "https://arxiv.org/abs/2407.07775"
+},
+{
+"field": "데이터 종류",
+"quote": "We collect the demonstration tour by teleoperating the robot with a gamepad.",
+"url": "https://arxiv.org/abs/2407.07775"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "We evaluated Mobility VLA in a 836m2real world environment",
+"url": "https://arxiv.org/abs/2407.07775"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The robot uses a MPC-based algorithm [23] to execute the waypoint action",
+"url": "https://arxiv.org/abs/2407.07775"
+},
+{
+"field": "아키텍처",
+"quote": "Gemini 1.5 Pro is a sparse mixture-of-expert (MoE) Transformer-based model",
+"url": "https://arxiv.org/abs/2403.05530"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "StreamVLN",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "시각-언어 내비게이션(VLN)",
+"발표": "2025-07",
+"기관": "Shanghai AI Laboratory·The University of Hong Kong·Zhejiang University·Shanghai Jiao Tong University",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "LLaVA-Video 7B (LLM Qwen2-7B) 기반 다중 턴 대화형 스트리밍; fast: 최근 N턴 슬라이딩 윈도우 KV 캐시 재사용, slow: 3D 복셀 기반 토큰 가지치기 메모리; 턴마다 이산 행동 텍스트 출력(↑ 전진 25 cm·←/→ 회전 15°·STOP, 코드 기본 4개)",
+"핵심 특징": "연속 영상을 다중 턴 대화로 처리하며 최근 대화는 슬라이딩 윈도우 KV 캐시로 재사용하고 과거 시각 정보는 3D 복셀 기반 토큰 가지치기 메모리로 압축하는 스트리밍 VLN 모델이다. 긴 영상에서도 지연을 낮게 유지하며 R2R-CE SR 56.4%(추가 VLN 데이터)를 기록하고 Unitree Go2 실로봇에서 실내·실외 지시를 수행했다.",
+"파라미터": "8.03B (HF safetensors; LLaVA-Video 7B 기반)",
+"파라미터(B)": 8.03,
+"사전학습 가속기": "A100 (장수 미공개)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "2단계: 오라클 VLN 궤적 1 에폭 → DAgger·VL 데이터 공동학습 1 에폭 추가; 스텝당 영상 클립 128개 (최대 lr LLM 2e-5·비전 인코더 5e-6)",
+"사전학습 GPU·TPU-시간": 1500,
+"시간 근거·단위": "명시 · A100-시간 (\"around 1500 A100 GPU hours\")",
+"파인튜닝 가속기·시간": "해당 없음 (실세계 배포용 체크포인트 별도 공개, 학습 연산 미공개)",
+"추론": "원격 워크스테이션 RTX 4090; 행동 4개 추론 평균 0.27초 + 통신 0.2초(실내)·1.0초(실외); Go2가 영상을 서버로 스트리밍; 메모리 미공개",
+"태스크·벤치마크": "R2R-CE val-unseen SR 52.8%·SPL 47.2% (추가 VLN 데이터 † SR 56.4%·SPL 50.2%); RxR-CE SR 48.6%·SPL 42.5% († SR 54.4%·SPL 45.4%); 실로봇 Go2 실내·실외 단순·장기 지시 수행",
+"로봇·엠바디먼트": "Unitree Go2 사족 + RealSense D455 (모델 입력 RGB; 깊이·오도메트리는 토큰 가지치기 역투영용)",
+"데이터 종류": "시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "VLN 영상 클립 450K(MP3D 60개 환경, R2R·R2R-EnvDrop·RxR) + ScaleVLN 부분집합 300K(다른 절 150k) + DAgger 240K + 영상 VQA 248K + MMC4 인터리브 230K; 혼합비 VLA 67%·일반 33%",
+"데이터 시간(h)": null,
+"주요 데이터셋": "R2R-CE; RxR-CE; R2R-EnvDrop; ScaleVLN(HM3D, VLN-CE 변환 부분집합); LLaVA-Video-178K; ScanQA·SQA3D; MMC4",
+"비고": "arXiv v2(2026-07) 기준; 본문 수치(R2R SR 56.9%·SPL 51.9%, RxR SR 52.9%·SPL 46.0%)와 Table I(56.4/50.2, 54.4/45.4)가 불일치; 행동 토큰 수 서술 불일치('8 action tokens' vs '0.27s for 4 actions'), 공식 코드 기본 num_future_steps=4; ScaleVLN 300K vs 150k 불일치; GPU 장수·기간 미공개; 코드·데이터·체크포인트 2종(벤치마크용·실세계용) 공개, CC BY-NC-SA 4.0. 기반: LLaVA-Video: Video Instruction Tuning With Synthetic Data (arXiv 2410.02713) — 논문·README가 LLaVA-Video 7B 위에 구축했다고 명시",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2507.05240"
+},
+"fields": {
+"v": "LLaVA-Video 내장 비전 인코더 (명칭 미기재)",
+"l": "Qwen2-7B · LLaVA-Video 7B 구성",
+"lb": 7,
+"fam": "Qwen",
+"h": "이산 행동 텍스트 (↑ 25 cm · ←/→ 15° · STOP), 턴당 4개",
+"hk": "이산 토큰",
+"ck": "행동 4개 (코드 기본값)",
+"hz": "행동 4개당 0.27초 (RTX 4090)",
+"dep": "원격 워크스테이션 (RTX 4090)",
+"inp": "RGB 영상 스트림 · 언어 지시",
+"tags": [
+"VLN",
+"스트리밍",
+"KV 캐시",
+"이산 행동"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(SFT) + DAgger 수집 데이터 공동학습",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2507.05240",
+"t": "StreamVLN: Streaming Vision-and-Language Navigation via SlowFast Context Modeling",
+"u": "https://arxiv.org/abs/2507.05240",
+"n": "v2 (2026-07-09) 기준"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 이산 행동 열(전진 25 cm·회전 15°·정지) 출력 → 로봇 클라이언트가 ROS2로 속도 명령 발행",
+"cat": "이산 이동 행동"
+},
+"evidence": [
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "Training is in around 1500 A100 GPU hours.",
+"url": "https://arxiv.org/abs/2507.05240"
+},
+{
+"field": "파라미터",
+"quote": "We build StreamVLN based on the LLaVA-Video [19] 7B model, which uses Qwen2-7B [34] as the language model.",
+"url": "https://arxiv.org/abs/2507.05240"
+},
+{
+"field": "파라미터",
+"quote": "\"total\": 8030345248",
+"url": "https://huggingface.co/mengwei0427/StreamVLN_Video_qwen_1_5_r2r_rxr_envdrop_scalevln_v1_3"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "Each training step processes 128 video clips.",
+"url": "https://arxiv.org/abs/2507.05240"
+},
+{
+"field": "데이터 규모",
+"quote": "we collect 450K samples (video clips) from 60 Matterport3D [22] (MP3D) environments",
+"url": "https://arxiv.org/abs/2507.05240"
+},
+{
+"field": "데이터 규모",
+"quote": "These DAgger-collected samples (240K)",
+"url": "https://arxiv.org/abs/2507.05240"
+},
+{
+"field": "추론",
+"quote": "We deploy StreamVLN on a remote workstation with an RTX 4090 GPU.",
+"url": "https://arxiv.org/abs/2507.05240"
+},
+{
+"field": "추론",
+"quote": "The averge inference (0.27s for 4 actions) and communication (0.2s for indoor and 1.0s for outdoor",
+"url": "https://arxiv.org/abs/2507.05240"
+},
+{
+"field": "백본·액션 표현",
+"quote": "TURN LEFT (←) or TURN RIGHT (→) by 15 degrees, MOVE FORWARD (↑) by 25 centimeters, or STOP",
+"url": "https://github.com/InternRobotics/StreamVLN/blob/main/streamvln/streamvln_eval.py"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "NavFoM",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "교차 엠바디먼트 범용 내비게이션 (VLN·물체 탐색·추적·자율주행)",
+"발표": "2025-09",
+"기관": "Peking University·Galbot·USTC·BAAI·University of Adelaide·Zhejiang University·Differential Robotics",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "DINOv2 + SigLIP 이중 비전 인코더(조립·세밀 토큰, 프레임당 576 패치) + 2층 MLP 프로젝터 + Qwen2-7B; 시점·시간 지시(TVI) 토큰과 토큰 예산 기반 시간 샘플링(BATS, 예산 1,600–2,048); 3층 MLP 계획 헤드가 웨이포인트 8개(x, y, z, θ) 회귀, QA는 언어 헤드; 1–8개 카메라 입력",
+"핵심 특징": "사족·드론·바퀴형·차량 등 여러 엠바디먼트와 VLN·물체 탐색·추적·자율주행 과제를 하나의 모델로 학습한 내비게이션 기반 모델로, 시점·시간 지시 토큰과 토큰 예산 기반 이력 샘플링을 도입했다. 8.02M 내비게이션 샘플로 과제별 미세조정 없이 R2R-CE(4뷰 SR 61.7%)·RxR-CE·HM3D-OVON·EVT-Bench·NAVSIM 등에서 최고 또는 경쟁 수준을 보였다.",
+"파라미터": "7B (Qwen2-7B 기반; 전체 수치 미기재)",
+"파라미터(B)": 7,
+"사전학습 가속기": "H100 56장",
+"사전학습 기간": "약 72시간",
+"사전학습 스텝·배치": "1 에폭 (배치·학습률 미공개)",
+"사전학습 GPU·TPU-시간": 4032,
+"시간 근거·단위": "명시 · H100-시간 (\"a total of 4,032 GPU hours\")",
+"파인튜닝 가속기·시간": "해당 없음 (과제별 미세조정 없음)",
+"추론": "원격 서버 RTX 4090(논문)/RTX 5090(프로젝트 페이지)에서 실행, 로봇은 관측 압축 전송; 1,600토큰 예산에서 8-웨이포인트 궤적 생성 최대 0.5초",
+"태스크·벤치마크": "R2R-CE SR 61.7%·SPL 55.3%(4뷰)/56.2%(단일뷰); RxR-CE SR 64.4%(4뷰)/57.4%(단일뷰); HM3D-OVON 제로샷 val-unseen SR 45.2%; EVT-Bench 단일 목표 SR 88.4%·방해 목표 62.0%; NAVSIM PDMS 84.3(8뷰); OpenUAV seen SR 29.17%; 실세계 110개 시험(VLN 50·탐색 30·추적 30)",
+"로봇·엠바디먼트": "Unitree Go2 사족(SG3S 카메라), Unitree G1 휴머노이드(RealSense D455), NCS-β 비행 로봇(RealSense D435), Galbot G1 바퀴형(SG3S 카메라); 로봇별 기성 로컬 플래너로 궤적 추종",
+"데이터 종류": "시뮬레이션·합성 / 웹 영상 / 실로봇 자율 주행 로그 / 웹 비전-언어",
+"데이터 규모": "총 12.7M 인스턴스: 내비게이션 8.02M(VLN 3.37M·ObjectNav 1.02M·능동 시각 추적 897K·자율주행 681K·웹 영상 내비 2.03M) + 이미지 QA 3.15M + 영상 QA 1.61M",
+"데이터 시간(h)": null,
+"주요 데이터셋": "VLN-CE R2R·RxR; OpenUAV(429K); HM3D ObjectNav(L3MVN 성공 에피소드); EVT-Bench; nuScenes(27K)·OpenScene(654K) 차량 주행 데이터; Sekai(YouTube 영상 약 182K, VLM·SLAM 의사 라벨)",
+"비고": "추론 GPU가 논문(RTX 4090)과 프로젝트 페이지(RTX 5090)에서 다름; 자율주행 데이터는 실제 차량 주행 로그(nuScenes·OpenScene)이며 실로봇 수집 학습 데이터는 없음; 코드·가중치 공개 링크 없음(프로젝트 페이지 기준); ICLR 2026.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2509.12129"
+},
+"fields": {
+"v": "DINOv2 + SigLIP",
+"l": "Qwen2-7B",
+"lb": 7,
+"fam": "Qwen",
+"h": "3층 MLP 계획 헤드: 웨이포인트 8개 (x, y, z, θ) + 언어 헤드(QA)",
+"hk": "회귀",
+"ck": "웨이포인트 8개",
+"hz": "궤적당 최대 0.5초 (1,600토큰 예산)",
+"dep": "원격 서버 (RTX 4090/5090)",
+"inp": "다중 카메라 RGB 영상 · 언어 지시",
+"tags": [
+"교차 엠바디먼트",
+"다중 과제",
+"웨이포인트"
+],
+"mem": "약 19.1 GB (ICLR 카메라레디)",
+"mg": 19.1,
+"mge": false,
+"mc": true
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(SFT)만",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2509.12129",
+"t": "Embodied Navigation Foundation Model",
+"u": "https://arxiv.org/abs/2509.12129",
+"n": "ICLR 2026"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행",
+"휴머노이드 보행",
+"바퀴형",
+"비행"
+],
+"how": "모델이 웨이포인트 궤적 출력 → 로봇별 기성 로컬 플래너가 속도·관절 명령으로 추종 (드론 포함)",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "Our model is trained on a cluster server equipped with 56 NVIDIA H100 GPUs for approximately 72 hours,",
+"url": "https://arxiv.org/abs/2509.12129"
+},
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "resulting in a total of 4,032 GPU hours.",
+"url": "https://arxiv.org/abs/2509.12129"
+},
+{
+"field": "파라미터",
+"quote": "the large language model (Qwen2-7B Yang et al. (2024a))",
+"url": "https://arxiv.org/abs/2509.12129"
+},
+{
+"field": "데이터 규모",
+"quote": "8.02 million navigation samples",
+"url": "https://arxiv.org/abs/2509.12129"
+},
+{
+"field": "데이터 규모",
+"quote": "totaling 12.7 million instances",
+"url": "https://arxiv.org/abs/2509.12129"
+},
+{
+"field": "추론",
+"quote": "NavFoM requires at most 0.5 seconds to generate an eight-waypoint trajectory under a 1600-token budget.",
+"url": "https://arxiv.org/abs/2509.12129"
+},
+{
+"field": "추론",
+"quote": "For real-world deployment, we employ a remote server equipped with an NVIDIA RTX 4090 GPU to run NavFoM.",
+"url": "https://arxiv.org/abs/2509.12129"
+},
+{
+"field": "추론",
+"quote": "we deploy our model on a remote server equipped with a GeForce RTX 5090 GPU",
+"url": "https://pku-epic.github.io/NavFoM-Web/"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "InternVLA-N1",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "시각-언어 내비게이션(VLN)",
+"발표": "2025-07",
+"기관": "Shanghai AI Laboratory (Intern Robotics)",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "System 2: Qwen2.5-VL-7B가 과거·현재 RGB와 지시로 이미지 상 픽셀 목표(또는 학습형 잠재 계획 토큰)·정지·제자리 회전을 2 Hz로 출력 / System 1: NavDP계 diffusion 정책(DepthAnything RGB 인코더, critic 포함; DualVLN은 DiT 12층·hidden 384)이 단기 궤적 30 Hz 생성(DualVLN 조밀 웨이포인트 32개) → MPC 추종, 저수준 제어기 200 Hz",
+"핵심 특징": "VLM 기반 System 2가 이미지 상 픽셀 목표·잠재 계획을 저주파로 내고 diffusion 기반 System 1이 이를 조건으로 고주파 궤적을 생성하는 비동기 이중 시스템 내비게이션 기반 모델이다. 시뮬레이션 전용 InternData-N1(53.5M 이미지·4,839.9 km)로 학습해 VLN-CE·VLN-PE에서 최고 수준을 내고 바퀴형·사족·휴머노이드 실로봇에 제로샷 이전했다.",
+"파라미터": "8.39B (HF Preview safetensors) / 8.38B (HF DualVLN); System 2는 Qwen2.5-VL 7B",
+"파라미터(B)": 8.39,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "보고서: S2 SFT 1 에폭; DualVLN 논문: S2 14,000 스텝·배치 128(lr 2e-5), S1 15,000 스텝·배치 128(lr 1e-4)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "2단계 공동 조정(S2 동결, 잠재 계획 토큰 + S1 비동기 미세조정) 연산 미공개; world model 확장(Wan2.1 1.3B) 사용 시 R2R-CE 최적 에폭 4→2",
+"추론": "원격 RTX 4090 1장, GPU 메모리 약 20GB; S2 궤적 토큰 KV 캐시 재사용으로 약 1.1초→0.7초; S1은 TensorRT로 궤적 32개 약 0.03초; S2 2 Hz·S1 30 Hz",
+"태스크·벤치마크": "기술 보고서: R2R-CE val-unseen SR 55.4%(S2)·58.2%(S1+S2), RxR-CE SR 49.5%·53.5%; VLN-PE(H1) 제로샷에서 VLN-PE 학습 모델 대비 SR 17% 이상 향상; DualVLN: R2R-CE SR 64.3%·SPL 58.5%, RxR-CE SR 61.4%·SPL 51.8%, VLN-PE R2R unseen SR 51.6%; 실세계 사무실·식당·거리 등",
+"로봇·엠바디먼트": "Turtlebot4 바퀴형, Unitree Go2 사족, Unitree G1 휴머노이드; RealSense D455(15° 하향)",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "InternData-N1: 3,154개 장면·4,839.9 km·1,344시간·53.5M 이미지·0.8M 지시 (VLN-N1 3,000+ 장면·40M 이미지·600k 지시; VLN-CE 332,179 에피소드·856개 장면; VLN-PE 8,679 에피소드); S2 정렬 샘플 5M 이상",
+"데이터 시간(h)": 1344,
+"주요 데이터셋": "InternData-N1 (VLN-N1: Replica·MP3D·Gibson·3D-Front·HSSD·HM3D; VLN-CE: R2R·RxR·EnvDrop·ScaleVLN 재생; VLN-PE: InternUtopia 물리 시뮬)",
+"비고": "발표는 HF InternVLA-N1-Preview 저장소 생성(2025-07-21) 기준, 기술 보고서는 2025-09-11, DualVLN 논문 arXiv 2512.08186(2025-12); HF 변형: Preview(동기, 약 2 Hz) → wo-dagger(첫 공식판 개명) → w-NavDP*·DualVLN(권장, RGB만); 학습 GPU·시간 미공개; 데이터 규모 표기 50M 이상/53M/53.5M 혼재; 라이선스 CC BY-NC-SA 4.0; 2025-12 학습 코드 공개. 기반: NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance (arXiv 2505.08712) — 보고서가 System 1이 NavDP와 유사한 구조를 계승한다고 명시",
+"검증": "확인",
+"1차 출처 URL": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+},
+"fields": {
+"v": "Qwen2.5-VL 비전 인코더 (S2) + DepthAnything RGB 인코더 (S1)",
+"l": "Qwen2.5-VL-7B (System 2)",
+"lb": 7,
+"fam": "Qwen",
+"h": "S2 픽셀 목표·잠재 계획 → S1 diffusion 궤적 (DualVLN 웨이포인트 32개)",
+"hk": "diffusion",
+"ck": "궤적 (DualVLN 조밀 웨이포인트 32개)",
+"hz": "S2 2 Hz · S1 30 Hz · 제어 200 Hz",
+"dep": "원격 서버 (RTX 4090)",
+"mem": "약 20GB",
+"mg": 20,
+"mc": true,
+"inp": "RGB(-D) 영상 · 언어 지시",
+"pipe": [
+[
+"in",
+"RGB 영상 · 언어 지시",
+""
+],
+[
+"llm",
+"S2 (Qwen2.5-VL 7B)",
+"픽셀 목표·잠재 계획 · 2 Hz"
+],
+[
+"pol",
+"System 1 diffusion 정책",
+"궤적 · 30 Hz"
+],
+[
+"ctrl",
+"MPC 추종 제어",
+"저수준 200 Hz"
+],
+[
+"out",
+"바퀴형·사족·휴머노이드 이동",
+""
+]
+],
+"tags": [
+"System 1/2",
+"diffusion",
+"VLN",
+"시뮬 전용 학습"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(SFT·diffusion)만; S1 critic은 지도학습",
+null
+],
+"paper": {
+"k": "보고서",
+"id": null,
+"t": "InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans",
+"u": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf",
+"n": "기술 보고서(2025-09-11); 최신 DualVLN 변형은 arXiv 2512.08186"
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행",
+"휴머노이드 보행"
+],
+"how": "S2 픽셀 목표·잠재 계획 → S1 궤적 출력 → 오도메트리 기준 월드 좌표로 변환해 MPC로 추종",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "\"total\": 8388524548",
+"url": "https://huggingface.co/InternRobotics/InternVLA-N1-Preview"
+},
+{
+"field": "파라미터",
+"quote": "\"total\": 8383538891",
+"url": "https://huggingface.co/InternRobotics/InternVLA-N1-DualVLN"
+},
+{
+"field": "백본·액션 표현",
+"quote": "a vision-language model (Qwen-VL-2.5 7B model) that has been pretrained on large-scale image-text corpora",
+"url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+},
+{
+"field": "백본·액션 표현",
+"quote": "translate into mid-term latent plans at 2 Hz",
+"url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+},
+{
+"field": "데이터 규모",
+"quote": "InternData-N1 3154 4839.9 1344 53.5M 0.8M Trajectory + Joint Autonomous",
+"url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+},
+{
+"field": "추론",
+"quote": "We deploy our whole system on a remote machine with an RTX 4090 GPU. The InternVLA-N1 model takes around 20GB memory of the GPU.",
+"url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+},
+{
+"field": "추론",
+"quote": "accelerating the inference speed of the trajectory tokens from about 1.1s to 0.7s",
+"url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+},
+{
+"field": "추론",
+"quote": "our System 1 model generates 32 trajectories parallelly in about 0.03s",
+"url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "finetune QwenVL-2.5 (7B) for one epoch",
+"url": "https://arxiv.org/abs/2512.08186"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "TrackVLA",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "물체 추적 내비게이션",
+"발표": "2025-05",
+"기관": "Peking University·Galbot·Beihang University·Beijing Normal University·BAAI",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "EVA-CLIP(동결) + 2층 MLP 프로젝터 + Vicuna-7B; 현재 프레임 64토큰·과거 프레임 4토큰(32프레임 창); 추적 시 anchor 기반 diffusion 헤드(DiT 12층·hidden 768·12헤드, anchor 40개, DDIM 2스텝)가 웨이포인트 10개(x, y, θ) 생성, 인식 시 언어 모델링 헤드; 실환경 10 FPS",
+"핵심 특징": "공유 LLM 위에 목표 인식용 언어 헤드와 궤적 계획용 anchor 기반 diffusion 헤드를 병렬로 둬 인식과 추적 궤적 계획을 함께 학습하는 체화 시각 추적 VLA다. 자체 EVT-Bench 시뮬 추적 데이터와 인식 데이터 1.7M으로 학습해 제로샷 Gym-UnrealCV와 실환경에서 10 FPS로 강건한 추적을 보였다.",
+"파라미터": "7B (Vicuna-7B 기반; 전체 수치 미기재)",
+"파라미터(B)": 7,
+"사전학습 가속기": "H100 24장",
+"사전학습 기간": "약 15시간",
+"사전학습 스텝·배치": "1 에폭 · 총 배치 196 (lr 2e-5 코사인)",
+"사전학습 GPU·TPU-시간": 360,
+"시간 근거·단위": "명시 · H100-시간 (\"totaling 360 GPU hours\")",
+"파인튜닝 가속기·시간": "해당 없음",
+"추론": "원격 서버 RTX 4090, 10 FPS; 행동 모델(Ours-Base) 13 ms; 메모리 미공개",
+"태스크·벤치마크": "EVT-Bench SR 단일 목표 85.1%·방해 목표 57.6%·모호 목표 50.2%; Gym-UnrealCV 제로샷 SR 1.00(단일)·0.91(방해물)·1.00(미지 물체); 실세계 난이도별 10회 SR 100%·90%·70%(상용 추적 드론 DJI Flip 100%·70%·50%)",
+"로봇·엠바디먼트": "Unitree Go2 사족 + RealSense D455(640×480, HFOV 90°); pure pursuit 폐루프 추종, LiDAR elastic band 장애물 회피",
+"데이터 종류": "시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "총 1.7M: 체화 시각 추적 855K(4.1절은 885K) + 영상 QA 855K(사람 인식 362K + 개방형 VQA 493K)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "EVT-Bench(Habitat 3.0, HM3D·MP3D 804개 장면, 사람 아바타 100개); SYNTH-PEDES; 공개 VQA",
+"비고": "추적 샘플 수 855K vs 885K 본문 불일치; TrackVLA 가중치 미공개(EVT-Bench와 Uni-NaVid 평가 코드·가중치만 공개); EVA-CLIP·Vicuna-7B는 사전학습 가중치로 초기화; CoRL 2025.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2505.23189"
+},
+"fields": {
+"v": "EVA-CLIP (동결)",
+"l": "Vicuna-7B",
+"lb": 7,
+"fam": "Llama",
+"h": "anchor 기반 diffusion 헤드 (DiT, DDIM 2스텝) 웨이포인트 + 언어 헤드(인식)",
+"hk": "diffusion",
+"ck": "웨이포인트 10개",
+"hz": "10 FPS",
+"dep": "원격 서버 (RTX 4090)",
+"inp": "RGB 영상 · 추적 지시",
+"tags": [
+"시각 추적",
+"diffusion",
+"사족보행"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"모방학습(SFT)만",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2505.23189",
+"t": "TrackVLA: Embodied Visual Tracking in the Wild",
+"u": "https://arxiv.org/abs/2505.23189",
+"n": "CoRL 2025"
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 웨이포인트 궤적 출력 → pure pursuit 폐루프 추종(LiDAR 기반 장애물 회피 병행)",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "TrackVLA is trained on a cluster server equipped with 24 NVIDIA H100 GPUs for approximately 15 hours, totaling 360 GPU hours.",
+"url": "https://arxiv.org/abs/2505.23189"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "The training is conducted with a learning rate of 2e-5, a total batch size of 196,",
+"url": "https://arxiv.org/abs/2505.23189"
+},
+{
+"field": "파라미터",
+"quote": "implemented with Vicuna-7B",
+"url": "https://arxiv.org/abs/2505.23189"
+},
+{
+"field": "데이터 규모",
+"quote": "embodied visual tracking data (855K samples) and video-based question-answering data (855K samples)",
+"url": "https://arxiv.org/abs/2505.23189"
+},
+{
+"field": "추론",
+"quote": "at 10 FPS inference speed",
+"url": "https://arxiv.org/abs/2505.23189"
+},
+{
+"field": "추론",
+"quote": "a remote server equipped with an NVIDIA RTX 4090 GPU",
+"url": "https://arxiv.org/abs/2505.23189"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The base diffusion transformer is configured with a depth of 12, hidden size of 768, and 12 attention heads",
+"url": "https://arxiv.org/abs/2505.23189"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "VLN-R1",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "시각-언어 내비게이션(VLN)",
+"발표": "2025-06",
+"기관": "The University of Hong Kong·Shanghai AI Laboratory",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen2-VL-2B/7B 전체 미세조정; 1인칭 영상(인스턴스당 이미지 16장, 최대 65,536 픽셀, 약 4.1K 토큰) + 지시 입력; 다음 6개 이산 행동을 선택지 문자+설명 텍스트로 출력(FORWARD·TURN-LEFT·TURN-RIGHT·STOP, 예 'C. Turn right 30 degrees')",
+"핵심 특징": "범용 VLM(Qwen2-VL)을 1인칭 영상 기반 VLN에 SFT한 뒤 시간 감쇠 보상(TDR)을 쓰는 GRPO 강화 미세조정(RFT)으로 다단계 행동 예측을 개선했다. RFT를 거친 2B 모델이 SFT만 한 7B 모델을 앞서 소형 VLM에서도 RL 사후학습 효과를 보였다.",
+"파라미터": "2B / 7B (Qwen2-VL-2B·7B)",
+"파라미터(B)": 7,
+"사전학습 가속기": "A800 8장 (7B SFT, DeepSpeed ZeRO-3)",
+"사전학습 기간": "36시간 (SFT 1 에폭)",
+"사전학습 스텝·배치": "SFT 1 에폭 · 글로벌 배치 64 (GPU당 2×누적 4, lr 5e-6)",
+"사전학습 GPU·TPU-시간": 288,
+"시간 근거·단위": "환산 · A800 8장 × 36시간 (7B SFT 1 에폭)",
+"파인튜닝 가속기·시간": "RFT(GRPO): 에폭당 약 12시간(에폭 수 미기재), lr 1e-6, 프롬프트당 8샘플, KL β 0.04, GPU당 배치 1, 20K 샘플 (7B는 A800 8장 환경)",
+"추론": "미공개 (Habitat 시뮬 평가만)",
+"태스크·벤치마크": "R2R-CE val-unseen SR 30.2%·SPL 21.8%(7B), SR 25.6%·SPL 20.5%(2B); RxR-CE SR 22.3%(7B)·21.4%(2B); 교차 도메인(R2R SFT→RxR RFT) RxR SR 22.7%(7B)",
+"로봇·엠바디먼트": "실로봇 없음 (Habitat 시뮬 에이전트)",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "VLN-Ego: R2R 630K + RxR 1.2M 학습 샘플(SFT 1.8M); RFT는 데이터셋별 10K, 총 20K",
+"데이터 시간(h)": null,
+"주요 데이터셋": "VLN-Ego (Habitat·MP3D에서 생성; R2R 7,189 경로·RxR 42,023 궤적 기반)",
+"비고": "가중치 미공개(VLN-Ego 학습 데이터·데이터 생성 코드만 공개, SFT·RFT·평가 코드 준비 중); 2B 학습 하드웨어 미기재; 표별 수치 일부 불일치(Table 1과 Table 3); 실로봇 실험 없음(한계로 명시).",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2506.17221"
+},
+"fields": {
+"v": "Qwen2-VL 내장 비전 인코더 (세부 미기재)",
+"l": "Qwen2-VL-7B / 2B (내장 LLM 명칭 미기재)",
+"lb": 7,
+"fam": "Qwen",
+"h": "다음 6개 이산 행동 텍스트 (선택지 문자 + 설명)",
+"hk": "이산 토큰",
+"ck": "행동 6개",
+"hz": "미공개",
+"dep": null,
+"inp": "1인칭 RGB 영상 · 언어 지시",
+"tags": [
+"VLN",
+"RL 미세조정",
+"GRPO"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"SFT 후 GRPO 기반 RFT 단계(Time-Decayed Reward로 다단계 행동 보상)",
+"https://arxiv.org/abs/2506.17221"
+],
+"paper": {
+"k": "논문",
+"id": "2506.17221",
+"t": "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning",
+"u": "https://arxiv.org/abs/2506.17221",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"시뮬 전용"
+],
+"how": "실로봇 없음: Habitat VLN-CE 시뮬 에이전트가 이산 행동(전진·회전·정지) 실행",
+"cat": "이산 이동 행동"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "with the 7B model deployed on 8 NVIDIA A800 GPUs",
+"url": "https://arxiv.org/abs/2506.17221"
+},
+{
+"field": "사전학습 기간",
+"quote": "completing 1 epoch in 36 hours.",
+"url": "https://arxiv.org/abs/2506.17221"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "complete training in about 12 hours per epoch.",
+"url": "https://arxiv.org/abs/2506.17221"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "β = 0.04, configure GRPO [49] with 8 samples per prompt,",
+"url": "https://arxiv.org/abs/2506.17221"
+},
+{
+"field": "파라미터",
+"quote": "We train both Qwen2-VL-2B and Qwen2-VL-7B models",
+"url": "https://arxiv.org/abs/2506.17221"
+},
+{
+"field": "데이터 규모",
+"quote": "with the SFT phase employing 1.8M samples from both R2R [2]",
+"url": "https://arxiv.org/abs/2506.17221"
+},
+{
+"field": "데이터 규모",
+"quote": "totaling 20K samples for training.",
+"url": "https://arxiv.org/abs/2506.17221"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "ABot-N0",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "범용 내비게이션 (포인트·물체·지시·POI·사람 추종)",
+"발표": "2026-02",
+"기관": "AMAP CV Lab (Alibaba)",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "범용 멀티모달 인코더(ViT; 파노라마 좌·전·우 또는 전방, 에피소드 시각 메모리, 텍스트·점 목표) + Cognitive Brain Qwen3-4B(추론 헤드·행동 헤드) + flow matching Action Expert → 로컬 BEV 웨이포인트 5개(x,y,θ); 온보드 VLA 2 Hz(엣지판 SigLIP-B/16 93M·토큰 병합), 하위 Neural Controller >10 Hz",
+"핵심 특징": "LLM Brain과 flow matching Action Expert를 묶은 Brain-Action 구조로 점·물체·지시·POI·사람 추종 5개 내비게이션 과제를 한 VLA로 통합하고, 16.9M 전문가 궤적·5.0M 추론 샘플 데이터 엔진과 SAFE-GRPO RL로 학습한다. 7개 벤치마크(R2R-CE SR 66.4%, SocNav 폐루프 SR 88.3% 등)에서 SOTA를 주장하며 Go2의 Jetson Orin NX에서 2 Hz로 온보드 구동된다.",
+"파라미터": "4B (Qwen3-4B 기반 + 엣지판 SigLIP-B/16 93M; 전체 수치 미기재)",
+"파라미터(B)": 4,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개 (3단계: 인지 워밍업 → 통합 감각운동 SFT → SAFE-GRPO)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "3단계 SAFE-GRPO(Brain 동결, Action Expert만 SocCity 전문가 궤적·복합 보상으로 RL): 가속기·시간 미공개",
+"추론": "Unitree Go2 온보드 Jetson Orin NX(157 TOPS, 16 GB)에서 VLA 2 Hz(토큰 압축, 성능 3% 감소), Neural Controller >10 Hz; 에이전트 플래너는 클라우드 RTX 4090; 메모리 사용량 미공개",
+"태스크·벤치마크": "R2R-CE val-unseen SR 66.4%·SPL 63.9, RxR-CE SR 69.3%·SPL 60.0; HM3D-OVON val-unseen SR 54.0%; SocNav 폐루프 SR 88.3%(CityWalker 47.8%); CityWalker 개루프 MAOE 11.2(15.2); BridgeNav POI SR@0.3 m 88.68%; EVT-Bench STT SR 86.9%",
+"로봇·엠바디먼트": "Unitree Go2 X 사족(RGB 카메라 3대 약 270°, 4D LiDAR L2, RTK-GNSS)",
+"데이터 종류": "실로봇 텔레옵 / 실로봇 자율 주행 로그 / 웹 영상 / 시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "전문가 궤적 16.9M(PointGoal 4.0M: 인터넷 영상 의사 궤적 2.0M·합성 1.7M·실로봇 340K / 지시 추종 2.8M / ObjectGoal 3.6M / POI 2.5M(Wan2.1-I2V 생성 영상) / 사람 추종 4.0M) + 추론 샘플 5.0M(일반 VQA 1.1M 포함); 3D 장면 7,802개·10.7 km²(논문)/10.3 km²(README)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "VLN-CE R2R·RxR; HM3D·HM3D-OVON; InteriorGS; SocCity(자체 가상 도시); SCAND; HuRoN; RECON; CityWalker; 인터넷 영상(π³·MoGe 재구성)",
+"비고": "README·논문에 가중치·코드 공개 언급 없음(README는 논문·프로젝트 페이지만, Apache 2.0 표기). 장면 면적 상충: 논문 10.7 km² vs README 10.3 km². 문서 일부에 'ABot-NO' 표기. 하위 Neural Controller는 CE-Nav 기반 VelFlow 전문가를 Isaac Sim RL로 미세조정. 학습 연산·총 파라미터 미공개.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2602.11598"
+},
+"fields": {
+"v": "ViT (엣지판 SigLIP-B/16 93M)",
+"l": "Qwen3-4B",
+"lb": 4,
+"fam": "Qwen",
+"h": "flow matching 행동 전문가: BEV 웨이포인트 5개 (x, y, θ) + 추론 헤드",
+"hk": "flow matching",
+"ck": "웨이포인트 5개",
+"hz": "VLA 2 Hz · 컨트롤러 10 Hz 이상",
+"dep": "온보드 Jetson Orin NX (플래너는 클라우드 RTX 4090)",
+"inp": "다중 뷰 RGB 영상 · 언어·좌표 목표",
+"pipe": [
+[
+"in",
+"RGB 3뷰 · 언어·좌표 목표",
+""
+],
+[
+"vis",
+"SigLIP-B/16",
+"93M · 토큰 병합"
+],
+[
+"llm",
+"Brain (Qwen3-4B)",
+"추론 헤드 · 행동 헤드"
+],
+[
+"head",
+"flow matching 행동 전문가",
+"웨이포인트 5개 · 2 Hz"
+],
+[
+"ctrl",
+"뉴럴 컨트롤러",
+"10 Hz 이상"
+],
+[
+"out",
+"사족 로봇 이동",
+""
+]
+],
+"tags": [
+"다중 과제",
+"flow matching",
+"RL 미세조정",
+"온보드"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"3단계 SAFE-GRPO로 flow matching Action Expert를 RL(Brain 동결); 하위 Neural Controller도 Isaac Sim RL 미세조정",
+"https://arxiv.org/html/2602.11598v1"
+],
+"paper": {
+"k": "논문",
+"id": "2602.11598",
+"t": "ABot-N0: Technical Report on the VLA Foundation Model for Versatile Embodied Navigation",
+"u": "https://arxiv.org/abs/2602.11598",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 2 Hz로 BEV 웨이포인트 5개 출력 → Neural Controller(CE-Nav 기반, >10 Hz)가 몸체 속도(vx,vy,vyaw) 생성 → Go2 보행 제어",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "The backbone of ABot-N0 is a pre-trained LLM (Qwen3-4B [59]).",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The Action Expert predicts a short-term trajectory plan consisting of a sequence of 5 waypoints in the local BEV frame.",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "데이터 규모",
+"quote": "curating 16.9M expert trajectories and 5.0M reasoning samples across 7,802 high-fidelity 3D scenes (10.7 km²).",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "데이터 규모",
+"quote": "We incorporate 340K high-quality trajectories from diverse real-world robotic platforms",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "추론",
+"quote": "achieves an onboard inference speed of 2Hz",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "추론",
+"quote": "The Neural Controller serves as a high-speed reactive layer, operating at over 10Hz on our edge device.",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "파라미터",
+"quote": "we employ a compact 93M SigLIP-B/16 as the vision backbone",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "It attains an 88.3% Success Rate, nearly doubling the performance of the baseline (47.8%).",
+"url": "https://arxiv.org/html/2602.11598v1"
+},
+{
+"field": "데이터 규모",
+"quote": "7,802 scenes (indoor: homes, offices, malls, stations; outdoor: intersections, parks, virtual city) covering 10.3 km²",
+"url": "https://github.com/amap-cvlab/ABot-Navigation"
+},
+{
+"field": "파라미터",
+"quote": "The backbone of ABot-N0 is a pre-trained LLM (Qwen3-4B [59]).",
+"url": "https://arxiv.org/abs/2602.11598"
+},
+{
+"field": "파라미터",
+"quote": "we employ a compact 93M SigLIP-B/16 as the vision backbone, followed by an MLP projector",
+"url": "https://arxiv.org/abs/2602.11598"
+},
+{
+"field": "데이터 규모",
+"quote": "we curated approximately 16.9 million expert training trajectories",
+"url": "https://arxiv.org/abs/2602.11598"
+},
+{
+"field": "데이터 규모",
+"quote": "We incorporate 340K high-quality trajectories from diverse real-world robotic platforms",
+"url": "https://arxiv.org/abs/2602.11598"
+},
+{
+"field": "추론",
+"quote": "are performed onboard an NVIDIA Jetson Orin NX module (157 TOPS, 16GB RAM).",
+"url": "https://arxiv.org/abs/2602.11598"
+},
+{
+"field": "추론",
+"quote": "the edge-side VLA model achieves an onboard inference speed of 2Hz while suffering only a 3% reduction in performance",
+"url": "https://arxiv.org/abs/2602.11598"
+},
+{
+"field": "백본·액션 표현",
+"quote": "Although ABot-N0 generates strategic waypoints at a frequency of 2Hz,",
+"url": "https://arxiv.org/abs/2602.11598"
+}
+],
+"_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "VLingNav",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "범용 내비게이션 (ObjectNav·ImageNav·시각 추적)",
+"발표": "2026-01",
+"기관": "ByteDance Seed·Peking University·Zhongguancun Academy",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "SigLIP-400M + LLaVA-Video-7B; 적응형 CoT(<think_on>/<think_off> 지시 토큰, 평균 2.1% 스텝만 추론) + 시각 보조 언어 메모리(VLingMem, 과거 시각 토큰 유지·최신 프레임만 인코딩); 마지막 토큰 은닉상태 → MLP 행동 헤드(가우시안)가 웨이포인트 궤적(x, y, θ) 출력",
+"핵심 특징": "필요할 때만 명시적 추론을 켜는 적응형 CoT와 언어 요약·핵심 시각 특징을 결합한 메모리를 갖춘 내비게이션 VLA로, 모방학습 뒤 전문가 유도 온라인 RL로 사후학습했다. HM3Dv2 ObjectNav SR 83.0%와 EVT-Bench·Instance ImageNav 최고 수준을 보고하고 Unitree Go2에 제로샷 이전했다.",
+"파라미터": "7B (LLaVA-Video-7B 기반; 전체 수치 미기재)",
+"파라미터(B)": 7,
+"사전학습 가속기": "A100 128장",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "3단계: 개방형 적응형 CoT 영상 사전학습 1 에폭 → SFT 공동학습 20K 스텝·총 배치 512 → 온라인 RL",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "온라인 RL: 반복마다 on-policy 128 에피소드 수집 × 10회 갱신, PPO형 목적 + REINFORCE++ 이점, 전문가 유도 혼합 목적(15스텝 정체 시 전문가 개입); GPU·시간 미공개",
+"추론": "원격 서버 RTX 4090; 500프레임에서도 지연 300 ms 미만, 실효 약 2.5 FPS; 로봇은 NMPC로 궤적 추종",
+"태스크·벤치마크": "ObjectNav SR HM3Dv1 79.1%·HM3Dv2 83.0%·MP3D 58.9%; HM3D-OVON val-unseen SR 50.1%; EVT-Bench SR 단일 88.4%·방해 67.6%; HM3D Instance ImageNav SR 60.8%·SPL 37.4%; 실세계 Go2 가정·사무실·실외 ObjectNav·추적·ImageNav",
+"로봇·엠바디먼트": "Unitree Go2 사족 + 머리 장착 RealSense D457 (RGB 1280×800, HFOV 90°)",
+"데이터 종류": "시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "총 4.5M: 내비게이션 2.9M(Nav-AdaCoT-2.9M, CoT 주석 약 472K) + 개방형 영상 1.6M",
+"데이터 시간(h)": null,
+"주요 데이터셋": "Nav-AdaCoT-2.9M(HM3D·MP3D ObjectNav, 추적, ImageNav); LLaVA-Video-178K; Video-R1; ScanQA",
+"비고": "추가 모델: 2026년 ByteDance Seed의 내비게이션 VLA로 적응형 CoT·언어 메모리·온라인 RL 사후학습을 결합해 ObjectNav·추적·ImageNav 최고 수준을 보고해 포함; LLaVA-Video-7B 내장 LLM 명칭은 논문 미기재(StreamVLN 논문은 Qwen2-7B로 기재); 웨이포인트 개수 n 미기재; 학습 기간 미공개; 가중치·코드 미공개(프로젝트 페이지만); VLN-CE 결과 없음.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2601.08665"
+},
+"fields": {
+"v": "SigLIP-400M",
+"l": "Qwen2-7B · LLaVA-Video-7B 구성",
+"lb": 7,
+"fam": "Qwen",
+"h": "MLP 행동 헤드 (가우시안) 웨이포인트 궤적 (x, y, θ) + 적응형 CoT 텍스트",
+"hk": "회귀",
+"ck": "미공개",
+"hz": "약 2.5 FPS (지연 300 ms 미만)",
+"dep": "원격 서버 (RTX 4090)",
+"inp": "RGB 영상 · 멀티모달 지시",
+"tags": [
+"적응형 CoT",
+"메모리",
+"RL 미세조정"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"3단계 전문가 유도 온라인 RL(시뮬 on-policy 롤아웃, PPO형 목적·REINFORCE++ 이점)",
+"https://arxiv.org/abs/2601.08665"
+],
+"paper": {
+"k": "논문",
+"id": "2601.08665",
+"t": "VLingNav: Embodied Navigation with Adaptive Reasoning and Visual-Assisted Linguistic Memory",
+"u": "https://arxiv.org/abs/2601.08665",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "VLA가 웨이포인트 궤적 출력 → NMPC가 선속도·각속도를 계산해 추종",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 가속기",
+"quote": "VLingNav is trained on a cluster with 128 NVIDIA A100 GPUs using a three-stage training pipeline.",
+"url": "https://arxiv.org/abs/2601.08665"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "co-training 20K steps with a total batch size of 512",
+"url": "https://arxiv.org/abs/2601.08665"
+},
+{
+"field": "파라미터",
+"quote": "extends a video-based VLM, specifically LLaVA-Video-7B",
+"url": "https://arxiv.org/abs/2601.08665"
+},
+{
+"field": "데이터 규모",
+"quote": "totaling 4.5M training samples",
+"url": "https://arxiv.org/abs/2601.08665"
+},
+{
+"field": "추론",
+"quote": "maintains an inference latency of under 300 ms across 500 video frames",
+"url": "https://arxiv.org/abs/2601.08665"
+},
+{
+"field": "추론",
+"quote": "VLingNav achieves an effective inference speed of around 2.5 FPS",
+"url": "https://arxiv.org/abs/2601.08665"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "we use the current policy to collect 128 episodes of on-policy data",
+"url": "https://arxiv.org/abs/2601.08665"
+}
+],
+"_src": "out_n2.jsonl"
+},
+{
+"row": {
+"모델": "TIC-VLA",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "언어 지시 내비게이션 (사람 많은 동적 환경)",
+"발표": "2026-02",
+"기관": "University of California, Los Angeles (UCLA)",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "공유 비전 인코더 + InternVL3-1B VLM(느린 추론 0.5 Hz, 지연된 마지막 층 KV 캐시를 MLP 투영) + 트랜스포머 액션 전문가(학습형 액션 쿼리가 현재 시각 토큰·지연 VLM 캐시·로봇 상태·지연 Δt·자기운동 Δp에 cross-attention) → MLP로 연속 3차원 행동 청크 출력, 적분한 3초 궤적의 목표점 실행, 10 Hz",
+"핵심 특징": "느린 VLM 추론의 지연된 상태와 명시적 지연 정보(추론·경과 시간, 자기운동)를 조건으로 빠른 액션 정책이 비동기로 제어하는 think-in-control VLA다. 학습 때 0–10초 추론 지연을 주입하고 PPO로 미세조정해 수 초 지연에서도 10 Hz 제어를 유지하며 DynaNav SR 55.29%로 기존 VLA(NaVILA 28.24%)를 앞섰다.",
+"파라미터": "미공개 (InternVL3-1B 백본, HF 표기 0.9B; 액션 전문가 크기 미기재)",
+"파라미터(B)": null,
+"사전학습 가속기": "L40S 8장 (VLM SFT, DDP)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "VLM SFT GPU당 배치 2(×8장)·lr 2e-5, 액션 전문가 GPU당 배치 16·lr 2e-4; 10 에폭·워밍업 1,000스텝(Table 8, 단계 구분 없음); 총 스텝 미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "PPO 온라인 RL: L40S 1장, 400 iteration(3과제×3환경); 시간 미공개",
+"추론": "액션 정책/VLM 추론 지연: RTX 4060 노트북(50W) 85.73/3430.73 ms, Jetson Orin NX(25W) 120.27/4831.73 ms, RTX A6000 32.70/1681.66 ms; 시뮬(L40S) 액션 10 Hz·VLM 0.5 Hz; 메모리 미공개",
+"태스크·벤치마크": "DynaNav(85개 테스트, 창고·병원·사무실·보도) SR 55.29%·SPL 50.29·충돌률 28.24%(RL 없이 SR 47.06%; NaVILA 28.24%, Uni-NaVid 22.35%, 점 목표 NavDP 54.12%); 실로봇 4과제×5회 SR 0.85(RTX 4060)·0.75(Orin NX)·0.80(A6000), DualVLN 0.50·NaVILA 0.35",
+"로봇·엠바디먼트": "실로봇 Unitree Go2 사족(전방 RGB); 시뮬 DynaNav Nova Carter 바퀴형·Boston Dynamics Spot 사족",
+"데이터 종류": "실로봇 텔레옵 / 시뮬레이션·합성",
+"데이터 규모": "SCAND 8.7시간 + GND 11시간 이상 + DynaNav 5.1시간(합계 24.8시간 이상); CoT·지시는 GPT-5 자동 주석; 샘플·에피소드 수 미공개",
+"데이터 시간(h)": 24.8,
+"주요 데이터셋": "SCAND; GND; DynaNav(자체 Isaac Sim)",
+"비고": "ICML 2026. 체크포인트·추론 데이터셋·DynaNav·RL 스크립트 공개(HF handsomeYun/TIC-VLA 데이터셋 저장소). 총 파라미터·학습 시간 미공개. 데이터 시간은 세 데이터셋 명시값 합산(GND 'over 11 hours'라 하한). SCAND는 사람 텔레옵 시연(SCAND 논문 초록), GND 수집 방식은 미확인. 실로봇 저수준 명령 방식 미기재.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2602.02459"
+},
+"fields": {
+"v": "InternViT-300M (InternVL3-1B 내장, 공유 비전 인코더)",
+"l": "Qwen2.5-0.5B · InternVL3-1B 구성",
+"lb": 0.5,
+"fam": "Qwen",
+"t": "트랜스포머 액션 전문가 (cross-attention 6층)",
+"h": "연속 3차원 행동 청크 MLP 회귀 (적분 궤적 smooth L1)",
+"hk": "회귀",
+"ck": "3초 예측 지평 (T=30 스텝)",
+"hz": "10 Hz (VLM 0.5 Hz)",
+"dep": "엣지 GPU (Jetson Orin NX·RTX 4060 노트북)",
+"mc": true,
+"inp": "RGB 영상 · 언어 지시 · 로봇 상태",
+"pipe": [
+[
+"in",
+"RGB · 언어 지시 · 상태",
+""
+],
+[
+"llm",
+"InternVL3-1B VLM",
+"느린 추론 0.5 Hz · KV 캐시"
+],
+[
+"pol",
+"액션 전문가 트랜스포머",
+"지연 Δt·자기운동 조건"
+],
+[
+"head",
+"연속 행동 청크 MLP",
+"3초 궤적 · 10 Hz"
+],
+[
+"out",
+"Go2 사족 이동",
+""
+]
+],
+"tags": [
+"내비게이션",
+"비동기 System 1/2",
+"RL 미세조정",
+"지연 인지"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"모방학습 후 액션 정책만 PPO 온라인 RL(Isaac Lab 동적 보행자 환경, 비전 인코더·LM 동결)",
+"https://arxiv.org/html/2602.02459v2"
+],
+"paper": {
+"k": "논문",
+"id": "2602.02459",
+"t": "TIC-VLA: A Think-in-Control Vision-Language-Action Model for Robot Navigation in Dynamic Environments",
+"u": "https://arxiv.org/abs/2602.02459",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행"
+],
+"how": "액션 정책이 연속 행동 청크 출력 → 적분한 단기 궤적의 목표점을 로봇이 추종(시뮬은 제어기가 평활 속도 명령 (v, ω) 생성, 실로봇 저수준 명령 방식 미기재); 실로봇 Go2, 시뮬 Nova Carter·Spot",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "We employ InternVL3-1B (Zhu et al., 2025) as the vision-language backbone",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "파라미터",
+"quote": "0.9B params",
+"url": "https://huggingface.co/OpenGVLab/InternVL3-1B"
+},
+{
+"field": "사전학습 가속기",
+"quote": "Training is performed using Distributed Data Parallel on eight NVIDIA L40S GPUs, with a batch size of 2 per GPU.",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "For training the action expert, we increase the batch size to 16 per GPU",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "RL fine-tuning of the action policy is conducted on a single NVIDIA L40S GPU for 400 iterations",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "데이터 규모",
+"quote": "which contains 8.7 hours of robot-driven trajectories across diverse social environments",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "데이터 규모",
+"quote": "over 11 hours of recorded data collected in various campus environments",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "데이터 규모",
+"quote": "containing 5.1 hours of robot navigation data across multiple scene types.",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "추론",
+"quote": "with the action policy running at 10 Hz",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "추론",
+"quote": "Runtimes for dual-system methods are reported as action policy / VLM reasoning latency.",
+"url": "https://arxiv.org/html/2602.02459v2"
+},
+{
+"field": "가중치 공개",
+"quote": "We release the pretrained TIC-VLA checkpoint trained on the released TIC-VLA reasoning dataset",
+"url": "https://github.com/ucla-mobility/TIC-VLA"
+}
+],
+"_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "FutureNav",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "시각-언어 내비게이션(VLN)",
+"발표": "2026-06",
+"기관": "Tsinghua University·Pengcheng Laboratory·HKUST (Guangzhou)·Xiaomi EV·National University of Singapore",
+"가중치 공개": "일부",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3-VL-4B/8B(비전 타워 동결) + 동결 VGGT 공간 인코더(중간층 토큰, 패치당 2048차원 → RMSNorm·2층 MLP merger, α=0.2로 시각 토큰에 가산) → LLM 은닉 상태에 4개 헤드(자기회귀 행동 정책, 역동역학 분류, 순동역학 MLP, 미래 공간 특징 생성); 추론은 정책 헤드만 사용, 이산 텍스트 행동(STOP·MOVE_FORWARD·TURN_LEFT·TURN_RIGHT) 스텝당 1개",
+"핵심 특징": "VLM 은닉 상태 위에서 행동 예측과 역·순동역학, 미래 공간 상태 생성을 함께 학습하는 world-action 모델링을 VLN에 도입하고 추론에는 정책 헤드만 써 속도를 유지한다. 단안 RGB·4B 백본으로 R2R-CE SR 65.4%·RxR-CE SR 60.9%를 내 7B급 JanusVLN(R2R 60.5%) 등 기존 VLN 모델을 앞섰다.",
+"파라미터": "4B·8B (Qwen3-VL-4B·8B 백본 기준; HF FutureNav-4B-Base는 VGGT·헤드 포함 총 5.48B, 8B 총량 미공개)",
+"파라미터(B)": 8,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "해당 없음 (Qwen3-VL에서 단일 내비게이션 학습 단계; 가속기·시간 미공개)",
+"추론": "실로봇은 H20 GPU 서버 원격 추론(Go2 카메라 RGB 스트리밍, 스텝당 저수준 행동 1개 반환); 지연·Hz·메모리 미공개",
+"태스크·벤치마크": "R2R-CE val-unseen SR 65.4%·SPL 61.3·NE 4.24(4B 전체 데이터; 8B 64.3%·60.3), RxR-CE SR 60.9%·SPL 52.8·nDTW 68.0(8B SR 63.9%·SPL 54.8); 외부 데이터 없는 0K 설정 4B R2R SR 55.1%; 실로봇 Go2 제로샷(정량 수치 미보고)",
+"로봇·엠바디먼트": "Go2 사족(원격 운용, D435i RGB 카메라); 시뮬 VLN-CE 에이전트",
+"데이터 종류": "시뮬레이션·합성",
+"데이터 규모": "VLN-CE 전문가 궤적 약 2.43M 샘플(R2R-CE 631K + RxR-CE 1.80M, '0K' 설정); 전체 설정은 ScaleVLN·DAgger 롤아웃 외부 데이터 10,457K(4B)/10,435K(8B) 추가",
+"데이터 시간(h)": null,
+"주요 데이터셋": "R2R-CE; RxR-CE; ScaleVLN; DAgger 롤아웃",
+"비고": "학습 하드웨어·시간·스텝·배치·lr 모두 미공개. HF llxs/FutureNav에 FutureNav-4B-Base(11.7 GB)만 공개, 8B·학습 스크립트·학습 데이터 미공개(README TODO). 실로봇은 시연만 있고 정량 결과 없음. 외부 데이터 열(10457K 등) 구성은 본문 설명 없음.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2606.30367"
+},
+"fields": {
+"v": "Qwen3-VL 비전 인코더(동결) + VGGT 공간 인코더(동결)",
+"l": "Qwen3-VL-4B / 8B",
+"lb": 8,
+"fam": "Qwen",
+"w": "순·역동역학·미래 공간 특징 예측 헤드 (학습 시만)",
+"h": "이산 텍스트 행동 (STOP·MOVE_FORWARD·TURN_LEFT·TURN_RIGHT)",
+"hk": "이산 토큰",
+"ck": "없음 (1스텝)",
+"hz": "미공개",
+"dep": "원격 서버 (H20)",
+"mc": true,
+"inp": "RGB 관측 이력 · 언어 지시",
+"tags": [
+"VLN",
+"world model",
+"Qwen3-VL"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"지도학습(교차 엔트로피·MSE); DAgger 롤아웃은 학습 데이터로만 사용",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2606.30367",
+"t": "FutureNav: Unified World-Action Modeling for Vision-and-Language Navigation",
+"u": "https://arxiv.org/abs/2606.30367",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "정책이 이산 행동(정지·전진·좌/우회전)을 스텝마다 1개 출력 → 원격 서버가 Go2에 전달해 실행(저수준 제어 미기재)",
+"cat": "이산 이동 행동"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "FutureNav instantiates the VLM backbone with Qwen3-VL-4B and Qwen3-VL-8B",
+"url": "https://arxiv.org/html/2606.30367v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "passed through a frozen spatial encoder, implemented with VGGT",
+"url": "https://arxiv.org/html/2606.30367v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "action labels such as STOP, MOVE_FORWARD,TURN_LEFT, and TURN_RIGHT.",
+"url": "https://arxiv.org/html/2606.30367v1"
+},
+{
+"field": "데이터 규모",
+"quote": "which provide approximately 2.43M training samples, including 631K from R2R-CE and 1.80M from RxR-CE.",
+"url": "https://arxiv.org/html/2606.30367v1"
+},
+{
+"field": "데이터 규모",
+"quote": "we further add external navigation data from ScaleVLN",
+"url": "https://arxiv.org/html/2606.30367v1"
+},
+{
+"field": "추론",
+"quote": "For real-world experiments, we deploy FutureNav on an H20 GPU",
+"url": "https://arxiv.org/html/2606.30367v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "with only a 4B-scale backbone, FutureNav achieves state-of-the-art performance on multiple VLN benchmarks",
+"url": "https://arxiv.org/abs/2606.30367"
+},
+{
+"field": "가중치 공개",
+"quote": "Release checkpoints (HuggingFace)",
+"url": "https://github.com/linglingxiansen/FutureNav"
+}
+],
+"_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "Uni-LaViRA",
+"구분": "내비게이션",
+"유형": "기타",
+"도메인": "통합 체화 내비게이션 (VLN·ObjectNav·EQA·항공 VLN)",
+"발표": "2026-05",
+"기관": "Nanjing University·Institute of Automation, Chinese Academy of Sciences·Beihang University·BMW (Nanjing) Information Technology Co., Ltd.·University of Rochester",
+"가중치 공개": "일부",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "학습 없는 3단 번역: Language Action(Gemini-3.1-Pro; 실로봇은 Qwen3.5-27B/9B-Q4)이 방향(전·좌·우·후)·도구 호출(turn·backtrack·stop 등) 선택 → Vision Action(Qwen3.5-27B)이 선택 시점 영상에 bbox/점 지정 → Robot Action이 3D 점으로 역투영 후 FMM(시뮬)·NavDP(실로봇) 경로 → 로봇별 제어기; 시뮬 지상 이산 이동(0.25 m 전진·30° 회전), UAV (x,y,z) 웨이포인트",
+"핵심 특징": "사전학습 MLLM이 언어로 방향을 고르고 시각으로 목표 픽셀을 짚으면 이를 로봇 행동으로 번역하는 학습 없는 에이전트로, TODO List Memory와 Second Chance Backtrack을 더해 4개 과제군·4종 로봇을 한 구조로 다룬다. 로봇 데이터 학습 없이 R2R-CE SR 60.7%·HM3D-v2 ObjectNav SR 77.7%를 내 학습 기반 내비게이션 파운데이션 모델과 대등하거나 앞섰다.",
+"파라미터": "미공개 (LA Gemini-3.1-Pro 크기 비공개 + VA Qwen3.5-27B; 지상 실로봇 Qwen3.5-27B-Q4·9B-Q4)",
+"파라미터(B)": null,
+"사전학습 가속기": "해당 없음",
+"사전학습 기간": "해당 없음",
+"사전학습 스텝·배치": "해당 없음",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "해당 없음",
+"파인튜닝 가속기·시간": "해당 없음 (학습 없음, 프롬프트만 사용)",
+"추론": "LA 호출 30–60 s(API 정상)·80–150 s(경합), 로컬 플래너·제어기 각 10 ms 미만; 호출당 LA 입력 22,305·출력 1,618 토큰; 시뮬 RTX 4090 8장 병렬 롤아웃; 실로봇 Cobot Magic 온보드 RTX 4090(Qwen3.5-27B-Q4), G1·Go1 온보드 Jetson Orin NX(Qwen3.5-9B-Q4)",
+"태스크·벤치마크": "제로샷 R2R-CE SR 60.7%·SPL 47.7, RxR-CE SR 51.3%·SPL 34.0, HM3D-v2 ObjectNav SR 77.7%·SPL 46.1, HM3D-OVON SR 60.0%, MP3D-EQA 정확도 54.7%, OpenUAV SR 40.0%(벤치마크당 100에피소드×3시드, 총 1,800 궤적); 실로봇 4종 시연",
+"로봇·엠바디먼트": "Agilex Cobot Magic 바퀴형 양팔(2-DoF 차동 베이스), Unitree G1 휴머노이드, Unitree Go1 사족, 자체 제작 쿼드로터 UAV",
+"데이터 종류": "해당 없음 (학습 데이터 없음)",
+"데이터 규모": "해당 없음 (평가만: 6개 벤치마크 계층 표집 100에피소드×3시드)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "평가: R2R-CE; RxR-CE; HM3D-v2; HM3D-OVON; MP3D-EQA; OpenUAV(UM split)",
+"비고": "자체 학습 가중치 없음(학습 없는 프레임워크): 시뮬 주 결과는 비공개 Gemini-3.1-Pro API에 의존하고 VA Qwen3.5-27B·실로봇 Qwen3.5 Q4·하위 NavDP는 공개 가중치라 '일부'로 표기. 코드 공개(CC BY-NC-SA 4.0). 실로봇 지상 3종은 FMM 대신 NavDP를 Robot Action 단계로 사용. 기관 Beihang University는 프로젝트 페이지 저자 표기 기준. 선행작 LaViRA(제로샷 VLN-CE) 확장. 기반: LaViRA: Language-Vision-Robot Actions Translation for Zero-Shot Vision Language Navigation in Continuous Environments (arXiv 2510.19655) — 공식 코드 README가 'This work builds on LaViRA'로 명시, 프로젝트 페이지 'Previously on LaViRA'",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2605.27582"
+},
+"fields": {
+"v": "MLLM 내장 비전 (Qwen3.5-27B VA가 bbox·점 그라운딩)",
+"l": "Gemini-3.1-Pro (LA, 시뮬·실 UAV) + Qwen3.5-27B (VA); 지상 실로봇은 LA·VA 모두 Qwen3.5-27B-Q4 / 9B-Q4",
+"lb": null,
+"fam": "Gemini",
+"h": "방향·도구 호출 텍스트 + 픽셀 목표 → 3D 점 → FMM/NavDP 경로",
+"hk": "기타",
+"ck": "미공개",
+"hz": "LA 호출당 30–60 s; G1 속도 명령 1 Hz",
+"dep": "시뮬 API 원격; 실로봇 온보드 RTX 4090 / Jetson Orin NX",
+"mc": true,
+"inp": "다시점 RGB · 언어 지시",
+"pipe": [
+[
+"in",
+"다시점 RGB · 언어 지시",
+""
+],
+[
+"llm",
+"Language Action",
+"Gemini-3.1-Pro · 방향/도구"
+],
+[
+"vis",
+"Vision Action",
+"Qwen3.5-27B · 픽셀 목표"
+],
+[
+"ctrl",
+"Robot Action",
+"3D 역투영 · FMM/NavDP"
+],
+[
+"out",
+"바퀴·사족·휴머노이드·UAV",
+""
+]
+],
+"tags": [
+"내비게이션",
+"학습 없음",
+"에이전트",
+"교차 엠바디먼트"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"학습 없음(프롬프트 기반 에이전트); 하위 NavDP는 기존 모방학습 모델을 그대로 사용",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2605.27582",
+"t": "Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation",
+"u": "https://arxiv.org/abs/2605.27582",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행",
+"휴머노이드 보행",
+"비행"
+],
+"how": "LA·VA가 고른 목표 픽셀을 3D 점으로 역투영 → NavDP 궤적을 각 로봇 기본 제어기가 추종(Cobot Magic 비례 속도 제어, G1 (vx,vy,ωz) 1 Hz, Go1 속도 모드); UAV는 PX4 위치 제어",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "The Language Action Model is Gemini-3.1-Pro and the Vision Action Model is Qwen3.5-27B.",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "추론",
+"quote": "An onboard RTX 4090 serves a single Qwen3.5-27B-Q4 model for both LA and VA with no remote API call during operation.",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "추론",
+"quote": "an onboard Jetson Orin NX runs Qwen3.5-9B-Q4 for both LA and VA.",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "추론",
+"quote": "with a single LA call taking 30–60 seconds when the API is healthy and 80–150 seconds under contention",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "추론",
+"quote": "while the local planner and controller each run in under 10 ms.",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "사전학습 가속기",
+"quote": "We presented Uni-LaViRA, a training-free agentic framework that factors embodied navigation into three levels.",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "데이터 규모",
+"quote": "Inference cost is measured per MLLM call on our 1,800-trajectory Full-configuration pool.",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "60.7% SR on VLN-CE R2R",
+"url": "https://arxiv.org/abs/2605.27582"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "For the three ground robots we replace the simulation-time FMM planner with NavDP [78] as the Robot Action stage.",
+"url": "https://arxiv.org/html/2605.27582v1"
+},
+{
+"field": "가중치 공개",
+"quote": "Uni-LaViRA is a training-free framework for unified embodied navigation",
+"url": "https://github.com/NJU-R-L-Group-Embodied-Lab/uni-lavira-code"
+}
+],
+"_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "LightNav-0",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "범용 체화 내비게이션 (VLN·ObjectNav·시각 추적)",
+"발표": "2026-08",
+"기관": "Light Origins",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3-VL-4B-Instruct(네이티브 해상도 ViT + 36층 LLM), 과제별 헤드 없이 어휘만 확장; 단계마다 이중 채널 포인팅 토큰 2개(affordance·object) → RVQ 행동 토큰 3개(코드북 K=256×3) → 10스텝 SE(2) 웨이포인트 디코딩; 최근성 기반 이력 압축; 첫 웨이포인트를 로봇 측 MPC가 추종, 폐루프 약 4–5 Hz",
+"핵심 특징": "사전학습 VLM에 새 헤드 없이 포인팅 토큰과 RVQ 행동 토큰만 더해 지시 추종·물체 탐색·시각 추적을 한 토큰 인터페이스로 통합하고 ER 중간학습→SFT→GRPO RL 순으로 학습한다. 단안 RGB만으로 10개 공개 시뮬 설정에서 단안 기준 최고 성공률(R2R-CE SR 68.5%, EVT-Bench STT SR 91.7%)을 냈고 휴머노이드·사족·비행·바퀴형 로봇에 제로샷 이전했다.",
+"파라미터": "4.85B (HF safetensors) / 4B (Qwen3-VL-4B-Instruct 기반; README 표의 LightNav-ER 4B, 총량 문장 없음)",
+"파라미터(B)": 4.85,
+"사전학습 가속기": "H100 (장수 미공개)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "ER 중간학습 배치 128·최대 10,240토큰·lr 1e-5, SFT 배치 320·최대 8,192토큰(시퀀스당 약 8.6샘플 패킹)·lr 1.5e-5; 스텝 미공개",
+"사전학습 GPU·TPU-시간": 1120,
+"시간 근거·단위": "명시 · H100-시간 (ER 중간학습 \"approximately 170 H100 GPU-hours\" + SFT \"approximately 950 H100 GPU-hours\" 합산)",
+"파인튜닝 가속기·시간": "GRPO 온라인 RL: H100 8장 단일 노드, 시간 미공개; 업데이트당 256 에피소드(G=8×B=32), lr 1e-6",
+"추론": "RTX 4090에서 생성 토큰당 약 4 ms(vLLM, 논문); README: 단일 GPU 스텝당 약 60–150 ms, Jetson AGX Thor 온보드 bf16 268 ms(3.7 Hz)·fp8(LLM만) 178 ms(5.6 Hz)·폐루프 4.5–4.8 Hz; 로봇 측 MPC 10 Hz",
+"태스크·벤치마크": "R2R-CE val-unseen SR 68.5%·SPL 62.8, RxR-CE SR 73.6%·SPL 64.5; ObjectNav MP3D 53.3%·HM3D v1 74.5%·v2 77.2%, HM3D-OVON unseen 47.0%; EVT-Bench STT SR 91.7%·DT SR 82.6%; INSIGHT-Bench SR 43.7%; LightNav-ER 8개 ER 벤치 평균 67.4; 실로봇 4종 제로샷",
+"로봇·엠바디먼트": "Unitree Go2 사족, LimX TRON 1, LightBot-0, 비행 로봇(기종 미기재); 논문은 휴머노이드·사족·비행·바퀴형 4종으로만 기술",
+"데이터 종류": "시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "내비게이션 2K+ 장면·4K+ 시간; ER 중간학습 36개 소스(포인팅 35%·단일 이미지 VQA 25%·일반 추론 20%·영상 추론 20%); SFT는 내비 16개 + ER/VQA 33개 소스(내비 감독 약 77.6%) + DAgger 수집분; 블로그: Stage II 지시 742K(고유 474K)",
+"데이터 시간(h)": 4000,
+"주요 데이터셋": "R2R; RxR; ScaleVLN; HM3D; MP3D; VLNVerse; Habitat-GS; InteriorGS; HM3D-OVON; EVT-Bench; ER: RefSpatial, RoboPoint, VSI-590K, SQA3D 등",
+"비고": "GPU-시간은 두 명시값 합산(RL 단계 시간 미공개). 데이터 시간(h)은 '4K+ hours' 하한. 가중치 HF LightOriginsHQ/LightNav-0, 코드 Apache 2.0, INSIGHT-Bench 별도 공개. 블로그(2026-09-01)는 2,000+ 인터넷 실세계 장면을 재사용 시뮬 세계로 변환했다고 설명. TRON 1·LightBot-0의 유형별 분류는 원문 미기재.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2608.30935"
+},
+"fields": {
+"v": "Qwen3-VL 네이티브 해상도 ViT",
+"l": "Qwen3-VL-4B-Instruct (36층 LLM)",
+"lb": 4,
+"fam": "Qwen",
+"h": "포인팅 토큰 2개 + RVQ 행동 토큰 3개 → 10 SE(2) 웨이포인트",
+"hk": "이산 토큰",
+"ck": "웨이포인트 10개",
+"hz": "약 4–5 Hz (README 폐루프)",
+"dep": "원격 GPU 서버 또는 온보드 Jetson AGX Thor",
+"mc": true,
+"inp": "단안 RGB 이력 · 언어 지시",
+"pipe": [
+[
+"in",
+"단안 RGB 이력 · 언어 지시",
+""
+],
+[
+"llm",
+"Qwen3-VL-4B",
+"포인팅·RVQ 토큰 생성"
+],
+[
+"head",
+"RVQ 디코더",
+"10 SE(2) 웨이포인트"
+],
+[
+"ctrl",
+"로봇 측 MPC",
+"속도 명령 · 10 Hz"
+],
+[
+"out",
+"사족·휴머노이드·바퀴·비행",
+""
+]
+],
+"tags": [
+"내비게이션",
+"RL 미세조정",
+"교차 엠바디먼트",
+"RVQ 토큰"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"SFT 후 GRPO 온라인 RL(과제 단위 종단 보상, 그룹 정규화 이점)",
+"https://arxiv.org/html/2608.30935v2"
+],
+"paper": {
+"k": "논문",
+"id": "2608.30935",
+"t": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation",
+"u": "https://arxiv.org/abs/2608.30935",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형",
+"사족보행",
+"휴머노이드 보행",
+"비행"
+],
+"how": "모델이 10스텝 SE(2) 웨이포인트 출력 → 로봇 측 MPC가 첫 웨이포인트를 선속도·각속도 명령으로 추종(Go2·TRON1 어댑터); 비행 로봇도 시연",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "We instantiate LightNav-0 from Qwen3-VL-4B-Instruct",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "This stage is trained on NVIDIA H100 GPUs and consumes approximately 170 H100 GPU-hours of compute.",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "Training is conducted on NVIDIA H100 GPUs and consumes approximately 950 H100 GPU-hours of compute.",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "The global batch size is 320, and the maximum sequence length is 8,192 tokens.",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "Training runs on a single node with 8 H100 GPUs.",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "데이터 규모",
+"quote": "The navigation corpus spans 2K+ scenes and 4K+ hours of embodied trajectories.",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "백본·액션 표현",
+"quote": "each 10-waypoint action chunk is encoded by three K=256 RVQ levels.",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "추론",
+"quote": "achieves an inference latency of approximately 4 ms per generated token on an NVIDIA GeForce RTX 4090.",
+"url": "https://arxiv.org/html/2608.30935v2"
+},
+{
+"field": "추론",
+"quote": "`fp8_llm_only`, full closed loop (camera → client → server → MPC) | — | 4.5–4.8 Hz",
+"url": "https://github.com/lightorigins/LightNav-0/blob/main/docs/JETSON_THOR.md"
+},
+{
+"field": "가중치 공개",
+"quote": "hf download LightOriginsHQ/LightNav-0 --local-dir checkpoints/LightNav-0",
+"url": "https://github.com/lightorigins/LightNav-0"
+}
+],
+"_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "Qwen-VLA",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "매니퓰레이션·내비게이션 통합",
+"발표": "2026-05",
+"기관": "Qwen Team",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3.5-4B(네이티브 멀티모달, ViT + 공간 병합) + 단일 스트림 DiT flow-matching 액션 디코더 약 1.15B(16블록×70.8M, AdaLN 시간 조건) → 조작 행동 청크 H=16, 내비게이션 웨이포인트 8개(Δx,Δy,Δθ; VLN-CE는 슬라이딩 윈도 실행), 소수 Euler 스텝; 로봇 태그·팔 구성·제어 주파수·청크 크기를 텍스트 프롬프트로 조건화",
+"핵심 특징": "Qwen VLM에 DiT flow-matching 디코더를 붙여 조작·내비게이션·궤적 예측을 하나의 행동·궤적 공간으로 묶고, 로봇별 프롬프트 조건화로 한 가중치가 여러 엠바디먼트를 다룬다. 단일 범용 모델로 LIBERO 97.9%·R2R-CE SR 57.5%·RxR-CE SR 59.6%를 냈고 실 ALOHA에서 평균 83.6%(π0.5 71.6%)를 기록했다.",
+"파라미터": "미공개 (Qwen3.5-4B 백본 + 액션 전문가 약 1.15B; 총량 문장 없음)",
+"파라미터(B)": null,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "T2A 2,000스텝(최종 파이프라인 기본값); 이후 단계 스텝·배치 미공개 (T2A 절제에서 2,000스텝 정점·10,000스텝까지 정체)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "미공개",
+"파인튜닝 가속기·시간": "SFT·ALOHA 파인튜닝 가속기·시간 미공개; RL(PPO+GAE, RLinf, SimplerEnv): iteration당 rollout epoch 8×환경 128스텝(8,192 청크), actor lr 5e-6·value lr 1e-4",
+"추론": "미공개 (소수 Euler 스텝으로 저지연 실시간 제어를 지향한다고만 기술)",
+"태스크·벤치마크": "LIBERO 97.9%; RoboCasa-GR1 56.7%; Simpler-WidowX 73.7%; RoboTwin 2.0 Easy 86.1%·Hard 87.2%; R2R-CE val-unseen OS 69.0·SR 57.5·SPL 51.2; RxR-CE SR 59.6·SPL 47.8; SimplerEnv-OOD 32.0%; DOMINO 제로샷 SR 26.6%; 실 ALOHA 평균 83.6%(OOD 76.9%)",
+"로봇·엠바디먼트": "실로봇 ALOHA 양팔(고정); 사전학습 WidowX·Google Robot·Franka·ARX5·Fourier GR-1·Mobile ALOHA·AgiBot A2-D·Galaxea R1·AIRBOT MMK2·TienKung(팔 행동만); 내비게이션은 VLN-CE 시뮬 3-DoF 평면 이동 에이전트",
+"데이터 종류": "실로봇 텔레옵 / 사람 영상 / 시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "공개 조작 데이터 10,000시간 이상 + 자체 실로봇 궤적 1,000시간 이상; 합성 시뮬 궤적 8M 이상; T2A 언어-행동 합성 약 7.2M 궤적·14,000시간 이상; 1인칭 사람 영상(EgoDex 829시간, EgoVerse 1,300시간 이상 등); 혼합 비율 조작 74.2%·사람 6.0%·내비게이션 7.5%(지시 4.3·물체 탐색 2.3·추적 1.0)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "RoboMIND; DROID; BridgeData V2; RT-1; BC-Z; AgiBot World; Ego4D·EPIC-KITCHENS(VITRA); EgoDex; EgoVerse; 내비게이션 데이터(출처 미기재)",
+"비고": "실제 모바일 베이스 제어 실험 없음: 내비게이션은 VLN-CE R2R/RxR 시뮬 평가만, 실로봇은 고정 ALOHA라 지시대로 '2026 신규'·베이스 '고정'으로 기재. 논문 바이라인 'Owen Team'(README는 'Qwen Team'). GitHub은 정보·이슈 창구로 체크포인트 링크 없음(2026-10 기준). 총 파라미터·학습 연산·추론 지연 미공개. 데이터 시간은 출처별 수치만 있어 합계 칸은 비움.",
+"검증": "수정 반영",
+"1차 출처 URL": "https://arxiv.org/abs/2605.30280"
+},
+"fields": {
+"v": "Qwen3.5-4B 내장 ViT (공간 병합)",
+"l": "Qwen3.5-4B",
+"lb": 4,
+"fam": "Qwen",
+"h": "DiT flow-matching 디코더 (약 1.15B, 16블록)",
+"hk": "flow matching",
+"ck": "16스텝 (내비게이션 웨이포인트 8개)",
+"hz": "데이터셋별 (프롬프트로 지정)",
+"dep": null,
+"mc": true,
+"inp": "이미지 · 언어 · 로봇 프롬프트",
+"tags": [
+"교차 엠바디먼트",
+"flow matching",
+"내비게이션",
+"RL 미세조정"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"다과제 SFT 체크포인트에서 PPO+GAE(RLinf), SimplerEnv 희소 이진 성공 보상",
+"https://arxiv.org/html/2605.30280v2"
+],
+"paper": {
+"k": "논문",
+"id": "2605.30280",
+"t": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+"u": "https://arxiv.org/abs/2605.30280",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"고정",
+"시뮬 전용"
+],
+"how": "실제 모바일 베이스 제어 없음: 조작은 고정 팔(실 ALOHA 등), 내비게이션은 VLN-CE 시뮬 3-DoF 평면 에이전트에 상대 웨이포인트 8개를 슬라이딩 윈도로 실행",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "Qwen-VLA is built upon Qwen3.5-4B, a natively multimodal backbone from Qwen families",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "파라미터",
+"quote": "In total, our action expert contains approximately 1.15B parameters",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "백본·액션 표현",
+"quote": "16 DiT blocks account for the bulk (70.8M each, 1.13B combined)",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "데이터 규모",
+"quote": "over 10,000 hours of interaction data across heterogeneous embodiments",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "데이터 규모",
+"quote": "over 1,000 hours of in-house collected real-robot trajectories",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "데이터 규모",
+"quote": "yielding roughly 7.2M trajectories and over 14,000 hours of simulated robot trajectory data in total",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "백본·액션 표현",
+"quote": "We retain only successfully completed episodes, with a prediction horizon of 8 waypoints per chunk",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "The mobile robot is assumed to have 3 degrees of freedom: translation in the plane",
+"url": "https://arxiv.org/html/2605.30280v2"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "We implement this stage using the RLinf framework (Yu et al., 2025a).",
+"url": "https://arxiv.org/html/2605.30280v2"
+}
+],
+"_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "Qwen-RobotNav",
+"구분": "내비게이션",
+"유형": "VLA",
+"도메인": "범용 내비게이션 (VLN·PointNav·ObjectNav·추적·자율주행)",
+"발표": "2026-06",
+"기관": "Qwen Team",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3-VL(4B·8B; SigLIP-2 ViT·2D-RoPE 동적 해상도·DeepStack) + 4층 MLP 행동 헤드(hidden 512) → 웨이포인트 8개(x,y,θ) 연속 회귀(MSE); 과제 모드(VLN·PointNav·ObjNav·Tracking)와 시각 토큰 예산(2048–4096)·시간 감쇠·카메라 가중·프레임 샘플링을 추론 시 조정, 상위 플래너가 도구처럼 호출; 실배치 약 5 Hz",
+"핵심 특징": "과제 모드와 관측 문맥(토큰 예산·시간 감쇠·카메라 가중)을 매개변수화하고 학습 때 무작위화해, 한 모델이 VLN·물체 탐색·추적·자율주행을 상위 에이전트 플래너의 도구로 수행한다. 15.6M 샘플로 학습한 8B가 R2R-CE SR 72.1%·RxR-CE SR 76.5%(파노라마)를 냈고 Go2에서 Jetson Thor 온디바이스 4.9 Hz로 제로샷 주행했다.",
+"파라미터": "4B·8B (Qwen3-VL 기반; 총량 문장 없음, 초록은 2B–8B 스케일링 언급)",
+"파라미터(B)": 8,
+"사전학습 가속기": "H100 (장수 미공개)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "8B 글로벌 배치 256, lr 2e-5(ViT·LLM)·1e-4(행동 헤드); 스텝·에폭 미공개",
+"사전학습 GPU·TPU-시간": 2816,
+"시간 근거·단위": "명시 · H100-시간 (\"a total of 2,816 H100 GPU hours\", 8B 모델)",
+"파인튜닝 가속기·시간": "해당 없음 (Qwen3-VL에서 단일 단계 종단 학습)",
+"추론": "Unitree Go2(4B 모델): 원격 서버 평균 196 ms(5.1 Hz), Jetson Thor 온디바이스(FP8·TensorRT) 204 ms(4.9 Hz)(논문); README는 Jetson Thor 온디바이스 196 ms(5.1 Hz)로 기재; 메모리 미공개",
+"태스크·벤치마크": "R2R-CE val-unseen SR 72.1%·SPL 66.6(8B 파노라마; 단안 8B 65.7%·4B 66.9%), RxR-CE SR 76.5%·SPL 65.7; HM3Dv2 ObjectNav SR 75.6%(4B); EVT-Bench TR 90.0%(4B); NAVSIM PDMS 91.4(4B); 에이전트 EQA HM-EQA 76.7%(Qwen3.6-Plus 플래너); 실로봇 Go2 제로샷 21.78 m 왕복 VLN",
+"로봇·엠바디먼트": "Unitree Go2 사족(내장 저해상도 카메라만 사용)",
+"데이터 종류": "시뮬레이션·합성 / 실로봇 자율 주행 로그 / 웹 비전-언어",
+"데이터 규모": "15.6M 샘플(궤적 85%·VL 15%): 지시 추종 5.63M(R2R 1,491K·RxR 4,140K), PointNav 984K, ObjectNav 2,000K, 추적 1,486K(EVT-Bench), 자율주행 약 3.2M(nuScenes 78K·OpenScene 3,138K), 영상 생성기 데이터 40K; VL 일반 약 1.0M + 내비 추론 약 873K",
+"데이터 시간(h)": null,
+"주요 데이터셋": "VLN-CE R2R·RxR; Matterport3D·HM3D(Habitat); EVT-Bench; nuScenes; OpenScene(NAVSIM); NavGPT-2 방식 추론 데이터; VQAv2·RefCOCO 등 일반 VL",
+"비고": "README: 'There is currently no plan to release the model weights'. 지연 수치 상충: 논문은 원격 196 ms·온디바이스 204 ms, README는 온디바이스 196 ms. 단안 결과(R2R SR 65.7%)는 LightNav-0 비교표와 일치. '실로봇 자율 주행 로그'는 차량 주행 데이터(nuScenes·OpenScene). 초록의 2B 변형은 결과표에 없음.",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2606.18112"
+},
+"fields": {
+"v": "SigLIP-2 ViT (Qwen3-VL 내장, DeepStack)",
+"l": "Qwen3-VL-8B (4B 변형 포함)",
+"lb": 8,
+"fam": "Qwen",
+"h": "4층 MLP 웨이포인트 회귀 (hidden 512)",
+"hk": "회귀",
+"ck": "웨이포인트 8개",
+"hz": "4.9–5.1 Hz (Go2 실배치)",
+"dep": "온보드 Jetson Thor (FP8·TensorRT) 또는 원격 서버",
+"mc": true,
+"inp": "다시점 RGB 이력 · 언어/목표 · 과제 모드",
+"tags": [
+"내비게이션",
+"에이전트",
+"자율주행 공동학습",
+"Qwen3-VL"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"궤적 MSE + VL 다음 토큰 지도학습(궤적:VL 85:15 공동학습)",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2606.18112",
+"t": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+"u": "https://arxiv.org/abs/2606.18112",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"사족보행"
+],
+"how": "모델이 웨이포인트 8개(x,y,θ) 출력 → Go2가 추종(저수준 제어기 미기재); 상위 플래너가 과제 모드·문맥 설정을 바꿔 호출",
+"cat": "웨이포인트 → 추종 제어기"
+},
+"evidence": [
+{
+"field": "사전학습 GPU·TPU-시간",
+"quote": "The 8B model is trained with a global batch size of 256 for a total of 2,816 H100 GPU hours.",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "데이터 규모",
+"quote": "we curate 15.6M samples comprising navigation trajectory planning data (85%)",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "데이터 규모",
+"quote": "We construct 2,000K object-goal navigation training samples from Matterport3D",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "데이터 규모",
+"quote": "We collect 1,486K training samples from the EVT-Bench dataset",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "데이터 규모",
+"quote": "nuScenes (78K) (Caesar et al., 2020) and OpenScene (3,138K) (Contributors, 2023)",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "백본·액션 표현",
+"quote": "A lightweight 4-layer MLP maps the LLM's final hidden state to K=8 waypoints",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "추론",
+"quote": "end-to-end latency than on-device inference, with 196 ms (5.1 Hz) versus 204 ms (4.9 Hz).",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "추론",
+"quote": "edge inference runs on Jetson Thor with FP8 quantization and TensorRT acceleration",
+"url": "https://arxiv.org/pdf/2606.18112v3"
+},
+{
+"field": "추론",
+"quote": "achieving 196 ms latency (5.1 Hz) in the blog deployment",
+"url": "https://github.com/QwenLM/Qwen-RobotNav"
+},
+{
+"field": "가중치 공개",
+"quote": "There is currently no plan to release the model weights for Qwen-RobotManip or Qwen-RobotNav.",
+"url": "https://github.com/QwenLM/Qwen-RobotNav"
+}
+],
+"_src": "out_n3.jsonl"
+}
+]
