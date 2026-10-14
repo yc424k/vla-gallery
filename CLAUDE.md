@@ -91,6 +91,7 @@
 - 커밋 메시지는 add / update / fix / edit 중 하나로 시작한다. 예: `add: VLA 아키텍처 갤러리 페이지`
 - 커밋과 푸시에 Claude를 기여자로 남기지 않는다.
   - Co-Authored-By 줄이나 'Generated with Claude Code' 문구를 넣지 않는다.
+  - 세션 링크 줄(`Claude-Session: https://claude.ai/code/...`)도 커밋 메시지와 PR 본문에 넣지 않는다.
   - `.claude/settings.json`의 `attribution` 설정으로 자동 서명도 꺼 두었다.
 
 ## GitHub Pages 배포
