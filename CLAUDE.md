@@ -107,6 +107,7 @@
 - 커밋과 푸시에 Claude를 기여자로 남기지 않는다.
   - Co-Authored-By 줄이나 'Generated with Claude Code' 문구를 넣지 않는다.
   - 세션 링크 줄(`Claude-Session: https://claude.ai/code/...`)도 커밋 메시지와 PR 본문에 넣지 않는다.
+  - 커밋 작성자는 `yc424k <yc424k@gmail.com>`로 한다. 클라우드 세션은 기본 작성자가 Claude이므로 커밋 전에 `git config user.name yc424k`와 `git config user.email yc424k@gmail.com`을 설정한다.
   - `.claude/settings.json`의 `attribution` 설정으로 자동 서명도 꺼 두었다.
 
 ## GitHub Pages 배포
