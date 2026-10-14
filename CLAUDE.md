@@ -28,7 +28,7 @@
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
 | `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
-| `docs/` | GitHub Pages에 올릴 파일(`index.html`, `en/`·`ja/`·`zh/`, `.nojekyll`). `build.sh`가 다시 만든다 |
+| `docs/` | GitHub Pages에 올릴 파일(`index.html`, `en/`·`ja/`·`zh/`, `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)·언어별 hreflang은 `make_site.py`에 있다 |
 | `i18n/` | 번역 사전(`en`·`ja`·`zh.json`), 용어집, 번역 대상 목록. 아래 '다국어' 참고 |
 | `reports/` | 로봇 VA VLA 모델 비교표.xlsx |
 | `research/notes/` | 주제별 조사 노트. `verification_*.md`(검증 노트)가 다른 노트보다 우선한다 |
@@ -59,7 +59,8 @@
 
 - 03 내 장치: 장치·정밀도·기준 Hz를 고르면 사용 가능한 모델을 보여 준다.
 - 08 갤러리 필터: 분류, 유형, 연도, 크기, 백본, 헤드, 공개, 추론, 강화학습, 내 장치, 베이스, 논문, 정렬.
-- 모션: 스크롤 등장, 페이지 전환, 구조도 블록 순차 등장, 필터 전환(FLIP), 숫자 굴리기, 진행 막대, 맨 위로 버튼, 테마 전환(원형 View Transition)이 있다.
+- 디자인 방향: 인쇄된 기술 사양서처럼 괘선과 무채색으로 정리한다. 그라데이션 글자, 빛 번짐 배경, 그림자, 떠오르는 hover, 알약 모양 칩, 히어로 순차 등장은 'AI가 만든 느낌'이 나서 뺐다. 다시 넣지 않는다.
+- 모션: 짧은 스크롤 등장, 페이지 전환, 구조도 블록 순차 등장, 필터 전환(FLIP), 계산기 숫자 굴리기, 진행 막대, 맨 위로 버튼, 테마 전환(원형 View Transition)이 있다.
   - 테마를 바꾸는 순간에는 `html.theme-x`로 모든 transition을 끄고, 카드에는 `content-visibility:auto`를 걸어 화면 밖 카드를 그리지 않는다. 둘 중 하나라도 빼면 갤러리에서 테마 전환이 수백 ms씩 멈춘다.
   - `<head>`의 작은 스크립트가 `html.motion` 클래스와 저장된 테마(`vla-theme`)를 첫 화면 전에 정한다. `prefers-reduced-motion: reduce`이면 `motion`이 붙지 않아 모든 애니메이션이 꺼진다.
   - 렌더 점검 스크립트(`shot4.py`·`shot5.py`)는 `reduced_motion="reduce"`로 찍고, 요소를 찍기 전에 그 요소가 든 페이지로 해시를 옮긴다.
