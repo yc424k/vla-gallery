@@ -99,7 +99,8 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,5.4vw,54
 
 /* sticky nav */
 .jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:saturate(1.2) blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.jump .wrap{display:flex;gap:2px;overflow-x:auto;padding-block:7px}
+.jump .wrap{display:flex;gap:2px}
+.jump .nav-links{display:flex;gap:2px;flex:1 1 auto;min-width:0;overflow-x:auto;padding-block:7px}
 .jump a{white-space:nowrap;font-size:13.5px;padding:5px 10px;border-radius:6px;text-decoration:none;color:var(--ink-2)}
 .jump a:hover{background:var(--sunk);color:var(--ink)}
 
@@ -334,13 +335,18 @@ h1 .hl{color:inherit}
 .mini:hover{border-color:var(--ink-2)}
 
 /* nav: 현재 섹션 표시 + 테마 버튼 */
-.jump .wrap{align-items:center;scrollbar-width:none}
-.jump .wrap::-webkit-scrollbar{display:none}
+.jump .wrap{align-items:center}
+.jump .nav-links{scrollbar-width:none}
+.jump .nav-links::-webkit-scrollbar{display:none}
+.jump .nav-links.fade-r{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent)}
+.jump .nav-links.fade-l{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to left,#000 calc(100% - 28px),transparent)}
+.jump .nav-links.fade-l.fade-r{-webkit-mask-image:linear-gradient(to right,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
+@media (max-width:620px){.gh-star span:not(.n){display:none}.gh-star{padding:0 8px}.gh-star .n{padding-left:5px}}
 .jump a{position:relative;transition:color .2s,background-color .2s}
 .jump a[aria-current="true"]{color:var(--ink);background:var(--sunk)}
 .jump a::after{content:"";position:absolute;left:10px;right:10px;bottom:-8px;height:2px;background:var(--ink);transform:scaleX(0);transition:transform .35s var(--ease-out)}
 .jump a[aria-current="true"]::after{transform:scaleX(1)}
-.lang-sel{margin-left:auto;flex:none;width:auto;font-size:13px;padding:5px 8px;height:32px;color:var(--ink-2)}
+.lang-sel{flex:none;width:auto;font-size:13px;padding:5px 8px;height:32px;color:var(--ink-2)}
 .gh-star{margin-left:8px;flex:none;height:32px;display:inline-flex;align-items:center;gap:6px;padding:0 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);color:var(--ink-2);font-size:13px;text-decoration:none;white-space:nowrap;transition:color .2s,border-color .2s,transform .3s var(--ease)}
 .gh-star:hover{color:var(--ink);border-color:var(--hairline)}
 .gh-star:active{transform:scale(.96)}
@@ -471,7 +477,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 <div class="progress" id="progress" aria-hidden="true"></div>
 <nav class="jump" aria-label="セクション移動">
   <div class="wrap">
-    <a class="brand" href="#">VLAギャラリー</a><a href="#infer">推論リソース</a><a href="#calc">メモリ計算機</a><a href="#fit">手元のデバイス</a><a href="#llm">バックボーンLLM</a><a href="#rl">強化学習</a><a href="#base">モバイルベース</a><a href="#compare">2モデル比較</a><a href="#gallery">ギャラリー</a><a href="#notes">表記基準</a>
+    <div class="nav-links"><a class="brand" href="#">VLAギャラリー</a><a href="#infer">推論リソース</a><a href="#calc">メモリ計算機</a><a href="#fit">手元のデバイス</a><a href="#llm">バックボーンLLM</a><a href="#rl">強化学習</a><a href="#base">モバイルベース</a><a href="#compare">2モデル比較</a><a href="#gallery">ギャラリー</a><a href="#notes">表記基準</a></div>
     <select class="lang-sel" id="lang-sel" aria-label="言語 · Language"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option></select>
     <a class="gh-star" href="https://github.com/yc424k/vla-gallery" target="_blank" rel="noopener" aria-label="GitHubでStarを付ける" title="役に立ったらGitHubでStarを押してください"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9z"/></svg><span>Star</span><span class="n" id="star-n"></span></a>
     <button type="button" class="theme-btn" id="theme-btn" aria-label="ライト・ダークテーマ切り替え" title="テーマ切り替え"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
@@ -1495,7 +1501,7 @@ PAGES.forEach((x, i) => {
     (next ? '<a class="next" href="#' + next[0] + '"><small>' + T('다음 →') + '</small>' + next[1] + "</a>" : "") + "</nav>");
 });
 const BASE_TITLE = document.title, root = document.documentElement;
-const navLinks = [...document.querySelectorAll(".jump a:not(.brand)")];
+const navLinks = [...document.querySelectorAll(".jump .nav-links a:not(.brand)")];
 let curPage = null;
 function go(page){ if (location.hash.slice(1) === page) route(); else location.hash = page; }
 function route(){
@@ -1515,6 +1521,12 @@ function route(){
   if (MOTION) el.animate([{opacity: 0, transform: "translateY(10px)"}, {opacity: 1, transform: "none"}], {duration: 380, easing: EASE});
 }
 addEventListener("hashchange", route);
+// 메뉴 링크가 넘칠 때 잘린 쪽 가장자리를 흐리게 해 가로로 밀 수 있다는 걸 보여 준다
+const navBar = document.querySelector(".jump .nav-links");
+function navFade(){ const x = navBar.scrollLeft, max = navBar.scrollWidth - navBar.clientWidth;
+  navBar.classList.toggle("fade-l", x > 2); navBar.classList.toggle("fade-r", x < max - 2); }
+navBar.addEventListener("wheel", e => { if (navBar.scrollWidth > navBar.clientWidth && Math.abs(e.deltaY) > Math.abs(e.deltaX)){ e.preventDefault(); navBar.scrollLeft += e.deltaY; } }, {passive: false});
+navBar.addEventListener("scroll", navFade, {passive: true}); addEventListener("resize", navFade); navFade();
 const langSel = document.getElementById("lang-sel");
 langSel.value = LANG;
 langSel.addEventListener("change", () => {
