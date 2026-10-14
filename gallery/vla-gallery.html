@@ -3,6 +3,8 @@
 <script>
 /* 첫 화면 전에 테마와 모션 여부를 정해 깜빡임을 막는다 */
 (function(){var d=document.documentElement;try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);}catch(e){}
+var h=decodeURIComponent(location.hash.slice(1)),P=["infer","calc","fit","llm","rl","base","compare","gallery","notes"];
+d.setAttribute("data-page",h.indexOf("m-")===0?"gallery":(P.indexOf(h)>=0?h:"home"));
 if("IntersectionObserver" in window&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))d.classList.add("motion");})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -405,6 +407,34 @@ html.motion .card.in:hover{transform:translateY(-4px)}
 html.motion .card.in .fig svg>g,html.motion .card.in .fig svg>path,html.motion .mini .fig svg>g,html.motion .mini .fig svg>path{animation:blk .45s var(--ease-out) both;animation-delay:calc(var(--i,0) * 55ms + 120ms);transform-box:fill-box}
 html.motion .progress{transition:transform .1s linear}
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+/* ===== 페이지 나누기: html[data-page]에 맞는 섹션만 보인다 ===== */
+html[data-page] main>section,html[data-page] #notes{display:none}
+html[data-page="infer"] #infer,html[data-page="calc"] #calc,html[data-page="fit"] #fit,html[data-page="llm"] #llm,html[data-page="rl"] #rl,
+html[data-page="base"] #base,html[data-page="compare"] #compare,html[data-page="gallery"] #gallery,html[data-page="notes"] #notes{display:block}
+html[data-page]:not([data-page="home"]) .hero{display:none}
+main>section,#notes{border-bottom:0;min-height:calc(100vh - 52px);padding-block:48px 40px}
+.jump .brand{font-family:var(--font-display);font-weight:700;color:var(--ink);margin-right:6px;padding-left:0}
+.jump .brand::after{display:none}
+.jump .brand:hover{background:transparent;color:var(--accent)}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px;margin:0 0 6px}
+.toc a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 10px;align-items:baseline;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-md);background:color-mix(in srgb,var(--surface) 82%,transparent);
+  text-decoration:none;box-shadow:var(--sh-1);transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+.toc a:hover{transform:translateY(-2px);box-shadow:var(--sh-2);border-color:var(--hairline)}
+.toc .no{font-family:var(--font-data);font-size:12px;color:var(--ink-3);grid-row:1/3}
+.toc b{font-size:15px}
+.toc small{grid-column:2;color:var(--ink-2);font-size:12.5px;line-height:1.45;word-break:keep-all}
+.toc .go{grid-column:3;grid-row:1/3;align-self:center;color:var(--ink-3);transition:transform .25s var(--ease),color .25s}
+.toc a:hover .go{transform:translateX(3px);color:var(--accent)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);text-decoration:none;font-weight:600;box-shadow:var(--sh-1);transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+.pager a small{font-weight:400;font-size:12.5px;color:var(--ink-3);font-family:var(--font-data)}
+.pager a.next{text-align:right;grid-column:2}
+.pager a:hover{transform:translateY(-2px);box-shadow:var(--sh-2);border-color:var(--hairline)}
+/* 화면 밖 카드는 그리지 않는다(테마 전환·스크롤 부담을 줄임) */
+.card{content-visibility:auto;contain-intrinsic-size:auto 1150px}
+/* 테마를 바꾸는 순간에는 모든 전환 효과를 끈다 */
+html.theme-x *,html.theme-x *::before,html.theme-x *::after{transition:none!important}
+
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 @media print{html.motion *{opacity:1!important;transform:none!important;clip-path:none!important}.jump,.to-top,.progress{display:none}}
 </style>
@@ -417,14 +447,11 @@ html.motion .progress{transition:transform .1s linear}
     <ul class="stats" id="stats"></ul>
     <div class="btns">
       <a class="btn primary" href="#gallery">갤러리 보기</a>
-      <a class="btn" href="#infer">추론 자원 요약</a>
-      <a class="btn" href="#calc">추론 메모리 계산기</a>
       <a class="btn" href="#fit">내 장치로 쓸 수 있는 모델</a>
-      <a class="btn" href="#llm">백본 LLM 지도</a>
-      <a class="btn" href="#rl">강화학습 사용처</a>
-      <a class="btn" href="#base">모바일 베이스 제어</a>
       <a class="btn" href="#compare">두 모델 비교</a>
     </div>
+    <p class="strip-h">페이지</p>
+    <nav class="toc" id="toc" aria-label="페이지 목록"></nav>
     <p class="strip-h">대표 구조 7선</p>
     <div class="strip" id="strip"></div>
     <ul class="legend" id="legend"></ul>
@@ -434,7 +461,7 @@ html.motion .progress{transition:transform .1s linear}
 <div class="progress" id="progress" aria-hidden="true"></div>
 <nav class="jump" aria-label="섹션 이동">
   <div class="wrap">
-    <a href="#infer">추론 자원</a><a href="#calc">메모리 계산기</a><a href="#fit">내 장치</a><a href="#llm">백본 LLM</a><a href="#rl">강화학습</a><a href="#base">모바일 베이스</a><a href="#compare">두 모델 비교</a><a href="#gallery">갤러리</a><a href="#notes">표기 기준</a>
+    <a class="brand" href="#">VLA 갤러리</a><a href="#infer">추론 자원</a><a href="#calc">메모리 계산기</a><a href="#fit">내 장치</a><a href="#llm">백본 LLM</a><a href="#rl">강화학습</a><a href="#base">모바일 베이스</a><a href="#compare">두 모델 비교</a><a href="#gallery">갤러리</a><a href="#notes">표기 기준</a>
     <button type="button" class="theme-btn" id="theme-btn" aria-label="밝은·어두운 테마 바꾸기" title="테마 바꾸기"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </div>
 </nav>
@@ -1216,7 +1243,7 @@ const SORTS = {
 };
 /* 필터·정렬 전환: 화면 근처 카드만 이전 위치에서 새 위치로 옮기고(FLIP), 새로 나타난 카드는 떠오르게 한다 */
 function flip(mutate){
-  if (!MOTION || grid.hidden || !io){ mutate(); return; }
+  if (!MOTION || grid.hidden || !io || !grid.offsetParent){ mutate(); return; }
   const vh = innerHeight, near = r => r.bottom > -150 && r.top < vh + 150, before = new Map();
   for (const el of grid.children){ if (el.hidden) continue; el.getAnimations().forEach(a => a.cancel()); const r = el.getBoundingClientRect(); if (near(r)) before.set(el, r); }
   mutate();
@@ -1361,7 +1388,7 @@ function renderFit(){
   document.getElementById("fit-rest").innerHTML = (oom.length ? '<h3 class="sub">메모리 부족 · ' + oom.length + '개 <small style="font-weight:400;color:var(--ink-3)">필요 메모리(추정)</small></h3><div class="mchips">' + oom.map(m => '<a class="mchip" href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "<small>" + fmt(FIT[m.id].mem, 0) + " GB</small></a>").join("") + "</div>" : "") +
     '<h3 class="sub">판정 불가 · ' + na.length + '개</h3><p class="note" style="margin:0 0 8px">총 파라미터와 LLM 크기를 모두 밝히지 않았거나(산업계 모델·전신 제어기 다수), 액션 헤드 구조를 밝히지 않았거나, 실측이 없는 영상 world model입니다.</p><div class="mchips">' +
     na.map(m => '<a class="mchip" href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "</a>").join("") + "</div>";
-  document.getElementById("fit-go").addEventListener("click", () => { document.getElementById("f-fit").value = "ok"; st.fit = "ok"; if (st.view === "compact") setView("compact"); else renderGallery(); document.getElementById("gallery").scrollIntoView(); });
+  document.getElementById("fit-go").addEventListener("click", () => { document.getElementById("f-fit").value = "ok"; st.fit = "ok"; if (st.view === "compact") setView("compact"); else renderGallery(); go("gallery"); });
   if (prevK.length) document.querySelectorAll("#fit-sum .k").forEach((k, i) => tween(k, prevK[i], +k.dataset.v, v => fmt(v, 0)));
   document.querySelectorAll(".fitline").forEach(el => { el.innerHTML = fitLine(FIT[el.dataset.fit]); });
   document.getElementById("f-fit-dev").textContent = "· " + dev.name + " · " + PREC[b] + " · " + thr + " Hz";
@@ -1376,21 +1403,26 @@ document.getElementById("fit-devs").innerHTML = "<thead><tr><th>장치</th><th>�
 document.getElementById("fit-form").addEventListener("submit", e => e.preventDefault());
 renderFit();
 
-function goCard(id){
+function goCard(id, jump){
   if (st.view === "compact") setView("detail");
   const el = cardEl[id]; if (!el) return;
   if (el.hidden){ document.getElementById("f-reset").click(); }
-  el.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+  // 화면 밖 카드는 높이를 어림값으로 두므로(content-visibility) 도착한 뒤 실제 위치로 다시 맞춘다
+  const settle = () => { let n = 0; const fix = () => { const d = el.getBoundingClientRect().top - 60; if (Math.abs(d) > 3) scrollBy({top: d, behavior: "instant"}); if (++n < 12) requestAnimationFrame(fix); }; requestAnimationFrame(fix); };
+  const smooth = MOTION && !jump;
+  el.scrollIntoView({behavior: smooth ? "smooth" : "instant", block: "start"});
+  if (!smooth) settle();
+  else { let done = false; const end = () => { if (done) return; done = true; removeEventListener("scrollend", end); settle(); }; addEventListener("scrollend", end); setTimeout(end, 1500); }
   el.classList.add("in"); el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
   el.addEventListener("animationend", function f(e){ if (e.target === el){ el.classList.remove("flash"); el.removeEventListener("animationend", f); } });
 }
 document.addEventListener("click", e => {
   const a = e.target.closest('a[href^="#m-"]');
-  if (a){ e.preventDefault(); const id = a.getAttribute("href").slice(3); goCard(id); return; }
+  if (a){ e.preventDefault(); const id = a.getAttribute("href").slice(3); if (location.hash === "#m-" + id) goCard(id); else location.hash = "m-" + id; return; }
   const c = e.target.closest("[data-cmp]");
-  if (c){ (c.dataset.cmp === "a" ? selA : selB).value = c.dataset.id; renderCompare(); document.getElementById("compare").scrollIntoView({behavior: "smooth"}); return; }
+  if (c){ (c.dataset.cmp === "a" ? selA : selB).value = c.dataset.id; renderCompare(); go("compare"); return; }
   const k = e.target.closest("[data-calc]");
-  if (k){ calcSel.value = k.dataset.calc; calcIn.value = ""; renderCalc(); document.getElementById("calc").scrollIntoView({behavior: "smooth"}); }
+  if (k){ calcSel.value = k.dataset.calc; calcIn.value = ""; renderCalc(); go("calc"); }
 });
 
 /* re-draw diagrams once web fonts are in, so wrapped labels use the final metrics */
@@ -1402,33 +1434,54 @@ if (document.fonts && document.fonts.ready){
   });
 }
 
-/* ---------- page chrome: 등장, 현재 섹션, 진행 막대, 맨 위로, 테마 ---------- */
+/* ---------- pages: 해시(#infer 등)마다 섹션 하나만 보여 준다 ---------- */
+const PAGES = [["infer","추론 자원","모델별 추론 메모리와 장치 등급별 속도"],["calc","메모리 계산기","파라미터·정밀도로 가중치 메모리 계산"],["fit","내 장치","내 GPU·Jetson에서 쓸 만한 속도로 도는 모델"],
+  ["llm","백본 LLM","VLA가 쓰는 LLM 계열과 시기별 변화"],["rl","강화학습","강화학습을 어디에 어떻게 썼나"],["base","모바일 베이스","바퀴·사족·휴머노이드 베이스 제어 방식"],
+  ["compare","두 모델 비교","구조도와 사양을 나란히"],["gallery","갤러리","모델 " + D.length + "개 카드와 필터"],["notes","표기 기준","범위와 미공개·미확인 표기 규칙"]];
+const PBY = {}; PAGES.forEach(x => { PBY[x[0]] = x; });
+document.getElementById("toc").innerHTML = PAGES.map((x, i) => '<a href="#' + x[0] + '"><span class="no">' + (i < 8 ? "0" + (i + 1) : "··") + "</span><b>" + x[1] + "</b><small>" + esc(x[2]) + '</small><span class="go" aria-hidden="true">→</span></a>').join("");
+PAGES.forEach((x, i) => {
+  const prev = PAGES[i - 1], next = PAGES[i + 1];
+  document.querySelector("#" + x[0] + ">.wrap").insertAdjacentHTML("beforeend", '<nav class="pager" aria-label="이전·다음 페이지">' +
+    (prev ? '<a class="prev" href="#' + prev[0] + '"><small>← 이전</small>' + prev[1] + "</a>" : '<a class="prev" href="#"><small>← 처음</small>홈</a>') +
+    (next ? '<a class="next" href="#' + next[0] + '"><small>다음 →</small>' + next[1] + "</a>" : "") + "</nav>");
+});
+const BASE_TITLE = document.title, root = document.documentElement;
+const navLinks = [...document.querySelectorAll(".jump a:not(.brand)")];
+let curPage = null;
+function go(page){ if (location.hash.slice(1) === page) route(); else location.hash = page; }
+function route(){
+  const h = decodeURIComponent(location.hash.slice(1));
+  const page = h.startsWith("m-") ? "gallery" : (PBY[h] ? h : "home");
+  const first = curPage === null, changed = page !== curPage;
+  curPage = page; root.setAttribute("data-page", page);
+  navLinks.forEach(a => { if (a.getAttribute("href") === "#" + page) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+  const cur = navLinks.find(a => a.hasAttribute("aria-current")), bar = navLinks[0].parentElement;
+  if (cur && bar.scrollWidth > bar.clientWidth) bar.scrollTo({left: cur.offsetLeft - bar.clientWidth / 2 + cur.offsetWidth / 2, behavior: MOTION ? "smooth" : "auto"});
+  document.title = page === "home" ? BASE_TITLE : PBY[page][1] + " · " + BASE_TITLE;
+  if (h.startsWith("m-")){ goCard(h.slice(2), changed); return; }
+  if (!changed || first) return;
+  scrollTo({top: 0, behavior: "instant"});
+  const el = page === "home" ? document.querySelector(".hero") : document.getElementById(page);
+  if (MOTION) el.animate([{opacity: 0, transform: "translateY(10px)"}, {opacity: 1, transform: "none"}], {duration: 380, easing: EASE});
+}
+addEventListener("hashchange", route);
+route();
+
+/* ---------- page chrome: 등장, 진행 막대, 맨 위로, 테마 ---------- */
 if (io){
   document.querySelectorAll("section>.wrap>:not(#grid):not(#compact):not(#empty), footer>.wrap>*, .factor, .chart, .card").forEach(el => io.observe(el));
   document.querySelectorAll(".factor").forEach(el => el.addEventListener("transitionend", () => el.classList.add("done"), {once: true}));
   // 히어로 숫자 굴리기
   document.querySelectorAll("#stats [data-count]").forEach((b, i) => { const n = +b.dataset.count; b.textContent = "0"; setTimeout(() => tween(b, 0, n, v => fmt(Math.round(v), 0), 1100), 350 + i * 60); });
 }
-const navLinks = [...document.querySelectorAll(".jump a")];
-const navBy = {}; navLinks.forEach(a => { navBy[a.getAttribute("href").slice(1)] = a; });
-if ("IntersectionObserver" in window){
-  const spy = new IntersectionObserver(es => es.forEach(e => {
-    if (!e.isIntersecting) return;
-    navLinks.forEach(a => a.removeAttribute("aria-current"));
-    const a = navBy[e.target.id]; if (!a) return;
-    a.setAttribute("aria-current", "true");
-    const bar = a.parentElement, l = a.offsetLeft - bar.clientWidth / 2 + a.offsetWidth / 2;
-    if (bar.scrollWidth > bar.clientWidth) bar.scrollTo({left: l, behavior: MOTION ? "smooth" : "auto"});
-  }), {rootMargin: "-40% 0px -55% 0px"});
-  document.querySelectorAll("main>section[id], footer[id]").forEach(s => spy.observe(s));
-}
-const prog = document.getElementById("progress"), toTop = document.getElementById("to-top"), hero = document.querySelector(".hero");
+const prog = document.getElementById("progress"), toTop = document.getElementById("to-top");
 let ticking = false;
 function onScroll(){
   ticking = false;
   const h = document.documentElement.scrollHeight - innerHeight;
   prog.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
-  toTop.classList.toggle("show", scrollY > hero.offsetHeight);
+  toTop.classList.toggle("show", scrollY > innerHeight * 0.8);
 }
 addEventListener("scroll", () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive: true});
 onScroll();
@@ -1437,7 +1490,11 @@ const themeBtn = document.getElementById("theme-btn");
 const isDark = () => { const t = document.documentElement.getAttribute("data-theme"); return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
 themeBtn.addEventListener("click", () => {
   const next = isDark() ? "light" : "dark";
-  const apply = () => { document.documentElement.setAttribute("data-theme", next); try { localStorage.setItem("vla-theme", next); } catch (e) {} };
+  const apply = () => {
+    root.classList.add("theme-x"); root.setAttribute("data-theme", next);
+    try { localStorage.setItem("vla-theme", next); } catch (e) {}
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove("theme-x")));
+  };
   if (!MOTION || !document.startViewTransition){ apply(); return; }
   // 버튼 위치에서 원이 퍼지며 테마가 바뀐다
   const r = themeBtn.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;

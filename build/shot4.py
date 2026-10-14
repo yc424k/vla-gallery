@@ -7,6 +7,9 @@ skel = ('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" 
         '</head><body>' + page_html + '</body></html>')
 open(outdir + "/wrapped.html", "w", encoding="utf-8").write(skel)
 async def el_shot(pg, sel, path, h=None):
+    # 섹션마다 페이지가 나뉘어 있으므로 그 요소가 든 페이지로 먼저 옮긴다
+    await pg.evaluate(f"(()=>{{const e=document.querySelector('{sel}');const s=e.closest('main>section,footer');const h=s?s.id:'';if(location.hash.slice(1)!==h)location.hash=h;}})()")
+    await pg.wait_for_timeout(300)
     box = await pg.evaluate(f"(()=>{{const e=document.querySelector('{sel}');const r=e.getBoundingClientRect();return [r.left+scrollX,r.top+scrollY,r.width,r.height]}})()")
     await pg.screenshot(path=path, full_page=True, clip={"x": max(box[0]-4,0), "y": box[1]-4, "width": box[2]+8, "height": (h or box[3])+8})
 async def run():
@@ -46,9 +49,11 @@ async def run():
                   out.badChipLinks=[...document.querySelectorAll('#base-matrix a.mchip')].filter(a=>!document.getElementById(a.getAttribute('href').slice(1))).length;
                   return out; })()""")
                 print(json.dumps(res, ensure_ascii=False, indent=1))
+                await pg.evaluate("location.hash='compare'"); await pg.wait_for_timeout(300)
                 await pg.select_option("#cmp-a", "navila"); await pg.select_option("#cmp-b", "pi0-5"); await pg.wait_for_timeout(200)
                 row = await pg.evaluate("[...document.querySelectorAll('#cmp-table tr')].find(r=>r.querySelector('th')&&r.querySelector('th').textContent==='베이스 제어').innerText")
                 print("compare base row:", row.replace("\n", " | "))
+                await pg.evaluate("location.hash='gallery'"); await pg.wait_for_timeout(300)
                 await pg.click("#v-compact"); await pg.wait_for_timeout(300)
                 await el_shot(pg, "#compact", f"{outdir}/{name}-compact.png", 500)
                 await pg.click("#v-detail")
