@@ -430,6 +430,16 @@ main>section,#notes{border-bottom:0;min-height:calc(100vh - 52px);padding-block:
 .pager a small{font-weight:400;font-size:12.5px;color:var(--ink-3);font-family:var(--font-data)}
 .pager a.next{text-align:right;grid-column:2}
 .pager a:hover{border-color:var(--ink-2)}
+/* 바닥에서 더 내리면 다음 페이지로: 당긴 만큼 막대가 차고, 다 차면 넘어간다 */
+.pull{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));z-index:31;width:min(300px,calc(100vw - 136px));padding:9px 14px 11px;
+  border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);color:var(--ink);pointer-events:none;
+  opacity:0;transform:translate(-50%,calc((1 - var(--p,0)) * 16px));transition:opacity .2s,transform .2s var(--ease-out)}
+.pull.show{opacity:1}
+.pull.drag{transition:opacity .2s}
+.pull small{display:block;font-family:var(--font-data);font-size:11.5px;color:var(--ink-3)}
+.pull b{display:block;font-size:14px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pull i{position:absolute;left:-1px;right:-1px;bottom:-1px;height:2px;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.pull.ready{border-color:var(--ink)}
 /* 화면 밖 카드는 그리지 않는다(테마 전환·스크롤 부담을 줄임) */
 .card{content-visibility:auto;contain-intrinsic-size:auto 1150px}
 /* 테마를 바꾸는 순간에는 모든 전환 효과를 끈다 */
@@ -437,7 +447,7 @@ html.theme-x *,html.theme-x *::before,html.theme-x *::after{transition:none!impo
 html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-@media print{html.motion *{opacity:1!important;transform:none!important;clip-path:none!important}.jump,.to-top,.progress{display:none}}
+@media print{html.motion *{opacity:1!important;transform:none!important;clip-path:none!important}.jump,.to-top,.progress,.pull{display:none}}
 </style>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -657,6 +667,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
   </div>
 </footer>
 </main>
+<div class="pull" id="pull" aria-hidden="true"><small></small><b></b><i></i></div>
 <button type="button" class="to-top" id="to-top" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script id="vla-data" type="application/json">__DATA__</script>
@@ -1468,7 +1479,7 @@ PAGES.forEach((x, i) => {
 });
 const BASE_TITLE = document.title, root = document.documentElement;
 const navLinks = [...document.querySelectorAll(".jump a:not(.brand)")];
-let curPage = null;
+let curPage = null, enterY = 10;
 function go(page){ if (location.hash.slice(1) === page) route(); else location.hash = page; }
 function route(){
   const h = decodeURIComponent(location.hash.slice(1));
@@ -1484,7 +1495,8 @@ function route(){
   if (!changed || first) return;
   scrollTo({top: 0, behavior: "instant"});
   const el = page === "home" ? document.querySelector(".hero") : document.getElementById(page);
-  if (MOTION) el.animate([{opacity: 0, transform: "translateY(10px)"}, {opacity: 1, transform: "none"}], {duration: 380, easing: EASE});
+  if (MOTION) el.animate([{opacity: 0, transform: "translateY(" + enterY + "px)"}, {opacity: 1, transform: "none"}], {duration: enterY > 10 ? 520 : 380, easing: EASE});
+  enterY = 10;
 }
 addEventListener("hashchange", route);
 const langSel = document.getElementById("lang-sel");
@@ -1512,6 +1524,53 @@ function onScroll(){
 addEventListener("scroll", () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive: true});
 onScroll();
 toTop.addEventListener("click", () => scrollTo({top: 0, behavior: MOTION ? "smooth" : "auto"}));
+/* ---------- 바닥에서 계속 내리면 다음 페이지로 넘어간다 ---------- */
+(() => {
+  const pull = document.getElementById("pull"), lab = pull.querySelector("small"), ttl = pull.querySelector("b");
+  const nextOf = p => p === "home" ? PAGES[0] : PAGES[PAGES.findIndex(x => x[0] === p) + 1];
+  const atBottom = () => scrollY + innerHeight >= document.documentElement.scrollHeight - 2;
+  // 휠이 안쪽 스크롤 상자(표 등)를 아직 내릴 수 있으면 그쪽에 맡긴다
+  const innerScroll = t => { for (let el = t; el && el !== document.body; el = el.parentElement){ const o = getComputedStyle(el).overflowY; if ((o === "auto" || o === "scroll") && el.scrollTop + el.clientHeight < el.scrollHeight - 1) return true; } return false; };
+  let amt = 0, armed = false, lastWheel = 0, busy = false, fadeT = 0, touchY = null;
+  const TH_WHEEL = 360, TH_TOUCH = 150;
+  function show(p){
+    const nx = nextOf(curPage); if (!nx) return;
+    lab.textContent = p >= 1 ? T("놓으면 이동") : T("계속 내리면 다음 페이지"); ttl.textContent = nx[1];
+    pull.style.setProperty("--p", Math.min(1, p)); pull.classList.add("show"); pull.classList.toggle("ready", p >= 1);
+  }
+  function reset(){ amt = 0; pull.classList.remove("show", "ready", "drag"); pull.style.setProperty("--p", 0); }
+  function advance(){
+    const nx = nextOf(curPage); if (!nx || busy) return;
+    busy = true; armed = false; reset();
+    const el = curPage === "home" ? document.querySelector(".hero") : document.getElementById(curPage);
+    const done = () => { enterY = 48; go(nx[0]); setTimeout(() => { busy = false; }, 600); };
+    if (!MOTION){ done(); return; }
+    // 지금 페이지는 위로 밀려 사라지고, 다음 페이지가 아래에서 올라온다
+    const a = el.animate([{opacity: 1, transform: "none"}, {opacity: 0, transform: "translateY(-48px)"}], {duration: 260, easing: "cubic-bezier(.4,0,1,1)", fill: "forwards"});
+    a.finished.then(() => { done(); a.cancel(); });
+  }
+  addEventListener("wheel", e => {
+    const now = performance.now(), gap = now - lastWheel; lastWheel = now;
+    if (busy || e.ctrlKey || !nextOf(curPage)) return;
+    if (e.deltaY <= 0 || !atBottom() || innerScroll(e.target)){ armed = false; if (amt) reset(); return; }
+    // 바닥에 닿은 스크롤의 관성으로 바로 넘어가지 않게, 한 번 멈췄다가 다시 내릴 때부터 센다
+    if (!armed){ if (gap > 160) armed = true; else return; }
+    amt += e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? innerHeight : 1);
+    pull.classList.add("drag"); show(amt / TH_WHEEL);
+    clearTimeout(fadeT);
+    if (amt >= TH_WHEEL){ advance(); return; }
+    fadeT = setTimeout(reset, 420);
+  }, {passive: true});
+  addEventListener("touchstart", e => { touchY = !busy && e.touches.length === 1 && atBottom() && nextOf(curPage) ? e.touches[0].clientY : null; }, {passive: true});
+  addEventListener("touchmove", e => {
+    if (touchY === null) return;
+    const dy = touchY - e.touches[0].clientY;
+    if (dy <= 0){ if (amt) reset(); return; }
+    amt = dy; pull.classList.add("drag"); show(amt / TH_TOUCH);
+  }, {passive: true});
+  addEventListener("touchend", () => { if (touchY === null) return; touchY = null; if (amt >= TH_TOUCH) advance(); else reset(); }, {passive: true});
+  addEventListener("hashchange", () => { armed = false; reset(); });
+})();
 // GitHub Star 수: 실패하면 숫자 없이 'Star'만 보인다
 (() => {
   const el = document.getElementById("star-n"), fmt = n => n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : String(n);
