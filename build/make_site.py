@@ -27,6 +27,7 @@ ld = {
     ],
 }
 seo = ("<link rel=\"canonical\" href=\"%s\">\n" % SITE
+       + meta("name", "google-site-verification", "Sdh4f6GJQFA6JrVspVS-Lcn_mAKMHdw-4H8wNxJZg2A")
        + meta("name", "robots", "index, follow, max-image-preview:large")
        + meta("name", "keywords", "VLA, Vision-Language-Action, 로봇 VLA 모델, 로봇 파운데이션 모델, VLA 비교, "
               "OpenVLA, pi0, GR00T, RT-2, 휴머노이드, 모바일 매니퓰레이션, 로봇 내비게이션")
