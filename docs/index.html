@@ -24,8 +24,8 @@ if("IntersectionObserver" in window&&!(window.matchMedia&&matchMedia("(prefers-r
   --k-in:#6A737A; --k-vis:#0B8478; --k-txt:#6F7C88; --k-llm:#2E58D0; --k-pol:#7748C6; --k-head:#C8561F; --k-world:#B4366F; --k-ctrl:#2A8042; --k-out:#15181A;
   --good:#2A7A3E; --warn:#A16A0F; --bad:#B0372B;
   --f-llama:#2F69B3; --f-gemma:#138276; --f-qwen:#6B4CC0; --f-intern:#B85A24; --f-smol:#AE3A75; --f-google:#5D6A74; --f-etc:#7D868C; --on-fill:#FFFFFF;
-  --font-display:"Hahmlet","Noto Serif KR",Georgia,serif;
-  --font-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --font-display:"Hahmlet","Noto Serif KR","Hiragino Mincho ProN","Noto Serif JP","Songti SC","Noto Serif SC",Georgia,serif;
+  --font-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Hiragino Sans","Noto Sans JP","Yu Gothic","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
   --font-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
@@ -322,7 +322,8 @@ h1 .hl{background:linear-gradient(100deg,var(--k-llm),var(--k-pol) 45%,var(--k-h
 .jump a[aria-current="true"]{color:var(--ink);background:var(--sunk)}
 .jump a::after{content:"";position:absolute;left:10px;right:10px;bottom:-8px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transition:transform .35s var(--ease-out)}
 .jump a[aria-current="true"]::after{transform:scaleX(1)}
-.theme-btn{margin-left:auto;flex:none;width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:color .2s,border-color .2s,transform .3s var(--ease)}
+.lang-sel{margin-left:auto;flex:none;width:auto;font-size:13px;padding:5px 8px;height:32px;color:var(--ink-2)}
+.theme-btn{margin-left:8px;flex:none;width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:color .2s,border-color .2s,transform .3s var(--ease)}
 .theme-btn:hover{color:var(--ink);border-color:var(--hairline)}
 .theme-btn:active{transform:scale(.92)}
 .theme-btn svg{width:16px;height:16px}
@@ -440,6 +441,7 @@ main>section,#notes{border-bottom:0;min-height:calc(100vh - 52px);padding-block:
 .card{content-visibility:auto;contain-intrinsic-size:auto 1150px}
 /* 테마를 바꾸는 순간에는 모든 전환 효과를 끈다 */
 html.theme-x *,html.theme-x *::before,html.theme-x *::after{transition:none!important}
+html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 @media print{html.motion *{opacity:1!important;transform:none!important;clip-path:none!important}.jump,.to-top,.progress{display:none}}
@@ -470,6 +472,7 @@ html.theme-x *,html.theme-x *::before,html.theme-x *::after{transition:none!impo
 <nav class="jump" aria-label="섹션 이동">
   <div class="wrap">
     <a class="brand" href="#">VLA 갤러리</a><a href="#infer">추론 자원</a><a href="#calc">메모리 계산기</a><a href="#fit">내 장치</a><a href="#llm">백본 LLM</a><a href="#rl">강화학습</a><a href="#base">모바일 베이스</a><a href="#compare">두 모델 비교</a><a href="#gallery">갤러리</a><a href="#notes">표기 기준</a>
+    <select class="lang-sel" id="lang-sel" aria-label="언어 · Language"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option></select>
     <button type="button" class="theme-btn" id="theme-btn" aria-label="밝은·어두운 테마 바꾸기" title="테마 바꾸기"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </div>
 </nav>
@@ -666,17 +669,22 @@ html.theme-x *,html.theme-x *::before,html.theme-x *::after{transition:none!impo
 <script>
 (function(){
 "use strict";
+/* ---------- i18n: 로직은 한국어 원문으로 돌리고, 화면에 낼 때만 번역한다 ---------- */
+const LANG = "ko";
+const I18N = {};
+const tx = s => (s == null || LANG === "ko" || !Object.prototype.hasOwnProperty.call(I18N, s)) ? s : I18N[s];
+function T(s){ let r = tx(s); for (let i = 1; i < arguments.length; i++) r = r.split("{" + (i - 1) + "}").join(arguments[i]); return r; }
 const D = JSON.parse(document.getElementById("vla-data").textContent);
 const byId = {}; D.forEach(m => { byId[m.id] = m; });
 const GROUPS = ["참고 기준(2024 이전)","VA","자기회귀·잠재 액션 VLA","π 계열","Flow·Diffusion VLA","산업계 모델","휴머노이드 VLA","휴머노이드 전신 제어기","모바일 매니퓰레이션","내비게이션","2026 신규"];
 const HKS = ["flow matching","diffusion","이산 토큰","하이브리드","잠재 액션","회귀","CVAE","영상 world model","RL 정책","기타","미공개"];
 const FAMS = ["Qwen","Gemma","Llama","SmolLM","InternLM","PaLI·PaLM","Gemini","Phi","Mamba","기타","없음","미공개"];
-const KIND = {in:"입력",vis:"비전 인코더",txt:"텍스트·토큰 인코더",llm:"백본 LLM·VLM",pol:"정책 트랜스포머",head:"액션 헤드",world:"영상 WORLD MODEL",ctrl:"저수준 제어기",out:"출력"};
-const FONT = '"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif';
-const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const KIND = {in:T("입력"),vis:T("비전 인코더"),txt:T("텍스트·토큰 인코더"),llm:T("백본 LLM·VLM"),pol:T("정책 트랜스포머"),head:T("액션 헤드"),world:T("영상 WORLD MODEL"),ctrl:T("저수준 제어기"),out:T("출력")};
+const FONT = '"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Hiragino Sans","Noto Sans JP","PingFang SC","Microsoft YaHei",sans-serif';
+const esc = s => String(s == null ? "" : tx(s)).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const isNA = v => v == null || v === "" || /^(미공개|미기재|미확인|해당 없음)/.test(String(v));
 const hasInfer = m => !!m.infer && !/^(미공개|미확인|해당 없음)/.test(m.infer) && (/\d/.test(m.infer) || /(RTX|A100|H100|L40|Jetson|Orin|Thor|TPU|GPU|CPU|온보드|클라우드|API|노트북)/.test(m.infer));
-const fmt = (n, d) => Number(n).toLocaleString("ko-KR", {maximumFractionDigits: d == null ? 1 : d});
+const fmt = (n, d) => Number(n).toLocaleString({ko: "ko-KR", en: "en-US", ja: "ja-JP", zh: "zh-CN"}[LANG] || "ko-KR", {maximumFractionDigits: d == null ? 1 : d});
 
 /* ---------- motion helpers ---------- */
 const MOTION = document.documentElement.classList.contains("motion");
@@ -723,20 +731,20 @@ function wrap(text, font, max){
 /* ---------- pipeline + diagram ---------- */
 function outLabel(m){
   const p = [];
-  if (!isNA(m.chunk)) p.push("청크 " + m.chunk);
-  if (!isNA(m.hz)) p.push(m.hz);
-  return p.length ? p.join(" · ") : "로봇 액션";
+  if (!isNA(m.chunk)) p.push(T("청크 {0}", tx(m.chunk)));
+  if (!isNA(m.hz)) p.push(tx(m.hz));
+  return p.length ? p.join(" · ") : T("로봇 액션");
 }
 function pipeline(m){
   if (m.pipe) return m.pipe.map(b => ({k: b[0], t: b[1], s: b[2]}));
   const b = [];
-  const inp = m.inp || (m.hk === "RL 정책" ? "고유감각 · 목표 모션" : m.type === "VA" ? "이미지 · 로봇 상태" : "이미지 · 언어 · 로봇 상태");
+  const inp = m.inp || (m.hk === "RL 정책" ? T("고유감각 · 목표 모션") : m.type === "VA" ? T("이미지 · 로봇 상태") : T("이미지 · 언어 · 로봇 상태"));
   b.push({k: "in", t: inp});
   if (m.vis && !isNA(m.vis) && !/^없음/.test(m.vis)) b.push({k: "vis", t: m.vis});
   if (m.txt) b.push({k: "txt", t: m.txt});
   if (m.world) b.push({k: "world", t: m.world});
   if (m.fam !== "없음"){
-    if (!m.llm || /^(미공개|미확인)$/.test(m.llm)) b.push({k: "llm", t: "백본 미공개"});
+    if (!m.llm || /^(미공개|미확인)$/.test(m.llm)) b.push({k: "llm", t: T("백본 미공개")});
     else b.push({k: "llm", t: m.llm.split(" · ")[0], s: m.llm.includes(" · ") ? m.llm.split(" · ").slice(1).join(" · ") : ""});
   }
   if (m.trunk && !isNA(m.trunk)) b.push({k: "pol", t: m.trunk});
@@ -750,8 +758,8 @@ function diagram(m, W){
   let y = 6; const parts = [];
   const blocks = pipeline(m);
   blocks.forEach((b, i) => {
-    const lab = wrap(b.t, "600 12.5px " + FONT, inner);
-    const sub = b.s ? wrap(b.s, "400 11px " + FONT, inner) : [];
+    const lab = wrap(tx(b.t), "600 12.5px " + FONT, inner);
+    const sub = b.s ? wrap(tx(b.s), "400 11px " + FONT, inner) : [];
     const showK = b.k !== "in" && b.k !== "out";
     const h = 9 + (showK ? 12 : 0) + lab.length * 16 + sub.length * 14 + 6;
     const cls = "blk" + (b.k === "in" ? " blk-in" : "") + (b.k === "out" ? " blk-out" : "");
@@ -769,33 +777,33 @@ function diagram(m, W){
     }
   });
   const H = y + 6;
-  return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(shortName(m.name).s) + ' 구조도">' + parts.join("") + "</svg>";
+  return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + T("{0} 구조도", esc(shortName(m.name).s)) + '">' + parts.join("") + "</svg>";
 }
 
 /* ---------- helpers for cards ---------- */
 function wLevel(gb){ return gb <= 2 ? 1 : gb <= 8 ? 2 : gb <= 24 ? 3 : 4; }
-const LV = ["", "낮음", "보통", "높음", "매우 높음"];
+const LV = ["", T("낮음"), T("보통"), T("높음"), T("매우 높음")];
 function wBadge(m){
   if (m.w16 == null) return "";
   const lv = wLevel(m.w16);
-  return '<span class="wb l' + lv + '"><span class="meter" aria-hidden="true">' + [1,2,3,4].map(i => '<i class="' + (i <= lv ? "on" : "") + '"></i>').join("") + '</span>가중치 bf16 ' + fmt(m.w16) + ' GB(계산) · ' + LV[lv] + '</span>';
+  return '<span class="wb l' + lv + '"><span class="meter" aria-hidden="true">' + [1,2,3,4].map(i => '<i class="' + (i <= lv ? "on" : "") + '"></i>').join("") + '</span>' + T("가중치 bf16 {0} GB(계산) · {1}", fmt(m.w16), LV[lv]) + '</span>';
 }
 function preText(m){
-  if (isNA(m.pre_hw) && isNA(m.pre_time)) return /^해당 없음/.test(m.pre_hw || "") ? "해당 없음 (과제별 학습)" : "미공개";
-  return [m.pre_hw, m.pre_time].filter(v => !isNA(v)).join(" · ");
+  if (isNA(m.pre_hw) && isNA(m.pre_time)) return /^해당 없음/.test(m.pre_hw || "") ? T("해당 없음 (과제별 학습)") : tx("미공개");
+  return [m.pre_hw, m.pre_time].filter(v => !isNA(v)).map(tx).join(" · ");
 }
 function trainText(m){
-  let pre = "사전: " + preText(m);
-  if (m.gpuh != null){ const unit = (m.gpuh_basis || "").split("·").slice(1).join("·").split(/[(;]/)[0].trim() || "GPU-시간"; pre += " (" + fmt(m.gpuh, 0) + " " + unit + ")"; }
-  return pre + " / 파인: " + (isNA(m.ft) ? (m.ft || "미공개") : m.ft);
+  let pre = T("사전: {0}", preText(m));
+  if (m.gpuh != null){ const unit = (m.gpuh_basis || "").split("·").slice(1).join("·").split(/[(;]/)[0].trim() || T("GPU-시간"); pre += " (" + fmt(m.gpuh, 0) + " " + tx(unit) + ")"; }
+  return pre + T(" / 파인: {0}", tx(isNA(m.ft) ? (m.ft || "미공개") : m.ft));
 }
-function dataText(m){ return [m.dtype, m.dscale].filter(v => !isNA(v)).join(" · ") || "미공개"; }
-function chunkHz(m){ return (isNA(m.chunk) ? "청크 미공개" : m.chunk) + " · " + (isNA(m.hz) ? "주기 미공개" : m.hz); }
+function dataText(m){ return [m.dtype, m.dscale].filter(v => !isNA(v)).map(tx).join(" · ") || tx("미공개"); }
+function chunkHz(m){ return (isNA(m.chunk) ? T("청크 미공개") : tx(m.chunk)) + " · " + (isNA(m.hz) ? T("주기 미공개") : tx(m.hz)); }
 function openPill(m){
-  if (m.open === "예") return '<span class="pill ok">가중치 공개</span>';
-  if (m.open === "일부") return '<span class="pill ok">가중치 일부 공개</span>';
-  if (m.open === "아니오") return '<span class="pill">비공개</span>';
-  return '<span class="pill">공개 여부 미확인</span>';
+  if (m.open === "예") return '<span class="pill ok">' + T('가중치 공개') + '</span>';
+  if (m.open === "일부") return '<span class="pill ok">' + T('가중치 일부 공개') + '</span>';
+  if (m.open === "아니오") return '<span class="pill">' + T('비공개') + '</span>';
+  return '<span class="pill">' + T('공개 여부 미확인') + '</span>';
 }
 const RLC = {"사용": "u", "일부": "p", "미사용": "n", "미공개": "x"};
 const usesRL = m => m.rl === "사용" || m.rl === "일부";
@@ -803,17 +811,17 @@ function rlPill(m){ return '<span class="rlp ' + RLC[m.rl] + '">' + esc(m.rl) + 
 function rlCell(m){ return rlPill(m) + (usesRL(m) ? ' <span class="famtag">' + esc(m.rlcat) + "</span>" : "") + '<span class="clamp rlw">' + esc(m.rlwhere) + "</span>"; }
 function famTag(m){ return (m.fam === "없음" || m.fam === "미공개") ? "" : '<span class="famtag">' + esc(m.fam) + "</span>"; }
 const ext = (u, inner, cls, tip) => '<a' + (cls ? ' class="' + cls + '"' : "") + (tip ? ' title="' + esc(tip) + '"' : "") + ' href="' + esc(u) + '" target="_blank" rel="noopener">' + inner + "</a>";
-function pidText(x){ return x.id ? "arXiv " + esc(x.id) : (/\.pdf$/i.test(x.u) ? "PDF" : "웹"); }
+function pidText(x){ return x.id ? "arXiv " + esc(x.id) : (/\.pdf$/i.test(x.u) ? "PDF" : T("웹")); }
 function paperBlock(m){
   const p = m.paper, r = m.prel;
   let h = '<div class="paper">';
   if (p.u) h += '<span class="pk' + (p.k === "보고서" ? " r" : "") + '">' + esc(p.k) + '</span><span class="pv">' + ext(p.u, esc(p.t), "pt", p.t) +
     '<span class="pm"><span class="pid">' + pidText(p) + " ↗</span>" + (p.n ? " · " + esc(p.n) : "") + "</span></span>";
-  else h += '<span class="pk x">논문 없음</span><span class="pv pm">' + esc(p.n) + "</span>";
-  if (r) h += '<span class="pk x">관련</span><span class="pv">' + ext(r.u, esc(r.t), "pt", r.t) + '<span class="pm"><span class="pid">' + pidText(r) + " ↗</span> · " + esc(r.why) + "</span></span>";
+  else h += '<span class="pk x">' + T('논문 없음') + '</span><span class="pv pm">' + esc(p.n) + "</span>";
+  if (r) h += '<span class="pk x">' + T('관련') + '</span><span class="pv">' + ext(r.u, esc(r.t), "pt", r.t) + '<span class="pm"><span class="pid">' + pidText(r) + " ↗</span> · " + esc(r.why) + "</span></span>";
   return h + "</div>";
 }
-function srcLabel(u){ return /github/.test(u) ? "GitHub" : /huggingface\.co/.test(u) ? "Hugging Face" : /\.pdf$/i.test(u) ? "모델 카드 PDF" : "공식 페이지"; }
+function srcLabel(u){ return /github/.test(u) ? "GitHub" : /huggingface\.co/.test(u) ? "Hugging Face" : /\.pdf$/i.test(u) ? T("모델 카드 PDF") : T("공식 페이지"); }
 function paperBtns(m){
   const p = m.paper; let h = "";
   if (p.u) h += ext(p.u, esc(p.k) + " ↗", "mb");
@@ -822,74 +830,74 @@ function paperBtns(m){
 }
 function paperText(m){
   const p = m.paper;
-  if (p.u) return p.t + " (" + (p.id ? "arXiv " + p.id : p.k) + ")";
-  return "논문 없음" + (m.prel ? " · 관련: " + m.prel.t + (m.prel.id ? " (arXiv " + m.prel.id + ")" : "") : "");
+  if (p.u) return p.t + " (" + (p.id ? "arXiv " + p.id : tx(p.k)) + ")";
+  return T("논문 없음") + (m.prel ? T(" · 관련: {0}", m.prel.t + (m.prel.id ? " (arXiv " + m.prel.id + ")" : "")) : "");
 }
 function paperHtml(m){
   const p = m.paper;
   if (p.u) return ext(p.u, esc(p.t)) + ' <span class="famtag">' + pidText(p) + "</span>";
-  return "논문 없음" + (m.prel ? ' · 관련: ' + ext(m.prel.u, esc(m.prel.t)) + ' <span class="famtag">' + pidText(m.prel) + "</span>" : "");
+  return T("논문 없음") + (m.prel ? T(' · 관련: ') + ext(m.prel.u, esc(m.prel.t)) + ' <span class="famtag">' + pidText(m.prel) + "</span>" : "");
 }
 function paperCell(m){
   const p = m.paper;
   if (p.u) return '<span class="pc">' + ext(p.u, (p.id ? "arXiv " + esc(p.id) : esc(p.k)) + " ↗") + "</span>";
-  return '<span style="color:var(--ink-3)">없음</span>' + (m.prel ? '<span class="pc">관련 ' + ext(m.prel.u, pidText(m.prel) + " ↗") + "</span>" : "");
+  return '<span style="color:var(--ink-3)">' + T('없음') + '</span>' + (m.prel ? '<span class="pc">' + T('관련 ') + ext(m.prel.u, pidText(m.prel) + " ↗") + "</span>" : "");
 }
 const MOBT = ["바퀴형","사족보행","휴머노이드 보행","비행","시뮬 전용"];
 const BCATS = ["베이스 속도·자세 직접 출력","웨이포인트 → 추종 제어기","이산 이동 행동","명령·잠재 → RL 보행 제어기","RL 정책이 직접 구동","전신 관절·자세 직접 출력","계획·최적화로 이동 결정","형식 미기재"];
-const BDESC = {"베이스 속도·자세 직접 출력": "정책 행동에 베이스 속도·목표 자세를 넣어 팔 행동과 함께 직접 낸다",
-  "웨이포인트 → 추종 제어기": "상대 웨이포인트를 내면 PD·MPC·pure pursuit 제어기가 속도 명령으로 바꾼다",
-  "이산 이동 행동": "‘25 cm 전진·15° 회전·정지’ 같은 이산 행동을 텍스트·토큰으로 낸다",
-  "명령·잠재 → RL 보행 제어기": "속도·자세 명령이나 잠재 행동을 내면 RL로 학습한 보행·전신 제어기가 관절을 만든다",
-  "RL 정책이 직접 구동": "RL로 학습한 정책(또는 그 증류 정책)이 다리·전신 관절을 직접 낸다",
-  "전신 관절·자세 직접 출력": "모방학습 정책이 다리 관절·발 자세까지 직접 낸다",
-  "계획·최적화로 이동 결정": "학습 정책 대신 최적화나 world model 계획이 베이스 이동을 정한다",
-  "형식 미기재": "베이스를 움직이지만 명령 형식을 밝히지 않았다"};
+const BDESC = {"베이스 속도·자세 직접 출력": T("정책 행동에 베이스 속도·목표 자세를 넣어 팔 행동과 함께 직접 낸다"),
+  "웨이포인트 → 추종 제어기": T("상대 웨이포인트를 내면 PD·MPC·pure pursuit 제어기가 속도 명령으로 바꾼다"),
+  "이산 이동 행동": T("‘25 cm 전진·15° 회전·정지’ 같은 이산 행동을 텍스트·토큰으로 낸다"),
+  "명령·잠재 → RL 보행 제어기": T("속도·자세 명령이나 잠재 행동을 내면 RL로 학습한 보행·전신 제어기가 관절을 만든다"),
+  "RL 정책이 직접 구동": T("RL로 학습한 정책(또는 그 증류 정책)이 다리·전신 관절을 직접 낸다"),
+  "전신 관절·자세 직접 출력": T("모방학습 정책이 다리 관절·발 자세까지 직접 낸다"),
+  "계획·최적화로 이동 결정": T("학습 정책 대신 최적화나 world model 계획이 베이스 이동을 정한다"),
+  "형식 미기재": T("베이스를 움직이지만 명령 형식을 밝히지 않았다")};
 const isMobile = m => m.base.types.some(t => t !== "고정");
 function basePills(m){
   const ts = m.base.types.filter(t => t !== "고정");
-  if (!ts.length) return '<span class="bp fx">고정</span>';
+  if (!ts.length) return '<span class="bp fx">' + T('고정') + '</span>';
   return ts.map(t => '<span class="bp' + (t === "시뮬 전용" ? " sim" : "") + '">' + esc(t) + "</span>").join("");
 }
 function baseCell(m){ return basePills(m) + (m.base.cat ? '<span class="famtag" style="margin-left:0">' + esc(m.base.cat) + "</span>" : "") + '<span class="clamp rlw">' + esc(m.base.how) + "</span>"; }
-function baseText(m){ const ts = m.base.types.filter(t => t !== "고정"); return (ts.length ? ts.join("·") + (m.base.cat ? " (" + m.base.cat + ")" : "") : "고정") + " · " + m.base.how; }
+function baseText(m){ const ts = m.base.types.filter(t => t !== "고정"); return (ts.length ? ts.map(tx).join("·") + (m.base.cat ? " (" + tx(m.base.cat) + ")" : "") : tx("고정")) + " · " + tx(m.base.how); }
 function card(m){
   const nm = shortName(m.name);
   const spec = [
-    ["규모", esc(m.params)],
-    ["백본 LLM", esc(m.llm) + famTag(m), "llm"],
-    ["비전 인코더", esc(m.vis || "—")],
-    ["액션 헤드", esc(m.head) + (m.hk && m.hk !== "미공개" ? ' <span class="famtag">' + esc(m.hk) + "</span>" : "")],
-    ["청크 · 주기", esc(chunkHz(m))],
-    ["베이스 제어", baseCell(m)],
-    ["학습 연산", '<span class="clamp">' + esc(trainText(m)) + "</span>"],
-    ["학습 데이터", '<span class="clamp">' + esc(dataText(m)) + "</span>"],
-    ["강화학습", rlCell(m)],
-    ["추론 장치·속도", '<span class="clamp">' + esc(m.infer || "미공개") + "</span>"],
-    ["추론 메모리", esc(m.mem || "미공개") + wBadge(m)],
-    ["내 장치 추정", '<span class="fitline" data-fit="' + m.id + '"></span>']
+    [T("규모"), esc(m.params)],
+    [T("백본 LLM"), esc(m.llm) + famTag(m), "llm"],
+    [T("비전 인코더"), esc(m.vis || "—")],
+    [T("액션 헤드"), esc(m.head) + (m.hk && m.hk !== "미공개" ? ' <span class="famtag">' + esc(m.hk) + "</span>" : "")],
+    [T("청크 · 주기"), esc(chunkHz(m))],
+    [T("베이스 제어"), baseCell(m)],
+    [T("학습 연산"), '<span class="clamp">' + esc(trainText(m)) + "</span>"],
+    [T("학습 데이터"), '<span class="clamp">' + esc(dataText(m)) + "</span>"],
+    [T("강화학습"), rlCell(m)],
+    [T("추론 장치·속도"), '<span class="clamp">' + esc(m.infer || "미공개") + "</span>"],
+    [T("추론 메모리"), esc(m.mem || "미공개") + wBadge(m)],
+    [T("내 장치 추정"), '<span class="fitline" data-fit="' + m.id + '"></span>']
   ];
   const more = [
-    ["태스크·평가", m.tasks], ["로봇", m.robots], ["사전학습", [m.pre_hw, m.pre_time, m.pre_steps].filter(v => !isNA(v)).join(" · ") || "미공개"],
-    ["GPU·TPU-시간", m.gpuh != null ? fmt(m.gpuh, 0) + " (" + (m.gpuh_basis || "") + ")" : "미공개"],
-    ["파인튜닝", m.ft], ["데이터 종류", m.dtype], ["데이터 규모", m.dscale], ["주요 데이터셋", m.datasets],
-    ["강화학습", m.rl + (usesRL(m) ? " · " + m.rlcat : "") + " · " + m.rlwhere], ["강화학습 근거", m.rlsrc], ["베이스 제어", baseText(m)],
-    ["추론 전체", m.infer], ["실행 위치", m.dep || "미공개"], ["구조 원문 요약", m.backbone_text], ["핵심 특징", m.feature], ["비고", m.note], ["검증", m.verify]
+    [T("태스크·평가"), m.tasks], [T("로봇"), m.robots], [T("사전학습"), [m.pre_hw, m.pre_time, m.pre_steps].filter(v => !isNA(v)).map(tx).join(" · ") || "미공개"],
+    [T("GPU·TPU-시간"), m.gpuh != null ? fmt(m.gpuh, 0) + " (" + tx(m.gpuh_basis || "") + ")" : "미공개"],
+    [T("파인튜닝"), m.ft], [T("데이터 종류"), m.dtype], [T("데이터 규모"), m.dscale], [T("주요 데이터셋"), m.datasets],
+    [T("강화학습"), tx(m.rl) + (usesRL(m) ? " · " + tx(m.rlcat) : "") + " · " + tx(m.rlwhere)], [T("강화학습 근거"), m.rlsrc], [T("베이스 제어"), baseText(m)],
+    [T("추론 전체"), m.infer], [T("실행 위치"), m.dep || "미공개"], [T("구조 원문 요약"), m.backbone_text], [T("핵심 특징"), m.feature], [T("비고"), m.note], [T("검증"), m.verify]
   ];
   return '<article class="card" id="m-' + m.id + '" data-id="' + m.id + '">' +
-    '<figure class="fig">' + diagram(m) + "<figcaption>구조 요약 · " + esc(m.hk) + (usesRL(m) ? " · RL: " + esc(m.rlcat) : "") + "</figcaption></figure>" +
+    '<figure class="fig">' + diagram(m) + "<figcaption>" + T("구조 요약 · ") + esc(m.hk) + (usesRL(m) ? " · RL: " + esc(m.rlcat) : "") + "</figcaption></figure>" +
     '<div class="cb"><header class="ch"><h3><a href="#m-' + m.id + '">' + esc(nm.s) + "</a></h3>" + (nm.full ? '<p class="full">' + esc(nm.full) + "</p>" : "") +
     '<p class="by">' + esc(m.org) + " · " + esc(m.date) + "</p>" +
     '<div class="pills"><span class="pill type">' + esc(m.type) + '</span><span class="pill">' + esc(m.group) + "</span>" + openPill(m) +
-    (String(m.arch).includes("비트랜스포머") ? '<span class="pill cmp">비교용 비트랜스포머</span>' : "") + "</div></header>" +
+    (String(m.arch).includes(T("비트랜스포머")) ? '<span class="pill cmp">' + T('비교용 비트랜스포머') + '</span>' : "") + "</div></header>" +
     paperBlock(m) +
     '<p class="sum">' + esc(m.summary) + "</p>" +
     '<dl class="spec">' + spec.map(r => "<dt>" + r[0] + '</dt><dd class="' + (r[2] || "") + '">' + r[1] + "</dd>").join("") + "</dl>" +
     (m.tags && m.tags.length ? '<ul class="tags">' + m.tags.map(t => "<li>" + esc(t) + "</li>").join("") + "</ul>" : "") +
-    '<div class="acts"><button type="button" class="mb" data-cmp="a" data-id="' + m.id + '">비교 A</button><button type="button" class="mb" data-cmp="b" data-id="' + m.id + '">비교 B</button>' +
-    (m.pb != null ? '<button type="button" class="mb" data-calc="' + m.id + '">메모리 계산</button>' : "") +
+    '<div class="acts"><button type="button" class="mb" data-cmp="a" data-id="' + m.id + T('">비교 A') + '</button><button type="button" class="mb" data-cmp="b" data-id="' + m.id + T('">비교 B') + '</button>' +
+    (m.pb != null ? '<button type="button" class="mb" data-calc="' + m.id + T('">메모리 계산') + '</button>' : "") +
     paperBtns(m) + "</div>" +
-    '<details class="more"><summary>자세히</summary><dl class="spec">' + more.filter(r => r[1] != null && r[1] !== "").map(r => "<dt>" + r[0] + "</dt><dd>" + esc(r[1]) + "</dd>").join("") + "</dl></details>" +
+    '<details class="more"><summary>' + T('자세히') + '</summary><dl class="spec">' + more.filter(r => r[1] != null && r[1] !== "").map(r => "<dt>" + r[0] + "</dt><dd>" + esc(r[1]) + "</dd>").join("") + "</dl></details>" +
     "</div></article>";
 }
 
@@ -900,15 +908,15 @@ const nMem = D.filter(m => m.mem).length;
 const nRL = D.filter(m => m.rl === "사용" || m.rl === "일부").length;
 const nPaper = D.filter(m => m.paper.k === "논문").length;
 const nMob = D.filter(isMobile).length;
-document.getElementById("stats").innerHTML = [[D.length, "모델"], [nPaper, "논문 링크"], [nLLM, "백본 LLM 확인"], [nInf, "추론 장치·속도 공개"], [nMem, "추론 메모리 보고"], [nRL, "강화학습 사용·일부"], [nMob, "모바일 베이스 제어"]]
+document.getElementById("stats").innerHTML = [[D.length, T("모델")], [nPaper, T("논문 링크")], [nLLM, T("백본 LLM 확인")], [nInf, T("추론 장치·속도 공개")], [nMem, T("추론 메모리 보고")], [nRL, T("강화학습 사용·일부")], [nMob, T("모바일 베이스 제어")]]
   .map(x => '<li><b class="mono" data-count="' + x[0] + '">' + x[0] + "</b>" + x[1] + "</li>").join("");
 const STRIP = ["rt-2","openvla","pi0","gr00t-n1","figure-helix","navila","dreamzero"];
 document.getElementById("strip").innerHTML = STRIP.map(id => {
   const m = byId[id]; if (!m) return "";
   return '<a class="mini" href="#m-' + id + '"><div class="fig">' + diagram(m) + "</div><span>" + esc(shortName(m.name).s) + "<small>" + esc(m.date) + " · " + esc(m.params.split(/[;(]/)[0].trim()) + "</small></span></a>";
 }).join("");
-document.getElementById("legend").innerHTML = [["in","입력"],["vis","비전 인코더"],["txt","텍스트·토큰 인코더"],["llm","백본 LLM·VLM"],["pol","정책 트랜스포머"],["head","액션 헤드"],["world","영상 world model"],["ctrl","저수준 제어기"]]
-  .map(k => '<li class="k-' + k[0] + '"><span class="sw' + (k[0] === "in" ? " in" : "") + '"></span>' + k[1] + "</li>").join("");
+document.getElementById("legend").innerHTML = [["in",T("입력")],["vis",T("비전 인코더")],["txt",T("텍스트·토큰 인코더")],["llm",T("백본 LLM·VLM")],["pol",T("정책 트랜스포머")],["head",T("액션 헤드")],["world","영상 world model"],["ctrl",T("저수준 제어기")]]
+  .map(k => '<li class="k-' + k[0] + '"><span class="sw' + (k[0] === "in" ? " in" : "") + '"></span>' + esc(k[1]) + "</li>").join("");
 
 /* ---------- inference: memory chart ---------- */
 (function memChart(){
@@ -918,17 +926,17 @@ document.getElementById("legend").innerHTML = [["in","입력"],["vis","비전 �
   const LAB = {"turbovla":[0,0,"start",180,405],"evo-1":[-4,-15,"middle"],"flower":[0,0,"start",180,389],"eo-1":[-17,10,"end"],"go-1":[-10,4,"end"],"nora":[-12,0,"end"],
     "pi0":[9,16,"start"],"spatialvla":[0,-15,"middle"],"internvla-m1":[-9,-4,"end"],"molmoact-2":[9,-10,"start"],"openvla":[-10,4,"end"],"openvla-oft":[-10,-2,"end"],"magma":[-10,2,"end"],"navfom":[-10,-2,"end"],"navila":[0,0,"end",520,191]};
   const out = [];
-  out.push('<text class="c-title" x="24" y="30">보고된 추론 메모리는 bf16 가중치 계산값과 같거나 최대 약 4 GB 크다</text>');
-  out.push('<text class="c-sub" x="24" y="52">채운 점 = 보고값 · 빈 점 = 양자화 보고값 · ▲ = 최소 요구량 · 점선 = 장치 메모리</text>');
+  out.push('<text class="c-title" x="24" y="30">' + T('보고된 추론 메모리는 bf16 가중치 계산값과 같거나 최대 약 4 GB 크다') + '</text>');
+  out.push('<text class="c-sub" x="24" y="52">' + T('채운 점 = 보고값 · 빈 점 = 양자화 보고값 · ▲ = 최소 요구량 · 점선 = 장치 메모리') + '</text>');
   for (let g = 0; g <= 25; g += 5) out.push('<line class="c-grid" x1="' + x0 + '" x2="' + x1 + '" y1="' + Y(g) + '" y2="' + Y(g) + '"/><text class="c-tick" x="' + (x0 - 8) + '" y="' + (Y(g) + 4) + '" text-anchor="end">' + g + "</text>");
   for (let b = 0; b <= 10; b += 2) out.push('<line class="c-grid" x1="' + X(b) + '" x2="' + X(b) + '" y1="' + yTop + '" y2="' + yBot + '"/><text class="c-tick" x="' + X(b) + '" y="' + (yBot + 18) + '" text-anchor="middle">' + b + "</text>");
-  out.push('<text class="c-t" x="' + ((x0 + x1) / 2) + '" y="' + (yBot + 40) + '" text-anchor="middle">총 파라미터 (B)</text>');
-  out.push('<text class="c-t" x="' + x0 + '" y="' + (yTop - 12) + '">추론 메모리 (GB)</text>');
+  out.push('<text class="c-t" x="' + ((x0 + x1) / 2) + '" y="' + (yBot + 40) + T('" text-anchor="middle">총 파라미터 (B)') + '</text>');
+  out.push('<text class="c-t" x="' + x0 + '" y="' + (yTop - 12) + T('">추론 메모리 (GB)') + '</text>');
   [[8,"8 GB"],[16,"16 GB · Jetson Orin NX"],[24,"24 GB · RTX 4090"]].forEach(r => {
     out.push('<line class="c-ref" x1="' + x0 + '" x2="' + x1 + '" y1="' + Y(r[0]) + '" y2="' + Y(r[0]) + '"/><text class="c-t" x="' + (x0 + 6) + '" y="' + (Y(r[0]) - 5) + '">' + r[1] + "</text>");
   });
   out.push('<line class="c-acc" x1="' + X(0) + '" y1="' + Y(0) + '" x2="' + X(10) + '" y2="' + Y(20) + '"/>');
-  out.push('<text class="c-acc-t" x="' + (X(10) - 16) + '" y="' + (Y(20) - 14) + '" text-anchor="end">bf16 가중치 = 파라미터 × 2 바이트</text>');
+  out.push('<text class="c-acc-t" x="' + (X(10) - 16) + '" y="' + (Y(20) - 14) + T('" text-anchor="end">bf16 가중치 = 파라미터 × 2 바이트') + '</text>');
   out.push('<g>');
   pts.forEach(m => {
     const px = X(m.pb), py = Y(m.mg);
@@ -940,7 +948,7 @@ document.getElementById("legend").innerHTML = [["in","입력"],["vis","비전 �
   });
   pts.forEach(m => {
     const px = X(m.pb), py = Y(m.mg), L = LAB[m.id] || [9, 4, "start"];
-    out.push('<circle class="c-pt" cx="' + px + '" cy="' + py + '" r="5"><title>' + esc(shortName(m.name).s + ": " + m.pb + "B, " + (m.mem || m.mg + " GB")) + "</title></circle>");
+    out.push('<circle class="c-pt" cx="' + px + '" cy="' + py + '" r="5"><title>' + esc(shortName(m.name).s + ": " + m.pb + "B, " + (m.mem ? tx(m.mem) : m.mg + " GB")) + "</title></circle>");
     if (m.mge) out.push('<path class="arrh" d="M' + (px - 4) + " " + (py - 8) + "L" + (px + 4) + " " + (py - 8) + "L" + px + " " + (py - 14) + 'Z"/>');
     if (m.id === "ecot") return;
     let name = shortName(m.name).s;
@@ -952,79 +960,79 @@ document.getElementById("legend").innerHTML = [["in","입력"],["vis","비전 �
     out.push('<text class="c-lab" x="' + lx + '" y="' + ly + '" text-anchor="' + L[2] + '">' + esc(name) + ' <tspan class="c-lab-s">' + esc((m.mge ? "≥" : "") + fmt(m.mg)) + "</tspan></text>");
   });
   out.push("</g>");
-  document.getElementById("mem-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="보고된 추론 메모리는 bf16 가중치 계산값과 같거나 최대 약 4 GB 크다">' + out.join("") + "</svg>";
+  document.getElementById("mem-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + T('" role="img" aria-label="보고된 추론 메모리는 bf16 가중치 계산값과 같거나 최대 약 4 GB 크다">') + out.join("") + "</svg>";
   const mx = pts.reduce((a, m) => m.mg > a.mg ? m : a), mn = pts.reduce((a, m) => m.mg < a.mg ? m : a);
-  document.getElementById("infer-lead").textContent = "보고된 추론 메모리는 " + fmt(mn.mg) + " GB(" + shortName(mn.name).s + ")부터 " + fmt(mx.mg) + " GB(" + shortName(mx.name).s + ")까지이고, bf16 가중치 계산값보다 0~4 GB 큽니다. 7B급은 bf16으로 15~17 GB라 24 GB GPU 1장이면 되고, 4-bit 양자화하면 5~7 GB로 줄어듭니다.";
+  document.getElementById("infer-lead").textContent = T("보고된 추론 메모리는 {0} GB({1})부터 {2} GB({3})까지이고, bf16 가중치 계산값보다 0~4 GB 큽니다. 7B급은 bf16으로 15~17 GB라 24 GB GPU 1장이면 되고, 4-bit 양자화하면 5~7 GB로 줄어듭니다.", fmt(mn.mg), tx(shortName(mn.name).s), fmt(mx.mg), tx(shortName(mx.name).s));
 })();
 
 /* ---------- inference: tier table ---------- */
 const TIERS = [
-  ["임베디드·로봇 탑재", "로봇에 실린 Jetson·임베디드 GPU·노트북 GPU", [
+  [T("임베디드·로봇 탑재"), T("로봇에 실린 Jetson·임베디드 GPU·노트북 GPU"), [
     ["gr00t-n1-7","Jetson AGX Thor (TensorRT)","93.8 ms · 10.7 Hz",""],
     ["gr00t-n1-6","Jetson Thor","105 ms · 9.5 Hz",""],
-    ["gigabrain-0","Jetson AGX Orin (Small 402M)","0.13 s (같은 장치 π0 1.28 s)",""],
-    ["figure-helix","저전력 임베디드 GPU 2개 (모델 병렬)","S2 7–9 Hz · S1 200 Hz",""],
-    ["1x-redwood-ai","NEO 온보드 GPU","약 5 Hz",""],
-    ["sonic","Jetson Orin (C++·TensorRT)","플래너 12 ms · 정책 50 Hz",""],
+    ["gigabrain-0","Jetson AGX Orin (Small 402M)",T("0.13 s (같은 장치 π0 1.28 s)"),""],
+    ["figure-helix",T("저전력 임베디드 GPU 2개 (모델 병렬)"),"S2 7–9 Hz · S1 200 Hz",""],
+    ["1x-redwood-ai",T("NEO 온보드 GPU"),T("약 5 Hz"),""],
+    ["sonic","Jetson Orin (C++·TensorRT)",T("플래너 12 ms · 정책 50 Hz"),""],
     ["amo","Jetson Orin NX","50 Hz",""],
-    ["pi0","RTX 4090 (로봇 탑재)","73 ms/청크 (원격 86 ms)","> 8 GB"],
-    ["rdt-1b","RTX 4090 24GB (로봇 탑재)","청크 6 Hz · 액션 381 Hz",""],
-    ["mobile-aloha","RTX 3070 Ti 노트북 (8 GB)","미공개",""],
-    ["abot-n0","Jetson Orin NX 16GB (Go2 탑재)","VLA 2 Hz · 하위 컨트롤러 10 Hz 이상",""],
-    ["lightnav-0","Jetson AGX Thor (bf16 · fp8)","268 ms · 178 ms (폐루프 4.5–4.8 Hz)",""],
+    ["pi0",T("RTX 4090 (로봇 탑재)"),T("73 ms/청크 (원격 86 ms)"),"> 8 GB"],
+    ["rdt-1b",T("RTX 4090 24GB (로봇 탑재)"),T("청크 6 Hz · 액션 381 Hz"),""],
+    ["mobile-aloha",T("RTX 3070 Ti 노트북 (8 GB)"),"미공개",""],
+    ["abot-n0",T("Jetson Orin NX 16GB (Go2 탑재)"),T("VLA 2 Hz · 하위 컨트롤러 10 Hz 이상"),""],
+    ["lightnav-0","Jetson AGX Thor (bf16 · fp8)",T("268 ms · 178 ms (폐루프 4.5–4.8 Hz)"),""],
     ["qwen-robotnav","Jetson Thor (FP8 · TensorRT)","204 ms · 4.9 Hz (README 196 ms)",""],
     ["compass","Jetson AGX Orin (TensorRT)","29.3 ms (P50)","422 MB"]]],
-  ["데스크톱 GPU", "로봇 옆 PC의 RTX 4090·5090·A6000", [
+  ["데스크톱 GPU", T("로봇 옆 PC의 RTX 4090·5090·A6000"), [
     ["turbovla","RTX 4090","31.2 ms · 32 Hz","0.9 GB"],
     ["flower","RTX 4090","0.052 s · 311 Hz","1.8 GB"],
     ["evo-1","RTX 4090d","16.4 Hz","2.3 GB"],
-    ["spatialvla","RTX 4090","약 20 Hz","8.5 GB"],
-    ["openvla","RTX 4090","약 6 Hz","bf16 15 GB · int4 7.0 GB"],
-    ["pi0-fast","RTX 4090","약 750 ms/청크","> 8 GB"],
+    ["spatialvla","RTX 4090",T("약 20 Hz"),"8.5 GB"],
+    ["openvla","RTX 4090",T("약 6 Hz"),"bf16 15 GB · int4 7.0 GB"],
+    ["pi0-fast","RTX 4090",T("약 750 ms/청크"),"> 8 GB"],
     ["gr00t-n1-6","RTX 4090 · RTX 5090","44 ms · 37 ms",""],
-    ["xiaomi-robotics-0","RTX 4090","80 ms (flow 5스텝)",""],
-    ["cogact","RTX A6000","181 ms/16액션 · 약 5.5 Hz","fp32 약 30 GB"],
+    ["xiaomi-robotics-0","RTX 4090",T("80 ms (flow 5스텝)"),""],
+    ["cogact","RTX A6000",T("181 ms/16액션 · 약 5.5 Hz"),T("fp32 약 30 GB")],
     ["dexvla","RTX A6000","60 Hz",""],
     ["navila","RTX 4090","FP16 595 ms · W4A16 368 ms","FP16 18.5 GB · W4A16 8.6 GB"],
-    ["streamvln","RTX 4090 (원격)","행동 4개 0.27초 + 통신 0.2–1.0초",""],
-    ["navdp","RTX 5080 노트북 GPU","10 Hz 이상",""]]],
-  ["데이터센터 GPU", "원격 서버의 A100·H100·L40·GB200", [
-    ["openvla-oft","A100","109.7 Hz","약 16 GB"],
-    ["gr00t-n1","L40 (bf16)","63.9 ms/16스텝",""],
+    ["streamvln",T("RTX 4090 (원격)"),T("행동 4개 0.27초 + 통신 0.2–1.0초"),""],
+    ["navdp",T("RTX 5080 노트북 GPU"),T("10 Hz 이상"),""]]],
+  ["데이터센터 GPU", T("원격 서버의 A100·H100·L40·GB200"), [
+    ["openvla-oft","A100","109.7 Hz",T("약 16 GB")],
+    ["gr00t-n1","L40 (bf16)",T("63.9 ms/16스텝"),""],
     ["gr00t-n1-5","H100","47.88 ms",""],
     ["gr00t-n1-7","H100 · RTX Pro 6000","27.9 ms · 35.9 Hz",""],
-    ["pi0-6","H100","63 ms/청크",""],
-    ["molmoact-2","H100","180 ms (적응 추론 790 ms)","bf16 약 12 GB"],
-    ["cosmos-policy","H100","0.61 s (디노이징 5스텝)",""],
-    ["dyna-2","H100","영상 3초 생성 110 ms",""],
-    ["dreamzero","GB200 (GPU 2개 이상)","150 ms · 약 7 Hz",""],
-    ["uni-navid","A100 (원격)","0.2초 · 약 5 Hz (통신 0.3초 별도)",""],
-    ["quart-online","A100 (fp16)","행동당 약 20 ms · 유효 50 Hz","fp16 > 19 GB"]]],
-  ["클라우드", "네트워크 너머의 TPU·API", [
-    ["rt-2","멀티 TPU 클라우드","1–3 Hz (55B) · 약 5 Hz (5B)",""],
-    ["gemini-robotics","클라우드 백본 + 온보드 디코더","백본 160 ms 미만 · e2e 약 250 ms",""],
-    ["gemini-robotics-er-1-5","Gemini API","미공개 (thinking budget으로 조절)",""],
-    ["mobility-vla","Gemini 1.5 Pro (클라우드)","목표 탐색 질의당 10–30초",""]]]
+    ["pi0-6","H100",T("63 ms/청크"),""],
+    ["molmoact-2","H100",T("180 ms (적응 추론 790 ms)"),T("bf16 약 12 GB")],
+    ["cosmos-policy","H100",T("0.61 s (디노이징 5스텝)"),""],
+    ["dyna-2","H100",T("영상 3초 생성 110 ms"),""],
+    ["dreamzero",T("GB200 (GPU 2개 이상)"),T("150 ms · 약 7 Hz"),""],
+    ["uni-navid",T("A100 (원격)"),T("0.2초 · 약 5 Hz (통신 0.3초 별도)"),""],
+    ["quart-online","A100 (fp16)",T("행동당 약 20 ms · 유효 50 Hz"),"fp16 > 19 GB"]]],
+  ["클라우드", T("네트워크 너머의 TPU·API"), [
+    ["rt-2",T("멀티 TPU 클라우드"),T("1–3 Hz (55B) · 약 5 Hz (5B)"),""],
+    ["gemini-robotics",T("클라우드 백본 + 온보드 디코더"),T("백본 160 ms 미만 · e2e 약 250 ms"),""],
+    ["gemini-robotics-er-1-5","Gemini API",T("미공개 (thinking budget으로 조절)"),""],
+    ["mobility-vla",T("Gemini 1.5 Pro (클라우드)"),T("목표 탐색 질의당 10–30초"),""]]]
 ];
 (function tierTable(){
-  const rows = ['<thead><tr><th>모델</th><th>장치</th><th>보고된 지연·속도</th><th>추론 메모리</th><th>파라미터</th></tr></thead><tbody>'];
+  const rows = ['<thead><tr><th>' + T('모델') + '</th><th>' + T('장치') + '</th><th>' + T('보고된 지연·속도') + '</th><th>' + T('추론 메모리') + '</th><th>' + T('파라미터') + '</th></tr></thead><tbody>'];
   TIERS.forEach(t => {
-    rows.push('<tr class="grp"><td colspan="5">' + t[0] + "<span>" + t[1] + "</span></td></tr>");
+    rows.push('<tr class="grp"><td colspan="5">' + esc(t[0]) + "<span>" + esc(t[1]) + "</span></td></tr>");
     t[2].forEach(r => { const m = byId[r[0]]; if (!m) return;
       rows.push('<tr><td><a href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "</a></td><td>" + esc(r[1]) + '</td><td class="num">' + esc(r[2]) + '</td><td class="num">' + esc(r[3] || "미공개") + '</td><td class="num">' + esc(m.pb != null ? m.pb + "B" : "미공개") + "</td></tr>"); });
   });
   rows.push("</tbody>");
   document.getElementById("tier-table").innerHTML = rows.join("");
-  document.getElementById("tier-lead").textContent = "같은 GR00T N1.7도 H100에서 27.9 ms, Jetson AGX Thor에서 93.8 ms로 장치에 따라 3배 넘게 차이 납니다. 로봇 탑재 실행은 GR00T(2~3B)·Helix처럼 계층을 나누거나 TensorRT로 최적화한 경우가 대부분입니다. 내비게이션 VLA도 ABot-N0(Jetson Orin NX, 2 Hz)·LightNav-0(Jetson AGX Thor, 약 5 Hz)처럼 로봇 탑재 실행이 늘었지만, VLM 기반 VLN 모델 다수는 원격 RTX 4090·A100 서버에서 돌리고 영상을 무선으로 주고받습니다.";
+  document.getElementById("tier-lead").textContent = T("같은 GR00T N1.7도 H100에서 27.9 ms, Jetson AGX Thor에서 93.8 ms로 장치에 따라 3배 넘게 차이 납니다. 로봇 탑재 실행은 GR00T(2~3B)·Helix처럼 계층을 나누거나 TensorRT로 최적화한 경우가 대부분입니다. 내비게이션 VLA도 ABot-N0(Jetson Orin NX, 2 Hz)·LightNav-0(Jetson AGX Thor, 약 5 Hz)처럼 로봇 탑재 실행이 늘었지만, VLM 기반 VLN 모델 다수는 원격 RTX 4090·A100 서버에서 돌리고 영상을 무선으로 주고받습니다.");
 })();
 
 /* ---------- LLM map ---------- */
 const FGRP = {"Llama":"llama","Gemma":"gemma","Qwen":"qwen","InternLM":"intern","SmolLM":"smol","PaLI·PaLM":"google","Gemini":"google","Phi":"etc","Mamba":"etc","기타":"etc"};
-const FGNAME = {llama:"Llama", gemma:"Gemma", qwen:"Qwen", intern:"InternLM", smol:"SmolLM", google:"Google 비공개 (PaLI·PaLM·Gemini)", etc:"기타 (Phi·Mamba·Chameleon 등)"};
+const FGNAME = {llama:"Llama", gemma:"Gemma", qwen:"Qwen", intern:"InternLM", smol:"SmolLM", google:T("Google 비공개 (PaLI·PaLM·Gemini)"), etc:T("기타 (Phi·Mamba·Chameleon 등)")};
 const FGORDER = ["qwen","gemma","llama","smol","intern","google","etc"];
 (function famChart(){
-  const yb = d => { const y = +d.slice(0, 4); return y <= 2023 ? "2023 이전" : String(y); };
-  const years = ["2023 이전","2024","2025","2026"];
+  const yb = d => { const y = +d.slice(0, 4); return y <= 2023 ? T("2023 이전") : String(y); };
+  const years = [T("2023 이전"),"2024","2025","2026"];
   const cnt = {}; years.forEach(y => { cnt[y] = {}; FGORDER.forEach(g => cnt[y][g] = 0); });
   const withLLM = D.filter(m => FGRP[m.fam]);
   withLLM.forEach(m => { cnt[yb(m.date)][FGRP[m.fam]]++; });
@@ -1032,10 +1040,10 @@ const FGORDER = ["qwen","gemma","llama","smol","intern","google","etc"];
   const maxT = Math.max(...years.map(y => tot[y]));
   const W = 760, x0 = 112, x1 = 700, rowH = 46, y0 = 112;
   const out = [];
-  out.push('<text class="c-title" x="24" y="30">백본 LLM은 2024년 Llama 중심에서 2025~2026년 Qwen 중심으로 옮겨갔다</text>');
-  out.push('<text class="c-sub" x="24" y="52">발표 연도별 모델 수, 백본 LLM 계열별 (계열 확인 ' + withLLM.length + "개)</text>");
+  out.push('<text class="c-title" x="24" y="30">' + T('백본 LLM은 2024년 Llama 중심에서 2025~2026년 Qwen 중심으로 옮겨갔다') + '</text>');
+  out.push('<text class="c-sub" x="24" y="52">' + T("발표 연도별 모델 수, 백본 LLM 계열별 (계열 확인 {0}개)", withLLM.length) + "</text>");
   let lx = 24; FGORDER.forEach(g => {
-    const nm = g === "google" ? "Google 비공개" : g === "etc" ? "기타" : FGNAME[g];
+    const nm = tx(g === "google" ? T("Google 비공개") : g === "etc" ? "기타" : FGNAME[g]);
     out.push('<rect x="' + lx + '" y="68" width="11" height="11" rx="2" style="fill:var(--f-' + g + ')"/><text class="c-t" x="' + (lx + 16) + '" y="78">' + esc(nm) + "</text>");
     cv.font = "12px " + FONT; lx += 16 + cv.measureText(nm).width + 18;
   });
@@ -1045,23 +1053,23 @@ const FGORDER = ["qwen","gemma","llama","smol","intern","google","etc"];
     let cx = x0;
     FGORDER.forEach(g => { const n = cnt[y][g]; if (!n) return;
       const w = n / maxT * (x1 - x0);
-      out.push('<rect x="' + cx + '" y="' + ry + '" width="' + Math.max(w - 1.5, 1) + '" height="28" style="fill:var(--f-' + g + ')"><title>' + y + " · " + esc(FGNAME[g]) + ": " + n + "개</title></rect>");
+      out.push('<rect x="' + cx + '" y="' + ry + '" width="' + Math.max(w - 1.5, 1) + '" height="28" style="fill:var(--f-' + g + ')"><title>' + y + " · " + esc(FGNAME[g]) + ": " + T("{0}개", n) + "</title></rect>");
       if (w >= 18) out.push('<text class="c-seg-t" x="' + (cx + w / 2) + '" y="' + (ry + 19) + '" text-anchor="middle">' + n + "</text>");
       cx += w; });
-    out.push('<text class="c-tick" x="' + (cx + 8) + '" y="' + (ry + 19) + '">' + tot[y] + "개</text>");
+    out.push('<text class="c-tick" x="' + (cx + 8) + '" y="' + (ry + 19) + '">' + T("{0}개", tot[y]) + "</text>");
   });
   const H = y0 + years.length * rowH + 6;
-  document.getElementById("fam-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="백본 LLM은 2024년 Llama 중심에서 2025~2026년 Qwen 중심으로 옮겨갔다">' + out.join("") + "</svg>";
+  document.getElementById("fam-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + T('" role="img" aria-label="백본 LLM은 2024년 Llama 중심에서 2025~2026년 Qwen 중심으로 옮겨갔다">') + out.join("") + "</svg>";
   const fc = {}; withLLM.forEach(m => { fc[m.fam] = (fc[m.fam] || 0) + 1; });
   const top = Object.entries(fc).sort((a, b) => b[1] - a[1]);
-  document.getElementById("llm-lead").textContent = "백본 LLM 계열이 확인된 모델 " + withLLM.length + "개 중 " + top[0][0] + " 계열이 " + top[0][1] + "개로 가장 많고, " + top[1][0] + " " + top[1][1] + "개, " + top[2][0] + " " + top[2][1] + "개 순입니다. 2024년에는 Llama 2 7B 기반(OpenVLA 계보)이, 2025~2026년에는 Qwen2.5-VL·Qwen3-VL 기반이 가장 많이 쓰였고, π 계열은 Gemma(PaliGemma→Gemma 3)를 씁니다.";
+  document.getElementById("llm-lead").textContent = T("백본 LLM 계열이 확인된 모델 {0}개 중 {1} 계열이 {2}개로 가장 많고, {3} {4}개, {5} {6}개 순입니다. 2024년에는 Llama 2 7B 기반(OpenVLA 계보)이, 2025~2026년에는 Qwen2.5-VL·Qwen3-VL 기반이 가장 많이 쓰였고, π 계열은 Gemma(PaliGemma→Gemma 3)를 씁니다.", withLLM.length, tx(top[0][0]), top[0][1], tx(top[1][0]), top[1][1], tx(top[2][0]), top[2][1]);
   const list = []; const order = FAMS.filter(f => FGRP[f]);
   order.sort((a, b) => (fc[b] || 0) - (fc[a] || 0));
   order.forEach(f => { const ms = withLLM.filter(m => m.fam === f).sort((a, b) => a.date < b.date ? -1 : 1); if (!ms.length) return;
-    list.push('<div class="fam-row"><div class="fam-name" style="--fc:var(--f-' + FGRP[f] + ')"><i></i>' + esc(f) + " <small>" + ms.length + '개</small></div><div class="mchips">' +
+    list.push('<div class="fam-row"><div class="fam-name" style="--fc:var(--f-' + FGRP[f] + ')"><i></i>' + esc(f) + " <small>" + T("{0}개", ms.length) + '</small></div><div class="mchips">' +
       ms.map(m => '<a class="mchip" href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "<small>" + esc(m.llm.split(" · ")[0]) + "</small></a>").join("") + "</div></div>"); });
   const none = D.filter(m => m.fam === "없음").length, hid = D.filter(m => m.fam === "미공개").length;
-  list.push('<p class="note">LLM 없이 비전 인코더·정책 트랜스포머만 쓰는 모델 ' + none + "개(ACT, Diffusion Policy, RDT-1B, 전신 제어기 등)와 백본을 밝히지 않은 모델 " + hid + "개(Helix, GEN-0 등)는 갤러리에서 ‘백본 LLM 계열’ 필터로 볼 수 있습니다.</p>");
+  list.push('<p class="note">' + T("LLM 없이 비전 인코더·정책 트랜스포머만 쓰는 모델 {0}개(ACT, Diffusion Policy, RDT-1B, 전신 제어기 등)와 백본을 밝히지 않은 모델 {1}개(Helix, GEN-0 등)는 갤러리에서 ‘백본 LLM 계열’ 필터로 볼 수 있습니다.", none, hid) + "</p>");
   document.getElementById("fam-list").innerHTML = list.join("");
 })();
 
@@ -1071,54 +1079,54 @@ const FGORDER = ["qwen","gemma","llama","smol","intern","google","etc"];
   const rows = GROUPS.map(g => { const ms = D.filter(m => m.group === g); const c = {}; S.forEach(x => { c[x] = ms.filter(m => m.rl === x).length; }); return {g: g, n: ms.length, c: c}; });
   const maxN = Math.max(...rows.map(r => r.n));
   const W = 760, x0 = 190, x1 = 690, rowH = 34, y0 = 104, out = [];
-  out.push('<text class="c-title" x="24" y="30">강화학습은 보행·내비게이션 쪽에 몰려 있고, 고정 팔 VLA는 대부분 모방학습만 쓴다</text>');
-  out.push('<text class="c-sub" x="24" y="52">분류별 모델 수, 강화학습 사용 여부별</text>');
+  out.push('<text class="c-title" x="24" y="30">' + T('강화학습은 보행·내비게이션 쪽에 몰려 있고, 고정 팔 VLA는 대부분 모방학습만 쓴다') + '</text>');
+  out.push('<text class="c-sub" x="24" y="52">' + T('분류별 모델 수, 강화학습 사용 여부별') + '</text>');
   let lx = 24;
-  [["사용","s-use"],["일부 (하위 제어기·데이터·보상·가치)","s-part"],["미사용","s-no"],["미공개","s-na"]].forEach(l => {
-    out.push('<rect class="' + l[1] + '" x="' + lx + '" y="68" width="11" height="11" rx="2"/><text class="c-t" x="' + (lx + 16) + '" y="78">' + l[0] + "</text>");
-    cv.font = "12px " + FONT; lx += 16 + cv.measureText(l[0]).width + 18; });
+  [["사용","s-use"],[T("일부 (하위 제어기·데이터·보상·가치)"),"s-part"],["미사용","s-no"],["미공개","s-na"]].forEach(l => {
+    out.push('<rect class="' + l[1] + '" x="' + lx + '" y="68" width="11" height="11" rx="2"/><text class="c-t" x="' + (lx + 16) + '" y="78">' + esc(l[0]) + "</text>");
+    cv.font = "12px " + FONT; lx += 16 + cv.measureText(tx(l[0])).width + 18; });
   rows.forEach((r, i) => {
     const ry = y0 + i * rowH;
     out.push('<text class="c-t" x="' + (x0 - 12) + '" y="' + (ry + 15) + '" text-anchor="end">' + esc(r.g) + "</text>");
     let cx = x0;
     S.forEach(x => { const n = r.c[x]; if (!n) return; const w = n / maxN * (x1 - x0);
-      out.push('<rect class="' + SC[x] + '" x="' + cx + '" y="' + ry + '" width="' + Math.max(w - 1.5, 1) + '" height="22"><title>' + esc(r.g + " · " + x + ": " + n + "개") + "</title></rect>");
+      out.push('<rect class="' + SC[x] + '" x="' + cx + '" y="' + ry + '" width="' + Math.max(w - 1.5, 1) + '" height="22"><title>' + esc(tx(r.g) + " · " + tx(x) + ": " + T("{0}개", n)) + "</title></rect>");
       if (w >= 16) out.push('<text class="' + (x === "사용" ? "c-seg-t" : "c-seg-d") + '" x="' + (cx + w / 2) + '" y="' + (ry + 15) + '" text-anchor="middle">' + n + "</text>");
       cx += w; });
-    out.push('<text class="c-tick" x="' + (cx + 8) + '" y="' + (ry + 15) + '">' + r.n + "개</text>");
+    out.push('<text class="c-tick" x="' + (cx + 8) + '" y="' + (ry + 15) + '">' + T("{0}개", r.n) + "</text>");
   });
   const H = y0 + rows.length * rowH + 4;
-  document.getElementById("rl-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="강화학습은 보행·내비게이션 쪽에 몰려 있고, 고정 팔 VLA는 대부분 모방학습만 쓴다">' + out.join("") + "</svg>";
+  document.getElementById("rl-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + T('" role="img" aria-label="강화학습은 보행·내비게이션 쪽에 몰려 있고, 고정 팔 VLA는 대부분 모방학습만 쓴다">') + out.join("") + "</svg>";
   const cnt = x => D.filter(m => m.rl === x).length;
   const pick = m => m.group === "내비게이션" ? "nav" : m.group === "모바일 매니퓰레이션" ? "mm" : (m.base.types.includes("휴머노이드 보행") || m.group === "휴머노이드 VLA" || m.group === "휴머노이드 전신 제어기") ? "hum" : "fix";
   const rlm = D.filter(usesRL), byK = k => rlm.filter(m => pick(m) === k).length;
   const post = D.filter(m => m.rlcat === "VLA RL 사후학습").sort((a, b) => a.date < b.date ? -1 : 1);
-  const nmj = ms => ms.map(m => m.name.replace(/ \(.*\)$/, "")).join("·");
+  const nmj = ms => ms.map(m => tx(m.name.replace(/ \(.*\)$/, ""))).join("·");
   const pNav = post.filter(m => m.group === "내비게이션"), pRest = post.filter(m => m.group !== "내비게이션");
-  document.getElementById("rl-lead").textContent = "모델 " + D.length + "개 중 강화학습을 모델 자체에 쓴 것은 " + cnt("사용") + "개, 하위 제어기·데이터·보상·가치 모델 등 일부에 쓴 것은 " + cnt("일부") + "개입니다. 이 " + rlm.length + "개 중 휴머노이드가 " + byK("hum") + "개, 모바일 매니퓰레이션(주로 사족)이 " + byK("mm") + "개, 내비게이션이 " + byK("nav") + "개이고, 베이스를 움직이지 않는 모델은 " + byK("fix") + "개입니다. VLA·정책 본체를 RL로 개선한 " + post.length + "개 중 " + pNav.length + "개가 내비게이션(" + nmj(pNav) + ")이고, 그 밖에는 " + nmj(pRest) + "입니다. 나머지 " + cnt("미사용") + "개는 모방·지도학습만 썼고 " + cnt("미공개") + "개는 학습 방식을 밝히지 않았습니다.";
+  document.getElementById("rl-lead").textContent = T("모델 {0}개 중 강화학습을 모델 자체에 쓴 것은 {1}개, 하위 제어기·데이터·보상·가치 모델 등 일부에 쓴 것은 {2}개입니다. 이 {3}개 중 휴머노이드가 {4}개, 모바일 매니퓰레이션(주로 사족)이 {5}개, 내비게이션이 {6}개이고, 베이스를 움직이지 않는 모델은 {7}개입니다. VLA·정책 본체를 RL로 개선한 {8}개 중 {9}개가 내비게이션({10})이고, 그 밖에는 {11}입니다. 나머지 {12}개는 모방·지도학습만 썼고 {13}개는 학습 방식을 밝히지 않았습니다.", D.length, cnt("사용"), cnt("일부"), rlm.length, byK("hum"), byK("mm"), byK("nav"), byK("fix"), post.length, pNav.length, nmj(pNav), nmj(pRest), cnt("미사용"), cnt("미공개"));
   const CATS = ["VLA RL 사후학습","보상·선호 최적화","가치 학습·계획","RL 데이터 활용","RL 하위 제어기 결합","RL 제어기 학습"];
-  const DESC = {"VLA RL 사후학습": "VLA·정책 본체를 RL로 개선", "보상·선호 최적화": "보상 모델·DPO를 학습에 사용", "가치 학습·계획": "가치 예측을 학습해 계획에 사용", "RL 데이터 활용": "RL 정책이 만든 데이터로 학습", "RL 하위 제어기 결합": "VLA 아래에 RL로 학습한 제어기를 둠", "RL 제어기 학습": "제어기 자체를 시뮬레이션 RL로 학습"};
-  const t = ["<thead><tr><th>모델</th><th>분류</th><th>발표</th><th>강화학습을 쓴 곳</th><th>근거</th></tr></thead><tbody>"];
+  const DESC = {"VLA RL 사후학습": T("VLA·정책 본체를 RL로 개선"), "보상·선호 최적화": T("보상 모델·DPO를 학습에 사용"), "가치 학습·계획": T("가치 예측을 학습해 계획에 사용"), "RL 데이터 활용": T("RL 정책이 만든 데이터로 학습"), "RL 하위 제어기 결합": T("VLA 아래에 RL로 학습한 제어기를 둠"), "RL 제어기 학습": T("제어기 자체를 시뮬레이션 RL로 학습")};
+  const t = ["<thead><tr><th>" + T("모델") + "</th><th>" + T("분류") + "</th><th>" + T("발표") + "</th><th>" + T("강화학습을 쓴 곳") + "</th><th>" + T("근거") + "</th></tr></thead><tbody>"];
   CATS.forEach(c => { const ms = D.filter(m => m.rlcat === c).sort((a, b) => a.date < b.date ? -1 : 1); if (!ms.length) return;
-    t.push('<tr class="grp"><td colspan="5">' + esc(c) + " · " + ms.length + "개<span>" + esc(DESC[c]) + "</span></td></tr>");
+    t.push('<tr class="grp"><td colspan="5">' + esc(c) + " · " + T("{0}개", ms.length) + "<span>" + esc(DESC[c]) + "</span></td></tr>");
     ms.forEach(m => { const u = m.rlsrc || m.src;
-      t.push('<tr><td><a href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "</a> " + rlPill(m) + "</td><td>" + esc(m.group) + '</td><td class="num">' + esc(m.date) + "</td><td>" + esc(m.rlwhere) + "</td><td>" + (u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">원문 ↗</a>' : "—") + "</td></tr>"); }); });
+      t.push('<tr><td><a href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "</a> " + rlPill(m) + "</td><td>" + esc(m.group) + '</td><td class="num">' + esc(m.date) + "</td><td>" + esc(m.rlwhere) + "</td><td>" + (u ? '<a href="' + esc(u) + T('" target="_blank" rel="noopener">원문 ↗') + '</a>' : "—") + "</td></tr>"); }); });
   t.push("</tbody>");
   document.getElementById("rl-table").innerHTML = t.join("");
 })();
 
 /* ---------- mobile base ---------- */
 (function baseSection(){
-  const COLS = [["바퀴형", t => t === "바퀴형"], ["사족보행", t => t === "사족보행"], ["휴머노이드 보행", t => t === "휴머노이드 보행"], ["기타 (비행·시뮬 전용)", t => t === "비행" || t === "시뮬 전용"]];
+  const COLS = [["바퀴형", t => t === "바퀴형"], ["사족보행", t => t === "사족보행"], ["휴머노이드 보행", t => t === "휴머노이드 보행"], [T("기타 (비행·시뮬 전용)"), t => t === "비행" || t === "시뮬 전용"]];
   const mob = D.filter(isMobile);
   const catOf = (m, t) => (m.base.bycat && m.base.bycat[t]) || m.base.cat;
   const cell = {}; let mx = 1;
   BCATS.forEach(c => { cell[c] = COLS.map(col => { const ms = mob.filter(m => m.base.types.some(t => col[1](t) && catOf(m, t) === c)).sort((a, b) => a.date < b.date ? -1 : 1); mx = Math.max(mx, ms.length); return ms; }); });
   const TOT = {};
-  const t = ['<colgroup><col class="c0">' + COLS.map(() => "<col>").join("") + "</colgroup><thead><tr><th>베이스를 움직이는 방식</th>" + COLS.map(c => "<th>" + esc(c[0]) + "</th>").join("") + "</tr></thead><tbody>"];
+  const t = ['<colgroup><col class="c0">' + COLS.map(() => "<col>").join("") + "</colgroup><thead><tr><th>" + T("베이스를 움직이는 방식") + "</th>" + COLS.map(c => "<th>" + esc(c[0]) + "</th>").join("") + "</tr></thead><tbody>"];
   BCATS.forEach(c => {
     const tot = new Set(cell[c].flat().map(m => m.id)).size; TOT[c] = tot; if (!tot) return;
-    t.push('<tr><td class="cat"><b>' + esc(c) + ' <span class="famtag">' + tot + '개</span></b><span class="d">' + esc(BDESC[c]) + "</span></td>" +
+    t.push('<tr><td class="cat"><b>' + esc(c) + ' <span class="famtag">' + T("{0}개", tot) + '</span></b><span class="d">' + esc(BDESC[c]) + "</span></td>" +
       cell[c].map(ms => { const k = ms.length;
         if (!k) return '<td class="z"><span class="n">0</span></td>';
         return '<td style="background:color-mix(in srgb,var(--accent) ' + Math.round(5 + 25 * k / mx) + '%,var(--surface))"><span class="n">' + k + '</span><div class="mchips">' +
@@ -1131,11 +1139,11 @@ const FGORDER = ["qwen","gemma","llama","smol","intern","google","etc"];
   const ofT = (x, cats) => { const ms = mob.filter(m => m.base.types.includes(x)); return [ms.length, ms.filter(m => cats.includes(catOf(m, x))).length]; };
   const RLC2 = ["명령·잠재 → RL 보행 제어기", "RL 정책이 직접 구동"];
   const w = ofT("바퀴형", ["베이스 속도·자세 직접 출력", "웨이포인트 → 추종 제어기"]), h = ofT("휴머노이드 보행", RLC2), q = ofT("사족보행", RLC2), qw = ofT("사족보행", ["웨이포인트 → 추종 제어기"]);
-  document.getElementById("base-lead").textContent = "모델 " + D.length + "개 중 " + mob.length + "개가 모바일 베이스를 움직입니다(바퀴형 " + nT("바퀴형") + "개, 사족보행 " + nT("사족보행") + "개, 휴머노이드 보행 " + nT("휴머노이드 보행") + "개, 여러 종류를 움직이는 모델은 중복 포함). 움직이는 방식은 ‘" + cc[0][0] + "’(" + cc[0][1] + "개)가 가장 많고, ‘" + cc[1][0] + "’(" + cc[1][1] + "개), ‘" + cc[2][0] + "’(" + cc[2][1] + "개) 순입니다. 바퀴형 " + w[0] + "개 중 " + w[1] + "개는 정책이 베이스 속도나 웨이포인트를 직접 내고, 휴머노이드 보행 " + h[0] + "개 중 " + h[1] + "개는 RL로 학습한 보행·전신 제어기에 기댑니다. 사족보행은 RL 보행 제어기(" + q[1] + "개)와 웨이포인트 추종(" + qw[1] + "개)으로 갈립니다.";
+  document.getElementById("base-lead").textContent = T("모델 {0}개 중 {1}개가 모바일 베이스를 움직입니다(바퀴형 {2}개, 사족보행 {3}개, 휴머노이드 보행 {4}개, 여러 종류를 움직이는 모델은 중복 포함). 움직이는 방식은 ‘{5}’({6}개)가 가장 많고, ‘{7}’({8}개), ‘{9}’({10}개) 순입니다. 바퀴형 {11}개 중 {12}개는 정책이 베이스 속도나 웨이포인트를 직접 내고, 휴머노이드 보행 {13}개 중 {14}개는 RL로 학습한 보행·전신 제어기에 기댑니다. 사족보행은 RL 보행 제어기({15}개)와 웨이포인트 추종({16}개)으로 갈립니다.", D.length, mob.length, nT("바퀴형"), nT("사족보행"), nT("휴머노이드 보행"), tx(cc[0][0]), cc[0][1], tx(cc[1][0]), cc[1][1], tx(cc[2][0]), cc[2][1], w[0], w[1], h[0], h[1], q[1], qw[1]);
 })();
 
 /* ---------- calculator ---------- */
-const DEVS = [["8 GB 노트북 GPU", "예: RTX 3070 Ti 노트북", 8],["Jetson Orin NX 16GB", "CPU와 공유", 16],["RTX 4090", "24 GB", 24],["RTX 5090", "32 GB", 32],["L40S · RTX 6000 Ada", "48 GB", 48],["Jetson AGX Orin 64GB", "CPU와 공유", 64],["A100 · H100", "80 GB", 80],["Jetson AGX Thor", "128 GB, CPU와 공유", 128]];
+const DEVS = [[T("8 GB 노트북 GPU"), T("예: RTX 3070 Ti 노트북"), 8],["Jetson Orin NX 16GB", T("CPU와 공유"), 16],["RTX 4090", "24 GB", 24],["RTX 5090", "32 GB", 32],["L40S · RTX 6000 Ada", "48 GB", 48],["Jetson AGX Orin 64GB", T("CPU와 공유"), 64],["A100 · H100", "80 GB", 80],["Jetson AGX Thor", T("128 GB, CPU와 공유"), 128]];
 const calcSel = document.getElementById("calc-model"), calcIn = document.getElementById("calc-params");
 const calcable = D.filter(m => m.pb != null).sort((a, b) => a.gi - b.gi || (a.date < b.date ? -1 : 1));
 calcSel.innerHTML = GROUPS.map(g => { const ms = calcable.filter(m => m.group === g); if (!ms.length) return "";
@@ -1152,13 +1160,13 @@ function renderCalc(){
   const ref = D.filter(x => x.mg != null && x.pb != null && x.mc !== false);
   const near = ref.slice().sort((a, b) => Math.abs(Math.log(a.pb / pb)) - Math.abs(Math.log(b.pb / pb))).slice(0, 2);
   let html = '<div class="res-top"><div><div class="big"><span id="calc-gb">' + fmt(gb, gb < 10 ? 2 : 1) + "</span><small>GB</small></div>" +
-    '<p class="res-sub">' + (custom > 0 ? "직접 입력" : esc(shortName(m.name).s)) + " " + fmt(pb, 3) + "B × " + bytes + " 바이트(" + pname + ") · 가중치만</p></div></div>";
-  if (!(custom > 0)) html += '<div class="reported"><b>보고된 추론 메모리</b> · ' + esc(m.mem || "미공개") + (hasInfer(m) ? '<br><span style="color:var(--ink-2)">보고된 장치·속도: ' + esc(m.infer) + "</span>" : "") + "</div>";
-  html += '<p class="res-sub" style="margin:0 0 10px">가까운 크기의 보고 사례: ' + near.map(x => esc(shortName(x.name).s) + " " + x.pb + "B → " + esc(x.mem)).join(" / ") + "</p>";
+    '<p class="res-sub">' + (custom > 0 ? T("직접 입력") : esc(shortName(m.name).s)) + " " + fmt(pb, 3) + "B × " + T("{0} 바이트({1}) · 가중치만", bytes, pname) + "</p></div></div>";
+  if (!(custom > 0)) html += '<div class="reported"><b>' + T('보고된 추론 메모리') + '</b> · ' + esc(m.mem || "미공개") + (hasInfer(m) ? '<br><span style="color:var(--ink-2)">' + T('보고된 장치·속도: ') + esc(m.infer) + "</span>" : "") + "</div>";
+  html += '<p class="res-sub" style="margin:0 0 10px">' + T('가까운 크기의 보고 사례: ') + near.map(x => esc(shortName(x.name).s) + " " + x.pb + "B → " + esc(x.mem)).join(" / ") + "</p>";
   html += '<div class="devs">' + DEVS.map(d => { const over = gb > d[2]; const pct = Math.min(100, gb / d[2] * 100);
-    return '<div class="dev' + (over ? " over" : "") + '"><span class="nm">' + esc(d[0]) + " <small>" + esc(d[1]) + '</small></span><span class="bar" role="img" aria-label="' + esc(d[0]) + " 메모리의 " + Math.round(pct) + '% 사용"><i style="width:' + pct.toFixed(1) + '%"></i></span><span class="st">' +
-      (over ? "가중치만으로 초과" : "남는 메모리 " + fmt(d[2] - gb) + " GB") + "</span></div>"; }).join("") + "</div>";
-  html += '<p class="note">실제 사용량은 활성값·KV 캐시·이미지 토큰·디노이징 버퍼 때문에 계산값보다 큽니다. 보고 사례 기준으로 0~4 GB를 더해 보세요.</p>';
+    return '<div class="dev' + (over ? " over" : "") + '"><span class="nm">' + esc(d[0]) + " <small>" + esc(d[1]) + '</small></span><span class="bar" role="img" aria-label="' + T("{0} 메모리의 {1}% 사용", esc(d[0]), Math.round(pct)) + '"><i style="width:' + pct.toFixed(1) + '%"></i></span><span class="st">' +
+      (over ? T("가중치만으로 초과") : T("남는 메모리 {0} GB", fmt(d[2] - gb))) + "</span></div>"; }).join("") + "</div>";
+  html += '<p class="note">' + T('실제 사용량은 활성값·KV 캐시·이미지 토큰·디노이징 버퍼 때문에 계산값보다 큽니다. 보고 사례 기준으로 0~4 GB를 더해 보세요.') + '</p>';
   const prevW = [...document.querySelectorAll("#calc-out .bar i")].map(i => i.style.width);
   document.getElementById("calc-out").innerHTML = html;
   const bars = [...document.querySelectorAll("#calc-out .bar i")];
@@ -1178,13 +1186,13 @@ renderCalc();
 
 /* ---------- compare ---------- */
 const selA = document.getElementById("cmp-a"), selB = document.getElementById("cmp-b");
-const optHtml = GROUPS.map(g => '<optgroup label="' + esc(g) + '">' + D.filter(m => m.group === g).map(m => '<option value="' + m.id + '">' + esc(shortName(m.name).s) + " (" + m.date + ")</option>").join("") + "</optgroup>").join("");
+const optHtml = GROUPS.map(g => '<optgroup label="' + esc(g) + '">' + D.filter(m => m.group === g).map(m => '<option value="' + m.id + '">' + esc(shortName(m.name).s) + " (" + esc(m.date) + ")</option>").join("") + "</optgroup>").join("");
 selA.innerHTML = optHtml; selB.innerHTML = optHtml; selA.value = "pi0"; selB.value = "openvla";
-const CROWS = [["분류", m => m.group],["유형", m => m.type],["발표", m => m.date],["기관", m => m.org],["논문", paperText, paperHtml],["가중치 공개", m => m.open],["파라미터", m => m.params],
-  ["백본 LLM", m => m.llm],["비전 인코더", m => m.vis || "—"],["액션 헤드", m => m.head + " (" + m.hk + ")"],["청크", m => m.chunk],["제어 주기", m => m.hz],
-  ["사전학습 가속기", m => m.pre_hw],["사전학습 기간", m => m.pre_time],["사전학습 스텝·배치", m => m.pre_steps],["GPU·TPU-시간", m => m.gpuh != null ? fmt(m.gpuh, 0) + " (" + m.gpuh_basis + ")" : "미공개"],
-  ["파인튜닝", m => m.ft],["데이터 종류", m => m.dtype],["데이터 규모", m => m.dscale],["태스크·평가", m => m.tasks],
-  ["추론 장치·속도", m => m.infer],["추론 메모리", m => m.mem || "미공개"],["가중치 bf16 (계산)", m => m.w16 != null ? fmt(m.w16) + " GB" : "미공개"],["실행 위치", m => m.dep || "미공개"],["강화학습", m => m.rl + (usesRL(m) ? " (" + m.rlcat + ")" : "") + " · " + m.rlwhere],["베이스 제어", baseText]];
+const CROWS = [[T("분류"), m => m.group],[T("유형"), m => m.type],[T("발표"), m => m.date],[T("기관"), m => m.org],["논문", paperText, paperHtml],[T("가중치 공개"), m => m.open],[T("파라미터"), m => m.params],
+  [T("백본 LLM"), m => m.llm],[T("비전 인코더"), m => m.vis || "—"],[T("액션 헤드"), m => tx(m.head) + " (" + tx(m.hk) + ")"],[T("청크"), m => m.chunk],[T("제어 주기"), m => m.hz],
+  [T("사전학습 가속기"), m => m.pre_hw],[T("사전학습 기간"), m => m.pre_time],[T("사전학습 스텝·배치"), m => m.pre_steps],[T("GPU·TPU-시간"), m => m.gpuh != null ? fmt(m.gpuh, 0) + " (" + tx(m.gpuh_basis) + ")" : "미공개"],
+  [T("파인튜닝"), m => m.ft],[T("데이터 종류"), m => m.dtype],[T("데이터 규모"), m => m.dscale],[T("태스크·평가"), m => m.tasks],
+  [T("추론 장치·속도"), m => m.infer],[T("추론 메모리"), m => m.mem || "미공개"],[T("가중치 bf16 (계산)"), m => m.w16 != null ? fmt(m.w16) + " GB" : "미공개"],[T("실행 위치"), m => m.dep || "미공개"],[T("강화학습"), m => tx(m.rl) + (usesRL(m) ? " (" + tx(m.rlcat) + ")" : "") + " · " + tx(m.rlwhere)],[T("베이스 제어"), baseText]];
 let cmpReady = false;
 function renderCompare(){
   const a = byId[selA.value], b = byId[selB.value];
@@ -1192,7 +1200,7 @@ function renderCompare(){
   document.getElementById("cmp-table").innerHTML = '<thead><tr><th></th><th>' + esc(shortName(a.name).s) + "</th><th>" + esc(shortName(b.name).s) + "</th></tr></thead><tbody>" +
     CROWS.map(r => { const va = String(r[1](a) == null ? "—" : r[1](a)), vb = String(r[1](b) == null ? "—" : r[1](b)); const same = va === vb;
       const ca = r[2] ? r[2](a) : esc(va), cb = r[2] ? r[2](b) : esc(vb);
-      return '<tr><th class="rowh" scope="row">' + r[0] + '</th><td class="' + (same ? "same" : "") + '">' + ca + '</td><td class="' + (same ? "same" : "") + '">' + cb + "</td></tr>"; }).join("") + "</tbody>";
+      return '<tr><th class="rowh" scope="row">' + esc(r[0]) + '</th><td class="' + (same ? "same" : "") + '">' + ca + '</td><td class="' + (same ? "same" : "") + '">' + cb + "</td></tr>"; }).join("") + "</tbody>";
   if (MOTION && cmpReady) ["cmp-figs", "cmp-table"].forEach((id, k) => document.getElementById(id).animate([{opacity: 0, transform: "translateY(8px)"}, {opacity: 1, transform: "none"}], {duration: 420, delay: k * 70, easing: EASE, fill: "backwards"}));
   cmpReady = true;
 }
@@ -1206,21 +1214,21 @@ const cardEl = {}; grid.querySelectorAll(".card").forEach(el => { cardEl[el.data
 const st = {g: "", q: "", type: "", year: "", size: "", fam: "", hk: "", open: "", inf: "", rl: "", paper: "", base: "", fit: "", sort: "group", view: "detail"};
 let FIT = {};
 const gWrap = document.getElementById("f-groups");
-gWrap.innerHTML = '<button type="button" class="chip" data-g="" aria-pressed="true">전체<small>' + D.length + "</small></button>" +
+gWrap.innerHTML = '<button type="button" class="chip" data-g="" aria-pressed="true">' + T('전체') + '<small>' + D.length + "</small></button>" +
   GROUPS.map(g => '<button type="button" class="chip" data-g="' + esc(g) + '" aria-pressed="false">' + esc(g) + "<small>" + D.filter(m => m.group === g).length + "</small></button>").join("");
-document.getElementById("f-fam").innerHTML = '<option value="">전체</option>' + FAMS.filter(f => D.some(m => m.fam === f)).map(f => '<option value="' + esc(f) + '">' + esc(f === "없음" ? "LLM 없음" : f === "미공개" ? "미공개·미확인" : f) + " (" + D.filter(m => m.fam === f).length + ")</option>").join("");
-document.getElementById("f-hk").innerHTML = '<option value="">전체</option>' + HKS.filter(h => D.some(m => m.hk === h)).map(h => '<option value="' + esc(h) + '">' + esc(h) + " (" + D.filter(m => m.hk === h).length + ")</option>").join("");
+document.getElementById("f-fam").innerHTML = '<option value="">' + T('전체') + '</option>' + FAMS.filter(f => D.some(m => m.fam === f)).map(f => '<option value="' + esc(f) + '">' + esc(f === "없음" ? T("LLM 없음") : f === "미공개" ? T("미공개·미확인") : f) + " (" + D.filter(m => m.fam === f).length + ")</option>").join("");
+document.getElementById("f-hk").innerHTML = '<option value="">' + T('전체') + '</option>' + HKS.filter(h => D.some(m => m.hk === h)).map(h => '<option value="' + esc(h) + '">' + esc(h) + " (" + D.filter(m => m.hk === h).length + ")</option>").join("");
 const RLCATS = ["VLA RL 사후학습","RL 제어기 학습","RL 하위 제어기 결합","RL 데이터 활용","보상·선호 최적화","가치 학습·계획"];
-document.getElementById("f-rl").innerHTML = '<option value="">전체</option><option value="any">사용·일부 (' + D.filter(usesRL).length + ")</option>" +
-  ["사용","일부","미사용","미공개"].map(x => '<option value="s:' + x + '">' + x + " (" + D.filter(m => m.rl === x).length + ")</option>").join("") +
-  '<optgroup label="사용 위치">' + RLCATS.map(c => '<option value="c:' + esc(c) + '">' + esc(c) + " (" + D.filter(m => m.rlcat === c).length + ")</option>").join("") + "</optgroup>";
-document.getElementById("f-paper").innerHTML = '<option value="">전체</option>' +
-  [["논문","논문 있음"],["보고서","기술 보고서만"],["없음","논문 없음"]].map(o => '<option value="' + o[0] + '">' + o[1] + " (" + D.filter(m => m.paper.k === o[0]).length + ")</option>").join("") +
-  '<option value="rel">논문 없음 · 관련 논문 있음 (' + D.filter(m => m.prel).length + ")</option>";
-document.getElementById("f-base").innerHTML = '<option value="">전체</option><option value="any">모바일 베이스 제어 (' + D.filter(isMobile).length + ")</option>" +
+document.getElementById("f-rl").innerHTML = '<option value="">' + T('전체') + '</option><option value="any">' + T('사용·일부 (') + D.filter(usesRL).length + ")</option>" +
+  ["사용","일부","미사용","미공개"].map(x => '<option value="s:' + x + '">' + esc(x) + " (" + D.filter(m => m.rl === x).length + ")</option>").join("") +
+  '<optgroup label="' + T('사용 위치') + '">' + RLCATS.map(c => '<option value="c:' + esc(c) + '">' + esc(c) + " (" + D.filter(m => m.rlcat === c).length + ")</option>").join("") + "</optgroup>";
+document.getElementById("f-paper").innerHTML = '<option value="">' + T('전체') + '</option>' +
+  [["논문",T("논문 있음")],["보고서",T("기술 보고서만")],["없음",T("논문 없음")]].map(o => '<option value="' + o[0] + '">' + o[1] + " (" + D.filter(m => m.paper.k === o[0]).length + ")</option>").join("") +
+  '<option value="rel">' + T('논문 없음 · 관련 논문 있음 (') + D.filter(m => m.prel).length + ")</option>";
+document.getElementById("f-base").innerHTML = '<option value="">' + T('전체') + '</option><option value="any">' + T('모바일 베이스 제어 (') + D.filter(isMobile).length + ")</option>" +
   MOBT.map(x => '<option value="t:' + esc(x) + '">' + esc(x) + " (" + D.filter(m => m.base.types.includes(x)).length + ")</option>").join("") +
-  '<option value="fixed">고정 베이스만 (' + D.filter(m => !isMobile(m)).length + ")</option>" +
-  '<optgroup label="베이스 제어 방식">' + BCATS.map(c => '<option value="c:' + esc(c) + '">' + esc(c) + " (" + D.filter(m => m.base.cat === c).length + ")</option>").join("") + "</optgroup>";
+  '<option value="fixed">' + T('고정 베이스만 (') + D.filter(m => !isMobile(m)).length + ")</option>" +
+  '<optgroup label="' + T('베이스 제어 방식') + '">' + BCATS.map(c => '<option value="c:' + esc(c) + '">' + esc(c) + " (" + D.filter(m => m.base.cat === c).length + ")</option>").join("") + "</optgroup>";
 function sizeKey(m){ if (m.pb == null) return "s0"; return m.pb < 1 ? "s1" : m.pb < 4 ? "s2" : m.pb < 10 ? "s3" : "s4"; }
 function match(m){
   if (st.g && m.group !== st.g) return false;
@@ -1266,7 +1274,7 @@ function flip(mutate){
 }
 function renderGallery(){
   const list = D.filter(match).sort(SORTS[st.sort]);
-  document.getElementById("f-count").textContent = list.length + "개 모델 / 전체 " + D.length;
+  document.getElementById("f-count").textContent = T("{0}개 모델 / 전체 {1}", list.length, D.length);
   document.getElementById("empty").hidden = list.length > 0;
   const compact = st.view === "compact";
   grid.hidden = compact; document.getElementById("compact").hidden = !compact || !list.length;
@@ -1278,7 +1286,7 @@ function renderGallery(){
     });
   } else {
     document.getElementById("ctable").innerHTML = '<colgroup><col style="width:150px"><col style="width:84px"><col style="width:176px"><col style="width:130px"><col style="width:150px"><col style="width:170px"><col style="width:120px"><col style="width:190px"><col style="width:220px"><col style="width:146px"><col style="width:170px"><col style="width:176px"></colgroup>' +
-      "<thead><tr><th>모델</th><th>발표</th><th>논문</th><th>분류</th><th>파라미터</th><th>백본 LLM</th><th>액션 헤드</th><th>사전학습 GPU·기간</th><th>추론 장치·속도</th><th>추론 메모리</th><th>강화학습</th><th>베이스</th></tr></thead><tbody>" +
+      "<thead><tr><th>" + T("모델") + "</th><th>" + T("발표") + "</th><th>" + T("논문") + "</th><th>" + T("분류") + "</th><th>" + T("파라미터") + "</th><th>" + T("백본 LLM") + "</th><th>" + T("액션 헤드") + "</th><th>" + T("사전학습 GPU·기간") + "</th><th>" + T("추론 장치·속도") + "</th><th>" + T("추론 메모리") + "</th><th>" + T("강화학습") + "</th><th>" + T("베이스") + "</th></tr></thead><tbody>" +
       list.map(m => '<tr><td><a href="#m-' + m.id + '" data-open="' + m.id + '">' + esc(shortName(m.name).s) + '</a></td><td class="num">' + esc(m.date) + "</td><td>" + paperCell(m) + "</td><td>" + esc(m.group) + '</td><td><span class="c2">' + esc(m.params.split(";")[0]) + '</span></td><td><span class="c2">' + esc(m.llm) +
         "</span></td><td>" + esc(m.hk) + '</td><td><span class="c2">' + esc(preText(m)) + '</span></td><td><span class="c2">' + esc(m.infer || "미공개") + '</span></td><td><span class="c2">' + esc(m.mem || "미공개") + '</span></td><td>' + rlPill(m) + (usesRL(m) ? '<span class="c2" style="margin-top:3px;font-size:12.5px;color:var(--ink-2)">' + esc(m.rlcat) + "</span>" : "") + "</td><td>" + basePills(m) + (m.base.cat ? '<span class="c2" style="margin-top:3px;font-size:12.5px;color:var(--ink-2)">' + esc(m.base.cat) + "</span>" : "") + "</td></tr>").join("") + "</tbody>";
   }
@@ -1304,17 +1312,17 @@ const DEVICES = [{"id": "jetson-orin-nano-super", "name": "Jetson Orin Nano Supe
 const DEVBY = {}; DEVICES.forEach(d => { DEVBY[d.id] = d; });
 // [모델 id, 장치 id, 정밀도 바이트, 추론 1회 지연(ms), 표기] — 카드의 ‘추론 장치·속도’ 원문 값
 const ANCHORS = [
-  ["openvla","rtx-4090",2,167,"약 6 Hz"],["openvla-oft","a100-80",2,72.9,"0.0729 s"],["minivla","l40s",2,80,"12.5 Hz"],["tinyvla","rtx-a6000",2,14,"14 ms (TinyVLA-H)"],
-  ["spatialvla","rtx-4090",2,50,"약 20 Hz"],["vla-0","rtx-5090",2,250,"4 Hz"],["pi0","rtx-4090",2,73,"73 ms"],["pi0","jetson-agx-orin-64",2,1280,"1.28 s (2차, GigaBrain-0 측정)"],
-  ["pi0-fast","rtx-4090",2,750,"청크당 약 750 ms"],["pi0-5","rtx-4090",2,76,"76 ms (RTC 논문, 5스텝)"],["pi0-6","h100-sxm",2,63,"63 ms (5스텝)"],["rdt-1b","rtx-4090",2,167,"청크 6 Hz"],
+  ["openvla","rtx-4090",2,167,T("약 6 Hz")],["openvla-oft","a100-80",2,72.9,"0.0729 s"],["minivla","l40s",2,80,"12.5 Hz"],["tinyvla","rtx-a6000",2,14,"14 ms (TinyVLA-H)"],
+  ["spatialvla","rtx-4090",2,50,T("약 20 Hz")],["vla-0","rtx-5090",2,250,"4 Hz"],["pi0","rtx-4090",2,73,"73 ms"],["pi0","jetson-agx-orin-64",2,1280,T("1.28 s (2차, GigaBrain-0 측정)")],
+  ["pi0-fast","rtx-4090",2,750,T("청크당 약 750 ms")],["pi0-5","rtx-4090",2,76,T("76 ms (RTC 논문, 5스텝)")],["pi0-6","h100-sxm",2,63,T("63 ms (5스텝)")],["rdt-1b","rtx-4090",2,167,T("청크 6 Hz")],
   ["cogact","rtx-a6000",2,181,"181 ms"],["flower","rtx-4090",2,52,"0.052 s"],["evo-1","rtx-4090",2,61,"16.4 Hz (4090D)"],["octo","rtx-4090",2,77,"13 it/s (Base, README)"],
   ["gr00t-n1","l40",2,63.9,"63.9 ms"],["gr00t-n1-5","h100-sxm",2,47.88,"47.88 ms"],
   ["gr00t-n1-6","rtx-5090",2,37,"37 ms"],["gr00t-n1-6","h100-sxm",2,38,"38 ms"],["gr00t-n1-6","rtx-4090",2,44,"44 ms"],["gr00t-n1-6","jetson-agx-thor",2,105,"105 ms"],
   ["gr00t-n1-7","h100-sxm",2,27.9,"27.9 ms (TensorRT)"],["gr00t-n1-7","rtx-pro-6000",2,27.9,"35.9 Hz (TensorRT)"],["gr00t-n1-7","jetson-agx-thor",2,93.8,"93.8 ms (TensorRT)"],
-  ["cosmos-policy","h100-sxm",2,610,"0.61 s (5스텝)"],["xiaomi-robotics-0","rtx-4090",2,80,"80 ms"],["molmoact-2","h100-sxm",2,180,"180 ms"],["turbovla","rtx-4090",2,31.2,"31.2 ms"],
-  ["uni-navid","a100-80",2,200,"약 0.2초"],["navila","rtx-4090",2,594.6,"FP16 594.6 ms"],["navila","rtx-4090",0.5,367.8,"AWQ W4A16 367.8 ms"],["streamvln","rtx-4090",2,270,"행동 4개 0.27초"],
-  ["trackvla","rtx-4090",2,100,"10 FPS"],["abot-n0","jetson-orin-nx-16",2,500,"2 Hz (토큰 압축 엣지판)"],["vlingnav","rtx-4090",2,300,"300 ms 미만"],
-  ["lightnav-0","jetson-agx-thor",2,268,"bf16 268 ms"],["lightnav-0","jetson-agx-thor",1,178,"fp8(LLM만) 178 ms"]];
+  ["cosmos-policy","h100-sxm",2,610,T("0.61 s (5스텝)")],["xiaomi-robotics-0","rtx-4090",2,80,"80 ms"],["molmoact-2","h100-sxm",2,180,"180 ms"],["turbovla","rtx-4090",2,31.2,"31.2 ms"],
+  ["uni-navid","a100-80",2,200,T("약 0.2초")],["navila","rtx-4090",2,594.6,"FP16 594.6 ms"],["navila","rtx-4090",0.5,367.8,"AWQ W4A16 367.8 ms"],["streamvln","rtx-4090",2,270,T("행동 4개 0.27초")],
+  ["trackvla","rtx-4090",2,100,"10 FPS"],["abot-n0","jetson-orin-nx-16",2,500,T("2 Hz (토큰 압축 엣지판)")],["vlingnav","rtx-4090",2,300,T("300 ms 미만")],
+  ["lightnav-0","jetson-agx-thor",2,268,"bf16 268 ms"],["lightnav-0","jetson-agx-thor",1,178,T("fp8(LLM만) 178 ms")]];
 const EST = {em: 0.6, ec: 0.6, c0: 4, ct: 4, emb: 1.5};  // 실측 38건으로 맞춘 상수
 const PREC = {2: "bf16", 1: "int8", 0.5: "int4"};
 const fitState = {dev: "rtx-4090", b: 2, hz: 5};
@@ -1323,7 +1331,7 @@ const fitDev = document.getElementById("fit-dev"), fitPrec = document.getElement
 function curDev(){
   if (fitState.dev !== "custom") return DEVBY[fitState.dev];
   const v = id => parseFloat(document.getElementById(id).value);
-  return {id: "custom", name: "직접 입력한 장치", tier: "직접 입력", mem_gb: v("fit-mem") || 24, bw_gbs: v("fit-bw") || 1000, bf16_tflops: v("fit-tf") || 160};
+  return {id: "custom", name: T("직접 입력한 장치"), tier: T("직접 입력"), mem_gb: v("fit-mem") || 24, bw_gbs: v("fit-bw") || 1000, bf16_tflops: v("fit-tf") || 160};
 }
 const isEmb = dev => dev.tier === "임베디드";
 function estLatency(m, dev, b){
@@ -1338,42 +1346,42 @@ function estLatency(m, dev, b){
   return L * (isEmb(dev) ? EST.emb : 1);
 }
 function fitOf(m, dev, b, thr){
-  if (!m.est) return {v: "na", why: "총 파라미터·LLM 크기 미공개"};
+  if (!m.est) return {v: "na", why: T("총 파라미터·LLM 크기 미공개")};
   const mem = m.est.P * b + 1 + 0.3 * m.est.P;
   const r = {mem: mem, fits: mem <= dev.mem_gb * (isEmb(dev) ? 0.75 : 0.9)};
   const an = ANCHORS.filter(a => a[0] === m.id && DEVBY[a[1]]);
   const exact = an.find(a => a[1] === dev.id && a[2] === b);
-  let L = null, basis = "추정", ref = null;
-  if (exact){ L = exact[3]; basis = "실측"; ref = exact; }
+  let L = null, basis = T("추정"), ref = null;
+  if (exact){ L = exact[3]; basis = T("실측"); ref = exact; }
   else if (an.length){
     const sc = an.map(a => { const d0 = DEVBY[a[1]]; let s = Math.abs(Math.log(d0.bw_gbs / dev.bw_gbs)); if (a[2] !== b) s += 0.7; if (isEmb(d0) !== isEmb(dev)) s += 0.5; return {a: a, d0: d0, s: s}; }).sort((x, y) => x.s - y.s);
     const x = sc[0], e0 = estLatency(m, x.d0, x.a[2]), e1 = estLatency(m, dev, b);
-    if (e0 && e1){ L = x.a[3] * e1 / e0; basis = "실측 환산"; ref = x.a; }
+    if (e0 && e1){ L = x.a[3] * e1 / e0; basis = T("실측 환산"); ref = x.a; }
   }
   if (L == null) L = estLatency(m, dev, b);
-  if (L == null) return Object.assign(r, {v: r.fits ? "na" : "oom", why: "영상 world model이라 실측이 있는 장치만 표시"});
+  if (L == null) return Object.assign(r, {v: r.fits ? "na" : "oom", why: T("영상 world model이라 실측이 있는 장치만 표시")});
   r.L = L; r.hz = 1000 / L; r.basis = basis; r.ref = ref;
-  if (m.est.kind === "ar"){ const bw = dev.bw_gbs * EST.em; const tok = 1000 * m.est.P * b / bw + EST.ct; const e1 = estLatency(m, dev, b); r.tps = 1000 / (tok * (isEmb(dev) ? EST.emb : 1)) * (basis !== "추정" && e1 ? e1 / L : 1); }
+  if (m.est.kind === "ar"){ const bw = dev.bw_gbs * EST.em; const tok = 1000 * m.est.P * b / bw + EST.ct; const e1 = estLatency(m, dev, b); r.tps = 1000 / (tok * (isEmb(dev) ? EST.emb : 1)) * (basis !== T("추정") && e1 ? e1 / L : 1); }
   r.v = !r.fits ? "oom" : r.hz >= thr ? "ok" : "slow";
   return r;
 }
-const VDL = {ok: "사용 가능", slow: "느림", oom: "메모리 부족", na: "판정 불가"};
-const hzT = h => h >= 200 ? "200 이상" : h >= 10 ? fmt(h, 0) : fmt(h, 1);
+const VDL = {ok: T("사용 가능"), slow: T("느림"), oom: T("메모리 부족"), na: T("판정 불가")};
+const hzT = h => h >= 200 ? T("200 이상") : h >= 10 ? fmt(h, 0) : fmt(h, 1);
 function basisText(r){
-  if (r.basis === "실측") return "실측 · " + esc(r.ref[4]);
-  if (r.basis === "실측 환산") return esc(DEVBY[r.ref[1]].name) + " 실측(" + esc(r.ref[4]) + ")을 환산";
-  return "크기·구조로 추정";
+  if (r.basis === T("실측")) return T("실측 · ") + esc(r.ref[4]);
+  if (r.basis === T("실측 환산")) return T("{0} 실측({1})을 환산", esc(DEVBY[r.ref[1]].name), esc(r.ref[4]));
+  return T("크기·구조로 추정");
 }
 function fitLine(r){
   if (!r) return "";
-  if (r.v === "na") return '<span class="vd na">판정 불가</span> ' + esc(r.why || "");
-  if (r.v === "oom") return '<span class="vd oom">메모리 부족</span> 필요 약 ' + fmt(r.mem, 0) + " GB";
-  return '<span class="vd ' + r.v + '">' + VDL[r.v] + "</span> 약 " + hzT(r.hz) + " Hz · " + fmt(r.mem, 1) + " GB · " + (r.basis === "추정" ? "추정" : r.basis);
+  if (r.v === "na") return '<span class="vd na">' + T('판정 불가') + '</span> ' + esc(r.why || "");
+  if (r.v === "oom") return '<span class="vd oom">' + T('메모리 부족') + '</span> ' + T("필요 약 {0} GB", fmt(r.mem, 0));
+  return '<span class="vd ' + r.v + '">' + VDL[r.v] + "</span> " + T("약 {0} Hz", hzT(r.hz)) + " · " + fmt(r.mem, 1) + " GB · " + (r.basis === T("추정") ? T("추정") : r.basis);
 }
 const TIERORD = ["임베디드","노트북","데스크톱","워크스테이션","데이터센터"];
 fitDev.innerHTML = TIERORD.map(t => { const ds = DEVICES.filter(d => d.tier === t); if (!ds.length) return "";
-  return '<optgroup label="' + t + '">' + ds.map(d => '<option value="' + d.id + '">' + esc(d.name) + " · " + d.mem_gb + " GB</option>").join("") + "</optgroup>"; }).join("") +
-  '<optgroup label="기타"><option value="custom">직접 입력</option></optgroup>';
+  return '<optgroup label="' + esc(t) + '">' + ds.map(d => '<option value="' + d.id + '">' + esc(d.name) + " · " + d.mem_gb + " GB</option>").join("") + "</optgroup>"; }).join("") +
+  '<optgroup label="' + T('기타') + '"><option value="custom">' + T('직접 입력') + '</option></optgroup>';
 fitDev.value = DEVBY[fitState.dev] || fitState.dev === "custom" ? fitState.dev : "rtx-4090"; fitPrec.value = String(fitState.b); fitHz.value = String(fitState.hz);
 function renderFit(){
   fitState.dev = fitDev.value; fitState.b = parseFloat(fitPrec.value); fitState.hz = parseFloat(fitHz.value);
@@ -1385,27 +1393,27 @@ function renderFit(){
   const ok = by("ok").sort((a, c) => c.est.P - a.est.P || FIT[c.id].hz - FIT[a.id].hz), slow = by("slow").sort((a, c) => FIT[c.id].hz - FIT[a.id].hz);
   const oom = by("oom").sort((a, c) => FIT[a.id].mem - FIT[c.id].mem), na = by("na");
   const prevK = [...document.querySelectorAll("#fit-sum .k")].map(k => +k.dataset.v);
-  document.getElementById("fit-sum").innerHTML = '<div class="fitsum"><span><span class="k" data-v="' + ok.length + '">' + ok.length + '</span>사용 가능</span><span><span class="k" data-v="' + slow.length + '">' + slow.length + '</span>느림</span><span><span class="k" data-v="' + oom.length + '">' + oom.length + '</span>메모리 부족</span><span><span class="k" data-v="' + na.length + '">' + na.length + '</span>판정 불가</span>' +
-    '<button class="btn primary" type="button" id="fit-go">갤러리에서 사용 가능 모델만 보기</button></div><p class="res-sub" style="margin:0 0 12px">' + esc(dev.name) + " · 메모리 " + fmt(dev.mem_gb, 0) + " GB · 대역폭 " + fmt(dev.bw_gbs, 0) + " GB/s · BF16 " + fmt(dev.bf16_tflops, 0) + " TFLOPS · " + PREC[b] + " · " + thr + " Hz 이상</p>";
+  document.getElementById("fit-sum").innerHTML = '<div class="fitsum"><span><span class="k" data-v="' + ok.length + '">' + ok.length + '</span>' + T('사용 가능') + '</span><span><span class="k" data-v="' + slow.length + '">' + slow.length + '</span>' + T('느림') + '</span><span><span class="k" data-v="' + oom.length + '">' + oom.length + '</span>' + T('메모리 부족') + '</span><span><span class="k" data-v="' + na.length + '">' + na.length + '</span>' + T('판정 불가') + '</span>' +
+    '<button class="btn primary" type="button" id="fit-go">' + T('갤러리에서 사용 가능 모델만 보기') + '</button></div><p class="res-sub" style="margin:0 0 12px">' + T("{0} · 메모리 {1} GB · 대역폭 {2} GB/s · BF16 {3} TFLOPS · {4} · {5} Hz 이상", esc(dev.name), fmt(dev.mem_gb, 0), fmt(dev.bw_gbs, 0), fmt(dev.bf16_tflops, 0), PREC[b], thr) + "</p>";
   const row = m => { const r = FIT[m.id];
-    return '<tr><td><a href="#m-' + m.id + '">' + esc(shortName(m.name).s) + '</a></td><td><span class="vd ' + r.v + '">' + VDL[r.v] + '</span></td><td class="num">약 ' + hzT(r.hz) + ' Hz</td><td class="num">' + fmt(r.L, 0) + ' ms</td><td class="num">' + (r.tps != null ? "약 " + fmt(r.tps, 0) + " 토큰/s" : "—") +
-      '</td><td class="num">' + fmt(r.mem, 1) + ' GB</td><td class="num">' + esc(fmt(m.est.P, 2) + "B" + (m.est.src === "lb" ? " (LLM 기준)" : "")) + "</td><td>" + basisText(r) + "</td></tr>"; };
-  document.getElementById("fit-table").innerHTML = "<thead><tr><th>모델</th><th>판정</th><th>추론 속도</th><th>1회 지연</th><th>토큰 속도</th><th>필요 메모리</th><th>크기</th><th>근거</th></tr></thead><tbody>" +
-    (ok.length ? '<tr class="grp"><td colspan="8">사용 가능 · ' + ok.length + "개<span>" + thr + " Hz 이상, 메모리에 올라감 · 큰 모델부터</span></td></tr>" + ok.map(row).join("") : '<tr class="grp"><td colspan="8">사용 가능한 모델 없음<span>기준 속도를 낮추거나 int4를 골라 보세요</span></td></tr>') +
-    (slow.length ? '<tr class="grp"><td colspan="8">느림 · ' + slow.length + "개<span>메모리에는 올라가지만 " + thr + " Hz 미만 · 빠른 순</span></td></tr>" + slow.map(row).join("") : "") + "</tbody>";
-  document.getElementById("fit-rest").innerHTML = (oom.length ? '<h3 class="sub">메모리 부족 · ' + oom.length + '개 <small style="font-weight:400;color:var(--ink-3)">필요 메모리(추정)</small></h3><div class="mchips">' + oom.map(m => '<a class="mchip" href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "<small>" + fmt(FIT[m.id].mem, 0) + " GB</small></a>").join("") + "</div>" : "") +
-    '<h3 class="sub">판정 불가 · ' + na.length + '개</h3><p class="note" style="margin:0 0 8px">총 파라미터와 LLM 크기를 모두 밝히지 않았거나(산업계 모델·전신 제어기 다수), 액션 헤드 구조를 밝히지 않았거나, 실측이 없는 영상 world model입니다.</p><div class="mchips">' +
+    return '<tr><td><a href="#m-' + m.id + '">' + esc(shortName(m.name).s) + '</a></td><td><span class="vd ' + r.v + '">' + VDL[r.v] + '</span></td><td class="num">' + T("약 {0} Hz", hzT(r.hz)) + '</td><td class="num">' + fmt(r.L, 0) + ' ms</td><td class="num">' + (r.tps != null ? T("약 {0} 토큰/s", fmt(r.tps, 0)) : "—") +
+      '</td><td class="num">' + fmt(r.mem, 1) + ' GB</td><td class="num">' + esc(fmt(m.est.P, 2) + "B" + (m.est.src === "lb" ? T(" (LLM 기준)") : "")) + "</td><td>" + basisText(r) + "</td></tr>"; };
+  document.getElementById("fit-table").innerHTML = "<thead><tr><th>" + T("모델") + "</th><th>" + T("판정") + "</th><th>" + T("추론 속도") + "</th><th>" + T("1회 지연") + "</th><th>" + T("토큰 속도") + "</th><th>" + T("필요 메모리") + "</th><th>" + T("크기") + "</th><th>" + T("근거") + "</th></tr></thead><tbody>" +
+    (ok.length ? '<tr class="grp"><td colspan="8">' + T("사용 가능 · {0}개", ok.length) + "<span>" + T("{0} Hz 이상, 메모리에 올라감 · 큰 모델부터", thr) + "</span></td></tr>" + ok.map(row).join("") : '<tr class="grp"><td colspan="8">' + T('사용 가능한 모델 없음') + '<span>' + T('기준 속도를 낮추거나 int4를 골라 보세요') + '</span></td></tr>') +
+    (slow.length ? '<tr class="grp"><td colspan="8">' + T("느림 · {0}개", slow.length) + "<span>" + T("메모리에는 올라가지만 {0} Hz 미만 · 빠른 순", thr) + "</span></td></tr>" + slow.map(row).join("") : "") + "</tbody>";
+  document.getElementById("fit-rest").innerHTML = (oom.length ? '<h3 class="sub">' + T("메모리 부족 · {0}개", oom.length) + ' <small style="font-weight:400;color:var(--ink-3)">' + T('필요 메모리(추정)') + '</small></h3><div class="mchips">' + oom.map(m => '<a class="mchip" href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "<small>" + fmt(FIT[m.id].mem, 0) + " GB</small></a>").join("") + "</div>" : "") +
+    '<h3 class="sub">' + T("판정 불가 · {0}개", na.length) + '</h3><p class="note" style="margin:0 0 8px">' + T('총 파라미터와 LLM 크기를 모두 밝히지 않았거나(산업계 모델·전신 제어기 다수), 액션 헤드 구조를 밝히지 않았거나, 실측이 없는 영상 world model입니다.') + '</p><div class="mchips">' +
     na.map(m => '<a class="mchip" href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "</a>").join("") + "</div>";
   document.getElementById("fit-go").addEventListener("click", () => { document.getElementById("f-fit").value = "ok"; st.fit = "ok"; if (st.view === "compact") setView("compact"); else renderGallery(); go("gallery"); });
   if (prevK.length) document.querySelectorAll("#fit-sum .k").forEach((k, i) => tween(k, prevK[i], +k.dataset.v, v => fmt(v, 0)));
   document.querySelectorAll(".fitline").forEach(el => { el.innerHTML = fitLine(FIT[el.dataset.fit]); });
   document.getElementById("f-fit-dev").textContent = "· " + dev.name + " · " + PREC[b] + " · " + thr + " Hz";
-  document.getElementById("fit-note").textContent = "추정 방법: 메모리는 파라미터 × 정밀도 바이트에 1 GB와 파라미터 1B당 0.3 GB(활성값·KV 캐시·비전 인코더)를 더했고, Jetson은 CPU와 메모리를 나눠 쓰므로 75%만 쓸 수 있다고 봤습니다. 속도는 가중치를 메모리에서 한 번 읽는 시간과 연산 시간 중 큰 쪽(roofline)으로 백본 순전파 1회, 토큰 디코딩, 디노이징 횟수를 더해 계산했습니다. 실측이 있는 모델(" + new Set(ANCHORS.map(a => a[0])).size + "개)은 가장 가까운 장치의 실측값을 두 장치의 추정 비율로 환산했습니다. TensorRT·torch.compile·양자화 커널 같은 최적화 여부에 따라 실제 속도는 2배 넘게 달라질 수 있고, int8·int4는 그 정밀도로 돌릴 수 있는 공개 구현이 있다는 전제입니다.";
+  document.getElementById("fit-note").textContent = T("추정 방법: 메모리는 파라미터 × 정밀도 바이트에 1 GB와 파라미터 1B당 0.3 GB(활성값·KV 캐시·비전 인코더)를 더했고, Jetson은 CPU와 메모리를 나눠 쓰므로 75%만 쓸 수 있다고 봤습니다. 속도는 가중치를 메모리에서 한 번 읽는 시간과 연산 시간 중 큰 쪽(roofline)으로 백본 순전파 1회, 토큰 디코딩, 디노이징 횟수를 더해 계산했습니다. 실측이 있는 모델({0}개)은 가장 가까운 장치의 실측값을 두 장치의 추정 비율로 환산했습니다. TensorRT·torch.compile·양자화 커널 같은 최적화 여부에 따라 실제 속도는 2배 넘게 달라질 수 있고, int8·int4는 그 정밀도로 돌릴 수 있는 공개 구현이 있다는 전제입니다.", new Set(ANCHORS.map(a => a[0])).size);
   if (st.fit) renderGallery();
 }
-document.getElementById("fit-devs").innerHTML = "<thead><tr><th>장치</th><th>분류</th><th>메모리</th><th>대역폭</th><th>BF16 (dense)</th><th>비고</th><th>출처</th></tr></thead><tbody>" +
-  DEVICES.map(d => "<tr><td>" + esc(d.name) + "</td><td>" + esc(d.tier) + '</td><td class="num">' + fmt(d.mem_gb, 0) + ' GB</td><td class="num">' + fmt(d.bw_gbs, 0) + ' GB/s</td><td class="num">' + fmt(d.bf16_tflops, 1) + ' TFLOPS</td><td style="white-space:normal;min-width:260px;font-size:12.5px;color:var(--ink-2)">' + esc(d.note || "공식 수치") + "</td><td>" +
-    (d.src || []).slice(0, 3).map((u, i) => ext(u, "출처" + (i + 1) + " ↗")).join(" ") + "</td></tr>").join("") + "</tbody>";
+document.getElementById("fit-devs").innerHTML = "<thead><tr><th>" + T("장치") + "</th><th>" + T("분류") + "</th><th>" + T("메모리") + "</th><th>" + T("대역폭") + "</th><th>BF16 (dense)</th><th>" + T("비고") + "</th><th>" + T("출처") + "</th></tr></thead><tbody>" +
+  DEVICES.map(d => "<tr><td>" + esc(d.name) + "</td><td>" + esc(d.tier) + '</td><td class="num">' + fmt(d.mem_gb, 0) + ' GB</td><td class="num">' + fmt(d.bw_gbs, 0) + ' GB/s</td><td class="num">' + fmt(d.bf16_tflops, 1) + ' TFLOPS</td><td style="white-space:normal;min-width:260px;font-size:12.5px;color:var(--ink-2)">' + esc(d.note || T("공식 수치")) + "</td><td>" +
+    (d.src || []).slice(0, 3).map((u, i) => ext(u, T("출처{0}", i + 1) + " ↗")).join(" ") + "</td></tr>").join("") + "</tbody>";
 [fitDev, fitPrec, fitHz].forEach(el => el.addEventListener("change", renderFit));
 ["fit-mem","fit-bw","fit-tf"].forEach(id => document.getElementById(id).addEventListener("input", renderFit));
 document.getElementById("fit-form").addEventListener("submit", e => e.preventDefault());
@@ -1443,16 +1451,16 @@ if (document.fonts && document.fonts.ready){
 }
 
 /* ---------- pages: 해시(#infer 등)마다 섹션 하나만 보여 준다 ---------- */
-const PAGES = [["infer","추론 자원","모델별 추론 메모리와 장치 등급별 속도"],["calc","메모리 계산기","파라미터·정밀도로 가중치 메모리 계산"],["fit","내 장치","내 GPU·Jetson에서 쓸 만한 속도로 도는 모델"],
-  ["llm","백본 LLM","VLA가 쓰는 LLM 계열과 시기별 변화"],["rl","강화학습","강화학습을 어디에 어떻게 썼나"],["base","모바일 베이스","바퀴·사족·휴머노이드 베이스 제어 방식"],
-  ["compare","두 모델 비교","구조도와 사양을 나란히"],["gallery","갤러리","모델 " + D.length + "개 카드와 필터"],["notes","표기 기준","범위와 미공개·미확인 표기 규칙"]];
+const PAGES = [["infer",T("추론 자원"),T("모델별 추론 메모리와 장치 등급별 속도")],["calc",T("메모리 계산기"),T("파라미터·정밀도로 가중치 메모리 계산")],["fit",T("내 장치"),T("내 GPU·Jetson에서 쓸 만한 속도로 도는 모델")],
+  ["llm",T("백본 LLM"),T("VLA가 쓰는 LLM 계열과 시기별 변화")],["rl",T("강화학습"),T("강화학습을 어디에 어떻게 썼나")],["base",T("모바일 베이스"),T("바퀴·사족·휴머노이드 베이스 제어 방식")],
+  ["compare",T("두 모델 비교"),T("구조도와 사양을 나란히")],["gallery",T("갤러리"),T("모델 {0}개 카드와 필터", D.length)],["notes",T("표기 기준"),T("범위와 미공개·미확인 표기 규칙")]];
 const PBY = {}; PAGES.forEach(x => { PBY[x[0]] = x; });
 document.getElementById("toc").innerHTML = PAGES.map((x, i) => '<a href="#' + x[0] + '"><span class="no">' + (i < 8 ? "0" + (i + 1) : "··") + "</span><b>" + x[1] + "</b><small>" + esc(x[2]) + '</small><span class="go" aria-hidden="true">→</span></a>').join("");
 PAGES.forEach((x, i) => {
   const prev = PAGES[i - 1], next = PAGES[i + 1];
-  document.querySelector("#" + x[0] + ">.wrap").insertAdjacentHTML("beforeend", '<nav class="pager" aria-label="이전·다음 페이지">' +
-    (prev ? '<a class="prev" href="#' + prev[0] + '"><small>← 이전</small>' + prev[1] + "</a>" : '<a class="prev" href="#"><small>← 처음</small>홈</a>') +
-    (next ? '<a class="next" href="#' + next[0] + '"><small>다음 →</small>' + next[1] + "</a>" : "") + "</nav>");
+  document.querySelector("#" + x[0] + ">.wrap").insertAdjacentHTML("beforeend", '<nav class="pager" aria-label="' + T('이전·다음 페이지') + '">' +
+    (prev ? '<a class="prev" href="#' + prev[0] + '"><small>' + T('← 이전') + '</small>' + prev[1] + "</a>" : '<a class="prev" href="#"><small>' + T('← 처음') + '</small>' + T('홈') + '</a>') +
+    (next ? '<a class="next" href="#' + next[0] + '"><small>' + T('다음 →') + '</small>' + next[1] + "</a>" : "") + "</nav>");
 });
 const BASE_TITLE = document.title, root = document.documentElement;
 const navLinks = [...document.querySelectorAll(".jump a:not(.brand)")];
@@ -1474,6 +1482,13 @@ function route(){
   if (MOTION) el.animate([{opacity: 0, transform: "translateY(10px)"}, {opacity: 1, transform: "none"}], {duration: 380, easing: EASE});
 }
 addEventListener("hashchange", route);
+const langSel = document.getElementById("lang-sel");
+langSel.value = LANG;
+langSel.addEventListener("change", () => {
+  // 한국어는 사이트 맨 위, 나머지는 /en/ 같은 하위 폴더에 있다. 보던 페이지(해시)는 그대로 가져간다
+  const code = langSel.value, base = LANG === "ko" ? "./" : "../";
+  location.href = base + (code === "ko" ? "" : code + "/") + location.hash;
+});
 route();
 
 /* ---------- page chrome: 등장, 진행 막대, 맨 위로, 테마 ---------- */

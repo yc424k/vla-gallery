@@ -28,7 +28,8 @@
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
 | `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
-| `docs/` | GitHub Pages에 올릴 파일(`index.html`, `.nojekyll`). `build.sh`가 다시 만든다 |
+| `docs/` | GitHub Pages에 올릴 파일(`index.html`, `en/`·`ja/`·`zh/`, `.nojekyll`). `build.sh`가 다시 만든다 |
+| `i18n/` | 번역 사전(`en`·`ja`·`zh.json`), 용어집, 번역 대상 목록. 아래 '다국어' 참고 |
 | `reports/` | 로봇 VA VLA 모델 비교표.xlsx |
 | `research/notes/` | 주제별 조사 노트. `verification_*.md`(검증 노트)가 다른 노트보다 우선한다 |
 | `research/mobile/` | 모바일·내비 조사 명세(`SPEC.md`), 조사 원본(`new_models.json`), 검증 결과(`verify_v*.json`), 적용 스크립트(`apply.py`) |
@@ -62,6 +63,19 @@
   - 테마를 바꾸는 순간에는 `html.theme-x`로 모든 transition을 끄고, 카드에는 `content-visibility:auto`를 걸어 화면 밖 카드를 그리지 않는다. 둘 중 하나라도 빼면 갤러리에서 테마 전환이 수백 ms씩 멈춘다.
   - `<head>`의 작은 스크립트가 `html.motion` 클래스와 저장된 테마(`vla-theme`)를 첫 화면 전에 정한다. `prefers-reduced-motion: reduce`이면 `motion`이 붙지 않아 모든 애니메이션이 꺼진다.
   - 렌더 점검 스크립트(`shot4.py`·`shot5.py`)는 `reduced_motion="reduce"`로 찍고, 요소를 찍기 전에 그 요소가 든 페이지로 해시를 옮긴다.
+
+## 다국어 (en·ja·zh)
+- 주소: 한국어 `/`, 영어 `/en/`, 일본어 `/ja/`, 중국어(간체) `/zh/`. 메뉴의 언어 선택은 보던 페이지(해시)를 유지한 채 옮긴다.
+- 방식: 로직(필터·판정)은 한국어 원문 데이터로 그대로 돌리고, 화면에 낼 때만 번역한다.
+  - JS의 화면 문구는 `T("한국어")`, 숫자가 끼면 `T("모델 {0}개 중 …", n)`. 데이터 값은 `esc()`·`tx()`가 정확히 같은 문자열을 사전에서 찾아 바꾼다.
+  - 데이터와 비교하는 값(분류·헤드·강화학습 상태 등)은 `T()`로 감싸지 않는다. 표시할 때만 `esc()`나 `tx()`를 쓴다.
+  - 정적 HTML 문구는 빌드 때 `build/i18n_html.py`가 바꾼다.
+- 파일: `i18n/source.json`(번역 대상 목록, 빌드가 다시 만든다), `i18n/glossary.json`(용어집), `i18n/<lang>.json`(번역 사전).
+- 문구나 데이터를 고친 뒤:
+  1. `./build.sh`를 돌리면 `[en 번역] FIX NEEDED`처럼 빠진 항목을 알려 준다(빠진 문구는 한국어로 나온다).
+  2. 빠진 키를 `python3 build/i18n_check.py i18n/source.json i18n/en.json`으로 확인하고, 용어집을 따라 `i18n/<lang>.json`에 번역을 추가한다.
+  3. 여러 개를 나눠 번역할 때는 `i18n/work/`(git 제외)에 `<lang>_*.json`으로 두고 `python3 build/i18n_merge.py <lang>`으로 합친다. `build/i18n_align.py`로 키와 번역이 어긋나지 않았는지 확인한다.
+- 엑셀 비교표는 한국어만 있다.
 
 ## '내 장치' 추정 방식
 - **메모리:** P×바이트 + 1 GB + 0.3 GB×P(B). 장치 메모리의 90%까지 쓸 수 있다고 보고, Jetson은 75%로 본다.
