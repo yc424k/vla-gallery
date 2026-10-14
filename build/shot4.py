@@ -13,7 +13,8 @@ async def run():
     async with async_playwright() as p:
         b = await p.chromium.launch()
         for name, w, scheme in [("desk-light", 1280, "light"), ("desk-dark", 1280, "dark"), ("phone-dark", 400, "dark")]:
-            ctx = await b.new_context(viewport={"width": w, "height": 900}, color_scheme=scheme)
+            # 모션을 끄고 찍는다(스크롤 등장 애니메이션 때문에 화면 밖 섹션이 비어 보이지 않게)
+            ctx = await b.new_context(viewport={"width": w, "height": 900}, color_scheme=scheme, reduced_motion="reduce")
             pg = await ctx.new_page(); errs = []
             pg.on("pageerror", lambda e: errs.append("pageerror: " + str(e)))
             pg.on("console", lambda m: errs.append("console." + m.type + ": " + m.text) if m.type == "error" and "fonts.g" not in m.text and "ERR_" not in m.text else None)
