@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UMI — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="UMI (Stanford University, 2024-02) — Collects demonstrations without a robot using a handheld gripper with a GoPro and transfers them to robot policies.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/umi/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/umi/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/umi/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/umi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/umi/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/umi/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="UMI — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="UMI (Stanford University, 2024-02) — Collects demonstrations without a robot using a handheld gripper with a GoPro and transfers them to robot policies.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/umi/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "UMI — Architecture, Backbone LLM, Training & Inference Memory", "description": "UMI (Stanford University, 2024-02) — Collects demonstrations without a robot using a handheld gripper with a GoPro and transfers them to robot policies.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/umi/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "UMI", "creator": {"@type": "Organization", "name": "Stanford University; Columbia University; Toyota Research Institute"}}, "citation": {"@type": "ScholarlyArticle", "name": "Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots", "url": "https://arxiv.org/abs/2402.10329"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "UMI", "item": "https://vla-gallery.is-a.dev/m/umi/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/umi/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/umi/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/umi/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/umi/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>UMI</h1>
+<p class="by">Stanford University; Columbia University; Toyota Research Institute · 2024-02</p>
+<p class="kv"><span>VA</span><span>VA</span><span>Not disclosed</span><span>diffusion</span></p>
+<p class="sum">Collects demonstrations without a robot using a handheld gripper with a GoPro and transfers them to robot policies.</p>
+<div class="acts"><a class="pri" href="/#m-umi">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2402.10329" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2402.10329" rel="noopener">Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots</a><small>arXiv 2402.10329</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-02</dd><dt>Organization</dt><dd>Stanford University; Columbia University; Toyota Research Institute</dd><dt>Open weights</dt><dd>Partial</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>CLIP ViT-B/16 (ResNet-34 · ViT-L/14 per task)</dd><dt>Action head</dt><dd>CNN U-Net diffusion (DDIM 16 steps) (diffusion)</dd><dt>Chunk</dt><dd>Executes 6 steps</dd><dt>Control rate</dt><dd>10 Hz (throwing 20 Hz)</dd><dt>Architecture (original summary)</dt><dd>Diffusion Policy CNN U-Net (DiffusionUnetTimmPolicy, down_dims 256·512·1024) + vision encoder CLIP ViT-B/16 (cup · dishwashing) · ResNet-34 (throwing · cloth, no pretraining) · CLIP ViT-L/14 (outdoor); DDIM 50 training · 16 inference steps, action Ta 6, 10 Hz (throwing 20 Hz)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per task (GPU·epochs·batch): cup 4× A10G·250·512, tossing 4× A10G·350·1024, cloth 4× A10G·100·1024, dishwashing 8× A10G·90·224, in-the-wild cup 8× A100·50·512; time Not disclosed; README &#x27;training verified on a single RTX3090 24GB GPU&#x27;</dd><dt>Data type</dt><dd>Human video (handheld GoPro gripper demonstrations, SLAM tracking)</dd><dt>Data scale</dt><dd>Per task: cup 305, throwing 280, cloth 250, dishwashing 258 episodes; outdoor cup 1,400 demos (30 locations, 12 person-hours, 3 demonstrators)</dd><dt>Main datasets</dt><dd>UMI in-house collection</dd><dt>Tasks &amp; evaluation</dt><dd>Cup arrangement, dynamic throwing, bimanual cloth folding, dishwashing, outdoor cup arrangement (30 locations)</dd><dt>Robot</dt><dd>Single-arm·bimanual robots (model Not stated in notes); collection via handheld gripper</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Hardware and latency not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning from human handheld demonstrations</dd><dt>Base control</dt><dd>Fixed · No base control (arm only; data collected with handheld gripper)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Collects demonstrations without a robot using a handheld gripper with a GoPro and transfers them to robot policies. Matches sensor and robot latencies; 3 demonstrators collected 1,400 demos in 12 person-hours at 30 locations.</dd><dt>Notes</dt><dd>Gripper BoM $73, GoPro·accessories $298; 155° fisheye lens·side mirrors·IMU-aided ORB-SLAM3. In-the-wild cup checkpoint (fine-tuned CLIP ViT-L) released. Repository default config (120 epochs, batch 64) differs from the paper&#x27;s per-task settings.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/scaledp/"><small>← Previous</small>ScaleDP</a><a class="nx" href="/m/dp3/"><small>Next →</small>DP3</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

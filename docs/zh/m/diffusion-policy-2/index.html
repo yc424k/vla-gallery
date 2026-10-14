@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diffusion Policy (Transformer) — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="Diffusion Policy (Transformer) (Columbia University, 2023-03) — 以Transformer去噪器实现与CNN变体相同扩散策略的变体。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/diffusion-policy-2/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/diffusion-policy-2/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/diffusion-policy-2/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/diffusion-policy-2/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/diffusion-policy-2/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/diffusion-policy-2/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Diffusion Policy (Transformer) — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="Diffusion Policy (Transformer) (Columbia University, 2023-03) — 以Transformer去噪器实现与CNN变体相同扩散策略的变体。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/diffusion-policy-2/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Diffusion Policy (Transformer) — 架构、骨干LLM、训练与推理内存", "description": "Diffusion Policy (Transformer) (Columbia University, 2023-03) — 以Transformer去噪器实现与CNN变体相同扩散策略的变体。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/diffusion-policy-2/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Diffusion Policy (Transformer)", "creator": {"@type": "Organization", "name": "Columbia University; Toyota Research Institute; MIT; Stanford University"}}, "citation": {"@type": "ScholarlyArticle", "name": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion", "url": "https://arxiv.org/abs/2303.04137"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "Diffusion Policy (Transformer)", "item": "https://vla-gallery.is-a.dev/zh/m/diffusion-policy-2/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/diffusion-policy-2/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/diffusion-policy-2/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/diffusion-policy-2/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/diffusion-policy-2/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 参考基线(2024年以前)</p>
+<h1>Diffusion Policy (Transformer)</h1>
+<p class="by">Columbia University; Toyota Research Institute; MIT; Stanford University · 2023-03</p>
+<p class="kv"><span>VA</span><span>参考基线(2024年以前)</span><span>去噪器 9M（仿真，含Block Push）·80M（Kitchen，真实Push-T）+ 视觉编码器 22M（Transport 45M，Block Push 0）</span><span>diffusion</span></p>
+<p class="sum">以Transformer去噪器实现与CNN变体相同扩散策略的变体。</p>
+<div class="acts"><a class="pri" href="/zh/#m-diffusion-policy-2">在图库中查看架构图</a><a href="https://arxiv.org/abs/2303.04137" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2303.04137" rel="noopener">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</a><small>arXiv 2303.04137</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>参考基线(2024年以前)</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2023-03</dd><dt>机构</dt><dd>Columbia University; Toyota Research Institute; MIT; Stanford University</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>去噪器 9M（仿真，含Block Push）·80M（Kitchen，真实Push-T）+ 视觉编码器 22M（Transport 45M，Block Push 0）</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>ResNet-18</dd><dt>动作头</dt><dd>minGPT式扩散Transformer (8层) (diffusion)</dd><dt>动作块</dt><dd>预测16 · 执行8</dd><dt>控制频率</dt><dd>10 Hz</dd><dt>架构原文摘要</dt><dd>ResNet-18(无预训练) + minGPT型时序扩散Transformer(通常8层,嵌入256或768;观测cross-attention, causal attention);动作序列Tp 16·Ta 8,真实10 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：训练GPU未公开；与CNN变体相同的epoch预算（图像 3000·状态 4500），warmup 1000；真实Push-T固定12小时；(二手) CARP论文重测 V100 10.83 GPU-小时（基于状态的Square）</dd><dt>数据类型</dt><dd>仿真·合成；真实机器人遥操作</dd><dt>数据规模</dt><dd>仿真与CNN变体相同；真实Push-T 136条演示</dd><dt>主要数据集</dt><dd>Robomimic; Push-T; Block Push; Franka Kitchen; 自采真实Push-T</dd><dt>任务·评估</dt><dd>与CNN变体相同的仿真集；真机Push-T</dd><dt>机器人</dt><dd>UR5(真实Push-T)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>论文：DDIM 10步 0.1秒（RTX 3080，未区分变体）；(二手) VQ-BeT论文实机测量 DP-T 573.49 ms（RTX A4000）·5,243.82 ms（CPU）</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0.2 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 模仿学习（扩散行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（UR5机械臂）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>以Transformer去噪器实现与CNN变体相同扩散策略的变体。仿真去噪器为9M，小于CNN变体(256M)。</dd><dt>备注</dt><dd>参数(B)为真实Push-T设置#D 80M + #V 22M之和(论文分别标注)。仿真检查点公开于训练日志文件夹。所属机构增加Stanford(已修正)。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/rt-1/">RT-1</a><small>2022-12</small></li><li><a href="/zh/m/rt-2/">RT-2</a><small>2023-07</small></li><li><a href="/zh/m/rt-1-x/">RT-1-X</a><small>2023-10</small></li><li><a href="/zh/m/rt-2-x/">RT-2-X</a><small>2023-10</small></li><li><a href="/zh/m/act/">ACT</a><small>2023-04</small></li><li><a href="/zh/m/diffusion-policy/">Diffusion Policy (CNN)</a><small>2023-03</small></li><li><a href="/zh/m/gr-1/">GR-1</a><small>2023-12</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/diffusion-policy/"><small>← 上一个</small>Diffusion Policy (CNN)</a><a class="nx" href="/zh/m/gr-1/"><small>下一个 →</small>GR-1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

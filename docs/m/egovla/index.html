@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EgoVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="EgoVLA (UIUC, 2025-07) — Pretrained on human egocentric video, then fine-tuned on robot demonstrations, transferring the human hand action space to humanoid…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/egovla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/egovla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/egovla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/egovla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/egovla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/egovla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="EgoVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="EgoVLA (UIUC, 2025-07) — Pretrained on human egocentric video, then fine-tuned on robot demonstrations, transferring the human hand action space to humanoid…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/egovla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "EgoVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "EgoVLA (UIUC, 2025-07) — Pretrained on human egocentric video, then fine-tuned on robot demonstrations, transferring the human hand action space to humanoid…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/egovla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "EgoVLA", "creator": {"@type": "Organization", "name": "UIUC·MIT·NVIDIA·UC San Diego"}}, "citation": {"@type": "ScholarlyArticle", "name": "EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos", "url": "https://arxiv.org/abs/2507.12440"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "EgoVLA", "item": "https://vla-gallery.is-a.dev/m/egovla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/egovla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/egovla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/egovla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/egovla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid VLA</p>
+<h1>EgoVLA</h1>
+<p class="by">UIUC·MIT·NVIDIA·UC San Diego · 2025-07</p>
+<p class="kv"><span>VLA</span><span>Humanoid VLA</span><span>NVILA-2B + action head 300M</span><span>regression</span></p>
+<p class="sum">Pretrained on human egocentric video, then fine-tuned on robot demonstrations, transferring the human hand action space to humanoid bimanual manipulation.</p>
+<div class="acts"><a class="pri" href="/#m-egovla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2507.12440" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2507.12440" rel="noopener">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</a><small>arXiv 2507.12440</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-07</dd><dt>Organization</dt><dd>UIUC·MIT·NVIDIA·UC San Diego</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>NVILA-2B + action head 300M (total not disclosed)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>LLM inside NVILA-2B (not stated)</dd><dt>Vision encoder</dt><dd>NVILA vision encoder</dd><dt>Action head</dt><dd>Transformer action head 300M (wrist + MANO) (regression)</dd><dt>Chunk</dt><dd>30 steps (1 s)</dd><dt>Control rate</dt><dd>30 Hz</dd><dt>Architecture (original summary)</dt><dd>NVILA-2B VLM + 300M Transformer action head (6 encoder layers, hidden 1536); action = wrist pose (3D position + rot6D) + top 15 PCA components of MANO hand joints, 1-second horizon (30 Hz × 30 steps)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed; 100 robot demonstrations per task</dd><dt>Data type</dt><dd>Human video / simulation·synthetic</dd><dt>Data scale</dt><dd>About 500,000 image-action pairs; 100 robot demonstrations per task</dd><dt>Main datasets</dt><dd>4,000 HOI4D videos, 833 min HOT3D, 166 hours HoloAssist (1/10 subsampled), 2,317 TACO motion sequences</dd><dt>Tasks &amp; evaluation</dt><dd>Ego Humanoid Manipulation Benchmark 12 tasks (7 short-horizon · 5 long-horizon); trained backgrounds short-horizon average 77.78%, long-horizon 45.93%</dd><dt>Robot</dt><dd>Sim Unitree H1 + Inspire hands (NVIDIA Isaac Lab)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>30 Hz action horizon; hardware not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Human video pretraining + imitation learning</dd><dt>Base control</dt><dd>Fixed · No base control (upper body only: arm EE IK + hand joints, 36-dim; sim H1 legs not controlled)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Pretrained on human egocentric video, then fine-tuned on robot demonstrations, transferring the human hand action space to humanoid bimanual manipulation.</dd><dt>Notes</dt><dd>Training setup deferred to supplementary material and absent from the main text (verification NOT FOUND, supplementary material inaccessible). Parameters (B) is null since total parameters are not disclosed. Data hours is null since there is no overall total.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/m/gr00t-n1-5/">GR00T N1.5</a><small>2025-05</small></li><li><a href="/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/m/figure-helix/">Figure Helix</a><small>2025-02</small></li><li><a href="/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/m/uh-1/"><small>← Previous</small>UH-1 (Humanoid-X)</a><a class="nx" href="/m/hat/"><small>Next →</small>HAT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

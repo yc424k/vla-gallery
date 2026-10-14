@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NaVid — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="NaVid (Peking University, 2024-02) — 単眼RGB動画履歴と言語指示のみで次の行動を言語で出力する動画VLMベースのVLNエージェントで、地図・オドメトリ・深度なしに連続環境(VLN-CE)で動作する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/navid/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/navid/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/navid/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/navid/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/navid/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/navid/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="NaVid — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="NaVid (Peking University, 2024-02) — 単眼RGB動画履歴と言語指示のみで次の行動を言語で出力する動画VLMベースのVLNエージェントで、地図・オドメトリ・深度なしに連続環境(VLN-CE)で動作する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/navid/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "NaVid — 構造・バックボーンLLM・学習・推論メモリ", "description": "NaVid (Peking University, 2024-02) — 単眼RGB動画履歴と言語指示のみで次の行動を言語で出力する動画VLMベースのVLNエージェントで、地図・オドメトリ・深度なしに連続環境(VLN-CE)で動作する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/navid/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "NaVid", "creator": {"@type": "Organization", "name": "Peking University·BAAI·CASIA·University of Adelaide·Australian National University·Galbot"}}, "citation": {"@type": "ScholarlyArticle", "name": "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation", "url": "https://arxiv.org/abs/2402.15852"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "NaVid", "item": "https://vla-gallery.is-a.dev/ja/m/navid/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/navid/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/navid/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/navid/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/navid/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>NaVid</h1>
+<p class="by">Peking University·BAAI·CASIA·University of Adelaide·Australian National University·Galbot · 2024-02</p>
+<p class="kv"><span>VLA</span><span>ナビゲーション</span><span>7B</span><span>離散トークン</span></p>
+<p class="sum">単眼RGB動画履歴と言語指示のみで次の行動を言語で出力する動画VLMベースのVLNエージェントで、地図・オドメトリ・深度なしに連続環境(VLN-CE)で動作する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-navid">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2402.15852" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2402.15852" rel="noopener">NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation</a><small>arXiv 2402.15852</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2024-02</dd><dt>機関</dt><dd>Peking University·BAAI·CASIA·University of Adelaide·Australian National University·Galbot</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>7B (Vicuna-7Bベース; 全体の数値は記載なし)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Vicuna-7B · LLaMA-VID構成</dd><dt>ビジョンエンコーダ</dt><dd>EVA-CLIP (EVA-ViT-G重み)</dd><dt>アクションヘッド</dt><dd>次の行動テキスト (FORWARD+距離 · TURN+角度 · STOP、正規表現でパース) (離散トークン)</dd><dt>チャンク</dt><dd>なし (1ステップ)</dd><dt>制御周期</dt><dd>行動あたり1.2–1.5秒</dd><dt>構造の原文要約</dt><dd>EVA-CLIPビジョンエンコーダ + 指示クエリトークン・指示非依存トークン(現在フレーム64個、過去フレームあたり4個) + Vicuna-7B (LLaMA-VIDベース); 次の1行動をテキストで出力(FORWARD+移動距離、TURN-LEFT/RIGHT+回転角度、STOP)、正規表現パーサで抽出; 単眼RGB動画のみ入力、行動あたり1.2–1.5秒</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>A100 24枚 (LLaMA-VIDの重みからNaVidを学習)</dd><dt>事前学習期間</dt><dd>約28時間</dd><dt>事前学習ステップ・バッチ</dt><dd>1エポック (バッチ非公開)</dd><dt>GPU・TPU時間</dt><dd>672 (明示 · A100時間 (&quot;totaling 672 GPU hours&quot;))</dd><dt>ファインチューニング</dt><dd>該当なし (ナビゲーション・Webデータの単一共同学習段階)</dd><dt>データ種類</dt><dd>シミュレーション・合成 / Web視覚言語</dd><dt>データ規模</dt><dd>ナビゲーション 510k サンプル(MP3D 61シーンのオラクルステップ 320k + 非オラクル 180k + 指示推論補助 10k 軌跡) + Webデータ 763k(動画キャプションなど)</dd><dt>主要データセット</dt><dd>VLN-CE R2R (MP3D 61シーン); Web動画・キャプションデータ763k (詳細な出典の記載なし)</dd><dt>タスク・評価</dt><dd>R2R-CE val-unseen SR 37.4%・SPL 35.9%・NE 5.47; RxR-CE クロスデータセット(R2Rで学習) SR 23.8%・SPL 21.2%; 屋内4シーン(Meeting room・Office・Lab・Lounge)で単純・複合指示計200件の実ロボット試験</dd><dt>ロボット</dt><dd>TurtleBot 4車輪型 + Azure Kinect DK (モデルはRGBのみ使用; LiDAR・Nav2はオドメトリが必要な比較モデル用)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>リモートサーバーのA100 1枚で実行、ロボットは圧縮画像を送信し解析済み指令を受信; 行動あたり約1.2–1.5秒; メモリは非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>14 GB</dd><dt>実行場所</dt><dd>リモートサーバー (A100)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(SFT)のみ; 非オラクル軌跡データの収集を含む</dd><dt>ベース制御</dt><dd>車輪型 (離散移動行動) · VLMが離散行動(前進距離・回転角度・停止)をテキストで出力 → ロボットが指令を実行し回転・前進の追従を確認</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>単眼RGB動画履歴と言語指示のみで次の行動を言語で出力する動画VLMベースのVLNエージェントで、地図・オドメトリ・深度なしに連続環境(VLN-CE)で動作する。シミュレーション510kサンプルとWebデータ763kで共同学習し、R2R-CE SR 37.4%と屋内200指示の実ロボット試験でsim-to-real汎化を示した。</dd><dt>備考</dt><dd>READMEの公開チェックポイント(HF Jzzhang/NaVid、CC BY-NC 4.0)はR2R・RxR学習分割でUni-NaVidの学習戦略に従い再学習したバージョンで、R2R val SR 41.9%・RxR val SR 45.7%(READMEの表)であり論文の数値とは異なる; 評価コード公開; 事前学習欄はLLaMA-VIDで初期化した後のNaVid学習段階(LLaMA・テキストエンコーダのみ学習)基準; バッチ・学習率は非公開; RSS 2024。ベース: LLaMA-VID: An Image is Worth 2 Tokens in Large Language Models (arXiv 2311.17043) — 論文は動画VLM LLaMA-VIDの上に構築したと明記</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/navdp/"><small>← 前のモデル</small>NavDP</a><a class="nx" href="/ja/m/uni-navid/"><small>次のモデル →</small>Uni-NaVid</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GR-3 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="GR-3 (ByteDance Seed, 2025-07) — Co-trains on robot trajectories, web vision-language data and VR human trajectories to generalize to new objects·instruction…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/gr-3/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gr-3/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gr-3/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gr-3/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gr-3/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gr-3/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GR-3 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="GR-3 (ByteDance Seed, 2025-07) — Co-trains on robot trajectories, web vision-language data and VR human trajectories to generalize to new objects·instruction…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/gr-3/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GR-3 — Architecture, Backbone LLM, Training & Inference Memory", "description": "GR-3 (ByteDance Seed, 2025-07) — Co-trains on robot trajectories, web vision-language data and VR human trajectories to generalize to new objects·instruction…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/gr-3/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "GR-3", "creator": {"@type": "Organization", "name": "ByteDance Seed"}}, "citation": {"@type": "ScholarlyArticle", "name": "GR-3 Technical Report", "url": "https://arxiv.org/abs/2507.15493"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "GR-3", "item": "https://vla-gallery.is-a.dev/m/gr-3/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gr-3/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gr-3/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gr-3/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gr-3/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Industry models</p>
+<h1>GR-3</h1>
+<p class="by">ByteDance Seed · 2025-07</p>
+<p class="kv"><span>VLA</span><span>Industry models</span><span>4B</span><span>flow matching</span></p>
+<p class="sum">Co-trains on robot trajectories, web vision-language data and VR human trajectories to generalize to new objects·instructions.</p>
+<div class="acts"><a class="pri" href="/#m-gr-3">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2507.15493" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2507.15493" rel="noopener">GR-3 Technical Report</a><small>arXiv 2507.15493</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Industry models</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-07</dd><dt>Organization</dt><dd>ByteDance Seed</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>4B</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B config</dd><dt>Vision encoder</dt><dd>Qwen2.5-VL ViT</dd><dt>Action head</dt><dd>flow matching action DiT (MoT) (flow matching)</dd><dt>Chunk</dt><dd>k steps (not disclosed)</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Qwen2.5-VL-3B-Instruct + action DiT (half the VLM&#x27;s layers), mixture-of-transformers; flow matching, k-length action chunk represented as k tokens (k not disclosed), causal attention in action DiT</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation + web vision-language + motion capture (VR human trajectories)</dd><dt>Data scale</dt><dd>pick-and-place 35k traj·101 objects·69 h; table tidying about 101 h; cloth handling 116 h; VR human trajectories about 450 per hour (teleoperation about 250), up to 10 per object for 45 unseen objects</dd><dt>Main datasets</dt><dd>In-house ByteMini teleoperation data, web VL (captioning, VQA, grounding, interleaved grounded captioning), PICO 4 Ultra Enterprise VR human trajectories</dd><dt>Tasks &amp; evaluation</dt><dd>pick-and-place unseen instructions 77.1%, unseen objects 57.8% (86.7% with 10-shot human trajectories); table tidying instruction following 97.5% vs π0 53.8%; cloth handling average task progress 86.7/83.9/75.8%</dd><dt>Robot</dt><dd>ByteMini 22-DoF bimanual mobile robot (7-DoF arms, spherical wrists, RGBD on head · both wrists)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Uses only the KV cache of the latter half of VLM layers; hardware·latency·control frequency not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>8 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning + co-training with web VL·VR human trajectories. The RL-applied version is GR-RL</dd><dt>Base control</dt><dd>Wheeled (Direct base velocity/pose output) · Policy chunks control the robot end-to-end including the mobile base (19 DoF excluding lift and head); base moves and rotates in table cleanup and clothes hanging</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Co-trains on robot trajectories, web vision-language data and VR human trajectories to generalize to new objects·instructions. Adds RMSNorm after attention·FFN linear layers to stabilize training.</dd><dt>Notes</dt><dd>Data hours are stated only per task (69 h, about 101 h, 116 h) with no total, so the numeric cell is left empty. Organization on arXiv page 1 is &#x27;ByteDance&#x27;. No public repository found (could not be confirmed in verification). arXiv v1 2025-07-21.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/m/gr-2/"><small>← Previous</small>GR-2</a><a class="nx" href="/m/gr-rl/"><small>Next →</small>GR-RL</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

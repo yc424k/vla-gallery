@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GR-RL — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="GR-RL (ByteDance Seed, 2025-12) — 学習したtask progress(Q値)でデモを選別し、左右対称拡張の後に潜在ノイズ予測器でオンラインRLを行う。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/gr-rl/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gr-rl/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gr-rl/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gr-rl/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gr-rl/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gr-rl/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GR-RL — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="GR-RL (ByteDance Seed, 2025-12) — 学習したtask progress(Q値)でデモを選別し、左右対称拡張の後に潜在ノイズ予測器でオンラインRLを行う。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/gr-rl/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GR-RL — 構造・バックボーンLLM・学習・推論メモリ", "description": "GR-RL (ByteDance Seed, 2025-12) — 学習したtask progress(Q値)でデモを選別し、左右対称拡張の後に潜在ノイズ予測器でオンラインRLを行う。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/gr-rl/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "GR-RL", "creator": {"@type": "Organization", "name": "ByteDance Seed"}}, "citation": {"@type": "ScholarlyArticle", "name": "GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation", "url": "https://arxiv.org/abs/2512.01801"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "GR-RL", "item": "https://vla-gallery.is-a.dev/ja/m/gr-rl/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gr-rl/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gr-rl/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gr-rl/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gr-rl/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 産業界モデル</p>
+<h1>GR-RL</h1>
+<p class="by">ByteDance Seed · 2025-12</p>
+<p class="kv"><span>VLA</span><span>産業界モデル</span><span>5B</span><span>flow matching</span></p>
+<p class="sum">学習したtask progress(Q値)でデモを選別し、左右対称拡張の後に潜在ノイズ予測器でオンラインRLを行う。</p>
+<div class="acts"><a class="pri" href="/ja/#m-gr-rl">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2512.01801" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2512.01801" rel="noopener">GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation</a><small>arXiv 2512.01801</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>産業界モデル</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-12</dd><dt>機関</dt><dd>ByteDance Seed</dd><dt>重み公開</dt><dd>未確認</dd><dt>パラメータ</dt><dd>5B(VLA + critic MoT全体); オンラインRL noise predictorの学習パラメータ 51.5M</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B構成</dd><dt>ビジョンエンコーダ</dt><dd>Qwen2.5-VL ViT</dd><dt>アクションヘッド</dt><dd>flow matching DiT + 分布型critic (flow matching)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>MoT: VLA(Qwen2.5-VL-3B-Instruct + flow-matching action DiT) + multi-task distributional critic; オンラインRL用latent noise predictor</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開(オンラインRL 500 stepsのチェックポイントで評価)</dd><dt>データ種類</dt><dd>実ロボットのデモ + 実ロボットでのオンラインRL</dd><dt>データ規模</dt><dd>デモ時間・エピソード数、オンラインRL時間は非公開</dd><dt>主要データセット</dt><dd>独自の靴ひもデモデータ</dd><dt>タスク・評価</dt><dd>靴ひも通し 45.7%(GR-3) → 61.6%(フィルタリング) → 72.7%(対称性拡張) → 83.3%(オンラインRL)</dd><dt>ロボット</dt><dd>ByteMini-v2双腕</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>10 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>使用 (VLAのRL事後学習) · 分布型criticでデモを選別・拡張した後、実ロボットでオンラインRL(潜在ノイズ予測器 51.5Mを学習)。靴紐の成功率 45.7% → 83.3%</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/html/2512.01801" rel="noopener">https://arxiv.org/html/2512.01801</a></dd><dt>ベース制御</dt><dd>固定 · ベース移動の言及なし (靴紐通しの双腕精密操作)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>学習したtask progress(Q値)でデモを選別し、左右対称拡張の後に潜在ノイズ予測器でオンラインRLを行う。靴ひも通しの成功率をGR-3の45.7%から83.3%に高めた。</dd><dt>備考</dt><dd>GR-3は4B、GR-RLはcritic込みで計5Bと記述。Seedページの日付 2025-12-02、arXiv v1 2025-12-01。公開リポジトリは見つからず(検証で確認不可)。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/ja/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/ja/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/ja/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/ja/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/ja/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/ja/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/ja/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/ja/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/ja/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/ja/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/ja/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/ja/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/ja/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/ja/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/ja/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/ja/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/ja/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/ja/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/ja/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/ja/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/gr-3/"><small>← 前のモデル</small>GR-3</a><a class="nx" href="/ja/m/gr-dexter/"><small>次のモデル →</small>GR-Dexter</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

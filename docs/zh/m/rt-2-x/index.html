@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RT-2-X — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="RT-2-X (Open X-Embodiment Collaboration(21개 기관), 2023-10) — 将RT-2与原VLM数据和OXE机器人混合以约1:1混合进行联合微调。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/rt-2-x/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rt-2-x/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rt-2-x/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rt-2-x/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rt-2-x/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rt-2-x/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RT-2-X — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="RT-2-X (Open X-Embodiment Collaboration(21개 기관), 2023-10) — 将RT-2与原VLM数据和OXE机器人混合以约1:1混合进行联合微调。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/rt-2-x/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RT-2-X — 架构、骨干LLM、训练与推理内存", "description": "RT-2-X (Open X-Embodiment Collaboration(21개 기관), 2023-10) — 将RT-2与原VLM数据和OXE机器人混合以约1:1混合进行联合微调。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/rt-2-x/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "RT-2-X", "creator": {"@type": "Organization", "name": "Open X-Embodiment Collaboration(21개 기관)"}}, "citation": {"@type": "ScholarlyArticle", "name": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models", "url": "https://arxiv.org/abs/2310.08864"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "RT-2-X", "item": "https://vla-gallery.is-a.dev/zh/m/rt-2-x/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rt-2-x/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rt-2-x/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rt-2-x/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rt-2-x/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 参考基线(2024年以前)</p>
+<h1>RT-2-X</h1>
+<p class="by">Open X-Embodiment Collaboration(21个机构) · 2023-10</p>
+<p class="kv"><span>VLA</span><span>参考基线(2024年以前)</span><span>55B</span><span>离散token</span></p>
+<p class="sum">将RT-2与原VLM数据和OXE机器人混合以约1:1混合进行联合微调。</p>
+<div class="acts"><a class="pri" href="/zh/#m-rt-2-x">在图库中查看架构图</a><a href="https://arxiv.org/abs/2310.08864" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2310.08864" rel="noopener">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</a><small>arXiv 2310.08864</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>参考基线(2024年以前)</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2023-10</dd><dt>机构</dt><dd>Open X-Embodiment Collaboration(21个机构)</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>55B(OXE论文Table II中也有5B变体)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>UL2 32B编码器-解码器 (PaLI-X 55B)</dd><dt>视觉编码器</dt><dd>ViT (PaLI-X)</dd><dt>动作头</dt><dd>256区间文本token (离散token)</dd><dt>动作块</dt><dd>无 (单步)</dd><dt>控制频率</dt><dd>3–10 Hz (因机器人而异)</dd><dt>架构原文摘要</dt><dd>ViT + UL2 VLM主干(RT-2方式)；8维(终止1·末端移动7) 256区间文本token</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开（使用已有VLM）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开；原VLM数据与机器人数据约 1:1 联合微调</dd><dt>数据类型</dt><dd>真实机器人遥操作等(各贡献数据集采集方式不同)；网络视觉-语言</dd><dt>数据规模</dt><dd>OXE训练混合(9个embodiment) + 原VLM数据,约1:1;OXE全部1M+轨迹·22个embodiment</dd><dt>主要数据集</dt><dd>OXE子集: RT-1, QT-Opt, Bridge, Task Agnostic Robot Play, Jaco Play, Cable Routing, RoboTurk, NYU VINN, Austin VIOLA, Berkeley Autolab UR5, TOTO, Language Table;原VLM训练数据</dd><dt>任务·评估</dt><dd>6种机器人 3,600次评估（与RT-1-X共同）；涌现技能约为RT-2的3倍</dd><dt>机器人</dt><dd>训练混合9种操作臂(OXE全部22个embodiment中)；评估机器人6种</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>云服务托管·网络查询，每台机器人3–10 Hz</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>110 GB</dd><dt>运行位置</dt><dd>云端</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · VLM·机器人数据联合微调(监督学习)</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（动作 8维：终止 1 + EE移动 7；Google移动机器人也仅为机械臂）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将RT-2与原VLM数据和OXE机器人混合以约1:1混合进行联合微调。在涌现技能评估中表现约为RT-2的3倍。</dd><dt>备注</dt><dd>README中无RT-2-X检查点。5B变体为核验笔记中的新事实。已反映机构标注修正。参数(B)为55B。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/rt-1/">RT-1</a><small>2022-12</small></li><li><a href="/zh/m/rt-2/">RT-2</a><small>2023-07</small></li><li><a href="/zh/m/rt-1-x/">RT-1-X</a><small>2023-10</small></li><li><a href="/zh/m/act/">ACT</a><small>2023-04</small></li><li><a href="/zh/m/diffusion-policy/">Diffusion Policy (CNN)</a><small>2023-03</small></li><li><a href="/zh/m/diffusion-policy-2/">Diffusion Policy (Transformer)</a><small>2023-03</small></li><li><a href="/zh/m/gr-1/">GR-1</a><small>2023-12</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/rt-1-x/"><small>← 上一个</small>RT-1-X</a><a class="nx" href="/zh/m/act/"><small>下一个 →</small>ACT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

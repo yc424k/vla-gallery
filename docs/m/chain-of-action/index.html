@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chain-of-Action — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Chain-of-Action (ByteDance Seed, 2025-06) — Generates the trajectory backward from the goal keyframe to the current time, reflecting the global goal in actio…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/chain-of-action/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/chain-of-action/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/chain-of-action/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/chain-of-action/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/chain-of-action/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/chain-of-action/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Chain-of-Action — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Chain-of-Action (ByteDance Seed, 2025-06) — Generates the trajectory backward from the goal keyframe to the current time, reflecting the global goal in actio…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/chain-of-action/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Chain-of-Action — Architecture, Backbone LLM, Training & Inference Memory", "description": "Chain-of-Action (ByteDance Seed, 2025-06) — Generates the trajectory backward from the goal keyframe to the current time, reflecting the global goal in actio…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/chain-of-action/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Chain-of-Action", "creator": {"@type": "Organization", "name": "ByteDance Seed; University of Adelaide; NUS; CAS; CSIRO"}}, "citation": {"@type": "ScholarlyArticle", "name": "Chain-of-Action: Trajectory Autoregressive Modeling for Robotic Manipulation", "url": "https://arxiv.org/abs/2506.09990"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Chain-of-Action", "item": "https://vla-gallery.is-a.dev/m/chain-of-action/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/chain-of-action/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/chain-of-action/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/chain-of-action/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/chain-of-action/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>Chain-of-Action</h1>
+<p class="by">ByteDance Seed; University of Adelaide; NUS; CAS; CSIRO · 2025-06</p>
+<p class="kv"><span>VA</span><span>VA</span><span>Not disclosed</span><span>regression</span></p>
+<p class="sum">Generates the trajectory backward from the goal keyframe to the current time, reflecting the global goal in actions.</p>
+<div class="acts"><a class="pri" href="/#m-chain-of-action">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2506.09990" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.09990" rel="noopener">Chain-of-Action: Trajectory Autoregressive Modeling for Robotic Manipulation</a><small>arXiv 2506.09990</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2025-06</dd><dt>Organization</dt><dd>ByteDance Seed; University of Adelaide; NUS; CAS; CSIRO</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>ResNet-18 (multi-view)</dd><dt>Action head</dt><dd>Reverse autoregressive continuous actions starting from keyframes (regression)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Multi-view ResNet-18 + 4-layer transformer encoder·7-layer decoder; reverse-order autoregressive trajectory generation starting from keyframe actions, continuous action tokens·latent consistency loss, multi-token prediction heads during training, dynamic stopping</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per task: 1× H100, 20,000 iterations, batch 128 (same as README default); time Not disclosed</dd><dt>Data type</dt><dd>Simulation·synthetic; real-robot teleoperation</dd><dt>Data scale</dt><dd>RLBench 100 demos per task; real 35–81 demos per task</dd><dt>Main datasets</dt><dd>RLBench; in-house Fetch data</dd><dt>Tasks &amp; evaluation</dt><dd>Centered on 60 RLBench tasks; 8 real Fetch kitchen tasks</dd><dt>Robot</dt><dd>Fetch (real); RLBench simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · Base movement uses Fetch&#x27;s built-in LiDAR navigation (separate stack); policy outputs absolute EE pose only</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Generates the trajectory backward from the goal keyframe to the current time, reflecting the global goal in actions. Trained on 1× H100 per task.</dd><dt>Notes</dt><dd>Reports improvement over ACT · DP, but the note gives no figures.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/dense-policy/"><small>← Previous</small>Dense Policy</a><a class="nx" href="/m/brs/"><small>Next →</small>BRS (WB-VIMA)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

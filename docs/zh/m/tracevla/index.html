@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TraceVLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="TraceVLA (University of Maryland, 2024-12) — 通过将点跟踪轨迹作为图像提示输入的visual trace prompting提升时空感知。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/tracevla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/tracevla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/tracevla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/tracevla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/tracevla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/tracevla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="TraceVLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="TraceVLA (University of Maryland, 2024-12) — 通过将点跟踪轨迹作为图像提示输入的visual trace prompting提升时空感知。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/tracevla/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "TraceVLA — 架构、骨干LLM、训练与推理内存", "description": "TraceVLA (University of Maryland, 2024-12) — 通过将点跟踪轨迹作为图像提示输入的visual trace prompting提升时空感知。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/tracevla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "TraceVLA", "creator": {"@type": "Organization", "name": "University of Maryland·Microsoft Research"}}, "citation": {"@type": "ScholarlyArticle", "name": "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies", "url": "https://arxiv.org/abs/2412.10345"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "TraceVLA", "item": "https://vla-gallery.is-a.dev/zh/m/tracevla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/tracevla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/tracevla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/tracevla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/tracevla/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 自回归与潜在动作VLA</p>
+<h1>TraceVLA</h1>
+<p class="by">University of Maryland·Microsoft Research · 2024-12</p>
+<p class="kv"><span>VLA</span><span>自回归与潜在动作VLA</span><span>7B</span><span>离散token</span></p>
+<p class="sum">通过将点跟踪轨迹作为图像提示输入的visual trace prompting提升时空感知。</p>
+<div class="acts"><a class="pri" href="/zh/#m-tracevla">在图库中查看架构图</a><a href="https://arxiv.org/abs/2412.10345" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.10345" rel="noopener">TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</a><small>arXiv 2412.10345</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>自回归与潜在动作VLA</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2024-12</dd><dt>机构</dt><dd>University of Maryland·Microsoft Research</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>7B(基于OpenVLA)；4B Phi-3V变体</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Llama 2 7B (OpenVLA) / Phi-3-Vision 4B</dd><dt>视觉编码器</dt><dd>SigLIP + DINOv2 + CoTracker轨迹图像</dd><dt>动作头</dt><dd>256-bin token (离散token)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>OpenVLA(Prismatic-7B)或Phi-3-Vision 4B;叠加CoTracker视觉轨迹的额外图像输入,OpenVLA式离散动作token</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用(7B从OpenVLA检查点、4B从Phi-3-Vision权重开始)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>7B：GPU 64张(README脚本，8节点×8)，在OpenVLA基础上追加5 epochs；Phi3-4B：H100 32张，30 epochs，batch 4096；时间未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作(含视觉轨迹标注)</dd><dt>数据规模</dt><dd>约150K条轨迹 + WidowX-250演示120条</dd><dt>主要数据集</dt><dd>BridgeData V2, Fractal</dd><dt>任务·评估</dt><dd>SimplerEnv 137种设置47.7%(OpenVLA 40.2%)；真实WidowX-250 seen·unseen各4项任务</dd><dt>机器人</dt><dd>WidowX-250，SimplerEnv仿真</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>OpenVLA速度 + 额外token约0.002 s,CoTracker(M=5)每步0.03 s</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>14 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅使用模仿学习（行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（WidowX机械臂）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>通过将点跟踪轨迹作为图像提示输入的visual trace prompting提升时空感知。在SimplerEnv 137种设置中达到47.7%，超过OpenVLA(40.2%)。</dd><dt>备注</dt><dd>用轨迹标注数据继续训练OpenVLA，因此没有单独的机器人预训练。参数(B)以7B变体为准。有一次提取结果显示v3 PDF所属机构中也有Capital One†。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/zh/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/zh/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/zh/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/zh/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/zh/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/zh/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/zh/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/zh/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/zh/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/zh/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/zh/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/zh/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/zh/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/zh/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/zh/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/zh/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/zh/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/zh/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/zh/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/zh/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/zh/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/zh/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/magma/"><small>← 上一个</small>Magma</a><a class="nx" href="/zh/m/cot-vla/"><small>下一个 →</small>CoT-VLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

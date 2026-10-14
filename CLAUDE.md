@@ -27,8 +27,8 @@
 | `gallery/base_existing.json` | 기존 165개의 베이스 제어(types·how·cat) |
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
-| `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
-| `docs/` | GitHub Pages에 올릴 파일(`index.html`(영어), `ko/`·`ja/`·`zh/`, `en/`(→ `/` 안내), `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)·언어별 hreflang은 `make_site.py`에 있다 |
+| `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_pages.py`(모델별 정적 페이지·sitemap.xml), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
+| `docs/` | GitHub Pages에 올릴 파일(`index.html`(영어), `ko/`·`ja/`·`zh/`, `en/`(→ `/` 안내), 모델별 페이지 `m/`·`<lang>/m/`, `assets/model.css`, `robots.txt`, `sitemap.xml`, `.nojekyll`, `CNAME`). `build.sh`가 다시 만든다(`CNAME` 제외). 검색용 메타 태그·사이트 주소(`SITE`)·언어별 hreflang은 `make_site.py`에 있다 |
 | `i18n/` | 번역 사전(`en`·`ja`·`zh.json`), 용어집, 번역 대상 목록. 아래 '다국어' 참고 |
 | `reports/` | 로봇 VA VLA 모델 비교표.xlsx |
 | `research/notes/` | 주제별 조사 노트. `verification_*.md`(검증 노트)가 다른 노트보다 우선한다 |
@@ -79,6 +79,14 @@
   2. 빠진 키를 `python3 build/i18n_check.py i18n/source.json i18n/en.json`으로 확인하고, 용어집을 따라 `i18n/<lang>.json`에 번역을 추가한다.
   3. 여러 개를 나눠 번역할 때는 `i18n/work/`(git 제외)에 `<lang>_*.json`으로 두고 `python3 build/i18n_merge.py <lang>`으로 합친다. `build/i18n_align.py`로 키와 번역이 어긋나지 않았는지 확인한다.
 - 엑셀 비교표는 한국어만 있다.
+
+## 모델별 페이지 (검색 노출용)
+- 주소: 영어 `/m/<모델 id>/`, 다른 언어 `/<lang>/m/<모델 id>/`(`/ko/m/…` 등), 모델 목록 `/m/`·`/<lang>/m/`. `build/make_pages.py`가 `data.json`에서 JS 없는 정적 HTML로 만든다.
+- 내용: 개요·구조·학습·추론·강화학습·베이스·비고 표, 논문·공식 페이지 링크, 같은 분류 모델, 이전·다음 모델. 페이지마다 canonical·hreflang·Open Graph·JSON-LD(TechArticle·BreadcrumbList)가 들어간다.
+- 표 항목명과 데이터 값은 갤러리와 같은 번역 사전(`i18n/<lang>.json`)으로 바꾼다. 이 페이지에만 쓰는 문구는 `make_pages.py`의 `PL`에 4개 언어로 있다.
+- 색·글꼴은 template.html의 `:root` 토큰을 가져와 `docs/assets/model.css`에 쓴다.
+- 갤러리 카드의 '모델 페이지' 버튼과 표기 기준의 '모델별 사양 페이지 목록'이 이 페이지로 연결된다.
+- `sitemap.xml`은 홈·모델 목록·모델 페이지 전체(언어별 852개 주소)를 담아 `make_pages.py`가 만든다. 기본 언어는 `make_site.py`와 `make_pages.py`의 `DEFAULT`를 같이 바꾼다.
 
 ## '내 장치' 추정 방식
 - **메모리:** P×바이트 + 1 GB + 0.3 GB×P(B). 장치 메모리의 90%까지 쓸 수 있다고 보고, Jetson은 75%로 본다.

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniVLA (BAAI) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="UniVLA (BAAI) (CASIA, 2025-06) — Treats vision·language·actions as one discrete token sequence and performs world-model post-training on robot video.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/univla-2/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/univla-2/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/univla-2/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/univla-2/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/univla-2/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/univla-2/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="UniVLA (BAAI) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="UniVLA (BAAI) (CASIA, 2025-06) — Treats vision·language·actions as one discrete token sequence and performs world-model post-training on robot video.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/univla-2/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "UniVLA (BAAI) — Architecture, Backbone LLM, Training & Inference Memory", "description": "UniVLA (BAAI) (CASIA, 2025-06) — Treats vision·language·actions as one discrete token sequence and performs world-model post-training on robot video.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/univla-2/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "UniVLA (BAAI)", "creator": {"@type": "Organization", "name": "CASIA·BAAI·Tsinghua University·HKISI"}}, "citation": {"@type": "ScholarlyArticle", "name": "Unified Vision-Language-Action Model", "url": "https://arxiv.org/abs/2506.19850"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "UniVLA (BAAI)", "item": "https://vla-gallery.is-a.dev/m/univla-2/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/univla-2/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/univla-2/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/univla-2/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/univla-2/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>UniVLA (BAAI)</h1>
+<p class="by">CASIA·BAAI·Tsinghua University·HKISI · 2025-06</p>
+<p class="kv"><span>VLA</span><span>Autoregressive &amp; latent-action VLA</span><span>8.5B</span><span>discrete tokens</span></p>
+<p class="sum">Treats vision·language·actions as one discrete token sequence and performs world-model post-training on robot video.</p>
+<div class="acts"><a class="pri" href="/#m-univla-2">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2506.19850" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.19850" rel="noopener">Unified Vision-Language-Action Model</a><small>arXiv 2506.19850</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-06</dd><dt>Organization</dt><dd>CASIA·BAAI·Tsinghua University·HKISI</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>8.5B (same as Emu3)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Emu3 (8.5B)</dd><dt>Vision encoder</dt><dd>VQ image tokens</dd><dt>Action head</dt><dd>DCT/FAST action tokens (interleaved video · action) (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Unified autoregressive model based on Emu3; VQ image tokens (spatial compression 8) + DCT/FAST action tokens (vocabulary 1024), interleaved video-action sequence</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>32 × A100 (40GB)</dd><dt>Pretraining duration</dt><dd>About 4–5 days (per the 50k steps run sentence)</dd><dt>Pretraining steps &amp; batch</dt><dd>50k steps (A100 × 32 sentence); a separate sentence gives 30K steps · batch 64; 256×256 6 frames, max sequence 6400</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>CALVIN · LIBERO batch 192 · 8k steps (A100), SimplerEnv batch 128 · 20k steps · chunk 5; GPU count and time not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation (video) + simulation·synthetic + human video</dd><dt>Data scale</dt><dd>622K videos (robot datasets + SSv2 human videos)</dd><dt>Main datasets</dt><dd>RT-1, BridgeV2, DROID, Kuka, CALVIN, LIBERO, ManiSkill2, SSv2, etc.</dd><dt>Tasks &amp; evaluation</dt><dd>CALVIN ABC→D 4.41 · ABCD→D 4.63; LIBERO average 95.5%; SimplerEnv-Bridge 69.8%; real ALOHA</dd><dt>Robot</dt><dd>ALOHA, CALVIN · LIBERO · SimplerEnv simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>17 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Supervised video·action generation</dd><dt>Base control</dt><dd>Fixed · Robot experiments use fixed bimanual (ALOHA); autonomous vehicle driving evaluation is separate (not a robot base)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Treats vision·language·actions as one discrete token sequence and performs world-model post-training on robot video. Reported CALVIN ABC→D average length 4.41 and LIBERO 95.5%.</dd><dt>Notes</dt><dd>The pretraining column is the world-model post-training stage on top of Emu3 (Emu3&#x27;s own training compute not disclosed). Verification found &#x27;4–5 days&#x27; is the 50k steps sentence (App A) and &#x27;30K steps·batch 64&#x27; is a separate sentence (Sec 4.2), so they were not combined. Affiliations supplemented with CASIA etc. A different model from OpenDriveLab&#x27;s UniVLA.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/m/worldvla/"><small>← Previous</small>WorldVLA</a><a class="nx" href="/m/moto/"><small>Next →</small>Moto</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

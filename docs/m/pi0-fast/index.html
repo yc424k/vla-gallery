@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>π0-FAST (FAST 토크나이저) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — Compresses action chunks with DCT and BPE so high-frequency continuous control…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/pi0-fast/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/pi0-fast/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/pi0-fast/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/pi0-fast/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/pi0-fast/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/pi0-fast/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="π0-FAST (FAST 토크나이저) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — Compresses action chunks with DCT and BPE so high-frequency continuous control…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/pi0-fast/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "π0-FAST (FAST 토크나이저) — Architecture, Backbone LLM, Training & Inference Memory", "description": "π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — Compresses action chunks with DCT and BPE so high-frequency continuous control…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/pi0-fast/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "π0-FAST (FAST 토크나이저)", "creator": {"@type": "Organization", "name": "Physical Intelligence, UC Berkeley, Stanford"}}, "citation": {"@type": "ScholarlyArticle", "name": "FAST: Efficient Action Tokenization for Vision-Language-Action Models", "url": "https://arxiv.org/abs/2501.09747"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "π0-FAST (FAST 토크나이저)", "item": "https://vla-gallery.is-a.dev/m/pi0-fast/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/pi0-fast/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/pi0-fast/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/pi0-fast/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/pi0-fast/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / π family</p>
+<h1>π0-FAST (FAST 토크나이저)</h1>
+<p class="by">Physical Intelligence, UC Berkeley, Stanford · 2025-01</p>
+<p class="kv"><span>VLA</span><span>π family</span><span>3B</span><span>discrete tokens</span></p>
+<p class="sum">Compresses action chunks with DCT and BPE so high-frequency continuous control can be learned as autoregressive tokens.</p>
+<div class="acts"><a class="pri" href="/#m-pi0-fast">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2501.09747" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2501.09747" rel="noopener">FAST: Efficient Action Tokenization for Vision-Language-Action Models</a><small>arXiv 2501.09747</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>π family</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-01</dd><dt>Organization</dt><dd>Physical Intelligence, UC Berkeley, Stanford</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>3B (VLA based on PaliGemma-3B)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Gemma 2B · PaliGemma 3B config</dd><dt>Vision encoder</dt><dd>SigLIP 400M</dd><dt>Action head</dt><dd>FAST token autoregressive (vocabulary 1024) (discrete tokens)</dd><dt>Chunk</dt><dd>1 s (DROID 15 steps)</dd><dt>Control rate</dt><dd>5–50 Hz (per task)</dd><dt>Architecture (original summary)</dt><dd>PaliGemma-3B, no action expert; autoregressive decoding of FAST discrete action tokens (DCT+BPE, rounding 10, vocabulary 1024), 1-second chunks (DROID 15 steps), evaluated at 5~50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Generalist model Not disclosed; DROID-only policy (from PaliGemma) H100×8</dd><dt>Pretraining duration</dt><dd>Generalist model Not disclosed (5× fewer GPU-hours than π0); DROID-only policy about 4 days</dd><dt>Pretraining steps &amp; batch</dt><dd>Generalist model Not disclosed; DROID-only policy 240k iter·batch 256 (3 epochs)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>openpi pi0_fast_full_droid_finetune: H100×8 about 2 days, 100k steps·batch 256; pi0_fast_libero 30k steps (same for LoRA version). LeRobot LIBERO: H100×8, 40k steps·batch 256 (secondary)</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>Robot data 10k h; FAST+ tokenizer about 1M 1-second chunks (main text)/1M trajectories (abstract); DROID 75k episodes·21M samples; LIBERO 270k samples</dd><dt>Main datasets</dt><dd>PI&#x27;s own data (903M timesteps), BRIDGE v2, DROID, OXE (9.1% of mix)</dd><dt>Tasks &amp; evaluation</dt><dd>Table bussing (UR5, 20 Hz), T-shirt folding (bimanual ARX, 50 Hz), Grocery bagging, Toast (bimanual Trossen, 50 Hz), Laundry folding; DROID zero-shot 16 tasks·44 trials (3 campuses); openpi LIBERO 96.4/96.8/88.6/60.2, average 85.5</dd><dt>Robot</dt><dd>UR5/UR5e, bimanual ARX, bimanual Trossen, DROID Franka; FAST+ training: ARX, AgileX, Fibocom Mobile, Franka FR3, UR5, Trossen, Mobile Trossen</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>RTX 4090 about 750 ms per chunk (decoding 30~60 action tokens); π0 under 100 ms on the same GPU</dd><dt>Inference memory</dt><dd>&gt; 8 GB (common to openpi README)</dd><dt>Weights bf16 (calc.)</dt><dd>6 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · FAST token imitation learning</dd><dt>Base control</dt><dd>Fixed · No base control (evaluation on fixed manipulators only; FAST+ training data includes mobile)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Compresses action chunks with DCT and BPE so high-frequency continuous control can be learned as autoregressive tokens. Cuts training GPU-hours 5× vs π0, but chunk inference is slow at about 750 ms.</dd><dt>Notes</dt><dd>Compression ratio BridgeV2 1.75×, DROID 3.6×, Bussing 5.0×, T-shirt 13.2×. FAST+ tokenizer released on HF under Apache-2.0. openpi pi0_fast_droid default horizon is 10, unlike the paper&#x27;s 15 steps for DROID. &#x27;About 5 days&#x27; in openpi README_train (240k iter from PaliGemma) refers to pi05_full_droid_finetune.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li><li><a href="/m/rtc/">학습시 RTC</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/m/pi0/"><small>← Previous</small>π0</a><a class="nx" href="/m/hi-robot/"><small>Next →</small>Hi Robot</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

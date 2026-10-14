@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>π0.5 + KI — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="π0.5 + KI (Physical Intelligence, 2025-05) — 阻止动作专家的梯度流入VLM以保留VLM知识，同时用FAST token学习表征。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/pi0-5-ki/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/pi0-5-ki/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/pi0-5-ki/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/pi0-5-ki/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/pi0-5-ki/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/pi0-5-ki/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="π0.5 + KI — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="π0.5 + KI (Physical Intelligence, 2025-05) — 阻止动作专家的梯度流入VLM以保留VLM知识，同时用FAST token学习表征。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/pi0-5-ki/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "π0.5 + KI — 架构、骨干LLM、训练与推理内存", "description": "π0.5 + KI (Physical Intelligence, 2025-05) — 阻止动作专家的梯度流入VLM以保留VLM知识，同时用FAST token学习表征。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/pi0-5-ki/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "π0.5 + KI (Knowledge Insulation)", "creator": {"@type": "Organization", "name": "Physical Intelligence"}}, "citation": {"@type": "ScholarlyArticle", "name": "Knowledge Insulating Vision-Language-Action Models: Train Fast, Run Fast, Generalize Better", "url": "https://arxiv.org/abs/2505.23705"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "π0.5 + KI", "item": "https://vla-gallery.is-a.dev/zh/m/pi0-5-ki/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/pi0-5-ki/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/pi0-5-ki/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/pi0-5-ki/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/pi0-5-ki/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / π系列</p>
+<h1>π0.5 + KI</h1>
+<p class="full">π0.5 + KI (Knowledge Insulation)</p>
+<p class="by">Physical Intelligence · 2025-05</p>
+<p class="kv"><span>VLA</span><span>π系列</span><span>总计未公开；2B LM主干</span><span>混合</span></p>
+<p class="sum">阻止动作专家的梯度流入VLM以保留VLM知识，同时用FAST token学习表征。</p>
+<div class="acts"><a class="pri" href="/zh/#m-pi0-5-ki">在图库中查看架构图</a><a href="https://arxiv.org/abs/2505.23705" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2505.23705" rel="noopener">Knowledge Insulating Vision-Language-Action Models: Train Fast, Run Fast, Generalize Better</a><small>arXiv 2505.23705</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>π系列</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-05</dd><dt>机构</dt><dd>Physical Intelligence</dd><dt>权重公开</dt><dd>部分</dd><dt>参数</dt><dd>总计未公开；2B LM主干(width 2048，depth 18，mlp 16,384) + 动作专家300M</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Gemma 2B · PaliGemma配置2B VLM</dd><dt>视觉编码器</dt><dd>SigLIP 400M</dd><dt>动作头</dt><dd>FAST token(VLM) + flow专家300M，stop-gradient (混合)</dd><dt>动作块</dt><dd>50步</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>PaliGemma初始化2B LM主干 + 300M动作专家;VLM以FAST离散token、专家以flow matching(horizon 50)训练,并用stop-gradient阻断专家梯度流入VLM;与VLM数据联合训练</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开（π0需要7.5倍步数才达到相近性能）</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 网络视觉-语言</dd><dt>数据规模</dt><dd>未公开（12种具身配置 + OXE + VLM数据）</dd><dt>主要数据集</dt><dd>PI自有数据, OXE;CapsFusion, COCO, Cambrian-7M, PixMo, VQAv2,物体位置数据</dd><dt>任务·评估</dt><dd>LIBERO(from generalist 98.0/97.8/95.6/85.8,LIBERO-90 96.0;from scratch LIBERO-90 92.7);DROID 0.55±0.09(π0 0.49±0.09,π0-FAST 0.45±0.09);放入抽屉·bussing·叠衬衫,未知家庭移动4项任务(每任务10回合)</dd><dt>机器人</dt><dd>12种配置：单臂ARX·UR5·Franka；双臂ARX·AgileX·Trossen·UR5；双臂移动Trossen·ARX slate·Galaxea G1·Hexmove H1·Fibocom</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>自身延迟数值未公开；引用π0-FAST ≈750 ms(RTX 4090)，π0方式10 Hz vs 自回归VLA 1.3 Hz</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 监督学习(用stop-gradient保护VLM)</dd><dt>底盘控制</dt><dd>轮式 (未说明格式) · 移动双臂任务（Make bed·Laundry in basket等）包含移动；底盘动作维度构成论文未注明（π0.5方式）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>阻止动作专家的梯度流入VLM以保留VLM知识，同时用FAST token学习表征。π0需要7.5倍的步数才能达到相近性能，该方法每步计算量增加约20%。</dd><dt>备注</dt><dd>&#x27;π0.5 + KI&#x27;是任务指定的标签，论文称为&#x27;knowledge insulation&#x27;。openpi的π0.5·pi05_droid采用KI训练。附录B的num_heads=18与openpi的8冲突。π0-FAST在抽屉任务中执行时间长2倍。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/zh/m/pi0-fast/">π0-FAST (FAST 토크나이저)</a><small>2025-01</small></li><li><a href="/zh/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/zh/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/zh/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/zh/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/zh/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li><li><a href="/zh/m/rtc/">학습시 RTC</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/pi0-5/"><small>← 上一个</small>π0.5</a><a class="nx" href="/zh/m/real-time-chunking/"><small>下一个 →</small>Real-Time Chunking (추론시 RTC)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

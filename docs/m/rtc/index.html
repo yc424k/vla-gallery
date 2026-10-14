@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>학습시 RTC — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="학습시 RTC (Physical Intelligence, 2025-12) — Simulates inference latency during training (uniformly sampled 0–10 steps on hardware) to learn action-prefix cond…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/rtc/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rtc/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rtc/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rtc/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rtc/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rtc/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="학습시 RTC — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="학습시 RTC (Physical Intelligence, 2025-12) — Simulates inference latency during training (uniformly sampled 0–10 steps on hardware) to learn action-prefix cond…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/rtc/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "학습시 RTC — Architecture, Backbone LLM, Training & Inference Memory", "description": "학습시 RTC (Physical Intelligence, 2025-12) — Simulates inference latency during training (uniformly sampled 0–10 steps on hardware) to learn action-prefix cond…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/rtc/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "학습시 RTC (Training-time RTC, π0.6)", "creator": {"@type": "Organization", "name": "Physical Intelligence"}}, "citation": {"@type": "ScholarlyArticle", "name": "Training-Time Action Conditioning for Efficient Real-Time Chunking", "url": "https://arxiv.org/abs/2512.05964"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "학습시 RTC", "item": "https://vla-gallery.is-a.dev/m/rtc/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rtc/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rtc/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rtc/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rtc/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / π family</p>
+<h1>학습시 RTC</h1>
+<p class="full">Training-time RTC (Training-time RTC, π0.6)</p>
+<p class="by">Physical Intelligence · 2025-12</p>
+<p class="kv"><span>기타</span><span>π family</span><span>Based on π0.6</span><span>hybrid</span></p>
+<p class="sum">Simulates inference latency during training (uniformly sampled 0–10 steps on hardware) to learn action-prefix conditioning, so there is no extra compute from inference-time RTC.</p>
+<div class="acts"><a class="pri" href="/#m-rtc">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2512.05964" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2512.05964" rel="noopener">Training-Time Action Conditioning for Efficient Real-Time Chunking</a><small>arXiv 2512.05964</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>π family</dd><dt>Type</dt><dd>기타</dd><dt>Released</dt><dd>2025-12</dd><dt>Organization</dt><dd>Physical Intelligence</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>Based on π0.6 (no separate figures)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Gemma 3 4B (π0.6)</dd><dt>Vision encoder</dt><dd>SigLIP 400M (π0.6)</dd><dt>Action head</dt><dd>π0.6 flow expert (trained with latency simulation) (hybrid)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>π0.6 as is (no architecture·runtime change); simulates inference latency during training and conditions on the already-executed action prefix</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A (based on π0.6)</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>8,000 steps·batch 512 per task (hardware·time not disclosed)</dd><dt>Data type</dt><dd>Real-robot teleoperation (per-task fine-tuning data)</dd><dt>Data scale</dt><dd>Not disclosed</dd><dt>Main datasets</dt><dd>Per-task data (not disclosed)</dd><dt>Tasks &amp; evaluation</dt><dd>Box assembly, espresso making (π0.6); simulation comparison under matched training compute</dd><dt>Robot</dt><dd>π0.6 real-robot platform (50 Hz robot)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Remote H100, 5 denoising steps: training-time RTC 108 ms (d≈5) vs inference-time RTC 135 ms (d≈7)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Remote server</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Supervised fine-tuning with simulated inference latency</dd><dt>Base control</dt><dd>Fixed · No mention of base control (box assembly·espresso tasks)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Simulates inference latency during training (uniformly sampled 0–10 steps on hardware) to learn action-prefix conditioning, so there is no extra compute from inference-time RTC. On box assembly and espresso it matched inference-time RTC with lower latency.</dd><dt>Notes</dt><dd>Type is Other since it is a fine-tuning technique based on π0.6. Supports up to 200 ms latency on a 50 Hz robot. Simulation samples latency {0..4} with exponentially decaying weights.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/m/pi0-fast/">π0-FAST (FAST 토크나이저)</a><small>2025-01</small></li><li><a href="/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li></ul></section>
+<nav class="pn"><a href="/m/pistar0-6/"><small>← Previous</small>π*0.6 (RECAP)</a><a class="nx" href="/m/rdt-1b/"><small>Next →</small>RDT-1B</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

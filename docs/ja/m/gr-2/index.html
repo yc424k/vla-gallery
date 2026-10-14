@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GR-2 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="GR-2 (ByteDance Research, 2024-10) — Web動画38M clipsで未来フレーム生成を事前学習した後、ロボット軌跡で動画・行動を合わせてファインチューニングする。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/gr-2/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gr-2/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gr-2/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gr-2/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gr-2/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gr-2/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GR-2 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="GR-2 (ByteDance Research, 2024-10) — Web動画38M clipsで未来フレーム生成を事前学習した後、ロボット軌跡で動画・行動を合わせてファインチューニングする。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/gr-2/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GR-2 — 構造・バックボーンLLM・学習・推論メモリ", "description": "GR-2 (ByteDance Research, 2024-10) — Web動画38M clipsで未来フレーム生成を事前学習した後、ロボット軌跡で動画・行動を合わせてファインチューニングする。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/gr-2/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "GR-2", "creator": {"@type": "Organization", "name": "ByteDance Research"}}, "citation": {"@type": "ScholarlyArticle", "name": "GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation", "url": "https://arxiv.org/abs/2410.06158"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "GR-2", "item": "https://vla-gallery.is-a.dev/ja/m/gr-2/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gr-2/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gr-2/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gr-2/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gr-2/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 産業界モデル</p>
+<h1>GR-2</h1>
+<p class="by">ByteDance Research · 2024-10</p>
+<p class="kv"><span>VLA</span><span>産業界モデル</span><span>230M</span><span>CVAE</span></p>
+<p class="sum">Web動画38M clipsで未来フレーム生成を事前学習した後、ロボット軌跡で動画・行動を合わせてファインチューニングする。</p>
+<div class="acts"><a class="pri" href="/ja/#m-gr-2">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2410.06158" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.06158" rel="noopener">GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation</a><small>arXiv 2410.06158</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>産業界モデル</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2024-10</dd><dt>機関</dt><dd>ByteDance Research</dd><dt>重み公開</dt><dd>未確認</dd><dt>パラメータ</dt><dd>230M(学習95M); スケーリング変形の学習パラメータ 30M(S)/95M(B)/312M(L)/719M(XL)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし (VLMなし)</dd><dt>ビジョンエンコーダ</dt><dd>VQGAN画像トークン</dd><dt>アクションヘッド</dt><dd>cVAE行動生成 → WBC軌跡最適化 (CVAE)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>200 Hz (実行)</dd><dt>構造の原文要約</dt><dd>GPT型Transformer(VLMなし): 固定テキストエンコーダ + VQGAN画像トークン; 行動はcVAEで生成(チャンク長は非公開) → WBC軌跡最適化で関節指令</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>人の動画 + 公開ロボットデータ + 実ロボット</dd><dt>データ規模</dt><dd>事前学習 38M video clips、50B+ tokens; ロボット105タスク約40,000 traj(タスクあたり平均400); bin picking 55物体約94,000 traj</dd><dt>主要データセット</dt><dd>Howto100M, Ego4D, Something-Something V2, EPIC-KITCHENS, Kinetics-700, RT-1, Bridge</dd><dt>タスク・評価</dt><dd>105のテーブルトップ課題(8スキル)平均97.7%; 課題あたり50 trajのみで73.9%; bin picking 122物体で79.0%(GR-1 33.3%); CALVIN 1課題98.6%、5課題85.9%</dd><dt>ロボット</dt><dd>7-DoF Kinova Gen3 + Robotiq 2F-85</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>WBC軌跡最適化後に実ロボットで200Hz実行; モデル推論遅延・ハードウェアは非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0.5 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 動画生成の事前学習 + 模倣学習</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (Kinova腕)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>Web動画38M clipsで未来フレーム生成を事前学習した後、ロボット軌跡で動画・行動を合わせてファインチューニングする。学習パラメータを30Mから719Mまで増やしてスケーリングを実験した。</dd><dt>備考</dt><dd>パラメータ(B)は基本モデル総量230M基準(XLは学習パラメータ719Mのみ公開、総量は非公開)。トークン表記は&#x27;over 50 billion&#x27;と&#x27;approximately 50 billion&#x27;が混在。公開リポジトリが見つからない(重み公開の有無は検証で確認不可)。arXiv v1 2024-10-08。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/ja/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/ja/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/ja/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/ja/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/ja/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/ja/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/ja/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/ja/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/ja/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/ja/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/ja/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/ja/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/ja/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/ja/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/ja/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/ja/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/ja/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/ja/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/ja/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/ja/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/ja/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/sara-rt/"><small>← 前のモデル</small>SARA-RT</a><a class="nx" href="/ja/m/gr-3/"><small>次のモデル →</small>GR-3</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

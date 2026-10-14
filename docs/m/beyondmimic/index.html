@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeyondMimic — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="BeyondMimic (UC Berkeley, 2025-08) — Adaptive sampling learns the hard segments of long motions, transferring LAFAN1 motions to hardware without parameter tu…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/beyondmimic/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/beyondmimic/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/beyondmimic/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/beyondmimic/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/beyondmimic/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/beyondmimic/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="BeyondMimic — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="BeyondMimic (UC Berkeley, 2025-08) — Adaptive sampling learns the hard segments of long motions, transferring LAFAN1 motions to hardware without parameter tu…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/beyondmimic/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "BeyondMimic — Architecture, Backbone LLM, Training & Inference Memory", "description": "BeyondMimic (UC Berkeley, 2025-08) — Adaptive sampling learns the hard segments of long motions, transferring LAFAN1 motions to hardware without parameter tu…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/beyondmimic/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "BeyondMimic", "creator": {"@type": "Organization", "name": "UC Berkeley·Stanford University"}}, "citation": {"@type": "ScholarlyArticle", "name": "BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion", "url": "https://arxiv.org/abs/2508.08241"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "BeyondMimic", "item": "https://vla-gallery.is-a.dev/m/beyondmimic/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/beyondmimic/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/beyondmimic/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/beyondmimic/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/beyondmimic/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid whole-body controllers</p>
+<h1>BeyondMimic</h1>
+<p class="by">UC Berkeley·Stanford University · 2025-08</p>
+<p class="kv"><span>VA</span><span>Humanoid whole-body controllers</span><span>Diffusion policy 19.95M</span><span>diffusion</span></p>
+<p class="sum">Adaptive sampling learns the hard segments of long motions, transferring LAFAN1 motions to hardware without parameter tuning.</p>
+<div class="acts"><a class="pri" href="/#m-beyondmimic">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2508.08241" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2508.08241" rel="noopener">BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</a><small>arXiv 2508.08241</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid whole-body controllers</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2025-08</dd><dt>Organization</dt><dd>UC Berkeley·Stanford University</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Diffusion policy 19.95M; MLP tracker not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Diffusion planner (6-layer transformer, 19.95M) (diffusion)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>MLP tracker (actor·critic [512, 256, 128], ELU): proprioception + reference motion → joint targets / guided diffusion policy: Transformer decoder 6 layers·4 heads·512 dims</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed (Isaac Lab v2.1.0, repo)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>max_iterations 30000 · 24 steps per env, 4096 envs (repo); sim dt 0.005, decimation 4</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Motion capture / simulation·synthetic</dd><dt>Data scale</dt><dd>About 2.5 h of human motion (v4); 30 clips (15 min) for real-robot deployment; diffusion policy data are rollouts of domain-randomized expert policies (scale not disclosed)</dd><dt>Main datasets</dt><dd>Unitree retargeted LAFAN1, prior-work datasets, online animation data</dd><dt>Tasks &amp; evaluation</dt><dd>Unitree G1 cartwheel·sprint·360° spin jump; diffusion policy for waypoint navigation·joystick teleoperation·obstacle avoidance (50 trials per joystick experiment)</dd><dt>Robot</dt><dd>Unitree G1</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Tracker: robot CPU ONNX Runtime, under 1.0 ms per step / diffusion policy: offboard RTX 4060 Mobile TensorRT, 20 denoising steps about 20 ms</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Offboard laptop + robot CPU</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (RL controller training) · MLP tracker trained with Isaac Lab actor-critic RL (4,096 envs). Diffusion planner uses supervised learning</dd><dt>Base control</dt><dd>Humanoid legged (RL policy drives joints directly) · Tracking policy follows reference motion and directly outputs whole-body joint PD targets (walking, running, cartwheels); diffusion policy generates locomotion via joystick velocity and waypoint cost guidance</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Adaptive sampling learns the hard segments of long motions, transferring LAFAN1 motions to hardware without parameter tuning. The diffusion policy follows waypoint, joystick, and obstacle-avoidance goals via test-time guidance.</dd><dt>Notes</dt><dd>Parameters (B) is null since total parameters are not disclosed (only the 19.95M diffusion policy is disclosed; tracker not disclosed). Architecture is transformer per the diffusion planner; the tracker is an MLP. Per-motion convergence iterations (Cristiano Ronaldo 1.5k, dance 8k~10k)†. The earlier HTML version referenced 40 LAFAN1 motions (several minutes each). arXiv v4 2025-11-13. Tracking training code MIT, checkpoints not stated.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/challenging-terrain-transformer/"><small>← Previous</small>Challenging-Terrain Transformer</a><a class="nx" href="/m/leverb-a/"><small>Next →</small>LeVERB-A</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

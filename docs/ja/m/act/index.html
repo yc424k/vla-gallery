@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="ACT (Stanford University, 2023-04) — 行動チャンクを一度に回帰し、時間アンサンブルで重なった予測を平均する低コスト双腕模倣学習方策である。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/act/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/act/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/act/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/act/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/act/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/act/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ACT — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="ACT (Stanford University, 2023-04) — 行動チャンクを一度に回帰し、時間アンサンブルで重なった予測を平均する低コスト双腕模倣学習方策である。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/act/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ACT — 構造・バックボーンLLM・学習・推論メモリ", "description": "ACT (Stanford University, 2023-04) — 行動チャンクを一度に回帰し、時間アンサンブルで重なった予測を平均する低コスト双腕模倣学習方策である。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/act/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "ACT", "creator": {"@type": "Organization", "name": "Stanford University; UC Berkeley; Meta"}}, "citation": {"@type": "ScholarlyArticle", "name": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware", "url": "https://arxiv.org/abs/2304.13705"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "ACT", "item": "https://vla-gallery.is-a.dev/ja/m/act/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/act/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/act/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/act/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/act/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / 参照ベースライン(2024年以前)</p>
+<h1>ACT</h1>
+<p class="by">Stanford University; UC Berkeley; Meta · 2023-04</p>
+<p class="kv"><span>VA</span><span>参照ベースライン(2024年以前)</span><span>約80M</span><span>CVAE</span></p>
+<p class="sum">行動チャンクを一度に回帰し、時間アンサンブルで重なった予測を平均する低コスト双腕模倣学習方策である。</p>
+<div class="acts"><a class="pri" href="/ja/#m-act">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2304.13705" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2304.13705" rel="noopener">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a><small>arXiv 2304.13705</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>参照ベースライン(2024年以前)</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2023-04</dd><dt>機関</dt><dd>Stanford University; UC Berkeley; Meta</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>約80M</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>ResNet18</dd><dt>アクションヘッド</dt><dd>関節位置チャンクの回帰 + 時間アンサンブル (CVAE)</dd><dt>チャンク</dt><dd>100ステップ</dd><dt>制御周期</dt><dd>50 Hz</dd><dt>構造の原文要約</dt><dd>ResNet18 + CVAE Transformer(エンコーダ4層・デコーダ7層、hidden 512、FF 3200、8ヘッド、潜在32次元); 関節位置チャンクk=100回帰、指数重み付き時間アンサンブル、50 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: RTX 2080 Ti(11GB) 1枚、約5時間; バッチ 8、lr 1e-5、KL重み 10; エポックは論文に記載なし(README: シミュレーション例 2000、実機は5000以上を推奨)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション; シミュレーション・合成</dd><dt>データ規模</dt><dd>実機 タスクあたり50デモ(Thread Velcroは100)、エピソード8–14秒(400–700ステップ)、タスクあたり約10–20分; シミュレーション タスクあたり50デモ(スクリプト・人)</dd><dt>主要データセット</dt><dd>ALOHA自社収集</dd><dt>タスク・評価</dt><dd>実機6タスク(Slide Ziploc, Slot Battery, Open Cup, Thread Velcro, Prep Tape, Put On Shoe); シミュレーション2タスク(Transfer Cube, Bimanual Insertion)</dd><dt>ロボット</dt><dd>ALOHA低コスト双腕(リーダー・フォロワー遠隔操作)、システム2万ドル未満</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>約0.01秒(RTX 2080 Ti)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0.2 GB</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 模倣学習(CVAE行動クローニング)</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (ALOHA 固定双腕)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>行動チャンクを一度に回帰し、時間アンサンブルで重なった予測を平均する低コスト双腕模倣学習方策である。2万ドル未満のALOHA機材とタスクあたり50デモで精密な双腕作業を学習した。</dd><dt>備考</dt><dd>計算量の数値はすべてタスク別。データ長は分単位(タスクあたり約10–20分)でのみ公開されており時間(h)欄は空欄。コード・シミュレーションデータは公開、チェックポイントなし。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/rt-1/">RT-1</a><small>2022-12</small></li><li><a href="/ja/m/rt-2/">RT-2</a><small>2023-07</small></li><li><a href="/ja/m/rt-1-x/">RT-1-X</a><small>2023-10</small></li><li><a href="/ja/m/rt-2-x/">RT-2-X</a><small>2023-10</small></li><li><a href="/ja/m/diffusion-policy/">Diffusion Policy (CNN)</a><small>2023-03</small></li><li><a href="/ja/m/diffusion-policy-2/">Diffusion Policy (Transformer)</a><small>2023-03</small></li><li><a href="/ja/m/gr-1/">GR-1</a><small>2023-12</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/rt-2-x/"><small>← 前のモデル</small>RT-2-X</a><a class="nx" href="/ja/m/diffusion-policy/"><small>次のモデル →</small>Diffusion Policy (CNN)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

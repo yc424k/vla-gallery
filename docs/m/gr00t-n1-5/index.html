@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GR00T N1.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="GR00T N1.5 (NVIDIA, 2025-05) — Freezes the VLM in both pre- and post-training and adds a FLARE (future latent representation alignment) loss (coefficient 0.2…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gr00t-n1-5/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GR00T N1.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="GR00T N1.5 (NVIDIA, 2025-05) — Freezes the VLM in both pre- and post-training and adds a FLARE (future latent representation alignment) loss (coefficient 0.2…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/gr00t-n1-5/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GR00T N1.5 — Architecture, Backbone LLM, Training & Inference Memory", "description": "GR00T N1.5 (NVIDIA, 2025-05) — Freezes the VLM in both pre- and post-training and adds a FLARE (future latent representation alignment) loss (coefficient 0.2…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/gr00t-n1-5/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "GR00T N1.5", "creator": {"@type": "Organization", "name": "NVIDIA"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "GR00T N1.5", "item": "https://vla-gallery.is-a.dev/m/gr00t-n1-5/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gr00t-n1-5/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gr00t-n1-5/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gr00t-n1-5/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid VLA</p>
+<h1>GR00T N1.5</h1>
+<p class="by">NVIDIA · 2025-05</p>
+<p class="kv"><span>VLA</span><span>Humanoid VLA</span><span>3B</span><span>flow matching</span></p>
+<p class="sum">Freezes the VLM in both pre- and post-training and adds a FLARE (future latent representation alignment) loss (coefficient 0.2) to flow matching, learning also from human egocentric video.</p>
+<div class="acts"><a class="pri" href="/#m-gr00t-n1-5">View architecture diagram in the gallery</a><a href="https://research.nvidia.com/labs/gear/gr00t-n1_5/" rel="noopener">Official page ↗</a></div>
+<h2>Paper</h2>
+<p class="paper">No paper · Related <a href="https://arxiv.org/abs/2503.14734" rel="noopener">GR00T N1: An Open Foundation Model for Generalist Humanoid Robots</a></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-05</dd><dt>Organization</dt><dd>NVIDIA</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>3B (VLM 2.1B)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Eagle 2.5 VLM 2.1B (internal LLM not stated, frozen)</dd><dt>Vision encoder</dt><dd>Built into Eagle 2.5</dd><dt>Action head</dt><dd>flow matching DiT (4 steps) + FLARE (flow matching)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Frozen Eagle 2.5 VLM (2.1B, grounding-tuned) + adapter MLP with added layer normalization + DiT action head (flow matching, 4 denoising steps)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>1K H100</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>250K steps · batch 16,384</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>1 H100 or L40 node recommended, max batch·20k steps recommended; LoRA on A6000 or 2 RTX 4090; post-training on 1K G1 teleoperation episodes (GPU·time not disclosed)</dd><dt>Data type</dt><dd>Real-robot teleoperation / simulation·synthetic</dd><dt>Data scale</dt><dd>Time not disclosed; G1 post-training teleoperation 1K episodes</dd><dt>Main datasets</dt><dd>Internal GR-1 data, OpenXE, sim GR-1 (DexMG), DreamGen neural trajectories, AgiBot-Beta</dd><dt>Tasks &amp; evaluation</dt><dd>Language Table 93.2%; Sim GR-1 Language 54.4%; RoboCasa (30 demos) 47.5; real GR-1 language instructions 93.3% (N1 46.6%); Unitree G1 seen objects 98.8%·novel 84.2% (N1 44.0%); DreamGen 12 new verbs 38.3%</dd><dt>Robot</dt><dd>Fourier GR-1 (real), Unitree G1 (real), sim cross-embodiment</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>H100: VLM 23.18 ms + action head 4 × 6.18 = 24.7 ms, total 47.88 ms; Jetson Thor TensorRT FP16/FP8+FP4: DiT 5.46/3.41 ms, ViT 5.21/4.10 ms, LLM 8.53/5.81 ms</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>6 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (RL low-level controller) · VLA by imitation learning. Uses Decoupled WBC (lower-body RL·upper-body IK) to run on Unitree G1</dd><dt>Base control</dt><dd>Fixed · No mention of locomotion commands (upper-body manipulation such as GR-1·G1 pick·place)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Freezes the VLM in both pre- and post-training and adds a FLARE (future latent representation alignment) loss (coefficient 0.2) to flow matching, learning also from human egocentric video. Generalizes to new motions beyond teleoperation via DreamGen neural trajectories.</dd><dt>Notes</dt><dd>Release month corrected in verification to 2025-05 (NVIDIA press release 2025-05-18, Computex); research page 2025-06-11. The HF card describes it as SigLip2·T5·flow matching transformer, differing from the research page (Eagle 2.5). The &#x27;36 hours&#x27; of development in the press release is data generation·development time, not training compute, and the same press release names AeiRobot as an early adopter. Nvidia License (non-commercial).</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/m/figure-helix/">Figure Helix</a><small>2025-02</small></li><li><a href="/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/m/gr00t-n1/"><small>← Previous</small>GR00T N1</a><a class="nx" href="/m/gr00t-n1-6/"><small>Next →</small>GR00T N1.6</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>π0.5 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="π0.5 (Physical Intelligence, 2025-04) — 一个模型先预测子任务文本再输出动作，与网络·多机器人·子任务标注数据联合训练。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/pi0-5/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/pi0-5/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/pi0-5/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/pi0-5/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/pi0-5/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/pi0-5/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="π0.5 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="π0.5 (Physical Intelligence, 2025-04) — 一个模型先预测子任务文本再输出动作，与网络·多机器人·子任务标注数据联合训练。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/pi0-5/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "π0.5 — 架构、骨干LLM、训练与推理内存", "description": "π0.5 (Physical Intelligence, 2025-04) — 一个模型先预测子任务文本再输出动作，与网络·多机器人·子任务标注数据联合训练。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/pi0-5/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "π0.5", "creator": {"@type": "Organization", "name": "Physical Intelligence"}}, "citation": {"@type": "ScholarlyArticle", "name": "π0.5: a Vision-Language-Action Model with Open-World Generalization", "url": "https://arxiv.org/abs/2504.16054"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "π0.5", "item": "https://vla-gallery.is-a.dev/zh/m/pi0-5/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/pi0-5/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/pi0-5/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/pi0-5/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/pi0-5/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / π系列</p>
+<h1>π0.5</h1>
+<p class="by">Physical Intelligence · 2025-04</p>
+<p class="kv"><span>VLA</span><span>π系列</span><span>总计未公开；VLM 2B</span><span>flow matching</span></p>
+<p class="sum">一个模型先预测子任务文本再输出动作，与网络·多机器人·子任务标注数据联合训练。</p>
+<div class="acts"><a class="pri" href="/zh/#m-pi0-5">在图库中查看架构图</a><a href="https://arxiv.org/abs/2504.16054" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2504.16054" rel="noopener">π0.5: a Vision-Language-Action Model with Open-World Generalization</a><small>arXiv 2504.16054</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>π系列</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-04</dd><dt>机构</dt><dd>Physical Intelligence</dd><dt>权重公开</dt><dd>部分</dd><dt>参数</dt><dd>总计未公开；VLM 2B(附录E)，Fig. 3 &#x27;SigLIP (400M) + Gemma (2B)&#x27;(预训练†)/&#x27;SigLIP (400M) + Gemma (2.6B)&#x27;(后训练†)；动作专家300M</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Gemma 2B · PaliGemma配置2B VLM</dd><dt>视觉编码器</dt><dd>SigLIP 400M</dd><dt>动作头</dt><dd>flow matching专家300M (预训练用FAST token) (flow matching)</dd><dt>动作块</dt><dd>50步</dd><dt>控制频率</dt><dd>50 Hz</dd><dt>架构原文摘要</dt><dd>PaliGemma初始化2B VLM + 300M动作专家;预训练用FAST离散token,后训练加入flow matching连续动作块(horizon 50, 50 Hz,denoising 10步,α=10.0)</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>离散token 280k步 + 后训练80k步 / batch未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>论文未公开。openpi pi05_full_droid_finetune：H100×8 约 2天，100k 步·批量 256（约 1 epoch），从PaliGemma训练 240k iter 约 5天；pi05_libero 30k 步·批量 256（时间未公开）。LeRobot：80 GB GPU 1张，批量 64·30k 步（二手）</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 网络视觉-语言 + 语言指令演示·子任务标注</dd><dt>数据规模</dt><dd>移动操作约 400 h·约 100户；第1阶段训练示例的97.6%为非移动数据；语言指令（VI）演示约占上层移动示例的11%；openpi pi05_base 机器人数据 10k+ h</dd><dt>主要数据集</dt><dd>PI自有MM·ME·CE数据, OXE;CapsFusion, COCO, Cambrian-7M, PixMo, VQAv2</dd><dt>任务·评估</dt><dd>训练中未出现的真实住宅3处 + 模拟住宅；厨房·卧室整理(水槽洗碗，整理抽屉，洗衣篮，整理床铺)，10~15分钟任务，每项任务10次；训练地点3·12·22·53·82·104处规模扩展；openpi LIBERO 98.8/98.2/98.0/92.4，平均96.85</dd><dt>机器人</dt><dd>家用移动操作机器人(臂·夹爪·躯干升降目标位姿 + 底盘速度，50 Hz) + 非移动·跨具身形态机器人</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>论文未公开；RTC论文：RTX 4090，denoising 5步模型延迟 76 ms</dd><dt>推理显存</dt><dd>&gt; 8 GB (openpi README通用)</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 网络·多机器人·子任务联合监督学习</dd><dt>底盘控制</dt><dd>轮式 (直接输出底盘速度/位姿) · 策略以50 Hz动作块直接输出底盘目标速度(线速度2D·角速度1D) (操作·导航端到端)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>一个模型先预测子任务文本再输出动作，与网络·多机器人·子任务标注数据联合训练。在训练中未出现的3处真实住宅中完成了10~15分钟的整理任务。</dd><dt>备注</dt><dd>数据时长(h)取openpi README中pi05_base的&#x27;10k+ hours&#x27;（下限）；论文仅明示移动部分约 400 h。附录E num_heads=18与openpi gemma_2b的8不同。附录&#x27;action horizon of 50, i.e. H = 49&#x27;照录原文。openpi π0.5（2025-09公开）用KI训练，可能与论文配方不同，且仅支持flow头。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/zh/m/pi0-fast/">π0-FAST (FAST 토크나이저)</a><small>2025-01</small></li><li><a href="/zh/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/zh/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/zh/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/zh/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/zh/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li><li><a href="/zh/m/rtc/">학습시 RTC</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/hi-robot/"><small>← 上一个</small>Hi Robot</a><a class="nx" href="/zh/m/pi0-5-ki/"><small>下一个 →</small>π0.5 + KI</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

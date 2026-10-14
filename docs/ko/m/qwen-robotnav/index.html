@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qwen-RobotNav — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery</title>
+<meta name="description" content="Qwen-RobotNav (Qwen Team, 2026-06) — 과제 모드와 관측 문맥(토큰 예산·시간 감쇠·카메라 가중)을 매개변수화하고 학습 때 무작위화해, 한 모델이 VLN·물체 탐색·추적·자율주행을 상위 에이전트 플래너의 도구로 수행한다.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/qwen-robotnav/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/qwen-robotnav/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/qwen-robotnav/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Qwen-RobotNav — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery"><meta property="og:description" content="Qwen-RobotNav (Qwen Team, 2026-06) — 과제 모드와 관측 문맥(토큰 예산·시간 감쇠·카메라 가중)을 매개변수화하고 학습 때 무작위화해, 한 모델이 VLN·물체 탐색·추적·자율주행을 상위 에이전트 플래너의 도구로 수행한다.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Qwen-RobotNav — 구조·백본 LLM·학습·추론 메모리", "description": "Qwen-RobotNav (Qwen Team, 2026-06) — 과제 모드와 관측 문맥(토큰 예산·시간 감쇠·카메라 가중)을 매개변수화하고 학습 때 무작위화해, 한 모델이 VLN·물체 탐색·추적·자율주행을 상위 에이전트 플래너의 도구로 수행한다.", "inLanguage": "ko", "url": "https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Qwen-RobotNav", "creator": {"@type": "Organization", "name": "Qwen Team"}}, "citation": {"@type": "ScholarlyArticle", "name": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System", "url": "https://arxiv.org/abs/2606.18112"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 갤러리", "item": "https://vla-gallery.is-a.dev/ko/"}, {"@type": "ListItem", "position": 2, "name": "모델 목록", "item": "https://vla-gallery.is-a.dev/ko/m/"}, {"@type": "ListItem", "position": 3, "name": "Qwen-RobotNav", "item": "https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ko/">VLA 갤러리</a><a href="/ko/m/">모델 목록</a><a href="/ko/#gallery">갤러리</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/qwen-robotnav/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/qwen-robotnav/" hreflang="ko" aria-current="true">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/qwen-robotnav/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/qwen-robotnav/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ko/">VLA 갤러리</a> / <a href="/ko/m/">모델 목록</a> / 내비게이션</p>
+<h1>Qwen-RobotNav</h1>
+<p class="by">Qwen Team · 2026-06</p>
+<p class="kv"><span>VLA</span><span>내비게이션</span><span>4B·8B</span><span>회귀</span></p>
+<p class="sum">과제 모드와 관측 문맥(토큰 예산·시간 감쇠·카메라 가중)을 매개변수화하고 학습 때 무작위화해, 한 모델이 VLN·물체 탐색·추적·자율주행을 상위 에이전트 플래너의 도구로 수행한다.</p>
+<div class="acts"><a class="pri" href="/ko/#m-qwen-robotnav">갤러리에서 구조도 보기</a><a href="https://arxiv.org/abs/2606.18112" rel="noopener">논문 ↗</a></div>
+<h2>논문</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2606.18112" rel="noopener">Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System</a><small>arXiv 2606.18112</small></p>
+<h2>개요</h2>
+<dl><dt>분류</dt><dd>내비게이션</dd><dt>유형</dt><dd>VLA</dd><dt>발표</dt><dd>2026-06</dd><dt>기관</dt><dd>Qwen Team</dd><dt>가중치 공개</dt><dd>아니오</dd><dt>파라미터</dt><dd>4B·8B (Qwen3-VL 기반; 총량 문장 없음, 초록은 2B–8B 스케일링 언급)</dd></dl>
+<h2>구조</h2>
+<dl><dt>백본 LLM</dt><dd>Qwen3-VL-8B (4B 변형 포함)</dd><dt>비전 인코더</dt><dd>SigLIP-2 ViT (Qwen3-VL 내장, DeepStack)</dd><dt>액션 헤드</dt><dd>4층 MLP 웨이포인트 회귀 (hidden 512) (회귀)</dd><dt>청크</dt><dd>웨이포인트 8개</dd><dt>제어 주기</dt><dd>4.9–5.1 Hz (Go2 실배치)</dd><dt>구조 원문 요약</dt><dd>Qwen3-VL(4B·8B; SigLIP-2 ViT·2D-RoPE 동적 해상도·DeepStack) + 4층 MLP 행동 헤드(hidden 512) → 웨이포인트 8개(x,y,θ) 연속 회귀(MSE); 과제 모드(VLN·PointNav·ObjNav·Tracking)와 시각 토큰 예산(2048–4096)·시간 감쇠·카메라 가중·프레임 샘플링을 추론 시 조정, 상위 플래너가 도구처럼 호출; 실배치 약 5 Hz</dd></dl>
+<h2>학습</h2>
+<dl><dt>사전학습 가속기</dt><dd>H100 (장수 미공개)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>8B 글로벌 배치 256, lr 2e-5(ViT·LLM)·1e-4(행동 헤드); 스텝·에폭 미공개</dd><dt>GPU·TPU-시간</dt><dd>2,816 (명시 · H100-시간 (&quot;a total of 2,816 H100 GPU hours&quot;, 8B 모델))</dd><dt>파인튜닝</dt><dd>해당 없음 (Qwen3-VL에서 단일 단계 종단 학습)</dd><dt>데이터 종류</dt><dd>시뮬레이션·합성 / 실로봇 자율 주행 로그 / 웹 비전-언어</dd><dt>데이터 규모</dt><dd>15.6M 샘플(궤적 85%·VL 15%): 지시 추종 5.63M(R2R 1,491K·RxR 4,140K), PointNav 984K, ObjectNav 2,000K, 추적 1,486K(EVT-Bench), 자율주행 약 3.2M(nuScenes 78K·OpenScene 3,138K), 영상 생성기 데이터 40K; VL 일반 약 1.0M + 내비 추론 약 873K</dd><dt>주요 데이터셋</dt><dd>VLN-CE R2R·RxR; Matterport3D·HM3D(Habitat); EVT-Bench; nuScenes; OpenScene(NAVSIM); NavGPT-2 방식 추론 데이터; VQAv2·RefCOCO 등 일반 VL</dd><dt>태스크·평가</dt><dd>R2R-CE val-unseen SR 72.1%·SPL 66.6(8B 파노라마; 단안 8B 65.7%·4B 66.9%), RxR-CE SR 76.5%·SPL 65.7; HM3Dv2 ObjectNav SR 75.6%(4B); EVT-Bench TR 90.0%(4B); NAVSIM PDMS 91.4(4B); 에이전트 EQA HM-EQA 76.7%(Qwen3.6-Plus 플래너); 실로봇 Go2 제로샷 21.78 m 왕복 VLN</dd><dt>로봇</dt><dd>Unitree Go2 사족(내장 저해상도 카메라만 사용)</dd></dl>
+<h2>추론</h2>
+<dl><dt>추론 장치·속도</dt><dd>Unitree Go2(4B 모델): 원격 서버 평균 196 ms(5.1 Hz), Jetson Thor 온디바이스(FP8·TensorRT) 204 ms(4.9 Hz)(논문); README는 Jetson Thor 온디바이스 196 ms(5.1 Hz)로 기재; 메모리 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>16 GB</dd><dt>실행 위치</dt><dd>온보드 Jetson Thor (FP8·TensorRT) 또는 원격 서버</dd></dl>
+<h2>강화학습 · 베이스</h2>
+<dl><dt>강화학습</dt><dd>미사용 · 궤적 MSE + VL 다음 토큰 지도학습(궤적:VL 85:15 공동학습)</dd><dt>베이스 제어</dt><dd>사족보행 (웨이포인트 → 추종 제어기) · 모델이 웨이포인트 8개(x,y,θ) 출력 → Go2가 추종(저수준 제어기 미기재); 상위 플래너가 과제 모드·문맥 설정을 바꿔 호출</dd></dl>
+<h2>비고</h2>
+<dl><dt>핵심 특징</dt><dd>과제 모드와 관측 문맥(토큰 예산·시간 감쇠·카메라 가중)을 매개변수화하고 학습 때 무작위화해, 한 모델이 VLN·물체 탐색·추적·자율주행을 상위 에이전트 플래너의 도구로 수행한다. 15.6M 샘플로 학습한 8B가 R2R-CE SR 72.1%·RxR-CE SR 76.5%(파노라마)를 냈고 Go2에서 Jetson Thor 온디바이스 4.9 Hz로 제로샷 주행했다.</dd><dt>비고</dt><dd>README: &#x27;There is currently no plan to release the model weights&#x27;. 지연 수치 상충: 논문은 원격 196 ms·온디바이스 204 ms, README는 온디바이스 196 ms. 단안 결과(R2R SR 65.7%)는 LightNav-0 비교표와 일치. &#x27;실로봇 자율 주행 로그&#x27;는 차량 주행 데이터(nuScenes·OpenScene). 초록의 2B 변형은 결과표에 없음.</dd><dt>검증</dt><dd>확인</dd></dl>
+<section class="rel"><h2>같은 분류의 모델</h2><ul><li><a href="/ko/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ko/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ko/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ko/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ko/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ko/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ko/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ko/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ko/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ko/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ko/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ko/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ko/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ko/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ko/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ko/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ko/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ko/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ko/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ko/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ko/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ko/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ko/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ko/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ko/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ko/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ko/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li></ul></section>
+<nav class="pn"><a href="/ko/m/qwen-vla/"><small>← 이전 모델</small>Qwen-VLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ko/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

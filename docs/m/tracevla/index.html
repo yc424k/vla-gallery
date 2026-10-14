@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TraceVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="TraceVLA (University of Maryland, 2024-12) — Improves spatiotemporal awareness with visual trace prompting, feeding point-tracking trajectories as image prom…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/tracevla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/tracevla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/tracevla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/tracevla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/tracevla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/tracevla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="TraceVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="TraceVLA (University of Maryland, 2024-12) — Improves spatiotemporal awareness with visual trace prompting, feeding point-tracking trajectories as image prom…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/tracevla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "TraceVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "TraceVLA (University of Maryland, 2024-12) — Improves spatiotemporal awareness with visual trace prompting, feeding point-tracking trajectories as image prom…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/tracevla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "TraceVLA", "creator": {"@type": "Organization", "name": "University of Maryland·Microsoft Research"}}, "citation": {"@type": "ScholarlyArticle", "name": "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies", "url": "https://arxiv.org/abs/2412.10345"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "TraceVLA", "item": "https://vla-gallery.is-a.dev/m/tracevla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/tracevla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/tracevla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/tracevla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/tracevla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>TraceVLA</h1>
+<p class="by">University of Maryland·Microsoft Research · 2024-12</p>
+<p class="kv"><span>VLA</span><span>Autoregressive &amp; latent-action VLA</span><span>7B</span><span>discrete tokens</span></p>
+<p class="sum">Improves spatiotemporal awareness with visual trace prompting, feeding point-tracking trajectories as image prompts.</p>
+<div class="acts"><a class="pri" href="/#m-tracevla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2412.10345" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.10345" rel="noopener">TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</a><small>arXiv 2412.10345</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2024-12</dd><dt>Organization</dt><dd>University of Maryland·Microsoft Research</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>7B (based on OpenVLA); 4B Phi-3V variant</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Llama 2 7B (OpenVLA) / Phi-3-Vision 4B</dd><dt>Vision encoder</dt><dd>SigLIP + DINOv2 + CoTracker trajectory image</dd><dt>Action head</dt><dd>256-bin tokens (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>OpenVLA (Prismatic-7B) or Phi-3-Vision 4B; extra image input overlaid with CoTracker visual traces, OpenVLA-style discrete action tokens</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A (7B starts from the OpenVLA checkpoint, 4B from Phi-3-Vision weights)</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>7B: 64 GPUs (README script, 8 nodes × 8), 5 more epochs from OpenVLA; Phi3-4B: 32 H100, 30 epochs, batch 4096; time not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation (including visual trajectory annotations)</dd><dt>Data scale</dt><dd>About 150K trajectories + 120 WidowX-250 demonstrations</dd><dt>Main datasets</dt><dd>BridgeData V2, Fractal</dd><dt>Tasks &amp; evaluation</dt><dd>SimplerEnv 137 settings 47.7% (OpenVLA 40.2%); real WidowX-250 4 tasks each seen·unseen</dd><dt>Robot</dt><dd>WidowX-250, SimplerEnv simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>OpenVLA speed + about 0.002 s for extra tokens, CoTracker (M=5) 0.03 s per step</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>14 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (WidowX arm)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Improves spatiotemporal awareness with visual trace prompting, feeding point-tracking trajectories as image prompts. Scored 47.7% across 137 SimplerEnv settings, ahead of OpenVLA (40.2%).</dd><dt>Notes</dt><dd>Continues training OpenVLA on trajectory-annotated data, so there is no separate robot pretraining. Parameters (B) refer to the 7B variant. One extraction suggested Capital One is also among the v3 PDF affiliations†.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/m/magma/"><small>← Previous</small>Magma</a><a class="nx" href="/m/cot-vla/"><small>Next →</small>CoT-VLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

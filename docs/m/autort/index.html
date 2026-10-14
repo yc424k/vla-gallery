@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoRT — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="AutoRT (Google DeepMind, 2024-01) — A system that orchestrates a robot fleet with LLMs·VLMs to collect real-world data at scale; not a model.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/autort/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/autort/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/autort/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/autort/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/autort/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/autort/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="AutoRT — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="AutoRT (Google DeepMind, 2024-01) — A system that orchestrates a robot fleet with LLMs·VLMs to collect real-world data at scale; not a model.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/autort/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "AutoRT — Architecture, Backbone LLM, Training & Inference Memory", "description": "AutoRT (Google DeepMind, 2024-01) — A system that orchestrates a robot fleet with LLMs·VLMs to collect real-world data at scale; not a model.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/autort/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "AutoRT", "creator": {"@type": "Organization", "name": "Google DeepMind"}}, "citation": {"@type": "ScholarlyArticle", "name": "AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents", "url": "https://arxiv.org/abs/2401.12963"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "AutoRT", "item": "https://vla-gallery.is-a.dev/m/autort/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/autort/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/autort/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/autort/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/autort/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Industry models</p>
+<h1>AutoRT</h1>
+<p class="by">Google DeepMind · 2024-01</p>
+<p class="kv"><span>기타</span><span>Industry models</span><span>N/A</span><span>Other</span></p>
+<p class="sum">A system that orchestrates a robot fleet with LLMs·VLMs to collect real-world data at scale; not a model.</p>
+<div class="acts"><a class="pri" href="/#m-autort">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2401.12963" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2401.12963" rel="noopener">AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents</a><small>arXiv 2401.12963</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Industry models</dd><dt>Type</dt><dd>기타</dd><dt>Released</dt><dd>2024-01</dd><dt>Organization</dt><dd>Google DeepMind</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>N/A</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>PaLI·FlexCap VLM + LLM (name not stated)</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Collected with RT-1·RT-2·scripted·teleoperation policies (Other)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>System: VLMs (PaLI, FlexCap) describe the scene → LLM proposes·filters tasks → collected with RT-1/RT-2/scripted/teleoperation policies</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>N/A (RT-1 co-finetuning on collected data, compute not disclosed)</dd><dt>Data type</dt><dd>Autonomous real-robot collection (scripted policies·teleoperation·RT-2)</dd><dt>Data scale</dt><dd>77,000 trials, 6,650 unique instructions, 7 months; scripted 73,293 episodes (21% success), teleop 3,060 (82%), RT-2 936 (4.7%)</dd><dt>Main datasets</dt><dd>AutoRT-collected data (in-house)</dd><dt>Tasks &amp; evaluation</dt><dd>With RT-1 co-finetuning, height-generalization picking 0%→12.5%, wiping 10%→30%</dd><dt>Robot</dt><dd>20+ mobile manipulators operated simultaneously (blog: 52 in total), 4 office buildings</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>N/A</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Data collection system (collected with RT-1·RT-2 policies·scripts·teleoperation)</dd><dt>Base control</dt><dd>Fixed · Base movement uses a separate navigation stack (map-based goal sampling); collection policies (RT-2·scripts·teleoperation) handle manipulation only</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A system that orchestrates a robot fleet with LLMs·VLMs to collect real-world data at scale; not a model. Filters tasks for safety using a &#x27;robot constitution&#x27; based on modified Asimov principles.</dd><dt>Notes</dt><dd>A data collection system (not a model), so type is Other. Supervision ratio: 3~5 robots per person for mobile, up to 8 per person for fixed. The blog uses &#x27;tasks&#x27; instead of &#x27;instructions&#x27;.</dd><dt>Verification</dt><dd>Not verified</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/m/rt-h/"><small>← Previous</small>RT-H</a><a class="nx" href="/m/sara-rt/"><small>Next →</small>SARA-RT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrackVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="TrackVLA (Peking University, 2025-05) — An embodied visual tracking VLA that places a language head for target recognition and an anchor-based diffusion head…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/trackvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/trackvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/trackvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/trackvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/trackvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/trackvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="TrackVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="TrackVLA (Peking University, 2025-05) — An embodied visual tracking VLA that places a language head for target recognition and an anchor-based diffusion head…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/trackvla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "TrackVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "TrackVLA (Peking University, 2025-05) — An embodied visual tracking VLA that places a language head for target recognition and an anchor-based diffusion head…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/trackvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "TrackVLA", "creator": {"@type": "Organization", "name": "Peking University·Galbot·Beihang University·Beijing Normal University·BAAI"}}, "citation": {"@type": "ScholarlyArticle", "name": "TrackVLA: Embodied Visual Tracking in the Wild", "url": "https://arxiv.org/abs/2505.23189"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "TrackVLA", "item": "https://vla-gallery.is-a.dev/m/trackvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/trackvla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/trackvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/trackvla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/trackvla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Navigation</p>
+<h1>TrackVLA</h1>
+<p class="by">Peking University·Galbot·Beihang University·Beijing Normal University·BAAI · 2025-05</p>
+<p class="kv"><span>VLA</span><span>Navigation</span><span>7B</span><span>diffusion</span></p>
+<p class="sum">An embodied visual tracking VLA that places a language head for target recognition and an anchor-based diffusion head for trajectory planning in parallel on a shared LLM, jointly learning recognition and tracking trajectory planning.</p>
+<div class="acts"><a class="pri" href="/#m-trackvla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2505.23189" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2505.23189" rel="noopener">TrackVLA: Embodied Visual Tracking in the Wild</a><small>arXiv 2505.23189</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Navigation</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-05</dd><dt>Organization</dt><dd>Peking University·Galbot·Beihang University·Beijing Normal University·BAAI</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>7B (based on Vicuna-7B; overall figure not stated)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Vicuna-7B</dd><dt>Vision encoder</dt><dd>EVA-CLIP (frozen)</dd><dt>Action head</dt><dd>anchor-based diffusion head (DiT, DDIM 2 steps) waypoints + language head (perception) (diffusion)</dd><dt>Chunk</dt><dd>10 waypoints</dd><dt>Control rate</dt><dd>10 FPS</dd><dt>Architecture (original summary)</dt><dd>EVA-CLIP (frozen) + 2-layer MLP projector + Vicuna-7B; 64 tokens for the current frame · 4 tokens per past frame (32-frame window); for tracking, an anchor-based diffusion head (DiT 12 layers · hidden 768 · 12 heads, 40 anchors, DDIM 2 steps) generates 10 waypoints (x, y, θ), language modeling head for recognition; 10 FPS in the real world</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>24 H100</dd><dt>Pretraining duration</dt><dd>About 15 h</dd><dt>Pretraining steps &amp; batch</dt><dd>1 epoch · total batch 196 (lr 2e-5 cosine)</dd><dt>GPU/TPU-hours</dt><dd>360 (Stated · H100-hours (&quot;totaling 360 GPU hours&quot;))</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Simulation·synthetic / web vision-language</dd><dt>Data scale</dt><dd>1.7M total: embodied visual tracking 855K (885K in Sec. 4.1) + video QA 855K (person recognition 362K + open-ended VQA 493K)</dd><dt>Main datasets</dt><dd>EVT-Bench (Habitat 3.0, 804 HM3D · MP3D scenes, 100 human avatars); SYNTH-PEDES; public VQA</dd><dt>Tasks &amp; evaluation</dt><dd>EVT-Bench SR single target 85.1% · distracted target 57.6% · ambiguous target 50.2%; Gym-UnrealCV zero-shot SR 1.00 (single) · 0.91 (distractors) · 1.00 (unseen objects); real-world 10 runs per difficulty SR 100% · 90% · 70% (commercial tracking drone DJI Flip 100% · 70% · 50%)</dd><dt>Robot</dt><dd>Unitree Go2 quadruped + RealSense D455 (640×480, HFOV 90°); pure pursuit closed-loop tracking, LiDAR elastic band obstacle avoidance</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Remote server RTX 4090, 10 FPS; action model (Ours-Base) 13 ms; memory not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>14 GB</dd><dt>Where it runs</dt><dd>Remote server (RTX 4090)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (SFT) only</dd><dt>Base control</dt><dd>Quadruped (Waypoints → tracking controller) · VLA outputs waypoint trajectory → pure pursuit closed-loop tracking (with LiDAR-based obstacle avoidance)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>An embodied visual tracking VLA that places a language head for target recognition and an anchor-based diffusion head for trajectory planning in parallel on a shared LLM, jointly learning recognition and tracking trajectory planning. Trained on its own EVT-Bench sim tracking data and 1.7M recognition samples, it showed robust tracking at 10 FPS in zero-shot Gym-UnrealCV and the real world.</dd><dt>Notes</dt><dd>Tracking sample count inconsistent in the text (855K vs 885K); TrackVLA weights not released (only EVT-Bench and Uni-NaVid evaluation code and weights released); EVA-CLIP and Vicuna-7B initialized from pretrained weights; CoRL 2025.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/m/internvla-n1/"><small>← Previous</small>InternVLA-N1</a><a class="nx" href="/m/vln-r1/"><small>Next →</small>VLN-R1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

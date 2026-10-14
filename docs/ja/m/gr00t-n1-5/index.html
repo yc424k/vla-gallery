@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GR00T N1.5 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="GR00T N1.5 (NVIDIA, 2025-05) — VLMを事前・事後学習とも凍結し、flow matchingにFLARE(未来潜在表現の整合)損失(係数0.2)を加えて人間の一人称動画からも学ぶ。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gr00t-n1-5/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gr00t-n1-5/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GR00T N1.5 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="GR00T N1.5 (NVIDIA, 2025-05) — VLMを事前・事後学習とも凍結し、flow matchingにFLARE(未来潜在表現の整合)損失(係数0.2)を加えて人間の一人称動画からも学ぶ。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GR00T N1.5 — 構造・バックボーンLLM・学習・推論メモリ", "description": "GR00T N1.5 (NVIDIA, 2025-05) — VLMを事前・事後学習とも凍結し、flow matchingにFLARE(未来潜在表現の整合)損失(係数0.2)を加えて人間の一人称動画からも学ぶ。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "GR00T N1.5", "creator": {"@type": "Organization", "name": "NVIDIA"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "GR00T N1.5", "item": "https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gr00t-n1-5/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gr00t-n1-5/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gr00t-n1-5/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gr00t-n1-5/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ヒューマノイドVLA</p>
+<h1>GR00T N1.5</h1>
+<p class="by">NVIDIA · 2025-05</p>
+<p class="kv"><span>VLA</span><span>ヒューマノイドVLA</span><span>3B</span><span>flow matching</span></p>
+<p class="sum">VLMを事前・事後学習とも凍結し、flow matchingにFLARE(未来潜在表現の整合)損失(係数0.2)を加えて人間の一人称動画からも学ぶ。</p>
+<div class="acts"><a class="pri" href="/ja/#m-gr00t-n1-5">ギャラリーで構造図を見る</a><a href="https://research.nvidia.com/labs/gear/gr00t-n1_5/" rel="noopener">公式ページ ↗</a></div>
+<h2>論文</h2>
+<p class="paper">論文なし · 関連 <a href="https://arxiv.org/abs/2503.14734" rel="noopener">GR00T N1: An Open Foundation Model for Generalist Humanoid Robots</a></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ヒューマノイドVLA</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-05</dd><dt>機関</dt><dd>NVIDIA</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>3B (VLM 2.1B)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Eagle 2.5 VLM 2.1B (内部LLMは記載なし、凍結)</dd><dt>ビジョンエンコーダ</dt><dd>Eagle 2.5内蔵</dd><dt>アクションヘッド</dt><dd>flow matching DiT (4ステップ) + FLARE (flow matching)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>凍結Eagle 2.5 VLM(2.1B、グラウンディング調整) + レイヤー正規化を加えたアダプタMLP + DiT行動ヘッド(flow matching、デノイジング4ステップ)</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100 1K枚</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>250Kステップ · バッチ16,384</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>H100またはL40 1ノード推奨、バッチ最大・20kステップ推奨; LoRAはA6000またはRTX 4090 2枚; G1テレオペレーション1Kエピソードで事後学習(GPU・時間は非公開)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / シミュレーション・合成</dd><dt>データ規模</dt><dd>時間非公開; G1事後学習 テレオペレーション1Kエピソード</dd><dt>主要データセット</dt><dd>内部GR-1データ、OpenXE、シミュレーションGR-1(DexMG)、DreamGenニューラル軌跡、AgiBot-Beta</dd><dt>タスク・評価</dt><dd>Language Table 93.2%; Sim GR-1 Language 54.4%; RoboCasa(30デモ) 47.5; 実機GR-1言語指示93.3%(N1 46.6%); Unitree G1 既知物体98.8%・新規84.2%(N1 44.0%); DreamGen 新しい動詞12個 38.3%</dd><dt>ロボット</dt><dd>Fourier GR-1(実機)、Unitree G1(実機)、シミュレーションのクロスエンボディメント</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>H100: VLM 23.18 ms + 行動ヘッド 4 × 6.18 = 24.7 ms、全体 47.88 ms; Jetson Thor TensorRT FP16/FP8+FP4: DiT 5.46/3.41 ms、ViT 5.21/4.10 ms、LLM 8.53/5.81 ms</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>6 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>一部 (RL下位制御器との結合) · VLAは模倣学習。Unitree G1の実行にDecoupled WBC(下半身RL・上半身IK)を使用</dd><dt>ベース制御</dt><dd>固定 · 歩行指令の言及なし (GR-1・G1のピック・アンド・プレースなど上半身操作)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>VLMを事前・事後学習とも凍結し、flow matchingにFLARE(未来潜在表現の整合)損失(係数0.2)を加えて人間の一人称動画からも学ぶ。DreamGenのニューラル軌跡でテレオペレーション外の新しい動作に汎化する。</dd><dt>備考</dt><dd>発表月は検証で2025-05(NVIDIAプレスリリース 2025-05-18、Computex)に修正; 研究ページは2025-06-11。HFカードはSigLip2・T5・flow matching transformerと記述しており研究ページ(Eagle 2.5)と表記が異なる。プレスリリースの「36時間」開発はデータ生成・開発の所要で学習computeではなく、同じプレスリリースがアーリーアダプターとしてAeiRobotを明記。Nvidia License(非商用)。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gr00t-n1/">GR00T N1</a><small>2025-03</small></li><li><a href="/ja/m/gr00t-n1-6/">GR00T N1.6</a><small>2025-09</small></li><li><a href="/ja/m/figure-helix/">Figure Helix</a><small>2025-02</small></li><li><a href="/ja/m/atlas-lbm/">Atlas LBM</a><small>2025-08</small></li><li><a href="/ja/m/1x-redwood-ai/">1X Redwood AI</a><small>2025-06</small></li><li><a href="/ja/m/tesla-optimus/">Tesla Optimus</a><small>2024-05(2차)</small></li><li><a href="/ja/m/being-h0/">Being-H0</a><small>2025-07</small></li><li><a href="/ja/m/humanoid-vla/">Humanoid-VLA</a><small>2025-02</small></li><li><a href="/ja/m/leverb/">LeVERB</a><small>2025-06</small></li><li><a href="/ja/m/uh-1/">UH-1 (Humanoid-X)</a><small>2024-12</small></li><li><a href="/ja/m/egovla/">EgoVLA</a><small>2025-07</small></li><li><a href="/ja/m/hat/">HAT</a><small>2025-03</small></li><li><a href="/ja/m/wholebodyvla/">WholeBodyVLA</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/gr00t-n1/"><small>← 前のモデル</small>GR00T N1</a><a class="nx" href="/ja/m/gr00t-n1-6/"><small>次のモデル →</small>GR00T N1.6</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

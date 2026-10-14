@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F1-VLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="F1-VLA (Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen), 2025-09) — A VLA that generates future visual scenes (foresight) in a next-scale m…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/f1-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/f1-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/f1-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/f1-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/f1-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/f1-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="F1-VLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="F1-VLA (Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen), 2025-09) — A VLA that generates future visual scenes (foresight) in a next-scale m…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/f1-vla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "F1-VLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "F1-VLA (Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen), 2025-09) — A VLA that generates future visual scenes (foresight) in a next-scale m…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/f1-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "F1-VLA", "creator": {"@type": "Organization", "name": "Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen)"}}, "citation": {"@type": "ScholarlyArticle", "name": "F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions", "url": "https://arxiv.org/abs/2509.06951"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "F1-VLA", "item": "https://vla-gallery.is-a.dev/m/f1-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/f1-vla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/f1-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/f1-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/f1-vla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
+<h1>F1-VLA</h1>
+<p class="by">Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen) · 2025-09</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>4.2B</span><span>flow matching</span></p>
+<p class="sum">A VLA that generates future visual scenes (foresight) in a next-scale manner before actions and uses them for planning.</p>
+<div class="acts"><a class="pri" href="/#m-f1-vla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2509.06951" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.06951" rel="noopener">F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions</a><small>arXiv 2509.06951</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Flow·Diffusion VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-09</dd><dt>Organization</dt><dd>Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen)</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>4.2B</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Gemma · PaliGemma initialization</dd><dt>Vision encoder</dt><dd>SigLIP (PaliGemma)</dd><dt>Action head</dt><dd>foresight generation + flow matching expert (flow matching)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Mixture-of-Transformer: understanding expert (PaliGemma initialization) + foresight generation expert (VAR residual VQ-VAE next-scale, 4 scales at inference) + flow matching action expert (inherited from π0)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed (no GPU type·count·time in App. B)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Stage I 512K steps·batch 1280·lr 3.0e-4 (cosine); Stage II 100K steps·batch 2880·lr 5.0e-5 (constant)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Stage III batch 128·lr 5.0e-5 (cosine), hardware·time not disclosed; post-training on about 1.8K in-house trajectories</dd><dt>Data type</dt><dd>Real-robot teleoperation + simulation (LIBERO)</dd><dt>Data scale</dt><dd>330.9K trajectories · 73.8M frames, 136 tasks, 5 embodiments (AgiBot-World 187K/66.4M, Bridge-v2 53.2K/1.9M, Fractal 87.2K/3.8M, LIBERO 1.7K/0.3M)</dd><dt>Main datasets</dt><dd>AgiBot World, OXE Bridge v2, OXE Fractal, LIBERO</dd><dt>Tasks &amp; evaluation</dt><dd>LIBERO 98.2/97.8/95.4/91.3, average 95.7; SimplerEnv Bridge 72.9; Genie real-robot 9 tasks average 82.2% (grasp 92.6%)</dd><dt>Robot</dt><dd>Genie G1, Franka, ARX LIFT II, WidowX, Google Robot (single-arm·bimanual)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed (limits foresight to 4 scales for real-time control)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>8.4 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No mention of base movement (Genie-1·ARX LIFT II manipulation; dynamic tasks use a conveyor belt)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A VLA that generates future visual scenes (foresight) in a next-scale manner before actions and uses them for planning. Achieved 82.2% average success rate on 9 real Genie tasks.</dd><dt>Notes</dt><dd>Initialized from the π0 action expert·PaliGemma (README requires lerobot/pi0_base). App. B hyperparameters newly confirmed in verification (Unverified in notes).</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/m/nora-1-5/"><small>← Previous</small>NORA-1.5</a><a class="nx" href="/m/dexgraspvla/"><small>Next →</small>DexGraspVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

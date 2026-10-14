@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DreamZero — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="DreamZero (NVIDIA GEAR, 2026-02) — A world action model (WAM) that jointly predicts video and actions.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/dreamzero/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/dreamzero/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/dreamzero/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/dreamzero/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/dreamzero/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/dreamzero/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="DreamZero — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="DreamZero (NVIDIA GEAR, 2026-02) — A world action model (WAM) that jointly predicts video and actions.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/dreamzero/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "DreamZero — Architecture, Backbone LLM, Training & Inference Memory", "description": "DreamZero (NVIDIA GEAR, 2026-02) — A world action model (WAM) that jointly predicts video and actions.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/dreamzero/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "DreamZero", "creator": {"@type": "Organization", "name": "NVIDIA GEAR"}}, "citation": {"@type": "ScholarlyArticle", "name": "World Action Models are Zero-shot Policies", "url": "https://arxiv.org/abs/2602.15922"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "DreamZero", "item": "https://vla-gallery.is-a.dev/m/dreamzero/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/dreamzero/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/dreamzero/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/dreamzero/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/dreamzero/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / New in 2026</p>
+<h1>DreamZero</h1>
+<p class="by">NVIDIA GEAR · 2026-02</p>
+<p class="kv"><span>기타</span><span>New in 2026</span><span>14B</span><span>video world model</span></p>
+<p class="sum">A world action model (WAM) that jointly predicts video and actions.</p>
+<div class="acts"><a class="pri" href="/#m-dreamzero">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2602.15922" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2602.15922" rel="noopener">World Action Models are Zero-shot Policies</a><small>arXiv 2602.15922</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>New in 2026</dd><dt>Type</dt><dd>기타</dd><dt>Released</dt><dd>2026-02</dd><dt>Organization</dt><dd>NVIDIA GEAR</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>14B (5B ablation separate)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None (video diffusion backbone)</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Joint video + action flow matching prediction (video world model)</dd><dt>Chunk</dt><dd>48 steps (1.6 s)</dd><dt>Control rate</dt><dd>30 Hz</dd><dt>Architecture (original summary)</dt><dd>Wan2.1-I2V-14B-480P video diffusion → autoregressive DiT (flow matching·teacher forcing); relative joint position actions, 30 Hz, 48-step chunk (1.6 s)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed (no training-GPU statement; H100·GB200 mentioned only for inference)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>100K steps each for AgiBot · DROID, global batch 128</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed; adapting to a new embodiment takes 30 min of play data, 10–20 min of other-robot·human-video-only data</dd><dt>Data type</dt><dd>Real-robot teleoperation + video-pretrained backbone (Wan2.1)</dd><dt>Data scale</dt><dd>About 500 hours of AgiBot G1 teleoperation (22 environments, 7.2K episodes) + DROID public dataset</dd><dt>Main datasets</dt><dd>AgiBot G1 teleoperation, DROID</dd><dt>Tasks &amp; evaluation</dt><dd>AgiBot G1 trained-task progress 62.2% (best pretrained VLA 27.4%), unseen 39.5% (16.3%); DROID-Franka progress 49% · success 22.5%; 1st on MolmoSpaces · RoboArena</dd><dt>Robot</dt><dd>AgiBot G1, Franka(DROID)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>5.7 s→150 ms per chunk (38× on GB200 including DreamZero-Flash; system optimizations alone about 9× on H100, about 16× on GB200), about 7 Hz closed loop; README GB200 about 0.6 s, H100 about 3 s, 2 or more GPUs</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>28 GB</dd><dt>Where it runs</dt><dd>2 or more GPUs (README)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · flow matching·teacher forcing supervised learning</dd><dt>Base control</dt><dd>Fixed · No base motion stated in evaluation tasks (AgiBot G1 relative joint position actions; training data includes navigation)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A world action model (WAM) that jointly predicts video and actions. With 39.5% progress on unseen tasks it beat pretrained VLAs (16.3%), and it is the foundational work for GR00T N2.</dd><dt>Notes</dt><dd>arXiv 2026-02-17. DreamZero-DROID 14B·DreamZero-AgiBot checkpoints (Apache 2.0). Data hours (h) for AgiBot only (DROID separate). Speedup conditions clarified per verification notes. NVIDIA introduced GR00T N2 as &#x27;based on DreamZero research&#x27; (2026-03-16).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/g0plus/">G0Plus</a><small>2026-01</small></li><li><a href="/m/internvla-a1/">InternVLA-A1</a><small>2026-01</small></li><li><a href="/m/1x-world-model/">1X World Model (1XWM) 정책</a><small>2026-01</small></li><li><a href="/m/spirit-v1-5/">Spirit v1.5</a><small>2026-01</small></li><li><a href="/m/being-h0-5/">Being-H0.5</a><small>2026-01</small></li><li><a href="/m/cosmos-policy/">Cosmos Policy</a><small>2026-01</small></li><li><a href="/m/rho-alpha/">Rho-alpha (ρα)</a><small>2026-01(2차)†</small></li><li><a href="/m/lingbot-vla/">LingBot-VLA</a><small>2026-01</small></li><li><a href="/m/helix-02/">Helix 02</a><small>2026-01</small></li><li><a href="/m/unifolm-vla-0/">UnifoLM-VLA-0</a><small>2026-01</small></li><li><a href="/m/holobrain-0/">HoloBrain-0</a><small>2026-02</small></li><li><a href="/m/g0tiny/">G0Tiny</a><small>2026-02</small></li><li><a href="/m/xiaomi-robotics-0/">Xiaomi-Robotics-0</a><small>2026-02</small></li><li><a href="/m/egoscale/">EgoScale</a><small>2026-02</small></li><li><a href="/m/psi0/">Ψ0 (Psi-Zero)</a><small>2026-03</small></li><li><a href="/m/gr00t-n1-7/">GR00T N1.7</a><small>2026-03</small></li><li><a href="/m/gen-1/">GEN-1</a><small>2026-04</small></li><li><a href="/m/go-2/">GO-2</a><small>2026-04(2차)</small></li><li><a href="/m/being-h0-7/">Being-H0.7</a><small>2026-04</small></li><li><a href="/m/pi0-7/">π0.7</a><small>2026-04</small></li><li><a href="/m/molmoact-2/">MolmoAct 2</a><small>2026-05</small></li><li><a href="/m/g0-5/">G0.5</a><small>2026-06</small></li><li><a href="/m/syvla/">SyVLA</a><small>2026-06</small></li><li><a href="/m/openhlm/">OpenHLM</a><small>2026-06</small></li><li><a href="/m/galbot-astrabrain/">Galbot AstraBrain(银河星脑) 계열</a><small>2026-06(2차)</small></li><li><a href="/m/internvla-a1-5/">InternVLA-A1.5</a><small>2026-07†</small></li><li><a href="/m/turbovla/">TurboVLA</a><small>2026-07</small></li><li><a href="/m/gemini-robotics-2/">Gemini Robotics 2</a><small>2026-07</small></li><li><a href="/m/gemini-robotics-on-device-2/">Gemini Robotics On-Device 2</a><small>2026-07</small></li><li><a href="/m/dyna-2/">DYNA-2</a><small>2026-08</small></li><li><a href="/m/skild-s1/">Skild S1</a><small>2026-08(Skild)/2026-09(NVIDIA)</small></li><li><a href="/m/gen-1-5/">GEN-1.5</a><small>2026-08</small></li><li><a href="/m/omega-0/">ω-0 (OMEGA-0)</a><small>2026-08</small></li><li><a href="/m/qwen-vla/">Qwen-VLA</a><small>2026-05</small></li></ul></section>
+<nav class="pn"><a href="/m/xiaomi-robotics-0/"><small>← Previous</small>Xiaomi-Robotics-0</a><a class="nx" href="/m/egoscale/"><small>Next →</small>EgoScale</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

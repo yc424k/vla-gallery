@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G0.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="G0.5 (Galaxea AI (OpenGalaxea), 2026-06) — Decoder-only VLA that produces reasoning and actions in a single autoregressive stream.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/g0-5/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/g0-5/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/g0-5/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/g0-5/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/g0-5/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/g0-5/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="G0.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="G0.5 (Galaxea AI (OpenGalaxea), 2026-06) — Decoder-only VLA that produces reasoning and actions in a single autoregressive stream.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/g0-5/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "G0.5 — Architecture, Backbone LLM, Training & Inference Memory", "description": "G0.5 (Galaxea AI (OpenGalaxea), 2026-06) — Decoder-only VLA that produces reasoning and actions in a single autoregressive stream.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/g0-5/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "G0.5", "creator": {"@type": "Organization", "name": "Galaxea AI (OpenGalaxea)"}}, "citation": {"@type": "ScholarlyArticle", "name": "G0.5: One Autoregressive Stream for Robot Reasoning and Action", "url": "https://arxiv.org/abs/2608.11739"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "G0.5", "item": "https://vla-gallery.is-a.dev/m/g0-5/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/g0-5/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/g0-5/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/g0-5/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/g0-5/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / New in 2026</p>
+<h1>G0.5</h1>
+<p class="by">Galaxea AI (OpenGalaxea) · 2026-06</p>
+<p class="kv"><span>VLA</span><span>New in 2026</span><span>Total amount not disclosed</span><span>discrete tokens</span></p>
+<p class="sum">Decoder-only VLA that produces reasoning and actions in a single autoregressive stream.</p>
+<div class="acts"><a class="pri" href="/#m-g0-5">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2608.11739" rel="noopener">Paper ↗</a><a href="https://github.com/OpenGalaxea/GalaxeaVLA" rel="noopener">GitHub ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2608.11739" rel="noopener">G0.5: One Autoregressive Stream for Robot Reasoning and Action</a><small>arXiv 2608.11739</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>New in 2026</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2026-06</dd><dt>Organization</dt><dd>Galaxea AI (OpenGalaxea)</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Total amount not disclosed (initialized from Qwen3.5 2B VLM)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Not disclosed</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Autoregressive reasoning·action tokens (learned tokenizer) (discrete tokens)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>A single transformer decoder autoregressively generates reasoning·action tokens under one objective (no separate flow matching expert); learned cross-embodiment action tokenizer, CoT reasoning stream, visual memory module</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>GPU type not disclosed; fine-tuning sentences &#x27;4 epochs, LR 4×10⁻⁵, global batch 1024&#x27; · &#x27;100K steps, LR 1×10⁻⁵&#x27; (stage attribution needs checking against the original)</dd><dt>Data type</dt><dd>Real-robot teleoperation (14 embodiments) + web vision-language (web·embodied VQA, VQA:action 1:4)</dd><dt>Data scale</dt><dd>Robot demonstrations from 14 embodiments (total Not disclosed); Galaxea Open-World dataset 500+ hours</dd><dt>Main datasets</dt><dd>Galaxea Open-World Dataset, web · embodied VQA</dd><dt>Tasks &amp; evaluation</dt><dd>DROID zero-shot 82.5%; SimplerEnv-Bridge 87.3%; RoboTwin 2.0 93.3%; LIBERO 98.9%; BEHAVIOR-1K 0.3136; real-robot R1-Lite/R1-Pro 76.7% (π0.5 53.3%, GR00T-N1.7 24.4%)</dd><dt>Robot</dt><dd>14 embodiments incl. Galaxea R1-Lite, R1-Pro</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Robot demonstrations + VQA supervised learning</dd><dt>Base control</dt><dd>Wheeled (Direct base velocity/pose output) · In BEHAVIOR-1K (sim R1 Pro), outputs navigation as a token group separate from manipulation; the real-robot R1 client publishes only arms · torso · gripper</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Decoder-only VLA that produces reasoning and actions in a single autoregressive stream. Scored 76.7% on real R1-Lite/R1-Pro robots, ahead of π0.5 (53.3%) and GR00T-N1.7 (24.4%).</dd><dt>Notes</dt><dd>Announced 2026-06-01, base checkpoint 2026-06-16, arXiv 2026-08-12. G0.5 Community License (non-commercial, commits from 2026-06-16 onward; three-tier license). The note&#x27;s &#x27;about 2B&#x27; only reflects &#x27;initialized from Qwen3.5 2B&#x27; in the source; there is no total-size sentence. Galaxea is a different company from Galbot.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/g0plus/">G0Plus</a><small>2026-01</small></li><li><a href="/m/internvla-a1/">InternVLA-A1</a><small>2026-01</small></li><li><a href="/m/1x-world-model/">1X World Model (1XWM) 정책</a><small>2026-01</small></li><li><a href="/m/spirit-v1-5/">Spirit v1.5</a><small>2026-01</small></li><li><a href="/m/being-h0-5/">Being-H0.5</a><small>2026-01</small></li><li><a href="/m/cosmos-policy/">Cosmos Policy</a><small>2026-01</small></li><li><a href="/m/rho-alpha/">Rho-alpha (ρα)</a><small>2026-01(2차)†</small></li><li><a href="/m/lingbot-vla/">LingBot-VLA</a><small>2026-01</small></li><li><a href="/m/helix-02/">Helix 02</a><small>2026-01</small></li><li><a href="/m/unifolm-vla-0/">UnifoLM-VLA-0</a><small>2026-01</small></li><li><a href="/m/holobrain-0/">HoloBrain-0</a><small>2026-02</small></li><li><a href="/m/g0tiny/">G0Tiny</a><small>2026-02</small></li><li><a href="/m/xiaomi-robotics-0/">Xiaomi-Robotics-0</a><small>2026-02</small></li><li><a href="/m/dreamzero/">DreamZero</a><small>2026-02</small></li><li><a href="/m/egoscale/">EgoScale</a><small>2026-02</small></li><li><a href="/m/psi0/">Ψ0 (Psi-Zero)</a><small>2026-03</small></li><li><a href="/m/gr00t-n1-7/">GR00T N1.7</a><small>2026-03</small></li><li><a href="/m/gen-1/">GEN-1</a><small>2026-04</small></li><li><a href="/m/go-2/">GO-2</a><small>2026-04(2차)</small></li><li><a href="/m/being-h0-7/">Being-H0.7</a><small>2026-04</small></li><li><a href="/m/pi0-7/">π0.7</a><small>2026-04</small></li><li><a href="/m/molmoact-2/">MolmoAct 2</a><small>2026-05</small></li><li><a href="/m/syvla/">SyVLA</a><small>2026-06</small></li><li><a href="/m/openhlm/">OpenHLM</a><small>2026-06</small></li><li><a href="/m/galbot-astrabrain/">Galbot AstraBrain(银河星脑) 계열</a><small>2026-06(2차)</small></li><li><a href="/m/internvla-a1-5/">InternVLA-A1.5</a><small>2026-07†</small></li><li><a href="/m/turbovla/">TurboVLA</a><small>2026-07</small></li><li><a href="/m/gemini-robotics-2/">Gemini Robotics 2</a><small>2026-07</small></li><li><a href="/m/gemini-robotics-on-device-2/">Gemini Robotics On-Device 2</a><small>2026-07</small></li><li><a href="/m/dyna-2/">DYNA-2</a><small>2026-08</small></li><li><a href="/m/skild-s1/">Skild S1</a><small>2026-08(Skild)/2026-09(NVIDIA)</small></li><li><a href="/m/gen-1-5/">GEN-1.5</a><small>2026-08</small></li><li><a href="/m/omega-0/">ω-0 (OMEGA-0)</a><small>2026-08</small></li><li><a href="/m/qwen-vla/">Qwen-VLA</a><small>2026-05</small></li></ul></section>
+<nav class="pn"><a href="/m/molmoact-2/"><small>← Previous</small>MolmoAct 2</a><a class="nx" href="/m/syvla/"><small>Next →</small>SyVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

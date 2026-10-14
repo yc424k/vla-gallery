@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLOWER — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — 通过VLM中间层融合和按动作空间的Global-AdaLN将参数减少20%以上，约用200 H100 GPU-小时完成预训练。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/flower/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/flower/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/flower/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/flower/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/flower/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/flower/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="FLOWER — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — 通过VLM中间层融合和按动作空间的Global-AdaLN将参数减少20%以上，约用200 H100 GPU-小时完成预训练。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/flower/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "FLOWER — 架构、骨干LLM、训练与推理内存", "description": "FLOWER (KIT Intuitive Robots Lab (공저자 1명 Microsoft Research), 2025-09) — 通过VLM中间层融合和按动作空间的Global-AdaLN将参数减少20%以上，约用200 H100 GPU-小时完成预训练。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/flower/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "FLOWER", "creator": {"@type": "Organization", "name": "KIT Intuitive Robots Lab (공저자 1명 Microsoft Research)"}}, "citation": {"@type": "ScholarlyArticle", "name": "FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies", "url": "https://arxiv.org/abs/2509.04996"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "FLOWER", "item": "https://vla-gallery.is-a.dev/zh/m/flower/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/flower/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/flower/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/flower/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/flower/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / Flow·Diffusion VLA</p>
+<h1>FLOWER</h1>
+<p class="by">KIT Intuitive Robots Lab (1名合著者来自Microsoft Research) · 2025-09</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>947M</span><span>flow matching</span></p>
+<p class="sum">通过VLM中间层融合和按动作空间的Global-AdaLN将参数减少20%以上，约用200 H100 GPU-小时完成预训练。</p>
+<div class="acts"><a class="pri" href="/zh/#m-flower">在图库中查看架构图</a><a href="https://arxiv.org/abs/2509.04996" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.04996" rel="noopener">FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies</a><small>arXiv 2509.04996</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>Flow·Diffusion VLA</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-09</dd><dt>机构</dt><dd>KIT Intuitive Robots Lab (1名合著者来自Microsoft Research)</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>947M(正文)/950M(摘要)；ViT 360M(论文)/350M(README)，VLM 205M，Flow Transformer 339M，Global-AdaLN 28.3M</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无 (Florence-2 VLM 205M，去除解码器)</dd><dt>视觉编码器</dt><dd>Florence-2-L ViT (360M)</dd><dt>动作头</dt><dd>Flow Transformer 339M (4–8步) (flow matching)</dd><dt>动作块</dt><dd>20步</dd><dt>控制频率</dt><dd>3–50 Hz</dd><dt>架构原文摘要</dt><dd>去掉解码器的Florence-2-L（ViT 360M + VLM 205M，中间层融合）+ 18层·1024维Flow Transformer（339M），Action-Space Global-AdaLN-Zero；rectified flow，动作块 20，denoising 4（单臂）/8（高频双臂），3~50 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>H100×4(1节点)</dd><dt>预训练时长</dt><dd>48 h</dd><dt>预训练步数·批量</dt><dd>360,000步(按数据配置300k~400k)，批量256×grad accum 4 = 1024，lr FlowT 1e-4·VLM 1e-5</dd><dt>GPU·TPU-小时</dt><dd>200 (明示 · H100-小时（约 200；4张 × 48 h）)</dd><dt>微调</dt><dd>CALVIN GPU×4·每GPU批量8·40k步；LIBERO每个suite 30k(LIBERO-90 50k)；真机厨房50,000步；时间未公开；仓库训练需24GB+显存</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>8个公开数据集约250k条轨迹(delta-EEF 74%，单臂关节26%)；实机417条轨迹(人类演示45分钟)</dd><dt>主要数据集</dt><dd>OXE soup: Bridge 28.62%, Fractal 24.68%, DROID 23.50%等</dd><dt>任务·评估</dt><dd>CALVIN ABCD→D 4.67，ABC→D 4.53(摘要)/4.54(README)，D→D 4.36；LIBERO-10 94.5%(README)/94.9%(论文)，LIBERO-90 93.4%，Spatial 97.2%，Object 99.3%，Goal 96.9%；SIMPLER Bridge 40.0%，Google Robot 31.9%；Aloha sim insertion 0.82；真机厨房平均61%</dd><dt>机器人</dt><dd>单臂（Franka Panda实机厨房），双臂（Aloha sim），4种具身</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>RTX 4090: 311.04 Hz, 0.052 s, 1,848 MB(为π0的27.6%, OpenVLA的12.7%)</dd><dt>推理显存</dt><dd>1,848 MB (RTX 4090)</dd><dt>权重 bf16（计算）</dt><dd>1.9 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅使用模仿学习（行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（Franka机械臂·双臂仿真）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>通过VLM中间层融合和按动作空间的Global-AdaLN将参数减少20%以上，约用200 H100 GPU-小时完成预训练。在RTX 4090上以311 Hz运行，内存仅为π0的27.6%。</dd><dt>备注</dt><dd>参数(B)为正文947M。947M/950M，ViT 360M/350M，LIBERO-Long 94.9/94.5，CALVIN ABC 4.53/4.54，出处间存在差异。arXiv v1日期行未核实(HF Papers 2025-09-05)。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/zh/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/zh/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/zh/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/zh/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/zh/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/zh/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/zh/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/zh/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/zh/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/zh/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/zh/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/zh/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/zh/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/zh/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/zh/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/zh/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/x-vla/"><small>← 上一个</small>X-VLA</a><a class="nx" href="/zh/m/internvla-m1/"><small>下一个 →</small>InternVLA-M1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLA-0 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="VLA-0 (NVIDIA, 2025-10) — A design that makes the VLM output actions as plain-text numbers without changing its architecture or vocabulary.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/vla-0/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vla-0/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vla-0/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vla-0/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vla-0/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vla-0/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="VLA-0 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="VLA-0 (NVIDIA, 2025-10) — A design that makes the VLM output actions as plain-text numbers without changing its architecture or vocabulary.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/vla-0/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "VLA-0 — Architecture, Backbone LLM, Training & Inference Memory", "description": "VLA-0 (NVIDIA, 2025-10) — A design that makes the VLM output actions as plain-text numbers without changing its architecture or vocabulary.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/vla-0/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "VLA-0", "creator": {"@type": "Organization", "name": "NVIDIA"}}, "citation": {"@type": "ScholarlyArticle", "name": "VLA-0: Building State-of-the-Art VLAs with Zero Modification", "url": "https://arxiv.org/abs/2510.13054"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "VLA-0", "item": "https://vla-gallery.is-a.dev/m/vla-0/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vla-0/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vla-0/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vla-0/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vla-0/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>VLA-0</h1>
+<p class="by">NVIDIA · 2025-10</p>
+<p class="kv"><span>VLA</span><span>Autoregressive &amp; latent-action VLA</span><span>3B</span><span>discrete tokens</span></p>
+<p class="sum">A design that makes the VLM output actions as plain-text numbers without changing its architecture or vocabulary.</p>
+<div class="acts"><a class="pri" href="/#m-vla-0">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2510.13054" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2510.13054" rel="noopener">VLA-0: Building State-of-the-Art VLAs with Zero Modification</a><small>arXiv 2510.13054</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-10</dd><dt>Organization</dt><dd>NVIDIA</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>3B</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B config</dd><dt>Vision encoder</dt><dd>Qwen2.5-VL ViT</dd><dt>Action head</dt><dd>Integer text actions (no action head) (discrete tokens)</dd><dt>Chunk</dt><dd>Multi-step + ensembling</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Unmodified Qwen2.5-VL-3B; outputs actions as integer text (e.g. 0–1000), multi-step prediction + cross-timestep ensembling, no vocabulary change·no action head</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A (no robot pretraining)</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>8 × A100 about 32 h, 64 epochs, batch 192, lr 5e-6</dd><dt>Data type</dt><dd>Simulation·synthetic + real-robot teleoperation</dd><dt>Data scale</dt><dd>LIBERO demos; 100 real SO-100 demos</dd><dt>Main datasets</dt><dd>LIBERO</dd><dt>Tasks &amp; evaluation</dt><dd>LIBERO average 94.7%; 4 real SO-100 tasks (+12.5%p over SmolVLA)</dd><dt>Robot</dt><dd>SO-100, LIBERO simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>RTX 5090 desktop 4 Hz (README: 6 Hz possible with TensorRT-LLM)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>6 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (SO-100 arm·LIBERO)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A design that makes the VLM output actions as plain-text numbers without changing its architecture or vocabulary. Reported LIBERO 94.7% without large-scale robot pretraining.</dd><dt>Notes</dt><dd>All robot training is a single fine-tuning stage (8× A100 × about 32 h, converted (approx.) 256 A100-hours). The base model license is the Qwen Research License.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/m/villa-x/"><small>← Previous</small>villa-X</a><a class="nx" href="/m/vla-adapter/"><small>Next →</small>VLA-Adapter</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

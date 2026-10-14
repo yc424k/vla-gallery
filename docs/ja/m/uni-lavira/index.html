@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uni-LaViRA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Uni-LaViRA (Nanjing University, 2026-05) — 事前学習済みMLLMが言語で方向を選び、視覚で目標ピクセルを指すと、それをロボット行動に変換する学習不要のエージェントで、TODO List MemoryとSecond Chance Backtrackを加えて4つのタスク群・4…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/uni-lavira/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/uni-lavira/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/uni-lavira/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/uni-lavira/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/uni-lavira/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/uni-lavira/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Uni-LaViRA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Uni-LaViRA (Nanjing University, 2026-05) — 事前学習済みMLLMが言語で方向を選び、視覚で目標ピクセルを指すと、それをロボット行動に変換する学習不要のエージェントで、TODO List MemoryとSecond Chance Backtrackを加えて4つのタスク群・4…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/uni-lavira/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Uni-LaViRA — 構造・バックボーンLLM・学習・推論メモリ", "description": "Uni-LaViRA (Nanjing University, 2026-05) — 事前学習済みMLLMが言語で方向を選び、視覚で目標ピクセルを指すと、それをロボット行動に変換する学習不要のエージェントで、TODO List MemoryとSecond Chance Backtrackを加えて4つのタスク群・4…", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/uni-lavira/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Uni-LaViRA", "creator": {"@type": "Organization", "name": "Nanjing University·Institute of Automation, Chinese Academy of Sciences·Beihang University·BMW (Nanjing) Information Technology Co., Ltd.·University of Rochester"}}, "citation": {"@type": "ScholarlyArticle", "name": "Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation", "url": "https://arxiv.org/abs/2605.27582"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Uni-LaViRA", "item": "https://vla-gallery.is-a.dev/ja/m/uni-lavira/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/uni-lavira/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/uni-lavira/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/uni-lavira/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/uni-lavira/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>Uni-LaViRA</h1>
+<p class="by">Nanjing University·Institute of Automation, Chinese Academy of Sciences·Beihang University·BMW (Nanjing) Information Technology Co., Ltd.·University of Rochester · 2026-05</p>
+<p class="kv"><span>기타</span><span>ナビゲーション</span><span>非公開</span><span>その他</span></p>
+<p class="sum">事前学習済みMLLMが言語で方向を選び、視覚で目標ピクセルを指すと、それをロボット行動に変換する学習不要のエージェントで、TODO List MemoryとSecond Chance Backtrackを加えて4つのタスク群・4種のロボットを一つの構造で扱う。</p>
+<div class="acts"><a class="pri" href="/ja/#m-uni-lavira">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2605.27582" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2605.27582" rel="noopener">Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation</a><small>arXiv 2605.27582</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>기타</dd><dt>発表</dt><dd>2026-05</dd><dt>機関</dt><dd>Nanjing University·Institute of Automation, Chinese Academy of Sciences·Beihang University·BMW (Nanjing) Information Technology Co., Ltd.·University of Rochester</dd><dt>重み公開</dt><dd>一部</dd><dt>パラメータ</dt><dd>非公開 (LA Gemini-3.1-Pro サイズ非公開 + VA Qwen3.5-27B; 地上実ロボットは Qwen3.5-27B-Q4・9B-Q4)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Gemini-3.1-Pro (LA、シミュレーション・実機UAV) + Qwen3.5-27B (VA); 地上の実機はLA・VAともQwen3.5-27B-Q4 / 9B-Q4</dd><dt>ビジョンエンコーダ</dt><dd>MLLM内蔵ビジョン (Qwen3.5-27B VAがbbox・点でグラウンディング)</dd><dt>アクションヘッド</dt><dd>方向・ツール呼び出しテキスト + ピクセル目標 → 3D点 → FMM/NavDP経路 (その他)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>LA呼び出しあたり30–60 s; G1速度指令1 Hz</dd><dt>構造の原文要約</dt><dd>学習不要の3段階翻訳: Language Action(Gemini-3.1-Pro; 実ロボットはQwen3.5-27B/9B-Q4)が方向(前・左・右・後)・ツール呼び出し(turn・backtrack・stopなど)を選択 → Vision Action(Qwen3.5-27B)が選択時点の映像にbbox/点を指定 → Robot Actionが3D点に逆投影後FMM(シミュレーション)・NavDP(実ロボット)で経路 → ロボット別制御器; シミュレーション地上は離散移動(0.25 m前進・30°旋回)、UAVは(x,y,z)ウェイポイント</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし (学習なし、プロンプトのみ使用)</dd><dt>データ種類</dt><dd>該当なし (学習データなし)</dd><dt>データ規模</dt><dd>該当なし (評価のみ: 6ベンチマークで層化抽出100エピソード×3シード)</dd><dt>主要データセット</dt><dd>評価: R2R-CE; RxR-CE; HM3D-v2; HM3D-OVON; MP3D-EQA; OpenUAV(UM split)</dd><dt>タスク・評価</dt><dd>ゼロショット R2R-CE SR 60.7%・SPL 47.7、RxR-CE SR 51.3%・SPL 34.0、HM3D-v2 ObjectNav SR 77.7%・SPL 46.1、HM3D-OVON SR 60.0%、MP3D-EQA 正解率54.7%、OpenUAV SR 40.0%(ベンチマークあたり100エピソード×3シード、計1,800軌跡); 実ロボット4機種でデモ</dd><dt>ロボット</dt><dd>Agilex Cobot Magic車輪型双腕(2-DoF差動ベース)、Unitree G1ヒューマノイド、Unitree Go1四足、自作クアッドロータUAV</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>LA呼び出し30–60 s(API正常)・80–150 s(競合時)、ローカルプランナー・制御器は各10 ms未満; 呼び出しあたりLA入力22,305・出力1,618トークン; シミュレーションはRTX 4090 8枚で並列ロールアウト; 実機Cobot MagicはオンボードRTX 4090(Qwen3.5-27B-Q4)、G1・Go1はオンボードJetson Orin NX(Qwen3.5-9B-Q4)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>シミュレーションはAPIでリモート; 実ロボットはオンボードRTX 4090 / Jetson Orin NX</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 学習なし(プロンプトベースのエージェント); 下位NavDPは既存の模倣学習モデルをそのまま使用</dd><dt>ベース制御</dt><dd>車輪型·四足歩行·ヒューマノイド歩行·飛行 (ウェイポイント → 追従制御器) · LA・VAが選んだ目標ピクセルを3D点へ逆投影 → NavDP軌跡を各ロボットの標準制御器が追従(Cobot Magicは比例速度制御、G1は(vx,vy,ωz) 1 Hz、Go1は速度モード); UAVはPX4位置制御</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>事前学習済みMLLMが言語で方向を選び、視覚で目標ピクセルを指すと、それをロボット行動に変換する学習不要のエージェントで、TODO List MemoryとSecond Chance Backtrackを加えて4つのタスク群・4種のロボットを一つの構造で扱う。ロボットデータで学習せずにR2R-CE SR 60.7%・HM3D-v2 ObjectNav SR 77.7%を達成し、学習ベースのナビゲーション基盤モデルと同等以上となった。</dd><dt>備考</dt><dd>独自の学習済み重みなし(学習不要のフレームワーク): シミュレーションの主結果は非公開のGemini-3.1-Pro APIに依存し、VA Qwen3.5-27B・実ロボットQwen3.5 Q4・下位NavDPは公開重みのため「一部」と表記。コード公開(CC BY-NC-SA 4.0)。実ロボット地上3機種はFMMの代わりにNavDPをRobot Action段階で使用。機関Beihang Universityはプロジェクトページの著者表記に基づく。先行研究LaViRA(ゼロショットVLN-CE)の拡張。ベース: LaViRA: Language-Vision-Robot Actions Translation for Zero-Shot Vision Language Navigation in Continuous Environments (arXiv 2510.19655) — 公式コードREADMEが&#x27;This work builds on LaViRA&#x27;と明記、プロジェクトページ&#x27;Previously on LaViRA&#x27;</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/futurenav/"><small>← 前のモデル</small>FutureNav</a><a class="nx" href="/ja/m/lightnav-0/"><small>次のモデル →</small>LightNav-0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

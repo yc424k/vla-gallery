@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HarmonicMM — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="HarmonicMM (UC San Diego, 2023-12) — ナビゲーションと操作のモジュールを分けず、RGBのみでベースと腕を同時に動かす単一方策をProcTHORシミュレーションでDD-PPOによりエンドツーエンド学習する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/harmonicmm/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/harmonicmm/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/harmonicmm/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/harmonicmm/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/harmonicmm/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/harmonicmm/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="HarmonicMM — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="HarmonicMM (UC San Diego, 2023-12) — ナビゲーションと操作のモジュールを分けず、RGBのみでベースと腕を同時に動かす単一方策をProcTHORシミュレーションでDD-PPOによりエンドツーエンド学習する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/harmonicmm/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "HarmonicMM — 構造・バックボーンLLM・学習・推論メモリ", "description": "HarmonicMM (UC San Diego, 2023-12) — ナビゲーションと操作のモジュールを分けず、RGBのみでベースと腕を同時に動かす単一方策をProcTHORシミュレーションでDD-PPOによりエンドツーエンド学習する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/harmonicmm/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "HarmonicMM", "creator": {"@type": "Organization", "name": "UC San Diego·Allen Institute for AI(PRIOR)·University of Washington"}}, "citation": {"@type": "ScholarlyArticle", "name": "Harmonic Mobile Manipulation", "url": "https://arxiv.org/abs/2312.06639"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "HarmonicMM", "item": "https://vla-gallery.is-a.dev/ja/m/harmonicmm/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/harmonicmm/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/harmonicmm/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/harmonicmm/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/harmonicmm/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / モバイルマニピュレーション</p>
+<h1>HarmonicMM</h1>
+<p class="by">UC San Diego·Allen Institute for AI(PRIOR)·University of Washington · 2023-12</p>
+<p class="kv"><span>VA</span><span>モバイルマニピュレーション</span><span>非公開</span><span>RL方策</span></p>
+<p class="sum">ナビゲーションと操作のモジュールを分けず、RGBのみでベースと腕を同時に動かす単一方策をProcTHORシミュレーションでDD-PPOによりエンドツーエンド学習する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-harmonicmm">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2312.06639" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2312.06639" rel="noopener">Harmonic Mobile Manipulation</a><small>arXiv 2312.06639</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>モバイルマニピュレーション</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2023-12</dd><dt>機関</dt><dd>UC San Diego·Allen Institute for AI(PRIOR)·University of Washington</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>非公開 (DINOv2 ViT-S/14エンコーダ + GRU 512)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>DINOv2 ViT-S/14 (Nav・Manipカメラ2台)</dd><dt>アクションヘッド</dt><dd>アクター・クリティックFC (5次元連続行動 + 把持) (RL方策)</dd><dt>チャンク</dt><dd>なし (1ステップ)</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>事前学習済みDINOv2(dinov2_vits14)特徴(Nav・Manip RGBカメラ2台) → カメラごとに1×1 Conv 2層(16チャネル) + 固有感覚 → GRU 1層(512) → 方策・価値FC(512); 5次元連続行動(ベースの並進・回転、アームの高さ・伸長、手首回転; ドア・冷蔵庫タスクは把持1次元を追加)、チャンクなし</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別RL学習: DD-PPO(AllenAct) 10^7ステップ、並列環境20個・反復あたりサンプル640、シード3個; GPU・学習時間は非公開</dd><dt>データ種類</dt><dd>シミュレーション・合成</dd><dt>データ規模</dt><dd>ProcTHORハウス: ドア700・テーブル2,000・冷蔵庫1,400個; タスクあたり10^7環境ステップ</dd><dt>主要データセット</dt><dd>ProcTHOR(AI2-THOR)手続き生成ハウス</dd><dt>タスク・評価</dt><dd>シミュレーション(未学習の家350軒)成功率: Cleaning Table 36.7%、Opening Door Push 80.0%・Pull 51.2%、Opening Fridge 20.0% (平均47%; ReLMoGen 25.1%・51.7%・40.7%・0%); 実環境: ドア引き 9/15、押し 7/10、テーブル清掃 8/12(表面66.6%)</dd><dt>ロボット</dt><dd>Hello Robot Stretch(車輪型ベース、腕の高さ・伸長を制御)、RealSense D455 RGB</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>使用 (RL制御器の学習) · 方策全体をProcTHORシミュレーションでDD-PPOによりタスク別にゼロから学習(10^7ステップ)後、実環境へzero-shot転移</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/abs/2312.06639" rel="noopener">https://arxiv.org/abs/2312.06639</a></dd><dt>ベース制御</dt><dd>車輪型 (RL方策が直接駆動) · 方策がベースの並進・回転をアーム高さ・伸長・手首回転と共に5次元連続行動として直接出力</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>ナビゲーションと操作のモジュールを分けず、RGBのみでベースと腕を同時に動かす単一方策をProcTHORシミュレーションでDD-PPOによりエンドツーエンド学習する。シミュレーション4タスクの平均成功率47%でReLMoGenなどのベースラインを上回り、ファインチューニングなしで初見の実際のアパートでドア開け・テーブル清掃を行った。</dd><dt>備考</dt><dd>2024年以前の参照基準(anchor)。課題ごとに別方策で、言語・目標入力なし。視覚エンコーダはViT(DINOv2)だが方策トランクがGRUのため非Transformerに分類。実機でのドアノブ把持はヒューリスティック補助。コード公開(GitHub)、チェックポイント未提供。IROS 2024 Best Paper on Mobile Manipulation。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/ja/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/ja/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/ja/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/ja/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/ja/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/ja/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/ja/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/ja/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/ja/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/ja/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/ja/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/ja/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/ja/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/panovla/"><small>← 前のモデル</small>PanoVLA</a><a class="nx" href="/ja/m/act-1/"><small>次のモデル →</small>ACT-1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

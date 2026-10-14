@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GNM — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="GNM (UC Berkeley, 2022-10) — 6種のロボットから集めた異質な走行データを正規化行動空間と時間コンテキストで統合し、単一の画像目標条件付きナビゲーション方策を学習する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/gnm/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gnm/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gnm/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gnm/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gnm/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gnm/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GNM — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="GNM (UC Berkeley, 2022-10) — 6種のロボットから集めた異質な走行データを正規化行動空間と時間コンテキストで統合し、単一の画像目標条件付きナビゲーション方策を学習する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/gnm/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GNM — 構造・バックボーンLLM・学習・推論メモリ", "description": "GNM (UC Berkeley, 2022-10) — 6種のロボットから集めた異質な走行データを正規化行動空間と時間コンテキストで統合し、単一の画像目標条件付きナビゲーション方策を学習する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/gnm/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "GNM", "creator": {"@type": "Organization", "name": "UC Berkeley·Toyota Motor North America"}}, "citation": {"@type": "ScholarlyArticle", "name": "GNM: A General Navigation Model to Drive Any Robot", "url": "https://arxiv.org/abs/2210.03370"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "GNM", "item": "https://vla-gallery.is-a.dev/ja/m/gnm/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gnm/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gnm/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gnm/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gnm/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>GNM</h1>
+<p class="by">UC Berkeley·Toyota Motor North America · 2022-10</p>
+<p class="kv"><span>VA</span><span>ナビゲーション</span><span>8.7M</span><span>回帰</span></p>
+<p class="sum">6種のロボットから集めた異質な走行データを正規化行動空間と時間コンテキストで統合し、単一の画像目標条件付きナビゲーション方策を学習する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-gnm">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2210.03370" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2210.03370" rel="noopener">GNM: A General Navigation Model to Drive Any Robot</a><small>arXiv 2210.03370</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2022-10</dd><dt>機関</dt><dd>UC Berkeley·Toyota Motor North America</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>8.7M (学習可能パラメータ; GNM論文に記載なし、同じ研究チームのViNT論文付録に記載)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>MobileNetV2 ×2 (観測コンテキスト / 観測+目標)</dd><dt>アクションヘッド</dt><dd>ウェイポイント5個(x, y, yaw)の回帰 + 時間的距離ヘッド (回帰)</dd><dt>チャンク</dt><dd>ウェイポイント5個</dd><dt>制御周期</dt><dd>4 Hz (デプロイ設定; 論文は記載なし)</dd><dt>構造の原文要約</dt><dd>MobileNetV2エンコーダ2個(過去5フレームをスタックした観測 / 観測+目標画像) → 埋め込み連結・FC 3層 → ヘッド2個: 正規化相対ウェイポイント5個(x, y, yaw変化)の回帰 + 目標までの時間的距離; 85×64 RGB; ロボットごとの低レベル制御器が追従</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>マルチGPU (種類・数は非公開)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>バッチ 400–1200 (論文); 公開gnm_large設定は30 エポック · バッチ 400</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし (ロボット別微調整なしでデプロイ)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / 実ロボットの自律走行ログ</dd><dt>データ規模</dt><dd>60時間以上(アブストラクト・本文)/70時間(表I); 6ロボットプラットフォーム; データセット8個(本文)/9個(表I)</dd><dt>主要データセット</dt><dd>GoStanford; RECON; CoryHall; Berkeley; SCAND; Seattle; TartanDrive; NeBula</dd><dt>タスク・評価</dt><dd>実ロボットの画像目標ナビゲーション成功率(GNM-Mid): LoCoBot 0.96・Tello 0.99・Vizbot 0.93・Jackal 0.94 (単一データセット GS 0.26・0.21・0.51・0.31、RECON 0.62・0.79・0.26・0.68); トポロジカルグラフベースの長距離ナビゲーション</dd><dt>ロボット</dt><dd>評価: LoCoBot・Vizbot・Clearpath Jackalの車輪型、DJI Telloクアッドローター(地上1mの水平面に制限、飛行データの学習なし); 学習データ: 6種のロボットプラットフォーム</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>論文に記載なし; 公式配布設定では観測 4 Hz (robot.yaml)、ウェイポイントはロボット別の低レベル制御器が追従</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · 教師あり模倣学習のみ (行動・距離の2ヘッドを共同で教師あり学習)</dd><dt>ベース制御</dt><dd>車輪型·飛行 (ウェイポイント → 追従制御器) · 方策が正規化相対ウェイポイント5個を出力 → ロボット別の低レベル制御器(PID・MPPIなど)が追従; Telloドローンは地上1mの水平面に制限</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>6種のロボットから集めた異質な走行データを正規化行動空間と時間コンテキストで統合し、単一の画像目標条件付きナビゲーション方策を学習する。学習になかったTelloクアッドロータを含む4ロボットをロボット別の微調整なしで駆動し、単一データセット方策より一部のケースで最大5倍高い性能を示した。</dd><dt>備考</dt><dd>データ時間が本文60h・表I 70hで不一致、データセット数も8/9個で相違。パラメータ数はGNM論文になく、同じ研究チームのViNT論文付録に8.7Mと記載。Small/Mid/Largeは使用データセット2/4/6個の違いであり、モデルサイズの違いではない。チェックポイントはGoogle Driveで公開、コードはvisualnav-transformerに統合(READMEはLoCoBot+Jetson Orin Nanoの配備例)。ICRA 2023。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/slim/"><small>← 前のモデル</small>SLIM</a><a class="nx" href="/ja/m/vint/"><small>次のモデル →</small>ViNT</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

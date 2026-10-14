@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DP3 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="DP3 (Shanghai Qi Zhi Institute, 2024-03) — 3D diffusion policy that encodes sparse point clouds with a small MLP and learns from about 10 demonstrations per…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/dp3/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/dp3/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/dp3/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/dp3/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/dp3/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/dp3/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="DP3 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="DP3 (Shanghai Qi Zhi Institute, 2024-03) — 3D diffusion policy that encodes sparse point clouds with a small MLP and learns from about 10 demonstrations per…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/dp3/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "DP3 — Architecture, Backbone LLM, Training & Inference Memory", "description": "DP3 (Shanghai Qi Zhi Institute, 2024-03) — 3D diffusion policy that encodes sparse point clouds with a small MLP and learns from about 10 demonstrations per…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/dp3/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "DP3", "creator": {"@type": "Organization", "name": "Shanghai Qi Zhi Institute; Shanghai Jiao Tong University; Tsinghua University(IIIS); Shanghai AI Lab"}}, "citation": {"@type": "ScholarlyArticle", "name": "3D Diffusion Policy", "url": "https://arxiv.org/abs/2403.03954"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "DP3", "item": "https://vla-gallery.is-a.dev/m/dp3/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/dp3/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/dp3/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/dp3/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/dp3/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>DP3</h1>
+<p class="by">Shanghai Qi Zhi Institute; Shanghai Jiao Tong University; Tsinghua University(IIIS); Shanghai AI Lab · 2024-03</p>
+<p class="kv"><span>VA</span><span>VA</span><span>Not disclosed</span><span>diffusion</span></p>
+<p class="sum">3D diffusion policy that encodes sparse point clouds with a small MLP and learns from about 10 demonstrations per task.</p>
+<div class="acts"><a class="pri" href="/#m-dp3">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2403.03954" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2403.03954" rel="noopener">3D Diffusion Policy</a><small>arXiv 2403.03954</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-03</dd><dt>Organization</dt><dd>Shanghai Qi Zhi Institute; Shanghai Jiao Tong University; Tsinghua University(IIIS); Shanghai AI Lab</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>Point cloud MLP encoder (64-dim)</dd><dt>Action head</dt><dd>CNN diffusion policy (DDIM 10 steps) (diffusion)</dd><dt>Chunk</dt><dd>4 steps (3 executed)</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Point cloud MLP encoder (3 layers, channels 3, 64, 128, 256, max-pool, 64-dim projection) + CNN-based diffusion policy; horizon H 4, 2 observation and 3 execution steps; DDIM 100 training and 10 inference steps; 512–1,024 points</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per task: paper does not disclose GPU·time (MetaWorld 1000 epochs, others 3000 epochs, batch 128); README: 1× A40 about 3 hours·GPU memory about 10G, Simple DP3 1–2 hours</dd><dt>Data type</dt><dd>Simulation·synthetic; real-robot teleoperation</dd><dt>Data scale</dt><dd>Sim: 10 demos per task for most tasks (DexArt·HORA 100); real: 40 demos per task</dd><dt>Main datasets</dt><dd>Adroit; Bi-DexHands; DexArt; DexDeform; DexMV; HORA; MetaWorld; in-house real data</dd><dt>Tasks &amp; evaluation</dt><dd>Sim 72 tasks across 7 domains (Adroit, Bi-DexHands, DexArt, DexDeform, DexMV, HORA, MetaWorld); real Roll-Up, Dumpling, Drill, Pour</dd><dt>Robot</dt><dd>Franka arm + Allegro hand · gripper, RealSense L515</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>DP3 12.7 FPS, DP 12.3 FPS, Simple DP3 25.3 FPS (hardware not stated)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (Franka arm + hand·gripper)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>3D diffusion policy that encodes sparse point clouds with a small MLP and learns from about 10 demonstrations per task. Covers 72 sim tasks across 7 domains and real tasks with a dexterous hand.</dd><dt>Notes</dt><dd>A40 training time is from the official README, not the paper. Code and real data released, no checkpoints.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/umi/"><small>← Previous</small>UMI</a><a class="nx" href="/m/data-scaling-laws/"><small>Next →</small>Data Scaling Laws</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

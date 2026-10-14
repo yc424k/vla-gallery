@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TidyBot++ — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="TidyBot++ (Princeton University, 2024-11) — Learns a per-task Diffusion Policy from phone teleoperation demonstrations on an omnidirectional (holonomic) powe…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/tidybot/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/tidybot/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/tidybot/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/tidybot/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/tidybot/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/tidybot/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="TidyBot++ — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="TidyBot++ (Princeton University, 2024-11) — Learns a per-task Diffusion Policy from phone teleoperation demonstrations on an omnidirectional (holonomic) powe…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/tidybot/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "TidyBot++ — Architecture, Backbone LLM, Training & Inference Memory", "description": "TidyBot++ (Princeton University, 2024-11) — Learns a per-task Diffusion Policy from phone teleoperation demonstrations on an omnidirectional (holonomic) powe…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/tidybot/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "TidyBot++ (diffusion policy)", "creator": {"@type": "Organization", "name": "Princeton University·Stanford University·Dexterity"}}, "citation": {"@type": "ScholarlyArticle", "name": "TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning", "url": "https://arxiv.org/abs/2412.10447"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "TidyBot++", "item": "https://vla-gallery.is-a.dev/m/tidybot/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/tidybot/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/tidybot/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/tidybot/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/tidybot/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>TidyBot++</h1>
+<p class="full">TidyBot++ (diffusion policy)</p>
+<p class="by">Princeton University·Stanford University·Dexterity · 2024-11</p>
+<p class="kv"><span>VA</span><span>Mobile manipulation</span><span>Not disclosed</span><span>diffusion</span></p>
+<p class="sum">Learns a per-task Diffusion Policy from phone teleoperation demonstrations on an omnidirectional (holonomic) powered-caster base, jointly outputting the base target pose and the arm end-effector target.</p>
+<div class="acts"><a class="pri" href="/#m-tidybot">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2412.10447" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.10447" rel="noopener">TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning</a><small>arXiv 2412.10447</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-11</dd><dt>Organization</dt><dd>Princeton University·Stanford University·Dexterity</dd><dt>Open weights</dt><dd>Partial</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>robomimic CNN encoder (ResNet-18†) · base·wrist cameras 84×84</dd><dt>Action head</dt><dd>DDIM diffusion head (100 training · 16 inference steps) (diffusion)</dd><dt>Chunk</dt><dd>executes 8 of 16 horizon steps</dd><dt>Control rate</dt><dd>10 Hz</dd><dt>Architecture (original summary)</dt><dd>Diffusion Policy (U-Net hybrid image, official code settings): robomimic CNN encoder (ResNet-18†) encodes 84×84 base · wrist cameras + base pose · arm state → 1D temporal U-Net, DDIM (100 training · 16 inference steps); 13-dim absolute target actions (base x · y · θ + arm end-effector position · 6D rotation + gripper), horizon 16 · 8 steps executed, 10 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Trained from scratch per task: GPU laptop (README: handles training·inference), 500 epochs (code default batch 64), training time not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>6 tasks: open fridge 100 runs · other 5 tasks 50 runs each (350 total); 1–2 hours to collect 50 runs (incl. resets)</dd><dt>Main datasets</dt><dd>In-house phone teleoperation demonstrations (real apartments)</dd><dt>Tasks &amp; evaluation</dt><dd>6 real apartment tasks, 10 trials each: open fridge 10/10, wipe countertop 9/10, load dishwasher 7/10, take out trash 10/10, load laundry 7/10, water plant 6/10; differential-drive-constrained policy wipe countertop 4/10</dd><dt>Robot</dt><dd>TidyBot++: powered-caster omnidirectional wheeled base (base $5–6k) + Kinova Gen3 7-DoF arm, Intel NUC mini PC</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>GPU laptop inference 115 ms (RTX 4080 Laptop, README), next chunk computed 200 ms ahead to hide latency; policy 10 Hz; real-time control on onboard Intel NUC</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>GPU laptop (RTX 4080 Laptop) inference + onboard Intel NUC control</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning only (per-task Diffusion Policy)</dd><dt>Base control</dt><dd>Wheeled (Direct base velocity/pose output) · Policy outputs base target pose (x, y, θ) together with arm targets → omnidirectional base low-level controller tracks it</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Learns a per-task Diffusion Policy from phone teleoperation demonstrations on an omnidirectional (holonomic) powered-caster base, jointly outputting the base target pose and the arm end-effector target. It succeeded 6/10 to 10/10 on 6 tasks in real apartments, while a differential-drive-constrained policy under the same conditions reached only 4/10 on the mopping task (omnidirectional 9/10).</dd><dt>Notes</dt><dd>Paper describes the policy only as a &#x27;diffusion policy&#x27;; architecture·frequency·latency follow the official GitHub code·README. Hardware design·teleoperation·training·control code open-sourced; weights released only for the sim sim-v1 policy checkpoint (real-task policies not released). Model size·training GPU model·time Not disclosed. Based on: Diffusion Policy: Visuomotor Policy Learning via Action Diffusion (arXiv 2303.04137) — paper·README use Diffusion Policy (real-stanford/diffusion_policy code) as-is for policy training</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/m/gen-1-5/"><small>← Previous</small>GEN-1.5</a><a class="nx" href="/m/momanipvla/"><small>Next →</small>MoManipVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

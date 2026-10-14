@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CARP — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="CARP (Westlake University, 2024-12†) — Converts action sequences into multi-scale tokens and predicts them autoregressively from coarse to fine.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/carp/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/carp/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/carp/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/carp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/carp/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/carp/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="CARP — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="CARP (Westlake University, 2024-12†) — Converts action sequences into multi-scale tokens and predicts them autoregressively from coarse to fine.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/carp/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "CARP — Architecture, Backbone LLM, Training & Inference Memory", "description": "CARP (Westlake University, 2024-12†) — Converts action sequences into multi-scale tokens and predicts them autoregressively from coarse to fine.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/carp/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "CARP", "creator": {"@type": "Organization", "name": "Westlake University; Zhejiang University; Beijing Advanced Innovation Center for Future Blockchain and Privacy Computing"}}, "citation": {"@type": "ScholarlyArticle", "name": "CARP: Visuomotor Policy Learning via Coarse-to-Fine Autoregressive Prediction", "url": "https://arxiv.org/abs/2412.06782"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "CARP", "item": "https://vla-gallery.is-a.dev/m/carp/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/carp/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/carp/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/carp/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/carp/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / VA</p>
+<h1>CARP</h1>
+<p class="by">Westlake University; Zhejiang University; Beijing Advanced Innovation Center for Future Blockchain and Privacy Computing · 2024-12†</p>
+<p class="kv"><span>VA</span><span>VA</span><span>State-based 0.65M</span><span>discrete tokens</span></p>
+<p class="sum">Converts action sequences into multi-scale tokens and predicts them autoregressively from coarse to fine.</p>
+<div class="acts"><a class="pri" href="/#m-carp">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2412.06782" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.06782" rel="noopener">CARP: Visuomotor Policy Learning via Coarse-to-Fine Autoregressive Prediction</a><small>arXiv 2412.06782</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>VA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-12†</dd><dt>Organization</dt><dd>Westlake University; Zhejiang University; Beijing Advanced Innovation Center for Future Blockchain and Privacy Computing</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>State-based 0.65M (DP-C 65.88M, DP-T 8.97M); image 7.58M; Kitchen 3.88M; multitask 16.08M</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>Not stated</dd><dt>Action head</dt><dd>Multi-scale VQ tokens (coarse-to-fine) (discrete tokens)</dd><dt>Chunk</dt><dd>16 steps</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Multi-scale action VQ-VAE tokenizer (one per action dimension, K=4 scales, 16-step horizon) + GPT-style transformer predicting discrete tokens from coarse to fine scales (cross-entropy)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Multi-task: 1× A100, batch 512, 200 epochs; Square training cost (V100): tokenizer 4.67 GPU-hours (28 min×10) + policy 13.85 GPU-hours</dd><dt>Data type</dt><dd>Simulation·synthetic; real-robot teleoperation</dd><dt>Data scale</dt><dd>Robomimic 200 demos per task; MimicGen 1K trajectories per task; real 50 demos per task</dd><dt>Main datasets</dt><dd>Robomimic; Franka Kitchen; Push-T; MimicGen</dd><dt>Tasks &amp; evaluation</dt><dd>Robomimic Lift·Can·Square (state·image), Kitchen, Push-T; MimicGen 8 tasks (multi-task); real UR5e 2 cup·bowl tasks</dd><dt>Robot</dt><dd>UR5e single arm; simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Measured as the average of 400 action predictions on A100, real robot uses RTX 2060; over 10× faster than DP</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (UR5e single arm·sim)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Converts action sequences into multi-scale tokens and predicts them autoregressively from coarse to fine. Reports inference more than 10× faster than diffusion policies.</dd><dt>Notes</dt><dd>Parameters (B) is the largest multitask 16.08M. Comparison parameters: image DP-C 255.61M, DP-T 9.01M; Kitchen DP-C 66.94M, DP-T 80.42M; multitask TCD 156.11M, SDP 159.85M (correction applied). In the same V100 measurement, DP-C 12.17 and DP-T 10.83 GPU-hours. Tasks specified by a learned 3-dim embedding (no language). v1 publication month could not be confirmed (†).</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/interact/"><small>← Previous</small>InterACT</a><a class="nx" href="/m/dense-policy/"><small>Next →</small>Dense Policy</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning Visual Quadrupedal Loco-Manipulation from Demonstrations — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="Learning Visual Quadrupedal Loco-Manipulation from Demonstrations (Shanghai Qi Zhi Institute, 2024-03) — 前脚1本でパラメータ化されたベジェ軌跡に追従しつつ残り3本の脚で歩行するRL低レベル制御器と、点群ベース…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Learning Visual Quadrupedal Loco-Manipulation from Demonstrations — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="Learning Visual Quadrupedal Loco-Manipulation from Demonstrations (Shanghai Qi Zhi Institute, 2024-03) — 前脚1本でパラメータ化されたベジェ軌跡に追従しつつ残り3本の脚で歩行するRL低レベル制御器と、点群ベース…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Learning Visual Quadrupedal Loco-Manipulation from Demonstrations — 構造・バックボーンLLM・学習・推論メモリ", "description": "Learning Visual Quadrupedal Loco-Manipulation from Demonstrations (Shanghai Qi Zhi Institute, 2024-03) — 前脚1本でパラメータ化されたベジェ軌跡に追従しつつ残り3本の脚で歩行するRL低レベル制御器と、点群ベース…", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Learning Visual Quadrupedal Loco-Manipulation from Demonstrations", "creator": {"@type": "Organization", "name": "Shanghai Qi Zhi Institute·HKUST(GZ)·UC Berkeley·Tsinghua University(IIIS)"}}, "citation": {"@type": "ScholarlyArticle", "name": "Learning Visual Quadrupedal Loco-Manipulation from Demonstrations", "url": "https://arxiv.org/abs/2403.20328"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "Learning Visual Quadrupedal Loco-Manipulation from Demonstrations", "item": "https://vla-gallery.is-a.dev/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / モバイルマニピュレーション</p>
+<h1>Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</h1>
+<p class="by">Shanghai Qi Zhi Institute·HKUST(GZ)·UC Berkeley·Tsinghua University(IIIS) · 2024-03</p>
+<p class="kv"><span>VA</span><span>モバイルマニピュレーション</span><span>非公開</span><span>diffusion</span></p>
+<p class="sum">前脚1本でパラメータ化されたベジェ軌跡に追従しつつ残り3本の脚で歩行するRL低レベル制御器と、点群ベースのDP3 diffusionプランナーが軌跡パラメータを出す階層型の脚操作方策である。</p>
+<div class="acts"><a class="pri" href="/ja/#m-learning-visual-quadrupedal-loco-manipulation-from-demonstrations">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2403.20328" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2403.20328" rel="noopener">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>arXiv 2403.20328</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>モバイルマニピュレーション</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2024-03</dd><dt>機関</dt><dd>Shanghai Qi Zhi Institute·HKUST(GZ)·UC Berkeley·Tsinghua University(IIIS)</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>非公開</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>DP3点群エンコーダ(768点、ワールド座標)</dd><dt>アクションヘッド</dt><dd>DP3 diffusion → ベジェ軌跡パラメータ (diffusion)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>プランナー10 Hz、低レベル50 Hz</dd><dt>構造の原文要約</dt><dd>高レベル: DP3(ワールド座標点群768点+固有受容覚) diffusion → 6次有理ベジエ制御点・重み、開始/終了姿勢(SLERP)、操作脚フラグ、10 Hz / 低レベル: PPO方策(15ステップの固有受容覚履歴) → 脚12関節目標(ローパス+PD) 50 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別シミュレーション学習(IsaacGym): 低レベルPPO 30億タイムステップ、高レベルDP3視覚データ2万タイムステップ; GPU・時間は非公開</dd><dt>データ種類</dt><dd>シミュレーション・合成</dd><dt>データ規模</dt><dd>タスクあたりシミュレーションのエキスパート軌跡100個(各200タイムステップ、約3分で収集); 低レベルRL 30億タイムステップ</dd><dt>主要データセット</dt><dd>独自のシミュレーション専門家軌跡(IsaacGym)</dd><dt>タスク・評価</dt><dd>シミュレーション9タスク(3シード平均): ボタン 92.3%、ドア押し 85.3%、取っ手引き 82.3%、かご持ち上げ 59.3%、バルブ回し 52.3%、食洗機閉め 50.3%、サッカーボール蹴り 26.0%、物体引き 12.7%、食洗機開け 5.7%; 実ロボットは定性デモのみ</dd><dt>ロボット</dt><dd>Unitree Aliengo四足(アームなし、前脚で操作)、RealSense D435深度カメラ + 外部AprilTag位置推定カメラ</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>低レベル50 Hz・プランナー10 Hz、推論ハードウェアは記載なし(拡散推論速度を限界として言及)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>一部 (RL下位制御器との結合) · 高レベルDP3プランナーはBC; 低レベルの足先軌跡追従・3脚歩行制御器はIsaacGym PPO(デモもこの制御器でシミュレーション生成)</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/abs/2403.20328" rel="noopener">https://arxiv.org/abs/2403.20328</a></dd><dt>ベース制御</dt><dd>四足歩行 (指令・潜在 → RL歩行制御器) · DP3プランナがワールド座標の足先軌跡パラメータを出力 → RL制御器が三脚歩行しながら追従(別途ベース速度指令なし)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>前脚1本でパラメータ化されたベジェ軌跡に追従しつつ残り3本の脚で歩行するRL低レベル制御器と、点群ベースのDP3 diffusionプランナーが軌跡パラメータを出す階層型の脚操作方策である。アームなしで脚だけを使い、ボタン押し・ドア押し・移動中のかご持ち上げなどをシミュレーションと実ロボット(Aliengo)で行った。</dd><dt>備考</dt><dd>デモは人のテレオペレーションではなく、設計した専門家軌跡パラメータをRL制御器がシミュレーションで追跡して生成; プランナーはベース速度を直接出さず、ワールド座標の目標(4 m×4 mの範囲で学習)で移動を誘導; 実ロボットの定量結果なし; コード・重み非公開。ベース: 3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (arXiv 2403.03954) — 高レベルプランナーのバックボーンとしてDP3を使用(論文に明記)</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/ja/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/ja/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/ja/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/ja/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/ja/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/ja/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/ja/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/ja/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/ja/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/ja/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/ja/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/ja/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/ja/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/ja/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/roboduet/"><small>← 前のモデル</small>RoboDuet</a><a class="nx" href="/ja/m/omega-0/"><small>次のモデル →</small>ω-0 (OMEGA-0)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

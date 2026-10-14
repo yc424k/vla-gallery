@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SG-VLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="SG-VLA (Lambda, Inc., 2026-03) — ロボットの大域姿勢・関節構成・把持成功・目標物体姿勢・セグメンテーションマスクを復元する補助デコーダをVLAと段階的に共同学習し、空間groundingを強化する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/sg-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/sg-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/sg-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/sg-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/sg-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/sg-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="SG-VLA — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="SG-VLA (Lambda, Inc., 2026-03) — ロボットの大域姿勢・関節構成・把持成功・目標物体姿勢・セグメンテーションマスクを復元する補助デコーダをVLAと段階的に共同学習し、空間groundingを強化する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/sg-vla/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "SG-VLA — 構造・バックボーンLLM・学習・推論メモリ", "description": "SG-VLA (Lambda, Inc., 2026-03) — ロボットの大域姿勢・関節構成・把持成功・目標物体姿勢・セグメンテーションマスクを復元する補助デコーダをVLAと段階的に共同学習し、空間groundingを強化する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/sg-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "SG-VLA", "creator": {"@type": "Organization", "name": "Lambda, Inc.·UC San Diego"}}, "citation": {"@type": "ScholarlyArticle", "name": "SG-VLA: Learning Spatially-Grounded Vision-Language-Action Models for Mobile Manipulation", "url": "https://arxiv.org/abs/2603.22760"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "SG-VLA", "item": "https://vla-gallery.is-a.dev/ja/m/sg-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/sg-vla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/sg-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/sg-vla/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/sg-vla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / モバイルマニピュレーション</p>
+<h1>SG-VLA</h1>
+<p class="by">Lambda, Inc.·UC San Diego · 2026-03</p>
+<p class="kv"><span>VLA</span><span>モバイルマニピュレーション</span><span>1.3B</span><span>離散トークン</span></p>
+<p class="sum">ロボットの大域姿勢・関節構成・把持成功・目標物体姿勢・セグメンテーションマスクを復元する補助デコーダをVLAと段階的に共同学習し、空間groundingを強化する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-sg-vla">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2603.22760" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2603.22760" rel="noopener">SG-VLA: Learning Spatially-Grounded Vision-Language-Action Models for Mobile Manipulation</a><small>arXiv 2603.22760</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>モバイルマニピュレーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2026-03</dd><dt>機関</dt><dd>Lambda, Inc.·UC San Diego</dd><dt>重み公開</dt><dd>未確認</dd><dt>パラメータ</dt><dd>1.3B (Qwen2.5-0.5BベースのPrismatic VLM; 選択式flowエキスパート100Mは別)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen2.5-0.5B · Prismatic VLM構成</dd><dt>ビジョンエンコーダ</dt><dd>DINOv2 + SigLIP (Prismatic; RGB・深度マルチビュー)</dd><dt>アクションヘッド</dt><dd>離散行動トークン + 補助デコーダ5種; 選択式flow matchingエキスパート100M (10ステップ) (離散トークン)</dd><dt>チャンク</dt><dd>非公開(トークン経路) / flowヘッド 8ステップ中2を実行</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>Prismatic VLM(DINOv2 + SigLIP融合エンコーダ、Qwen2.5-0.5B LLM); ヘッド・ハンドのマルチビューRGB・深度・過去4ステップの履歴を入力; 13次元行動(ベース姿勢ΔX 3・トルソ高さ1・腕関節Δq 7・グリッパー2)を離散行動トークンで予測; 選択式flow matchingエキスパート100M(チャンク8のうち2を実行、デノイジング10ステップ); 補助デコーダ5種を共同学習</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし (事前学習Prismatic VLMからタスクデータで直接学習)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>A100 8枚、3段階(デコーダ適応→共同精錬→VLM凍結後にアクションヘッド単独)、6サブ課題 10エポック(分割デコーダモデルはpick・place 5エポック)・グローバルバッチ512・Adam lr 2e-5固定、時間は非公開</dd><dt>データ種類</dt><dd>シミュレーション・合成</dd><dt>データ規模</dt><dd>44Kエピソード・1.4M transition</dd><dt>主要データセット</dt><dd>ManiSkill-HABデータ生成パイプライン(TidyHouse・PrepareGroceries・SetTable)</dd><dt>タスク・評価</dt><dd>ManiSkill-HAB(TidyHouse・PrepareGroceries・SetTable → Pick・Place・Open・Close) タスクあたり30回: 平均0.73(補助タスクなし0.60、単純な共同学習0.51、flowヘッド0.69; OpenVLA 0.04、マルチビュー+深度OpenVLA 0.32); 実ロボット実験なし</dd><dt>ロボット</dt><dd>ManiSkill-HABシミュレーションのモバイルマニピュレータ(MS-HABではFetch; SG-VLA論文はロボット名記載なし)、ベース・トルソ・7関節アーム・グリッパーの13次元制御</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>2.6 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>一部 (RLデータの活用) · 学習データをManiSkill-HAB生成パイプライン(RL方策デモ + ルールベースフィルタリング)で生成; 方策自体は模倣学習</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/abs/2412.13211" rel="noopener">https://arxiv.org/abs/2412.13211</a></dd><dt>ベース制御</dt><dd>車輪型 (ベース速度・姿勢を直接出力) · 方策がベース姿勢変化(ΔX 3次元)を胴体・アーム・グリッパと共に13次元行動として直接出力(シミュレーション)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>ロボットの大域姿勢・関節構成・把持成功・目標物体姿勢・セグメンテーションマスクを復元する補助デコーダをVLAと段階的に共同学習し、空間groundingを強化する。ManiSkill-HAB家庭タスクの平均成功率0.73で、補助タスクのないマルチビュー・深度モデル(0.60)より22%高く、OpenVLA(0.04)を大きく上回った。</dd><dt>備考</dt><dd>シミュレーションのみ(結論で実世界への適用を今後の課題として言及)。論文にコード・重み公開の言及がなく、検索でもリポジトリは見つからず。履歴長の表記が&#x27;4 timesteps&#x27;と&#x27;4 actions&#x27;で混在。学習時間・推論速度は非公開。計算資源はLambdaの支援。ベース: Prismatic VLMs: Investigating the Design Space of Visually-Conditioned Language Models (arXiv 2402.07865) — 事前学習済みPrismatic VLMをバックボーンとして使用</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/ja/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/ja/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/ja/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/ja/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/ja/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/ja/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/ja/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/ja/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/ja/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/ja/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/ja/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/ja/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/ja/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/ja/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/ac-dit/"><small>← 前のモデル</small>AC-DiT</a><a class="nx" href="/ja/m/panovla/"><small>次のモデル →</small>PanoVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

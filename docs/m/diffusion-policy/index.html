@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diffusion Policy (CNN) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Diffusion Policy (CNN) (Columbia University, 2023-03) — Policy that generates action sequences by diffusion denoising to handle multimodal action distributio…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/diffusion-policy/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/diffusion-policy/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/diffusion-policy/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/diffusion-policy/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/diffusion-policy/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/diffusion-policy/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Diffusion Policy (CNN) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Diffusion Policy (CNN) (Columbia University, 2023-03) — Policy that generates action sequences by diffusion denoising to handle multimodal action distributio…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/diffusion-policy/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Diffusion Policy (CNN) — Architecture, Backbone LLM, Training & Inference Memory", "description": "Diffusion Policy (CNN) (Columbia University, 2023-03) — Policy that generates action sequences by diffusion denoising to handle multimodal action distributio…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/diffusion-policy/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Diffusion Policy (CNN)", "creator": {"@type": "Organization", "name": "Columbia University; Toyota Research Institute; MIT; Stanford University"}}, "citation": {"@type": "ScholarlyArticle", "name": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion", "url": "https://arxiv.org/abs/2303.04137"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Diffusion Policy (CNN)", "item": "https://vla-gallery.is-a.dev/m/diffusion-policy/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/diffusion-policy/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/diffusion-policy/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/diffusion-policy/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/diffusion-policy/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Reference baselines (pre-2024)</p>
+<h1>Diffusion Policy (CNN)</h1>
+<p class="by">Columbia University; Toyota Research Institute; MIT; Stanford University · 2023-03</p>
+<p class="kv"><span>VA</span><span>Reference baselines (pre-2024)</span><span>Denoiser 256M</span><span>diffusion</span></p>
+<p class="sum">Policy that generates action sequences by diffusion denoising to handle multimodal action distributions.</p>
+<div class="acts"><a class="pri" href="/#m-diffusion-policy">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2303.04137" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2303.04137" rel="noopener">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</a><small>arXiv 2303.04137</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Reference baselines (pre-2024)</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2023-03</dd><dt>Organization</dt><dd>Columbia University; Toyota Research Institute; MIT; Stanford University</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Denoiser 256M (sim, Transport 264M)·67M (real tasks) + vision encoder 22M (Transport 45M, state-based 0)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>ResNet-18</dd><dt>Action head</dt><dd>1D CNN U-Net diffusion (DDIM 10–16 steps) (diffusion)</dd><dt>Chunk</dt><dd>Predict 16 · execute 8</dd><dt>Control rate</dt><dd>10 Hz</dd><dt>Architecture (original summary)</dt><dd>ResNet-18 (no pretraining, spatial softmax, GroupNorm) + FiLM-conditioned 1D temporal CNN U-Net; DDPM action sequence generation (To 2, Ta 8, Tp 16), 100 training steps·DDIM 10–16 inference steps, real 10 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Per task: training GPU Not disclosed (paper·README); 3000 epochs image·4500 state, batch 64 (image)·256 (state), lr 1e-4, warmup 500; real Push-T fixed 12 hours per method; (secondary) re-measured in CARP paper: V100 12.17 GPU-hours (state-based Square, 200 trajectories)</dd><dt>Data type</dt><dd>Simulation·synthetic; real-robot teleoperation</dd><dt>Data scale</dt><dd>Robomimic 200 (proficient)·300 (mixed) demos per task, Push-T 200, Block Push 1,000 (scripted), Kitchen 566; real Push-T 136, source task 50 (90% train), Egg Beater 210, Mat Unrolling 162, Shirt Folding 284; Mug Flipping not disclosed†</dd><dt>Main datasets</dt><dd>Robomimic; Push-T; Block Push; Franka Kitchen; in-house real demos</dd><dt>Tasks &amp; evaluation</dt><dd>Robomimic Lift·Can·Square·Transport·ToolHang, Push-T, Block Push, Franka Kitchen; real Push-T (UR5), Mug Flipping, Sauce Pouring·Spreading (Franka), bimanual Egg Beater·Mat Unrolling·Shirt Folding (Franka)</dd><dt>Robot</dt><dd>UR5 (real Push-T); Franka (2 source tasks, 3 bimanual tasks); Mug Flipping robot not specified in notes</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>0.1 s (RTX 3080, DDIM 10 steps)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0.6 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (diffusion behavior cloning)</dd><dt>Base control</dt><dd>Fixed · No base control (UR5·Franka arms)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Policy that generates action sequences by diffusion denoising to handle multimodal action distributions. Many 2024–2025 VA papers use it as a standard comparison baseline.</dd><dt>Notes</dt><dd>Parameters (B) is the sum of #D 264M + #V 45M for the largest setting, Transport (listed separately in the paper). All real-task rows are #D 67M, #V 22M. Sim checkpoints released in the training log folder. Journal version v5 (2024-03) added bimanual tasks. Stanford added to affiliations (correction applied).</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rt-1/">RT-1</a><small>2022-12</small></li><li><a href="/m/rt-2/">RT-2</a><small>2023-07</small></li><li><a href="/m/rt-1-x/">RT-1-X</a><small>2023-10</small></li><li><a href="/m/rt-2-x/">RT-2-X</a><small>2023-10</small></li><li><a href="/m/act/">ACT</a><small>2023-04</small></li><li><a href="/m/diffusion-policy-2/">Diffusion Policy (Transformer)</a><small>2023-03</small></li><li><a href="/m/gr-1/">GR-1</a><small>2023-12</small></li></ul></section>
+<nav class="pn"><a href="/m/act/"><small>← Previous</small>ACT</a><a class="nx" href="/m/diffusion-policy-2/"><small>Next →</small>Diffusion Policy (Transformer)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

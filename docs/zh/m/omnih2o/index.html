@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniH2O — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="OmniH2O (Carnegie Mellon University, 2024-06) — 既是用VR·RGB关键点遥操作全身的追踪器，也是用所采集演示训练自主策略的平台。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/omnih2o/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/omnih2o/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/omnih2o/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/omnih2o/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/omnih2o/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/omnih2o/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="OmniH2O — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="OmniH2O (Carnegie Mellon University, 2024-06) — 既是用VR·RGB关键点遥操作全身的追踪器，也是用所采集演示训练自主策略的平台。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/omnih2o/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "OmniH2O — 架构、骨干LLM、训练与推理内存", "description": "OmniH2O (Carnegie Mellon University, 2024-06) — 既是用VR·RGB关键点遥操作全身的追踪器，也是用所采集演示训练自主策略的平台。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/omnih2o/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "OmniH2O", "creator": {"@type": "Organization", "name": "Carnegie Mellon University·Shanghai Jiao Tong University"}}, "citation": {"@type": "ScholarlyArticle", "name": "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning", "url": "https://arxiv.org/abs/2406.08858"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "OmniH2O", "item": "https://vla-gallery.is-a.dev/zh/m/omnih2o/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/omnih2o/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/omnih2o/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/omnih2o/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/omnih2o/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 人形机器人全身控制器</p>
+<h1>OmniH2O</h1>
+<p class="by">Carnegie Mellon University·Shanghai Jiao Tong University · 2024-06</p>
+<p class="kv"><span>VA</span><span>人形机器人全身控制器</span><span>未公开</span><span>RL策略</span></p>
+<p class="sum">既是用VR·RGB关键点遥操作全身的追踪器，也是用所采集演示训练自主策略的平台。</p>
+<div class="acts"><a class="pri" href="/zh/#m-omnih2o">在图库中查看架构图</a><a href="https://arxiv.org/abs/2406.08858" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2406.08858" rel="noopener">OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning</a><small>arXiv 2406.08858</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>人形机器人全身控制器</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2024-06</dd><dt>机构</dt><dd>Carnegie Mellon University·Shanghai Jiao Tong University</dd><dt>权重公开</dt><dd>未核实</dd><dt>参数</dt><dd>未公开 (MLP [512, 256, 128])</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>关节目标 (RL策略)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>50 Hz (PD 200 Hz)</dd><dt>架构原文摘要</dt><dd>MLP [512, 256, 128](实验了GRU·LSTM学生变体),学生25步历史;VR或RGB关键点输入 → 关节目标,策略50 Hz·PD 200 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开 (Isaac Gym preview 4，repo)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>4096 env (repo训练命令)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>不适用</dd><dt>数据类型</dt><dd>动作捕捉 / 实机遥操作</dd><dt>数据规模</dt><dd>重定向·增强AMASS 14k序列（仿真评估集）；OmniH2O-6 真实遥操作演示共40分钟（每任务8,535~18,436帧）</dd><dt>主要数据集</dt><dd>AMASS(重定向·增强)，OmniH2O-6</dd><dt>任务·评估</dt><dd>仿真跟踪指标；真实自主6项任务(OmniH2O-6，Diffusion Policy·ResNet BC)</dd><dt>机器人</dt><dd>Unitree H1 + 手</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>策略50 Hz，PD控制器200 Hz</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>使用 (RL控制器训练) · RL教师(特权信息) → DAgger学生蒸馏</dd><dt>底盘控制</dt><dd>人形双足 (RL策略直接驱动) · 全身RL策略接收关键点·摇杆目标，输出含腿部在内的关节目标 (摇杆前后行走，&#x27;Walk forward 0.5m&#x27;)</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>既是用VR·RGB关键点遥操作全身的追踪器，也是用所采集演示训练自主策略的平台。还展示了接入GPT-4o的自主动作。</dd><dt>备注</dt><dd>README命令中还有short_history_length 0/5/50变体。代码CC BY-NC 4.0,检查点未核实。arXiv v1 2024-06-13, CoRL 2024。数据时长以分钟计(40分钟),故为null。核验仅针对repo值(Isaac Gym·env·许可证·历史)。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/zh/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/zh/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/zh/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/zh/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/zh/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/zh/m/hover/">HOVER</a><small>2024-10</small></li><li><a href="/zh/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/zh/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/zh/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/zh/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/zh/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/zh/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/zh/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/zh/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/zh/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/zh/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/leverb-a/"><small>← 上一个</small>LeVERB-A</a><a class="nx" href="/zh/m/hover/"><small>下一个 →</small>HOVER</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

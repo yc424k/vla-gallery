@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLN-R1 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="VLN-R1 (The University of Hong Kong, 2025-06) — Applies SFT to a general VLM (Qwen2-VL) for egocentric-video-based VLN, then improves multi-step action predi…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/vln-r1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vln-r1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vln-r1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vln-r1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vln-r1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vln-r1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="VLN-R1 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="VLN-R1 (The University of Hong Kong, 2025-06) — Applies SFT to a general VLM (Qwen2-VL) for egocentric-video-based VLN, then improves multi-step action predi…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/vln-r1/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "VLN-R1 — Architecture, Backbone LLM, Training & Inference Memory", "description": "VLN-R1 (The University of Hong Kong, 2025-06) — Applies SFT to a general VLM (Qwen2-VL) for egocentric-video-based VLN, then improves multi-step action predi…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/vln-r1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "VLN-R1", "creator": {"@type": "Organization", "name": "The University of Hong Kong·Shanghai AI Laboratory"}}, "citation": {"@type": "ScholarlyArticle", "name": "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning", "url": "https://arxiv.org/abs/2506.17221"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "VLN-R1", "item": "https://vla-gallery.is-a.dev/m/vln-r1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vln-r1/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vln-r1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vln-r1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vln-r1/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Navigation</p>
+<h1>VLN-R1</h1>
+<p class="by">The University of Hong Kong·Shanghai AI Laboratory · 2025-06</p>
+<p class="kv"><span>VLA</span><span>Navigation</span><span>2B / 7B</span><span>discrete tokens</span></p>
+<p class="sum">Applies SFT to a general VLM (Qwen2-VL) for egocentric-video-based VLN, then improves multi-step action prediction via GRPO reinforcement fine-tuning (RFT) with a time-decayed reward (TDR).</p>
+<div class="acts"><a class="pri" href="/#m-vln-r1">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2506.17221" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.17221" rel="noopener">VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning</a><small>arXiv 2506.17221</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Navigation</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-06</dd><dt>Organization</dt><dd>The University of Hong Kong·Shanghai AI Laboratory</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>2B / 7B (Qwen2-VL-2B·7B)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Qwen2-VL-7B / 2B (built-in LLM name not stated)</dd><dt>Vision encoder</dt><dd>Qwen2-VL built-in vision encoder (details not stated)</dd><dt>Action head</dt><dd>Text of the next 6 discrete actions (option letter + description) (discrete tokens)</dd><dt>Chunk</dt><dd>6 actions</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Full fine-tuning of Qwen2-VL-2B/7B; first-person video (16 images per instance, up to 65,536 pixels, about 4.1K tokens) + instruction input; outputs the next 6 discrete actions as option letter+description text (FORWARD·TURN-LEFT·TURN-RIGHT·STOP, e.g. &#x27;C. Turn right 30 degrees&#x27;)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>8 × A800 (7B SFT, DeepSpeed ZeRO-3)</dd><dt>Pretraining duration</dt><dd>36 hours (SFT 1 epoch)</dd><dt>Pretraining steps &amp; batch</dt><dd>SFT 1 epoch · global batch 64 (2 per GPU × 4 accumulation, lr 5e-6)</dd><dt>GPU/TPU-hours</dt><dd>288 (Converted · 8× A800 × 36 hours (7B SFT 1 epoch))</dd><dt>Fine-tuning</dt><dd>RFT (GRPO): about 12 hours per epoch (epoch count not stated), lr 1e-6, 8 samples per prompt, KL β 0.04, batch 1 per GPU, 20K samples (7B on 8 A800 setup)</dd><dt>Data type</dt><dd>Simulation·synthetic</dd><dt>Data scale</dt><dd>VLN-Ego: R2R 630K + RxR 1.2M training samples (SFT 1.8M); RFT 10K per dataset, 20K total</dd><dt>Main datasets</dt><dd>VLN-Ego (generated from Habitat·MP3D; based on R2R 7,189 paths·RxR 42,023 trajectories)</dd><dt>Tasks &amp; evaluation</dt><dd>R2R-CE val-unseen SR 30.2%·SPL 21.8% (7B), SR 25.6%·SPL 20.5% (2B); RxR-CE SR 22.3% (7B)·21.4% (2B); cross-domain (R2R SFT→RxR RFT) RxR SR 22.7% (7B)</dd><dt>Robot</dt><dd>No real robot (Habitat sim agent)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed (Habitat sim evaluation only)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>14 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (VLA RL post-training) · GRPO-based RFT stage after SFT (multi-step action reward with Time-Decayed Reward)</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/abs/2506.17221" rel="noopener">https://arxiv.org/abs/2506.17221</a></dd><dt>Base control</dt><dd>Sim only (Discrete motion actions) · No real robot: a Habitat VLN-CE sim agent executes discrete actions (forward·turn·stop)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Applies SFT to a general VLM (Qwen2-VL) for egocentric-video-based VLN, then improves multi-step action prediction via GRPO reinforcement fine-tuning (RFT) with a time-decayed reward (TDR). The 2B model after RFT outperformed a 7B model with SFT only, showing the effect of RL post-training even for small VLMs.</dd><dt>Notes</dt><dd>Weights not released (only VLN-Ego training data·data generation code released; SFT·RFT·evaluation code in preparation); 2B training hardware not stated; some figures inconsistent across tables (Table 1 vs Table 3); no real-robot experiments (stated as a limitation).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/m/trackvla/"><small>← Previous</small>TrackVLA</a><a class="nx" href="/m/abot-n0/"><small>Next →</small>ABot-N0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

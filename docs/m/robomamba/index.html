@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoboMamba — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="RoboMamba (Peking University, 2024-06) — VLA that uses a Mamba state-space model as the LLM instead of a transformer.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/robomamba/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/robomamba/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/robomamba/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/robomamba/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/robomamba/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/robomamba/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RoboMamba — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="RoboMamba (Peking University, 2024-06) — VLA that uses a Mamba state-space model as the LLM instead of a transformer.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/robomamba/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RoboMamba — Architecture, Backbone LLM, Training & Inference Memory", "description": "RoboMamba (Peking University, 2024-06) — VLA that uses a Mamba state-space model as the LLM instead of a transformer.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/robomamba/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "RoboMamba", "creator": {"@type": "Organization", "name": "Peking University·AI²Robotics·BAAI"}}, "citation": {"@type": "ScholarlyArticle", "name": "RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation", "url": "https://arxiv.org/abs/2406.04339"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "RoboMamba", "item": "https://vla-gallery.is-a.dev/m/robomamba/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/robomamba/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/robomamba/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/robomamba/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/robomamba/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>RoboMamba</h1>
+<p class="by">Peking University·AI²Robotics·BAAI · 2024-06</p>
+<p class="kv"><span>VLA</span><span>Autoregressive &amp; latent-action VLA</span><span>Mamba 2.8B/1.4B + ViT-L</span><span>regression</span></p>
+<p class="sum">VLA that uses a Mamba state-space model as the LLM instead of a transformer.</p>
+<div class="acts"><a class="pri" href="/#m-robomamba">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2406.04339" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2406.04339" rel="noopener">RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation</a><small>arXiv 2406.04339</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2024-06</dd><dt>Organization</dt><dd>Peking University·AI²Robotics·BAAI</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Mamba 2.8B/1.4B + ViT-L; policy head 3.7M (0.1% of total)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Mamba 2.8B (SSM)</dd><dt>Vision encoder</dt><dd>CLIP/SigLIP ViT-L</dd><dt>Action head</dt><dd>MLP pose regression (3.7M) (regression)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Mamba SSM LLM 2.8B/1.4B + CLIP/SigLIP ViT-Large; continuous SE(3) end-effector pose via MLP pose regression head (3.7M), no action tokens</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>NVIDIA A100 (count not disclosed)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Alignment 1 epoch (LLaVA-LCS 558K); co-training 2 epochs (LLaVA mixture 655K + RoboVQA 300K)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>A100 (count not disclosed), 8 epochs (10K SAPIEN images), &#x27;a few dozen minutes&#x27;</dd><dt>Data type</dt><dd>Web vision-language + robot VQA + simulation·synthetic</dd><dt>Data scale</dt><dd>LLaVA-LCS 558K + LLaVA mix 655K + RoboVQA 300K; SAPIEN 10K images</dd><dt>Main datasets</dt><dd>LLaVA-LCS 558K, LLaVA mix, RoboVQA, SAPIEN</dd><dt>Tasks &amp; evaluation</dt><dd>SAPIEN manipulation seen 63.3%·unseen 53%; RoboVQA</dd><dt>Robot</dt><dd>SAPIEN simulation, real robot (model not stated)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>3× faster than prior VLAs (absolute Hz Not stated)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>5.6 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (arm EE pose regression)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>VLA that uses a Mamba state-space model as the LLM instead of a transformer. Manipulation fine-tuning takes tens of minutes, and it reports 3× faster inference than existing VLAs.</dd><dt>Notes</dt><dd>A reference row for non-transformer comparison. Parameters (B) refer to the largest Mamba LLM (2.8B), excluding ViT-L. Whether the repository·weights are released could not be confirmed†.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/octo/">Octo</a><small>2023-12</small></li><li><a href="/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li></ul></section>
+<nav class="pn"><a href="/m/vla-adapter/"><small>← Previous</small>VLA-Adapter</a><a class="nx" href="/m/pi0/"><small>Next →</small>π0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

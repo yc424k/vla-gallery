@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RISE — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="RISE (Shanghai Noematrix Intelligence Technology, 2024-04) — 用稀疏3D卷积编码单视角点云，经Transformer和扩散头输出动作。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/rise/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rise/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rise/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rise/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rise/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rise/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RISE — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="RISE (Shanghai Noematrix Intelligence Technology, 2024-04) — 用稀疏3D卷积编码单视角点云，经Transformer和扩散头输出动作。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/rise/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RISE — 架构、骨干LLM、训练与推理内存", "description": "RISE (Shanghai Noematrix Intelligence Technology, 2024-04) — 用稀疏3D卷积编码单视角点云，经Transformer和扩散头输出动作。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/rise/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "RISE", "creator": {"@type": "Organization", "name": "Shanghai Noematrix Intelligence Technology; Shanghai Jiao Tong University"}}, "citation": {"@type": "ScholarlyArticle", "name": "RISE: 3D Perception Makes Real-World Robot Imitation Simple and Effective", "url": "https://arxiv.org/abs/2404.12281"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "RISE", "item": "https://vla-gallery.is-a.dev/zh/m/rise/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rise/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rise/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rise/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rise/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / VA</p>
+<h1>RISE</h1>
+<p class="by">Shanghai Noematrix Intelligence Technology; Shanghai Jiao Tong University · 2024-04</p>
+<p class="kv"><span>VA</span><span>VA</span><span>未公开</span><span>diffusion</span></p>
+<p class="sum">用稀疏3D卷积编码单视角点云，经Transformer和扩散头输出动作。</p>
+<div class="acts"><a class="pri" href="/zh/#m-rise">在图库中查看架构图</a><a href="https://arxiv.org/abs/2404.12281" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2404.12281" rel="noopener">RISE: 3D Perception Makes Real-World Robot Imitation Simple and Effective</a><small>arXiv 2404.12281</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>VA</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2024-04</dd><dt>机构</dt><dd>Shanghai Noematrix Intelligence Technology; Shanghai Jiao Tong University</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>未公开</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>稀疏3D编码器 (MinkowskiEngine)</dd><dt>动作头</dt><dd>CNN扩散头 (推理20步) (diffusion)</dd><dt>动作块</dt><dd>20步</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>MinkowskiEngine稀疏3D编码器(体素5mm,单个RGB-D点云) + Transformer(编码器4·解码器1,d_model 512,d_ff 2048) + CNN扩散头(训练100·推理20步);动作时域20</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：A100 2张，批量 240，lr 3e-4，warmup 2000 步；时间·epoch未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>每项任务50条演示</dd><dt>主要数据集</dt><dd>自有Flexiv遥操作</dd><dt>任务·评估</dt><dd>Collect Cups、Collect Pens、Pour Balls、Push Block、Push Ball、Stack Blocks；对比ACT、Diffusion Policy、Act3D、DP3</dd><dt>机器人</dt><dd>Flexiv Rizon机械臂 + Dahuan AG-95夹爪</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>Intel i9-10900K + RTX 3090工作站;延迟未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅使用模仿学习（行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（Flexiv机械臂）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>用稀疏3D卷积编码单视角点云，经Transformer和扩散头输出动作。以每个任务50条演示与ACT·DP·Act3D·DP3进行了比较。</dd><dt>备注</dt><dd>稀疏卷积·Transformer·CNN扩散头的混合结构。后续RISE-2于2025-05公开(README)，未做分析。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/zh/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/zh/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/zh/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/zh/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/zh/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/zh/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/zh/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/zh/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/zh/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/zh/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/zh/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/zh/m/carp/">CARP</a><small>2024-12†</small></li><li><a href="/zh/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/zh/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/zh/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/data-scaling-laws/"><small>← 上一个</small>Data Scaling Laws</a><a class="nx" href="/zh/m/robot-utility-models/"><small>下一个 →</small>Robot Utility Models (RUM)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

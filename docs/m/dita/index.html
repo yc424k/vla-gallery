@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dita — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Dita (Shanghai AI Lab, Zhejiang University, CUHK MMLab, Peking University, SenseTime Research, Tsinghua University, HKISI/CAS, 2024-10†) — Performs diffusion…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/dita/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/dita/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/dita/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/dita/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/dita/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/dita/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Dita — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Dita (Shanghai AI Lab, Zhejiang University, CUHK MMLab, Peking University, SenseTime Research, Tsinghua University, HKISI/CAS, 2024-10†) — Performs diffusion…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/dita/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Dita — Architecture, Backbone LLM, Training & Inference Memory", "description": "Dita (Shanghai AI Lab, Zhejiang University, CUHK MMLab, Peking University, SenseTime Research, Tsinghua University, HKISI/CAS, 2024-10†) — Performs diffusion…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/dita/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Dita", "creator": {"@type": "Organization", "name": "Shanghai AI Lab, Zhejiang University, CUHK MMLab, Peking University, SenseTime Research, Tsinghua University, HKISI/CAS"}}, "citation": {"@type": "ScholarlyArticle", "name": "Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy", "url": "https://arxiv.org/abs/2503.19757"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Dita", "item": "https://vla-gallery.is-a.dev/m/dita/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/dita/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/dita/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/dita/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/dita/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
+<h1>Dita</h1>
+<p class="by">Shanghai AI Lab, Zhejiang University, CUHK MMLab, Peking University, SenseTime Research, Tsinghua University, HKISI/CAS · 2024-10†</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>334M</span><span>diffusion</span></p>
+<p class="sum">Performs diffusion denoising with in-context conditioning that puts language·image·timestep·noisy action tokens in one causal transformer sequence.</p>
+<div class="acts"><a class="pri" href="/#m-dita">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2503.19757" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2503.19757" rel="noopener">Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy</a><small>arXiv 2503.19757</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Flow·Diffusion VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2024-10†</dd><dt>Organization</dt><dd>Shanghai AI Lab, Zhejiang University, CUHK MMLab, Peking University, SenseTime Research, Tsinghua University, HKISI/CAS</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>334M (221M trainable); about 11M trained with LoRA</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None (CLIP text encoder)</dd><dt>Vision encoder</dt><dd>DINOv2 + Q-Former</dd><dt>Action head</dt><dd>in-context diffusion denoising (DDIM 10) (diffusion)</dd><dt>Chunk</dt><dd>16 steps</dd><dt>Control rate</dt><dd>3 Hz (real robot)</dd><dt>Architecture (original summary)</dt><dd>No LLM: frozen CLIP text + DINOv2 + Q-Former (depth 4) + causal transformer (12 blocks, hidden 768); in-context diffusion denoising (DDPM 1000 for training, DDIM 20→10 steps), 2-frame observation→16-step chunk, 3 Hz on real robot</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>A100×32 (4 nodes × 8)</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>100,000 steps, batch 8192 (256 per GPU), AdamW, lr 1e-4 (transformer · Q-Former)/1e-5 (DINOv2)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>LIBERO A100×8·batch 512·100K steps; CALVIN A100×4·batch 128·15 epochs; ManiSkill2 A100×16·batch 1024·50K steps; Franka 10-shot LoRA 20K steps·batch 512 (GPU not disclosed); all times not disclosed</dd><dt>Data type</dt><dd>Real-robot teleoperation + simulation (40K+ self-generated ManiSkill2 trajectories, for fine-tuning·evaluation)</dd><dt>Data scale</dt><dd>OXE (oxe_magic_soup_plus, trajectory count not disclosed); 10 samples per real-robot task</dd><dt>Main datasets</dt><dd>Open X-Embodiment, DROID (separate pretrained version)</dd><dt>Tasks &amp; evaluation</dt><dd>SimplerEnv coke can 0.837/0.855, move near 0.760/0.730, drawer 0.463/0.375; LIBERO 84.2/96.3/85.4/63.8, average 82.4%; CALVIN ABC→D 3.61; ManiSkill2; Franka 10-shot real robot (2-stage task 63.8%)</dd><dt>Robot</dt><dd>Franka (single arm); simulation</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Deployment server 1× A100; latency Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0.7 GB</dd><dt>Where it runs</dt><dd>Remote server (A100)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning (behavior cloning) only</dd><dt>Base control</dt><dd>Fixed · No base control (Franka single arm)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Performs diffusion denoising with in-context conditioning that puts language·image·timestep·noisy action tokens in one causal transformer sequence. At 334M, after OXE pretraining it adapted on Franka with 10 samples per task.</dd><dt>Notes</dt><dd>Release month based on the earlier version arXiv 2410.15959 (submission-date line could not be confirmed†); this version 2503.19757 v1 is 2025-03-25. Affiliation corrected from the notes&#x27; RoboDita team to page 1 of the paper. ManiSkill2 per-task figures excluded due to extraction mismatch.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/m/hybridvla/"><small>← Previous</small>HybridVLA</a><a class="nx" href="/m/smolvla/"><small>Next →</small>SmolVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

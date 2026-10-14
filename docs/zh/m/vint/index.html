@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ViNT — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="ViNT (UC Berkeley, 2023-06) — 用扩展GNM数据混合的多机器人行驶数据训练31M Transformer策略，并将目标token替换为面向GPS坐标·路线指令等其他目标模态的soft prompt来适配。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/vint/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vint/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vint/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vint/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vint/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vint/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ViNT — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="ViNT (UC Berkeley, 2023-06) — 用扩展GNM数据混合的多机器人行驶数据训练31M Transformer策略，并将目标token替换为面向GPS坐标·路线指令等其他目标模态的soft prompt来适配。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/vint/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ViNT — 架构、骨干LLM、训练与推理内存", "description": "ViNT (UC Berkeley, 2023-06) — 用扩展GNM数据混合的多机器人行驶数据训练31M Transformer策略，并将目标token替换为面向GPS坐标·路线指令等其他目标模态的soft prompt来适配。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/vint/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "ViNT", "creator": {"@type": "Organization", "name": "UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "ViNT: A Foundation Model for Visual Navigation", "url": "https://arxiv.org/abs/2306.14846"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "ViNT", "item": "https://vla-gallery.is-a.dev/zh/m/vint/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vint/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vint/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vint/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vint/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>ViNT</h1>
+<p class="by">UC Berkeley · 2023-06</p>
+<p class="kv"><span>VA</span><span>导航</span><span>31M</span><span>回归</span></p>
+<p class="sum">用扩展GNM数据混合的多机器人行驶数据训练31M Transformer策略，并将目标token替换为面向GPS坐标·路线指令等其他目标模态的soft prompt来适配。</p>
+<div class="acts"><a class="pri" href="/zh/#m-vint">在图库中查看架构图</a><a href="https://arxiv.org/abs/2306.14846" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2306.14846" rel="noopener">ViNT: A Foundation Model for Visual Navigation</a><small>arXiv 2306.14846</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2023-06</dd><dt>机构</dt><dd>UC Berkeley</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>31M (策略；扩散subgoal模型318M另计)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>EfficientNet-B0 (观测 / 观测+目标early fusion)</dd><dt>动作头</dt><dd>航点5个 + 时间距离MLP回归 (回归)</dd><dt>动作块</dt><dd>航点5个</dd><dt>控制频率</dt><dd>4 Hz</dd><dt>架构原文摘要</dt><dd>EfficientNet-B0观测编码器 + 观测·目标通道拼接(early fusion)目标编码器 → 解码器式Transformer 4层·4头(512维，过去5+当前观测token + 目标token) → MLP：5个相对航点 + 时间距离；85×64 RGB；以4 Hz执行·PD跟踪；探索时318M图像扩散模型提出subgoal + 拓扑图</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>V100 8张 (表6，代表配置)；扩散模型TPU v4-8板</dd><dt>预训练时长</dt><dd>30小时 (策略)；扩散模型30小时</dd><dt>预训练步数·批量</dt><dd>30个epoch · 批量300 (策略)；扩散250k步 · 批量128</dd><dt>GPU·TPU-小时</dt><dd>240 (换算 · V100 8张 × 30小时 (表6&#x27;代表性配置&#x27;脚注；扩散模型TPU v4-8 × 30小时另计))</dd><dt>微调</dt><dd>适应新环境·embodiment·目标模态(GPS·路径指令)：lr 1e-4·5 epoch，约1小时数据；GPU·时长未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作 / 真实机器人自主行驶日志</dd><dt>数据规模</dt><dd>表7：数据集11个共160h中训练使用80h；机器人平台8种(正文)</dd><dt>主要数据集</dt><dd>RECON; GoStanford; SCAND; TartanDrive; NeBula; SACSoN; BDD; CoryHall; Berkeley; Seattle</dd><dt>任务·评估</dt><dd>无方向目标到达成功率 室内 0.94·室外 1.00（End-to-End BC 0.72·0.44）；卫星引导搜索成功 1.00·SPL 0.94（ViKiNG 0.77·0.68）；适应成功率 图像 0.82·位置 0.89·路径指令 0.72</dd><dt>机器人</dt><dd>Vizbot·LoCoBot·Clearpath Jackal轮式，Unitree Go1四足 (正文提及含无人机共5种)；Go1·LoCoBot不在训练数据中</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>以4 Hz运行，PD控制器跟踪航点 (论文)；README部署示例LoCoBot + Jetson Orin Nano；延迟未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0.1 GB</dd><dt>运行位置</dt><dd>机载Jetson Orin Nano (LoCoBot，README)</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅最大似然模仿学习 (RL仅出现在基线中)</dd><dt>底盘控制</dt><dd>轮式·四足 (航点 → 跟踪控制器) · 策略输出5个航点 → PD控制器以4 Hz跟踪生成速度指令；机器人只需底层速度跟踪控制器</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>用扩展GNM数据混合的多机器人行驶数据训练31M Transformer策略，并将目标token替换为面向GPS坐标·路线指令等其他目标模态的soft prompt来适配。结合扩散subgoal提议与图搜索完成公里级探索，在训练数据中未出现的Go1四足·LoCoBot上也能零样本运行。</dd><dt>备注</dt><dd>脚注说明表6训练资源为&#x27;代表性配置&#x27;，实际使用了多种GPU配置。数据规模表述不一(摘要&#x27;hundreds of hours&#x27;，正文100小时以上，表7说明150小时以上，合计160h/使用80h)。公开的vint.yaml为100 epoch·批量256，与论文不同。权重在Google Drive公开。CoRL 2023。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/zh/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/gnm/"><small>← 上一个</small>GNM</a><a class="nx" href="/zh/m/nomad/"><small>下一个 →</small>NoMaD</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

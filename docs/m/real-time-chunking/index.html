@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real-Time Chunking (추론시 RTC) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Real-Time Chunking (추론시 RTC) (Physical Intelligence, UC Berkeley, 2025-06) — Inference technique applied to diffusion/flow VLAs without retraining; inpaints…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/real-time-chunking/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/real-time-chunking/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/real-time-chunking/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/real-time-chunking/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/real-time-chunking/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/real-time-chunking/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Real-Time Chunking (추론시 RTC) — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Real-Time Chunking (추론시 RTC) (Physical Intelligence, UC Berkeley, 2025-06) — Inference technique applied to diffusion/flow VLAs without retraining; inpaints…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/real-time-chunking/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Real-Time Chunking (추론시 RTC) — Architecture, Backbone LLM, Training & Inference Memory", "description": "Real-Time Chunking (추론시 RTC) (Physical Intelligence, UC Berkeley, 2025-06) — Inference technique applied to diffusion/flow VLAs without retraining; inpaints…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/real-time-chunking/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Real-Time Chunking (추론시 RTC)", "creator": {"@type": "Organization", "name": "Physical Intelligence, UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "Real-Time Execution of Action Chunking Flow Policies", "url": "https://arxiv.org/abs/2506.07339"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Real-Time Chunking (추론시 RTC)", "item": "https://vla-gallery.is-a.dev/m/real-time-chunking/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/real-time-chunking/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/real-time-chunking/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/real-time-chunking/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/real-time-chunking/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / π family</p>
+<h1>Real-Time Chunking (추론시 RTC)</h1>
+<p class="by">Physical Intelligence, UC Berkeley · 2025-06</p>
+<p class="kv"><span>기타</span><span>π family</span><span>N/A</span><span>flow matching</span></p>
+<p class="sum">Inference technique applied to diffusion/flow VLAs without retraining; inpaints the next chunk to match the actions being executed, so execution continues smoothly despite inference latency.</p>
+<div class="acts"><a class="pri" href="/#m-real-time-chunking">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2506.07339" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.07339" rel="noopener">Real-Time Execution of Action Chunking Flow Policies</a><small>arXiv 2506.07339</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>π family</dd><dt>Type</dt><dd>기타</dd><dt>Released</dt><dd>2025-06</dd><dt>Organization</dt><dd>Physical Intelligence, UC Berkeley</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>N/A (uses π0.5)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Gemma 2B (applied to π0.5)</dd><dt>Vision encoder</dt><dd>SigLIP 400M (π0.5)</dd><dt>Action head</dt><dd>π0.5 flow expert + inpainting chunk generation (no retraining) (flow matching)</dd><dt>Chunk</dt><dd>50 steps</dd><dt>Control rate</dt><dd>50 Hz</dd><dt>Architecture (original summary)</dt><dd>Applied to π0.5 (H=50, Δt=20 ms); generates the next chunk by inpainting conditioned on already-committed actions (no retraining)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>No VLA retraining. Kinetix sim policy (4-layer MLP-Mixer, 32 epochs) about 1.5 h on H100×2 per environment, whole experiment on 8 or fewer H100</dd><dt>Data type</dt><dd>N/A</dd><dt>Data scale</dt><dd>N/A</dd><dt>Main datasets</dt><dd>N/A</dd><dt>Tasks &amp; evaluation</dt><dd>6 bimanual tasks (lighting a candle, plugging Ethernet, making a bed (mobile), shirt folding, batch folding, dishwashing (mobile)), 10 trials per task·method, 480 episodes·28 h total; 12 Kinetix dynamic tasks</dd><dt>Robot</dt><dd>Bimanual·mobile bimanual manipulators (π0.5 real-robot platforms)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>RTX 4090, bf16, 5 denoising steps: baseline 76 ms vs RTC 97 ms; π0 KV cache prefill 46 ms</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Inference technique (no retraining)</dd><dt>Base control</dt><dd>Wheeled (Format not stated) · RTC applied to 2 π0.5 mobile bimanual tasks (Make bed·Dishes in sink); whether base velocity is included not stated in paper (π0.5 baseline)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Inference technique applied to diffusion/flow VLAs without retraining; inpaints the next chunk to match the actions being executed, so execution continues smoothly despite inference latency. Evaluated on 6 bimanual tasks, 480 episodes, 28 hours of robot execution.</dd><dt>Notes</dt><dd>An inference method that does not change training, so weights and data fields are N/A. Training-time RTC (2025-12) is a separate row.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/m/pi0-fast/">π0-FAST (FAST 토크나이저)</a><small>2025-01</small></li><li><a href="/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li><li><a href="/m/rtc/">학습시 RTC</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/m/pi0-5-ki/"><small>← Previous</small>π0.5 + KI</a><a class="nx" href="/m/pi0-6/"><small>Next →</small>π0.6</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

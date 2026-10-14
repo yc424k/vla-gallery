@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACT-1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="ACT-1 (Sunday (Sunday Robotics), 2025-11) — 将Skill Capture Glove采集的人类演示通过Skill Transform转换为机器人数据，无需遥操作机器人轨迹，用一个端到端模型学习长时程操作和3D地图条件导航。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/act-1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/act-1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/act-1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/act-1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/act-1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/act-1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="ACT-1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="ACT-1 (Sunday (Sunday Robotics), 2025-11) — 将Skill Capture Glove采集的人类演示通过Skill Transform转换为机器人数据，无需遥操作机器人轨迹，用一个端到端模型学习长时程操作和3D地图条件导航。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/act-1/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "ACT-1 — 架构、骨干LLM、训练与推理内存", "description": "ACT-1 (Sunday (Sunday Robotics), 2025-11) — 将Skill Capture Glove采集的人类演示通过Skill Transform转换为机器人数据，无需遥操作机器人轨迹，用一个端到端模型学习长时程操作和3D地图条件导航。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/act-1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "ACT-1", "creator": {"@type": "Organization", "name": "Sunday (Sunday Robotics)"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "ACT-1", "item": "https://vla-gallery.is-a.dev/zh/m/act-1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/act-1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/act-1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/act-1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/act-1/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 移动操作</p>
+<h1>ACT-1</h1>
+<p class="by">Sunday (Sunday Robotics) · 2025-11</p>
+<p class="kv"><span>VA</span><span>移动操作</span><span>未公开</span><span>未公开</span></p>
+<p class="sum">将Skill Capture Glove采集的人类演示通过Skill Transform转换为机器人数据，无需遥操作机器人轨迹，用一个端到端模型学习长时程操作和3D地图条件导航。</p>
+<div class="acts"><a class="pri" href="/zh/#m-act-1">在图库中查看架构图</a><a href="https://www.sunday.ai/blog/no-robot-data" rel="noopener">官方页面 ↗</a></div>
+<h2>论文</h2>
+<p class="paper">无论文</p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>移动操作</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2025-11</dd><dt>机构</dt><dd>Sunday (Sunday Robotics)</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>未公开</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>未公开</dd><dt>视觉编码器</dt><dd>未公开</dd><dt>动作头</dt><dd>未公开 (从操作到导航的可变granularity动作) (未公开)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>未公开；将长时程操作和以3D地图为条件的导航结合为一个end-to-end模型，生成从毫米级操作到米级移动的可变granularity动作</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>人类视频</dd><dt>数据规模</dt><dd>佩戴Skill Capture Glove的人类演示，遥操作轨迹0(官方)；已分发数千副手套(官方主页)；500户以上·约1,000万回合·数千小时(二手)</dd><dt>主要数据集</dt><dd>自有Skill Capture Glove家庭数据</dd><dt>任务·评估</dt><dd>整理餐桌→装入洗碗机(独特33种·共68次精细交互，物体21个，移动130 ft以上)；部署于未见过的Airbnb住宅；袜子配对并叠好；操作意式咖啡机；成功率未公开</dd><dt>机器人</dt><dd>Sunday Memo家用机器人(手臂可达地面~7 ft，常规高度4 ft；轮式底盘(二手))</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>未公开 (主页仅称&#x27;onboard AI&#x27;)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未公开 · 官方文章未注明训练方式</dd><dt>底盘控制</dt><dd>轮式 (未说明格式) · 单个end-to-end模型直接生成以3D地图为条件的导航动作（底盘指令格式未公开；轮式为二手来源）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将Skill Capture Glove采集的人类演示通过Skill Transform转换为机器人数据，无需遥操作机器人轨迹，用一个端到端模型学习长时程操作和3D地图条件导航。自主完成了需操作21个物体·68次精细交互(33种)·移动130 ft以上的餐桌→洗碗机任务，并部署到首次进入的Airbnb住宅。</dd><dt>备注</dt><dd>仅通过官方博客公开(无论文)：结构·参数·算力·成功率未公开。手套→机器人数据转换(Skill Transform)成功率90%。是否有语言指令输入未公开(官方文章仅明示3D地图条件)，故类型暂定为VA。已发布后续ACT-2 Preview(2026-07)。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/zh/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/zh/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/zh/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/zh/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/zh/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/zh/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/zh/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/zh/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/zh/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/zh/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/zh/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/zh/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/zh/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/zh/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/harmonicmm/"><small>← 上一个</small>HarmonicMM</a><a class="nx" href="/zh/m/umi-on-legs/"><small>下一个 →</small>UMI on Legs</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

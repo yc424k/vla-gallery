@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLIM — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="SLIM (Horizon Robotics, 2025-01) — A quadruped+arm policy that performs long-horizon search·approach·grasp·carry·drop tasks from a single wrist RGB camera an…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/slim/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/slim/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/slim/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/slim/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/slim/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/slim/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="SLIM — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="SLIM (Horizon Robotics, 2025-01) — A quadruped+arm policy that performs long-horizon search·approach·grasp·carry·drop tasks from a single wrist RGB camera an…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/slim/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "SLIM — Architecture, Backbone LLM, Training & Inference Memory", "description": "SLIM (Horizon Robotics, 2025-01) — A quadruped+arm policy that performs long-horizon search·approach·grasp·carry·drop tasks from a single wrist RGB camera an…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/slim/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "SLIM", "creator": {"@type": "Organization", "name": "Horizon Robotics"}}, "citation": {"@type": "ScholarlyArticle", "name": "SLIM: Sim-to-Real Legged Instructive Manipulation via Long-Horizon Visuomotor Learning", "url": "https://arxiv.org/abs/2501.09905"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "SLIM", "item": "https://vla-gallery.is-a.dev/m/slim/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/slim/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/slim/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/slim/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/slim/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>SLIM</h1>
+<p class="by">Horizon Robotics · 2025-01</p>
+<p class="kv"><span>VLA</span><span>Mobile manipulation</span><span>Under 19M</span><span>RL policy</span></p>
+<p class="sum">A quadruped+arm policy that performs long-horizon search·approach·grasp·carry·drop tasks from a single wrist RGB camera and language instructions, trained only with MuJoCo sim RL (privileged teacher→visual student) and deployed zero-shot on the real robot.</p>
+<div class="acts"><a class="pri" href="/#m-slim">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2501.09905" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2501.09905" rel="noopener">SLIM: Sim-to-Real Legged Instructive Manipulation via Long-Horizon Visuomotor Learning</a><small>arXiv 2501.09905</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-01</dd><dt>Organization</dt><dd>Horizon Robotics</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>Under 19M (low-level 3M + student high-level 16M; teacher 10M not deployed)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>FiLM U-Net (auxiliary segmentation · depth) + ResNet 5 blocks, 160×90 RGB 5 frames</dd><dt>Action head</dt><dd>MLP actor: arm joint increments·gripper·forward/angular velocity (RL policy)</dd><dt>Chunk</dt><dd>None (1 step)</dd><dt>Control rate</dt><dd>High level 10 Hz, low level 50 Hz</dd><dt>Architecture (original summary)</dt><dd>160×90 RGB 5 frames → FiLM U-Net (auxiliary segmentation · depth prediction) + ResNet 5 blocks + Transformer 5 layers (8 heads), language via byte tokens 2-layer Transformer → MLP actor (512×3): arm joint deltas · gripper target · forward/angular velocity commands 10 Hz → PPO low-level locomotion policy leg joint targets 50 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Sim RL (MuJoCo) only: teacher (multitask SAC) 4 GPUs about 1 week (120 envs·4M iter), student (SAC+KL distillation) 4 GPUs about 2 weeks (60 envs·1.3M iter), low level (PPO+ROA) 1 GPU about 3 days (5,000 envs·4B env steps); V100-class GPUs</dd><dt>Data type</dt><dd>Simulation·synthetic</dd><dt>Data scale</dt><dd>Sim RL: teacher about 60M·student about 40M env steps, low level 4B env steps; no real data</dd><dt>Main datasets</dt><dd>None (MuJoCo sim environment)</dd><dt>Tasks &amp; evaluation</dt><dd>Real-world Lobby standard layout overall task success 78.3±5.8% (3 seeds×20 trials) vs expert teleoperation 75.0±5.0%; average 43.8 s (teleoperation 65.5 s); 400 episodes evaluated indoors and outdoors</dd><dt>Robot</dt><dd>Unitree Go1 quadruped + WidowX-250S arm, wrist RealSense D435 (RGB only)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Asynchronous inference on laptop RTX 3070Ti (i9-12900H, 16GB RAM): high-level 10 Hz·low-level 50 Hz; Raspberry Pi on the robot runs the drivers</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0 GB</dd><dt>Where it runs</dt><dd>Laptop RTX 3070Ti</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (RL controller training) · High-level teacher (multi-task SAC)·visual student (SAC+KL distillation)·low-level locomotion (PPO+ROA) all trained with MuJoCo sim RL, no real data</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/abs/2501.09905" rel="noopener">https://arxiv.org/abs/2501.09905</a></dd><dt>Base control</dt><dd>Quadruped (RL policy drives joints directly) · High-level policy outputs forward·angular velocity commands + arm joint increments·gripper → PPO low-level locomotion policy controls leg joints</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A quadruped+arm policy that performs long-horizon search·approach·grasp·carry·drop tasks from a single wrist RGB camera and language instructions, trained only with MuJoCo sim RL (privileged teacher→visual student) and deployed zero-shot on the real robot. With under 19M parameters it achieved a 78.3% overall real-world task success rate, comparable to expert teleoperation (75.0%) while about 1.5× faster.</dd><dt>Notes</dt><dd>Added outside the list (2025 quadruped mobile manipulation VLA); deployed with no real data or fine-tuning; language encoder is a byte-token transformer without a pretrained LM; training GPU &#x27;V100 or similar&#x27;; code only announced as forthcoming.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li></ul></section>
+<nav class="pn"><a href="/m/omega-0/"><small>← Previous</small>ω-0 (OMEGA-0)</a><a class="nx" href="/m/gnm/"><small>Next →</small>GNM</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

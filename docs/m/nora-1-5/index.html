@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NORA-1.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="NORA-1.5 (Nanyang Technological University, Lambda Labs, SUTD, 2025-11) — Attaches a flow expert to an autoregressive VLA, jointly learning FAST+ tokens and…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/nora-1-5/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/nora-1-5/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/nora-1-5/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/nora-1-5/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/nora-1-5/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/nora-1-5/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="NORA-1.5 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="NORA-1.5 (Nanyang Technological University, Lambda Labs, SUTD, 2025-11) — Attaches a flow expert to an autoregressive VLA, jointly learning FAST+ tokens and…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/nora-1-5/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "NORA-1.5 — Architecture, Backbone LLM, Training & Inference Memory", "description": "NORA-1.5 (Nanyang Technological University, Lambda Labs, SUTD, 2025-11) — Attaches a flow expert to an autoregressive VLA, jointly learning FAST+ tokens and…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/nora-1-5/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "NORA-1.5", "creator": {"@type": "Organization", "name": "Nanyang Technological University, Lambda Labs, SUTD"}}, "citation": {"@type": "ScholarlyArticle", "name": "NORA-1.5: A Vision-Language-Action Model Trained using World Model- and Action-based Preference Rewards", "url": "https://arxiv.org/abs/2511.14659"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "NORA-1.5", "item": "https://vla-gallery.is-a.dev/m/nora-1-5/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/nora-1-5/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/nora-1-5/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/nora-1-5/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/nora-1-5/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
+<h1>NORA-1.5</h1>
+<p class="by">Nanyang Technological University, Lambda Labs, SUTD · 2025-11</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>Total not disclosed</span><span>hybrid</span></p>
+<p class="sum">Attaches a flow expert to an autoregressive VLA, jointly learning FAST+ tokens and continuous actions, plus DPO reward post-training.</p>
+<div class="acts"><a class="pri" href="/#m-nora-1-5">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2511.14659" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2511.14659" rel="noopener">NORA-1.5: A Vision-Language-Action Model Trained using World Model- and Action-based Preference Rewards</a><small>arXiv 2511.14659</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Flow·Diffusion VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-11</dd><dt>Organization</dt><dd>Nanyang Technological University, Lambda Labs, SUTD</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Total not disclosed; VLM 3B + action expert about 400M</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B config</dd><dt>Vision encoder</dt><dd>Qwen2.5-VL ViT</dd><dt>Action head</dt><dd>FAST+ tokens + flow expert about 400M (hybrid)</dd><dt>Chunk</dt><dd>5 steps</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Autoregressive VLA NORA based on Qwen-2.5-VL-3B + about 400M flow matching action expert; joint optimization of FAST+ token cross-entropy and flow matching; action horizon N=5; DPO reward post-training</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>1 H100 node</dd><dt>Pretraining duration</dt><dd>5 days</dd><dt>Pretraining steps &amp; batch</dt><dd>150k steps, global batch 512 (continued from NORA-Long 900k steps · batch 256)</dd><dt>GPU/TPU-hours</dt><dd>960 (Stated · H100-hours (about 960; 1 node × 5 days))</dd><dt>Fine-tuning</dt><dd>Not disclosed (LIBERO·SimplerEnv·real robot·DPO)</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>OXE subset (same as NORA-Long, size not disclosed); 1,000 real-robot teleoperation pick-and-place episodes</dd><dt>Main datasets</dt><dd>Open X-Embodiment subset</dd><dt>Tasks &amp; evaluation</dt><dd>LIBERO 98.0/96.0/95.4/90.5, average 95.0; SimplerEnv VM 82.8% (DPO); Galaxea A1 real-robot 9 tasks +13~46%</dd><dt>Robot</dt><dd>Galaxea A1 (single arm) real robot; SimplerEnv, LIBERO</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Numbers not disclosed (only &#x27;better inference speed&#x27;)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Partial (Reward/preference optimization) · Uses reward-based DPO (preference optimization) in post-training. Not RL that interacts with the environment</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/pdf/2511.14659" rel="noopener">https://arxiv.org/pdf/2511.14659</a></dd><dt>Base control</dt><dd>Fixed · No base control (Galaxea A1 single arm)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Attaches a flow expert to an autoregressive VLA, jointly learning FAST+ tokens and continuous actions, plus DPO reward post-training. On 9 real Galaxea A1 tasks it was 13–46% higher than baselines.</dd><dt>Notes</dt><dd>960 H100-hours is the value for the 150k-step stage continued from NORA-Long. Institution corrected from the note&#x27;s declare-lab per page 1 of the paper. README states discrete actions outperform continuous actions on Galaxea A1.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/m/evo-1/"><small>← Previous</small>Evo-1</a><a class="nx" href="/m/f1-vla/"><small>Next →</small>F1-VLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

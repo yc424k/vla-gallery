@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F1-VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="F1-VLA (Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen), 2025-09) — 在动作之前以next-scale方式生成未来视觉场景(foresight)并用于规划的VLA。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/f1-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/f1-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/f1-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/f1-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/f1-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/f1-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="F1-VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="F1-VLA (Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen), 2025-09) — 在动作之前以next-scale方式生成未来视觉场景(foresight)并用于规划的VLA。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/f1-vla/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "F1-VLA — 架构、骨干LLM、训练与推理内存", "description": "F1-VLA (Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen), 2025-09) — 在动作之前以next-scale方式生成未来视觉场景(foresight)并用于规划的VLA。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/f1-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "F1-VLA", "creator": {"@type": "Organization", "name": "Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen)"}}, "citation": {"@type": "ScholarlyArticle", "name": "F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions", "url": "https://arxiv.org/abs/2509.06951"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "F1-VLA", "item": "https://vla-gallery.is-a.dev/zh/m/f1-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/f1-vla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/f1-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/f1-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/f1-vla/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / Flow·Diffusion VLA</p>
+<h1>F1-VLA</h1>
+<p class="by">Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen) · 2025-09</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>4.2B</span><span>flow matching</span></p>
+<p class="sum">在动作之前以next-scale方式生成未来视觉场景(foresight)并用于规划的VLA。</p>
+<div class="acts"><a class="pri" href="/zh/#m-f1-vla">在图库中查看架构图</a><a href="https://arxiv.org/abs/2509.06951" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.06951" rel="noopener">F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions</a><small>arXiv 2509.06951</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>Flow·Diffusion VLA</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2025-09</dd><dt>机构</dt><dd>Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen)</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>4.2B</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Gemma · PaliGemma 初始化</dd><dt>视觉编码器</dt><dd>SigLIP (PaliGemma)</dd><dt>动作头</dt><dd>foresight生成 + flow matching专家 (flow matching)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Mixture-of-Transformer: 理解专家(PaliGemma初始化) + foresight生成专家(VAR residual VQ-VAE next-scale,推理4 scale) + flow matching动作专家(继承π0)</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开（App. B中无GPU型号·数量·时长）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>Stage I 512K步·批量1280·lr 3.0e-4(cosine)；Stage II 100K步·批量2880·lr 5.0e-5(constant)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>Stage III批量128·lr 5.0e-5(cosine)，硬件·时间未公开；后训练内部约1.8K条轨迹</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 仿真(LIBERO)</dd><dt>数据规模</dt><dd>330.9K条轨迹·73.8M帧，136个任务，5种本体(AgiBot-World 187K/66.4M，Bridge-v2 53.2K/1.9M，Fractal 87.2K/3.8M，LIBERO 1.7K/0.3M)</dd><dt>主要数据集</dt><dd>AgiBot World, OXE Bridge v2, OXE Fractal, LIBERO</dd><dt>任务·评估</dt><dd>LIBERO 98.2/97.8/95.4/91.3,平均95.7;SimplerEnv Bridge 72.9;Genie真机9项任务平均82.2%(grasp 92.6%)</dd><dt>机器人</dt><dd>Genie G1, Franka, ARX LIFT II, WidowX, Google Robot(单臂·双臂)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>未公开（将foresight限制为4个scale，面向实时控制）</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>8.4 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅使用模仿学习（行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 未提及底盘移动（Genie-1·ARX LIFT II操作；动态任务为传送带）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>在动作之前以next-scale方式生成未来视觉场景(foresight)并用于规划的VLA。在Genie实机9项任务上平均成功率达82.2%。</dd><dt>备注</dt><dd>由π0动作专家·PaliGemma初始化(README要求lerobot/pi0_base)。App. B超参数在核验中新确认(笔记中为未核实)。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/zh/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/zh/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/zh/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/zh/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/zh/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/zh/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/zh/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/zh/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/zh/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/zh/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/zh/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/zh/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/zh/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/zh/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/zh/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/zh/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/nora-1-5/"><small>← 上一个</small>NORA-1.5</a><a class="nx" href="/zh/m/dexgraspvla/"><small>下一个 →</small>DexGraspVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

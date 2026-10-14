@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOVER — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery</title>
+<meta name="description" content="HOVER (NVIDIA, 2024-10) — 명령 모드·희소 마스크로 여러 제어 모드를 하나의 다중모드 전신 정책에 통합한다.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ko/m/hover/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/hover/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/hover/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/hover/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/hover/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/hover/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="HOVER — 구조·백본 LLM·학습·추론 메모리 | VLA Gallery"><meta property="og:description" content="HOVER (NVIDIA, 2024-10) — 명령 모드·희소 마스크로 여러 제어 모드를 하나의 다중모드 전신 정책에 통합한다.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ko/m/hover/"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "HOVER — 구조·백본 LLM·학습·추론 메모리", "description": "HOVER (NVIDIA, 2024-10) — 명령 모드·희소 마스크로 여러 제어 모드를 하나의 다중모드 전신 정책에 통합한다.", "inLanguage": "ko", "url": "https://vla-gallery.is-a.dev/ko/m/hover/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "HOVER", "creator": {"@type": "Organization", "name": "NVIDIA·CMU·UC Berkeley·UT Austin·UC San Diego"}}, "citation": {"@type": "ScholarlyArticle", "name": "HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots", "url": "https://arxiv.org/abs/2410.21229"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 갤러리", "item": "https://vla-gallery.is-a.dev/ko/"}, {"@type": "ListItem", "position": 2, "name": "모델 목록", "item": "https://vla-gallery.is-a.dev/ko/m/"}, {"@type": "ListItem", "position": 3, "name": "HOVER", "item": "https://vla-gallery.is-a.dev/ko/m/hover/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ko/">VLA 갤러리</a><a href="/ko/m/">모델 목록</a><a href="/ko/#gallery">갤러리</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/hover/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/hover/" hreflang="ko" aria-current="true">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/hover/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/hover/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ko/">VLA 갤러리</a> / <a href="/ko/m/">모델 목록</a> / 휴머노이드 전신 제어기</p>
+<h1>HOVER</h1>
+<p class="by">NVIDIA·CMU·UC Berkeley·UT Austin·UC San Diego · 2024-10</p>
+<p class="kv"><span>VA</span><span>휴머노이드 전신 제어기</span><span>미공개</span><span>RL 정책</span></p>
+<p class="sum">명령 모드·희소 마스크로 여러 제어 모드를 하나의 다중모드 전신 정책에 통합한다.</p>
+<div class="acts"><a class="pri" href="/ko/#m-hover">갤러리에서 구조도 보기</a><a href="https://arxiv.org/abs/2410.21229" rel="noopener">논문 ↗</a></div>
+<h2>논문</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.21229" rel="noopener">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</a><small>arXiv 2410.21229</small></p>
+<h2>개요</h2>
+<dl><dt>분류</dt><dd>휴머노이드 전신 제어기</dd><dt>유형</dt><dd>VA</dd><dt>발표</dt><dd>2024-10</dd><dt>기관</dt><dd>NVIDIA·CMU·UC Berkeley·UT Austin·UC San Diego</dd><dt>가중치 공개</dt><dd>미확인</dd><dt>파라미터</dt><dd>미공개 (MLP [512, 256, 128])</dd></dl>
+<h2>구조</h2>
+<dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>—</dd><dt>액션 헤드</dt><dd>관절 목표 (다중 모드 마스크) (RL 정책)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>미공개</dd><dt>구조 원문 요약</dt><dd>3층 MLP [512, 256, 128]; 학생은 최근 25스텝 고유감각 + 모드·희소 마스크(B(0.5) 샘플) → 관절 목표; 오라클 교사에서 DAgger 증류</dd></dl>
+<h2>학습</h2>
+<dl><dt>사전학습 가속기</dt><dd>RTX 4090 / RTX A6000 / L40 중 1장 (repo, Isaac Lab 2.0.0 재구현); 논문은 IsaacGym, GPU 미공개</dd><dt>사전학습 기간</dt><dd>교사 100,000 반복: RTX 4090 23.3시간 / A6000 52.8시간 / L40 44.6시간; 학생 10,000 반복: 0.27 / 0.50 / 0.49시간 (repo)</dd><dt>사전학습 스텝·배치</dt><dd>교사 100,000 반복 + 학생 10,000 반복(repo 표); 보통 50k~80k 반복이면 충분, 예시 1,024 env</dd><dt>GPU·TPU-시간</dt><dd>24 (환산 · RTX 4090-시간 (1 × (교사 23.3 h + 학생 0.27 h), repo 재구현 기준))</dd><dt>파인튜닝</dt><dd>해당 없음</dd><dt>데이터 종류</dt><dd>모션캡처</dd><dt>데이터 규모</dt><dd>H1 리타게팅 AMASS(부분집합 크기 미공개); 전체 리타게팅은 32코어 CPU로 최대 4일</dd><dt>주요 데이터셋</dt><dd>AMASS</dd><dt>태스크·평가</dt><dd>추적 오차·모드 전환 평가; 실기 서 있는 동작 시퀀스 20개</dd><dt>로봇</dt><dd>Unitree H1(19-DOF, 약 51.5 kg, 약 1.8 m)</dd></dl>
+<h2>추론</h2>
+<dl><dt>추론 장치·속도</dt><dd>제어 주기 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>미공개</dd></dl>
+<h2>강화학습 · 베이스</h2>
+<dl><dt>강화학습</dt><dd>사용 (RL 제어기 학습) · 오라클 RL 교사 → DAgger 학생 증류</dd><dt>베이스 제어</dt><dd>휴머노이드 보행 (RL 정책이 직접 구동) · 다중 모드 명령(루트 속도·높이·자세, 키포인트, 관절각) → 전신 19 DoF 관절 목표 출력, 실환경 전진 보행 시연</dd></dl>
+<h2>비고</h2>
+<dl><dt>핵심 특징</dt><dd>명령 모드·희소 마스크로 여러 제어 모드를 하나의 다중모드 전신 정책에 통합한다. repo 재구현은 단일 GPU에서 교사를 약 하루에 학습한다.</dd><dt>비고</dt><dd>학습 시간은 논문이 아니라 repo(Isaac Lab 2.0.0 재구현) 값. 코드 Apache 2.0, 체크포인트 미확인. 검증은 repo 값(학습 시간·env·반복)만 대상.</dd><dt>검증</dt><dd>확인</dd></dl>
+<section class="rel"><h2>같은 분류의 모델</h2><ul><li><a href="/ko/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/ko/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/ko/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/ko/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/ko/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/ko/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/ko/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/ko/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/ko/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/ko/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/ko/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/ko/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/ko/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/ko/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/ko/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/ko/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/ko/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/ko/m/omnih2o/"><small>← 이전 모델</small>OmniH2O</a><a class="nx" href="/ko/m/idp3/"><small>다음 모델 →</small>iDP3</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ko/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

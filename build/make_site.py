@@ -1,5 +1,5 @@
 """gallery/vla-gallery.html(아티팩트용 본문)을 GitHub Pages 등에 바로 올릴 수 있는 완전한 HTML 문서로 감싼다.
-검색 노출용 메타 태그(canonical·hreflang·Open Graph·JSON-LD)를 넣고, 기본 언어(영어, 사이트 맨 위) 빌드 때 robots.txt와 sitemap.xml을 만든다.
+검색 노출용 메타 태그(canonical·hreflang·Open Graph·JSON-LD)를 넣고, 기본 언어(영어, 사이트 맨 위) 빌드 때 robots.txt를 만든다(sitemap.xml은 make_pages.py).
 사용: make_site.py <본문 html> <출력 html> [lang]   (lang: ko·en·ja·zh, 기본 ko)"""
 import datetime, html as H, json, os, sys
 src, out = sys.argv[1:3]
@@ -61,9 +61,4 @@ print(out, len(html.encode("utf-8")), "bytes")
 if lang == DEFAULT:
     d = os.path.dirname(out) or "."
     open(os.path.join(d, "robots.txt"), "w", encoding="utf-8").write("User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n" % SITE)
-    links = "".join('    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>\n' % ("zh-Hans" if l == "zh" else l, url_of(l)) for l in LANGS)
-    open(os.path.join(d, "sitemap.xml"), "w", encoding="utf-8").write(
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-        + "".join("  <url><loc>%s</loc><lastmod>%s</lastmod>\n%s  </url>\n" % (url_of(l), today, links) for l in LANGS)
-        + "</urlset>\n")
+    # sitemap.xml은 모델 페이지까지 넣어 make_pages.py가 만든다

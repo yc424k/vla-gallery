@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrossFormer — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="CrossFormer (UC Berkeley, 2024-08) — 20種のエンボディメントの900K軌跡を観測・行動空間を揃えずに単一の130M Transformerで学習し、単腕・双腕、車輪型、四足、クアッドコプターをすべて制御する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/crossformer/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/crossformer/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/crossformer/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/crossformer/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/crossformer/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/crossformer/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="CrossFormer — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="CrossFormer (UC Berkeley, 2024-08) — 20種のエンボディメントの900K軌跡を観測・行動空間を揃えずに単一の130M Transformerで学習し、単腕・双腕、車輪型、四足、クアッドコプターをすべて制御する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/crossformer/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "CrossFormer — 構造・バックボーンLLM・学習・推論メモリ", "description": "CrossFormer (UC Berkeley, 2024-08) — 20種のエンボディメントの900K軌跡を観測・行動空間を揃えずに単一の130M Transformerで学習し、単腕・双腕、車輪型、四足、クアッドコプターをすべて制御する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/crossformer/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "CrossFormer", "creator": {"@type": "Organization", "name": "UC Berkeley·Carnegie Mellon University"}}, "citation": {"@type": "ScholarlyArticle", "name": "Scaling Cross-Embodied Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation", "url": "https://arxiv.org/abs/2408.11812"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "CrossFormer", "item": "https://vla-gallery.is-a.dev/ja/m/crossformer/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/crossformer/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/crossformer/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/crossformer/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/crossformer/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>CrossFormer</h1>
+<p class="by">UC Berkeley·Carnegie Mellon University · 2024-08</p>
+<p class="kv"><span>VLA</span><span>ナビゲーション</span><span>130M</span><span>回帰</span></p>
+<p class="sum">20種のエンボディメントの900K軌跡を観測・行動空間を揃えずに単一の130M Transformerで学習し、単腕・双腕、車輪型、四足、クアッドコプターをすべて制御する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-crossformer">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2408.11812" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2408.11812" rel="noopener">Scaling Cross-Embodied Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation</a><small>arXiv 2408.11812</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2024-08</dd><dt>機関</dt><dd>UC Berkeley·Carnegie Mellon University</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>130M</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>ResNet-26 (ImageNet初期化、FiLM言語条件付け)</dd><dt>アクションヘッド</dt><dd>エンボディメント別L1回帰ヘッド (ナビゲーションのウェイポイント4個・四足関節12次元など) (回帰)</dd><dt>チャンク</dt><dd>ナビのウェイポイント4個 (腕 4・双腕 100・四足 1)</dd><dt>制御周期</dt><dd>ナビ 4 Hz · 四足 20 Hz · 双腕 20 Hz · 腕 5–15 Hz</dd><dt>構造の原文要約</dt><dd>ResNet-26画像トークナイザ(言語FiLM条件付け) + 固有受容覚の線形射影 → 因果Transformer 12層・8ヘッド(512次元、エンボディメント別readoutトークン) → L1回帰ヘッド: ナビ2Dウェイポイント4個(4 Hz)、単腕EEF 4ステップ(5–15 Hz)、双腕関節100ステップ(20 Hz)、四足12次元関節位置1ステップ(20 Hz)</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>TPU v5e-256 pod</dd><dt>事前学習期間</dt><dd>47時間(本文3.4節・README)/80時間(付録B)</dd><dt>事前学習ステップ・バッチ</dt><dd>300kステップ · バッチ512</dd><dt>GPU・TPU時間</dt><dd>12,032 (換算 · TPU v5e 256チップ × 47時間 (付録Bの80時間を適用すると20,480))</dd><dt>ファインチューニング</dt><dd>該当なし (評価は事前学習モデルのまま; READMEに微調整スクリプトを提供)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / 実ロボットの自律走行ログ</dd><dt>データ規模</dt><dd>900K軌跡・20エンボディメント (図1では30); GNMナビ60時間(サンプリング比率17%)、ALOHA 7K軌跡、Go1歩行25分</dd><dt>主要データセット</dt><dd>Open X-Embodiment(Octo単腕混合); DROID; ALOHA-multi-task; GNM; Go1-walk; Franka-tabletop</dd><dt>タスク・評価</dt><dd>6ロボットの平均成功率73% (単一ロボット方策67%、既存最良51%); LoCoBot 障害物回避0.95・コーナー0.95・急コーナー0.88 (既存最良手法 0.30・0.85・0.30); Tello コーナー0.82 (ベースライン0.68)</dd><dt>ロボット</dt><dd>WidowX・Franka単腕、ALOHA双腕 (固定); LoCoBot車輪型; Unitree Go1四足; DJI Telloクアッドコプター (飛行データの学習なし)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>ナビ・ドローン: 別サーバーで推論後に無線送信; マニピュレーション: RTX 4090級のローカルGPU; ナビ 4 Hz・四足 20 Hz; 遅延は非公開 (推論速度を限界として言及)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0.3 GB</dd><dt>実行場所</dt><dd>リモートサーバー (ナビゲーション・ドローン、無線伝送)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>一部 (RLデータの活用) · Go1歩行データのみシミュレーションRLエキスパート方策のロールアウトで収集; CrossFormer自体はL1模倣学習</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/pdf/2408.11812" rel="noopener">https://arxiv.org/pdf/2408.11812</a></dd><dt>ベース制御</dt><dd>車輪型·四足歩行·飛行 (ウェイポイント → 追従制御器) · ナビヘッドが2D相対ウェイポイント4個を出力(LoCoBotはトポロジカルグラフのsubgoal追従、Telloは高度固定) / 四足ヘッドが12次元の脚関節位置を20 Hzで直接出力 / 腕ヘッドはEEF・関節目標</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>20種のエンボディメントの900K軌跡を観測・行動空間を揃えずに単一の130M Transformerで学習し、単腕・双腕、車輪型、四足、クアッドコプターをすべて制御する。6ロボットの平均成功率73%で、単一ロボット専用方策(67%)と既存最良のクロスエンボディメント手法(51%)を上回った。</dd><dt>備考</dt><dd>学習時間は本文・READMEの47hと付録Bの80hで不一致。エンボディメント数は本文20・図1で30と不一致。Go1データはシミュレーションRL専門家方策のロールアウト。言語エンコーダは論文に明記なし(公式設定はUniversal Sentence Encoder)。HFチェックポイント519MB(300kステップ)、MITライセンス。LoCoBotナビゲーションはトポロジカルグラフ・目標画像条件付き。総データ時間は記載なし。ベース: Octo: An Open-Source Generalist Robot Policy (arXiv 2405.12213) — Octoコードベースに基づく (READMEに明記)</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/nomad/"><small>← 前のモデル</small>NoMaD</a><a class="nx" href="/ja/m/lelan/"><small>次のモデル →</small>LeLaN</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

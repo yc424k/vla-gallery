@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CARP — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="CARP (Westlake University, 2024-12†) — 将动作序列转为多尺度token，由粗到细进行自回归预测。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/carp/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/carp/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/carp/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/carp/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/carp/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/carp/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="CARP — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="CARP (Westlake University, 2024-12†) — 将动作序列转为多尺度token，由粗到细进行自回归预测。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/carp/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "CARP — 架构、骨干LLM、训练与推理内存", "description": "CARP (Westlake University, 2024-12†) — 将动作序列转为多尺度token，由粗到细进行自回归预测。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/carp/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "CARP", "creator": {"@type": "Organization", "name": "Westlake University; Zhejiang University; Beijing Advanced Innovation Center for Future Blockchain and Privacy Computing"}}, "citation": {"@type": "ScholarlyArticle", "name": "CARP: Visuomotor Policy Learning via Coarse-to-Fine Autoregressive Prediction", "url": "https://arxiv.org/abs/2412.06782"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "CARP", "item": "https://vla-gallery.is-a.dev/zh/m/carp/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/carp/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/carp/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/carp/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/carp/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / VA</p>
+<h1>CARP</h1>
+<p class="by">Westlake University; Zhejiang University; Beijing Advanced Innovation Center for Future Blockchain and Privacy Computing · 2024-12†</p>
+<p class="kv"><span>VA</span><span>VA</span><span>基于状态 0.65M</span><span>离散token</span></p>
+<p class="sum">将动作序列转为多尺度token，由粗到细进行自回归预测。</p>
+<div class="acts"><a class="pri" href="/zh/#m-carp">在图库中查看架构图</a><a href="https://arxiv.org/abs/2412.06782" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.06782" rel="noopener">CARP: Visuomotor Policy Learning via Coarse-to-Fine Autoregressive Prediction</a><small>arXiv 2412.06782</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>VA</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2024-12†</dd><dt>机构</dt><dd>Westlake University; Zhejiang University; Beijing Advanced Innovation Center for Future Blockchain and Privacy Computing</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>基于状态 0.65M(DP-C 65.88M，DP-T 8.97M)；图像 7.58M；Kitchen 3.88M；多任务 16.08M</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>未注明</dd><dt>动作头</dt><dd>多尺度VQ token（coarse-to-fine） (离散token)</dd><dt>动作块</dt><dd>16步</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>多尺度动作VQ-VAE tokenizer（每个动作维度1个，K=4个尺度，16步时域）+ GPT式Transformer从粗尺度到细尺度预测离散token（交叉熵）</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>多任务：A100 1张，批量 512，200 epoch；Square训练成本（V100）：tokenizer 4.67 GPU-小时（28分×10）+ 策略 13.85 GPU-小时</dd><dt>数据类型</dt><dd>仿真·合成；真实机器人遥操作</dd><dt>数据规模</dt><dd>Robomimic每项任务200条演示；MimicGen每项任务1K条轨迹；真实每项任务50条演示</dd><dt>主要数据集</dt><dd>Robomimic; Franka Kitchen; Push-T; MimicGen</dd><dt>任务·评估</dt><dd>Robomimic Lift·Can·Square(状态·图像), Kitchen, Push-T; MimicGen 8项任务(多任务); 真实UR5e杯·碗2项任务</dd><dt>机器人</dt><dd>UR5e单臂；仿真</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>在A100上以400次动作预测平均测得，实际为RTX 2060；比DP快10倍以上</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 仅使用模仿学习（行为克隆）</dd><dt>底盘控制</dt><dd>固定 · 无底盘控制（UR5e单臂·仿真）</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>将动作序列转为多尺度token，由粗到细进行自回归预测。报告推理比扩散策略快10倍以上。</dd><dt>备注</dt><dd>参数(B)为最大多任务16.08M。对比参数：图像DP-C 255.61M·DP-T 9.01M，Kitchen DP-C 66.94M·DP-T 80.42M，多任务TCD 156.11M·SDP 159.85M(已修正)。同一V100测量下DP-C 12.17·DP-T 10.83 GPU-小时。任务指定为可学习的3维嵌入(无语言)。发布月份v1无法确认(†)。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/mobile-aloha/">Mobile ALOHA</a><small>2024-01</small></li><li><a href="/zh/m/aloha-unleashed/">ALOHA Unleashed</a><small>2024-10</small></li><li><a href="/zh/m/hpt/">HPT</a><small>2024-09</small></li><li><a href="/zh/m/baku/">BAKU</a><small>2024-06</small></li><li><a href="/zh/m/vq-bet/">VQ-BeT</a><small>2024-03</small></li><li><a href="/zh/m/scaledp/">ScaleDP</a><small>2024-09†</small></li><li><a href="/zh/m/umi/">UMI</a><small>2024-02</small></li><li><a href="/zh/m/dp3/">DP3</a><small>2024-03</small></li><li><a href="/zh/m/data-scaling-laws/">Data Scaling Laws</a><small>2024-10</small></li><li><a href="/zh/m/rise/">RISE</a><small>2024-04</small></li><li><a href="/zh/m/robot-utility-models/">Robot Utility Models (RUM)</a><small>2024-09</small></li><li><a href="/zh/m/egomimic/">EgoMimic</a><small>2024-10</small></li><li><a href="/zh/m/interact/">InterACT</a><small>2024-09†</small></li><li><a href="/zh/m/dense-policy/">Dense Policy</a><small>2025-03</small></li><li><a href="/zh/m/chain-of-action/">Chain-of-Action</a><small>2025-06</small></li><li><a href="/zh/m/brs/">BRS (WB-VIMA)</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/interact/"><small>← 上一个</small>InterACT</a><a class="nx" href="/zh/m/dense-policy/"><small>下一个 →</small>Dense Policy</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

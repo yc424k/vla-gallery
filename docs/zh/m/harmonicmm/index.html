@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HarmonicMM — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="HarmonicMM (UC San Diego, 2023-12) — 不拆分导航和操作模块，仅用RGB同时驱动底盘和机械臂的单一策略，在ProcTHOR仿真中用DD-PPO端到端训练。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/harmonicmm/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/harmonicmm/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/harmonicmm/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/harmonicmm/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/harmonicmm/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/harmonicmm/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="HarmonicMM — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="HarmonicMM (UC San Diego, 2023-12) — 不拆分导航和操作模块，仅用RGB同时驱动底盘和机械臂的单一策略，在ProcTHOR仿真中用DD-PPO端到端训练。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/harmonicmm/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "HarmonicMM — 架构、骨干LLM、训练与推理内存", "description": "HarmonicMM (UC San Diego, 2023-12) — 不拆分导航和操作模块，仅用RGB同时驱动底盘和机械臂的单一策略，在ProcTHOR仿真中用DD-PPO端到端训练。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/harmonicmm/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "HarmonicMM", "creator": {"@type": "Organization", "name": "UC San Diego·Allen Institute for AI(PRIOR)·University of Washington"}}, "citation": {"@type": "ScholarlyArticle", "name": "Harmonic Mobile Manipulation", "url": "https://arxiv.org/abs/2312.06639"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "HarmonicMM", "item": "https://vla-gallery.is-a.dev/zh/m/harmonicmm/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/harmonicmm/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/harmonicmm/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/harmonicmm/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/harmonicmm/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 移动操作</p>
+<h1>HarmonicMM</h1>
+<p class="by">UC San Diego·Allen Institute for AI(PRIOR)·University of Washington · 2023-12</p>
+<p class="kv"><span>VA</span><span>移动操作</span><span>未公开</span><span>RL策略</span></p>
+<p class="sum">不拆分导航和操作模块，仅用RGB同时驱动底盘和机械臂的单一策略，在ProcTHOR仿真中用DD-PPO端到端训练。</p>
+<div class="acts"><a class="pri" href="/zh/#m-harmonicmm">在图库中查看架构图</a><a href="https://arxiv.org/abs/2312.06639" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2312.06639" rel="noopener">Harmonic Mobile Manipulation</a><small>arXiv 2312.06639</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>移动操作</dd><dt>类型</dt><dd>VA</dd><dt>发布</dt><dd>2023-12</dd><dt>机构</dt><dd>UC San Diego·Allen Institute for AI(PRIOR)·University of Washington</dd><dt>权重公开</dt><dd>否</dd><dt>参数</dt><dd>未公开 (DINOv2 ViT-S/14编码器 + GRU 512)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>DINOv2 ViT-S/14 (Nav·Manip相机2台)</dd><dt>动作头</dt><dd>Actor-critic FC (5维连续动作 + 抓取) (RL策略)</dd><dt>动作块</dt><dd>无 (单步)</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>预训练DINOv2(dinov2_vits14)特征(Nav·Manip RGB相机2台) → 每相机1×1 Conv 2层(16通道) + 本体感觉 → GRU 1层(512) → 策略·价值FC(512)；5维连续动作(底盘平移·旋转、手臂高度·伸展、手腕旋转；开门·冰箱任务额外加1维抓取)，无动作块</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务RL训练：DD-PPO(AllenAct) 10^7步，并行环境20个·每次迭代样本640，种子3个；GPU·训练时间未公开</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>ProcTHOR住宅: 门700·桌子2,000·冰箱1,400个;每任务10^7环境步</dd><dt>主要数据集</dt><dd>ProcTHOR(AI2-THOR)程序生成住宅</dd><dt>任务·评估</dt><dd>仿真(未见过的房屋350个)成功率：Cleaning Table 36.7%，Opening Door Push 80.0%·Pull 51.2%，Opening Fridge 20.0% (平均47%；ReLMoGen 25.1%·51.7%·40.7%·0%)；真实环境：拉门9/15，推门7/10，清洁桌面8/12(表面66.6%)</dd><dt>机器人</dt><dd>Hello Robot Stretch(轮式底盘,手臂高度·伸展控制),RealSense D455 RGB</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>使用 (RL控制器训练) · 整个策略在ProcTHOR仿真中按任务用DD-PPO从零训练(10^7步)后zero-shot迁移到真实环境</dd><dt>强化学习依据</dt><dd><a href="https://arxiv.org/abs/2312.06639" rel="noopener">https://arxiv.org/abs/2312.06639</a></dd><dt>底盘控制</dt><dd>轮式 (RL策略直接驱动) · 策略将底盘平移·旋转与手臂高度·伸展·腕部旋转一起作为5维连续动作直接输出</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>不拆分导航和操作模块，仅用RGB同时驱动底盘和机械臂的单一策略，在ProcTHOR仿真中用DD-PPO端到端训练。仿真4项任务平均成功率47%，超过ReLMoGen等基线，并在未经微调的情况下在首次见到的真实公寓中完成开门·清理桌子。</dd><dt>备注</dt><dd>2024年以前的参考基线(anchor)。每个任务单独策略，无语言·目标输入。视觉编码器为ViT(DINOv2)，但策略主干为GRU，故归为非Transformer。真机门把手抓取有启发式辅助。代码公开(GitHub)，未提供检查点。IROS 2024 Best Paper on Mobile Manipulation。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/zh/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/zh/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/zh/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/zh/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/zh/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/zh/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/zh/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/zh/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/zh/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/zh/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/zh/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/zh/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/zh/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/zh/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/panovla/"><small>← 上一个</small>PanoVLA</a><a class="nx" href="/zh/m/act-1/"><small>下一个 →</small>ACT-1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

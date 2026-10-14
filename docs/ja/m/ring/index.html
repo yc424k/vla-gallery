@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RING (The One RING) — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="RING (The One RING) (Allen Institute for AI, 2024-12) — シミュレーションでカメラ位置・画角・衝突体サイズなどをランダム化した100万個のエンボディメントの専門家軌跡で模倣学習した後、DD-PPOでRLファインチューニングし、形状に依存しない屋内物体探索方策を…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/ring/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/ring/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/ring/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/ring/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/ring/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/ring/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RING (The One RING) — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="RING (The One RING) (Allen Institute for AI, 2024-12) — シミュレーションでカメラ位置・画角・衝突体サイズなどをランダム化した100万個のエンボディメントの専門家軌跡で模倣学習した後、DD-PPOでRLファインチューニングし、形状に依存しない屋内物体探索方策を…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/ring/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RING (The One RING) — 構造・バックボーンLLM・学習・推論メモリ", "description": "RING (The One RING) (Allen Institute for AI, 2024-12) — シミュレーションでカメラ位置・画角・衝突体サイズなどをランダム化した100万個のエンボディメントの専門家軌跡で模倣学習した後、DD-PPOでRLファインチューニングし、形状に依存しない屋内物体探索方策を…", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/ring/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "RING (The One RING)", "creator": {"@type": "Organization", "name": "Allen Institute for AI·University of Washington"}}, "citation": {"@type": "ScholarlyArticle", "name": "The One RING: a Robotic Indoor Navigation Generalist", "url": "https://arxiv.org/abs/2412.14401"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "RING (The One RING)", "item": "https://vla-gallery.is-a.dev/ja/m/ring/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/ring/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/ring/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/ring/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/ring/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>RING (The One RING)</h1>
+<p class="by">Allen Institute for AI·University of Washington · 2024-12</p>
+<p class="kv"><span>VLA</span><span>ナビゲーション</span><span>非公開</span><span>離散トークン</span></p>
+<p class="sum">シミュレーションでカメラ位置・画角・衝突体サイズなどをランダム化した100万個のエンボディメントの専門家軌跡で模倣学習した後、DD-PPOでRLファインチューニングし、形状に依存しない屋内物体探索方策を作る。</p>
+<div class="acts"><a class="pri" href="/ja/#m-ring">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2412.14401" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2412.14401" rel="noopener">The One RING: a Robotic Indoor Navigation Generalist</a><small>arXiv 2412.14401</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2024-12</dd><dt>機関</dt><dd>Allen Institute for AI·University of Washington</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>非公開</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>SigLIP-ViT-B/16 (固定)</dd><dt>アクションヘッド</dt><dd>線形actor-criticヘッド (離散行動ロジット + 価値) (離散トークン)</dd><dt>チャンク</dt><dd>なし (1ステップ離散行動)</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>固定SigLIP-ViT-B/16画像・テキストエンコーダ(768→512射影) → Transformer状態エンコーダ3層 + 因果Transformerデコーダ3層(512次元・8ヘッド、コンテキスト100ステップ) → 線形actor-criticヘッド: 共通離散行動(MoveBase ±20cm、RotateBase ±6°・±30°、Done)</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100 80GB 8枚 (IL)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>80k反復 · バッチ240軌跡(表10は224)、コンテキスト100ステップ</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>DD-PPO RL微調整: H100 8枚 × 4台、40Mステップ(並列環境64・ロールアウト128)、時間は非公開</dd><dt>データ種類</dt><dd>シミュレーション・合成</dd><dt>データ規模</dt><dd>ランダムなエンボディメント100万個・ProcTHORの家50kのエキスパート軌跡 (序論は150kの家に言及)</dd><dt>主要データセット</dt><dd>ProcTHOR手続き生成の家 + Objaverse物体 (AI2-THOR); HF allenai/ring-data</dd><dt>タスク・評価</dt><dd>シミュレーションObjectNav 5エンボディメント平均成功率72.1% (FLaRe 44.8%、PoliFormer 55.4%、SPOC-2.3M 35.5%; CHORES-Sで16.7%p向上); 実世界 Stretch 83.3%・Stretch(工場構成) 72.2%・LoCoBot 80.0%・Go1 80.0% (平均78.9%)</dd><dt>ロボット</dt><dd>実世界: Stretch RE-1(2種類のカメラ構成)・LoCoBot車輪型、Unitree Go1四足、RB-Y1車輪型ヒューマノイド(定性評価); シミュレーション: Stretch・LoCoBot・Unitree A1など</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>非公開 (人による評価ではサーバーが方策を実行)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>使用 (VLAのRL事後学習) · 専門家軌跡の模倣学習後、DD-PPOで方策自体をRL微調整 (40Mステップ)</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/html/2412.14401v2" rel="noopener">https://arxiv.org/html/2412.14401v2</a></dd><dt>ベース制御</dt><dd>車輪型·四足歩行 (離散移動行動) · 全エンボディメント共通の離散行動(MoveBase ±20cm・RotateBase ±6°/±30°・Done)を出力すると、ロボット別の下位制御器が実行</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>シミュレーションでカメラ位置・画角・衝突体サイズなどをランダム化した100万個のエンボディメントの専門家軌跡で模倣学習した後、DD-PPOでRLファインチューニングし、形状に依存しない屋内物体探索方策を作る。シミュレーション5エンボディメントの平均成功率72.1%、実機Stretch RE-1・LoCoBot・Go1など4プラットフォームでゼロショット78.9%を記録した。</dd><dt>備考</dt><dd>リスト外の追加: 2024–2026 クロスエンボディメント・言語目標ナビの汎化方策の代表例。ILバッチは本文240・表10 224、RL lrは本文2e-5・表10 2e-4で不一致。パラメータ・学習時間・推論装置は非公開。HFチェックポイント 587MB(ring_model_step_40356421)。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/omnivla/"><small>← 前のモデル</small>OmniVLA</a><a class="nx" href="/ja/m/navdp/"><small>次のモデル →</small>NavDP</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

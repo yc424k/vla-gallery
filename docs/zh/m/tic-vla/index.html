@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TIC-VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="TIC-VLA (University of California, Los Angeles (UCLA), 2026-02) — 以慢速VLM推理的延迟状态和显式延迟信息（推理·经过时间、自身运动）为条件，由快速动作策略异步控制的think-in-control VLA。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/tic-vla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/tic-vla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/tic-vla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/tic-vla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/tic-vla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/tic-vla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="TIC-VLA — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="TIC-VLA (University of California, Los Angeles (UCLA), 2026-02) — 以慢速VLM推理的延迟状态和显式延迟信息（推理·经过时间、自身运动）为条件，由快速动作策略异步控制的think-in-control VLA。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/tic-vla/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "TIC-VLA — 架构、骨干LLM、训练与推理内存", "description": "TIC-VLA (University of California, Los Angeles (UCLA), 2026-02) — 以慢速VLM推理的延迟状态和显式延迟信息（推理·经过时间、自身运动）为条件，由快速动作策略异步控制的think-in-control VLA。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/tic-vla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "TIC-VLA", "creator": {"@type": "Organization", "name": "University of California, Los Angeles (UCLA)"}}, "citation": {"@type": "ScholarlyArticle", "name": "TIC-VLA: A Think-in-Control Vision-Language-Action Model for Robot Navigation in Dynamic Environments", "url": "https://arxiv.org/abs/2602.02459"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "TIC-VLA", "item": "https://vla-gallery.is-a.dev/zh/m/tic-vla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/tic-vla/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/tic-vla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/tic-vla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/tic-vla/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 导航</p>
+<h1>TIC-VLA</h1>
+<p class="by">University of California, Los Angeles (UCLA) · 2026-02</p>
+<p class="kv"><span>VLA</span><span>导航</span><span>未公开</span><span>回归</span></p>
+<p class="sum">以慢速VLM推理的延迟状态和显式延迟信息（推理·经过时间、自身运动）为条件，由快速动作策略异步控制的think-in-control VLA。</p>
+<div class="acts"><a class="pri" href="/zh/#m-tic-vla">在图库中查看架构图</a><a href="https://arxiv.org/abs/2602.02459" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2602.02459" rel="noopener">TIC-VLA: A Think-in-Control Vision-Language-Action Model for Robot Navigation in Dynamic Environments</a><small>arXiv 2602.02459</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>导航</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2026-02</dd><dt>机构</dt><dd>University of California, Los Angeles (UCLA)</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>未公开 (InternVL3-1B主干，HF标注0.9B；动作专家大小未注明)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Qwen2.5-0.5B · InternVL3-1B配置</dd><dt>视觉编码器</dt><dd>InternViT-300M (InternVL3-1B内置,共享视觉编码器)</dd><dt>动作头</dt><dd>连续3维动作块MLP回归 (积分轨迹smooth L1) (回归)</dd><dt>动作块</dt><dd>3秒预测时域 (T=30步)</dd><dt>控制频率</dt><dd>10 Hz (VLM 0.5 Hz)</dd><dt>架构原文摘要</dt><dd>共享视觉编码器 + InternVL3-1B VLM(慢速推理0.5 Hz，将延迟的最后一层KV缓存经MLP投影) + Transformer动作专家(可学习动作查询对当前视觉token·延迟VLM缓存·机器人状态·延迟Δt·自运动Δp做cross-attention) → 经MLP输出连续3维动作块，执行积分所得3秒轨迹的目标点，10 Hz</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>L40S 8张 (VLM SFT, DDP)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>VLM SFT每GPU批量2(×8张)·lr 2e-5，动作专家每GPU批量16·lr 2e-4；10个epoch·预热1,000步(Table 8，未区分阶段)；总步数未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>PPO在线RL: L40S单张,400 iteration(3项任务×3环境);时间未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作 / 仿真·合成</dd><dt>数据规模</dt><dd>SCAND 8.7小时 + GND 11小时以上 + DynaNav 5.1小时(合计24.8小时以上)；CoT·指令由GPT-5自动标注；样本·回合数未公开</dd><dt>主要数据集</dt><dd>SCAND; GND; DynaNav(自建Isaac Sim)</dd><dt>任务·评估</dt><dd>DynaNav(85个测试，仓库·医院·办公室·人行道) SR 55.29%·SPL 50.29·碰撞率28.24%(无RL时SR 47.06%；NaVILA 28.24%，Uni-NaVid 22.35%，点目标NavDP 54.12%)；真机4个任务×5次 SR 0.85(RTX 4060)·0.75(Orin NX)·0.80(A6000)，DualVLN 0.50·NaVILA 0.35</dd><dt>机器人</dt><dd>真实机器人Unitree Go2四足(前视RGB)；仿真DynaNav Nova Carter轮式·Boston Dynamics Spot四足</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>动作策略/VLM推理延迟：RTX 4060笔记本(50W) 85.73/3430.73 ms，Jetson Orin NX(25W) 120.27/4831.73 ms，RTX A6000 32.70/1681.66 ms；仿真(L40S)动作10 Hz·VLM 0.5 Hz；内存未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>边缘GPU (Jetson Orin NX·RTX 4060笔记本)</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>使用 (VLA RL后训练) · 模仿学习后仅对动作策略进行PPO在线RL（Isaac Lab动态行人环境，视觉编码器·LM冻结）</dd><dt>强化学习依据</dt><dd><a href="https://arxiv.org/html/2602.02459v2" rel="noopener">https://arxiv.org/html/2602.02459v2</a></dd><dt>底盘控制</dt><dd>轮式·四足 (航点 → 跟踪控制器) · 动作策略输出连续动作块 → 机器人跟踪积分得到的短期轨迹目标点(仿真中控制器生成平滑速度指令(v, ω)，真实机器人底层指令方式未注明)；真实机器人Go2，仿真Nova Carter·Spot</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>以慢速VLM推理的延迟状态和显式延迟信息（推理·经过时间、自身运动）为条件，由快速动作策略异步控制的think-in-control VLA。训练时注入0–10秒推理延迟并用PPO微调，在数秒延迟下仍保持10 Hz控制，DynaNav SR 55.29%，超过现有VLA（NaVILA 28.24%）。</dd><dt>备注</dt><dd>ICML 2026。公开检查点·推理数据集·DynaNav·RL脚本(HF handsomeYun/TIC-VLA数据集仓库)。总参数·训练时间未公开。数据时长为三个数据集明示值之和(GND为&#x27;over 11 hours&#x27;,故为下限)。SCAND为人类遥操作演示(SCAND论文摘要),GND采集方式未核实。真机底层指令方式未注明。</dd><dt>核验</dt><dd>已反映修正</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/zh/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/zh/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/zh/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/zh/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/zh/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/zh/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/zh/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/zh/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/zh/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/zh/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/zh/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/zh/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/zh/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/zh/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/zh/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/zh/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/zh/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/zh/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/zh/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/zh/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/zh/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/zh/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/zh/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/zh/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/zh/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/zh/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/vlingnav/"><small>← 上一个</small>VLingNav</a><a class="nx" href="/zh/m/futurenav/"><small>下一个 →</small>FutureNav</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFM-1 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="RFM-1 (Covariant, 2024-03) — Handles language instruction understanding, in-context learning, and action-conditioned video prediction in a single 8B model.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/rfm-1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rfm-1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/rfm-1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rfm-1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rfm-1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rfm-1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RFM-1 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="RFM-1 (Covariant, 2024-03) — Handles language instruction understanding, in-context learning, and action-conditioned video prediction in a single 8B model.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/rfm-1/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RFM-1 — Architecture, Backbone LLM, Training & Inference Memory", "description": "RFM-1 (Covariant, 2024-03) — Handles language instruction understanding, in-context learning, and action-conditioned video prediction in a single 8B model.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/rfm-1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "RFM-1", "creator": {"@type": "Organization", "name": "Covariant"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "RFM-1", "item": "https://vla-gallery.is-a.dev/m/rfm-1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rfm-1/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rfm-1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rfm-1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rfm-1/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Industry models</p>
+<h1>RFM-1</h1>
+<p class="by">Covariant · 2024-03</p>
+<p class="kv"><span>VLA</span><span>Industry models</span><span>8B</span><span>Not disclosed</span></p>
+<p class="sum">Handles language instruction understanding, in-context learning, and action-conditioned video prediction in a single 8B model.</p>
+<div class="acts"><a class="pri" href="/#m-rfm-1">View architecture diagram in the gallery</a><a href="https://covariant.ai/insights/introducing-rfm-1-giving-robots-human-like-reasoning-capabilities/" rel="noopener">Official page ↗</a></div>
+<h2>Paper</h2>
+<p class="paper">No paper</p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Industry models</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2024-03</dd><dt>Organization</dt><dd>Covariant</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>8B</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Not disclosed (8B any-to-any transformer)</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Action tokens + action-conditioned video prediction (Not disclosed)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>multimodal any-to-any sequence Transformer (text·image·video·robot actions·numeric sensors); uses action-conditioned video prediction as a world model; action chunk·frequency not disclosed</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed</dd><dt>Data type</dt><dd>Real-robot operation data + internet data (text·images·video)</dd><dt>Data scale</dt><dd>&#x27;tens of millions of trajectories&#x27; (press release); (secondary) &#x27;a million trajectories every few weeks&#x27;, dozens of customers in 15 countries</dd><dt>Main datasets</dt><dd>Covariant real-deployment robot data (private)</dd><dt>Tasks &amp; evaluation</dt><dd>Warehouse pick-and-place; quantitative benchmarks Not disclosed; not deployed to customers at announcement</dd><dt>Robot</dt><dd>Warehouse picking robots (suction, etc.)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed (world model video generation about 512×512, about 5fps)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>16 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not disclosed · Training method not disclosed</dd><dt>Base control</dt><dd>Fixed · No base control (warehouse picking arm)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Handles language instruction understanding, in-context learning, and action-conditioned video prediction in a single 8B model. Trained on tens of millions of trajectories of operational data from robots deployed in customer warehouses.</dd><dt>Notes</dt><dd>Announced 2024-03-11 (press-release URL path·IEEE Spectrum article date). (secondary, IEEE Spectrum) Data includes still images·video·joint angles·force·suction strength. The blog calls it the &#x27;largest real-world robot production dataset&#x27;.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/m/gigabrain-0/">GigaBrain-0</a><small>2025-10</small></li><li><a href="/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/m/genie-envisioner/"><small>← Previous</small>Genie Envisioner</a><a class="nx" href="/m/skild-brain/"><small>Next →</small>Skild Brain</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

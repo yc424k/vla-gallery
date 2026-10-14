@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraspVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="GraspVLA (Galbot, Peking University, HKU, BAAI, 2025-05) — Without real-robot data, co-trains synthetic SynGrasp-1B (10M trajectories) and web grounding (GRI…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/graspvla/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/graspvla/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/graspvla/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/graspvla/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/graspvla/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/graspvla/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GraspVLA — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="GraspVLA (Galbot, Peking University, HKU, BAAI, 2025-05) — Without real-robot data, co-trains synthetic SynGrasp-1B (10M trajectories) and web grounding (GRI…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/graspvla/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GraspVLA — Architecture, Backbone LLM, Training & Inference Memory", "description": "GraspVLA (Galbot, Peking University, HKU, BAAI, 2025-05) — Without real-robot data, co-trains synthetic SynGrasp-1B (10M trajectories) and web grounding (GRI…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/graspvla/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "GraspVLA", "creator": {"@type": "Organization", "name": "Galbot, Peking University, HKU, BAAI"}}, "citation": {"@type": "ScholarlyArticle", "name": "GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data", "url": "https://arxiv.org/abs/2505.03233"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "GraspVLA", "item": "https://vla-gallery.is-a.dev/m/graspvla/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/graspvla/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/graspvla/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/graspvla/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/graspvla/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
+<h1>GraspVLA</h1>
+<p class="by">Galbot, Peking University, HKU, BAAI · 2025-05</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>LLM 1.8B</span><span>flow matching</span></p>
+<p class="sum">Without real-robot data, co-trains synthetic SynGrasp-1B (10M trajectories) and web grounding (GRIT) for zero-shot grasping.</p>
+<div class="acts"><a class="pri" href="/#m-graspvla">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2505.03233" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2505.03233" rel="noopener">GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data</a><small>arXiv 2505.03233</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Flow·Diffusion VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-05</dd><dt>Organization</dt><dd>Galbot, Peking University, HKU, BAAI</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>LLM 1.8B; total·action expert size not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>InternLM2 1.8B</dd><dt>Vision encoder</dt><dd>DINOv2 + SigLIP (frozen)</dd><dt>Action head</dt><dd>bbox → grasp pose → flow chunk (flow matching)</dd><dt>Chunk</dt><dd>4 steps</dd><dt>Control rate</dt><dd>10 Hz (data)</dd><dt>Architecture (original summary)</dt><dd>InternLM2 1.8B (trained) + frozen DINOv2·SigLIP; Progressive Action Generation: 2D bbox → grasp pose → flow matching action chunk (4 steps); actions stored at 10 Hz</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Model training Not disclosed (data generation on RTX 4090×160)</dd><dt>Pretraining duration</dt><dd>Model training Not disclosed (data generation 10 days)</dd><dt>Pretraining steps &amp; batch</dt><dd>Batch 384, lr 1.6e-4, success stabilizes after 120k steps; README example 200K steps·8 GPUs/node (not a paper value)</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Compute not disclosed; post-training tasks 1–2: 100 demonstrations, task 3: 10 per bottle; 5k synthetic trajectories for new arm·camera adaptation (1 day on 1 RTX 4090)</dd><dt>Data type</dt><dd>Simulation·synthetic + web vision-language</dd><dt>Data scale</dt><dd>SynGrasp-1B 10M trajectories (about 100 frames per trajectory, about 1B frames), 10,680 object meshes·240 categories; GRIT (mixing ratio not disclosed)</dd><dt>Main datasets</dt><dd>SynGrasp-1B, GRIT</dd><dt>Tasks &amp; evaluation</dt><dd>Real-robot zero-shot grasping: synthetic categories 93.3%, web categories 93.3%; LIBERO Long 82.0·Goal 91.2·Object 94.1</dd><dt>Robot</dt><dd>Franka Panda (single arm), adapted to UR5e</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>L40s + Torch Compile about 200 ms (vision 9·bbox 72·grasp pose 50·flow 64 ms), about 9 GB; 5 Hz (AnyGrasp 37 Hz)</dd><dt>Inference memory</dt><dd>About 9 GB (L40s)</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning on synthetic data</dd><dt>Base control</dt><dd>Fixed · No base control (Franka·UR5e arm grasping)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Without real-robot data, co-trains synthetic SynGrasp-1B (10M trajectories) and web grounding (GRIT) for zero-shot grasping. Data generation took 10 days on 160 RTX 4090s, about $5,000.</dd><dt>Notes</dt><dd>Do not confuse data-generation compute with model-training compute. Zero-shot grasping 93.3% is an extracted Table 1 value; cross-checking against the original is recommended. Weights cc-by-nc-4.0 (released 2025-07-25).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/m/eo-1/"><small>← Previous</small>EO-1</a><a class="nx" href="/m/evo-1/"><small>Next →</small>Evo-1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

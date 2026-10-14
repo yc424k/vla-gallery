@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WALL-OSS — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="WALL-OSS (X Square Robot, 2025-09) — Uses Uni-CoT, which produces reasoning (CoT), subtask plans, and continuous actions in one stream, with separate FFNs fo…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/wall-oss/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/wall-oss/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/wall-oss/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/wall-oss/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/wall-oss/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/wall-oss/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="WALL-OSS — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="WALL-OSS (X Square Robot, 2025-09) — Uses Uni-CoT, which produces reasoning (CoT), subtask plans, and continuous actions in one stream, with separate FFNs fo…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/wall-oss/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "WALL-OSS — Architecture, Backbone LLM, Training & Inference Memory", "description": "WALL-OSS (X Square Robot, 2025-09) — Uses Uni-CoT, which produces reasoning (CoT), subtask plans, and continuous actions in one stream, with separate FFNs fo…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/wall-oss/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "WALL-OSS", "creator": {"@type": "Organization", "name": "X Square Robot"}}, "citation": {"@type": "ScholarlyArticle", "name": "Igniting VLMs toward the Embodied Space", "url": "https://arxiv.org/abs/2509.11766"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "WALL-OSS", "item": "https://vla-gallery.is-a.dev/m/wall-oss/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/wall-oss/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/wall-oss/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/wall-oss/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/wall-oss/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
+<h1>WALL-OSS</h1>
+<p class="by">X Square Robot · 2025-09</p>
+<p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>4B</span><span>hybrid</span></p>
+<p class="sum">Uses Uni-CoT, which produces reasoning (CoT), subtask plans, and continuous actions in one stream, with separate FFNs for actions and VL.</p>
+<div class="acts"><a class="pri" href="/#m-wall-oss">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2509.11766" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2509.11766" rel="noopener">Igniting VLMs toward the Embodied Space</a><small>arXiv 2509.11766</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Flow·Diffusion VLA</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-09</dd><dt>Organization</dt><dd>X Square Robot</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>4B (HF card); backbone Qwen2.5-VL-3B</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B config</dd><dt>Vision encoder</dt><dd>Qwen2.5-VL ViT</dd><dt>Action head</dt><dd>FAST tokens + flow matching (MoE with separate FFNs) (hybrid)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>Qwen2.5-VL-3B + MoE-style split Action FFN·VL FFN; Uni-CoT (instruction→reasoning→subtask plan→continuous actions); FAST discrete tokens in the Inspiration stage, flow matching continuous actions in the Integration stage (stage 1 VLM frozen·flow head only, stage 2 joint); chunk·frequency not disclosed</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Not disclosed; episodes per task Place-by-Color 500, Block-Spell 1600, Set-Table 1500, Tidy-Bedroom 1000, Collect-Waste 900, Pick-Place-Cup 500; LeRobot guide peak VRAM about 24~40 GB, A100 40GB+ (secondary)</dd><dt>Data type</dt><dd>Real-robot teleoperation + web vision-language</dd><dt>Data scale</dt><dd>Over 10,000 h (Sec. 4)/&#x27;tens of thousands of hours&#x27; (Sec. 4.4)</dd><dt>Main datasets</dt><dd>In-house collection + AgiBotWorld, DROID, BC-Z, RH20T, Furniture_bench, Fractal, Bridge v2; CapsFusion, Cambrian, PixMo, RoboPoint, Robo2VLM, COCO, VQAv2</dd><dt>Tasks &amp; evaluation</dt><dd>Embodied VQA: Object Grounding 91.6%, Scene Captioning 87.6%, Action Planning 69.0% (base 46.1/57.7/59.8); 6 real tasks (Set-Table · Tidy-Bedroom, etc.) task progress seen 85% · novel 61%</dd><dt>Robot</dt><dd>Desktop arm, mobile stand, wheeled bimanual, wheeled humanoid</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>8 GB</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Joint supervised learning of reasoning, FAST, and flow</dd><dt>Base control</dt><dd>Wheeled (Direct base velocity/pose output) · In the Collect-waste task the model moves to the trash bin; base command format not stated in the paper (DoF template masking)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Uses Uni-CoT, which produces reasoning (CoT), subtask plans, and continuous actions in one stream, with separate FFNs for actions and VL. Reports seen-task progress of 85% on 6 real-world tasks, higher than π0 and Diffusion Policy.</dd><dt>Notes</dt><dd>Data scale conflicts within the paper between over 10,000 h and tens of thousands of hours (checked in original). Training compute Not disclosed in both paper·README. Weights wall-oss-flow, wall-oss-fast.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rdt-1b/">RDT-1B</a><small>2024-10</small></li><li><a href="/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
+<nav class="pn"><a href="/m/internvla-m1/"><small>← Previous</small>InternVLA-M1</a><a class="nx" href="/m/eo-1/"><small>Next →</small>EO-1</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

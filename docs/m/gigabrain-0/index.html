@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GigaBrain-0 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="GigaBrain-0 (GigaAI, 2025-10) — Reduces dependence on real-robot data with generated data from the GigaWorld world model (Real2Real, Sim2Real, human video co…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/gigabrain-0/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/gigabrain-0/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/gigabrain-0/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/gigabrain-0/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/gigabrain-0/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/gigabrain-0/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="GigaBrain-0 — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="GigaBrain-0 (GigaAI, 2025-10) — Reduces dependence on real-robot data with generated data from the GigaWorld world model (Real2Real, Sim2Real, human video co…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/gigabrain-0/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "GigaBrain-0 — Architecture, Backbone LLM, Training & Inference Memory", "description": "GigaBrain-0 (GigaAI, 2025-10) — Reduces dependence on real-robot data with generated data from the GigaWorld world model (Real2Real, Sim2Real, human video co…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/gigabrain-0/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "GigaBrain-0", "creator": {"@type": "Organization", "name": "GigaAI"}}, "citation": {"@type": "ScholarlyArticle", "name": "GigaBrain-0: A World Model-Powered Vision-Language-Action Model", "url": "https://arxiv.org/abs/2510.19430"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "GigaBrain-0", "item": "https://vla-gallery.is-a.dev/m/gigabrain-0/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/gigabrain-0/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/gigabrain-0/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/gigabrain-0/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/gigabrain-0/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Industry models</p>
+<h1>GigaBrain-0</h1>
+<p class="by">GigaAI · 2025-10</p>
+<p class="kv"><span>VLA</span><span>Industry models</span><span>Not disclosed</span><span>flow matching</span></p>
+<p class="sum">Reduces dependence on real-robot data with generated data from the GigaWorld world model (Real2Real, Sim2Real, human video conversion, etc.).</p>
+<div class="acts"><a class="pri" href="/#m-gigabrain-0">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2510.19430" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2510.19430" rel="noopener">GigaBrain-0: A World Model-Powered Vision-Language-Action Model</a><small>arXiv 2510.19430</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Industry models</dd><dt>Type</dt><dd>VLA</dd><dt>Released</dt><dd>2025-10</dd><dt>Organization</dt><dd>GigaAI</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>Not disclosed (GigaBrain-0-Small 402M)</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>Gemma 2 · PaliGemma2 config (size not disclosed)</dd><dt>Vision encoder</dt><dd>SigLIP (RGB-D)</dd><dt>Action head</dt><dd>flow matching DiT (MoT) (flow matching)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>PaliGemma2 VLM + flow-matching DiT, mixture-of-transformers; RGB-D input (SigLIP depth channel zero-initialized); embodied CoT (10 2D trajectory keypoints, discrete action tokens, subgoal language)</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>Not disclosed</dd><dt>Pretraining duration</dt><dd>Not disclosed</dd><dt>Pretraining steps &amp; batch</dt><dd>Not disclosed</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>GPU and time not disclosed; laundry folding G1 300 demos · batch 128 · 40K steps; paper towel PiPER 100 demos · batch 128 · 20K steps</dd><dt>Data type</dt><dd>Real robot + simulation·synthetic (GigaWorld-generated) + public robot data</dd><dt>Data scale</dt><dd>In-house real robot 1,182 h (Agilex Cobot Magic 199 h, AgiBot G1 983 h; 14 environments, 3,100 m²); amount of public and generated data not disclosed</dd><dt>Main datasets</dt><dd>In-house data, AgiBotWorld, RoboMind, Open X-Embodiment, GigaWorld-generated data</dd><dt>Tasks &amp; evaluation</dt><dd>Laundry folding, paper towel prep, juice making, table clearing, moving boxes·baskets, appearance·layout·viewpoint generalization; vs π0 laundry folding +30%, paper towel +10% (main text)</dd><dt>Robot</dt><dd>AgiBot G1, PiPER arm, Agilex Cobot Magic</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>On Jetson AGX Orin, GigaBrain-0-Small 0.13 s vs π0 1.28 s</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Onboard (Jetson AGX Orin, Small)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Supervised learning on real robot + generated data</dd><dt>Base control</dt><dd>Wheeled (Direct base velocity/pose output) · In mobile manipulation tasks (moving boxes·laundry baskets, AgiBot G1) the model does obstacle-avoiding movement·base repositioning; base command format not stated; PiPER bimanual arms are fixed</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Reduces dependence on real-robot data with generated data from the GigaWorld world model (Real2Real, Sim2Real, human video conversion, etc.). The lightweight GigaBrain-0-Small (402M) runs in 0.13 s on Jetson AGX Orin.</dd><dt>Notes</dt><dd>Parameters (B) is null because the total for this model is not disclosed (only GigaBrain-0-Small 402M is disclosed). Per-task absolute success rates from figure bar labels could not be confirmed in verification, so only the differences in the text (+30%, +10%) are used. Weights released 2025-11-27 (repository Apache-2.0). GigaBrain-0.7 in the README is a 2026 release and excluded. Data hours (h) cover in-house data only. arXiv v1 2025-10-22.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/gemini-robotics/">Gemini Robotics</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-er/">Gemini Robotics-ER</a><small>2025-03</small></li><li><a href="/m/gemini-robotics-on-device/">Gemini Robotics On-Device</a><small>2025-06</small></li><li><a href="/m/gemini-robotics-1-5/">Gemini Robotics 1.5</a><small>2025-09</small></li><li><a href="/m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a><small>2025-09</small></li><li><a href="/m/rt-h/">RT-H</a><small>2024-03</small></li><li><a href="/m/autort/">AutoRT</a><small>2024-01</small></li><li><a href="/m/sara-rt/">SARA-RT</a><small>2023-12</small></li><li><a href="/m/gr-2/">GR-2</a><small>2024-10</small></li><li><a href="/m/gr-3/">GR-3</a><small>2025-07</small></li><li><a href="/m/gr-rl/">GR-RL</a><small>2025-12</small></li><li><a href="/m/gr-dexter/">GR-Dexter</a><small>2025-12</small></li><li><a href="/m/tri-lbm-1-0/">TRI LBM 1.0</a><small>2025-07</small></li><li><a href="/m/go-1/">GO-1</a><small>2025-03</small></li><li><a href="/m/genie-envisioner/">Genie Envisioner</a><small>2025-08</small></li><li><a href="/m/rfm-1/">RFM-1</a><small>2024-03</small></li><li><a href="/m/skild-brain/">Skild Brain</a><small>2025-07</small></li><li><a href="/m/dyna-1/">DYNA-1</a><small>2025-06</small></li><li><a href="/m/gen-0/">GEN-0</a><small>2025-11</small></li><li><a href="/m/galaxea-g0/">Galaxea G0</a><small>2025-08</small></li><li><a href="/m/rynnvla-001/">RynnVLA-001</a><small>2025-08</small></li><li><a href="/m/unifolm-wma-0/">UnifoLM-WMA-0</a><small>2025-09</small></li><li><a href="/m/v-jepa-2-ac/">V-JEPA 2-AC</a><small>2025-06</small></li></ul></section>
+<nav class="pn"><a href="/m/galaxea-g0/"><small>← Previous</small>Galaxea G0</a><a class="nx" href="/m/rynnvla-001/"><small>Next →</small>RynnVLA-001</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

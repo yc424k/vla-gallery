@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>π0 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="π0 (Physical Intelligence, 2024-10) — π系列首个在VLM主干上附加独立flow matching动作专家的模型，用7种机器人配置·68项任务约10,000 h数据预训练。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/pi0/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/pi0/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/pi0/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/pi0/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/pi0/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/pi0/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="π0 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="π0 (Physical Intelligence, 2024-10) — π系列首个在VLM主干上附加独立flow matching动作专家的模型，用7种机器人配置·68项任务约10,000 h数据预训练。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/pi0/"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "π0 — 架构、骨干LLM、训练与推理内存", "description": "π0 (Physical Intelligence, 2024-10) — π系列首个在VLM主干上附加独立flow matching动作专家的模型，用7种机器人配置·68项任务约10,000 h数据预训练。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/pi0/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "π0", "creator": {"@type": "Organization", "name": "Physical Intelligence"}}, "citation": {"@type": "ScholarlyArticle", "name": "π0: A Vision-Language-Action Flow Model for General Robot Control", "url": "https://arxiv.org/abs/2410.24164"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "π0", "item": "https://vla-gallery.is-a.dev/zh/m/pi0/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/pi0/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/pi0/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/pi0/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/pi0/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / π系列</p>
+<h1>π0</h1>
+<p class="by">Physical Intelligence · 2024-10</p>
+<p class="kv"><span>VLA</span><span>π系列</span><span>3.3B</span><span>flow matching</span></p>
+<p class="sum">π系列首个在VLM主干上附加独立flow matching动作专家的模型，用7种机器人配置·68项任务约10,000 h数据预训练。</p>
+<div class="acts"><a class="pri" href="/zh/#m-pi0">在图库中查看架构图</a><a href="https://arxiv.org/abs/2410.24164" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.24164" rel="noopener">π0: A Vision-Language-Action Flow Model for General Robot Control</a><small>arXiv 2410.24164</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>π系列</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2024-10</dd><dt>机构</dt><dd>Physical Intelligence</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>3.3B (VLM 3B + 动作专家300M)；对比用π0-small 470M</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Gemma 2B · PaliGemma 3B配置</dd><dt>视觉编码器</dt><dd>SigLIP 400M</dd><dt>动作头</dt><dd>flow matching动作专家300M (10步) (flow matching)</dd><dt>动作块</dt><dd>50步</dd><dt>控制频率</dt><dd>最高50 Hz</dd><dt>架构原文摘要</dt><dd>PaliGemma 3B VLM + 300M动作专家(从头训练);flow matching连续动作块H=50,最高50 Hz,积分10步</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>700k步(compute parity变体160k) / 批量未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>论文未公开（每个任务后训练数据 5~100+ h）。openpi：LoRA &gt;22.5 GB（RTX 4090），Full &gt;70 GB（A100 80GB/H100），pi0_libero 30k 步·批量 32（时间未公开）。LoRA A800×4 约 7 h·30k 步·批量 32（二手，X-VLA论文 App. K 重新训练）</dd><dt>数据类型</dt><dd>真实机器人遥操作(自有 + 开放数据)</dd><dt>数据规模</dt><dd>约10,000 h；自有903M timesteps；68项任务；开放数据占比9.1%</dd><dt>主要数据集</dt><dd>PI自有数据, OXE(Magic Soup), Bridge v2, DROID</dd><dt>任务·评估</dt><dd>叠衬衫，Bussing easy/hard，Grocery bagging，Toast；多阶段：叠衣服，移动叠衣，移动烘干机，清空烘干机，Table bussing，折纸箱，To-go box，鸡蛋装盒；微调任务5种；openpi LIBERO 96.8/98.8/95.8/85.2，平均94.15</dd><dt>机器人</dt><dd>UR5e，双臂UR5e，Franka，双臂Trossen，双臂ARX·AgileX，移动Trossen·ARX，移动Fibocom (7种配置)</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>RTX 4090机载73 ms(图像编码器14 + 观测32 + 动作×10 27 ms),远程86 ms;openpi推理&gt;8 GB</dd><dt>推理显存</dt><dd>&gt; 8 GB (openpi README)</dd><dt>权重 bf16（计算）</dt><dd>6.6 GB</dd><dt>运行位置</dt><dd>机载或远程PC</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · flow matching模仿学习</dd><dt>底盘控制</dt><dd>轮式 (直接输出底盘速度/位姿) · 在移动配置中底盘动作包含于策略输出（Trossen·ARX 2维，Fibocom 3维）；其他为固定机械臂</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>π系列首个在VLM主干上附加独立flow matching动作专家的模型，用7种机器人配置·68项任务约10,000 h数据预训练。可完成叠衣服·折纸箱等多阶段长时程任务。</dd><dt>备注</dt><dd>按n^0.43对任务-机器人组合加权。当前arXiv PDF为v4(2026-01-08)，延迟表等在v1中也有。PI博客因403未核实。openpi权重自2025-02-03首次提交起公开(Apache-2.0)。</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/pi0-fast/">π0-FAST (FAST 토크나이저)</a><small>2025-01</small></li><li><a href="/zh/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/zh/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/zh/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/zh/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/zh/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/zh/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li><li><a href="/zh/m/rtc/">학습시 RTC</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/robomamba/"><small>← 上一个</small>RoboMamba</a><a class="nx" href="/zh/m/pi0-fast/"><small>下一个 →</small>π0-FAST (FAST 토크나이저)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NoMaD — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="NoMaD (UC Berkeley, 2023-10) — 目標画像を確率的に隠す目標マスキングで、目標指向ナビゲーションと目標なし探索を1つの拡散方策で処理する。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/nomad/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/nomad/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/nomad/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/nomad/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/nomad/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/nomad/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="NoMaD — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="NoMaD (UC Berkeley, 2023-10) — 目標画像を確率的に隠す目標マスキングで、目標指向ナビゲーションと目標なし探索を1つの拡散方策で処理する。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/nomad/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "NoMaD — 構造・バックボーンLLM・学習・推論メモリ", "description": "NoMaD (UC Berkeley, 2023-10) — 目標画像を確率的に隠す目標マスキングで、目標指向ナビゲーションと目標なし探索を1つの拡散方策で処理する。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/nomad/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "NoMaD", "creator": {"@type": "Organization", "name": "UC Berkeley"}}, "citation": {"@type": "ScholarlyArticle", "name": "NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration", "url": "https://arxiv.org/abs/2310.07896"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "NoMaD", "item": "https://vla-gallery.is-a.dev/ja/m/nomad/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/nomad/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/nomad/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/nomad/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/nomad/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>NoMaD</h1>
+<p class="by">UC Berkeley · 2023-10</p>
+<p class="kv"><span>VA</span><span>ナビゲーション</span><span>19M</span><span>diffusion</span></p>
+<p class="sum">目標画像を確率的に隠す目標マスキングで、目標指向ナビゲーションと目標なし探索を1つの拡散方策で処理する。</p>
+<div class="acts"><a class="pri" href="/ja/#m-nomad">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2310.07896" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2310.07896" rel="noopener">NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</a><small>arXiv 2310.07896</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VA</dd><dt>発表</dt><dd>2023-10</dd><dt>機関</dt><dd>UC Berkeley</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>19M</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>EfficientNet-B0 (観測 / 観測+目標)</dd><dt>アクションヘッド</dt><dd>1D条件付きU-Net拡散ヘッド (K=10) + 時間的距離ヘッド (diffusion)</dd><dt>チャンク</dt><dd>ウェイポイント8個 (公開設定)</dd><dt>制御周期</dt><dd>非公開 (配備設定 4 Hz)</dd><dt>構造の原文要約</dt><dd>EfficientNet-B0で観測・目標を256次元にトークン化 → Transformer 4層・4ヘッド(目標マスキング p_m=0.5) → 1D条件付きU-Net拡散ヘッド(K=10デノイジング)で将来の行動シーケンスを生成(公開設定でウェイポイント8個) + 時間的距離ヘッド; PD制御器が速度に変換</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開 (謝辞にGoogle TPU Research Cloudなどの計算支援のみ言及)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>30エポック · バッチ256 (公開nomad.yamlは100エポック)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / 実ロボットの自律走行ログ</dd><dt>データ規模</dt><dd>GNM・SACSoNデータセット100時間以上</dd><dt>主要データセット</dt><dd>GNMデータ混合(RECON、GoStanford、SCAND、TartanDriveなど); SACSoN(HuRoN)</dd><dt>タスク・評価</dt><dd>実環境の探索成功率98%・衝突0.2回 (Subgoal Diffusion 77%・1.7回、Random Subgoals 70%); 目標条件付きナビゲーション90%; 専用方策比で探索98%(Diffusion Policy 98%)・目標92%(ViNT 92%)</dd><dt>ロボット</dt><dd>LoCoBot 車輪型 (屋内・屋外環境)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>Jetson Orin級のオンボード実行を志向 (論文); READMEの配備例はLoCoBot + Jetson Orin Nano; 拡散10ステップ; 遅延は非公開 (配備ループ4 Hz設定)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0 GB</dd><dt>実行場所</dt><dd>オンボード Jetson Orin級 (README: Orin Nano)</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · エンドツーエンドの教師あり模倣学習のみ</dd><dt>ベース制御</dt><dd>車輪型 (ウェイポイント → 追従制御器) · 拡散方策がウェイポイント系列を出力 → PD制御器がベース速度指令に変換 (README)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>目標画像を確率的に隠す目標マスキングで、目標指向ナビゲーションと目標なし探索を1つの拡散方策で処理する。19Mパラメータで335Mのsubgoal拡散方式より探索成功率(98% 対 77%)と衝突(0.2回 対 1.7回)を改善した。</dd><dt>備考</dt><dd>論文に行動シーケンス長・コンテキスト・解像度の記載なし → 公開nomad.yaml基準でウェイポイント8個・コンテキスト3・96×96。学習GPU・時間は非公開。ViNT方策構造に目標マスキングを結合。重みはGoogle Driveで公開。ICRA 2024。ベース: ViNT: A Foundation Model for Visual Navigation (arXiv 2306.14846) — ViNT方策構造に目標マスキング・拡散ヘッドを結合 (論文に明記)</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/vln-r1/">VLN-R1</a><small>2025-06</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/vint/"><small>← 前のモデル</small>ViNT</a><a class="nx" href="/ja/m/crossformer/"><small>次のモデル →</small>CrossFormer</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLN-R1 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="VLN-R1 (The University of Hong Kong, 2025-06) — 汎用VLM(Qwen2-VL)を一人称動画ベースのVLNでSFTした後、時間減衰報酬(TDR)を使うGRPO強化ファインチューニング(RFT)で多段階の行動予測を改善した。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/vln-r1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/vln-r1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/vln-r1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/vln-r1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/vln-r1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/vln-r1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="VLN-R1 — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="VLN-R1 (The University of Hong Kong, 2025-06) — 汎用VLM(Qwen2-VL)を一人称動画ベースのVLNでSFTした後、時間減衰報酬(TDR)を使うGRPO強化ファインチューニング(RFT)で多段階の行動予測を改善した。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/vln-r1/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "VLN-R1 — 構造・バックボーンLLM・学習・推論メモリ", "description": "VLN-R1 (The University of Hong Kong, 2025-06) — 汎用VLM(Qwen2-VL)を一人称動画ベースのVLNでSFTした後、時間減衰報酬(TDR)を使うGRPO強化ファインチューニング(RFT)で多段階の行動予測を改善した。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/vln-r1/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "VLN-R1", "creator": {"@type": "Organization", "name": "The University of Hong Kong·Shanghai AI Laboratory"}}, "citation": {"@type": "ScholarlyArticle", "name": "VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning", "url": "https://arxiv.org/abs/2506.17221"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "VLN-R1", "item": "https://vla-gallery.is-a.dev/ja/m/vln-r1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/vln-r1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/vln-r1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/vln-r1/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/vln-r1/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / ナビゲーション</p>
+<h1>VLN-R1</h1>
+<p class="by">The University of Hong Kong·Shanghai AI Laboratory · 2025-06</p>
+<p class="kv"><span>VLA</span><span>ナビゲーション</span><span>2B / 7B</span><span>離散トークン</span></p>
+<p class="sum">汎用VLM(Qwen2-VL)を一人称動画ベースのVLNでSFTした後、時間減衰報酬(TDR)を使うGRPO強化ファインチューニング(RFT)で多段階の行動予測を改善した。</p>
+<div class="acts"><a class="pri" href="/ja/#m-vln-r1">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2506.17221" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2506.17221" rel="noopener">VLN-R1: Vision-Language Navigation via Reinforcement Fine-Tuning</a><small>arXiv 2506.17221</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>ナビゲーション</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-06</dd><dt>機関</dt><dd>The University of Hong Kong·Shanghai AI Laboratory</dd><dt>重み公開</dt><dd>なし</dd><dt>パラメータ</dt><dd>2B / 7B (Qwen2-VL-2B·7B)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Qwen2-VL-7B / 2B (内蔵LLMの名称は記載なし)</dd><dt>ビジョンエンコーダ</dt><dd>Qwen2-VL内蔵ビジョンエンコーダ (詳細記載なし)</dd><dt>アクションヘッド</dt><dd>次の6個の離散行動テキスト (選択肢の文字 + 説明) (離散トークン)</dd><dt>チャンク</dt><dd>行動6個</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>Qwen2-VL-2B/7Bをフルファインチューニング; 一人称映像(インスタンスあたり画像16枚、最大65,536ピクセル、約4.1Kトークン) + 指示を入力; 次の6個の離散行動を選択肢の文字+説明テキストで出力(FORWARD・TURN-LEFT・TURN-RIGHT・STOP、例 &#x27;C. Turn right 30 degrees&#x27;)</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>A800 8枚 (7B SFT、DeepSpeed ZeRO-3)</dd><dt>事前学習期間</dt><dd>36時間 (SFT 1エポック)</dd><dt>事前学習ステップ・バッチ</dt><dd>SFT 1エポック · グローバルバッチ64 (GPUあたり2×累積4、lr 5e-6)</dd><dt>GPU・TPU時間</dt><dd>288 (換算 · A800 8枚 × 36時間 (7B SFT 1エポック))</dd><dt>ファインチューニング</dt><dd>RFT(GRPO): エポックあたり約12時間(エポック数は記載なし)、lr 1e-6、プロンプトあたり8サンプル、KL β 0.04、GPUあたりバッチ1、20Kサンプル (7BはA800 8枚の環境)</dd><dt>データ種類</dt><dd>シミュレーション・合成</dd><dt>データ規模</dt><dd>VLN-Ego: R2R 630K + RxR 1.2Mの学習サンプル(SFT 1.8M); RFTはデータセットごとに10K、計20K</dd><dt>主要データセット</dt><dd>VLN-Ego (Habitat・MP3Dで生成; R2R 7,189経路・RxR 42,023軌跡ベース)</dd><dt>タスク・評価</dt><dd>R2R-CE val-unseen SR 30.2%・SPL 21.8%(7B)、SR 25.6%・SPL 20.5%(2B); RxR-CE SR 22.3%(7B)・21.4%(2B); クロスドメイン(R2R SFT→RxR RFT) RxR SR 22.7%(7B)</dd><dt>ロボット</dt><dd>実ロボットなし (Habitatシミュレーションエージェント)</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>非公開 (Habitatシミュレーション評価のみ)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>14 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>使用 (VLAのRL事後学習) · SFT後にGRPOベースのRFT段階(Time-Decayed Rewardで多段階行動に報酬)</dd><dt>強化学習の根拠</dt><dd><a href="https://arxiv.org/abs/2506.17221" rel="noopener">https://arxiv.org/abs/2506.17221</a></dd><dt>ベース制御</dt><dd>シミュレーションのみ (離散移動行動) · 実ロボットなし: Habitat VLN-CEシミュレーションエージェントが離散行動(前進・回転・停止)を実行</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>汎用VLM(Qwen2-VL)を一人称動画ベースのVLNでSFTした後、時間減衰報酬(TDR)を使うGRPO強化ファインチューニング(RFT)で多段階の行動予測を改善した。RFTを経た2BモデルがSFTのみの7Bモデルを上回り、小型VLMでもRL事後学習の効果を示した。</dd><dt>備考</dt><dd>重みは非公開(VLN-Ego学習データ・データ生成コードのみ公開、SFT・RFT・評価コードは準備中); 2B学習ハードウェアは記載なし; 表ごとの数値が一部不一致(Table 1とTable 3); 実ロボット実験なし(限界として明記)。</dd><dt>検証</dt><dd>確認</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/gnm/">GNM</a><small>2022-10</small></li><li><a href="/ja/m/vint/">ViNT</a><small>2023-06</small></li><li><a href="/ja/m/nomad/">NoMaD</a><small>2023-10</small></li><li><a href="/ja/m/crossformer/">CrossFormer</a><small>2024-08</small></li><li><a href="/ja/m/lelan/">LeLaN</a><small>2024-10</small></li><li><a href="/ja/m/citywalker/">CityWalker</a><small>2024-11</small></li><li><a href="/ja/m/nwm/">NWM</a><small>2024-12</small></li><li><a href="/ja/m/x-mobility/">X-Mobility</a><small>2024-10</small></li><li><a href="/ja/m/compass/">COMPASS</a><small>2025-02</small></li><li><a href="/ja/m/omnivla/">OmniVLA</a><small>2025-09</small></li><li><a href="/ja/m/ring/">RING (The One RING)</a><small>2024-12</small></li><li><a href="/ja/m/navdp/">NavDP</a><small>2025-05</small></li><li><a href="/ja/m/navid/">NaVid</a><small>2024-02</small></li><li><a href="/ja/m/uni-navid/">Uni-NaVid</a><small>2024-12</small></li><li><a href="/ja/m/navila/">NaVILA</a><small>2024-12</small></li><li><a href="/ja/m/mobility-vla/">Mobility VLA</a><small>2024-07</small></li><li><a href="/ja/m/streamvln/">StreamVLN</a><small>2025-07</small></li><li><a href="/ja/m/navfom/">NavFoM</a><small>2025-09</small></li><li><a href="/ja/m/internvla-n1/">InternVLA-N1</a><small>2025-07</small></li><li><a href="/ja/m/trackvla/">TrackVLA</a><small>2025-05</small></li><li><a href="/ja/m/abot-n0/">ABot-N0</a><small>2026-02</small></li><li><a href="/ja/m/vlingnav/">VLingNav</a><small>2026-01</small></li><li><a href="/ja/m/tic-vla/">TIC-VLA</a><small>2026-02</small></li><li><a href="/ja/m/futurenav/">FutureNav</a><small>2026-06</small></li><li><a href="/ja/m/uni-lavira/">Uni-LaViRA</a><small>2026-05</small></li><li><a href="/ja/m/lightnav-0/">LightNav-0</a><small>2026-08</small></li><li><a href="/ja/m/qwen-robotnav/">Qwen-RobotNav</a><small>2026-06</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/trackvla/"><small>← 前のモデル</small>TrackVLA</a><a class="nx" href="/ja/m/abot-n0/"><small>次のモデル →</small>ABot-N0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

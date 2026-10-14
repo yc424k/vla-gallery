@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoboDuet — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="RoboDuet (Tsinghua University, 2024-03) — A two-stage-trained whole-body control framework in which two RL policies, a locomotion policy and an arm policy, c…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/roboduet/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/roboduet/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/roboduet/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/roboduet/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/roboduet/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/roboduet/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="RoboDuet — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="RoboDuet (Tsinghua University, 2024-03) — A two-stage-trained whole-body control framework in which two RL policies, a locomotion policy and an arm policy, c…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/roboduet/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RoboDuet — Architecture, Backbone LLM, Training & Inference Memory", "description": "RoboDuet (Tsinghua University, 2024-03) — A two-stage-trained whole-body control framework in which two RL policies, a locomotion policy and an arm policy, c…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/roboduet/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "RoboDuet", "creator": {"@type": "Organization", "name": "Tsinghua University·Shanghai Qi Zhi Institute·Shanghai AI Laboratory·UC San Diego·Jianghuai Advance Technology Center"}}, "citation": {"@type": "ScholarlyArticle", "name": "RoboDuet: Learning a Cooperative Policy for Whole-body Legged Loco-Manipulation", "url": "https://arxiv.org/abs/2403.17367"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "RoboDuet", "item": "https://vla-gallery.is-a.dev/m/roboduet/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/roboduet/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/roboduet/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/roboduet/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/roboduet/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>RoboDuet</h1>
+<p class="by">Tsinghua University·Shanghai Qi Zhi Institute·Shanghai AI Laboratory·UC San Diego·Jianghuai Advance Technology Center · 2024-03</p>
+<p class="kv"><span>기타</span><span>Mobile manipulation</span><span>Not disclosed</span><span>RL policy</span></p>
+<p class="sum">A two-stage-trained whole-body control framework in which two RL policies, a locomotion policy and an arm policy, cooperate (the arm policy commands body pitch·roll) to perform quadruped+arm base movement and end-effector 6D pose tracking simultaneously.</p>
+<div class="acts"><a class="pri" href="/#m-roboduet">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2403.17367" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2403.17367" rel="noopener">RoboDuet: Learning a Cooperative Policy for Whole-body Legged Loco-Manipulation</a><small>arXiv 2403.17367</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>기타</dd><dt>Released</dt><dd>2024-03</dd><dt>Organization</dt><dd>Tsinghua University·Shanghai Qi Zhi Institute·Shanghai AI Laboratory·UC San Diego·Jianghuai Advance Technology Center</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>12 leg·6 arm joint targets + body pitch·roll commands (RL policy)</dd><dt>Chunk</dt><dd>None (1 step)</dd><dt>Control rate</dt><dd>50 Hz</dd><dt>Architecture (original summary)</dt><dd>Two MLP (512·256·128, ELU) PPO policies for locomotion·arm; locomotion policy → 12 leg joint targets, arm policy → 6 arm joint offsets + 2 body pitch·roll commands, 50 Hz; input is proprioception + velocity command + 9-dim end-effector target</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Sim RL (IsaacGym, PPO asymmetric actor-critic): 4,096 parallel agents, stage 1 10k + stage 2 40k iter (3 seeds), RTX 4090; training time not disclosed</dd><dt>Data type</dt><dd>Simulation·synthetic</dd><dt>Data scale</dt><dd>Sim RL rollouts with 4,096 parallel agents, 50k iter total</dd><dt>Main datasets</dt><dd>None (sim RL)</dd><dt>Tasks &amp; evaluation</dt><dd>Real-robot object carrying (heights 0·20·60·100 cm) success 39/60 (AFB+ID 32/60, FB+IK 10/60), 23% higher success rate (as stated in paper); extreme 6D pose self-collision rate 5% (FB+IK 50%); cross-transfer in sim Go1·Go2·A1+ARX5</dd><dt>Robot</dt><dd>Unitree Go1 Edu + ARX5 6-DoF arm (parallel gripper, RealSense D435i above gripper); zero-shot transfer to Go2+ARX5</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Policy 50 Hz; Go2 deployment code runs on Jetson Orin or a PC (README), Go1 deployed via Docker</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Onboard (Go2: Jetson Orin or PC, README)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (RL controller training) · The entire cooperative locomotion·arm policy trained with IsaacGym PPO (asymmetric actor-critic, two stages); no high-level policy (teleoperation commands)</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/abs/2403.17367" rel="noopener">https://arxiv.org/abs/2403.17367</a></dd><dt>Base control</dt><dd>Quadruped (RL policy drives joints directly) · Teleoperated base velocity and end-effector pose commands → cooperative RL policy (locomotion, arms) directly outputs leg and arm joint targets</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A two-stage-trained whole-body control framework in which two RL policies, a locomotion policy and an arm policy, cooperate (the arm policy commands body pitch·roll) to perform quadruped+arm base movement and end-effector 6D pose tracking simultaneously. Showed 23% higher task success than baselines and zero-shot cross-embodiment transfer from Go1 to Go2.</dd><dt>Notes</dt><dd>A proprioceptive RL controller with no visual input; in experiments base velocity·end-effector pose are commanded by VR teleoperation (Meta Quest 3) (no high-level learned policy); the calculation basis of 23% vs 39/60 and 32/60 is unclear; the paper lists the affiliation as &#x27;University of San Diego&#x27; (project page: UC San Diego); code (based on Walk These Ways)·deployment code released, weights not released; RA-L 2025. Based on: Walk These Ways: Tuning Robot Control for Generalization with Multiplicity of Behavior (arXiv 2212.03238) — README states the base implementation was borrowed from walk-these-ways</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/m/more/"><small>← Previous</small>MoRE</a><a class="nx" href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/"><small>Next →</small>Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

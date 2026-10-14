@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOVER — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="HOVER (NVIDIA, 2024-10) — Unifies multiple control modes into one multi-mode whole-body policy via command modes·sparse masks.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/hover/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/hover/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/hover/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/hover/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/hover/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/hover/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="HOVER — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="HOVER (NVIDIA, 2024-10) — Unifies multiple control modes into one multi-mode whole-body policy via command modes·sparse masks.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/hover/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "HOVER — Architecture, Backbone LLM, Training & Inference Memory", "description": "HOVER (NVIDIA, 2024-10) — Unifies multiple control modes into one multi-mode whole-body policy via command modes·sparse masks.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/hover/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "HOVER", "creator": {"@type": "Organization", "name": "NVIDIA·CMU·UC Berkeley·UT Austin·UC San Diego"}}, "citation": {"@type": "ScholarlyArticle", "name": "HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots", "url": "https://arxiv.org/abs/2410.21229"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "HOVER", "item": "https://vla-gallery.is-a.dev/m/hover/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/hover/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/hover/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/hover/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/hover/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Humanoid whole-body controllers</p>
+<h1>HOVER</h1>
+<p class="by">NVIDIA·CMU·UC Berkeley·UT Austin·UC San Diego · 2024-10</p>
+<p class="kv"><span>VA</span><span>Humanoid whole-body controllers</span><span>Not disclosed</span><span>RL policy</span></p>
+<p class="sum">Unifies multiple control modes into one multi-mode whole-body policy via command modes·sparse masks.</p>
+<div class="acts"><a class="pri" href="/#m-hover">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2410.21229" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.21229" rel="noopener">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</a><small>arXiv 2410.21229</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Humanoid whole-body controllers</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2024-10</dd><dt>Organization</dt><dd>NVIDIA·CMU·UC Berkeley·UT Austin·UC San Diego</dd><dt>Open weights</dt><dd>Unverified</dd><dt>Parameters</dt><dd>Not disclosed (MLP [512, 256, 128])</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>—</dd><dt>Action head</dt><dd>Joint targets (multi-mode mask) (RL policy)</dd><dt>Chunk</dt><dd>Not disclosed</dd><dt>Control rate</dt><dd>Not disclosed</dd><dt>Architecture (original summary)</dt><dd>3-layer MLP [512, 256, 128]; student takes last 25 steps of proprioception + mode · sparse mask (sampled B(0.5)) → joint targets; DAgger distillation from oracle teacher</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>One of RTX 4090 / RTX A6000 / L40 (repo, Isaac Lab 2.0.0 reimplementation); paper uses IsaacGym, GPU not disclosed</dd><dt>Pretraining duration</dt><dd>Teacher 100,000 iterations: RTX 4090 23.3 h / A6000 52.8 h / L40 44.6 h; student 10,000 iterations: 0.27 / 0.50 / 0.49 h (repo)</dd><dt>Pretraining steps &amp; batch</dt><dd>Teacher 100,000 iterations + student 10,000 iterations (repo table); 50k~80k iterations usually suffice, example 1,024 envs</dd><dt>GPU/TPU-hours</dt><dd>24 (Converted · RTX 4090-hours (1 × (teacher 23.3 h + student 0.27 h), based on repo reimplementation))</dd><dt>Fine-tuning</dt><dd>N/A</dd><dt>Data type</dt><dd>Motion capture</dd><dt>Data scale</dt><dd>H1-retargeted AMASS (subset size not disclosed); full retargeting takes up to 4 days on a 32-core CPU</dd><dt>Main datasets</dt><dd>AMASS</dd><dt>Tasks &amp; evaluation</dt><dd>Evaluated on tracking error and mode switching; 20 standing motion sequences on hardware</dd><dt>Robot</dt><dd>Unitree H1 (19-DOF, about 51.5 kg, about 1.8 m)</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Control rate not disclosed</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Not disclosed</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (RL controller training) · Oracle RL teacher → DAgger student distillation</dd><dt>Base control</dt><dd>Humanoid legged (RL policy drives joints directly) · Multi-mode commands (root velocity·height·pose, keypoints, joint angles) → whole-body 19 DoF joint target output; real-world forward walking demonstrated</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Unifies multiple control modes into one multi-mode whole-body policy via command modes·sparse masks. The repo reimplementation trains the teacher in about a day on a single GPU.</dd><dt>Notes</dt><dd>Training time is from the repo (Isaac Lab 2.0.0 reimplementation), not the paper. Code Apache 2.0, checkpoints unverified. Verification covered only repo values (training time, envs, iterations).</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/humanplus-hst/">HumanPlus HST</a><small>2024-06</small></li><li><a href="/m/humanplus-hit/">HumanPlus HIT</a><small>2024-06</small></li><li><a href="/m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a><small>2024-02</small></li><li><a href="/m/challenging-terrain-transformer/">Challenging-Terrain Transformer</a><small>2024-10</small></li><li><a href="/m/beyondmimic/">BeyondMimic</a><small>2025-08</small></li><li><a href="/m/leverb-a/">LeVERB-A</a><small>2025-06</small></li><li><a href="/m/omnih2o/">OmniH2O</a><small>2024-06</small></li><li><a href="/m/idp3/">iDP3</a><small>2024-10</small></li><li><a href="/m/exbody2/">ExBody2</a><small>2024-12</small></li><li><a href="/m/twist/">TWIST</a><small>2025-05</small></li><li><a href="/m/twist2/">TWIST2</a><small>2025-11</small></li><li><a href="/m/amo/">AMO</a><small>2025-05</small></li><li><a href="/m/gmt/">GMT</a><small>2025-06</small></li><li><a href="/m/sonic/">SONIC</a><small>2025-11</small></li><li><a href="/m/viral/">VIRAL</a><small>2025-11</small></li><li><a href="/m/bumblebee/">BumbleBee</a><small>2025-06</small></li><li><a href="/m/figure-rl/">Figure RL 보행 제어기</a><small>2025-03</small></li></ul></section>
+<nav class="pn"><a href="/m/omnih2o/"><small>← Previous</small>OmniH2O</a><a class="nx" href="/m/idp3/"><small>Next →</small>iDP3</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

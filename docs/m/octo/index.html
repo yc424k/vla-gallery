@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Octo — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Octo (UC Berkeley, 2023-12) — A generalist VA policy trained on OXE 800k episodes without a pretrained VLM.">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/octo/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/octo/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/octo/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/octo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/octo/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/octo/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Octo — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Octo (UC Berkeley, 2023-12) — A generalist VA policy trained on OXE 800k episodes without a pretrained VLM.">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/octo/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Octo — Architecture, Backbone LLM, Training & Inference Memory", "description": "Octo (UC Berkeley, 2023-12) — A generalist VA policy trained on OXE 800k episodes without a pretrained VLM.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/octo/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Octo", "creator": {"@type": "Organization", "name": "UC Berkeley·Stanford·CMU·Google DeepMind"}}, "citation": {"@type": "ScholarlyArticle", "name": "Octo: An Open-Source Generalist Robot Policy", "url": "https://arxiv.org/abs/2405.12213"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Octo", "item": "https://vla-gallery.is-a.dev/m/octo/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/octo/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/octo/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/octo/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/octo/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Autoregressive &amp; latent-action VLA</p>
+<h1>Octo</h1>
+<p class="by">UC Berkeley·Stanford·CMU·Google DeepMind · 2023-12</p>
+<p class="kv"><span>VA</span><span>Autoregressive &amp; latent-action VLA</span><span>27M</span><span>diffusion</span></p>
+<p class="sum">A generalist VA policy trained on OXE 800k episodes without a pretrained VLM.</p>
+<div class="acts"><a class="pri" href="/#m-octo">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2405.12213" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2405.12213" rel="noopener">Octo: An Open-Source Generalist Robot Policy</a><small>arXiv 2405.12213</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Autoregressive &amp; latent-action VLA</dd><dt>Type</dt><dd>VA</dd><dt>Released</dt><dd>2023-12</dd><dt>Organization</dt><dd>UC Berkeley·Stanford·CMU·Google DeepMind</dd><dt>Open weights</dt><dd>Yes</dd><dt>Parameters</dt><dd>27M (Small)/93M (Base), excluding T5-base 111M; 2023-12 technical report Table 4 gives Base 86M</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None (T5-base text encoder)</dd><dt>Vision encoder</dt><dd>ViT patch tokens</dd><dt>Action head</dt><dd>Diffusion head (3-layer MLP, 20 steps) (diffusion)</dd><dt>Chunk</dt><dd>4 steps (fine-tuning default)</dd><dt>Control rate</dt><dd>5 · 10 · 15 Hz (per robot)</dd><dt>Architecture (original summary)</dt><dd>ViT-S/B-sized Transformer + T5-base language encoder (111M); diffusion action head (3-layer MLP, 20 steps), action chunk (fine-tuning default 4), 2-frame observation history</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>TPU v4-128 pod</dd><dt>Pretraining duration</dt><dd>Base 14 h (paper); Small 8 h (README)</dd><dt>Pretraining steps &amp; batch</dt><dd>300k steps, batch 2048(ViT-B)</dd><dt>GPU/TPU-hours</dt><dd>1,792 (Converted · TPU v4 core-hours (128 × 14 h, Octo-Base))</dd><dt>Fine-tuning</dt><dd>1 × A5000 (24GB) about 5 h (50k steps, about 100 target demos); repo default batch 256, head_only · head_mlp_only · full modes</dd><dt>Data type</dt><dd>Real-robot teleoperation</dd><dt>Data scale</dt><dd>800k episodes (25 OXE datasets); preprocessed data about 1.2TB (README)</dd><dt>Main datasets</dt><dd>Open X-Embodiment (Fractal·Kuka·Bridge each weighted 17.0%)</dd><dt>Tasks &amp; evaluation</dt><dd>9 real-robot setups at 4 institutions (WidowX BridgeV2, UR5 TableTop, RT-1 Robot, Berkeley Bimanual, etc.); LIBERO average 75.1% (secondary, OpenVLA README)</dd><dt>Robot</dt><dd>9 setups including WidowX, UR5, RT-1 robot, bimanual setup; evaluation control rates 5·10·15 Hz</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Single RTX 4090: Base 13 it/s, Small 17 it/s (README); no inference speed in paper</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>0.2 GB</dd><dt>Where it runs</dt><dd>Local PC</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Not used · Imitation learning on OXE data</dd><dt>Base control</dt><dd>Fixed · No base control (arm EE actions; RT-1 robot is arm only)</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>A generalist VA policy trained on OXE 800k episodes without a pretrained VLM. Modular attention allows fine-tuning to new sensors and action spaces.</dd><dt>Notes</dt><dd>Release month is based on the repository v0.1.0 tag (2023-12-14) and the technical report; arXiv v1 is 2024-05-20. Parameters (B) refer to Octo-Base (excluding T5); GPU·TPU-hours were converted treating the 128 in TPU v4-128 as the core count.</dd><dt>Verification</dt><dd>Confirmed</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/openvla/">OpenVLA</a><small>2024-06</small></li><li><a href="/m/openvla-oft/">OpenVLA-OFT</a><small>2025-02</small></li><li><a href="/m/minivla/">MiniVLA</a><small>2024-12</small></li><li><a href="/m/tinyvla/">TinyVLA</a><small>2024-09</small></li><li><a href="/m/ecot/">ECoT</a><small>2024-07</small></li><li><a href="/m/llara/">LLaRA</a><small>2024-06</small></li><li><a href="/m/3d-vla/">3D-VLA</a><small>2024-03</small></li><li><a href="/m/roboflamingo/">RoboFlamingo</a><small>2023-11</small></li><li><a href="/m/spatialvla/">SpatialVLA</a><small>2025-01</small></li><li><a href="/m/lapa/">LAPA</a><small>2024-10</small></li><li><a href="/m/univla/">UniVLA (OpenDriveLab)</a><small>2025-05</small></li><li><a href="/m/magma/">Magma</a><small>2025-02</small></li><li><a href="/m/tracevla/">TraceVLA</a><small>2024-12</small></li><li><a href="/m/cot-vla/">CoT-VLA</a><small>2025-03</small></li><li><a href="/m/nora/">NORA</a><small>2025-04</small></li><li><a href="/m/molmoact/">MolmoAct</a><small>2025-08</small></li><li><a href="/m/worldvla/">WorldVLA</a><small>2025-06</small></li><li><a href="/m/univla-2/">UniVLA (BAAI)</a><small>2025-06</small></li><li><a href="/m/moto/">Moto</a><small>2024-12</small></li><li><a href="/m/villa-x/">villa-X</a><small>2025-07</small></li><li><a href="/m/vla-0/">VLA-0</a><small>2025-10</small></li><li><a href="/m/vla-adapter/">VLA-Adapter</a><small>2025-09</small></li><li><a href="/m/robomamba/">RoboMamba</a><small>2024-06</small></li></ul></section>
+<nav class="pn"><a href="/m/brs/"><small>← Previous</small>BRS (WB-VIMA)</a><a class="nx" href="/m/openvla/"><small>Next →</small>OpenVLA</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helpful DoggyBot — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<meta name="description" content="Helpful DoggyBot (Stanford University, 2024-09) — Modular indoor object-fetching system for a Go2 with a front-bottom 1-DoF gripper, combining an egocentric…">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/m/helpful-doggybot/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/helpful-doggybot/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/helpful-doggybot/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/helpful-doggybot/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/helpful-doggybot/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Helpful DoggyBot — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="Helpful DoggyBot (Stanford University, 2024-09) — Modular indoor object-fetching system for a Go2 with a front-bottom 1-DoF gripper, combining an egocentric…">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/m/helpful-doggybot/"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Helpful DoggyBot — Architecture, Backbone LLM, Training & Inference Memory", "description": "Helpful DoggyBot (Stanford University, 2024-09) — Modular indoor object-fetching system for a Go2 with a front-bottom 1-DoF gripper, combining an egocentric…", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/helpful-doggybot/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "CreativeWork", "name": "Helpful DoggyBot", "creator": {"@type": "Organization", "name": "Stanford University·UC San Diego"}}, "citation": {"@type": "ScholarlyArticle", "name": "Helpful DoggyBot: Open-World Object Fetching using Legged Robots and Vision-Language Models", "url": "https://arxiv.org/abs/2410.00231"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "Helpful DoggyBot", "item": "https://vla-gallery.is-a.dev/m/helpful-doggybot/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/helpful-doggybot/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/helpful-doggybot/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/helpful-doggybot/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/helpful-doggybot/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Mobile manipulation</p>
+<h1>Helpful DoggyBot</h1>
+<p class="by">Stanford University·UC San Diego · 2024-09</p>
+<p class="kv"><span>기타</span><span>Mobile manipulation</span><span>Not disclosed</span><span>RL policy</span></p>
+<p class="sum">Modular indoor object-fetching system for a Go2 with a front-bottom 1-DoF gripper, combining an egocentric depth-based agile controller trained with sim RL and pretrained VLM perception with proportional control.</p>
+<div class="acts"><a class="pri" href="/#m-helpful-doggybot">View architecture diagram in the gallery</a><a href="https://arxiv.org/abs/2410.00231" rel="noopener">Paper ↗</a></div>
+<h2>Paper</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2410.00231" rel="noopener">Helpful DoggyBot: Open-World Object Fetching using Legged Robots and Vision-Language Models</a><small>arXiv 2410.00231</small></p>
+<h2>Overview</h2>
+<dl><dt>Category</dt><dd>Mobile manipulation</dd><dt>Type</dt><dd>기타</dd><dt>Released</dt><dd>2024-09</dd><dt>Organization</dt><dd>Stanford University·UC San Diego</dd><dt>Open weights</dt><dd>No</dd><dt>Parameters</dt><dd>Not disclosed</dd></dl>
+<h2>Architecture</h2>
+<dl><dt>Backbone LLM</dt><dd>None</dd><dt>Vision encoder</dt><dd>Depth CNN+GRU (controller) · Florence-2·SAM2 · GroundingDINO·MobileSAM·Cutie (perception)</dd><dt>Action head</dt><dd>RL policy joint targets → Unitree PD (RL policy)</dd><dt>Chunk</dt><dd>None (1 step)</dd><dt>Control rate</dt><dd>50 Hz (depth 10 Hz)</dd><dt>Architecture (original summary)</dt><dd>Learned controller: depth CNN+GRU estimator (ROA distillation) + RL policy → joint targets (sent with PD gains) at 50 Hz, depth encoder at 10 Hz; commands = linear velocity, angular velocity, pitch; high level is Florence-2, SAM2 (ceiling camera), GroundingDINO, MobileSAM, Cutie perception + proportional control</dd></dl>
+<h2>Training</h2>
+<dl><dt>Pretraining accelerators</dt><dd>N/A</dd><dt>Pretraining duration</dt><dd>N/A</dd><dt>Pretraining steps &amp; batch</dt><dd>N/A</dd><dt>GPU/TPU-hours</dt><dd>Not disclosed</dd><dt>Fine-tuning</dt><dd>Sim RL (IsaacGym Preview 4): privileged (oracle) policy 6,144 robots·400 terrains 20k iter 10 h (1 RTX 4090), depth distillation 384 robots 5k iter 6 h; VLM used as the pretrained model unchanged</dd><dt>Data type</dt><dd>Simulation·synthetic</dd><dt>Data scale</dt><dd>Sim RL rollouts (6,144·384 parallel robots); no real data</dd><dt>Main datasets</dt><dd>None (400 sim terrains)</dd><dt>Tasks &amp; evaluation</dt><dd>First-attempt success rate in 2 unseen real environments (10 trials each): bed+toy 60%, sofa+bottle 60%, floor+ball 70%; sim metrics averaged over 200 trials</dd><dt>Robot</dt><dd>Unitree Go2 quadruped (12-DoF) + lower-front 1-DoF gripper (Dynamixel), egocentric RealSense D435, ceiling fisheye camera</dd></dl>
+<h2>Inference</h2>
+<dl><dt>Inference device &amp; speed</dt><dd>Controller: onboard Jetson (Orin) 50 Hz, depth encoder 10 Hz; VLM: separate workstation (SAM2 tracking 10 Hz); grasp perception (GroundingDINO, MobileSAM 0.2 Hz, Cutie 10 Hz) runs onboard (on-device)</dd><dt>Inference memory</dt><dd>Not disclosed</dd><dt>Weights bf16 (calc.)</dt><dd>Not disclosed</dd><dt>Where it runs</dt><dd>Onboard Jetson (controller) + workstation (VLM)</dd></dl>
+<h2>Reinforcement learning &amp; base</h2>
+<dl><dt>Reinforcement learning</dt><dd>Used (RL controller training) · The only learned policy, a low-level depth controller, is trained via PPO (privileged teacher)→ROA depth student; high-level perception·commands are not learned</dd><dt>RL evidence</dt><dd><a href="https://arxiv.org/abs/2410.00231" rel="noopener">https://arxiv.org/abs/2410.00231</a></dd><dt>Base control</dt><dd>Quadruped (Commands/latents → RL locomotion controller) · From VLM-detected position, a proportional controller generates linear velocity (0.8 m/s)·yaw·pitch commands → depth-based RL policy controls joints</dd></dl>
+<h2>Notes</h2>
+<dl><dt>Key features</dt><dd>Modular indoor object-fetching system for a Go2 with a front-bottom 1-DoF gripper, combining an egocentric depth-based agile controller trained with sim RL and pretrained VLM perception with proportional control. Without collecting or training on real data, it achieved 60–70% success in two unseen homes, including climbing onto a bed to fetch a toy.</dd><dt>Notes</dt><dd>Only the low-level RL controller is learned; detection and tracking use pretrained models, and motion and grasp commands use rule-based proportional control (linear velocity fixed at 0.8 m/s); reliance on a ceiling camera stated as a limitation; natural-language object specification via Florence-2 prompts; code released (GitHub), weights not released.</dd><dt>Verification</dt><dd>Corrections applied</dd></dl>
+<section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/m/vbc/"><small>← Previous</small>VBC</a><a class="nx" href="/m/quar-vla/"><small>Next →</small>QUAR-VLA (QUART)</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>

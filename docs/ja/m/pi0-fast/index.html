@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>π0-FAST (FAST 토크나이저) — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery</title>
+<meta name="description" content="π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — アクションチャンクをDCTとBPEで圧縮し、高周波の連続制御を自己回帰トークンとして学習できるようにした。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/ja/m/pi0-fast/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/pi0-fast/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/pi0-fast/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/pi0-fast/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/pi0-fast/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/pi0-fast/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="π0-FAST (FAST 토크나이저) — 構造・バックボーンLLM・学習・推論メモリ | VLA Gallery"><meta property="og:description" content="π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — アクションチャンクをDCTとBPEで圧縮し、高周波の連続制御を自己回帰トークンとして学習できるようにした。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/ja/m/pi0-fast/"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "π0-FAST (FAST 토크나이저) — 構造・バックボーンLLM・学習・推論メモリ", "description": "π0-FAST (FAST 토크나이저) (Physical Intelligence, UC Berkeley, Stanford, 2025-01) — アクションチャンクをDCTとBPEで圧縮し、高周波の連続制御を自己回帰トークンとして学習できるようにした。", "inLanguage": "ja", "url": "https://vla-gallery.is-a.dev/ja/m/pi0-fast/", "dateModified": "2026-10-14", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "π0-FAST (FAST 토크나이저)", "creator": {"@type": "Organization", "name": "Physical Intelligence, UC Berkeley, Stanford"}}, "citation": {"@type": "ScholarlyArticle", "name": "FAST: Efficient Action Tokenization for Vision-Language-Action Models", "url": "https://arxiv.org/abs/2501.09747"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA ギャラリー", "item": "https://vla-gallery.is-a.dev/ja/"}, {"@type": "ListItem", "position": 2, "name": "モデル一覧", "item": "https://vla-gallery.is-a.dev/ja/m/"}, {"@type": "ListItem", "position": 3, "name": "π0-FAST (FAST 토크나이저)", "item": "https://vla-gallery.is-a.dev/ja/m/pi0-fast/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/ja/">VLA ギャラリー</a><a href="/ja/m/">モデル一覧</a><a href="/ja/#gallery">ギャラリー</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/pi0-fast/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/pi0-fast/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/pi0-fast/" hreflang="ja" aria-current="true">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/pi0-fast/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/ja/">VLA ギャラリー</a> / <a href="/ja/m/">モデル一覧</a> / πシリーズ</p>
+<h1>π0-FAST (FAST 토크나이저)</h1>
+<p class="by">Physical Intelligence, UC Berkeley, Stanford · 2025-01</p>
+<p class="kv"><span>VLA</span><span>πシリーズ</span><span>3B</span><span>離散トークン</span></p>
+<p class="sum">アクションチャンクをDCTとBPEで圧縮し、高周波の連続制御を自己回帰トークンとして学習できるようにした。</p>
+<div class="acts"><a class="pri" href="/ja/#m-pi0-fast">ギャラリーで構造図を見る</a><a href="https://arxiv.org/abs/2501.09747" rel="noopener">論文 ↗</a></div>
+<h2>論文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2501.09747" rel="noopener">FAST: Efficient Action Tokenization for Vision-Language-Action Models</a><small>arXiv 2501.09747</small></p>
+<h2>概要</h2>
+<dl><dt>分類</dt><dd>πシリーズ</dd><dt>タイプ</dt><dd>VLA</dd><dt>発表</dt><dd>2025-01</dd><dt>機関</dt><dd>Physical Intelligence, UC Berkeley, Stanford</dd><dt>重み公開</dt><dd>あり</dd><dt>パラメータ</dt><dd>3B (PaliGemma-3BベースのVLA)</dd></dl>
+<h2>構造</h2>
+<dl><dt>バックボーンLLM</dt><dd>Gemma 2B · PaliGemma 3B 構成</dd><dt>ビジョンエンコーダ</dt><dd>SigLIP 400M</dd><dt>アクションヘッド</dt><dd>FASTトークン自己回帰 (語彙1024) (離散トークン)</dd><dt>チャンク</dt><dd>1秒 (DROID 15ステップ)</dd><dt>制御周期</dt><dd>5–50 Hz (課題別)</dd><dt>構造の原文要約</dt><dd>PaliGemma-3B、アクションエキスパートなし; FAST離散アクショントークン(DCT+BPE、rounding 10、語彙1024)の自己回帰デコーディング、1秒チャンク(DROID 15ステップ)、評価5~50 Hz</dd></dl>
+<h2>学習</h2>
+<dl><dt>事前学習アクセラレータ</dt><dd>汎用モデルは非公開; DROID単独方策(PaliGemmaから) H100×8</dd><dt>事前学習期間</dt><dd>汎用モデルは非公開(π0比でGPU時間が5倍少ない); DROID単独方策は約4日</dd><dt>事前学習ステップ・バッチ</dt><dd>汎用モデルは非公開; DROID単独方策 240k iter・バッチ 256(3 エポック)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>openpi pi0_fast_full_droid_finetune: H100×8で約2日、100kステップ・バッチ256; pi0_fast_libero 30kステップ(LoRA版も同じ)。LeRobot LIBERO: H100×8、40kステップ・バッチ256(二次情報)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>ロボットデータ 10k h; FAST+トークナイザ 1秒チャンク 約100万個(本文)/1M 軌跡(要旨); DROID 75k エピソード・21M サンプル; LIBERO 270k サンプル</dd><dt>主要データセット</dt><dd>PI独自データ(903M timesteps)、BRIDGE v2、DROID、OXE(混合の9.1%)</dd><dt>タスク・評価</dt><dd>Table bussing(UR5、20 Hz)、T-shirt folding(双腕ARX、50 Hz)、Grocery bagging、Toast(双腕Trossen、50 Hz)、Laundry folding; DROIDゼロショット16タスク・44 trials(3キャンパス); openpi LIBERO 96.4/96.8/88.6/60.2、平均85.5</dd><dt>ロボット</dt><dd>UR5/UR5e、双腕ARX、双腕Trossen、DROID Franka; FAST+学習: ARX、AgileX、Fibocom Mobile、Franka FR3、UR5、Trossen、Mobile Trossen</dd></dl>
+<h2>推論</h2>
+<dl><dt>推論デバイス・速度</dt><dd>RTX 4090でチャンクあたり約750 ms(アクショントークン30~60個をデコーディング); π0は同じGPUで100 ms以内</dd><dt>推論メモリ</dt><dd>&gt; 8 GB (openpi README共通)</dd><dt>重み bf16(計算)</dt><dd>6 GB</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
+<h2>強化学習・ベース</h2>
+<dl><dt>強化学習</dt><dd>不使用 · FASTトークン模倣学習</dd><dt>ベース制御</dt><dd>固定 · ベース制御なし (評価は固定マニピュレーターのみ; FAST+学習データにはモバイルを含む)</dd></dl>
+<h2>備考</h2>
+<dl><dt>主な特徴</dt><dd>アクションチャンクをDCTとBPEで圧縮し、高周波の連続制御を自己回帰トークンとして学習できるようにした。π0比で学習GPU時間を5分の1にしたが、チャンク推論は約750 msと遅い。</dd><dt>備考</dt><dd>圧縮率 BridgeV2 1.75×、DROID 3.6×、Bussing 5.0×、T-shirt 13.2×。FAST+トークナイザーはHFでApache-2.0公開。openpi pi0_fast_droidのデフォルトhorizonは10で、論文のDROID 15ステップと異なる。openpi README_trainの&#x27;約5日&#x27;(PaliGemmaから240k iter)はpi05_full_droid_finetune基準。</dd><dt>検証</dt><dd>修正反映</dd></dl>
+<section class="rel"><h2>同じ分類のモデル</h2><ul><li><a href="/ja/m/pi0/">π0</a><small>2024-10</small></li><li><a href="/ja/m/hi-robot/">Hi Robot</a><small>2025-02</small></li><li><a href="/ja/m/pi0-5/">π0.5</a><small>2025-04</small></li><li><a href="/ja/m/pi0-5-ki/">π0.5 + KI</a><small>2025-05</small></li><li><a href="/ja/m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a><small>2025-06</small></li><li><a href="/ja/m/pi0-6/">π0.6</a><small>2025-11</small></li><li><a href="/ja/m/pistar0-6/">π*0.6 (RECAP)</a><small>2025-11</small></li><li><a href="/ja/m/rtc/">학습시 RTC</a><small>2025-12</small></li></ul></section>
+<nav class="pn"><a href="/ja/m/pi0/"><small>← 前のモデル</small>π0</a><a class="nx" href="/ja/m/hi-robot/"><small>次のモデル →</small>Hi Robot</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/ja/">vla-gallery.is-a.dev</a> · 2026-10-14</div></footer>
+</body>
+</html>
