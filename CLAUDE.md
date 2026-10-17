@@ -25,6 +25,7 @@
 | `gallery/papers.py` | 논문 제목(`T`), 예외(`OWN`), 관련 논문(`REL`) |
 | `gallery/new_models.json` | 신규 46개 레코드(row·fields·rl·paper·base·evidence, 독립 검증 반영본). 신규 모델의 원천 파일이다 |
 | `gallery/base_existing.json` | 기존 165개의 베이스 제어(types·how·cat) |
+| `gallery/hf.json` | 모델 id → 공식 Hugging Face 저장소 주소 목록(89개 모델, 2026-10-17 확인). 저자·개발사가 올린 가중치만 넣고 제3자 파인튜닝·재업로드·양자화본은 뺀다. 카드의 'HF' 줄, '가중치 공개' 필터의 'Hugging Face 공개', 모델별 페이지, 엑셀 'Hugging Face' 열에 쓰인다 |
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
 | `build/` | `build_data.py`(병합), `inject.py`(페이지 생성), `make_site.py`(배포용 완전한 HTML), `make_pages.py`(모델별 정적 페이지·sitemap.xml), `make_og.py`(링크 미리보기 이미지), `make_xlsx2.py`(엑셀), `shot4.py`·`shot5.py`(Playwright 렌더 점검) |
