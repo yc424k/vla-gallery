@@ -40,7 +40,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>V-JEPA 2 ViT-g (最大1B)</dd><dt>アクションヘッド</dt><dd>目標画像ベースのMPC計画 (その他)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>自己教師あり動画エンコーダViT(最大ViT-g) + action-conditioned predictor(約300M、24層、block-causal attention); 目標画像ベースのMPC計画(言語入力なし)</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開(A100基準のGPU-days比較表のみ)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>人の動画(インターネット動画) + 画像 + 実ロボットのラベルなし動画</dd><dt>データ規模</dt><dd>インターネット動画100万h以上 + 画像100万枚(VideoMix22M); AC事後学習 DROIDのラベルなしロボット動画62 h未満</dd><dt>主要データセット</dt><dd>VideoMix22M, DROID</dd><dt>タスク・評価</dt><dd>新環境・新物体でのzero-shot pick-and-place成功率65~80%(ブログ); 異なる2研究室のFrankaに配備</dd><dt>ロボット</dt><dd>Franka単腕</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開(A100基準のGPU-days比較表のみ)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>人の動画(インターネット動画) + 画像 + 実ロボットのラベルなし動画</dd><dt>データ規模</dt><dd>インターネット動画100万h以上 + 画像100万枚(VideoMix22M); AC事後学習 DROIDのラベルなしロボット動画62 h未満</dd><dt>主要データセット</dt><dd>VideoMix22M, DROID</dd><dt>タスク・評価</dt><dd>新環境・新物体でのzero-shot pick-and-place成功率65~80%(ブログ); 異なる2研究室のFrankaに配備</dd><dt>ロボット</dt><dd>Franka単腕</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>MPC計画をRTX 4090 1枚で実行; 計画時間の数値は非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>2.4 GB</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
 <h2>強化学習・ベース</h2>

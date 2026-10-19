@@ -40,7 +40,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>関節PD目標 (RL方策)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>50 Hz (低レベル 500 Hz)</dd><dt>構造の原文要約</dt><dd>MLP: 教師actor・value [512, 256, 128]、学生 [1024, 1024, 512]、固有感覚の履歴10; モーション目標 + 固有感覚 → 関節PD目標、方策50 Hz・低レベル500 Hz</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開 (IsaacGym)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開 (env数は非公開)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>モーションキャプチャ</dd><dt>データ規模</dt><dd>CMUモーションキャプチャ1,919シーケンス(選別前); 選別後の規模は非公開</dd><dt>主要データセット</dt><dd>CMU motion capture</dd><dt>タスク・評価</dt><dd>MPKPE・MPJPE追跡誤差をベースライン4つと比較</dd><dt>ロボット</dt><dd>Unitree G1(23 DoF)</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開 (IsaacGym)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開 (env数は非公開)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>モーションキャプチャ</dd><dt>データ規模</dt><dd>CMUモーションキャプチャ1,919シーケンス(選別前); 選別後の規模は非公開</dd><dt>主要データセット</dt><dd>CMU motion capture</dd><dt>タスク・評価</dt><dd>MPKPE・MPJPE追跡誤差をベースライン4つと比較</dd><dt>ロボット</dt><dd>Unitree G1(23 DoF)</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>方策50 Hz、低レベル500 Hz、通信遅延18~30 ms; オンボードJetson Orin NX</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>オンボード (Jetson Orin NX)</dd></dl>
 <h2>強化学習・ベース</h2>

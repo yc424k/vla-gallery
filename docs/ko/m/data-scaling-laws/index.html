@@ -42,7 +42,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>DINOv2 ViT-L/14 (미세조정)</dd><dt>액션 헤드</dt><dd>CNN U-Net 확산 (diffusion)</dd><dt>청크</dt><dd>16스텝</dd><dt>제어 주기</dt><dd>5 Hz</dd><dt>구조 원문 요약</dt><dd>미세조정 DINOv2 ViT-L/14 + CNN U-Net 확산 정책; 행동 지평 16, 이미지 관측 지평 2(Pour Water·Unplug Charger 3), 환경 주파수 5</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>과제별: 최대 데이터셋 정책 A800 8장, 75 에폭(5×10^5 스텝), 75시간; 배치 256</dd><dt>데이터 종류</dt><dd>사람 영상(UMI 핸드헬드 그리퍼 시연)</dd><dt>데이터 규모</dt><dd>총 40,000+ 데모; 공개 정책은 환경-물체 32쌍 × 환경당 50데모</dd><dt>주요 데이터셋</dt><dd>UMI로 자체 수집</dd><dt>태스크·평가</dt><dd>Pour Water, Mouse Arrangement, Fold Towels, Unplug Charger; 실로봇 롤아웃 15,000회+; 수집자 4명 한나절 데이터로 새 환경·새 물체 2과제 약 90% 성공</dd><dt>로봇</dt><dd>Franka Emika Panda + Weiss WSG-50, 손목 GoPro</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>과제별 학습 (최대 데이터셋 정책): A800 · 8장 · 3.1일</dd><dt>파인튜닝</dt><dd>과제별: 최대 데이터셋 정책 A800 8장, 75 에폭(5×10^5 스텝), 75시간; 배치 256</dd><dt>데이터 종류</dt><dd>사람 영상(UMI 핸드헬드 그리퍼 시연)</dd><dt>데이터 규모</dt><dd>총 40,000+ 데모; 공개 정책은 환경-물체 32쌍 × 환경당 50데모</dd><dt>주요 데이터셋</dt><dd>UMI로 자체 수집</dd><dt>태스크·평가</dt><dd>Pour Water, Mouse Arrangement, Fold Towels, Unplug Charger; 실로봇 롤아웃 15,000회+; 수집자 4명 한나절 데이터로 새 환경·새 물체 2과제 약 90% 성공</dd><dt>로봇</dt><dd>Franka Emika Panda + Weiss WSG-50, 손목 GoPro</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>RTX 4090(24GB) 워크스테이션</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>0.8 GB</dd><dt>실행 위치</dt><dd>로컬 PC</dd></dl>
 <h2>강화학습 · 베이스</h2>

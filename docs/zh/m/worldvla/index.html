@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Chameleon 7B</dd><dt>视觉编码器</dt><dd>VQ-GAN图像token</dd><dt>动作头</dt><dd>256-bin token + 图像生成 (离散token)</dd><dt>动作块</dt><dd>10 · 5</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Chameleon初始化(README参考Lumina-mGPT-7B-768分词器)；VQ-GAN图像token(码本8192) + 7个256-bin动作token，动作块K=10(LIBERO-Long)/5，动作注意力掩码</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>LIBERO演示(剔除失败后按90/10划分)</dd><dt>主要数据集</dt><dd>LIBERO</dd><dt>任务·评估</dt><dd>LIBERO平均81.8%(512²,OpenVLA 76.5%)</dd><dt>机器人</dt><dd>LIBERO仿真</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>仿真·合成</dd><dt>数据规模</dt><dd>LIBERO演示(剔除失败后按90/10划分)</dd><dt>主要数据集</dt><dd>LIBERO</dd><dt>任务·评估</dt><dd>LIBERO平均81.8%(512²,OpenVLA 76.5%)</dd><dt>机器人</dt><dd>LIBERO仿真</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>约3.67 FPS(1帧，动作块)~1.22 FPS(4帧，无动作块)；GPU未注明</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

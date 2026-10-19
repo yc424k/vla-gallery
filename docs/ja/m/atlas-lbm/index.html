@@ -39,7 +39,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし (450M DiT、言語条件)</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>flow matching DiT 450M (flow matching)</dd><dt>チャンク</dt><dd>48ステップ (24実行)</dd><dt>制御周期</dt><dd>非公開 (画像 30 Hz)</dd><dt>構造の原文要約</dt><dd>450M Diffusion Transformer + flow matching; 固有受容感覚・画像(30 Hz入力)・言語で条件付け、観測履歴から48ステップ(1.6秒)の行動チャンクを予測、推論ごとに通常24ステップ(1x速度で0.8秒)を実行</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / シミュレーション・合成</dd><dt>データ規模</dt><dd>非公開 (時間・エピソードは非公開)</dd><dt>主要データセット</dt><dd>VR全身トラッキングによるテレオペレーション(実ロボット・シミュレーション)、QAツールでレビュー・フィルタリング</dd><dt>タスク・評価</dt><dd>Spot Workshop長期タスク(把持・折り畳み・持ち替え・関節物体操作・配置・押し)、ロープ結び、バースツール裏返し、テーブルクロス操作、22 lbタイヤ; 成功率は非公開</dd><dt>ロボット</dt><dd>Boston Dynamics Atlas(50 DoF)、Atlas Manipulation Test Stand(上半身29 DoF)</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション / シミュレーション・合成</dd><dt>データ規模</dt><dd>非公開 (時間・エピソードは非公開)</dd><dt>主要データセット</dt><dd>VR全身トラッキングによるテレオペレーション(実ロボット・シミュレーション)、QAツールでレビュー・フィルタリング</dd><dt>タスク・評価</dt><dd>Spot Workshop長期タスク(把持・折り畳み・持ち替え・関節物体操作・配置・押し)、ロープ結び、バースツール裏返し、テーブルクロス操作、22 lbタイヤ; 成功率は非公開</dd><dt>ロボット</dt><dd>Boston Dynamics Atlas(50 DoF)、Atlas Manipulation Test Stand(上半身29 DoF)</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>ハードウェア・遅延は非公開; 制御周期(Hz)は非公開(30 Hzは画像入力速度)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>0.9 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

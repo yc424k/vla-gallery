@@ -40,7 +40,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>PointNet 점군</dd><dt>액션 헤드</dt><dd>확산 UNet 헤드 3개 (베이스·토르소·팔) (diffusion)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>10 Hz (컨트롤러 100 Hz)</dd><dt>구조 원문 요약</dt><dd>PointNet 점군 토큰 + 고유감각 → 인과 self-attention 트렁크; 베이스·토르소·팔용 독립 확산망 3개(경량 UNet 헤드)로 전신 행동을 자기회귀 디코딩; 데이터 10 Hz, 컨트롤러 100 Hz</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>미공개(GPU·시간·스텝·배치 없음; README 학습 명령은 gpus=&lt;NUM_GPUS&gt; 자리표시자)</dd><dt>데이터 종류</dt><dd>실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>과제별 100, 103, 98, 138, 122궤적</dd><dt>주요 데이터셋</dt><dd>JoyLo 자체 수집</dd><dt>태스크·평가</dt><dd>장기 가사 5과제</dd><dt>로봇</dt><dd>Galaxea R1(6-DoF 팔 2개 + 4-DoF 토르소 + 전방향 이동 베이스)</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>미공개(GPU·시간·스텝·배치 없음; README 학습 명령은 gpus=&lt;NUM_GPUS&gt; 자리표시자)</dd><dt>데이터 종류</dt><dd>실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>과제별 100, 103, 98, 138, 122궤적</dd><dt>주요 데이터셋</dt><dd>JoyLo 자체 수집</dd><dt>태스크·평가</dt><dd>장기 가사 5과제</dd><dt>로봇</dt><dd>Galaxea R1(6-DoF 팔 2개 + 4-DoF 토르소 + 전방향 이동 베이스)</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>RTX 4090 배포, 유효 지연 0.02초</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>미공개</dd></dl>
 <h2>강화학습 · 베이스</h2>

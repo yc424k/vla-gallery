@@ -40,7 +40,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>Qwen2.5-72B · Qwen2.5-VL-72B 구성 (planner)</dd><dt>비전 인코더</dt><dd>SAM · Cutie · DINOv2 × 2</dd><dt>액션 헤드</dt><dd>DiT 확산 controller (16스텝) (diffusion)</dd><dt>청크</dt><dd>64스텝</dd><dt>제어 주기</dt><dd>20 Hz</dd><dt>구조 원문 요약</dt><dd>계층형: VLM planner(Qwen-VL-Chat, 부록·README는 Qwen2.5-VL-72B-Instruct) + DiT 확산 controller(SAM·Cutie 분할, frozen DINOv2 2개 포함 비전 인코더 3개); 청크 H=64, 추론 16스텝, 20 Hz</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>해당 없음(대규모 로봇 사전학습 없음)</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>controller 학습: A800×8 서버, 1일 미만, 84 에폭, GPU당 배치 48</dd><dt>데이터 종류</dt><dd>실로봇 시연(kinesthetic teaching)</dd><dt>데이터 규모</dt><dd>성공 에피소드 2,094개, 가정용 물체 36개</dd><dt>주요 데이터셋</dt><dd>자체 수집</dd><dt>태스크·평가</dt><dd>미지 물체 360개·조명 3종·배경 6종 조합 1,287개에서 90.8% 성공</dd><dt>로봇</dt><dd>7-DoF RealMan RM75-6F 팔 + 6-DoF PsiBot 핸드</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>해당 없음(대규모 로봇 사전학습 없음)</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>과제별 학습 (controller): A800 · 8장 · 1일 미만</dd><dt>파인튜닝</dt><dd>controller 학습: A800×8 서버, 1일 미만, 84 에폭, GPU당 배치 48</dd><dt>데이터 종류</dt><dd>실로봇 시연(kinesthetic teaching)</dd><dt>데이터 규모</dt><dd>성공 에피소드 2,094개, 가정용 물체 36개</dd><dt>주요 데이터셋</dt><dd>자체 수집</dd><dt>태스크·평가</dt><dd>미지 물체 360개·조명 3종·배경 6종 조합 1,287개에서 90.8% 성공</dd><dt>로봇</dt><dd>7-DoF RealMan RM75-6F 팔 + 6-DoF PsiBot 핸드</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>물체당 파지 평균 약 6 s; planner(72B)는 A800×8 서버에서 GPU 4장·vLLM·speculative decoding(Qwen2.5-VL-7B)으로 서빙</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>원격 서버 (planner)</dd></dl>
 <h2>강화학습 · 베이스</h2>

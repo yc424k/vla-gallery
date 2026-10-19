@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Vicuna 7B · LLaVA-1.5配置</dd><dt>视觉编码器</dt><dd>CLIP ViT-L (冻结)</dd><dt>动作头</dt><dd>输出文本坐标·旋转 (离散token)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>LLaVA-1.5-7B(视觉编码器冻结);以文本输出动作(归一化2D图像坐标 + 旋转角度)</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>不适用(无机器人预训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>论文：batch 32（VIMA-0.8k/8k）/128（VIMA-80k），lr 最大 2e-5，GPU·时间未公开；README：全量FT需24GB以上Ampere GPU 4张 + RAM 300GB（在A5000 4张上验证），LoRA需24GB GPU 1张</dd><dt>数据类型</dt><dd>仿真·合成 + 真实机器人(xArm)</dd><dt>数据规模</dt><dd>VIMA专家轨迹0.8k/8k/80k；辅助·xArm样本数未公开</dd><dt>主要数据集</dt><dd>VIMA-Bench, xArm-Det, xArm-Action</dd><dt>任务·评估</dt><dd>VIMA-Bench L1–L3(20 seeds)；真实xArm(每设置20回合)</dd><dt>机器人</dt><dd>VIMA-Bench仿真，xArm</dd></dl>
+<dl><dt>预训练加速器</dt><dd>不适用(无机器人预训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>论文：batch 32（VIMA-0.8k/8k）/128（VIMA-80k），lr 最大 2e-5，GPU·时间未公开；README：全量FT需24GB以上Ampere GPU 4张 + RAM 300GB（在A5000 4张上验证），LoRA需24GB GPU 1张</dd><dt>数据类型</dt><dd>仿真·合成 + 真实机器人(xArm)</dd><dt>数据规模</dt><dd>VIMA专家轨迹0.8k/8k/80k；辅助·xArm样本数未公开</dd><dt>主要数据集</dt><dd>VIMA-Bench, xArm-Det, xArm-Action</dd><dt>任务·评估</dt><dd>VIMA-Bench L1–L3(20 seeds)；真实xArm(每设置20回合)</dd><dt>机器人</dt><dd>VIMA-Bench仿真，xArm</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>单张24GB GPU(README)；速度未公开</dd><dt>推理显存</dt><dd>单张24 GB GPU运行 (README)</dd><dt>权重 bf16（计算）</dt><dd>14 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

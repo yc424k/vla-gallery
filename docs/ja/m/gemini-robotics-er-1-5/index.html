@@ -38,7 +38,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Geminiベース (サイズ非公開)</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>行動の代わりにポイント・bbox・軌跡・ツール呼び出し (その他)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>Geminiベースのthinking VLM(Geminiの機能をすべて保持); 行動の直接出力なし(2Dポイント・bbox・軌跡、ツール呼び出し)</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>TPU v4、v5p、v6e(チップ数は非公開; GR 1.5と共通のモデルカード)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>画像・テキスト・ロボットセンサ・行動データ(GR 1.5と共通のモデルカード記述)</dd><dt>データ規模</dt><dd>非公開</dd><dt>主要データセット</dt><dd>非公開</dd><dt>タスク・評価</dt><dd>学術ベンチマーク15個(ERQA、Point-Bench、BLINK、CV-Bench、RoboSpatial、PointArena、Where2Place、RefSpatialなど); ALOHA・bi-arm Frankaの長期8タスク</dd><dt>ロボット</dt><dd>ALOHA、bi-arm Franka(長期課題でGR 1.5を統括)</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>TPU v4、v5p、v6e(チップ数は非公開; GR 1.5と共通のモデルカード)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>事前学習: TPU v4·v5p·v6e · 非公開 · 非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>画像・テキスト・ロボットセンサ・行動データ(GR 1.5と共通のモデルカード記述)</dd><dt>データ規模</dt><dd>非公開</dd><dt>主要データセット</dt><dd>非公開</dd><dt>タスク・評価</dt><dd>学術ベンチマーク15個(ERQA、Point-Bench、BLINK、CV-Bench、RoboSpatial、PointArena、Where2Place、RefSpatialなど); ALOHA・bi-arm Frankaの長期8タスク</dd><dt>ロボット</dt><dd>ALOHA、bi-arm Franka(長期課題でGR 1.5を統括)</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>Gemini API「gemini-robotics-er-1.5-preview」(Google AI Studio、2025-09-25); thinking budgetで遅延と精度を調整; 遅延の数値は非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>クラウド (Gemini API)</dd></dl>
 <h2>強化学習・ベース</h2>

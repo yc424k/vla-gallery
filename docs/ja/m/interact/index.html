@@ -40,7 +40,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>ResNet18</dd><dt>アクションヘッド</dt><dd>マルチアームデコーダ (同期ブロック) (回帰)</dd><dt>チャンク</dt><dd>50ステップ</dd><dt>制御周期</dt><dd>50 Hz</dd><dt>構造の原文要約</dt><dd>ResNet18 + 階層的アテンションエンコーダ(セグメント内3層・セグメント間3層、セグメント別CLSトークン) + マルチアームデコーダ(並列2経路4層、同期ブロック1層); hidden 512、8ヘッド、FF 3200; チャンク50、関節位置・RGB 50 Hz</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: GPU・時間・エポックは非公開; バッチ 8、lr 1e-5</dd><dt>データ種類</dt><dd>シミュレーション・合成; 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>タスクあたり50デモ</dd><dt>主要データセット</dt><dd>独自収集(シミュレーション・実機)</dd><dt>タスク・評価</dt><dd>シミュレーション3タスク(Transfer Cube, Peg Insertion, Slot Insertion); 実機6タスク(Slide Ziploc, Thread Velcro, Insert Plug, Click Pen, Sweep, Unscrew Cap)</dd><dt>ロボット</dt><dd>双腕(機種はノートに記載なし)</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: GPU・時間・エポックは非公開; バッチ 8、lr 1e-5</dd><dt>データ種類</dt><dd>シミュレーション・合成; 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>タスクあたり50デモ</dd><dt>主要データセット</dt><dd>独自収集(シミュレーション・実機)</dd><dt>タスク・評価</dt><dd>シミュレーション3タスク(Transfer Cube, Peg Insertion, Slot Insertion); 実機6タスク(Slide Ziploc, Thread Velcro, Insert Plug, Click Pen, Sweep, Unscrew Cap)</dd><dt>ロボット</dt><dd>双腕(機種はノートに記載なし)</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

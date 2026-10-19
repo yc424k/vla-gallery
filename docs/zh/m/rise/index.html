@@ -40,7 +40,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>稀疏3D编码器 (MinkowskiEngine)</dd><dt>动作头</dt><dd>CNN扩散头 (推理20步) (diffusion)</dd><dt>动作块</dt><dd>20步</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>MinkowskiEngine稀疏3D编码器(体素5mm,单个RGB-D点云) + Transformer(编码器4·解码器1,d_model 512,d_ff 2048) + CNN扩散头(训练100·推理20步);动作时域20</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：A100 2张，批量 240，lr 3e-4，warmup 2000 步；时间·epoch未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>每项任务50条演示</dd><dt>主要数据集</dt><dd>自有Flexiv遥操作</dd><dt>任务·评估</dt><dd>Collect Cups、Collect Pens、Pour Balls、Push Block、Push Ball、Stack Blocks；对比ACT、Diffusion Policy、Act3D、DP3</dd><dt>机器人</dt><dd>Flexiv Rizon机械臂 + Dahuan AG-95夹爪</dd></dl>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>任务专用训练: A100 · 2张 · 未公开</dd><dt>微调</dt><dd>按任务：A100 2张，批量 240，lr 3e-4，warmup 2000 步；时间·epoch未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>每项任务50条演示</dd><dt>主要数据集</dt><dd>自有Flexiv遥操作</dd><dt>任务·评估</dt><dd>Collect Cups、Collect Pens、Pour Balls、Push Block、Push Ball、Stack Blocks；对比ACT、Diffusion Policy、Act3D、DP3</dd><dt>机器人</dt><dd>Flexiv Rizon机械臂 + Dahuan AG-95夹爪</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>Intel i9-10900K + RTX 3090工作站;延迟未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
 <h2>强化学习与底盘</h2>

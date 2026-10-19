@@ -42,7 +42,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>NVILA-2B内のLLM (記載なし)</dd><dt>ビジョンエンコーダ</dt><dd>NVILAビジョンエンコーダ</dd><dt>アクションヘッド</dt><dd>Transformer行動ヘッド300M (手首 + MANO) (回帰)</dd><dt>チャンク</dt><dd>30ステップ (1秒)</dd><dt>制御周期</dt><dd>30 Hz</dd><dt>構造の原文要約</dt><dd>NVILA-2B VLM + 300M Transformer行動ヘッド(エンコーダ6層、hidden 1536); 行動 = 手首姿勢(3D位置 + rot6D) + MANO手関節の上位15 PCA成分、1秒ホライズン(30 Hz × 30ステップ)</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開; タスクあたりロボットデモ100件</dd><dt>データ種類</dt><dd>人の動画 / シミュレーション・合成</dd><dt>データ規模</dt><dd>画像-行動ペア約500,000個; ロボットデモ タスクあたり100件</dd><dt>主要データセット</dt><dd>HOI4D映像4,000本、HOT3D 833分、HoloAssist 166時間(1/10サブサンプル)、TACOモーションシーケンス2,317本</dd><dt>タスク・評価</dt><dd>Ego Humanoid Manipulation Benchmark 12タスク(短期7・長期5); 学習背景で短期平均77.78%、長期45.93%</dd><dt>ロボット</dt><dd>シミュレーション Unitree H1 + Inspireハンド(NVIDIA Isaac Lab)</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開; タスクあたりロボットデモ100件</dd><dt>データ種類</dt><dd>人の動画 / シミュレーション・合成</dd><dt>データ規模</dt><dd>画像-行動ペア約500,000個; ロボットデモ タスクあたり100件</dd><dt>主要データセット</dt><dd>HOI4D映像4,000本、HOT3D 833分、HoloAssist 166時間(1/10サブサンプル)、TACOモーションシーケンス2,317本</dd><dt>タスク・評価</dt><dd>Ego Humanoid Manipulation Benchmark 12タスク(短期7・長期5); 学習背景で短期平均77.78%、長期45.93%</dd><dt>ロボット</dt><dd>シミュレーション Unitree H1 + Inspireハンド(NVIDIA Isaac Lab)</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>30 Hz行動ホライズン; ハードウェア非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

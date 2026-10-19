@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>无 (视频扩散主干)</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>视频 + 动作flow matching联合预测 (视频world model)</dd><dt>动作块</dt><dd>48步 (1.6秒)</dd><dt>控制频率</dt><dd>30 Hz</dd><dt>架构原文摘要</dt><dd>Wan2.1-I2V-14B-480P视频扩散 → 自回归DiT(流匹配·teacher forcing)；相对关节位置动作，30 Hz，48步动作块(1.6 s)</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开 (无训练GPU相关语句；H100·GB200仅在推理中提及)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>AgiBot·DROID各100K steps，全局批量128</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开；适应新具身需游戏数据30分钟、其他机器人·人类视频专用数据10–20分钟</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 视频预训练主干(Wan2.1)</dd><dt>数据规模</dt><dd>AgiBot G1遥操作约500小时(22个环境，回合7.2K) + DROID公开数据集</dd><dt>主要数据集</dt><dd>AgiBot G1遥操作，DROID</dd><dt>任务·评估</dt><dd>AgiBot G1训练任务进度62.2%(最佳预训练VLA 27.4%)，未训练39.5%(16.3%)；DROID-Franka进度49%·成功22.5%；MolmoSpaces·RoboArena第1</dd><dt>机器人</dt><dd>AgiBot G1, Franka(DROID)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开 (无训练GPU相关语句；H100·GB200仅在推理中提及)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>AgiBot·DROID各100K steps，全局批量128</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>未公开；适应新具身需游戏数据30分钟、其他机器人·人类视频专用数据10–20分钟</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 视频预训练主干(Wan2.1)</dd><dt>数据规模</dt><dd>AgiBot G1遥操作约500小时(22个环境，回合7.2K) + DROID公开数据集</dd><dt>主要数据集</dt><dd>AgiBot G1遥操作，DROID</dd><dt>任务·评估</dt><dd>AgiBot G1训练任务进度62.2%(最佳预训练VLA 27.4%)，未训练39.5%(16.3%)；DROID-Franka进度49%·成功22.5%；MolmoSpaces·RoboArena第1</dd><dt>机器人</dt><dd>AgiBot G1, Franka(DROID)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>每个动作块5.7 s→150 ms(含DreamZero-Flash GB200 38×；仅系统优化H100约9×·GB200约16×)，约7 Hz闭环；README GB200约0.6 s·H100约3 s，GPU 2个以上</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>28 GB</dd><dt>运行位置</dt><dd>GPU 2块以上 (README)</dd></dl>
 <h2>强化学习与底盘</h2>

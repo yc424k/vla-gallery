@@ -38,7 +38,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B構成</dd><dt>ビジョンエンコーダ</dt><dd>Qwen2.5-VL ViT</dd><dt>アクションヘッド</dt><dd>flow matching DiT + 分布型critic (flow matching)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>MoT: VLA(Qwen2.5-VL-3B-Instruct + flow-matching action DiT) + multi-task distributional critic; オンラインRL用latent noise predictor</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開(オンラインRL 500 stepsのチェックポイントで評価)</dd><dt>データ種類</dt><dd>実ロボットのデモ + 実ロボットでのオンラインRL</dd><dt>データ規模</dt><dd>デモ時間・エピソード数、オンラインRL時間は非公開</dd><dt>主要データセット</dt><dd>独自の靴ひもデモデータ</dd><dt>タスク・評価</dt><dd>靴ひも通し 45.7%(GR-3) → 61.6%(フィルタリング) → 72.7%(対称性拡張) → 83.3%(オンラインRL)</dd><dt>ロボット</dt><dd>ByteMini-v2双腕</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開(オンラインRL 500 stepsのチェックポイントで評価)</dd><dt>データ種類</dt><dd>実ロボットのデモ + 実ロボットでのオンラインRL</dd><dt>データ規模</dt><dd>デモ時間・エピソード数、オンラインRL時間は非公開</dd><dt>主要データセット</dt><dd>独自の靴ひもデモデータ</dd><dt>タスク・評価</dt><dd>靴ひも通し 45.7%(GR-3) → 61.6%(フィルタリング) → 72.7%(対称性拡張) → 83.3%(オンラインRL)</dd><dt>ロボット</dt><dd>ByteMini-v2双腕</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>10 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

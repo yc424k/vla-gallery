@@ -40,7 +40,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>V-JEPA 2 ViT-g (최대 1B)</dd><dt>액션 헤드</dt><dd>목표 이미지 기반 MPC 계획 (기타)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>미공개</dd><dt>구조 원문 요약</dt><dd>자기지도 비디오 인코더 ViT(최대 ViT-g) + action-conditioned predictor(약 300M, 24층, block-causal attention); 목표 이미지 기반 MPC 계획(언어 입력 없음)</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>미공개(A100 기준 GPU-days 비교표만 있음)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>미공개</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>미공개</dd><dt>데이터 종류</dt><dd>사람 영상(인터넷 비디오) + 이미지 + 실로봇 무라벨 영상</dd><dt>데이터 규모</dt><dd>인터넷 비디오 100만 h 이상 + 이미지 100만 장(VideoMix22M); AC 사후학습 DROID 무라벨 로봇 영상 62 h 미만</dd><dt>주요 데이터셋</dt><dd>VideoMix22M, DROID</dd><dt>태스크·평가</dt><dd>새 환경·새 물체 zero-shot pick-and-place 성공률 65~80%(블로그); 서로 다른 두 연구실 Franka에 배치</dd><dt>로봇</dt><dd>Franka 단일 팔</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>미공개(A100 기준 GPU-days 비교표만 있음)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>미공개</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>미공개</dd><dt>데이터 종류</dt><dd>사람 영상(인터넷 비디오) + 이미지 + 실로봇 무라벨 영상</dd><dt>데이터 규모</dt><dd>인터넷 비디오 100만 h 이상 + 이미지 100만 장(VideoMix22M); AC 사후학습 DROID 무라벨 로봇 영상 62 h 미만</dd><dt>주요 데이터셋</dt><dd>VideoMix22M, DROID</dd><dt>태스크·평가</dt><dd>새 환경·새 물체 zero-shot pick-and-place 성공률 65~80%(블로그); 서로 다른 두 연구실 Franka에 배치</dd><dt>로봇</dt><dd>Franka 단일 팔</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>MPC 계획을 RTX 4090 1장에서 실행; 계획 시간 수치 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>2.4 GB</dd><dt>실행 위치</dt><dd>로컬 PC</dd></dl>
 <h2>강화학습 · 베이스</h2>

@@ -40,7 +40,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>扩散规划器 (Transformer 6层，19.95M) (diffusion)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>MLP跟踪器(actor·critic [512, 256, 128], ELU): 本体感知 + 参考动作 → 关节目标 / 引导扩散策略: Transformer解码器6层·4头·512维</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开 (Isaac Lab v2.1.0，repo)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>max_iterations 30000 · 每env 24步，4096 env (repo)；sim dt 0.005，decimation 4</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>不适用</dd><dt>数据类型</dt><dd>动作捕捉 / 仿真·合成</dd><dt>数据规模</dt><dd>人类动作约2.5小时(v4)；实机部署30个片段(15分钟)；扩散策略数据为域随机化专家策略rollout(规模未公开)</dd><dt>主要数据集</dt><dd>Unitree重定向LAFAN1，先前研究数据集，在线动画数据</dd><dt>任务·评估</dt><dd>Unitree G1侧手翻·冲刺·360°旋转跳；用扩散策略进行航点导航·摇杆遥操作·避障(每个摇杆实验50次)</dd><dt>机器人</dt><dd>Unitree G1</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开 (Isaac Lab v2.1.0，repo)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>max_iterations 30000 · 每env 24步，4096 env (repo)；sim dt 0.005，decimation 4</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>不适用</dd><dt>数据类型</dt><dd>动作捕捉 / 仿真·合成</dd><dt>数据规模</dt><dd>人类动作约2.5小时(v4)；实机部署30个片段(15分钟)；扩散策略数据为域随机化专家策略rollout(规模未公开)</dd><dt>主要数据集</dt><dd>Unitree重定向LAFAN1，先前研究数据集，在线动画数据</dd><dt>任务·评估</dt><dd>Unitree G1侧手翻·冲刺·360°旋转跳；用扩散策略进行航点导航·摇杆遥操作·避障(每个摇杆实验50次)</dd><dt>机器人</dt><dd>Unitree G1</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>跟踪器：机器人CPU ONNX Runtime，每步不到1.0 ms / 扩散策略：机外RTX 4060 Mobile TensorRT，去噪20步约20 ms</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>外置笔记本 + 机器人CPU</dd></dl>
 <h2>强化学习与底盘</h2>

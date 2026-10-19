@@ -107,6 +107,7 @@ td.num{font-family:var(--font-data);font-variant-numeric:tabular-nums;white-spac
 .trn tr>:first-child{position:sticky;left:0;z-index:1;background:var(--surface);min-width:150px;box-shadow:inset -1px 0 var(--line)}
 .trn thead tr>:first-child{background:var(--sunk)}
 .trn td.w{min-width:200px;max-width:320px}
+.trn tr.fam td{position:static;background:var(--sunk);font-weight:600;font-size:12.5px;box-shadow:none}
 .trn td.na,.trn .na{color:var(--ink-3)}
 .trn td small{display:block;color:var(--ink-3);font-size:11.5px;margin-top:2px}
 .trn td.num small{font-family:var(--font-body);white-space:normal;min-width:150px}
@@ -534,6 +535,19 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
     </div>
     <div class="chart" id="train-chart"></div>
     <p class="chart-cap">출처: 각 모델의 논문·README·모델 카드. ‘명시’는 원문이 GPU·TPU-시간을 적은 값, ‘환산’은 장수 × 기간을 곱한 값입니다. 가속기 종류를 맞추지 않은 원래 단위이며, 가로축은 로그 눈금입니다.</p>
+    <h3 class="sub">GPU 종류·장수·기간으로 분류</h3>
+    <p class="note" id="tg-lead" style="margin:0 0 10px"></p>
+    <div class="chart" id="tg-chart"></div>
+    <p class="chart-cap">출처: 각 모델의 논문·README·모델 카드에서 학습 GPU 종류, 장수, 학습 기간 중 하나라도 밝힌 경우만 모았습니다. 한 모델이 여러 단계(사전학습·파인튜닝 등)를 밝혔으면 단계마다 한 줄씩 적었고, 기간은 48시간 미만이면 시간, 그 이상이면 일로 적었습니다. 장수는 원문 표현(노드 × 장수 등)을 곱한 값입니다.</p>
+    <form class="fitform" id="tg-form" autocomplete="off">
+      <div class="field"><label for="tg-fam">GPU 종류</label><select id="tg-fam"></select></div>
+      <div class="field"><label for="tg-st">학습 단계</label><select id="tg-st"></select></div>
+      <div class="field"><label for="tg-n">장수</label><select id="tg-n"></select></div>
+      <div class="field"><label for="tg-h">기간</label><select id="tg-h"></select></div>
+      <div class="field"><label for="tg-sort">정렬</label><select id="tg-sort"><option value="n">장수 많은 순</option><option value="h">기간 긴 순</option><option value="date">최신순</option></select></div>
+    </form>
+    <p class="note" id="tg-sum" style="margin:0 0 10px" aria-live="polite"></p>
+    <div class="tbl-wrap"><table class="trn" id="tg-table"></table></div>
     <h3 class="sub">모델별 학습 자원 전체 표</h3>
     <form class="fitform" id="train-form" autocomplete="off">
       <div class="field"><label for="tr-grp">분류</label><select id="tr-grp"></select></div>
@@ -935,6 +949,7 @@ function card(m){
   const more = [
     [T("태스크·평가"), m.tasks], [T("로봇"), m.robots], [T("사전학습"), [m.pre_hw, m.pre_time, m.pre_steps].filter(v => !isNA(v)).map(tx).join(" · ") || "미공개"],
     [T("GPU·TPU-시간"), m.gpuh != null ? fmt(m.gpuh, 0) + " (" + tx(m.gpuh_basis || "") + ")" : "미공개"],
+    [T("학습 GPU 종류·장수·기간"), tgLine(m)],
     [T("파인튜닝"), m.ft], [T("데이터 종류"), m.dtype], [T("데이터 규모"), m.dscale], [T("주요 데이터셋"), m.datasets],
     [T("강화학습"), tx(m.rl) + (usesRL(m) ? " · " + tx(m.rlcat) : "") + " · " + tx(m.rlwhere)], [T("강화학습 근거"), m.rlsrc], [T("베이스 제어"), baseText(m)],
     [T("추론 전체"), m.infer], [T("실행 위치"), m.dep || "미공개"], [T("구조 원문 요약"), m.backbone_text], [T("핵심 특징"), m.feature], [T("비고"), m.note], [T("검증"), m.verify]
@@ -1141,6 +1156,91 @@ const gpuUnit = m => (m.gpuh_basis || "").split("·").slice(1).join("·").split(
   render();
 })();
 
+/* ---------- 학습 GPU 종류·장수·기간 분류 ---------- */
+const TGF = [["hopper", "NVIDIA H100·H200·H800·GB200", /H100|H200|H800|GB200|MI300/], ["ampere", "NVIDIA A100·A800", /A100|A800/], ["v100", "NVIDIA V100", /V100/],
+  ["dc", T("NVIDIA 기타 데이터센터 (A40·A10G·A10·L40·L40S)"), /^(A40|A10G|A10|L40S?)$/], ["ws", T("워크스테이션·소비자 GPU (RTX 4090·3090·2080 Ti·A4000·A5000·A6000·RTX 6000 Ada)"), /RTX|A4000|A5000|A6000/],
+  ["tpu", "Google TPU", /TPU/], ["na", T("기종 미공개"), /./]];
+const TGST = ["사전학습", "사후학습", "과제별 학습", "파인튜닝", "시뮬 RL"];
+const tgFam = e => TGF.find(f => f[2].test(e.acc))[0];
+const TGN = [["1", T("1장"), n => n === 1], ["8", T("2–8장"), n => n > 1 && n <= 8], ["64", T("9–64장"), n => n > 8 && n <= 64], ["256", T("65–256장"), n => n > 64 && n <= 256], ["big", T("257장 이상"), n => n > 256], ["na", T("장수 미공개"), n => n == null]];
+const TGH = [["d1", T("1일 미만"), h => h < 24], ["d3", T("1–3일"), h => h >= 24 && h <= 72], ["d7", T("3–7일"), h => h > 72 && h <= 168], ["w4", T("1–4주"), h => h > 168 && h <= 672], ["long", T("4주 이상"), h => h > 672], ["na", T("기간 미공개"), h => h == null]];
+function tgHi(v){ return v == null ? null : Array.isArray(v) ? v[1] : v; }
+function tgNText(e){ return e.nt ? tx(e.nt) : e.n == null ? tx("미공개") : Array.isArray(e.n) ? T("{0}–{1}장", fmt(e.n[0], 0), fmt(e.n[1], 0)) : e.n === 1 ? T("1장") : T("{0}장", fmt(e.n, 0)); }
+function tgHText(e){
+  if (e.ht) return tx(e.ht);
+  if (e.h == null) return tx("미공개");
+  const v = Array.isArray(e.h) ? e.h : [e.h], day = tgHi(e.h) >= 48, f = x => fmt(day ? x / 24 : x, 1);
+  const t = v.map(f).join("–");
+  return day ? T("{0}일", t) : T("{0}시간", t);
+}
+/* 카드·비교용 한 줄: "사전학습 (LAM): A100 · 128장 · 4일" */
+function tgLine(m){
+  return m.tg.map(e => tx(e.st) + (e.p ? " (" + tx(e.p) + ")" : "") + ": " + tx(e.acc) + " · " + tgNText(e) + " · " + tgHText(e) + (e.s ? " · " + tx(e.s) : "")).join(" / ") || "미공개";
+}
+(function tgChart(){
+  const rows = TGF.map(f => {
+    const ms = D.filter(m => m.tg.some(e => tgFam(e) === f[0]));
+    const pre = ms.filter(m => m.tg.some(e => tgFam(e) === f[0] && (e.st === "사전학습" || e.st === "사후학습"))).length;
+    const acc = {}; ms.forEach(m => new Set(m.tg.filter(e => tgFam(e) === f[0]).map(e => e.acc)).forEach(a => { acc[a] = (acc[a] || 0) + 1; }));
+    return {f, n: ms.length, pre, acc: Object.entries(acc).sort((a, b) => b[1] - a[1])};
+  });
+  const W = 760, x0 = 24, x1 = 360, rowH = 52, y0 = 108, maxN = Math.max(...rows.map(r => r.n)), out = [];
+  out.push('<text class="c-title" x="24" y="30">' + T("공개된 학습 GPU는 A100과 H100이 대부분이다") + "</text>");
+  out.push('<text class="c-sub" x="24" y="52">' + T("GPU 종류별 모델 수 (종류·장수·기간 중 하나라도 공개한 모델 {0}개)", D.filter(m => m.tg.length).length) + "</text>");
+  let lx = 24;
+  [[T("사전학습·사후학습"), "s-use"], [T("과제별 학습·파인튜닝·시뮬 RL만"), "s-part"]].forEach(l => {
+    out.push('<rect class="' + l[1] + '" x="' + lx + '" y="68" width="11" height="11" rx="2"/><text class="c-t" x="' + (lx + 16) + '" y="78">' + l[0] + "</text>");
+    cv.font = "12px " + FONT; lx += 16 + cv.measureText(l[0]).width + 18; });
+  rows.forEach((r, i) => {
+    const ry = y0 + i * rowH, w = r.n / maxN * (x1 - x0), wp = r.pre / maxN * (x1 - x0);
+    out.push('<text class="c-t" x="' + x0 + '" y="' + (ry + 4) + '">' + esc(r.f[1]) + "</text>");
+    out.push('<rect class="s-use" x="' + x0 + '" y="' + (ry + 12) + '" width="' + Math.max(wp, 0) + '" height="18"><title>' + esc(tx(r.f[1])) + " · " + T("사전학습·사후학습") + ": " + T("{0}개", r.pre) + "</title></rect>");
+    out.push('<rect class="s-part" x="' + (x0 + wp) + '" y="' + (ry + 12) + '" width="' + Math.max(w - wp, 0) + '" height="18"><title>' + esc(tx(r.f[1])) + " · " + T("과제별 학습·파인튜닝·시뮬 RL만") + ": " + T("{0}개", r.n - r.pre) + "</title></rect>");
+    out.push('<text class="c-lab-s" x="' + (x0 + w + 8) + '" y="' + (ry + 25) + '">' + T("{0}개", r.n) + (r.acc.length > 1 || r.f[0] !== "na" ? " · " + esc(r.acc.slice(0, 4).map(a => tx(a[0]) + " " + a[1]).join(", ")) : "") + "</text>");
+  });
+  const H = y0 + rows.length * rowH;
+  document.getElementById("tg-chart").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + T('" role="img" aria-label="공개된 학습 GPU는 A100과 H100이 대부분이다">') + out.join("") + "</svg>";
+  const ms = D.filter(m => m.tg.length), cnt = f => ms.filter(m => m.tg.some(f)).length;
+  const acc = {}; ms.forEach(m => new Set(m.tg.flatMap(e => e.acc.split("·"))).forEach(a => { if (a !== "기종 미공개") acc[a] = (acc[a] || 0) + 1; }));
+  const top = Object.entries(acc).sort((a, b) => b[1] - a[1]);
+  document.getElementById("tg-lead").textContent = T("모델 {0}개 중 학습 GPU 종류·장수·기간 가운데 하나라도 밝힌 모델은 {1}개({2}건)입니다. GPU 종류를 밝힌 모델은 {3}개, 장수는 {4}개, 기간은 {5}개이고, 셋을 모두 밝힌 모델은 {6}개입니다. 가장 많이 쓴 기종은 {7}({8}개 모델), {9}({10}개 모델) 순입니다.",
+    D.length, ms.length, ms.reduce((s, m) => s + m.tg.length, 0), cnt(e => tgFam(e) !== "na"), cnt(e => e.n != null), cnt(e => e.h != null || !!e.ht), cnt(e => tgFam(e) !== "na" && e.n != null && (e.h != null || !!e.ht)), top[0][0], top[0][1], top[1][0], top[1][1]);
+})();
+(function tgTable(){
+  const fam = document.getElementById("tg-fam"), st = document.getElementById("tg-st"), nb = document.getElementById("tg-n"), hb = document.getElementById("tg-h"), srt = document.getElementById("tg-sort");
+  const opt = (v, l) => '<option value="' + v + '">' + esc(l) + "</option>";
+  fam.innerHTML = opt("", T("전체")) + TGF.map(f => opt(f[0], f[1])).join("");
+  st.innerHTML = opt("", T("전체")) + TGST.map(x => opt(x, x)).join("");
+  nb.innerHTML = opt("", T("전체")) + TGN.map(b => opt(b[0], b[1])).join("");
+  hb.innerHTML = opt("", T("전체")) + TGH.map(b => opt(b[0], b[1])).join("");
+  const rows = D.flatMap(m => m.tg.map(e => ({m, e, f: tgFam(e), n: tgHi(e.n), h: tgHi(e.h)})));
+  const desc = k => (a, b) => (a[k] == null) - (b[k] == null) || (b[k] || 0) - (a[k] || 0) || (a.m.date < b.m.date ? 1 : -1);
+  const SORT = {n: desc("n"), h: desc("h"), date: (a, b) => a.m.date < b.m.date ? 1 : a.m.date > b.m.date ? -1 : 0};
+  function render(){
+    const nf = TGN.find(b => b[0] === nb.value), hf = TGH.find(b => b[0] === hb.value);
+    const rs = rows.filter(r => (!fam.value || r.f === fam.value) && (!st.value || r.e.st === st.value) && (!nf || nf[2](r.n)) && (!hf || hf[2](r.h))).sort(SORT[srt.value]);
+    const t = ["<thead><tr><th>" + T("모델") + "</th><th>" + T("학습 단계") + "</th><th>" + T("GPU 종류") + "</th><th>" + T("장수") + "</th><th>" + T("기간") + "</th><th>" + T("GPU·TPU-시간") + "</th></tr></thead><tbody>"];
+    TGF.forEach(f => {
+      const g = rs.filter(r => r.f === f[0]); if (!g.length) return;
+      t.push('<tr class="fam"><td colspan="6">' + esc(f[1]) + " · " + T("{0}건", g.length) + "</td></tr>");
+      g.forEach(({m, e}) => {
+        const pre = e === m.tg.find(x => x.st === "사전학습") && m.gpuh != null;
+        t.push('<tr><td><a href="#m-' + m.id + '">' + esc(shortName(m.name).s) + "</a><small>" + esc(m.group) + " · " + esc(m.date) + "</small></td>" +
+          "<td>" + esc(e.st) + (e.p ? "<small>" + esc(e.p) + "</small>" : "") + "</td>" +
+          '<td class="' + (f[0] === "na" ? "na" : "") + '">' + esc(e.acc) + (e.s ? "<small>" + esc(e.s) + "</small>" : "") + "</td>" +
+          '<td class="num' + (e.n == null && !e.nt ? " na" : "") + '">' + esc(tgNText(e)) + "</td>" +
+          '<td class="num' + (e.h == null && !e.ht ? " na" : "") + '">' + esc(tgHText(e)) + "</td>" +
+          (pre ? '<td class="num">' + fmt(m.gpuh, 0) + "<small>" + esc(gpuUnit(m)) + "</small></td>" : '<td class="num na">–</td>') + "</tr>");
+      });
+    });
+    t.push("</tbody>");
+    document.getElementById("tg-table").innerHTML = t.join("");
+    document.getElementById("tg-sum").textContent = T("{0}건 중 {1}건을 보여 줍니다. GPU·TPU-시간은 사전학습 줄에만 적었습니다.", rows.length, rs.length);
+  }
+  [fam, st, nb, hb, srt].forEach(el => el.addEventListener("change", render));
+  render();
+})();
+
 /* ---------- LLM map ---------- */
 const FGRP = {"Llama":"llama","Gemma":"gemma","Qwen":"qwen","InternLM":"intern","SmolLM":"smol","PaLI·PaLM":"google","Gemini":"google","Phi":"etc","Mamba":"etc","기타":"etc"};
 const FGNAME = {llama:"Llama", gemma:"Gemma", qwen:"Qwen", intern:"InternLM", smol:"SmolLM", google:T("Google 비공개 (PaLI·PaLM·Gemini)"), etc:T("기타 (Phi·Mamba·Chameleon 등)")};
@@ -1305,7 +1405,7 @@ const optHtml = GROUPS.map(g => '<optgroup label="' + esc(g) + '">' + D.filter(m
 selA.innerHTML = optHtml; selB.innerHTML = optHtml; selA.value = "pi0"; selB.value = "openvla";
 const CROWS = [[T("분류"), m => m.group],[T("유형"), m => m.type],[T("발표"), m => m.date],[T("기관"), m => m.org],["논문", paperText, paperHtml],[T("가중치 공개"), m => m.open],[T("파라미터"), m => m.params],
   [T("백본 LLM"), m => m.llm],[T("비전 인코더"), m => m.vis || "—"],[T("액션 헤드"), m => tx(m.head) + " (" + tx(m.hk) + ")"],[T("청크"), m => m.chunk],[T("제어 주기"), m => m.hz],
-  [T("사전학습 가속기"), m => m.pre_hw],[T("사전학습 기간"), m => m.pre_time],[T("사전학습 스텝·배치"), m => m.pre_steps],[T("GPU·TPU-시간"), m => m.gpuh != null ? fmt(m.gpuh, 0) + " (" + tx(m.gpuh_basis) + ")" : "미공개"],
+  [T("사전학습 가속기"), m => m.pre_hw],[T("사전학습 기간"), m => m.pre_time],[T("사전학습 스텝·배치"), m => m.pre_steps],[T("GPU·TPU-시간"), m => m.gpuh != null ? fmt(m.gpuh, 0) + " (" + tx(m.gpuh_basis) + ")" : "미공개"],[T("학습 GPU 종류·장수·기간"), tgLine],
   [T("파인튜닝"), m => m.ft],[T("데이터 종류"), m => m.dtype],[T("데이터 규모"), m => m.dscale],[T("태스크·평가"), m => m.tasks],
   [T("추론 장치·속도"), m => m.infer],[T("추론 메모리"), m => m.mem || "미공개"],[T("가중치 bf16 (계산)"), m => m.w16 != null ? fmt(m.w16) + " GB" : "미공개"],[T("실행 위치"), m => m.dep || "미공개"],[T("강화학습"), m => tx(m.rl) + (usesRL(m) ? " (" + tx(m.rlcat) + ")" : "") + " · " + tx(m.rlwhere)],[T("베이스 제어"), baseText]];
 let cmpReady = false;

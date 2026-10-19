@@ -40,7 +40,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>疎3Dエンコーダ (MinkowskiEngine)</dd><dt>アクションヘッド</dt><dd>CNN拡散ヘッド (推論20ステップ) (diffusion)</dd><dt>チャンク</dt><dd>20ステップ</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>MinkowskiEngineスパース3Dエンコーダ(ボクセル5mm、単一RGB-D点群) + Transformer(エンコーダ4・デコーダ1、d_model 512、d_ff 2048) + CNN拡散ヘッド(学習100・推論20ステップ); 行動ホライズン20</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: A100 2枚、バッチ 240、lr 3e-4、warmup 2000 ステップ; 時間・エポックは非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>タスクあたり50デモ</dd><dt>主要データセット</dt><dd>独自のFlexivテレオペレーション</dd><dt>タスク・評価</dt><dd>Collect Cups、Collect Pens、Pour Balls、Push Block、Push Ball、Stack Blocks; 比較 ACT、Diffusion Policy、Act3D、DP3</dd><dt>ロボット</dt><dd>Flexiv Rizonアーム + Dahuan AG-95グリッパ</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>タスク別学習: A100 · 2枚 · 非公開</dd><dt>ファインチューニング</dt><dd>タスク別: A100 2枚、バッチ 240、lr 3e-4、warmup 2000 ステップ; 時間・エポックは非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>タスクあたり50デモ</dd><dt>主要データセット</dt><dd>独自のFlexivテレオペレーション</dd><dt>タスク・評価</dt><dd>Collect Cups、Collect Pens、Pour Balls、Push Block、Push Ball、Stack Blocks; 比較 ACT、Diffusion Policy、Act3D、DP3</dd><dt>ロボット</dt><dd>Flexiv Rizonアーム + Dahuan AG-95グリッパ</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>Intel i9-10900K + RTX 3090ワークステーション; 遅延は非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
 <h2>強化学習・ベース</h2>

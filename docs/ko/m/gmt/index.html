@@ -41,7 +41,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>—</dd><dt>액션 헤드</dt><dd>관절 목표 (RL 정책)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>50 Hz</dd><dt>구조 원문 요약</dt><dd>Motion Mixture-of-Experts MLP(전문가 네트워크 묶음 + 게이팅 네트워크) + 합성곱 모션 인코더(미래 프레임 → 128차원 잠재); 학생은 고유감각 20스텝 이력으로 DAgger; 시뮬 500 Hz·제어 50 Hz</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>RTX 4090 × 1</dd><dt>사전학습 기간</dt><dd>교사 약 3일 + 학생 약 1일</dd><dt>사전학습 스텝·배치</dt><dd>4096 병렬 env (IsaacGym); 스텝 미공개</dd><dt>GPU·TPU-시간</dt><dd>96 (환산 · RTX 4090-시간 (1 × (약 3일 + 약 1일) × 24 h))</dd><dt>파인튜닝</dt><dd>해당 없음</dd><dt>데이터 종류</dt><dd>모션캡처</dd><dt>데이터 규모</dt><dd>AMASS·LAFAN1 부분집합 8925 클립·33.12시간</dd><dt>주요 데이터셋</dt><dd>AMASS, LAFAN1</dd><dt>태스크·평가</dt><dd>MPKPE·MPJPE·속도 추적 오차 평가; 실기 Unitree G1 범용 동작 추적</dd><dt>로봇</dt><dd>Unitree G1(23 DoF, 키 1.32 m)</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>RTX 4090 × 1</dd><dt>사전학습 기간</dt><dd>교사 약 3일 + 학생 약 1일</dd><dt>사전학습 스텝·배치</dt><dd>4096 병렬 env (IsaacGym); 스텝 미공개</dd><dt>GPU·TPU-시간</dt><dd>96 (환산 · RTX 4090-시간 (1 × (약 3일 + 약 1일) × 24 h))</dd><dt>학습 GPU 종류·장수·기간</dt><dd>시뮬 RL (교사 + 학생): RTX 4090 · 1장 · 4일</dd><dt>파인튜닝</dt><dd>해당 없음</dd><dt>데이터 종류</dt><dd>모션캡처</dd><dt>데이터 규모</dt><dd>AMASS·LAFAN1 부분집합 8925 클립·33.12시간</dd><dt>주요 데이터셋</dt><dd>AMASS, LAFAN1</dd><dt>태스크·평가</dt><dd>MPKPE·MPJPE·속도 추적 오차 평가; 실기 Unitree G1 범용 동작 추적</dd><dt>로봇</dt><dd>Unitree G1(23 DoF, 키 1.32 m)</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>제어 50 Hz</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>미공개</dd></dl>
 <h2>강화학습 · 베이스</h2>

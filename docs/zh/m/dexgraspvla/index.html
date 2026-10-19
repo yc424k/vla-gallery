@@ -40,7 +40,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Qwen2.5-72B · Qwen2.5-VL-72B配置 (planner)</dd><dt>视觉编码器</dt><dd>SAM · Cutie · DINOv2 × 2</dd><dt>动作头</dt><dd>DiT扩散controller (16步) (diffusion)</dd><dt>动作块</dt><dd>64步</dd><dt>控制频率</dt><dd>20 Hz</dd><dt>架构原文摘要</dt><dd>分层：VLM planner(Qwen-VL-Chat，附录·README为Qwen2.5-VL-72B-Instruct) + DiT扩散controller(SAM·Cutie分割，含2个frozen DINOv2的3个视觉编码器)；动作块H=64，推理16步，20 Hz</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>不适用(无大规模机器人预训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>controller训练：A800×8服务器，不到1天，84个epoch，每GPU批量48</dd><dt>数据类型</dt><dd>真实机器人演示(kinesthetic teaching)</dd><dt>数据规模</dt><dd>成功episode 2,094个，家用物体36个</dd><dt>主要数据集</dt><dd>自行采集</dd><dt>任务·评估</dt><dd>在未见物体360个·光照3种·背景6种的1,287个组合上成功率90.8%</dd><dt>机器人</dt><dd>7-DoF RealMan RM75-6F机械臂 + 6-DoF PsiBot灵巧手</dd></dl>
+<dl><dt>预训练加速器</dt><dd>不适用(无大规模机器人预训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>任务专用训练 (controller): A800 · 8张 · 不足1天</dd><dt>微调</dt><dd>controller训练：A800×8服务器，不到1天，84个epoch，每GPU批量48</dd><dt>数据类型</dt><dd>真实机器人演示(kinesthetic teaching)</dd><dt>数据规模</dt><dd>成功episode 2,094个，家用物体36个</dd><dt>主要数据集</dt><dd>自行采集</dd><dt>任务·评估</dt><dd>在未见物体360个·光照3种·背景6种的1,287个组合上成功率90.8%</dd><dt>机器人</dt><dd>7-DoF RealMan RM75-6F机械臂 + 6-DoF PsiBot灵巧手</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>每个物体抓取平均约 6 s；planner（72B）在A800×8服务器上以GPU 4张·vLLM·speculative decoding（Qwen2.5-VL-7B）提供服务</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>远程服务器 (planner)</dd></dl>
 <h2>强化学习与底盘</h2>

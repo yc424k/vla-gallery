@@ -39,7 +39,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>无 (ViT-B视觉·文本编码器)</dd><dt>视觉编码器</dt><dd>ViT-B视觉·文本编码器 (冻结)</dd><dt>动作头</dt><dd>潜在动词 → Transformer学生策略 (潜在动作)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>50 Hz</dd><dt>架构原文摘要</dt><dd>System 2(LeVERB-VL)：冻结ViT-Base视觉·文本编码器(各768维) → 256维潜在&#x27;动词&#x27;，10 Hz / System 1(LeVERB-A)：2层·4头·hidden 128 Transformer学生，关节位置动作50 Hz</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>Ada 6000 × 2 (System 2)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>步数未公开 · 全局batch 512 (System 2)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>不适用</dd><dt>数据类型</dt><dd>仿真·合成 / 动作捕捉</dd><dt>数据规模</dt><dd>154条轨迹各随机化100次的照片级真实rollout 17.1小时；纯语言2.7小时(500条轨迹)</dd><dt>主要数据集</dt><dd>LeVERB-Bench(重定向动作捕捉的IsaacSim光线追踪渲染)</dd><dt>任务·评估</dt><dd>LeVERB-Bench(10个类别,150+任务);简单视觉导航80%,整体58.5%;相对简单分层全身VLA为7.8倍</dd><dt>机器人</dt><dd>Unitree G1全身(视觉导航·移动操作)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>Ada 6000 × 2 (System 2)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>步数未公开 · 全局batch 512 (System 2)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>预训练 (System 2): RTX 6000 Ada · 2张 · 未公开</dd><dt>微调</dt><dd>不适用</dd><dt>数据类型</dt><dd>仿真·合成 / 动作捕捉</dd><dt>数据规模</dt><dd>154条轨迹各随机化100次的照片级真实rollout 17.1小时；纯语言2.7小时(500条轨迹)</dd><dt>主要数据集</dt><dd>LeVERB-Bench(重定向动作捕捉的IsaacSim光线追踪渲染)</dd><dt>任务·评估</dt><dd>LeVERB-Bench(10个类别,150+任务);简单视觉导航80%,整体58.5%;相对简单分层全身VLA为7.8倍</dd><dt>机器人</dt><dd>Unitree G1全身(视觉导航·移动操作)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>System 2 10 Hz，System 1 50 Hz；硬件未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

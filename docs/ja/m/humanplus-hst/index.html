@@ -41,7 +41,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>関節位置目標 (19次元) (RL方策)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>50 Hz</dd><dt>構造の原文要約</dt><dd>デコーダのみのTransformer(repoデフォルト 4層・latent 128・4ヘッド、dropout 0.1)、文脈 8ステップ; 固有感覚 + 目標姿勢 → 19次元関節位置目標、50 Hz</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開 (Isaac Gym PPO、repo)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>max_iterations 15000 · envあたり32ステップ、2048 env (repo H1 config)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>モーションキャプチャ</dd><dt>データ規模</dt><dd>AMASS 40時間、11,000以上のシーケンス†</dd><dt>主要データセット</dt><dd>AMASS</dd><dt>タスク・評価</dt><dd>リアルタイム全身シャドーイング(遠隔操作); HITと組み合わせた自律タスク Fold Clothes 100%(40デモ)、Warehouse 90%、Wear a Shoe and Walk 60%</dd><dt>ロボット</dt><dd>Unitree H1ベースの33-DoFヒューマノイド + Inspire-Robots RH56DFXハンド、身長180cm</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開 (Isaac Gym PPO、repo)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>max_iterations 15000 · envあたり32ステップ、2048 env (repo H1 config)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>モーションキャプチャ</dd><dt>データ規模</dt><dd>AMASS 40時間、11,000以上のシーケンス†</dd><dt>主要データセット</dt><dd>AMASS</dd><dt>タスク・評価</dt><dd>リアルタイム全身シャドーイング(遠隔操作); HITと組み合わせた自律タスク Fold Clothes 100%(40デモ)、Warehouse 90%、Wear a Shoe and Walk 60%</dd><dt>ロボット</dt><dd>Unitree H1ベースの33-DoFヒューマノイド + Inspire-Robots RH56DFXハンド、身長180cm</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>50 Hz; シャドーイング時の人体姿勢推定・リターゲティングはRTX 4090で25 fps、手姿勢推定は10 fps</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

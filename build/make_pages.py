@@ -132,6 +132,13 @@ def build(l):
         uses = m["rl"] in ("사용", "일부")
         rl_t = tx(m["rl"]) + (" (" + tx(m["rlcat"]) + ")" if uses else "") + " · " + tx(m["rlwhere"])
         gpuh = fmt(m["gpuh"], 0) + " (" + tx(m.get("gpuh_basis") or "") + ")" if m.get("gpuh") is not None else NA
+        def tg(t):
+            def rng(v, f): return "–".join(f(x) for x in (v if isinstance(v, list) else [v]))
+            n = tx(t["nt"]) if t.get("nt") else NA if t["n"] is None else tx("1장") if t["n"] == 1 else tx("{0}장").replace("{0}", rng(t["n"], lambda x: fmt(x, 0)))
+            hi = t["h"][1] if isinstance(t["h"], list) else t["h"]
+            h = tx(t["ht"]) if t.get("ht") else NA if hi is None else (tx("{0}일") if hi >= 48 else tx("{0}시간")).replace("{0}", rng(t["h"], lambda x: fmt(x / 24 if hi >= 48 else x)))
+            return tx(t["st"]) + (" (" + tx(t["p"]) + ")" if t.get("p") else "") + ": " + tx(t["acc"]) + " · " + n + " · " + h + (" · " + tx(t["s"]) if t.get("s") else "")
+        tgs = " / ".join(tg(t) for t in m.get("tg") or []) or NA
         return [
             ("s_over", [("분류", tx(m["group"])), ("유형", m["type"]), ("발표", m["date"]), ("기관", tx(m["org"])),
                         ("가중치 공개", tx(m["open"])), ("파라미터", tx(m["params"]))]),
@@ -139,7 +146,7 @@ def build(l):
                         ("액션 헤드", tx(m["head"]) + (" (" + tx(m["hk"]) + ")" if m.get("hk") else "")),
                         ("청크", tx(m["chunk"])), ("제어 주기", tx(m["hz"])), ("구조 원문 요약", tx(m["backbone_text"]))]),
             ("s_train", [("사전학습 가속기", tx(m["pre_hw"])), ("사전학습 기간", tx(m["pre_time"])), ("사전학습 스텝·배치", tx(m["pre_steps"])),
-                         ("GPU·TPU-시간", gpuh), ("파인튜닝", tx(m["ft"])), ("데이터 종류", tx(m["dtype"])), ("데이터 규모", tx(m["dscale"])),
+                         ("GPU·TPU-시간", gpuh), ("학습 GPU 종류·장수·기간", tgs), ("파인튜닝", tx(m["ft"])), ("데이터 종류", tx(m["dtype"])), ("데이터 규모", tx(m["dscale"])),
                          ("주요 데이터셋", tx(m["datasets"])), ("태스크·평가", tx(m["tasks"])), ("로봇", tx(m["robots"]))]),
             ("s_inf", [("추론 장치·속도", tx(m["infer"]) or NA), ("추론 메모리", tx(m["mem"]) or NA),
                        ("가중치 bf16 (계산)", fmt(m["w16"]) + " GB" if m.get("w16") is not None else NA), ("실행 위치", tx(m["dep"]) or NA)]),

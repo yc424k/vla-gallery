@@ -42,7 +42,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>미기재</dd><dt>액션 헤드</dt><dd>다중 스케일 VQ 토큰 (coarse-to-fine) (이산 토큰)</dd><dt>청크</dt><dd>16스텝</dd><dt>제어 주기</dt><dd>미공개</dd><dt>구조 원문 요약</dt><dd>다중 스케일 행동 VQ-VAE 토크나이저(행동 차원별 1개, K=4 스케일, 16스텝 지평) + GPT형 트랜스포머가 거친 스케일부터 세밀한 스케일로 이산 토큰 예측(교차 엔트로피)</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>멀티태스크: A100 1장, 배치 512, 200 에폭; Square 학습 비용(V100): 토크나이저 4.67 GPU-시간(28분×10) + 정책 13.85 GPU-시간</dd><dt>데이터 종류</dt><dd>시뮬레이션·합성; 실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>Robomimic 과제당 200데모; MimicGen 과제당 1K 궤적; 실제 과제당 50데모</dd><dt>주요 데이터셋</dt><dd>Robomimic; Franka Kitchen; Push-T; MimicGen</dd><dt>태스크·평가</dt><dd>Robomimic Lift·Can·Square(상태·이미지), Kitchen, Push-T; MimicGen 8과제(멀티태스크); 실제 UR5e 컵·그릇 2과제</dd><dt>로봇</dt><dd>UR5e 단일 팔; 시뮬레이션</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>과제별 학습: A100 · 1장 · 미공개</dd><dt>파인튜닝</dt><dd>멀티태스크: A100 1장, 배치 512, 200 에폭; Square 학습 비용(V100): 토크나이저 4.67 GPU-시간(28분×10) + 정책 13.85 GPU-시간</dd><dt>데이터 종류</dt><dd>시뮬레이션·합성; 실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>Robomimic 과제당 200데모; MimicGen 과제당 1K 궤적; 실제 과제당 50데모</dd><dt>주요 데이터셋</dt><dd>Robomimic; Franka Kitchen; Push-T; MimicGen</dd><dt>태스크·평가</dt><dd>Robomimic Lift·Can·Square(상태·이미지), Kitchen, Push-T; MimicGen 8과제(멀티태스크); 실제 UR5e 컵·그릇 2과제</dd><dt>로봇</dt><dd>UR5e 단일 팔; 시뮬레이션</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>A100에서 행동 예측 400회 평균으로 측정, 실제는 RTX 2060; DP 대비 10배 이상 빠름</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>0 GB</dd><dt>실행 위치</dt><dd>로컬 PC</dd></dl>
 <h2>강화학습 · 베이스</h2>

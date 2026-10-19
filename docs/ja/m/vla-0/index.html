@@ -42,7 +42,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B構成</dd><dt>ビジョンエンコーダ</dt><dd>Qwen2.5-VL ViT</dd><dt>アクションヘッド</dt><dd>整数テキストアクション (アクションヘッドなし) (離散トークン)</dd><dt>チャンク</dt><dd>マルチステップ + アンサンブル</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>改変していないQwen2.5-VL-3B; アクションを整数テキスト(例: 0–1000)で出力、複数ステップ予測 + 時点間アンサンブル、語彙変更・アクションヘッドなし</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>A100 8枚 約32 h、64 epochs、batch 192、lr 5e-6</dd><dt>データ種類</dt><dd>シミュレーション・合成 + 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>LIBEROデモ; 実機SO-100デモ100本</dd><dt>主要データセット</dt><dd>LIBERO</dd><dt>タスク・評価</dt><dd>LIBERO平均94.7%; 実機SO-100 4タスク(SmolVLA比 +12.5%p)</dd><dt>ロボット</dt><dd>SO-100、LIBEROシミュレーション</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>ファインチューニング: A100 · 8枚 · 32時間</dd><dt>ファインチューニング</dt><dd>A100 8枚 約32 h、64 epochs、batch 192、lr 5e-6</dd><dt>データ種類</dt><dd>シミュレーション・合成 + 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>LIBEROデモ; 実機SO-100デモ100本</dd><dt>主要データセット</dt><dd>LIBERO</dd><dt>タスク・評価</dt><dd>LIBERO平均94.7%; 実機SO-100 4タスク(SmolVLA比 +12.5%p)</dd><dt>ロボット</dt><dd>SO-100、LIBEROシミュレーション</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>RTX 5090デスクトップで4 Hz(README: TensorRT-LLMで6 Hz可能)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>6 GB</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
 <h2>強化学習・ベース</h2>

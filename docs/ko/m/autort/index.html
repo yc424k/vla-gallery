@@ -38,7 +38,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>PaLI·FlexCap VLM + LLM (이름 미기재)</dd><dt>비전 인코더</dt><dd>—</dd><dt>액션 헤드</dt><dd>RT-1·RT-2·스크립트·텔레옵 정책으로 수집 (기타)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>미공개</dd><dt>구조 원문 요약</dt><dd>시스템: VLM(PaLI, FlexCap)이 장면 서술 → LLM이 과제 제안·필터 → RT-1/RT-2/스크립트/텔레옵 정책으로 수집</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>해당 없음(수집 데이터로 RT-1 co-finetuning, 연산 미공개)</dd><dt>데이터 종류</dt><dd>실로봇 자율 수집(스크립트 정책·텔레옵·RT-2)</dd><dt>데이터 규모</dt><dd>77,000 trials, 6,650 unique instructions, 7개월; scripted 73,293 episodes(성공 21%), teleop 3,060(82%), RT-2 936(4.7%)</dd><dt>주요 데이터셋</dt><dd>AutoRT 수집 데이터(자체)</dd><dt>태스크·평가</dt><dd>RT-1 co-finetuning 시 높이 일반화 집기 0%→12.5%, 닦기 10%→30%</dd><dt>로봇</dt><dd>모바일 매니퓰레이터 20대 이상 동시 운용(블로그: 총 52대), 사무실 빌딩 4곳</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>해당 없음(수집 데이터로 RT-1 co-finetuning, 연산 미공개)</dd><dt>데이터 종류</dt><dd>실로봇 자율 수집(스크립트 정책·텔레옵·RT-2)</dd><dt>데이터 규모</dt><dd>77,000 trials, 6,650 unique instructions, 7개월; scripted 73,293 episodes(성공 21%), teleop 3,060(82%), RT-2 936(4.7%)</dd><dt>주요 데이터셋</dt><dd>AutoRT 수집 데이터(자체)</dd><dt>태스크·평가</dt><dd>RT-1 co-finetuning 시 높이 일반화 집기 0%→12.5%, 닦기 10%→30%</dd><dt>로봇</dt><dd>모바일 매니퓰레이터 20대 이상 동시 운용(블로그: 총 52대), 사무실 빌딩 4곳</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>해당 없음</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>미공개</dd></dl>
 <h2>강화학습 · 베이스</h2>

@@ -41,7 +41,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>ResNet18 (ステレオRGB)</dd><dt>アクションヘッド</dt><dd>目標姿勢50個のチャンク → HST (回帰)</dd><dt>チャンク</dt><dd>50ステップ</dd><dt>制御周期</dt><dd>25 Hz</dd><dt>構造の原文要約</dt><dd>Transformer(repo例 hidden 512、FF 512、デコーダ6層、ResNet18バックボーン); ステレオ一人称RGB特徴 + 固有感覚 + 固定位置埋め込み → 目標姿勢50個のチャンク、オンボード25 HzでHSTへ非同期に送信</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>repo例 100,000ステップ · バッチ48 (lr 1e-5)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>タスクあたり最大40個のデモ(シャドーイング収集)</dd><dt>主要データセット</dt><dd>独自のシャドーイングデモ</dd><dt>タスク・評価</dt><dd>Fold Clothes 100%(40デモ)、Rearrange Objects 90%(30)、Type AI 80%(30)、Two-Robot Greeting 90%(30)、Warehouse 90%(25)、Wear a Shoe and Walk 60%(40)</dd><dt>ロボット</dt><dd>Unitree H1ベースの33-DoFヒューマノイド + Inspire-Robots RH56DFXハンド、身長180cm</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>repo例 100,000ステップ · バッチ48 (lr 1e-5)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>タスクあたり最大40個のデモ(シャドーイング収集)</dd><dt>主要データセット</dt><dd>独自のシャドーイングデモ</dd><dt>タスク・評価</dt><dd>Fold Clothes 100%(40デモ)、Rearrange Objects 90%(30)、Type AI 80%(30)、Two-Robot Greeting 90%(30)、Warehouse 90%(25)、Wear a Shoe and Walk 60%(40)</dd><dt>ロボット</dt><dd>Unitree H1ベースの33-DoFヒューマノイド + Inspire-Robots RH56DFXハンド、身長180cm</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>オンボード 25 Hz</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>オンボード</dd></dl>
 <h2>強化学習・ベース</h2>

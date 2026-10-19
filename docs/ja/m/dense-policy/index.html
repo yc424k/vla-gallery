@@ -40,7 +40,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>ResNet18または3Dスパース畳み込み</dd><dt>アクションヘッド</dt><dd>双方向の階層拡張 (連続L2) (回帰)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>2D ResNet18(GroupNorm)または3Dスパース畳み込みエンコーダ + 4層BERTエンコーダのみの構造; 単一フレームから行動列を粗いものから双方向に展開する対数時間推論、連続行動L2損失</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: GPU・バッチ・時間は非公開; 1000 エポック(比較対象のACTは2000)</dd><dt>データ種類</dt><dd>シミュレーション・合成; 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>Adroit・MetaWorldは課題あたり10デモ、DexArt 100; 実機は課題あたり50デモ</dd><dt>主要データセット</dt><dd>Adroit; DexArt; MetaWorld; 自社Flexivデータ</dd><dt>タスク・評価</dt><dd>シミュレーション Adroit, DexArt, MetaWorld; 実機 Put Bread into Pot, Open Drawer, Pour Balls, Flower Arrangement</dd><dt>ロボット</dt><dd>Flexiv Rizon + Robotiq 2F-85</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>タスク別: GPU・バッチ・時間は非公開; 1000 エポック(比較対象のACTは2000)</dd><dt>データ種類</dt><dd>シミュレーション・合成; 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>Adroit・MetaWorldは課題あたり10デモ、DexArt 100; 実機は課題あたり50デモ</dd><dt>主要データセット</dt><dd>Adroit; DexArt; MetaWorld; 自社Flexivデータ</dd><dt>タスク・評価</dt><dd>シミュレーション Adroit, DexArt, MetaWorld; 実機 Put Bread into Pot, Open Drawer, Pour Balls, Flower Arrangement</dd><dt>ロボット</dt><dd>Flexiv Rizon + Robotiq 2F-85</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>ACTと同程度の速度、DP比で約10倍; 実験は i9-10980XE + RTX 2080 Ti</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>ローカルPC</dd></dl>
 <h2>強化学習・ベース</h2>

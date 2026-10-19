@@ -40,7 +40,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Qwen2 1.5B / 7B / 72B · Qwen2-VL-2B/7B/72B配置</dd><dt>视觉编码器</dt><dd>Qwen2-VL ViT</dd><dt>动作头</dt><dd>Diffusion Policy头 + FiLM推理注入 (diffusion)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen2-VL主干 + 随机初始化Diffusion Policy头(Chi et al. 2023设计) + FiLM推理注入模块;动作块长度未公开</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>GPU·时间未公开；lr 2e-5固定，20个epoch(适用于DiVLA·OpenVLA中的哪个，原文也不明确)</dd><dt>数据类型</dt><dd>真实机器人遥操作 + GPT-4o生成的推理标注</dd><dt>数据规模</dt><dd>预训练DROID(2B·7B)、OXE+DROID(72B)，规模未注明；微调分拣500、多任务580、bussing 400条轨迹</dd><dt>主要数据集</dt><dd>DROID, Open X-Embodiment</dd><dt>任务·评估</dt><dd>Franka工厂分拣总平均66.2%；102个未知物体零样本bin picking 63.7%；AgileX双臂table bussing seen 72.9%</dd><dt>机器人</dt><dd>Franka(单臂)，AgileX(双臂)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>GPU·时间未公开；lr 2e-5固定，20个epoch(适用于DiVLA·OpenVLA中的哪个，原文也不明确)</dd><dt>数据类型</dt><dd>真实机器人遥操作 + GPT-4o生成的推理标注</dd><dt>数据规模</dt><dd>预训练DROID(2B·7B)、OXE+DROID(72B)，规模未注明；微调分拣500、多任务580、bussing 400条轨迹</dd><dt>主要数据集</dt><dd>DROID, Open X-Embodiment</dd><dt>任务·评估</dt><dd>Franka工厂分拣总平均66.2%；102个未知物体零样本bin picking 63.7%；AgileX双臂table bussing seen 72.9%</dd><dt>机器人</dt><dd>Franka(单臂)，AgileX(双臂)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>A6000 1张：DiVLA-2B 82 Hz，7B 42 Hz(不用vLLM时74/30 Hz)；比OpenVLA快6倍</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>144 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

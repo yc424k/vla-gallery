@@ -40,7 +40,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Qwen2.5-72B · Qwen2.5-VL-72B構成 (planner)</dd><dt>ビジョンエンコーダ</dt><dd>SAM · Cutie · DINOv2 × 2</dd><dt>アクションヘッド</dt><dd>DiT拡散controller (16ステップ) (diffusion)</dd><dt>チャンク</dt><dd>64ステップ</dd><dt>制御周期</dt><dd>20 Hz</dd><dt>構造の原文要約</dt><dd>階層型: VLM planner(Qwen-VL-Chat、付録・READMEはQwen2.5-VL-72B-Instruct) + DiT拡散controller(SAM・Cutieセグメンテーション、frozen DINOv2 2個を含むビジョンエンコーダ3個); チャンクH=64、推論16ステップ、20 Hz</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(大規模ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>controller学習: A800×8サーバー、1日未満、84エポック、GPUあたりバッチ48</dd><dt>データ種類</dt><dd>実ロボットのデモ(kinesthetic teaching)</dd><dt>データ規模</dt><dd>成功エピソード2,094件、家庭用物体36個</dd><dt>主要データセット</dt><dd>独自収集</dd><dt>タスク・評価</dt><dd>未知の物体360個・照明3種・背景6種の組み合わせ1,287件で90.8%成功</dd><dt>ロボット</dt><dd>7-DoF RealMan RM75-6Fアーム + 6-DoF PsiBotハンド</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(大規模ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>タスク別学習 (controller): A800 · 8枚 · 1日未満</dd><dt>ファインチューニング</dt><dd>controller学習: A800×8サーバー、1日未満、84エポック、GPUあたりバッチ48</dd><dt>データ種類</dt><dd>実ロボットのデモ(kinesthetic teaching)</dd><dt>データ規模</dt><dd>成功エピソード2,094件、家庭用物体36個</dd><dt>主要データセット</dt><dd>独自収集</dd><dt>タスク・評価</dt><dd>未知の物体360個・照明3種・背景6種の組み合わせ1,287件で90.8%成功</dd><dt>ロボット</dt><dd>7-DoF RealMan RM75-6Fアーム + 6-DoF PsiBotハンド</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>物体あたりの把持は平均約6 s; planner(72B)はA800×8サーバーでGPU 4枚・vLLM・speculative decoding(Qwen2.5-VL-7B)でサービング</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>リモートサーバー (planner)</dd></dl>
 <h2>強化学習・ベース</h2>

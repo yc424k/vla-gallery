@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Qwen3.5 2B (Gated DeltaNet混合)</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>统一动作专家460M (未公开)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen-3.5 2B VLM(Gated DeltaNet线性注意力3层与全注意力1层交替) + 460M统一动作专家;视觉预测token 50个(训练时由冻结的WAN2.2-5B视频生成器监督,推理时去除视频分支)</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>Stage 1 300K + Stage 2 600K steps，批量1024，LR 5×10⁻⁵，bf16</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>余弦衰减后训练；硬件·时间未公开</dd><dt>数据类型</dt><dd>机器人操作数据（6个来源，未注明真实·合成之分）+ 网络视觉-语言（多模态QA）</dd><dt>数据规模</dt><dd>机器人 1.2M条回合·861M帧；多模态QA约 3M；采样比 机器人:多模态 = 0.15:0.85</dd><dt>主要数据集</dt><dd>6个来源(名称笔记未注明)</dd><dt>任务·评估</dt><dd>LIBERO·RoboTwin 2.0·EBench·SimplerEnv·LIBERO-Plus(零样本)·DOMINO(零样本) 6项综合最佳(自报);真实世界插管80.7%·移管74.4%·MOF长程76.4%</dd><dt>机器人</dt><dd>笔记未注明</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>Stage 1 300K + Stage 2 600K steps，批量1024，LR 5×10⁻⁵，bf16</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>余弦衰减后训练；硬件·时间未公开</dd><dt>数据类型</dt><dd>机器人操作数据（6个来源，未注明真实·合成之分）+ 网络视觉-语言（多模态QA）</dd><dt>数据规模</dt><dd>机器人 1.2M条回合·861M帧；多模态QA约 3M；采样比 机器人:多模态 = 0.15:0.85</dd><dt>主要数据集</dt><dd>6个来源(名称笔记未注明)</dd><dt>任务·评估</dt><dd>LIBERO·RoboTwin 2.0·EBench·SimplerEnv·LIBERO-Plus(零样本)·DOMINO(零样本) 6项综合最佳(自报);真实世界插管80.7%·移管74.4%·MOF长程76.4%</dd><dt>机器人</dt><dd>笔记未注明</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>单张RTX 5090上推理1步约0.1 s</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
 <h2>强化学习与底盘</h2>

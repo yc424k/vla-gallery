@@ -40,7 +40,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>ResNet18</dd><dt>动作头</dt><dd>关节 + 底盘速度 16维回归 (CVAE)</dd><dt>动作块</dt><dd>45步</dd><dt>控制频率</dt><dd>50 Hz</dd><dt>架构原文摘要</dt><dd>ACT(预训练ResNet18，编码器4层·解码器7层，hidden 512，FF 3200，8头)；16维动作(14-DoF关节位置 + 底盘线速度·角速度)，动作块45；对比策略DP动作块64，VINN动作块100</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>不适用(联合训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：硬件·时间·步数未公开；ACT 批量 16·lr 2e-5，DP 批量 32·lr 1e-4（DDIM 训练 50·推理 10步）</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>每项任务50条演示(5项任务)·20条演示(Cook Shrimp，High Five) + 静态ALOHA 825条演示联合训练(采样比例0.5:0.5)</dd><dt>主要数据集</dt><dd>Mobile ALOHA自行采集;静态ALOHA数据集</dd><dt>任务·评估</dt><dd>Wipe Wine, Cook Shrimp, Rinse Pan, Use Cabinet, Call Elevator, Push Chairs, High Five(7项任务)</dd><dt>机器人</dt><dd>Mobile ALOHA(移动底盘 + 双臂14-DoF)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>不适用(联合训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：硬件·时间·步数未公开；ACT 批量 16·lr 2e-5，DP 批量 32·lr 1e-4（DDIM 训练 50·推理 10步）</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>每项任务50条演示(5项任务)·20条演示(Cook Shrimp，High Five) + 静态ALOHA 825条演示联合训练(采样比例0.5:0.5)</dd><dt>主要数据集</dt><dd>Mobile ALOHA自行采集;静态ALOHA数据集</dd><dt>任务·评估</dt><dd>Wipe Wine, Cook Shrimp, Rinse Pan, Use Cabinet, Call Elevator, Push Chairs, High Five(7项任务)</dd><dt>机器人</dt><dd>Mobile ALOHA(移动底盘 + 双臂14-DoF)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>在RTX 3070 Ti(8GB)笔记本上采集·推理;延迟未公开;相机50 Hz</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>机载 (笔记本GPU)</dd></dl>
 <h2>强化学习与底盘</h2>

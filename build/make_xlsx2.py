@@ -98,6 +98,25 @@ ws2 = wb.create_sheet("데이터셋")
 dwidths = [26,9,24,22,26,10,18,22,24,22,34,34,10,40]
 write_sheet(ws2, DKEYS, datasets, dwidths, {"시간(h)"}, "출처 URL", {"시간(h)":"#,##0.#"})
 
+# 학습 GPU sheet: 모델별 GPU 종류·장수·기간(gallery/train_gpu.json, 단계마다 한 줄)
+TGF = [("NVIDIA H100·H200·H800·GB200", r"H100|H200|H800|GB200|MI300"), ("NVIDIA A100·A800", r"A100|A800"), ("NVIDIA V100", r"V100"),
+       ("NVIDIA 기타 데이터센터", r"^(A40|A10G|A10|L40S?)$"), ("워크스테이션·소비자 GPU", r"RTX|A4000|A5000|A6000"), ("Google TPU", r"TPU"), ("기종 미공개", r".")]
+def rng(v): return None if v is None else "–".join(f"{x:,.1f}".rstrip("0").rstrip(".") for x in (v if isinstance(v, list) else [v]))
+grows = []
+for g in sorted(GD.values(), key=lambda g: (g["gi"], g["date"])):
+    for t in g.get("tg") or []:
+        hi = t["h"][1] if isinstance(t["h"], list) else t["h"]
+        grows.append({"구분": g["group"], "모델": g["name"], "발표": g["date"], "학습 단계": t["st"], "세부": t.get("p") or "",
+                      "GPU 분류": next(n for n, rx in TGF if re.search(rx, t["acc"])), "GPU 종류": t["acc"],
+                      "장수": t.get("nt") or (rng(t["n"]) + "장" if t["n"] is not None else "미공개"),
+                      "장수(최대)": t["n"][1] if isinstance(t["n"], list) else t["n"],
+                      "기간": t.get("ht") or ("미공개" if hi is None else rng([x / 24 for x in t["h"]] if isinstance(t["h"], list) else t["h"] / 24) + "일" if hi >= 48 else rng(t["h"]) + "시간"),
+                      "기간(일, 최대)": round(hi / 24, 2) if hi is not None else None,
+                      "출처 표기": t.get("s") or "논문·공식 자료"})
+GKEYS = ["모델", "구분", "발표", "학습 단계", "세부", "GPU 분류", "GPU 종류", "장수", "장수(최대)", "기간", "기간(일, 최대)", "출처 표기"]
+ws5 = wb.create_sheet("학습 GPU", 1)
+write_sheet(ws5, GKEYS, grows, [26, 18, 9, 11, 20, 24, 16, 18, 10, 16, 11, 14], {"장수(최대)", "기간(일, 최대)"}, set(), {"장수(최대)": "#,##0", "기간(일, 최대)": "#,##0.##"})
+
 # 출처 sheet
 ws3 = wb.create_sheet("출처")
 labels = {"w1":"참고 기준·VA","w2":"자기회귀·잠재 액션 VLA","w3":"π 계열·Flow/Diffusion VLA","w4":"산업계 모델","w5":"휴머노이드","w6":"2026 신규","w8":"모바일 매니퓰레이션·내비게이션","w7":"데이터셋"}

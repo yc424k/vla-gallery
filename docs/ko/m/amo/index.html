@@ -41,7 +41,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>—</dd><dt>액션 헤드</dt><dd>AMO 3층 MLP (RL 정책)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>50 Hz</dd><dt>구조 원문 요약</dt><dd>AMO 모듈: 3층 MLP; PPO 교사 → 지도학습 학생; 자율 상체 정책은 ACT(트랜스포머) + DINOv2 인코더</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>미공개 (IsaacGym 대규모 병렬 시뮬)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>미공개 (env 수 미공개)</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>해당 없음; 모방학습은 태스크당 50 에피소드</dd><dt>데이터 종류</dt><dd>모션캡처 / 시뮬레이션·합성 / 실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>AMASS 상체 모션 + 무작위 몸통 명령(크기 미공개); 모방학습 태스크당 50 에피소드</dd><dt>주요 데이터셋</dt><dd>AMASS</dd><dt>태스크·평가</dt><dd>몸통 추적; 종이봉투 집기 8~10/10, 페트병 던지기 10/10, 바구니 집기(정성 평가)</dd><dt>로봇</dt><dd>Unitree G1(29-DoF) + Dex3-1 손, 3-DoF 능동 머리, ZED Mini</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>미공개 (IsaacGym 대규모 병렬 시뮬)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>미공개 (env 수 미공개)</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>해당 없음; 모방학습은 태스크당 50 에피소드</dd><dt>데이터 종류</dt><dd>모션캡처 / 시뮬레이션·합성 / 실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>AMASS 상체 모션 + 무작위 몸통 명령(크기 미공개); 모방학습 태스크당 50 에피소드</dd><dt>주요 데이터셋</dt><dd>AMASS</dd><dt>태스크·평가</dt><dd>몸통 추적; 종이봉투 집기 8~10/10, 페트병 던지기 10/10, 바구니 집기(정성 평가)</dd><dt>로봇</dt><dd>Unitree G1(29-DoF) + Dex3-1 손, 3-DoF 능동 머리, ZED Mini</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>Jetson Orin NX 50 Hz</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>온보드 (Jetson Orin NX)</dd></dl>
 <h2>강화학습 · 베이스</h2>

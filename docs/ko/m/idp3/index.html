@@ -41,7 +41,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>피라미드 합성곱 점군 인코더</dd><dt>액션 헤드</dt><dd>확산 정책 (DDIM 10스텝) (diffusion)</dd><dt>청크</dt><dd>16스텝</dd><dt>제어 주기</dt><dd>15 Hz</dd><dt>구조 원문 요약</dt><dd>피라미드 합성곱 인코더 + 확산 정책(DDIM 학습 50스텝·추론 10스텝), 예측 호라이즌 16; 1인칭 3D 포인트 클라우드(RealSense L515, 추론 시 4096점) + 고유감각 → 목표 관절 위치, 15 Hz</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>RTX 4090 × 1 (README)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>300 에폭 (AdamW)</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>해당 없음</dd><dt>데이터 종류</dt><dd>실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>태스크당 시연 10개 × 롤아웃 10회, 3태스크 총 300 에피소드(시연당 성공 20회); 단일 학습 장면</dd><dt>주요 데이터셋</dt><dd>Apple Vision Pro 상체 원격조작 데이터(자체)</dd><dt>태스크·평가</dt><dd>학습 장면 Pick&amp;Place 9/10, Pour 9/10, Wipe 10/10; 새 물체·시점·장면 9/10; 실세계 평가 2000회 이상(Table I 2253 에피소드)</dd><dt>로봇</dt><dd>Fourier GR1(높이 조절 카트 위 25-DoF 상체)</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>RTX 4090 × 1 (README)</dd><dt>사전학습 기간</dt><dd>미공개</dd><dt>사전학습 스텝·배치</dt><dd>300 에폭 (AdamW)</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>과제별 학습: RTX 4090 · 1장 · 미공개 · README</dd><dt>파인튜닝</dt><dd>해당 없음</dd><dt>데이터 종류</dt><dd>실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>태스크당 시연 10개 × 롤아웃 10회, 3태스크 총 300 에피소드(시연당 성공 20회); 단일 학습 장면</dd><dt>주요 데이터셋</dt><dd>Apple Vision Pro 상체 원격조작 데이터(자체)</dd><dt>태스크·평가</dt><dd>학습 장면 Pick&amp;Place 9/10, Pour 9/10, Wipe 10/10; 새 물체·시점·장면 9/10; 실세계 평가 2000회 이상(Table I 2253 에피소드)</dd><dt>로봇</dt><dd>Fourier GR1(높이 조절 카트 위 25-DoF 상체)</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>온보드 로봇 연산만으로 실시간 15 Hz</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>온보드</dd></dl>
 <h2>강화학습 · 베이스</h2>

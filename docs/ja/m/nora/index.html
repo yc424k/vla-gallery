@@ -42,7 +42,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B構成</dd><dt>ビジョンエンコーダ</dt><dd>Qwen2.5-VL ViT</dd><dt>アクションヘッド</dt><dd>FAST+トークン (離散トークン)</dd><dt>チャンク</dt><dd>1 (NORA) · 5 (Long)</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>Qwen2.5-VL-3B; FAST+トークナイザ(語彙2048個追加)、チャンク1(NORA)/5(NORA-Long)、7-DoFアクション</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>H100 8枚(1ノード)</dd><dt>事前学習期間</dt><dd>約3週間</dd><dt>事前学習ステップ・バッチ</dt><dd>1.1M steps、batch 256、50k stepsのウォームアップ後に最大lr 5e-5、コサイン減衰</dd><dt>GPU・TPU時間</dt><dd>4,000 (明示(約) · H100時間)</dd><dt>ファインチューニング</dt><dd>150 epochs、batch 128、lr 5e-5; ハードウェア・時間は非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>970kデモ</dd><dt>主要データセット</dt><dd>Open X-Embodiment</dd><dt>タスク・評価</dt><dd>実機WidowX-250 9タスク 56.7%; LIBERO 87.9%(NORA-Long)</dd><dt>ロボット</dt><dd>WidowX-250、LIBEROシミュレーション</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>H100 8枚(1ノード)</dd><dt>事前学習期間</dt><dd>約3週間</dd><dt>事前学習ステップ・バッチ</dt><dd>1.1M steps、batch 256、50k stepsのウォームアップ後に最大lr 5e-5、コサイン減衰</dd><dt>GPU・TPU時間</dt><dd>4,000 (明示(約) · H100時間)</dd><dt>学習GPUの種類・枚数・期間</dt><dd>事前学習: H100 · 8枚 · 21日</dd><dt>ファインチューニング</dt><dd>150 epochs、batch 128、lr 5e-5; ハードウェア・時間は非公開</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>970kデモ</dd><dt>主要データセット</dt><dd>Open X-Embodiment</dd><dt>タスク・評価</dt><dd>実機WidowX-250 9タスク 56.7%; LIBERO 87.9%(NORA-Long)</dd><dt>ロボット</dt><dd>WidowX-250、LIBEROシミュレーション</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>GPUメモリ 約8.3 GB; 遅延は非公開</dd><dt>推論メモリ</dt><dd>約8.3 GB</dd><dt>重み bf16(計算)</dt><dd>6 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

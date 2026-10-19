@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B配置</dd><dt>视觉编码器</dt><dd>Qwen2.5-VL ViT</dd><dt>动作头</dt><dd>整数文本动作 (无动作头) (离散token)</dd><dt>动作块</dt><dd>多步 + 集成</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>未经修改的Qwen2.5-VL-3B；以整数文本(例：0–1000)输出动作，多步预测 + 跨时刻集成，无词表修改·无动作头</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>不适用(无机器人预训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>A100 8张约32 h，64 epochs，batch 192，lr 5e-6</dd><dt>数据类型</dt><dd>仿真·合成 + 真实机器人遥操作</dd><dt>数据规模</dt><dd>LIBERO演示;真实SO-100演示100条</dd><dt>主要数据集</dt><dd>LIBERO</dd><dt>任务·评估</dt><dd>LIBERO平均94.7%;真实SO-100 4项任务(相对SmolVLA +12.5%p)</dd><dt>机器人</dt><dd>SO-100，LIBERO仿真</dd></dl>
+<dl><dt>预训练加速器</dt><dd>不适用(无机器人预训练)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>微调: A100 · 8张 · 32小时</dd><dt>微调</dt><dd>A100 8张约32 h，64 epochs，batch 192，lr 5e-6</dd><dt>数据类型</dt><dd>仿真·合成 + 真实机器人遥操作</dd><dt>数据规模</dt><dd>LIBERO演示;真实SO-100演示100条</dd><dt>主要数据集</dt><dd>LIBERO</dd><dt>任务·评估</dt><dd>LIBERO平均94.7%;真实SO-100 4项任务(相对SmolVLA +12.5%p)</dd><dt>机器人</dt><dd>SO-100，LIBERO仿真</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>RTX 5090台式机4 Hz(README: 用TensorRT-LLM可达6 Hz)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>6 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
 <h2>强化学习与底盘</h2>

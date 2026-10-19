@@ -40,7 +40,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>无</dd><dt>视觉编码器</dt><dd>ResNet-18</dd><dt>动作头</dt><dd>minGPT式扩散Transformer (8层) (diffusion)</dd><dt>动作块</dt><dd>预测16 · 执行8</dd><dt>控制频率</dt><dd>10 Hz</dd><dt>架构原文摘要</dt><dd>ResNet-18(无预训练) + minGPT型时序扩散Transformer(通常8层,嵌入256或768;观测cross-attention, causal attention);动作序列Tp 16·Ta 8,真实10 Hz</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：训练GPU未公开；与CNN变体相同的epoch预算（图像 3000·状态 4500），warmup 1000；真实Push-T固定12小时；(二手) CARP论文重测 V100 10.83 GPU-小时（基于状态的Square）</dd><dt>数据类型</dt><dd>仿真·合成；真实机器人遥操作</dd><dt>数据规模</dt><dd>仿真与CNN变体相同；真实Push-T 136条演示</dd><dt>主要数据集</dt><dd>Robomimic; Push-T; Block Push; Franka Kitchen; 自采真实Push-T</dd><dt>任务·评估</dt><dd>与CNN变体相同的仿真集；真机Push-T</dd><dt>机器人</dt><dd>UR5(真实Push-T)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>不适用</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>按任务：训练GPU未公开；与CNN变体相同的epoch预算（图像 3000·状态 4500），warmup 1000；真实Push-T固定12小时；(二手) CARP论文重测 V100 10.83 GPU-小时（基于状态的Square）</dd><dt>数据类型</dt><dd>仿真·合成；真实机器人遥操作</dd><dt>数据规模</dt><dd>仿真与CNN变体相同；真实Push-T 136条演示</dd><dt>主要数据集</dt><dd>Robomimic; Push-T; Block Push; Franka Kitchen; 自采真实Push-T</dd><dt>任务·评估</dt><dd>与CNN变体相同的仿真集；真机Push-T</dd><dt>机器人</dt><dd>UR5(真实Push-T)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>论文：DDIM 10步 0.1秒（RTX 3080，未区分变体）；(二手) VQ-BeT论文实机测量 DP-T 573.49 ms（RTX A4000）·5,243.82 ms（CPU）</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>0.2 GB</dd><dt>运行位置</dt><dd>本地PC</dd></dl>
 <h2>强化学习与底盘</h2>

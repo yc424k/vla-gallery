@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Chameleon 7B (视频扩展)</dd><dt>视觉编码器</dt><dd>Chameleon图像分词器</dd><dt>动作头</dt><dd>ActionVAE潜在动作 (潜在动作)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>将Chameleon 7B图像生成模型扩展至视频(README初始权重&#x27;Chemeleon-7B&#x27;)；用ActionVAE将动作序列压缩为潜在嵌入</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开（仅ActionVAE为8 GPUs，型号未标注）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>ActionVAE 300,000 iterations, batch 16×8(GPUs)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>人类视频 + 机器人视频 + 动作捕捉(EgoDex上半身关节轨迹) + 真实机器人演示(SO-100)</dd><dt>数据规模</dt><dd>ego-centric人类操作视频12M + 机器人操作视频244K；微调248·249·301 demos</dd><dt>主要数据集</dt><dd>自有ego-centric视频，EgoDex(Apple Vision Pro)，SO-100自有演示</dd><dt>任务·评估</dt><dd>SO-100 3项任务(积木pick-and-place，草莓，插笔)平均90.6% vs π0 70.4% vs GR00T N1.5 55.6%(用相同数据微调)</dd><dt>机器人</dt><dd>LeRobot SO-100单臂(3台)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开（仅ActionVAE为8 GPUs，型号未标注）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>ActionVAE 300,000 iterations, batch 16×8(GPUs)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>预训练 (ActionVAE): 型号未公开 · 8张 · 未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>人类视频 + 机器人视频 + 动作捕捉(EgoDex上半身关节轨迹) + 真实机器人演示(SO-100)</dd><dt>数据规模</dt><dd>ego-centric人类操作视频12M + 机器人操作视频244K；微调248·249·301 demos</dd><dt>主要数据集</dt><dd>自有ego-centric视频，EgoDex(Apple Vision Pro)，SO-100自有演示</dd><dt>任务·评估</dt><dd>SO-100 3项任务(积木pick-and-place，草莓，插笔)平均90.6% vs π0 70.4% vs GR00T N1.5 55.6%(用相同数据微调)</dd><dt>机器人</dt><dd>LeRobot SO-100单臂(3台)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>14 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

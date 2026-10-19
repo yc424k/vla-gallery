@@ -40,7 +40,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Pythia (TinyVLA-S/B/H)</dd><dt>ビジョンエンコーダ</dt><dd>LLaVAフレームワークのビジョンエンコーダ</dd><dt>アクションヘッド</dt><dd>拡散方策ヘッド (diffusion)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>LLaVAフレームワークのPythia LLM(TinyVLA-S/B/H) + 拡散方策ヘッド、7次元連続アクション</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボット事前学習なし; VLM事前学習ハードウェアは非公開)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開(GPU・時間・バッチ・LoRA rankの記載なし)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション + シミュレーション・合成 + Web視覚言語(VLM用LLaVAデータ)</dd><dt>データ規模</dt><dd>Franka 課題あたり100軌跡; MetaWorld 50デモ</dd><dt>主要データセット</dt><dd>独自のFranka・UR5テレオペレーション、MetaWorld、LLaVA</dd><dt>タスク・評価</dt><dd>MetaWorld 50タスク31.6%; 実機Franka 5タスク94.0%(OpenVLA比 +25.7%); 双腕UR5 44.5%(OpenVLA 0%)</dd><dt>ロボット</dt><dd>Franka単腕、UR5双腕、MetaWorldシミュレーション</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボット事前学習なし; VLM事前学習ハードウェアは非公開)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開(GPU・時間・バッチ・LoRA rankの記載なし)</dd><dt>データ種類</dt><dd>実ロボットのテレオペレーション + シミュレーション・合成 + Web視覚言語(VLM用LLaVAデータ)</dd><dt>データ規模</dt><dd>Franka 課題あたり100軌跡; MetaWorld 50デモ</dd><dt>主要データセット</dt><dd>独自のFranka・UR5テレオペレーション、MetaWorld、LLaVA</dd><dt>タスク・評価</dt><dd>MetaWorld 50タスク31.6%; 実機Franka 5タスク94.0%(OpenVLA比 +25.7%); 双腕UR5 44.5%(OpenVLA 0%)</dd><dt>ロボット</dt><dd>Franka単腕、UR5双腕、MetaWorldシミュレーション</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>A6000 1枚で14 ms(TinyVLA-H)、OpenVLA 292 ms</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>2.6 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Gemma 2B · PaliGemma 3B配置 (π0.5)</dd><dt>视觉编码器</dt><dd>SigLIP 400M (π0.5)</dd><dt>动作头</dt><dd>flow matching头 (10步) (flow matching)</dd><dt>动作块</dt><dd>50 (执行25)</dd><dt>控制频率</dt><dd>10 Hz (SONIC 50 Hz)</dd><dt>架构原文摘要</dt><dd>π0.5(PaliGemma 3B) + 流匹配动作头(去噪10步)；32-D全身指令 + 夹爪2-D = 34-D输出；VLA 10 Hz之上SONIC跟踪器50 Hz，每次推理执行25个动作，动作horizon 50</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>不适用 (由π0.5初始化)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>A800 4块，约24小时，30k steps，批量128</dd><dt>数据类型</dt><dd>真实机器人遥操作(全身) + 人类演示(HuMI无机器人演示)</dd><dt>数据规模</dt><dd>遥操作演示320个(8项任务×40) + HuMI无机器人演示 + 长时程演示120个</dd><dt>主要数据集</dt><dd>自有HLM-12演示，HuMI</dd><dt>任务·评估</dt><dd>HLM-12(Unitree G1):训练8项任务平均进度89%;未训练任务无联合训练33%·有联合训练87%;长程水果整理87.5%(演示1.14小时;GR00T N1.6 57.5%,Ψ0 48.8%,各2.70小时)</dd><dt>机器人</dt><dd>Unitree G1</dd></dl>
+<dl><dt>预训练加速器</dt><dd>不适用 (由π0.5初始化)</dd><dt>预训练时长</dt><dd>不适用</dd><dt>预训练步数·批量</dt><dd>不适用</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>微调: A800 · 4张 · 24小时</dd><dt>微调</dt><dd>A800 4块，约24小时，30k steps，批量128</dd><dt>数据类型</dt><dd>真实机器人遥操作(全身) + 人类演示(HuMI无机器人演示)</dd><dt>数据规模</dt><dd>遥操作演示320个(8项任务×40) + HuMI无机器人演示 + 长时程演示120个</dd><dt>主要数据集</dt><dd>自有HLM-12演示，HuMI</dd><dt>任务·评估</dt><dd>HLM-12(Unitree G1):训练8项任务平均进度89%;未训练任务无联合训练33%·有联合训练87%;长程水果整理87.5%(演示1.14小时;GR00T N1.6 57.5%,Ψ0 48.8%,各2.70小时)</dd><dt>机器人</dt><dd>Unitree G1</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>VLA 10 Hz，SONIC 50 Hz (未报告延迟)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

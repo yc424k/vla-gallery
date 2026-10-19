@@ -40,7 +40,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>희소 3D 인코더 (MinkowskiEngine)</dd><dt>액션 헤드</dt><dd>CNN 확산 헤드 (추론 20스텝) (diffusion)</dd><dt>청크</dt><dd>20스텝</dd><dt>제어 주기</dt><dd>미공개</dd><dt>구조 원문 요약</dt><dd>MinkowskiEngine 희소 3D 인코더(복셀 5mm, 단일 RGB-D 점군) + 트랜스포머(인코더 4·디코더 1, d_model 512, d_ff 2048) + CNN 확산 헤드(학습 100·추론 20스텝); 행동 지평 20</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>과제별: A100 2장, 배치 240, lr 3e-4, warmup 2000 스텝; 시간·에폭 미공개</dd><dt>데이터 종류</dt><dd>실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>과제당 50데모</dd><dt>주요 데이터셋</dt><dd>자체 Flexiv 텔레옵</dd><dt>태스크·평가</dt><dd>Collect Cups, Collect Pens, Pour Balls, Push Block, Push Ball, Stack Blocks; 비교 ACT, Diffusion Policy, Act3D, DP3</dd><dt>로봇</dt><dd>Flexiv Rizon 팔 + Dahuan AG-95 그리퍼</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>해당 없음</dd><dt>사전학습 기간</dt><dd>해당 없음</dd><dt>사전학습 스텝·배치</dt><dd>해당 없음</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>과제별 학습: A100 · 2장 · 미공개</dd><dt>파인튜닝</dt><dd>과제별: A100 2장, 배치 240, lr 3e-4, warmup 2000 스텝; 시간·에폭 미공개</dd><dt>데이터 종류</dt><dd>실로봇 텔레옵</dd><dt>데이터 규모</dt><dd>과제당 50데모</dd><dt>주요 데이터셋</dt><dd>자체 Flexiv 텔레옵</dd><dt>태스크·평가</dt><dd>Collect Cups, Collect Pens, Pour Balls, Push Block, Push Ball, Stack Blocks; 비교 ACT, Diffusion Policy, Act3D, DP3</dd><dt>로봇</dt><dd>Flexiv Rizon 팔 + Dahuan AG-95 그리퍼</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>Intel i9-10900K + RTX 3090 워크스테이션; 지연 미공개</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>로컬 PC</dd></dl>
 <h2>강화학습 · 베이스</h2>

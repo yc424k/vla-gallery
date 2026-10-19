@@ -38,7 +38,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>PaLI・FlexCap VLM + LLM (名前は記載なし)</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>RT-1・RT-2・スクリプト・テレオペレーション方策で収集 (その他)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>システム: VLM(PaLI, FlexCap)がシーンを記述 → LLMがタスクを提案・フィルタ → RT-1/RT-2/スクリプト/テレオペレーション方策で収集</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし(収集データでRT-1 co-finetuning、演算は非公開)</dd><dt>データ種類</dt><dd>実ロボットでの自律収集(スクリプト方策・テレオペレーション・RT-2)</dd><dt>データ規模</dt><dd>77,000 trials、6,650 unique instructions、7か月; scripted 73,293 episodes(成功21%)、teleop 3,060(82%)、RT-2 936(4.7%)</dd><dt>主要データセット</dt><dd>AutoRT収集データ(自社)</dd><dt>タスク・評価</dt><dd>RT-1 co-finetuning時、高さ汎化の把持0%→12.5%、拭き取り10%→30%</dd><dt>ロボット</dt><dd>モバイルマニピュレーター20台以上を同時運用(ブログ: 計52台)、オフィスビル4か所</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし(収集データでRT-1 co-finetuning、演算は非公開)</dd><dt>データ種類</dt><dd>実ロボットでの自律収集(スクリプト方策・テレオペレーション・RT-2)</dd><dt>データ規模</dt><dd>77,000 trials、6,650 unique instructions、7か月; scripted 73,293 episodes(成功21%)、teleop 3,060(82%)、RT-2 936(4.7%)</dd><dt>主要データセット</dt><dd>AutoRT収集データ(自社)</dd><dt>タスク・評価</dt><dd>RT-1 co-finetuning時、高さ汎化の把持0%→12.5%、拭き取り10%→30%</dd><dt>ロボット</dt><dd>モバイルマニピュレーター20台以上を同時運用(ブログ: 計52台)、オフィスビル4か所</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>該当なし</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

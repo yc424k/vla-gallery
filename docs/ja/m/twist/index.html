@@ -41,7 +41,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>関節位置指令 (RL方策)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>50 Hz (PD 1000 Hz)</dd><dt>構造の原文要約</dt><dd>MLP [512, 512, 256, 128](SiLU, LayerNorm) + Conv1dモーションエンコーダ(latent 128)、履歴10; モーキャプ参照 → 関節位置指令50 Hz、PD 1000 Hz; repoのTransformerブロックはコメントアウト</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>RTX 4090 × 1 (README)</dd><dt>事前学習期間</dt><dd>1~2日 (README)</dd><dt>事前学習ステップ・バッチ</dt><dd>教師 max_iterations 30_002、4096 env (repo)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>モーションキャプチャ</dd><dt>データ規模</dt><dd>AMASS・OMOMO 15,000+クリップ(約42時間) + 社内モーキャプ150クリップ(約0.5時間)</dd><dt>主要データセット</dt><dd>AMASS、OMOMO、社内モーションキャプチャ</dd><dt>タスク・評価</dt><dd>全身操作・脚を使う操作・歩行・表現動作の遠隔操作</dd><dt>ロボット</dt><dd>Unitree G1(29 DoF); Booster T1はシミュレーションのみ</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>RTX 4090 × 1 (README)</dd><dt>事前学習期間</dt><dd>1~2日 (README)</dd><dt>事前学習ステップ・バッチ</dt><dd>教師 max_iterations 30_002、4096 env (repo)</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>シミュRL: RTX 4090 · 1枚 · 1–2日 · README</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>モーションキャプチャ</dd><dt>データ規模</dt><dd>AMASS・OMOMO 15,000+クリップ(約42時間) + 社内モーキャプ150クリップ(約0.5時間)</dd><dt>主要データセット</dt><dd>AMASS、OMOMO、社内モーションキャプチャ</dd><dt>タスク・評価</dt><dd>全身操作・脚を使う操作・歩行・表現動作の遠隔操作</dd><dt>ロボット</dt><dd>Unitree G1(29 DoF); Booster T1はシミュレーションのみ</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>RTX 4090で関節位置指令50 Hz、PD 1000 Hz; OptiTrackモーキャプ120 Hz; 遠隔操作の遅延約0.9秒</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>ローカルPC (RTX 4090)</dd></dl>
 <h2>強化学習・ベース</h2>

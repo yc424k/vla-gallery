@@ -41,7 +41,7 @@
 <h2>구조</h2>
 <dl><dt>백본 LLM</dt><dd>없음</dd><dt>비전 인코더</dt><dd>—</dd><dt>액션 헤드</dt><dd>관절 위치 명령 (RL 정책)</dd><dt>청크</dt><dd>미공개</dd><dt>제어 주기</dt><dd>50 Hz (PD 1000 Hz)</dd><dt>구조 원문 요약</dt><dd>MLP [512, 512, 256, 128](SiLU, LayerNorm) + Conv1d 모션 인코더(latent 128), 이력 10; 모캡 참조 → 관절 위치 명령 50 Hz, PD 1000 Hz; repo의 Transformer 블록은 주석 처리</dd></dl>
 <h2>학습</h2>
-<dl><dt>사전학습 가속기</dt><dd>RTX 4090 × 1 (README)</dd><dt>사전학습 기간</dt><dd>1~2일 (README)</dd><dt>사전학습 스텝·배치</dt><dd>교사 max_iterations 30_002, 4096 env (repo)</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>파인튜닝</dt><dd>해당 없음</dd><dt>데이터 종류</dt><dd>모션캡처</dd><dt>데이터 규모</dt><dd>AMASS·OMOMO 15,000+ 클립(약 42시간) + 사내 모캡 150 클립(약 0.5시간)</dd><dt>주요 데이터셋</dt><dd>AMASS, OMOMO, 사내 모션캡처</dd><dt>태스크·평가</dt><dd>전신 조작·다리 사용 조작·보행·표현 동작 원격조작</dd><dt>로봇</dt><dd>Unitree G1(29 DoF); Booster T1은 시뮬만</dd></dl>
+<dl><dt>사전학습 가속기</dt><dd>RTX 4090 × 1 (README)</dd><dt>사전학습 기간</dt><dd>1~2일 (README)</dd><dt>사전학습 스텝·배치</dt><dd>교사 max_iterations 30_002, 4096 env (repo)</dd><dt>GPU·TPU-시간</dt><dd>미공개</dd><dt>학습 GPU 종류·장수·기간</dt><dd>시뮬 RL: RTX 4090 · 1장 · 1–2일 · README</dd><dt>파인튜닝</dt><dd>해당 없음</dd><dt>데이터 종류</dt><dd>모션캡처</dd><dt>데이터 규모</dt><dd>AMASS·OMOMO 15,000+ 클립(약 42시간) + 사내 모캡 150 클립(약 0.5시간)</dd><dt>주요 데이터셋</dt><dd>AMASS, OMOMO, 사내 모션캡처</dd><dt>태스크·평가</dt><dd>전신 조작·다리 사용 조작·보행·표현 동작 원격조작</dd><dt>로봇</dt><dd>Unitree G1(29 DoF); Booster T1은 시뮬만</dd></dl>
 <h2>추론</h2>
 <dl><dt>추론 장치·속도</dt><dd>RTX 4090에서 관절 위치 명령 50 Hz, PD 1000 Hz; OptiTrack 모캡 120 Hz; 원격조작 지연 약 0.9초</dd><dt>추론 메모리</dt><dd>미공개</dd><dt>가중치 bf16 (계산)</dt><dd>미공개</dd><dt>실행 위치</dt><dd>로컬 PC (RTX 4090)</dd></dl>
 <h2>강화학습 · 베이스</h2>

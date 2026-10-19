@@ -38,7 +38,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>基于Gemini (规模未公开)</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>以点·bbox·轨迹·工具调用代替动作 (其他)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>基于Gemini的thinking VLM(保留Gemini全部能力)；不直接输出动作(2D点·bbox·轨迹，工具调用)</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>TPU v4，v5p，v6e(芯片数未公开；与GR 1.5共用模型卡)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>图像·文本·机器人传感器·动作数据(与GR 1.5共用的模型卡描述)</dd><dt>数据规模</dt><dd>未公开</dd><dt>主要数据集</dt><dd>未公开</dd><dt>任务·评估</dt><dd>学术基准15个(ERQA，Point-Bench，BLINK，CV-Bench，RoboSpatial，PointArena，Where2Place，RefSpatial等)；ALOHA·bi-arm Franka长时程8项任务</dd><dt>机器人</dt><dd>ALOHA，bi-arm Franka(在长时程任务中协调GR 1.5)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>TPU v4，v5p，v6e(芯片数未公开；与GR 1.5共用模型卡)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>预训练: TPU v4·v5p·v6e · 未公开 · 未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>图像·文本·机器人传感器·动作数据(与GR 1.5共用的模型卡描述)</dd><dt>数据规模</dt><dd>未公开</dd><dt>主要数据集</dt><dd>未公开</dd><dt>任务·评估</dt><dd>学术基准15个(ERQA，Point-Bench，BLINK，CV-Bench，RoboSpatial，PointArena，Where2Place，RefSpatial等)；ALOHA·bi-arm Franka长时程8项任务</dd><dt>机器人</dt><dd>ALOHA，bi-arm Franka(在长时程任务中协调GR 1.5)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>Gemini API &#x27;gemini-robotics-er-1.5-preview&#x27;(Google AI Studio，2025-09-25)；通过thinking budget调节延迟-精度；延迟数值未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>云端 (Gemini API)</dd></dl>
 <h2>强化学习与底盘</h2>

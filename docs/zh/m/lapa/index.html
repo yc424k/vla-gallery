@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>LWM-Chat-1M 7B (基于Llama 2 7B)</dd><dt>视觉编码器</dt><dd>LWM视觉tokenizer</dd><dt>动作头</dt><dd>潜在动作token → 动作解码器 (潜在动作)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>LWM-Chat-1M 7B;潜在动作token(LAQ VQ-VAE,词表8·长度4,0.6秒后帧) → 微调中为真实动作</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>H100 8张</dd><dt>预训练时长</dt><dd>34 h</dd><dt>预训练步数·批量</dt><dd>batch 128(论文)/256·70K steps(README)</dd><dt>GPU·TPU-小时</dt><dd>272 (明示 · H100-小时)</dd><dt>微调</dt><dd>A100 80GB 4张(README)，训练至动作准确率达95%；时间未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作(不使用动作的视频) + 人类视频</dd><dt>数据规模</dt><dd>OXE 970k演示(不使用动作) + SSv2 220K视频;Bridgev2 60k·LangTable 181k轨迹</dd><dt>主要数据集</dt><dd>Open X-Embodiment, Something-Something V2, BridgeData V2, Language Table</dd><dt>任务·评估</dt><dd>LangTable;SIMPLER(WidowX,多任务100条轨迹微调);真实桌面3项任务;真实平均50.1%(OpenVLA 43.9%)</dd><dt>机器人</dt><dd>LangTable仿真,WidowX(SIMPLER),真实桌面机器人</dd></dl>
+<dl><dt>预训练加速器</dt><dd>H100 8张</dd><dt>预训练时长</dt><dd>34 h</dd><dt>预训练步数·批量</dt><dd>batch 128(论文)/256·70K steps(README)</dd><dt>GPU·TPU-小时</dt><dd>272 (明示 · H100-小时)</dd><dt>训练GPU型号·数量·时长</dt><dd>预训练: H100 · 8张 · 34小时 / 微调: A100 · 4张 · 未公开 · README</dd><dt>微调</dt><dd>A100 80GB 4张(README)，训练至动作准确率达95%；时间未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作(不使用动作的视频) + 人类视频</dd><dt>数据规模</dt><dd>OXE 970k演示(不使用动作) + SSv2 220K视频;Bridgev2 60k·LangTable 181k轨迹</dd><dt>主要数据集</dt><dd>Open X-Embodiment, Something-Something V2, BridgeData V2, Language Table</dd><dt>任务·评估</dt><dd>LangTable;SIMPLER(WidowX,多任务100条轨迹微调);真实桌面3项任务;真实平均50.1%(OpenVLA 43.9%)</dd><dt>机器人</dt><dd>LangTable仿真,WidowX(SIMPLER),真实桌面机器人</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>14 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

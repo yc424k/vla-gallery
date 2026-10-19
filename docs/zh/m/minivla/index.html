@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Qwen2.5 0.5B</dd><dt>视觉编码器</dt><dd>SigLIP + DINOv2</dd><dt>动作头</dt><dd>256-bin token + 残差VQ动作块 (离散token)</dd><dt>动作块</dt><dd>8 (VQ动作块示例)</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen2.5 0.5B + 与OpenVLA相同的DINOv2+SigLIP ViT;256-bin额外token,残差VQ动作块(例: horizon 8,码本256)</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开（README示例为1节点GPU 8张）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>仿真·合成 + 真实机器人遥操作 + 网络视觉-语言</dd><dt>数据规模</dt><dd>未公开</dd><dt>主要数据集</dt><dd>LIBERO-90, BridgeData V2, LLaVA-1.5-Instruct VQA(基础VLM)</dd><dt>任务·评估</dt><dd>LIBERO-90 82%(VQ h8 + 历史);SimplerEnv 4项任务44–70%;真实Bridge V2</dd><dt>机器人</dt><dd>LIBERO·SimplerEnv仿真,Bridge V2真机数据</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开（README示例为1节点GPU 8张）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>仿真·合成 + 真实机器人遥操作 + 网络视觉-语言</dd><dt>数据规模</dt><dd>未公开</dd><dt>主要数据集</dt><dd>LIBERO-90, BridgeData V2, LLaVA-1.5-Instruct VQA(基础VLM)</dd><dt>任务·评估</dt><dd>LIBERO-90 82%(VQ h8 + 历史);SimplerEnv 4项任务44–70%;真实Bridge V2</dd><dt>机器人</dt><dd>LIBERO·SimplerEnv仿真,Bridge V2真机数据</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>L40s单张12.5 Hz(OpenVLA 5 Hz)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>2 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

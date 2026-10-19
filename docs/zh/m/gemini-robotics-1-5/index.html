@@ -38,7 +38,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>基于Gemini (规模未公开)</dd><dt>视觉编码器</dt><dd>—</dd><dt>动作头</dt><dd>思考·动作交替生成（Thinking VLA） (未公开)</dd><dt>动作块</dt><dd>未公开</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>基于Gemini的Thinking VLA(交替生成自然语言思考与动作)；以Motion Transfer进行多embodiment学习；动作块·控制频率未公开</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>TPU v4，v5p，v6e(芯片数未公开；未区分预训练·后训练)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>真实机器人动作数据(多embodiment) + 网络视觉-语言(公开文本·图像·视频)</dd><dt>数据规模</dt><dd>&#x27;thousands of diverse tasks&#x27;；时间·回合数未公开</dd><dt>主要数据集</dt><dd>自有多embodiment机器人数据(非公开) + 互联网公开文本·图像·视频</dd><dt>任务·评估</dt><dd>230个任务基准(视觉·指令·动作·任务泛化)；bi-arm Franka 44个任务(20 in-distribution + 24)；ALOHA 105个任务†；开发期间90%以上的评估episode在仿真中进行；agentic对比(Gemini 2.5 Flash + GR 1.5)</dd><dt>机器人</dt><dd>ALOHA 2、bi-arm Franka、Apptronik Apollo人形机器人</dd></dl>
+<dl><dt>预训练加速器</dt><dd>TPU v4，v5p，v6e(芯片数未公开；未区分预训练·后训练)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>预训练: TPU v4·v5p·v6e · 未公开 · 未公开</dd><dt>微调</dt><dd>未公开</dd><dt>数据类型</dt><dd>真实机器人动作数据(多embodiment) + 网络视觉-语言(公开文本·图像·视频)</dd><dt>数据规模</dt><dd>&#x27;thousands of diverse tasks&#x27;；时间·回合数未公开</dd><dt>主要数据集</dt><dd>自有多embodiment机器人数据(非公开) + 互联网公开文本·图像·视频</dd><dt>任务·评估</dt><dd>230个任务基准(视觉·指令·动作·任务泛化)；bi-arm Franka 44个任务(20 in-distribution + 24)；ALOHA 105个任务†；开发期间90%以上的评估episode在仿真中进行；agentic对比(Gemini 2.5 Flash + GR 1.5)</dd><dt>机器人</dt><dd>ALOHA 2、bi-arm Franka、Apptronik Apollo人形机器人</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>未公开</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

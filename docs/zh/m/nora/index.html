@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B配置</dd><dt>视觉编码器</dt><dd>Qwen2.5-VL ViT</dd><dt>动作头</dt><dd>FAST+ token (离散token)</dd><dt>动作块</dt><dd>1 (NORA) · 5 (Long)</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen2.5-VL-3B;FAST+ tokenizer(新增词表2048个),动作块1(NORA)/5(NORA-Long),7-DoF动作</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>H100 8张(1节点)</dd><dt>预训练时长</dt><dd>约3周</dd><dt>预训练步数·批量</dt><dd>1.1M steps，batch 256，50k steps预热后峰值lr 5e-5，余弦衰减</dd><dt>GPU·TPU-小时</dt><dd>4,000 (明示(约) · H100-小时)</dd><dt>微调</dt><dd>150 epochs，batch 128，lr 5e-5；硬件·时间未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>970k条演示</dd><dt>主要数据集</dt><dd>Open X-Embodiment</dd><dt>任务·评估</dt><dd>真实WidowX-250 9项任务56.7%；LIBERO 87.9%(NORA-Long)</dd><dt>机器人</dt><dd>WidowX-250，LIBERO仿真</dd></dl>
+<dl><dt>预训练加速器</dt><dd>H100 8张(1节点)</dd><dt>预训练时长</dt><dd>约3周</dd><dt>预训练步数·批量</dt><dd>1.1M steps，batch 256，50k steps预热后峰值lr 5e-5，余弦衰减</dd><dt>GPU·TPU-小时</dt><dd>4,000 (明示(约) · H100-小时)</dd><dt>训练GPU型号·数量·时长</dt><dd>预训练: H100 · 8张 · 21天</dd><dt>微调</dt><dd>150 epochs，batch 128，lr 5e-5；硬件·时间未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>970k条演示</dd><dt>主要数据集</dt><dd>Open X-Embodiment</dd><dt>任务·评估</dt><dd>真实WidowX-250 9项任务56.7%；LIBERO 87.9%(NORA-Long)</dd><dt>机器人</dt><dd>WidowX-250，LIBERO仿真</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>GPU显存约8.3 GB；延迟未公开</dd><dt>推理显存</dt><dd>约8.3 GB</dd><dt>权重 bf16（计算）</dt><dd>6 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

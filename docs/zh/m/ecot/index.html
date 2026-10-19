@@ -43,7 +43,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Llama 2 7B · OpenVLA</dd><dt>视觉编码器</dt><dd>SigLIP + DINOv2</dd><dt>动作头</dt><dd>推理文本 → 256-bin token (离散token)</dd><dt>动作块</dt><dd>无 (单步)</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>OpenVLA/Prismatic-7B;推理文本(TASK·PLAN·SUBTASK·MOVE·GRIPPER·OBJECTS,含边界框)后接256-bin动作token</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>未公开（README示例为GPU 8张）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>Bridge推理标注数据80k steps(ecot-openvla-7b-bridge)；批量未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>OXE变体: OXE动作训练后用推理混合数据追加20k steps;GPU·时间·批量未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 仿真·合成(合成推理标注)</dd><dt>数据规模</dt><dd>Bridge v2 2.5M+ transitions(标注回合数未公开)</dd><dt>主要数据集</dt><dd>BridgeData V2，Embodied-CoT/embodied_features_bridge，OXE(变体)</dd><dt>任务·评估</dt><dd>WidowX泛化评估(每种方法314次)；绝对成功率比OpenVLA高28%</dd><dt>机器人</dt><dd>WidowX(Bridge)</dd></dl>
+<dl><dt>预训练加速器</dt><dd>未公开（README示例为GPU 8张）</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>Bridge推理标注数据80k steps(ecot-openvla-7b-bridge)；批量未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>OXE变体: OXE动作训练后用推理混合数据追加20k steps;GPU·时间·批量未公开</dd><dt>数据类型</dt><dd>真实机器人遥操作 + 仿真·合成(合成推理标注)</dd><dt>数据规模</dt><dd>Bridge v2 2.5M+ transitions(标注回合数未公开)</dd><dt>主要数据集</dt><dd>BridgeData V2，Embodied-CoT/embodied_features_bridge，OXE(变体)</dd><dt>任务·评估</dt><dd>WidowX泛化评估(每种方法314次)；绝对成功率比OpenVLA高28%</dd><dt>机器人</dt><dd>WidowX(Bridge)</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>bf16 16 GB，4-bit约5 GB(README)；Hz未公开；5-step freeze +24%，异步+40%速度</dd><dt>推理显存</dt><dd>bf16 16 GB · 4-bit约5 GB (README)</dd><dt>权重 bf16（计算）</dt><dd>14 GB</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

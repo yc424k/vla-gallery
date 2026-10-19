@@ -42,7 +42,7 @@
 <h2>架构</h2>
 <dl><dt>主干LLM</dt><dd>Qwen2.5-3B · Qwen2.5-VL-3B配置</dd><dt>视觉编码器</dt><dd>Qwen2.5-VL ViT</dd><dt>动作头</dt><dd>MoT flow matching动作专家 (flow matching)</dd><dt>动作块</dt><dd>50步</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen2.5-VL-3B-Instruct + BAGEL式Mixture-of-Transformers动作专家,flow matching连续动作,预训练动作块T=50</dd></dl>
 <h2>训练</h2>
-<dl><dt>预训练加速器</dt><dd>GPU型号未公开；8 GPU合计261 samples/s，8–256 GPU扩展实验(FSDP，bf16)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开 (扩展实验本地批量 32)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>GPU·时间未公开；GM-100每任务130个回合，模型对比批量256</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>约20,000小时，双臂机器人构型9种；评估演示39,000条·试验22,500次</dd><dt>主要数据集</dt><dd>自行采集9种双臂数据；GM-100</dd><dt>任务·评估</dt><dd>GM-100(100个任务，3个平台平均)成功率17.30%·进度35.41%(含深度)；RoboTwin 2.0 clean 88.56%</dd><dt>机器人</dt><dd>AgiBot G1, AgileX, Galaxea R1Lite·R1Pro, Realman Rs-02, Leju KUAVO 4 Pro, Qinglong, ARX Lift2, Bimanual Franka</dd></dl>
+<dl><dt>预训练加速器</dt><dd>GPU型号未公开；8 GPU合计261 samples/s，8–256 GPU扩展实验(FSDP，bf16)</dd><dt>预训练时长</dt><dd>未公开</dd><dt>预训练步数·批量</dt><dd>未公开 (扩展实验本地批量 32)</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>训练GPU型号·数量·时长</dt><dd>未公开</dd><dt>微调</dt><dd>GPU·时间未公开；GM-100每任务130个回合，模型对比批量256</dd><dt>数据类型</dt><dd>真实机器人遥操作</dd><dt>数据规模</dt><dd>约20,000小时，双臂机器人构型9种；评估演示39,000条·试验22,500次</dd><dt>主要数据集</dt><dd>自行采集9种双臂数据；GM-100</dd><dt>任务·评估</dt><dd>GM-100(100个任务，3个平台平均)成功率17.30%·进度35.41%(含深度)；RoboTwin 2.0 clean 88.56%</dd><dt>机器人</dt><dd>AgiBot G1, AgileX, Galaxea R1Lite·R1Pro, Realman Rs-02, Leju KUAVO 4 Pro, Qinglong, ARX Lift2, Bimanual Franka</dd></dl>
 <h2>推理</h2>
 <dl><dt>推理设备·速度</dt><dd>未公开 (支持torch.compile)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>未公开</dd><dt>运行位置</dt><dd>未公开</dd></dl>
 <h2>强化学习与底盘</h2>

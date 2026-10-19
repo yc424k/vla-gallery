@@ -42,7 +42,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Vicuna 7B · LLaVA-1.5構成</dd><dt>ビジョンエンコーダ</dt><dd>CLIP ViT-L (固定)</dd><dt>アクションヘッド</dt><dd>テキストで座標・回転を出力 (離散トークン)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>LLaVA-1.5-7B(ビジョンエンコーダ固定); アクションをテキストで出力(正規化2D画像座標 + 回転角度)</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>論文: batch 32(VIMA-0.8k/8k)/128(VIMA-80k)、lr 最大 2e-5、GPU・時間は非公開; README: フルFTは24GB以上のAmpere GPU 4枚 + RAM 300GB(A5000 4枚で検証)、LoRAは24GB GPU 1枚</dd><dt>データ種類</dt><dd>シミュレーション・合成 + 実ロボット(xArm)</dd><dt>データ規模</dt><dd>VIMAエキスパート軌跡0.8k/8k/80k; 補助・xArmのサンプル数は非公開</dd><dt>主要データセット</dt><dd>VIMA-Bench, xArm-Det, xArm-Action</dd><dt>タスク・評価</dt><dd>VIMA-Bench L1–L3(20 seeds); 実機xArm(設定あたり20エピソード)</dd><dt>ロボット</dt><dd>VIMA-Benchシミュレーション、xArm</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>該当なし(ロボット事前学習なし)</dd><dt>事前学習期間</dt><dd>該当なし</dd><dt>事前学習ステップ・バッチ</dt><dd>該当なし</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>論文: batch 32(VIMA-0.8k/8k)/128(VIMA-80k)、lr 最大 2e-5、GPU・時間は非公開; README: フルFTは24GB以上のAmpere GPU 4枚 + RAM 300GB(A5000 4枚で検証)、LoRAは24GB GPU 1枚</dd><dt>データ種類</dt><dd>シミュレーション・合成 + 実ロボット(xArm)</dd><dt>データ規模</dt><dd>VIMAエキスパート軌跡0.8k/8k/80k; 補助・xArmのサンプル数は非公開</dd><dt>主要データセット</dt><dd>VIMA-Bench, xArm-Det, xArm-Action</dd><dt>タスク・評価</dt><dd>VIMA-Bench L1–L3(20 seeds); 実機xArm(設定あたり20エピソード)</dd><dt>ロボット</dt><dd>VIMA-Benchシミュレーション、xArm</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>24GB GPU 1枚(README); 速度は非公開</dd><dt>推論メモリ</dt><dd>24 GB GPU 1枚で実行 (README)</dd><dt>重み bf16(計算)</dt><dd>14 GB</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

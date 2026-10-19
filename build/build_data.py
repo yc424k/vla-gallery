@@ -11,6 +11,9 @@ NEW = json.load(open(f"{G}/new_models.json", encoding="utf-8"))
 BASE = json.load(open(f"{G}/base_existing.json", encoding="utf-8"))
 HF = json.load(open(f"{G}/hf.json", encoding="utf-8"))
 GH = json.load(open(f"{G}/github.json", encoding="utf-8"))
+# 학습 GPU 종류·장수·기간(사람이 원문에서 정리한 값, h는 시간 단위; 범위는 [최소, 최대])
+TG = json.load(open(f"{G}/train_gpu.json", encoding="utf-8"))
+TGST = ("사전학습", "사후학습", "과제별 학습", "파인튜닝", "시뮬 RL")
 AX = re.compile(r"arxiv\.org/(?:abs|pdf|html)/(\d{4}\.\d{4,5})")
 def axp(aid, **kw):
     return dict(k="논문", id=aid, u=f"https://arxiv.org/abs/{aid}", t=PT[aid], **kw)
@@ -114,7 +117,10 @@ for i, r in enumerate(rows, start=1):
     assert all(u.startswith("https://huggingface.co/") for u in d["hf"]), d["id"]
     d["gh"] = GH.get(d["id"], [])
     assert all(u.startswith("https://github.com/") for u in d["gh"]), d["id"]
+    d["tg"] = TG.get(d["id"], [])
+    assert all(e["st"] in TGST and e["acc"] for e in d["tg"]), d["id"]
     data.append(d)
+assert set(TG) <= {d["id"] for d in data}, set(TG) - {d["id"] for d in data}
 assert set(HF) | set(GH) <= {d["id"] for d in data}, (set(HF) | set(GH)) - {d["id"] for d in data}
 json.dump(data, open(OUT, "w", encoding="utf-8"), ensure_ascii=False)
 # stats

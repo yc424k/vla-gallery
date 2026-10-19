@@ -41,7 +41,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>なし</dd><dt>ビジョンエンコーダ</dt><dd>DINOv2 ViT-S (凍結)</dd><dt>アクションヘッド</dt><dd>人中心の54次元行動チャンク (CVAE)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>ACT系 Human Action Transformer; 凍結DINOv2 ViT-S + 中間層視覚アダプタ(ACTのResNet-18を置換); 人間中心の統合行動空間54次元(頭・両手首の回転6D、手首位置xyz、指先10個の3Dキーポイント)、行動チャンク</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>人の動画 / 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>人のデモ26,824件(~3.02Mフレーム)、ロボットデモ1,552件(~668kフレーム); フレーム数は原文が30 Hzを仮定して推定</dd><dt>主要データセット</dt><dd>PH²D(Apple Vision Pro、Meta Quest 3・Apple Vision Pro + ZEDカメラ)</dd><dt>タスク・評価</dt><dd>OOD評価: カップ受け渡し52/60、水平把持12/30、垂直把持29/70、注ぐ8/10</dd><dt>ロボット</dt><dd>Unitree H1 + 6-DoF Inspireハンド(両手操作)</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>非公開</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>該当なし</dd><dt>データ種類</dt><dd>人の動画 / 実ロボットのテレオペレーション</dd><dt>データ規模</dt><dd>人のデモ26,824件(~3.02Mフレーム)、ロボットデモ1,552件(~668kフレーム); フレーム数は原文が30 Hzを仮定して推定</dd><dt>主要データセット</dt><dd>PH²D(Apple Vision Pro、Meta Quest 3・Apple Vision Pro + ZEDカメラ)</dd><dt>タスク・評価</dt><dd>OOD評価: カップ受け渡し52/60、水平把持12/30、垂直把持29/70、注ぐ8/10</dd><dt>ロボット</dt><dd>Unitree H1 + 6-DoF Inspireハンド(両手操作)</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>非公開 (制御周期は非公開)</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>

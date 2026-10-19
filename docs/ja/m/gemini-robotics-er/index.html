@@ -38,7 +38,7 @@
 <h2>構造</h2>
 <dl><dt>バックボーンLLM</dt><dd>Gemini 2.0 Flash</dd><dt>ビジョンエンコーダ</dt><dd>—</dd><dt>アクションヘッド</dt><dd>行動の代わりにポイント・bbox・軌跡・コードを出力 (その他)</dd><dt>チャンク</dt><dd>非公開</dd><dt>制御周期</dt><dd>非公開</dd><dt>構造の原文要約</dt><dd>Gemini 2.0 Flashベースのembodied-reasoning VLM; 行動の直接出力なし(2Dポイント・3D bbox・grasp・軌跡を出力、コード生成でロボットを制御)</dd></dl>
 <h2>学習</h2>
-<dl><dt>事前学習アクセラレータ</dt><dd>TPU v4、v5p、v6e(チップ数は非公開; Gemini Roboticsと共通のモデルカード)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>画像・テキスト・ロボットセンサ・行動データ(Gemini Roboticsと共通のモデルカード記述)</dd><dt>データ規模</dt><dd>非公開</dd><dt>主要データセット</dt><dd>非公開</dd><dt>タスク・評価</dt><dd>ERQA 400問を提案(Table 2にER自体のスコア列なし); 2D pointing Paco-LVIS 71.3、Pixmo-Point 49.5、Where2Place 45.0; ブログ: end-to-end制御成功率がGemini 2.0比2~3倍</dd><dt>ロボット</dt><dd>該当なし(ロボット制御はコード生成・in-context例で実行)</dd></dl>
+<dl><dt>事前学習アクセラレータ</dt><dd>TPU v4、v5p、v6e(チップ数は非公開; Gemini Roboticsと共通のモデルカード)</dd><dt>事前学習期間</dt><dd>非公開</dd><dt>事前学習ステップ・バッチ</dt><dd>非公開</dd><dt>GPU・TPU時間</dt><dd>非公開</dd><dt>学習GPUの種類・枚数・期間</dt><dd>事前学習: TPU v4·v5p·v6e · 非公開 · 非公開</dd><dt>ファインチューニング</dt><dd>非公開</dd><dt>データ種類</dt><dd>画像・テキスト・ロボットセンサ・行動データ(Gemini Roboticsと共通のモデルカード記述)</dd><dt>データ規模</dt><dd>非公開</dd><dt>主要データセット</dt><dd>非公開</dd><dt>タスク・評価</dt><dd>ERQA 400問を提案(Table 2にER自体のスコア列なし); 2D pointing Paco-LVIS 71.3、Pixmo-Point 49.5、Where2Place 45.0; ブログ: end-to-end制御成功率がGemini 2.0比2~3倍</dd><dt>ロボット</dt><dd>該当なし(ロボット制御はコード生成・in-context例で実行)</dd></dl>
 <h2>推論</h2>
 <dl><dt>推論デバイス・速度</dt><dd>非公開</dd><dt>推論メモリ</dt><dd>非公開</dd><dt>重み bf16(計算)</dt><dd>非公開</dd><dt>実行場所</dt><dd>非公開</dd></dl>
 <h2>強化学習・ベース</h2>
