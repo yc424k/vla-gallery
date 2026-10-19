@@ -24,7 +24,7 @@ cat > docs/en/index.html <<'HTML'
 <html lang="en"><head><meta charset="utf-8"><title>Robot VLA Gallery</title>
 <link rel="canonical" href="https://vla-gallery.is-a.dev/"><meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url=../">
-<script>location.replace("../" + location.hash);</script></head>
+<script>try{localStorage.setItem("vla-lang","en")}catch(e){}location.replace("../" + location.hash);</script></head>
 <body><a href="../">Robot VLA Gallery</a></body></html>
 HTML
 touch docs/.nojekyll

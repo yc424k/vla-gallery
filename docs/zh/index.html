@@ -34,6 +34,11 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "机器人VLA模型对比图库 · 215种Vision-Language-Action模型 | VLA Gallery", "alternateName": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/zh/", "inLanguage": "zh"}, {"@type": "Dataset", "name": "机器人VLA模型对比图库 · 215种Vision-Language-Action模型 | VLA Gallery", "description": "以卡片对比 2022~2026 年 215 个机器人 VA·VLA 模型的架构图、论文链接、主干LLM、训练GPU·时长、数据、推理资源、强化学习用途和移动底盘控制方式的图库", "url": "https://vla-gallery.is-a.dev/zh/", "inLanguage": "zh", "dateModified": "2026-10-19", "temporalCoverage": "2022/2026", "isAccessibleForFree": true, "keywords": ["VLA", "Vision-Language-Action", "robot foundation model", "robot manipulation", "humanoid", "mobile manipulation", "robot navigation", "action head", "flow matching", "diffusion policy", "inference memory"]}]}</script>
 <meta name="description" content="以卡片对比 2022~2026 年 215 个机器人 VA·VLA 模型的架构图、论文链接、主干LLM、训练GPU·时长、数据、推理资源、强化学习用途和移动底盘控制方式的图库">
 <script>
+/* 기본 주소(/, 영어)에 처음 온 방문자는 브라우저 언어(ko·ja·zh)에 맞는 주소로 보낸다. 메뉴에서 언어를 고른 적이 있으면(vla-lang) 그 선택을 따른다 */
+(function(){if(document.documentElement.lang!=="en")return;var c=null;try{c=localStorage.getItem("vla-lang");}catch(e){}
+if(!c){var L=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""];
+for(var i=0;i<L.length;i++){var k=String(L[i]).toLowerCase().slice(0,2);if(k==="en"||k==="ko"||k==="ja"||k==="zh"){c=k;break;}}}
+if(c==="ko"||c==="ja"||c==="zh")location.replace(c+"/"+location.hash);})();
 /* 첫 화면 전에 테마와 모션 여부를 정해 깜빡임을 막는다 */
 (function(){var d=document.documentElement;try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);}catch(e){}
 var h=decodeURIComponent(location.hash.slice(1)),P=["infer","train","calc","fit","llm","rl","base","compare","gallery","notes"];
@@ -1640,6 +1645,7 @@ langSel.value = LANG;
 langSel.addEventListener("change", () => {
   // 영어는 사이트 맨 위, 나머지는 /ko/ 같은 하위 폴더에 있다. 보던 페이지(해시)는 그대로 가져간다
   const code = langSel.value, base = LANG === "en" ? "./" : "../";
+  try { localStorage.setItem("vla-lang", code); } catch (e) {}
   location.href = base + (code === "en" ? "" : code + "/") + location.hash;
 });
 route();

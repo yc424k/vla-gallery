@@ -1,6 +1,11 @@
 <title>로봇 VLA 모델 비교 갤러리 · Vision-Language-Action 215종 | VLA Gallery</title>
 <meta name="description" content="2022~2026 로봇 VA·VLA 모델 215개의 구조도, 논문 링크, 백본 LLM, 학습 GPU·시간, 데이터, 추론 자원, 강화학습 사용처, 모바일 베이스 제어 방식을 카드로 비교하는 갤러리">
 <script>
+/* 기본 주소(/, 영어)에 처음 온 방문자는 브라우저 언어(ko·ja·zh)에 맞는 주소로 보낸다. 메뉴에서 언어를 고른 적이 있으면(vla-lang) 그 선택을 따른다 */
+(function(){if(document.documentElement.lang!=="en")return;var c=null;try{c=localStorage.getItem("vla-lang");}catch(e){}
+if(!c){var L=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""];
+for(var i=0;i<L.length;i++){var k=String(L[i]).toLowerCase().slice(0,2);if(k==="en"||k==="ko"||k==="ja"||k==="zh"){c=k;break;}}}
+if(c==="ko"||c==="ja"||c==="zh")location.replace(c+"/"+location.hash);})();
 /* 첫 화면 전에 테마와 모션 여부를 정해 깜빡임을 막는다 */
 (function(){var d=document.documentElement;try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);}catch(e){}
 var h=decodeURIComponent(location.hash.slice(1)),P=["infer","train","calc","fit","llm","rl","base","compare","gallery","notes"];
@@ -1605,6 +1610,7 @@ langSel.value = LANG;
 langSel.addEventListener("change", () => {
   // 영어는 사이트 맨 위, 나머지는 /ko/ 같은 하위 폴더에 있다. 보던 페이지(해시)는 그대로 가져간다
   const code = langSel.value, base = LANG === "en" ? "./" : "../";
+  try { localStorage.setItem("vla-lang", code); } catch (e) {}
   location.href = base + (code === "en" ? "" : code + "/") + location.hash;
 });
 route();
