@@ -6258,5 +6258,739 @@ null
 }
 ],
 "_src": "out_n3.jsonl"
+},
+{
+"row": {
+"모델": "Xiaomi-Robotics-1",
+"구분": "모바일 매니퓰레이션",
+"유형": "VLA",
+"도메인": "모바일 매니퓰레이션(양팔·가정)",
+"발표": "2026-07",
+"기관": "Xiaomi (Xiaomi Robotics Team)",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3-VL(5B 공개판은 Qwen3-VL-4B-Instruct) + 같은 층 수의 작은 hidden DiT를 Mixture-of-Transformers로 결합 → VLM KV cache·고유감각 조건 flow matching(Euler 5스텝) → 상대 delta EE 자세·그리퍼·허리·베이스 속도 청크(공개 코드 기본 30스텝×60차원); VLM에는 Choice Policies 보조 회귀(K 후보·점수) 학습",
+"핵심 특징": "10만 시간 이상의 UMI 궤적을 VLM 자동 라벨(장면 상태 전이 서술)로 사전학습한 뒤 약 1만 시간 교차 엠바디먼트 데이터로 로봇·명령문에 정렬하는 2단계 VLA다. 사전학습 데이터·모델 규모가 커질수록 미지 환경 즉시 성능이 오르며, RoboCasa365 57.4%·RoboDojo 점수 20.07로 기존 최고(46.6%·13.07)를 넘었다.",
+"파라미터": "5.1B(5B 공개판: VLM 4.4B + DiT 604M); 규모 실험판 2.6B(2.1B+470M)·10.5B(8.8B+1.5B)",
+"파라미터(B)": 5.1,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개(자동 라벨링만 약 2주)",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (가속기·기간 미공개)",
+"파인튜닝 가속기·시간": "사후학습(약 1만 시간, VL:오픈소스:UMI 지시:사내 = 0.5:0.5:0.5:8.5) 가속기·시간 미공개; 다운스트림 4과제 144시간(저데이터 36시간)으로 Xiaomi-Robotics-0 비동기 학습 레시피 적용, GPU·스텝 미공개(공개 데모 config 배치 48)",
+"추론": "flow matching 5스텝 Euler, 비동기 실행(action prefix) 지원; 지연·Hz·장치 미기재(README '소비자 GPU 최적화')",
+"태스크·벤치마크": "RoboCasa 74.5%; RoboCasa365 57.4%(본문 서론 57.6%, A/B; 이전 최고 ABot-M0.6 46.6%); VLABench 평균 SR 59.1·PS 70.3·IS 69.9; RoboDojo 점수 20.07·성공률 13.93%; 실로봇 사후학습 즉시 평가 4과제(미지 환경) 2B 61%·5B 75%·10B 79%; 다운스트림 4과제 저데이터 75%(π0.5 40%)·고데이터 85%(π0.5 53%)",
+"로봇·엠바디먼트": "사내 바퀴형 양팔 모바일 매니퓰레이터(허리 승강)와 고정 양팔 로봇(기종명 미기재); 카메라 ego·좌우 손목 3개; 시뮬 RoboCasa·RoboCasa365·VLABench·RoboDojo",
+"데이터 종류": "UMI 핸드헬드 시연 / 실로봇 텔레옵 / 오픈소스 로봇 데이터 / 웹 비전-언어",
+"데이터 규모": "사전학습 UMI 궤적 10만 시간 이상(규모 실험은 약 2만 시간 부분집합); 사후학습 약 1만 시간(사내 로봇 7,200시간 이상, 지시 라벨 UMI 1,000시간 이상, Bridge V2·RT-1·DROID); 다운스트림 144시간",
+"데이터 시간(h)": 100000,
+"주요 데이터셋": "사내 UMI 데이터(비공개); 사내 모바일·양팔 로봇 데이터; Bridge V2; RT-1; DROID",
+"비고": "사전학습 목표는 flow matching + Choice Policies 회귀 + 0.1×NTP(VL:UMI = 1:9); DiT는 VLM의 행동 토큰 KV를 보지 않게 막아 복사 지름길을 차단; 상태 전이 캡션은 Qwen3.5-27B로 자동 생성; 객실 단위 10분 이상 여행가방 꾸리기 시연; 코드·체크포인트 2026-08-03 공개(Apache-2.0, HF Xiaomi-Robotics-1-5B model_states.pt 10.2 GB, 벤치마크별 RoboCasa·RoboCasa365·VLABench 체크포인트), 2B·10B 미공개, 사전학습 UMI 데이터 미공개; arXiv v2 2026-07-22. 전작: Xiaomi-Robotics-0 (arXiv 2602.12684) — 비동기 학습 레시피와 VL 데이터를 이어받음(논문 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2607.15330"
+},
+"fields": {
+"v": "Qwen3-VL 내장 비전 인코더",
+"l": "Qwen3-VL-4B-Instruct (5B 공개판; 2B·10B판은 VLM 2.1B·8.8B)",
+"lb": 4,
+"fam": "Qwen",
+"t": "Mixture-of-Transformers(VLM + DiT, 층 수 동일·DiT hidden 1024)",
+"h": "DiT flow matching(Euler 5스텝, adaLN 시간 조건) + VLM Choice Policies 보조 회귀",
+"hk": "flow matching",
+"ck": "30스텝×60차원(공개 코드 기본값; 논문 H 미기재)",
+"dep": "추론 서버(GPU 기종 미기재) – 클라이언트 구조, 비동기 실행",
+"inp": "RGB 3시점(ego·좌우 손목) · 언어 · 고유감각",
+"pipe": [
+[
+"in",
+"RGB 3시점 · 언어 · 상태",
+""
+],
+[
+"vis",
+"Qwen3-VL 비전",
+""
+],
+[
+"llm",
+"Qwen3-VL-4B",
+"Choice Policies 보조 회귀"
+],
+[
+"head",
+"DiT flow matching",
+"5스텝, MoT KV 공유"
+],
+[
+"out",
+"양팔 EE·허리·베이스 속도 청크",
+""
+]
+],
+"tags": [
+"모바일 매니퓰레이션",
+"UMI 사전학습",
+"flow matching",
+"스케일링"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"사전·사후학습·파인튜닝 모두 모방학습(flow matching + Choice Policies 회귀 + NTP); RL 언급 없음",
+"https://arxiv.org/abs/2607.15330"
+],
+"paper": {
+"k": "논문",
+"id": "2607.15330",
+"t": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+"u": "https://arxiv.org/abs/2607.15330",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"바퀴형"
+],
+"how": "VLA가 통합 행동 벡터에 베이스 속도(3차원)와 허리 위치 delta를 팔 EE 행동과 함께 청크로 직접 출력",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "파라미터",
+"quote": "Xiaomi-Robotics-1 -5B 36 2560 4.4B 1024 604M 5.1B",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The clean action chunk is recovered via a 5-step Euler integration",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The Qwen3-VL backbone is loaded from Qwen/Qwen3-VL-4B-Instruct.",
+"url": "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-5B"
+},
+{
+"field": "백본·액션 표현",
+"quote": "Actions are converted to relative deltas and packed into (30, 60) tensors.",
+"url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/xr1/docs/data_format.md"
+},
+{
+"field": "데이터 규모",
+"quote": "we curate a dataset of over 100,000 hours of real-world manipulation trajectories, captured with Universal Manipulation Interface (UMI) handheld grippers",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "데이터 규모",
+"quote": "we collect over 7,200 hours of robot data using mobile manipulators and dual-arm robots",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "데이터 규모",
+"quote": "In total, our post-training dataset comprises about 10,000 hours of trajectory data.",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "For the high-data setting, we leverage a total of 144 hours of data across all tasks.",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "it establishes a new state-of-the-art with a 57.4% success rate on RoboCasa365, surpassing the previous best of 46.6%",
+"url": "https://arxiv.org/abs/2607.15330"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "it achieves an average score of 20.07 on RoboDojo, significantly outperforming the prior state-of-the-art (13.07)",
+"url": "https://arxiv.org/abs/2607.15330"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "rising from 61% for the 2B variant to 75% and 79% for the 5B and 10B variants, respectively",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "base",
+"quote": "For mobile robot data, we represent the base and waist actions using the base velocity and the relative delta of the waist position, respectively.",
+"url": "https://arxiv.org/html/2607.15330v2"
+},
+{
+"field": "가중치 공개",
+"quote": "[2026-08-03] Released code and checkpoints for post-training, inference, and benchmark evaluation.",
+"url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1"
+},
+{
+"field": "rl",
+"quote": "The model is optimized to predict actions by jointly minimizing the flow-matching loss",
+"url": "https://arxiv.org/html/2607.15330v2"
+}
+],
+"_src": "manual_2026-10-19"
+},
+{
+"row": {
+"모델": "LingBot-VLA 2.0",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "매니퓰레이션·모바일 매니퓰레이션",
+"발표": "2026-07",
+"기관": "Robbyant (Ant Group)",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3-VL-4B-Instruct VLM(인과 어텐션) + 현재·미래 쿼리 2개(LingBot-Depth·DINO-Video 증류) → sparse-MoE 액션 전문가(Qwen2식, 36층 전부 MoE, 공유 1+라우팅 32개 중 top-4) flow matching(추론 10스텝) → 55차원 통합 상태·행동(팔·EEF·그리퍼·손·허리·머리·베이스) 청크 50",
+"핵심 특징": "LingBot-VLA를 개선해 로봇 20종 구성의 궤적 50,000시간과 1인칭 사람 영상 10,000시간, 모두 약 60,000시간으로 사전학습하고 머리·허리·이동 베이스·손 자유도까지 55차원 통합 행동 공간으로 다룬다. 액션 전문가에 sparse MoE를 넣고 현재·미래 쿼리를 LingBot-Depth·DINO-Video로 증류해 미래 예측을 보조 과제로 학습한다.",
+"파라미터": "약 6.38B(HF safetensors 6,375,907,511, fp32; 체크포인트명 6b; Qwen3-VL-4B 백본 + sparse-MoE 액션 전문가, 활성 파라미터 미기재)",
+"파라미터(B)": 6.38,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (가속기·기간 미공개)",
+"파인튜닝 가속기·시간": "RoboTwin 2.0 사후학습 공개 config: 32 GPU, 배치 1,024, 50k 스텝, Muon lr 1e-4, L1 flow matching(GPU 기종·총 시간 미기재); 단일 노드 H20 사후학습 반복 5.93 s/it(Muon)·4.31 s/it(Distributed Muon); 실로봇 config 배치 256·60k 스텝; 4×A6000 예시는 GPU당 약 49 GB 이상 필요(README)",
+"추론": "RTX 4090D에서 1회 추론 약 130 ms(10 denoising 스텝, torch.compile, 실로봇 배포 시 청크 중 25스텝 실행); 공개 체크포인트 검증은 FP32 추론, BF16은 메모리가 적지만 성공률이 달라질 수 있음(README); 깊이·영상 교사는 추론에 쓰지 않음",
+"태스크·벤치마크": "GM-100 9과제 범용(혼합 학습) 진행/성공: AgileX Cobot Magic 66.2/34.4(π0.5 59.1/32.2, LingBot-VLA 1.0 58.2/30.0), Galaxea R1 Pro 34.6/15.6(π0.5 27.4/8.9); 장기 모바일 매니퓰레이션(15회): Astribot S1 냉장고 정리 ID 77.1/60.0·OOD 37.0/13.3, Cobot Magic-ARX X5 가스레인지 청소 ID 84.3/66.7·OOD 67.5/40.0(모두 π0.5보다 높음); RoboTwin 2.0 clean 93.52%·randomized 92.80%",
+"로봇·엠바디먼트": "평가: AgileX Cobot Magic, Galaxea R1 Pro, Astribot S1, Cobot Magic-ARX X5; 사전학습 20종: Franka, Flexiv Rizon 4, AgileX, ARX Lift2, UR7e, AgiBot G1, Galbot G1, Moz1, Realman Rs-02, Galaxea R1Pro·R1Lite, Astribot S1, Zerith H1, Leju KUAVO 4 Pro, Tienkung, QingLong, MagicBot Gen1, Unitree G1, Fourier GR-2, AgiBot A2",
+"데이터 종류": "실로봇 텔레옵 / 사람 영상",
+"데이터 규모": "사전학습 약 60,000시간: 로봇 20종 구성 50,000시간(원시 약 90,000시간에서 필터링) + 1인칭 사람 영상 10,000시간(원시 약 20,000시간에서 필터링); DINO-Video는 영상 클립 5M개로 학습",
+"데이터 시간(h)": 60000,
+"주요 데이터셋": "자체 수집 20종 로봇 데이터; 1인칭 사람 영상(공개 데이터·자체 데이터, Ant Digital Technologies Phecda Laboratory·Genrobot.ai 제공); GM-100; RoboTwin 2.0",
+"비고": "하위 과제 주석은 Qwen3.6-27B로 자동 생성(18개 원자 행동 어휘); 사람 영상은 SLAM·손 자세 추정으로 MANO 손 궤적을 복원; 절대 관절보다 상대 관절 행동, MeanStd 정규화, L2(MSE) flow matching이 좋았다는 ablation 보고; 사전학습은 loss-free MoE 부하 균형(DeepSeek-V3식 편향), 사후학습 config는 시퀀스 보조 손실·z-loss 사용; 코드·가중치(robbyant/lingbot-vla-v2-6b, RoboTwin 사후학습본 lingbot-vla-v2-6b-robotwin) Apache-2.0, LeRobot 변환본(lerobot/lingbot_vla_v2_base) 있음; arXiv v1 2026-07-07. 기반: A Pragmatic VLA Foundation Model (arXiv 2601.18692) — 이전 버전 LingBot-VLA를 개선(논문 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2607.06403"
+},
+"fields": {
+"v": "Qwen3-VL 내장 비전 인코더(학습 시 동결 안 함)",
+"l": "Qwen3-VL-4B-Instruct",
+"lb": 4,
+"fam": "Qwen",
+"w": "현재·미래(청크 길이 T 뒤) 쿼리 증류: LingBot-Depth 깊이 토큰 + DINO-Video 특징(학습 시 보조 과제, 추론에 교사 미사용)",
+"h": "sparse-MoE 액션 전문가(Qwen2식, 36층, 공유 1+라우팅 32개 top-4) flow matching 10스텝",
+"hk": "flow matching",
+"ck": "50스텝(실로봇 배포 예시 25 실행)",
+"hz": "미공개 (1회 추론 약 130 ms, RTX 4090D)",
+"dep": "RTX 4090D 추론 서버(README 예시)",
+"mem": "가중치 fp32 공개(약 6.38B); 검증은 FP32 추론, BF16은 메모리 절감(수치 미기재)",
+"inp": "RGB 3시점(머리·양 손목) · 언어 · 55차원 고유감각",
+"pipe": [
+[
+"in",
+"RGB 3시점 · 언어 · 상태(55차원)",
+""
+],
+[
+"vis",
+"Qwen3-VL 비전 인코더",
+""
+],
+[
+"llm",
+"Qwen3-VL-4B",
+"인과 어텐션"
+],
+[
+"world",
+"현재·미래 쿼리 증류",
+"LingBot-Depth·DINO-Video (학습 시)"
+],
+[
+"head",
+"sparse-MoE 액션 전문가",
+"flow matching 10스텝, 청크 50"
+],
+[
+"out",
+"55차원 통합 행동",
+"팔·EEF·손·허리·머리·베이스"
+]
+],
+"tags": [
+"flow matching",
+"MoE",
+"교차 엠바디먼트",
+"사람 영상",
+"모바일 매니퓰레이션"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"flow matching 지도학습(사전학습·사후학습), 깊이·영상 특징 증류는 보조 손실",
+"https://arxiv.org/html/2607.06403"
+],
+"paper": {
+"k": "논문",
+"id": "2607.06403",
+"t": "From Foundation to Application: Improving VLA Models in Practice",
+"u": "https://arxiv.org/abs/2607.06403",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "통합 행동 벡터의 이동 신호 3차원(LeRobot 변환본 표기 base.velocity)을 팔·허리·머리와 함께 청크로 직접 출력; 장기 과제는 Astribot S1·Cobot Magic-ARX X5 이동 베이스로 평가(바퀴형은 로봇 사양 기준, 논문은 'mobile base'로만 표기)",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "weights from [Qwen3-VL-4B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct), [MoGe-2-vitb-normal](https://huggingface.co/Ruicheng/moge-2-vitb-normal), [LingBot-Depth](https://huggingface.co/robbyant/lingbot-vla-v2-6b/tree/main/depth), and [DINO-VIDEO](https://huggingface.co/robbyant/lingbot-vla-v2-6b/tree/main/dino_video) teacher checkpoint/config are also required",
+"url": "https://github.com/robbyant/lingbot-vla-v2"
+},
+{
+"field": "백본·액션 표현",
+"quote": "a Qwen3-VL-4B backbone with a sparse-MoE Qwen2 action expert, trained with flow matching",
+"url": "https://huggingface.co/lerobot/lingbot_vla_v2_base"
+},
+{
+"field": "백본·액션 표현",
+"quote": "we use a 55-dimensional canonical vector representation for both states and actions",
+"url": "https://arxiv.org/html/2607.06403"
+},
+{
+"field": "백본·액션 표현",
+"quote": "\"chunk_size\": 50",
+"url": "https://huggingface.co/lerobot/lingbot_vla_v2_base/blob/main/config.json"
+},
+{
+"field": "백본·액션 표현",
+"quote": "we instantiate sparse MoE layers inside the action expert, which replace the feed-forward network (FFN) in the action expert",
+"url": "https://arxiv.org/html/2607.06403"
+},
+{
+"field": "추론",
+"quote": "one inference call on an NVIDIA GeForce RTX 4090D takes about **130 ms** with **10 denoising steps**",
+"url": "https://github.com/robbyant/lingbot-vla-v2"
+},
+{
+"field": "추론",
+"quote": "Release validation of the published checkpoint uses **FP32 inference**; BF16 uses less GPU memory, but can produce materially different success rates.",
+"url": "https://github.com/robbyant/lingbot-vla-v2"
+},
+{
+"field": "파라미터",
+"quote": "\"total\":6375907511",
+"url": "https://huggingface.co/api/models/robbyant/lingbot-vla-v2-6b"
+},
+{
+"field": "데이터 규모",
+"quote": "curate around 60,000 hours of data for pretraining, including 50,000 hours of robot trajectories spanning 20 robot configurations and 10,000 hours of egocentric human videos",
+"url": "https://arxiv.org/abs/2607.06403"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "global_batch_size: 1024 # Training uses 32 GPUs: global_batch_size = micro_batch_size * 32",
+"url": "https://github.com/robbyant/lingbot-vla-v2/blob/main/configs/vla/robotwin/robotwin.yaml"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "This example needs at least about 49 GB of VRAM per GPU on A6000-class GPUs.",
+"url": "https://github.com/robbyant/lingbot-vla-v2/blob/main/configs/vla/Training_Config.md"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "On Agilex Cobot Magic, it reaches 66.2 / 34.4 in progress score / success rate, surpassing LingBot-VLA-1.0 by 8.0 / 4.4 points",
+"url": "https://arxiv.org/html/2607.06403"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "LingBot-VLA-2.0 achieves a progress score / success rate of 77.1 / 60.0 on the refrigerator sorting task and 84.3 / 66.7 on the stove cleaning task",
+"url": "https://arxiv.org/html/2607.06403"
+},
+{
+"field": "base",
+"quote": "3 dimensions for mobility signal",
+"url": "https://arxiv.org/html/2607.06403"
+},
+{
+"field": "base",
+"quote": "long-horizon task sequences that require coordinated base movement, object manipulation, and interaction with articulated objects",
+"url": "https://arxiv.org/html/2607.06403"
+},
+{
+"field": "rl",
+"quote": "`\"fm\"` for MSE flow-matching, `\"L1_fm\"` for L1 flow-matching",
+"url": "https://github.com/robbyant/lingbot-vla-v2/blob/main/configs/vla/Training_Config.md"
+}
+],
+"_src": "manual_2026-10-19"
+},
+{
+"row": {
+"모델": "τ0-VLA (tau-0)",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "모바일 매니퓰레이션·양팔 매니퓰레이션(교차 엠바디먼트)",
+"발표": "2026-08",
+"기관": "Shanghai Innovation Institute·Agibot Finch·CUHK",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3.5-2B VLM + Mixture-of-Transformers 행동 전문가(층별 공동 어텐션) → 조건부 flow matching(마스크 적용, Euler 10스텝) → 40차원 통합 상태·행동(EEF Rot6D·그리퍼·허리·평면 베이스 속도·팔 관절) 청크 H=30, 약 30 Hz 제어; 상위 정책(Qwen3.5-9B 제안·가치·반성 모델 + Step1X-Edit world model)이 하위 과제 언어 명령 생성",
+"핵심 특징": "실행 메모리를 가진 상위 정책이 world model로 후보 하위 과제의 결과 영상을 예측하고 가치 모델로 평가해 빔 탐색하는 test-time computation 계층형 VLA이다. 40,115시간 실데이터로 학습한 하위 정책이 장기 과제 4종 평균 SR 27.5%(π0.5 22.5%)를 내고 계층 시스템(Plan Once)은 45.0%까지 올렸다.",
+"파라미터": "약 3.0B(하위 정책, HF safetensors BF16 3,015,404,136; 백본 Qwen3.5-2B); 상위 정책은 Qwen3.5-9B 기반 모델 3개 + Step1X-Edit world model, 시스템 총합 미기재",
+"파라미터(B)": 3.0,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (가속기·기간 미공개)",
+"파인튜닝 가속기·시간": "3단계 과제별 파인튜닝(과제별 소량 시연) 가속기·시간 미공개; LIBERO 체크포인트 60,000스텝 사후학습(GPU 미기재); 공개 예제 config는 bf16·DeepSpeed ZeRO-1·lr 2e-5·1,000스텝",
+"추론": "하위 정책 약 30 Hz 제어 루프로 청크 실행, 상위 정책은 비동기 워커가 약 1초마다 하위 과제 갱신; 추론 GPU·지연 미기재(LIBERO 예시 서버 환경 RTX 4090, 10행동 예측 중 8 실행)",
+"태스크·벤치마크": "실환경 장기 과제 4종(과제당 10회, AGIBOT G1): 평균 SR 27.5%·진행률 80.1%, 계층(Plan Once) 45.0%·87.85%; 기준선 π0.5 22.5%, GR00T N1.7 2.5%, LingBot-VLA 0.0%; TTC로 Make Milk Tea 5→7/10, Book Organization 6→9/10, Clean Room 5→7/10; Collect Laundry 10/10(π0.5 9/10); LIBERO 평균 97.35%(README)",
+"로봇·엠바디먼트": "AGIBOT G1(바퀴형 휴머노이드, 전방향 4륜 조향 베이스, 7-DoF 양팔·평행 그리퍼); ARX AC One(6-DoF X5 양팔); Franka Research 3 양팔(7-DoF 2대); 학습에 AGIBOT G2·UMI 데이터 포함",
+"데이터 종류": "실로봇 텔레옵 / 자율 정책 롤아웃 / UMI 데이터 / 멀티모달 VL 공동학습",
+"데이터 규모": "40,115시간(내부 약 23.4K시간: AGIBOT G1 21.9K·G2 585·ARX AC One 578·Franka 347; 공개 데이터 약 16.7K시간, 그중 오픈소스 UMI 9.25K) + 멀티모달 VL 데이터(규모 미기재)",
+"데이터 시간(h)": 40115,
+"주요 데이터셋": "내부 AGIBOT G1/G2·ARX·Franka 시연; 오픈소스 UMI 데이터; 기타 공개 로봇 데이터셋(이름 미기재)",
+"비고": "하위 정책 3단계 학습(KI 공동학습 → 종단 공동학습 → 과제별 적응); 상위 데이터 라벨링에 Gemma4-31B-it 사용; 공개 HF 가중치는 하위 사전학습 정책(제로샷 제어기 아님, 사후학습용), 상위 Proposal·World Model은 별도 공개(2026-09); HF 공개 2026-07-27, arXiv v1 2026-08-17; 코드·가중치 Apache-2.0, 예제 데이터 CC BY-NC-SA 4.0",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2608.16885"
+},
+"fields": {
+"v": "Qwen3.5-2B 내장 비전(다시점 RGB)",
+"l": "Qwen3.5-2B (하위 정책 VLM; 상위 정책은 Qwen3.5-9B)",
+"lb": 2,
+"fam": "Qwen",
+"t": "Mixture-of-Transformers(백본·행동 토큰 별도 파라미터 스트림, 공동 어텐션)",
+"w": "상위 정책 world model(Step1X-Edit 기반, 하위 과제 종료 시점 머리 카메라 영상 예측)",
+"h": "MoT 행동 전문가 조건부 flow matching(마스크 적용, Euler 10스텝) → 40차원 청크",
+"hk": "flow matching",
+"ck": "30스텝 × 40차원 (LIBERO 체크포인트 10, 8 실행)",
+"hz": "약 30 Hz 제어 루프 (상위 하위 과제 약 1초마다 갱신)",
+"dep": "추론 GPU 미기재 (LIBERO 예시 서버 RTX 4090)",
+"inp": "다시점 RGB · 언어(하위 과제) · 고유감각 · 로봇 메타데이터·마스크",
+"pipe": [
+[
+"in",
+"다시점 RGB · 하위 과제 · 상태",
+"로봇 메타데이터"
+],
+[
+"llm",
+"상위 Qwen3.5-9B 제안·가치·반성",
+"test-time 빔 탐색"
+],
+[
+"world",
+"Step1X-Edit world model",
+"하위 과제 결과 영상 예측"
+],
+[
+"vis",
+"Qwen3.5-2B 비전",
+""
+],
+[
+"llm",
+"Qwen3.5-2B VLM",
+"하위 정책 백본"
+],
+[
+"head",
+"MoT 행동 전문가",
+"flow matching 10스텝"
+],
+[
+"out",
+"40차원 청크 H=30",
+"팔·그리퍼·허리·베이스 속도"
+]
+],
+"tags": [
+"계층형",
+"test-time computation",
+"world model",
+"모바일 매니퓰레이션",
+"교차 엠바디먼트",
+"flow matching"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"논문·모델 카드에 강화학습 사용 언급 없음; 하위 정책은 flow matching 모방학습, 상위 모델은 지도 파인튜닝, 학습 데이터에 자율 정책 롤아웃 포함",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2608.16885",
+"t": "τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation",
+"u": "https://arxiv.org/abs/2608.16885",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"고정",
+"바퀴형"
+],
+"how": "40차원 통합 행동에 평면 베이스 속도 2차원(23–24) 포함 → AGIBOT G1 전방향 바퀴 베이스를 정책이 직접 구동(Clean Room·Collect Laundry 등); ARX·Franka 과제는 베이스 없음",
+"cat": "베이스 속도·자세 직접 출력"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "We initialize the low-level vision-language backbone from Qwen3.5-2B [ 35 ] and attach the MoT action expert described in Section IV-C .",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The reported policies use an action horizon of H = 30 and ten uniform Euler updates.",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The proposal, value, and reflective models are independently fine-tuned from the same robot-pretrained VLM checkpoint initialized from Qwen3.5-9B [ 35 ] . The world model is initialized from Step1X-Edit [ 23 ] and trained separately.",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "파라미터",
+"quote": "BF16: 3015404136",
+"url": "https://huggingface.co/api/models/sii-research/tau-0-vla"
+},
+{
+"field": "추론",
+"quote": "keeps executing the current cached subtask at the control rate ( ∼30 Hz)",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "추론",
+"quote": "An example server environment uses Python 3.12.3, PyTorch 2.7.1+cu128, Transformers 5.5.4, NumPy 2.3.5, and an RTX 4090.",
+"url": "https://github.com/sii-research/tau-0-vla/blob/main/configs/libero/README.md"
+},
+{
+"field": "데이터 규모",
+"quote": "The low-level training corpus combines approximately 23.4 K hours of internally collected demonstrations with 16.7 K hours from public robot datasets.",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "데이터 규모",
+"quote": "The internal data comprise 21.9 K hours on AGIBOT G1, 585 hours on AGIBOT G2, 578 hours on ARX AC One, and 347 hours on Franka. The public data include 9.25 K hours of open-source UMI data",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "τ0-VLA 4/10 92.80% 2/10 66.43% 0/10 65.00% 5/10 96.15% 27.50% 80.10%",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "| 97.40 | 98.20 | 98.80 | 95.00 | 97.35 |",
+"url": "https://github.com/sii-research/tau-0-vla/blob/main/configs/libero/README.md"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "is post-trained for **60,000 steps** from [`sii-research/tau-0-vla`]",
+"url": "https://github.com/sii-research/tau-0-vla/blob/main/configs/libero/README.md"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "AGIBOT G1 is a wheeled humanoid with an omnidirectional four-wheel-steering base, dual 7-DoF arms, and modular end-effectors.",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "base",
+"quote": "Planar base velocity 23–24 two native coordinates",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "base",
+"quote": "Clean Room, Prepare Ingredients, Tomato and Egg Stir Fry, and Collect Laundry require mobile manipulation.",
+"url": "https://arxiv.org/html/2608.16885"
+},
+{
+"field": "비고",
+"quote": "Code and model weights are released under the [Apache License 2.0](LICENSE).",
+"url": "https://github.com/sii-research/tau-0-vla"
+}
+],
+"_src": "manual_2026-10-19"
+},
+{
+"row": {
+"모델": "Spark-0",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "촉각 기반 양팔 정교 손 매니퓰레이션",
+"발표": "2026-10",
+"기관": "Xspark AI·Tsinghua University·MMLab@HKU·HKUST(GZ)·Peking University",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen3-VL-4B-Instruct VLM(층별 KV, 행동 쿼리 64개) → 36층 폭 1024 층별 flow matching 행동 DiT(짝수 층 VLM 교차 어텐션, 홀수 층 State·Tactile·Action 공동 자기 어텐션, 촉각 토큰 24개) → 58차원(양손 EE 포즈 9+WUJI Hand 2 관절 20) 청크 H=50, Euler 4스텝; 학습 전용 DA3 기하·접촉 맵 정렬(VLM 25층)",
+"핵심 특징": "촉각 장갑에서 얻은 접촉 맵과 동결 Depth-Anything-3 특징으로 시각 토큰을 학습 때만 감독하고, 별도 촉각 경로가 영역별 힘 이력과 3D taxel 상태로 행동 전문가만 조건화하는 VTLA 모델이다. 체크포인트 하나로 시각 전용·촉각 조건 배치를 모두 지원하며, 1,000시간 HumanTouch 촉각 사전학습으로 Ego Humanoid 시각 전용 성공률을 52.5%에서 71.7%로, SparkArena-Real 성공률을 44.0%에서 52.0%로 올렸다.",
+"파라미터": "미공개(Qwen3-VL-4B + 36층 폭 1024 행동 DiT; 총합 미기재)",
+"파라미터(B)": null,
+"사전학습 가속기": "GPU 96장(12노드×8, 기종 미기재)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "400k 스텝(warmup 20k), 전역 배치 576(GPU당 6, 누적 없음)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "벤치마크별 다운스트림 파인튜닝 80k 스텝(warmup 8k), 사전학습과 같은 옵티마이저·GPU당 배치; 장치 수·시간 미공개",
+"추론": "flow matching Euler 4스텝, 청크 50 + 학습 불필요 RTC(남은 행동 26개에서 다음 청크 비동기 요청, 24스텝마다 재계획, 추론 지연 명목 8스텝); 정책 서버는 GPU 1장 1프로세스(README), GPU 기종·지연 시간·제어 Hz 미기재",
+"태스크·벤치마크": "SparkArena-Sim 7과제(시각 전용) 평균 성공률 36.86%(FastWAM 28.29%); SparkArena-Real 5과제(촉각 사용) 성공률 52.0%·완료 점수 62.8(FTP-1 36.0%·47.8); Ego Humanoid Manipulation Benchmark 8개 집계 지표 모두 1위(시각 전용, 예: Short Seen SR 80.95%)",
+"로봇·엠바디먼트": "Gen 1 Prototype: Marvin M6S CCS-696 팔 2개 + WUJI Hand 2 정교 손 2개 + Moxian 촉각 장갑(손당 320 taxel), 머리 Orbbec 336·손목 Orbbec 305 카메라",
+"데이터 종류": "사람 영상 / 실로봇 텔레옵 / 시뮬레이션·합성",
+"데이터 규모": "사전학습 7개 원천 합계 약 1,944시간(논문 '1.9k h'): HumanTouch 1,000h(100개 이상 과제·작업자 32명, 60 Hz)·EgoDex 662h·같은 장갑 로봇 플레이 20h·촉각 제거 로봇 플레이 24h·시뮬 25h·Fourier ActionNet 153h·AgiBot World 60h; 촉각은 표본의 44%",
+"데이터 시간(h)": 1944,
+"주요 데이터셋": "HumanTouch; EgoDex; Fourier ActionNet; AgiBot World",
+"비고": "샘플링 가중치 HumanTouch 0.35·EgoDex 0.39·같은 장갑 로봇 0.09; 사람 데이터는 IK로 WUJI 손에 리타기팅; 상태·행동 58차원(논문) vs 54차원(README) A/B, RTC 재계획 간격 24스텝(논문) vs 16스텝(README) A/B; 코드(GitHub MIT)·사전학습 체크포인트 pretrain_spark_0(HF, 400k 스텝 .pt 약 10.9GB)·SparkArena 공개, 파인튜닝 체크포인트·HumanTouch 데이터 공개 여부 미기재; XPolicyLab에도 통합. 기반: StarVLA (논문 [3]) — StarVLA·XPolicyLab 코드 위에 구축(논문 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2610.22342"
+},
+"fields": {
+"v": "Qwen3-VL 내장 비전(머리 384², 손목 256²) + 학습 전용 DA3-LARGE 기하 교사(동결)",
+"l": "Qwen3-VL-4B-Instruct",
+"lb": 4,
+"fam": "Qwen",
+"t": "층별 행동 DiT 36층(폭 1024, 16헤드), 짝수 층 VLM 교차·홀수 층 State·Tactile·Action 공동 자기 어텐션",
+"h": "flow matching 행동 전문가(Euler 4스텝) → 58차원 양손 EE 포즈·손 관절",
+"hk": "flow matching",
+"ck": "50스텝(RTC로 24스텝마다 재계획)",
+"dep": "GPU 정책 서버 1장(기종 미기재) + websocket 로봇 클라이언트",
+"inp": "머리·양 손목 RGB · 언어 · 상태 3프레임 · 촉각(선택)",
+"pipe": [
+[
+"in",
+"RGB(머리·손목) · 언어 · 상태",
+"촉각 장갑(선택)"
+],
+[
+"vis",
+"Qwen3-VL 비전",
+"DA3·접촉 맵 정렬(학습 전용)"
+],
+[
+"llm",
+"Qwen3-VL-4B",
+"층별 KV + 행동 쿼리 64"
+],
+[
+"txt",
+"촉각 인코더",
+"영역 힘 12 + 3D taxel 12 토큰"
+],
+[
+"head",
+"층별 flow matching DiT",
+"36층 · Euler 4스텝"
+],
+[
+"out",
+"양팔 + WUJI Hand 2",
+"58차원 청크 50"
+]
+],
+"tags": [
+"촉각",
+"VTLA",
+"정교 손",
+"양팔",
+"flow matching"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"flow matching 모방학습(행동 손실)과 기하·접촉 정렬 손실만 사용, 강화학습 언급 없음",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2610.22342",
+"t": "Spark-0: Scaling Spatially Aligned Tactile Pretraining for Robot Dexterous Manipulation",
+"u": "https://arxiv.org/abs/2610.22342",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"고정"
+],
+"how": "고정 양팔(Marvin M6S) + 정교 손, 이동 베이스 없음",
+"cat": null
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "It pairs Qwen3-VL-4B with a layerwise flow-matching action expert",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The action expert has L = 36 DiT blocks of width 1024, matching the VLM depth.",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "From three state frames, the expert predicts an H = 50 action chunk",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "추론",
+"quote": "inference integrates the predicted velocity with four Euler steps",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "추론",
+"quote": "The next chunk is requested asynchronously when 26 actions of the current chunk remain, so the policy replans every 24 steps for H = 50",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "사전학습 가속기",
+"quote": "Training uses 12 nodes with 8 GPUs each.",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "400k / 20k 12 × 8 GPUs; 576 (6 per GPU), no accum.",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "runs for 80k steps with an 8k-step warmup",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "데이터 규모",
+"quote": "HumanTouch: 1,000 hours of manipulation across more than 100 tasks and 32 operators",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "데이터 규모",
+"quote": "7 sources · 1.9k h touch in 44% of samples",
+"url": "https://xsparkai.com/Spark-0"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Spark-0 reaches 52.00% success and a 62.80 completion score, exceeding the strongest baseline, the tactile foundation policy FTP1 (36.00% and 47.80)",
+"url": "https://arxiv.org/pdf/2610.22342v1"
+},
+{
+"field": "가중치 공개",
+"quote": "pretrain_spark_0 | Visual + tactile pretraining on retargeted human and robot data (Tianji Marvin arms + Wuji Hand 2) | TianxingChen/Spark-0",
+"url": "https://github.com/XsparkAI/Spark-0"
+},
+{
+"field": "비고",
+"quote": "Every source is first retargeted into the same 54-d layout (Tianji EE poses + Wuji Hand 2 joints)",
+"url": "https://github.com/XsparkAI/Spark-0"
+},
+{
+"field": "비고",
+"quote": "re-planning every 16 steps (`action_horizon` 50 minus `fire_at_remaining` 34)",
+"url": "https://github.com/XsparkAI/Spark-0"
+},
+{
+"field": "추론",
+"quote": "The server is one process on one GPU",
+"url": "https://github.com/XsparkAI/Spark-0"
+}
+],
+"_src": "manual_2026-10-19"
 }
 ]

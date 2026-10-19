@@ -29,7 +29,7 @@ ORDER = ["참고 기준(2024 이전)","VA","자기회귀·잠재 액션 VLA","π
 HK = {"이산 토큰","diffusion","flow matching","회귀","CVAE","잠재 액션","하이브리드","영상 world model","RL 정책","기타","미공개"}
 FAM = {"Llama","Gemma","Qwen","InternLM","SmolLM","Phi","PaLI·PaLM","Gemini","Mamba","기타","없음","미공개"}
 def slug(s):
-    s = s.lower().replace("π*", "pistar").replace("π", "pi").replace("ψ", "psi").replace("ρα","rho-alpha").replace("ω","omega")
+    s = s.lower().replace("π*", "pistar").replace("π", "pi").replace("ψ", "psi").replace("ρα","rho-alpha").replace("ω","omega").replace("τ","tau")
     s = re.sub(r"\(.*?\)", "", s)
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
     return s or "m"

@@ -1,12 +1,13 @@
 # 로봇 VA·VLA 모델 비교 갤러리 — 인수인계
 
 ## 한눈에
-- 2022~2026년 로봇 VA·VLA 모델 211개를 비교하는 정적 웹 갤러리와 엑셀 비교표다. 범위는 매니퓰레이션, 휴머노이드 전신 제어, 모바일 매니퓰레이션, 내비게이션이다.
+- 2022~2026년 로봇 VA·VLA 모델 215개를 비교하는 정적 웹 갤러리와 엑셀 비교표다. 범위는 매니퓰레이션, 휴머노이드 전신 제어, 모바일 매니퓰레이션, 내비게이션이다.
 - 카드마다 구조도, 논문 링크, 백본 LLM, 액션 헤드, 학습 GPU·시간·데이터, 추론 장치·속도·메모리, 강화학습 사용처, 베이스 제어 방식이 있다.
 - 현재 게시본: claude.ai 아티팩트 https://claude.ai/artifact/CdHZuSinnVa9n6rXrx5DMH (사용자만 볼 수 있는 비공개 상태). 다음 목표는 GitHub Pages 배포다.
 - 기준일:
   - 기존 165개 모델 수치: 2026-10-06
   - 모바일 매니퓰레이션·내비게이션 46개, 베이스 제어 분류, '내 장치' 추정: 2026-10-14
+  - 추가 4개(Xiaomi-Robotics-1, LingBot-VLA 2.0, τ0-VLA, Spark-0): 2026-10-19
 
 ## 작업 방식
 - 사용자와는 한국어로 대화한다.
@@ -16,14 +17,14 @@
 | 경로 | 내용 |
 |---|---|
 | `gallery/template.html` | 페이지 원본(HTML·CSS·JS 한 파일). `__DATA__`, `__DEVICES__` 자리에 JSON이 들어간다 |
-| `gallery/data.json` | 빌드 결과(모델 211개). 직접 고치지 말고 아래 원천 파일을 고친 뒤 빌드한다 |
+| `gallery/data.json` | 빌드 결과(모델 215개). 직접 고치지 말고 아래 원천 파일을 고친 뒤 빌드한다 |
 | `parts/rows_w1~w6.jsonl` | 기존 165개 모델 행(한국어 키 28개) |
 | `parts/rows_w7.jsonl` | 데이터셋 67개 |
-| `parts/rows_w8.jsonl` | 모바일·내비 46개. `build.sh`가 `gallery/new_models.json`에서 다시 뽑는다 |
+| `parts/rows_w8.jsonl` | 모바일·내비 46개 + 2026-10-19 추가 4개(총 50개). `build.sh`가 `gallery/new_models.json`에서 다시 뽑는다 |
 | `gallery/fields.py` | 기존 165개의 구조도·백본 LLM·헤드·추론 필드(`F`, 행 번호 1~165) |
 | `gallery/rl.py` | 기존 165개의 강화학습 (상태, 분류, 사용 위치, 근거 URL) |
 | `gallery/papers.py` | 논문 제목(`T`), 예외(`OWN`), 관련 논문(`REL`) |
-| `gallery/new_models.json` | 신규 46개 레코드(row·fields·rl·paper·base·evidence, 독립 검증 반영본). 신규 모델의 원천 파일이다 |
+| `gallery/new_models.json` | 신규 50개 레코드(row·fields·rl·paper·base·evidence, 독립 검증 반영본). 신규 모델의 원천 파일이다 |
 | `gallery/base_existing.json` | 기존 165개의 베이스 제어(types·how·cat) |
 | `gallery/devices.json` | '내 장치' 계산용 장치 24종 사양과 출처 |
 | `parts/sources_w*.md` | 엑셀 '출처' 시트용 링크 |
@@ -91,7 +92,7 @@
 - 표 항목명과 데이터 값은 갤러리와 같은 번역 사전(`i18n/<lang>.json`)으로 바꾼다. 이 페이지에만 쓰는 문구는 `make_pages.py`의 `PL`에 4개 언어로 있다.
 - 색·글꼴은 template.html의 `:root` 토큰을 가져와 `docs/assets/model.css`에 쓴다.
 - 갤러리 카드의 '모델 페이지' 버튼과 표기 기준의 '모델별 사양 페이지 목록'이 이 페이지로 연결된다.
-- `sitemap.xml`은 홈·모델 목록·모델 페이지 전체(언어별 852개 주소)를 담아 `make_pages.py`가 만든다. 기본 언어는 `make_site.py`와 `make_pages.py`의 `DEFAULT`를 같이 바꾼다.
+- `sitemap.xml`은 홈·모델 목록·모델 페이지 전체(언어별 868개 주소)를 담아 `make_pages.py`가 만든다. 기본 언어는 `make_site.py`와 `make_pages.py`의 `DEFAULT`를 같이 바꾼다.
 
 ## '내 장치' 추정 방식
 - **메모리:** P×바이트 + 1 GB + 0.3 GB×P(B). 장치 메모리의 90%까지 쓸 수 있다고 보고, Jetson은 75%로 본다.

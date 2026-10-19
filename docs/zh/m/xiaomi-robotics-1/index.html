@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xiaomi-Robotics-1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery</title>
+<meta name="description" content="Xiaomi-Robotics-1 (Xiaomi (Xiaomi Robotics Team), 2026-07) — 以超过10万小时的UMI轨迹配合VLM自动标注(场景状态转移描述)进行预训练，再用约1万小时跨本体数据对齐到机器人·指令的2阶段VLA。">
+<link rel="canonical" href="https://vla-gallery.is-a.dev/zh/m/xiaomi-robotics-1/">
+<link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/xiaomi-robotics-1/">
+<link rel="alternate" hreflang="ko" href="https://vla-gallery.is-a.dev/ko/m/xiaomi-robotics-1/">
+<link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/xiaomi-robotics-1/">
+<link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/xiaomi-robotics-1/">
+<link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/xiaomi-robotics-1/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
+<meta property="og:title" content="Xiaomi-Robotics-1 — 架构、骨干LLM、训练与推理内存 | VLA Gallery"><meta property="og:description" content="Xiaomi-Robotics-1 (Xiaomi (Xiaomi Robotics Team), 2026-07) — 以超过10万小时的UMI轨迹配合VLM自动标注(场景状态转移描述)进行预训练，再用约1万小时跨本体数据对齐到机器人·指令的2阶段VLA。">
+<meta property="og:url" content="https://vla-gallery.is-a.dev/zh/m/xiaomi-robotics-1/"><meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vla-gallery.is-a.dev/assets/og-zh.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/model.css">
+<script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Xiaomi-Robotics-1 — 架构、骨干LLM、训练与推理内存", "description": "Xiaomi-Robotics-1 (Xiaomi (Xiaomi Robotics Team), 2026-07) — 以超过10万小时的UMI轨迹配合VLM自动标注(场景状态转移描述)进行预训练，再用约1万小时跨本体数据对齐到机器人·指令的2阶段VLA。", "inLanguage": "zh", "url": "https://vla-gallery.is-a.dev/zh/m/xiaomi-robotics-1/", "dateModified": "2026-10-19", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "Xiaomi-Robotics-1", "creator": {"@type": "Organization", "name": "Xiaomi (Xiaomi Robotics Team)"}}, "citation": {"@type": "ScholarlyArticle", "name": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories", "url": "https://arxiv.org/abs/2607.15330"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA 图库", "item": "https://vla-gallery.is-a.dev/zh/"}, {"@type": "ListItem", "position": 2, "name": "模型列表", "item": "https://vla-gallery.is-a.dev/zh/m/"}, {"@type": "ListItem", "position": 3, "name": "Xiaomi-Robotics-1", "item": "https://vla-gallery.is-a.dev/zh/m/xiaomi-robotics-1/"}]}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/zh/">VLA 图库</a><a href="/zh/m/">模型列表</a><a href="/zh/#gallery">图库</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/xiaomi-robotics-1/" hreflang="en">English</a><a href="https://vla-gallery.is-a.dev/ko/m/xiaomi-robotics-1/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/xiaomi-robotics-1/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/xiaomi-robotics-1/" hreflang="zh-Hans" aria-current="true">简体中文</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="/zh/">VLA 图库</a> / <a href="/zh/m/">模型列表</a> / 移动操作</p>
+<h1>Xiaomi-Robotics-1</h1>
+<p class="by">Xiaomi (Xiaomi Robotics Team) · 2026-07</p>
+<p class="kv"><span>VLA</span><span>移动操作</span><span>5.1B</span><span>flow matching</span></p>
+<p class="sum">以超过10万小时的UMI轨迹配合VLM自动标注(场景状态转移描述)进行预训练，再用约1万小时跨本体数据对齐到机器人·指令的2阶段VLA。</p>
+<div class="acts"><a class="pri" href="/zh/#m-xiaomi-robotics-1">在图库中查看架构图</a><a href="https://arxiv.org/abs/2607.15330" rel="noopener">论文 ↗</a></div>
+<h2>论文</h2>
+<p class="paper"><a href="https://arxiv.org/abs/2607.15330" rel="noopener">Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</a><small>arXiv 2607.15330</small></p>
+<h2>概述</h2>
+<dl><dt>分类</dt><dd>移动操作</dd><dt>类型</dt><dd>VLA</dd><dt>发布</dt><dd>2026-07</dd><dt>机构</dt><dd>Xiaomi (Xiaomi Robotics Team)</dd><dt>权重公开</dt><dd>是</dd><dt>参数</dt><dd>5.1B(5B公开版：VLM 4.4B + DiT 604M)；规模实验版2.6B(2.1B+470M)·10.5B(8.8B+1.5B)</dd></dl>
+<h2>架构</h2>
+<dl><dt>主干LLM</dt><dd>Qwen3-VL-4B-Instruct (5B公开版；2B·10B版VLM为2.1B·8.8B)</dd><dt>视觉编码器</dt><dd>Qwen3-VL内置视觉编码器</dd><dt>动作头</dt><dd>DiT flow matching(Euler 5步，adaLN时间条件) + VLM Choice Policies辅助回归 (flow matching)</dd><dt>动作块</dt><dd>30步×60维(公开代码默认值；论文未注明H)</dd><dt>控制频率</dt><dd>未公开</dd><dt>架构原文摘要</dt><dd>Qwen3-VL(5B公开版为Qwen3-VL-4B-Instruct) + 层数相同的小hidden DiT以Mixture-of-Transformers结合 → VLM KV cache·本体感知条件flow matching(Euler 5步) → 相对delta EE位姿·夹爪·腰部·底盘速度动作块(公开代码默认30步×60维)；VLM训练Choice Policies辅助回归(K个候选·评分)</dd></dl>
+<h2>训练</h2>
+<dl><dt>预训练加速器</dt><dd>未公开</dd><dt>预训练时长</dt><dd>未公开(仅自动标注约2周)</dd><dt>预训练步数·批量</dt><dd>未公开</dd><dt>GPU·TPU-小时</dt><dd>未公开</dd><dt>微调</dt><dd>后训练(约1万小时，VL:开源:UMI指令:内部 = 0.5:0.5:0.5:8.5)加速器·时间未公开；下游4项任务144小时(低数据36小时)应用Xiaomi-Robotics-0异步训练方案，GPU·步数未公开(公开演示config批量48)</dd><dt>数据类型</dt><dd>UMI手持演示 / 真机遥操作 / 开源机器人数据 / 网络视觉-语言</dd><dt>数据规模</dt><dd>预训练UMI轨迹10万小时以上(规模实验为约2万小时子集)；后训练约1万小时(内部机器人7,200小时以上，带指令标注UMI 1,000小时以上，Bridge V2·RT-1·DROID)；下游144小时</dd><dt>主要数据集</dt><dd>内部UMI数据(未公开)；内部移动·双臂机器人数据；Bridge V2；RT-1；DROID</dd><dt>任务·评估</dt><dd>RoboCasa 74.5%；RoboCasa365 57.4%(正文引言57.6%，A/B；此前最佳ABot-M0.6 46.6%)；VLABench平均SR 59.1·PS 70.3·IS 69.9；RoboDojo得分20.07·成功率13.93%；真机后训练即时评估4项任务(未见环境)2B 61%·5B 75%·10B 79%；下游4项任务低数据75%(π0.5 40%)·高数据85%(π0.5 53%)</dd><dt>机器人</dt><dd>内部轮式双臂移动操作机器人(腰部升降)与固定双臂机器人(型号未注明)；相机ego·左右腕部3个；仿真RoboCasa·RoboCasa365·VLABench·RoboDojo</dd></dl>
+<h2>推理</h2>
+<dl><dt>推理设备·速度</dt><dd>flow matching 5步Euler，支持异步执行(action prefix)；延迟·Hz·设备未注明(README&#x27;针对消费级GPU优化&#x27;)</dd><dt>推理显存</dt><dd>未公开</dd><dt>权重 bf16（计算）</dt><dd>10.2 GB</dd><dt>运行位置</dt><dd>推理服务器(GPU型号未注明) – 客户端架构，异步执行</dd></dl>
+<h2>强化学习与底盘</h2>
+<dl><dt>强化学习</dt><dd>未使用 · 预训练·后训练·微调均为模仿学习(flow matching + Choice Policies回归 + NTP)；未提及RL</dd><dt>强化学习依据</dt><dd><a href="https://arxiv.org/abs/2607.15330" rel="noopener">https://arxiv.org/abs/2607.15330</a></dd><dt>底盘控制</dt><dd>轮式 (直接输出底盘速度/位姿) · VLA在统一动作向量中将底盘速度(3维)和腰部位置delta与手臂EE动作一起以动作块直接输出</dd></dl>
+<h2>备注</h2>
+<dl><dt>核心特点</dt><dd>以超过10万小时的UMI轨迹配合VLM自动标注(场景状态转移描述)进行预训练，再用约1万小时跨本体数据对齐到机器人·指令的2阶段VLA。预训练数据·模型规模越大，未见环境的即时性能越高，RoboCasa365 57.4%·RoboDojo得分20.07，超过此前最佳(46.6%·13.07)。</dd><dt>备注</dt><dd>预训练目标为flow matching + Choice Policies回归 + 0.1×NTP(VL:UMI = 1:9)；阻止DiT看到VLM的动作token KV以切断复制捷径；状态转移描述由Qwen3.5-27B自动生成；客房级10分钟以上整理行李箱演示；代码·检查点2026-08-03公开(Apache-2.0，HF Xiaomi-Robotics-1-5B model_states.pt 10.2 GB，按基准的RoboCasa·RoboCasa365·VLABench检查点)，2B·10B未公开，预训练UMI数据未公开；arXiv v2 2026-07-22。前作：Xiaomi-Robotics-0 (arXiv 2602.12684) — 沿用异步训练方案与VL数据(论文明示)</dd><dt>核验</dt><dd>已确认</dd></dl>
+<section class="rel"><h2>同类其他模型</h2><ul><li><a href="/zh/m/tidybot/">TidyBot++</a><small>2024-11</small></li><li><a href="/zh/m/momanipvla/">MoManipVLA</a><small>2025-03</small></li><li><a href="/zh/m/ac-dit/">AC-DiT</a><small>2025-07</small></li><li><a href="/zh/m/sg-vla/">SG-VLA</a><small>2026-03</small></li><li><a href="/zh/m/panovla/">PanoVLA</a><small>2026-08</small></li><li><a href="/zh/m/harmonicmm/">HarmonicMM</a><small>2023-12</small></li><li><a href="/zh/m/act-1/">ACT-1</a><small>2025-11</small></li><li><a href="/zh/m/umi-on-legs/">UMI on Legs</a><small>2024-07</small></li><li><a href="/zh/m/vbc/">VBC</a><small>2024-03</small></li><li><a href="/zh/m/helpful-doggybot/">Helpful DoggyBot</a><small>2024-09</small></li><li><a href="/zh/m/quar-vla/">QUAR-VLA (QUART)</a><small>2023-12</small></li><li><a href="/zh/m/quart-online/">QUART-Online</a><small>2024-12</small></li><li><a href="/zh/m/more/">MoRE</a><small>2025-03</small></li><li><a href="/zh/m/roboduet/">RoboDuet</a><small>2024-03</small></li><li><a href="/zh/m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a><small>2024-03</small></li><li><a href="/zh/m/slim/">SLIM</a><small>2025-01</small></li></ul></section>
+<nav class="pn"><a href="/zh/m/qwen-robotnav/"><small>← 上一个</small>Qwen-RobotNav</a><a class="nx" href="/zh/m/lingbot-vla-2-0/"><small>下一个 →</small>LingBot-VLA 2.0</a></nav>
+</main>
+<footer><div class="wrap">VLA Gallery · <a href="/zh/">vla-gallery.is-a.dev</a> · 2026-10-19</div></footer>
+</body>
+</html>
