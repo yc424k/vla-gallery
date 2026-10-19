@@ -24,6 +24,8 @@ async def run():
             await pg.goto("file://" + outdir + "/wrapped.html"); await pg.wait_for_timeout(1500)
             print(name, "scrollWidth", await pg.evaluate("document.documentElement.scrollWidth"), errs)
             await el_shot(pg, "#fit", f"{outdir}/{name}-fit.png", 1500)
+            await el_shot(pg, "#tune", f"{outdir}/{name}-tune.png", 1800)
+            print(name, "tune scrollWidth", await pg.evaluate("document.documentElement.scrollWidth"))
             if name == "desk-light":
                 res = await pg.evaluate("""(()=>{
                   const out={}; const dev=document.getElementById('fit-dev'), pr=document.getElementById('fit-prec'), hz=document.getElementById('fit-hz');
@@ -46,6 +48,17 @@ async def run():
                   dev.value='rtx-4090'; dev.dispatchEvent(new Event('change'));
                   return out; })()""")
                 print(json.dumps(res, ensure_ascii=False, indent=1))
+                tune = await pg.evaluate("""(()=>{
+                  const out={}, f=id=>document.getElementById(id);
+                  const snap=()=>[...document.querySelectorAll('#tune-sum .k')].map(k=>k.textContent).join('/');
+                  for (const [d,n,m,bs] of [['rtx-4090','1','lora','n'],['rtx-4090','1','lora','s'],['rtx-4090','1','full','n'],['rtx-4090','1','qlora','s'],['rtx-4090','1','head','n'],['a100-80','8','full','n'],['jetson-agx-thor','4','lora','n']]){
+                    f('tune-dev').value=d; f('tune-n').value=n; f('tune-m').value=m; f('tune-bs').value=bs; f('tune-dev').dispatchEvent(new Event('change'));
+                    const top=[...document.querySelectorAll('#tune-table tbody tr:not(.grp)')].slice(0,4).map(r=>r.cells[0].textContent+' '+r.cells[2].textContent+' '+r.cells[3].textContent);
+                    out[[d,n,m,bs].join('/')]={counts:snap(), n:f('tune-n').value, top};
+                  }
+                  f('tune-dev').value='rtx-4090'; f('tune-n').value='1'; f('tune-m').value='lora'; f('tune-bs').value='n'; f('tune-dev').dispatchEvent(new Event('change'));
+                  return out; })()""")
+                print(json.dumps(tune, ensure_ascii=False, indent=1))
                 await el_shot(pg, "#m-openvla", f"{outdir}/{name}-card-openvla.png", 1100)
             await ctx.close()
         await b.close()
