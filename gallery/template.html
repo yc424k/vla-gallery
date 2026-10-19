@@ -8,7 +8,7 @@ for(var i=0;i<L.length;i++){var k=String(L[i]).toLowerCase().slice(0,2);if(k==="
 if(c==="ko"||c==="ja"||c==="zh")location.replace(c+"/"+location.hash);})();
 /* 첫 화면 전에 테마와 모션 여부를 정해 깜빡임을 막는다 */
 (function(){var d=document.documentElement;try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);}catch(e){}
-var h=decodeURIComponent(location.hash.slice(1)),P=["infer","train","calc","fit","llm","rl","base","compare","gallery","notes"];
+var h=decodeURIComponent(location.hash.slice(1)),P=["infer","train","calc","fit","tune","llm","rl","base","compare","gallery","notes"];
 d.setAttribute("data-page",h.indexOf("m-")===0?"gallery":(P.indexOf(h)>=0?h:"home"));
 if("IntersectionObserver" in window&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))d.classList.add("motion");})();
 </script>
@@ -291,7 +291,11 @@ h1,h2,h3,.lead,.sec-lead,.factor p,.note,.sum,.eyebrow,.chart-cap,footer dd{word
 #fit-table td{white-space:nowrap}
 #fit-table td:first-child{white-space:normal;min-width:110px;max-width:210px;overflow-wrap:anywhere}
 #fit-table td:last-child{white-space:normal;min-width:180px;color:var(--ink-2);font-size:12.5px}
-#fit-rest .mchips{margin-bottom:6px}
+#fit-rest .mchips,#tune-rest .mchips{margin-bottom:6px}
+#tune-table td{white-space:nowrap}
+#tune-table td:first-child{white-space:normal;min-width:110px;max-width:210px;overflow-wrap:anywhere}
+#tune-table td:last-child{white-space:normal;min-width:300px;color:var(--ink-2);font-size:12.5px}
+#tune-n:disabled{opacity:.55}
 /* ===== 디자인 갱신: 깊이·상호작용 ===== */
 :root{--r-sm:3px;--r-md:4px;--r-lg:4px;--ease:cubic-bezier(.2,.7,.2,1);--ease-out:cubic-bezier(.16,1,.3,1);
   --sh-1:none;--sh-2:none;
@@ -429,7 +433,7 @@ html.motion .progress{transition:transform .1s linear}
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 /* ===== 페이지 나누기: html[data-page]에 맞는 섹션만 보인다 ===== */
 html[data-page] main>section,html[data-page] #notes{display:none}
-html[data-page="infer"] #infer,html[data-page="train"] #train,html[data-page="calc"] #calc,html[data-page="fit"] #fit,html[data-page="llm"] #llm,html[data-page="rl"] #rl,
+html[data-page="infer"] #infer,html[data-page="train"] #train,html[data-page="calc"] #calc,html[data-page="fit"] #fit,html[data-page="tune"] #tune,html[data-page="llm"] #llm,html[data-page="rl"] #rl,
 html[data-page="base"] #base,html[data-page="compare"] #compare,html[data-page="gallery"] #gallery,html[data-page="notes"] #notes{display:block}
 html[data-page]:not([data-page="home"]) .hero{display:none}
 main>section,#notes{border-bottom:0;min-height:calc(100vh - 52px);padding-block:48px 40px}
@@ -473,7 +477,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 <div class="progress" id="progress" aria-hidden="true"></div>
 <nav class="jump" aria-label="섹션 이동">
   <div class="wrap">
-    <div class="nav-links"><a class="brand" href="#">VLA 갤러리</a><a href="#infer">추론 자원</a><a href="#train">학습 자원</a><a href="#calc">메모리 계산기</a><a href="#fit">내 장치</a><a href="#llm">백본 LLM</a><a href="#rl">강화학습</a><a href="#base">모바일 베이스</a><a href="#compare">두 모델 비교</a><a href="#gallery">갤러리</a><a href="#notes">표기 기준</a></div>
+    <div class="nav-links"><a class="brand" href="#">VLA 갤러리</a><a href="#infer">추론 자원</a><a href="#train">학습 자원</a><a href="#calc">메모리 계산기</a><a href="#fit">내 장치</a><a href="#tune">내 장치로 학습</a><a href="#llm">백본 LLM</a><a href="#rl">강화학습</a><a href="#base">모바일 베이스</a><a href="#compare">두 모델 비교</a><a href="#gallery">갤러리</a><a href="#notes">표기 기준</a></div>
     <select class="lang-sel" id="lang-sel" aria-label="언어 · Language"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option></select>
     <a class="gh-star" href="https://github.com/yc424k/vla-gallery" target="_blank" rel="noopener" aria-label="GitHub에서 Star 주기" title="도움이 됐다면 GitHub에서 Star를 눌러 주세요"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9z"/></svg><span>Star</span><span class="n" id="star-n"></span></a>
     <button type="button" class="theme-btn" id="theme-btn" aria-label="밝은·어두운 테마 바꾸기" title="테마 바꾸기"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
@@ -489,6 +493,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
     <div class="btns">
       <a class="btn primary" href="#gallery">갤러리 보기</a>
       <a class="btn" href="#fit">내 장치로 쓸 수 있는 모델</a>
+      <a class="btn" href="#tune">내 장치로 학습할 수 있는 모델</a>
       <a class="btn" href="#compare">두 모델 비교</a>
       <a class="btn star" href="https://github.com/yc424k/vla-gallery" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9z"/></svg>GitHub에서 Star 주기</a>
     </div>
@@ -597,9 +602,38 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
   </div>
 </section>
 
+<section id="tune">
+  <div class="wrap">
+    <p class="sec-no">05 · 내 장치로 학습</p>
+    <h2>이 장치에서 파인튜닝할 수 있는 모델</h2>
+    <p class="sec-lead">장치, GPU 수, 학습 방식을 고르면 GPU 메모리에 들어가는 모델과 파인튜닝 1회(1만 스텝 · 배치 32)에 걸릴 시간을 추정합니다. 학습은 가중치 말고도 기울기, 옵티마이저 상태, 활성값을 메모리에 올려야 해서 같은 모델이라도 추론보다 몇 배 큰 메모리가 필요합니다. 사전학습 가중치가 공개된 모델만 ‘학습 가능’으로 셉니다.</p>
+    <div class="factors">
+      <div class="factor"><h3>전체 파인튜닝</h3><p>모든 파라미터를 AdamW와 bf16 혼합 정밀도로 학습합니다. 가중치·기울기·fp32 사본·Adam 상태로 파라미터 1B당 약 16 GB가 들고, GPU가 여러 장이면 FSDP·ZeRO-3로 나눠 담는다고 봤습니다.</p></div>
+      <div class="factor"><h3>LoRA</h3><p>가중치는 bf16으로 고정하고 작은 어댑터(파라미터의 약 1%)만 학습합니다. OpenVLA는 LoRA로 A100 1장(최소 약 27 GB), π0은 RTX 4090 1장(22.5 GB 이상)에서 파인튜닝할 수 있다고 밝혔습니다.</p></div>
+      <div class="factor"><h3>QLoRA (4비트)</h3><p>고정 가중치를 4비트로 양자화해 올리고 LoRA 어댑터만 학습합니다. 메모리는 가장 적지만 VLA 공식 저장소 대부분은 지원하지 않아 직접 붙여야 합니다.</p></div>
+      <div class="factor"><h3>액션 헤드만</h3><p>VLM 백본을 동결하고 flow·diffusion 액션 헤드만 학습합니다. GR00T·SmolVLA·GO-1이 이 방식을 기본이나 저메모리 옵션으로 제공하며, 헤드 크기를 아는 flow·diffusion 모델만 계산합니다.</p></div>
+    </div>
+    <form class="fitform" id="tune-form" autocomplete="off">
+      <div class="field"><label for="tune-dev">장치</label><select id="tune-dev"></select></div>
+      <div class="field"><label for="tune-n">GPU 수</label><select id="tune-n"><option value="1">1장</option><option value="2">2장</option><option value="4">4장</option><option value="8">8장</option></select></div>
+      <div class="field"><label for="tune-m">학습 방식</label><select id="tune-m"><option value="full">전체 파인튜닝 (AdamW · bf16)</option><option value="lora" selected>LoRA (bf16 가중치 고정)</option><option value="qlora">QLoRA (4비트 가중치 고정)</option><option value="head">액션 헤드만 (백본 동결)</option></select></div>
+      <div class="field"><label for="tune-bs">GPU당 배치</label><select id="tune-bs"><option value="s">작게 (1~2, 기울기 체크포인팅)</option><option value="n" selected>보통 (16~32, 공식 설정 수준)</option></select></div>
+      <div class="field"><label for="tune-h">시간 한도 (1만 스텝 · 배치 32)</label><select id="tune-h"><option value="12">12시간 이내</option><option value="24">하루 이내</option><option value="72" selected>3일 이내</option><option value="168">1주 이내</option><option value="0">제한 없음</option></select></div>
+      <div class="fit-custom" id="tune-custom" hidden>
+        <div class="field"><label for="tune-mem">GPU 메모리 (GB)</label><input id="tune-mem" type="number" min="1" step="1" value="24" inputmode="decimal"></div>
+        <div class="field"><label for="tune-tf">BF16 연산 (TFLOPS, dense)</label><input id="tune-tf" type="number" min="1" step="1" value="160" inputmode="decimal"></div>
+      </div>
+    </form>
+    <div id="tune-sum" aria-live="polite"></div>
+    <div class="tbl-wrap"><table id="tune-table"></table></div>
+    <div id="tune-rest"></div>
+    <p class="note" id="tune-note"></p>
+  </div>
+</section>
+
 <section id="llm">
   <div class="wrap">
-    <p class="sec-no">05 · 백본 LLM</p>
+    <p class="sec-no">06 · 백본 LLM</p>
     <h2>VLA의 백본 LLM</h2>
     <p class="sec-lead" id="llm-lead"></p>
     <div class="chart" id="fam-chart"></div>
@@ -611,7 +645,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 <section id="rl">
   <div class="wrap">
-    <p class="sec-no">06 · 강화학습</p>
+    <p class="sec-no">07 · 강화학습</p>
     <h2>강화학습을 어디에 썼나</h2>
     <p class="sec-lead" id="rl-lead"></p>
     <div class="chart" id="rl-chart"></div>
@@ -628,7 +662,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 <section id="base">
   <div class="wrap">
-    <p class="sec-no">07 · 모바일 베이스</p>
+    <p class="sec-no">08 · 모바일 베이스</p>
     <h2>모바일 베이스를 어떻게 움직이나</h2>
     <p class="sec-lead" id="base-lead"></p>
     <div class="factors">
@@ -644,7 +678,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 <section id="compare">
   <div class="wrap">
-    <p class="sec-no">08 · 두 모델 비교</p>
+    <p class="sec-no">09 · 두 모델 비교</p>
     <h2>두 모델 나란히 보기</h2>
     <p class="sec-lead">카드의 ‘비교 A’·‘비교 B’ 버튼이나 아래 목록으로 모델을 고르면 구조도와 사양을 나란히 놓습니다. 값이 같은 행은 흐리게 표시합니다.</p>
     <div class="cmp-sel">
@@ -658,7 +692,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 <section id="gallery">
   <div class="wrap">
-    <p class="sec-no">09 · 갤러리</p>
+    <p class="sec-no">10 · 갤러리</p>
     <h2>모델 갤러리</h2>
     <p class="sec-lead">분류·발표 시기·크기·백본 LLM·액션 헤드·추론 정보·논문 유무·베이스 종류로 거릅니다. 카드 위쪽의 논문 제목을 누르면 arXiv 원문이 열리고, ‘자세히’에서 태스크·데이터·학습 설정을 확인합니다.</p>
     <div class="filters" role="search">
@@ -1534,6 +1568,81 @@ document.getElementById("fit-devs").innerHTML = "<thead><tr><th>" + T("장치") 
 document.getElementById("fit-form").addEventListener("submit", e => e.preventDefault());
 renderFit();
 
+/* ---------- 내 장치로 학습: 파인튜닝 메모리·시간 추정 ---------- */
+// act: GPU당 배치별 활성값·작업 메모리 [고정 GB, 파라미터 1B당 GB]. openpi π0(LoRA 22.5 GB·전체 70 GB)·OpenVLA LoRA(배치 1 약 27 GB)·GO-1(전체 약 70 GB) 보고값에 맞췄다
+const TUNE = {act: {s: [2, 1.5], n: [4, 5]}, lora: 0.01, mfu: 0.35, scale: 0.9, steps: 10000, batch: 32, nh: 64};
+const TML = {full: T("전체 파인튜닝"), lora: "LoRA", qlora: "QLoRA", head: T("액션 헤드만")};
+const tuneState = {dev: "rtx-4090", n: 1, m: "lora", bs: "n", h: 72};
+try { const s = JSON.parse(localStorage.getItem("vla-tune") || "null"); if (s && (DEVBY[s.dev] || s.dev === "custom")) Object.assign(tuneState, s); } catch (e) {}
+const tuneDev = document.getElementById("tune-dev"), tuneN = document.getElementById("tune-n"), tuneM = document.getElementById("tune-m"), tuneBs = document.getElementById("tune-bs"), tuneH = document.getElementById("tune-h");
+function tuneOf(m, dev, N, meth, bs, lim){
+  const e = m.est; if (!e) return {v: "na", why: T("총 파라미터·LLM 크기 미공개")};
+  const P = e.P, a = TUNE.act[bs], iter = e.kind === "iter" && e.Ph > 0;
+  const Ph = iter ? Math.min(e.Ph, P) : 0, Pb = P - Ph;
+  let mem, train, fl;  // fl: 샘플 1개당 학습 연산(× 1e9 FLOP)
+  if (meth === "head"){
+    if (!iter) return {v: "na", why: T("별도 액션 헤드가 없거나 헤드 크기 미공개")};
+    mem = 2 * Pb + 16 * Ph / N + a[0] + 0.3 * P + a[1] * Ph; train = Ph; fl = 2 * Pb * e.n_in + 6 * Ph * TUNE.nh;
+  } else {
+    const act = a[0] + a[1] * P, ad = 16 * TUNE.lora * P;
+    if (meth === "full"){ mem = 16 * P / N + act; train = P; fl = 6 * Pb * e.n_in + 6 * Ph * TUNE.nh; }
+    else { mem = (meth === "qlora" ? 0.55 : 2) * P + ad + act; train = TUNE.lora * P; fl = (4 * Pb * e.n_in + 4 * Ph * TUNE.nh) * (meth === "qlora" ? 1.3 : 1); }
+  }
+  const r = {mem: mem, train: train, fits: mem <= dev.mem_gb * (isEmb(dev) ? 0.75 : 0.9)};
+  if (e.kind !== "wm"){
+    const eff = dev.bf16_tflops * TUNE.mfu / (isEmb(dev) ? EST.emb : 1) * N * (N > 1 ? TUNE.scale : 1);
+    r.hrs = fl * 1e9 * TUNE.steps * TUNE.batch / (eff * 1e12) / 3600;
+  }
+  const open = m.open === "예" || m.open === "일부";
+  r.v = !open ? "closed" : !r.fits ? "oom" : (lim && r.hrs != null && r.hrs > lim) ? "slow" : "ok";
+  return r;
+}
+const TVDL = {ok: T("학습 가능"), slow: T("오래 걸림"), oom: T("메모리 부족"), closed: T("가중치 비공개"), na: T("판정 불가")};
+const TVC = {ok: "ok", slow: "slow", oom: "oom", closed: "na", na: "na"};
+const hrsT = h => h == null ? "—" : h < 1 ? T("약 {0}분", fmt(Math.max(1, h * 60), 0)) : h < 48 ? T("약 {0}시간", fmt(h, h < 10 ? 1 : 0)) : T("약 {0}일", fmt(h / 24, h < 240 ? 1 : 0));
+const pT = p => p >= 1 ? fmt(p, 2) + "B" : fmt(p * 1000, 0) + "M";
+tuneDev.innerHTML = fitDev.innerHTML;
+tuneDev.value = DEVBY[tuneState.dev] || tuneState.dev === "custom" ? tuneState.dev : "rtx-4090";
+tuneN.value = String(tuneState.n); tuneM.value = tuneState.m; tuneBs.value = tuneState.bs; tuneH.value = String(tuneState.h);
+function curTuneDev(){
+  if (tuneState.dev !== "custom") return DEVBY[tuneState.dev];
+  const v = id => parseFloat(document.getElementById(id).value);
+  return {id: "custom", name: T("직접 입력한 장치"), tier: T("직접 입력"), mem_gb: v("tune-mem") || 24, bf16_tflops: v("tune-tf") || 160};
+}
+function renderTune(){
+  Object.assign(tuneState, {dev: tuneDev.value, n: parseInt(tuneN.value, 10), m: tuneM.value, bs: tuneBs.value, h: parseFloat(tuneH.value)});
+  document.getElementById("tune-custom").hidden = tuneState.dev !== "custom";
+  try { localStorage.setItem("vla-tune", JSON.stringify(tuneState)); } catch (e) {}
+  const dev = curTuneDev(), emb = isEmb(dev), N = emb ? 1 : tuneState.n, meth = tuneState.m, lim = tuneState.h;
+  tuneN.disabled = emb; if (emb) tuneN.value = "1";
+  const R = {}; D.forEach(m => { R[m.id] = tuneOf(m, dev, N, meth, tuneState.bs, lim); });
+  const by = v => D.filter(m => R[m.id].v === v);
+  const ok = by("ok").sort((a, c) => c.est.P - a.est.P || R[a.id].hrs - R[c.id].hrs), slow = by("slow").sort((a, c) => R[a.id].hrs - R[c.id].hrs);
+  const oom = by("oom").sort((a, c) => R[a.id].mem - R[c.id].mem), closed = by("closed").sort((a, c) => R[a.id].mem - R[c.id].mem), na = by("na");
+  const prevK = [...document.querySelectorAll("#tune-sum .k")].map(k => +k.dataset.v);
+  const K = (n, l) => '<span><span class="k" data-v="' + n + '">' + n + "</span>" + l + "</span>";
+  document.getElementById("tune-sum").innerHTML = '<div class="fitsum">' + K(ok.length, TVDL.ok) + K(slow.length, TVDL.slow) + K(oom.length, TVDL.oom) + K(closed.length, TVDL.closed) + K(na.length, TVDL.na) + "</div>" +
+    '<p class="res-sub" style="margin:0 0 12px">' + T("{0} × {1}장 · GPU당 메모리 {2} GB · BF16 {3} TFLOPS · {4} · 1만 스텝 × 배치 32 기준", esc(dev.name), N, fmt(dev.mem_gb, 0), fmt(dev.bf16_tflops, 0), TML[meth]) + "</p>";
+  const row = m => { const r = R[m.id];
+    return '<tr><td><a href="#m-' + m.id + '">' + esc(shortName(m.name).s) + '</a></td><td><span class="vd ' + TVC[r.v] + '">' + TVDL[r.v] + '</span></td><td class="num">' + fmt(r.mem, 1) + ' GB</td><td class="num">' + hrsT(r.hrs) + '</td><td class="num">' + pT(r.train) +
+      '</td><td class="num">' + esc(fmt(m.est.P, 2) + "B" + (m.est.src === "lb" ? T(" (LLM 기준)") : "")) + "</td><td>" + esc(m.ft || T("미공개")) + (m.gh.length ? " " + ext(m.gh[0], "GitHub ↗") : "") + "</td></tr>"; };
+  const limT = lim ? T("{0}시간 이내", lim) : T("시간 제한 없음");
+  document.getElementById("tune-table").innerHTML = "<thead><tr><th>" + T("모델") + "</th><th>" + T("판정") + "</th><th>" + T("GPU당 메모리") + "</th><th>" + T("예상 시간") + "</th><th>" + T("학습 파라미터") + "</th><th>" + T("크기") + "</th><th>" + T("공개된 파인튜닝 자원") + "</th></tr></thead><tbody>" +
+    (ok.length ? '<tr class="grp"><td colspan="7">' + T("학습 가능 · {0}개", ok.length) + "<span>" + T("가중치 공개, 메모리에 들어감, {0} · 큰 모델부터", limT) + "</span></td></tr>" + ok.map(row).join("") : '<tr class="grp"><td colspan="7">' + T("학습 가능한 모델 없음") + "<span>" + T("GPU 수를 늘리거나 LoRA·QLoRA·액션 헤드만 학습을 골라 보세요") + "</span></td></tr>") +
+    (slow.length ? '<tr class="grp"><td colspan="7">' + T("오래 걸림 · {0}개", slow.length) + "<span>" + T("메모리에는 들어가지만 {0}시간 넘게 걸림 · 빠른 순", lim) + "</span></td></tr>" + slow.map(row).join("") : "") + "</tbody>";
+  const chips = (list, f) => '<div class="mchips">' + list.map(m => '<a class="mchip" href="#m-' + m.id + '">' + esc(shortName(m.name).s) + (f ? "<small>" + f(m) + "</small>" : "") + "</a>").join("") + "</div>";
+  document.getElementById("tune-rest").innerHTML =
+    (oom.length ? '<h3 class="sub">' + T("메모리 부족 · {0}개", oom.length) + ' <small style="font-weight:400;color:var(--ink-3)">' + T("GPU당 필요 메모리(추정)") + "</small></h3>" + chips(oom, m => fmt(R[m.id].mem, 0) + " GB") : "") +
+    (closed.length ? '<h3 class="sub">' + T("가중치 비공개 · {0}개", closed.length) + ' <small style="font-weight:400;color:var(--ink-3)">' + T("GPU당 필요 메모리(추정)") + '</small></h3><p class="note" style="margin:0 0 8px">' + T("사전학습 가중치를 공개하지 않았거나 공개 여부를 확인하지 못한 모델입니다. 구조를 따라 처음부터 학습할 수는 있지만 파인튜닝 대상은 아닙니다.") + "</p>" + chips(closed, m => R[m.id].mem != null ? fmt(R[m.id].mem, 0) + " GB" : "") : "") +
+    '<h3 class="sub">' + T("판정 불가 · {0}개", na.length) + '</h3><p class="note" style="margin:0 0 8px">' + (meth === "head" ? T("총 파라미터·LLM 크기를 밝히지 않았거나, 백본과 분리된 flow·diffusion 액션 헤드가 없거나 헤드 크기를 알 수 없는 모델입니다.") : T("총 파라미터와 LLM 크기를 모두 밝히지 않은 모델입니다(산업계 모델·전신 제어기 다수).")) + "</p>" + chips(na);
+  if (prevK.length) document.querySelectorAll("#tune-sum .k").forEach((k, i) => tween(k, prevK[i], +k.dataset.v, v => fmt(v, 0)));
+  document.getElementById("tune-note").textContent = T("추정 방법: GPU당 메모리는 전체 파인튜닝이 파라미터 1B당 16 GB(bf16 가중치·기울기, fp32 사본, Adam 상태 2개)를 GPU 수로 나눈 값, LoRA는 bf16 가중치 2 GB/B와 어댑터(파라미터의 1%) 상태, QLoRA는 4비트 가중치 0.55 GB/B와 어댑터 상태, 액션 헤드만은 동결 백본 bf16과 헤드 16 GB/B입니다. 여기에 활성값을 배치 ‘작게’는 2 GB + 1.5 GB/B, ‘보통’은 4 GB + 5 GB/B로 더했고, 이 값은 openpi π0(LoRA 22.5 GB·전체 70 GB 이상), OpenVLA LoRA(배치 1 약 27 GB), GO-1(전체 약 70 GB) 보고값에 맞춘 것입니다. 시간은 샘플당 연산을 전체 6 × 파라미터 × 토큰, LoRA 4 ×(QLoRA는 1.3배), 동결 백본 2 ×로 잡고 BF16 연산의 35%(Jetson은 23%), GPU 여러 장은 90% 효율로 나눴습니다. 영상 world model은 시간을 계산하지 않습니다. 이미지 수·해상도·청크 길이·DeepSpeed offload 여부에 따라 실제 값은 2배 넘게 달라질 수 있으니 ‘공개된 파인튜닝 자원’ 열의 원문 값을 함께 보세요.");
+}
+[tuneDev, tuneN, tuneM, tuneBs, tuneH].forEach(el => el.addEventListener("change", renderTune));
+["tune-mem","tune-tf"].forEach(id => document.getElementById(id).addEventListener("input", renderTune));
+document.getElementById("tune-form").addEventListener("submit", e => e.preventDefault());
+renderTune();
+
 function goCard(id, jump){
   if (st.view === "compact") setView("detail");
   const el = cardEl[id]; if (!el) return;
@@ -1566,11 +1675,11 @@ if (document.fonts && document.fonts.ready){
 }
 
 /* ---------- pages: 해시(#infer 등)마다 섹션 하나만 보여 준다 ---------- */
-const PAGES = [["infer",T("추론 자원"),T("모델별 추론 메모리와 장치 등급별 속도")],["train",T("학습 자원"),T("사전학습 GPU·시간·데이터·파인튜닝 전체 표")],["calc",T("메모리 계산기"),T("파라미터·정밀도로 가중치 메모리 계산")],["fit",T("내 장치"),T("내 GPU·Jetson에서 쓸 만한 속도로 도는 모델")],
+const PAGES = [["infer",T("추론 자원"),T("모델별 추론 메모리와 장치 등급별 속도")],["train",T("학습 자원"),T("사전학습 GPU·시간·데이터·파인튜닝 전체 표")],["calc",T("메모리 계산기"),T("파라미터·정밀도로 가중치 메모리 계산")],["fit",T("내 장치"),T("내 GPU·Jetson에서 쓸 만한 속도로 도는 모델")],["tune",T("내 장치로 학습"),T("내 GPU로 파인튜닝할 수 있는 모델과 예상 시간")],
   ["llm",T("백본 LLM"),T("VLA가 쓰는 LLM 계열과 시기별 변화")],["rl",T("강화학습"),T("강화학습을 어디에 어떻게 썼나")],["base",T("모바일 베이스"),T("바퀴·사족·휴머노이드 베이스 제어 방식")],
   ["compare",T("두 모델 비교"),T("구조도와 사양을 나란히")],["gallery",T("갤러리"),T("모델 {0}개 카드와 필터", D.length)],["notes",T("표기 기준"),T("범위와 미공개·미확인 표기 규칙")]];
 const PBY = {}; PAGES.forEach(x => { PBY[x[0]] = x; });
-document.getElementById("toc").innerHTML = PAGES.map((x, i) => '<a href="#' + x[0] + '"><span class="no">' + (i < 9 ? "0" + (i + 1) : "··") + "</span><b>" + x[1] + "</b><small>" + esc(x[2]) + '</small><span class="go" aria-hidden="true">→</span></a>').join("");
+document.getElementById("toc").innerHTML = PAGES.map((x, i) => '<a href="#' + x[0] + '"><span class="no">' + (x[0] === "notes" ? "··" : String(i + 1).padStart(2, "0")) + "</span><b>" + x[1] + "</b><small>" + esc(x[2]) + '</small><span class="go" aria-hidden="true">→</span></a>').join("");
 PAGES.forEach((x, i) => {
   const prev = PAGES[i - 1], next = PAGES[i + 1];
   document.querySelector("#" + x[0] + ">.wrap").insertAdjacentHTML("beforeend", '<nav class="pager" aria-label="' + T('이전·다음 페이지') + '">' +
