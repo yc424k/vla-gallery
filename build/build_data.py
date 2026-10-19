@@ -9,6 +9,8 @@ spec3 = importlib.util.spec_from_file_location("papers", f"{G}/papers.py"); pm =
 PT, POWN, PREL = pm.T, pm.OWN, pm.REL
 NEW = json.load(open(f"{G}/new_models.json", encoding="utf-8"))
 BASE = json.load(open(f"{G}/base_existing.json", encoding="utf-8"))
+HF = json.load(open(f"{G}/hf.json", encoding="utf-8"))
+GH = json.load(open(f"{G}/github.json", encoding="utf-8"))
 AX = re.compile(r"arxiv\.org/(?:abs|pdf|html)/(\d{4}\.\d{4,5})")
 def axp(aid, **kw):
     return dict(k="논문", id=aid, u=f"https://arxiv.org/abs/{aid}", t=PT[aid], **kw)
@@ -108,7 +110,12 @@ for i, r in enumerate(rows, start=1):
         d["prel"] = None
     d["base"] = n["base"] if n else BASE[str(i)]
     d["est"] = est_params(d)
+    d["hf"] = HF.get(d["id"], [])
+    assert all(u.startswith("https://huggingface.co/") for u in d["hf"]), d["id"]
+    d["gh"] = GH.get(d["id"], [])
+    assert all(u.startswith("https://github.com/") for u in d["gh"]), d["id"]
     data.append(d)
+assert set(HF) | set(GH) <= {d["id"] for d in data}, (set(HF) | set(GH)) - {d["id"] for d in data}
 json.dump(data, open(OUT, "w", encoding="utf-8"), ensure_ascii=False)
 # stats
 from collections import Counter, defaultdict
@@ -121,7 +128,7 @@ for y in sorted(fc): print(y, dict(fc[y]))
 tot = Counter(d["fam"] for d in data); print("total fam", dict(tot))
 print("mem points", [(d["name"], d["pb"], d["mg"]) for d in data if d["mg"] and d["pb"] and d["mc"]])
 print("tiers", Counter(t for d in data for t in d["tiers"]))
-print("open", Counter(d["open"] for d in data))
+print("open", Counter(d["open"] for d in data), "hf", sum(1 for d in data if d["hf"]), "gh", sum(1 for d in data if d["gh"]))
 print("hk", Counter(d["hk"] for d in data))
 print("paper", Counter(d["paper"]["k"] for d in data), "rel", sum(1 for d in data if d["prel"]))
 print("base", Counter(t for d in data for t in d["base"]["types"]), Counter(d["base"].get("cat") for d in data))

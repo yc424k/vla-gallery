@@ -1,0 +1,467 @@
+{
+ "rt-1": [
+  "https://github.com/google-research/robotics_transformer"
+ ],
+ "rt-1-x": [
+  "https://github.com/google-deepmind/open_x_embodiment"
+ ],
+ "act": [
+  "https://github.com/tonyzhaozh/act"
+ ],
+ "diffusion-policy": [
+  "https://github.com/real-stanford/diffusion_policy"
+ ],
+ "diffusion-policy-2": [
+  "https://github.com/real-stanford/diffusion_policy"
+ ],
+ "gr-1": [
+  "https://github.com/bytedance/GR-1"
+ ],
+ "mobile-aloha": [
+  "https://github.com/MarkFzp/mobile-aloha",
+  "https://github.com/MarkFzp/act-plus-plus"
+ ],
+ "hpt": [
+  "https://github.com/liruiw/HPT"
+ ],
+ "baku": [
+  "https://github.com/siddhanthaldar/BAKU"
+ ],
+ "vq-bet": [
+  "https://github.com/jayLEE0301/vq_bet_official"
+ ],
+ "scaledp": [
+  "https://github.com/juruobenruo/DexVLA"
+ ],
+ "umi": [
+  "https://github.com/real-stanford/universal_manipulation_interface"
+ ],
+ "dp3": [
+  "https://github.com/YanjieZe/3D-Diffusion-Policy"
+ ],
+ "data-scaling-laws": [
+  "https://github.com/Fanqi-Lin/Data-Scaling-Laws"
+ ],
+ "rise": [
+  "https://github.com/rise-policy/RISE"
+ ],
+ "robot-utility-models": [
+  "https://github.com/haritheja-e/robot-utility-models"
+ ],
+ "egomimic": [
+  "https://github.com/SimarKareer/EgoMimic"
+ ],
+ "interact": [
+  "https://github.com/soltanilara/InterACT-LeRobot"
+ ],
+ "carp": [
+  "https://github.com/ZhefeiGong/carp"
+ ],
+ "dense-policy": [
+  "https://github.com/Selen-Suyue/DensePolicy"
+ ],
+ "chain-of-action": [
+  "https://github.com/ByteDance-Seed/Chain-of-Action"
+ ],
+ "brs": [
+  "https://github.com/behavior-robot-suite/brs-algo",
+  "https://github.com/behavior-robot-suite/brs-ctrl"
+ ],
+ "octo": [
+  "https://github.com/octo-models/octo"
+ ],
+ "openvla": [
+  "https://github.com/openvla/openvla"
+ ],
+ "openvla-oft": [
+  "https://github.com/moojink/openvla-oft"
+ ],
+ "minivla": [
+  "https://github.com/Stanford-ILIAD/openvla-mini"
+ ],
+ "tinyvla": [
+  "https://github.com/liyaxuanliyaxuan/TinyVLA"
+ ],
+ "ecot": [
+  "https://github.com/MichalZawalski/embodied-CoT"
+ ],
+ "llara": [
+  "https://github.com/LostXine/LLaRA"
+ ],
+ "3d-vla": [
+  "https://github.com/UMass-Foundation-Model/3D-VLA"
+ ],
+ "roboflamingo": [
+  "https://github.com/RoboFlamingo/RoboFlamingo"
+ ],
+ "spatialvla": [
+  "https://github.com/SpatialVLA/SpatialVLA"
+ ],
+ "lapa": [
+  "https://github.com/LatentActionPretraining/LAPA"
+ ],
+ "univla": [
+  "https://github.com/OpenDriveLab/UniVLA"
+ ],
+ "magma": [
+  "https://github.com/microsoft/Magma"
+ ],
+ "tracevla": [
+  "https://github.com/umd-huang-lab/tracevla"
+ ],
+ "nora": [
+  "https://github.com/declare-lab/nora"
+ ],
+ "molmoact": [
+  "https://github.com/allenai/MolmoAct"
+ ],
+ "worldvla": [
+  "https://github.com/alibaba-damo-academy/WorldVLA"
+ ],
+ "univla-2": [
+  "https://github.com/baaivision/UniVLA"
+ ],
+ "moto": [
+  "https://github.com/TencentARC/Moto"
+ ],
+ "villa-x": [
+  "https://github.com/microsoft/villa-x"
+ ],
+ "vla-0": [
+  "https://github.com/NVlabs/vla0"
+ ],
+ "vla-adapter": [
+  "https://github.com/OpenHelix-Team/VLA-Adapter"
+ ],
+ "robomamba": [
+  "https://github.com/lmzpai/roboMamba"
+ ],
+ "pi0": [
+  "https://github.com/Physical-Intelligence/openpi"
+ ],
+ "pi0-fast": [
+  "https://github.com/Physical-Intelligence/openpi"
+ ],
+ "pi0-5": [
+  "https://github.com/Physical-Intelligence/openpi"
+ ],
+ "pi0-5-ki": [
+  "https://github.com/Physical-Intelligence/openpi"
+ ],
+ "real-time-chunking": [
+  "https://github.com/Physical-Intelligence/real-time-chunking-kinetix"
+ ],
+ "rdt-1b": [
+  "https://github.com/thu-ml/RoboticsDiffusionTransformer"
+ ],
+ "rdt2": [
+  "https://github.com/thu-ml/RDT2"
+ ],
+ "cogact": [
+  "https://github.com/microsoft/CogACT"
+ ],
+ "divla": [
+  "https://github.com/juruobenruo/DexVLA"
+ ],
+ "dexvla": [
+  "https://github.com/juruobenruo/DexVLA"
+ ],
+ "hybridvla": [
+  "https://github.com/PKU-HMI-Lab/Hybrid-VLA"
+ ],
+ "dita": [
+  "https://github.com/RoboDita/Dita"
+ ],
+ "smolvla": [
+  "https://github.com/huggingface/lerobot"
+ ],
+ "x-vla": [
+  "https://github.com/2toinf/X-VLA"
+ ],
+ "flower": [
+  "https://github.com/intuitive-robots/flower_vla_calvin",
+  "https://github.com/intuitive-robots/flower_vla_pret"
+ ],
+ "internvla-m1": [
+  "https://github.com/InternRobotics/InternVLA-M1"
+ ],
+ "wall-oss": [
+  "https://github.com/X-Square-Robot/wall-x"
+ ],
+ "eo-1": [
+  "https://github.com/EO-Robotics/EO1"
+ ],
+ "graspvla": [
+  "https://github.com/PKU-EPIC/GraspVLA"
+ ],
+ "evo-1": [
+  "https://github.com/MINT-SJTU/Evo-1"
+ ],
+ "nora-1-5": [
+  "https://github.com/declare-lab/nora-1.5"
+ ],
+ "f1-vla": [
+  "https://github.com/InternRobotics/F1-VLA"
+ ],
+ "dexgraspvla": [
+  "https://github.com/Psi-Robot/DexGraspVLA"
+ ],
+ "gemini-robotics-on-device": [
+  "https://github.com/google-deepmind/gemini-robotics-sdk"
+ ],
+ "go-1": [
+  "https://github.com/OpenDriveLab/AgiBot-World"
+ ],
+ "genie-envisioner": [
+  "https://github.com/AgibotTech/Genie-Envisioner"
+ ],
+ "galaxea-g0": [
+  "https://github.com/OpenGalaxea/GalaxeaVLA"
+ ],
+ "gigabrain-0": [
+  "https://github.com/open-gigaai/giga-brain-0"
+ ],
+ "rynnvla-001": [
+  "https://github.com/alibaba-damo-academy/RynnVLA-001"
+ ],
+ "unifolm-wma-0": [
+  "https://github.com/unitreerobotics/unifolm-world-model-action"
+ ],
+ "v-jepa-2-ac": [
+  "https://github.com/facebookresearch/vjepa2"
+ ],
+ "gr00t-n1": [
+  "https://github.com/NVIDIA/Isaac-GR00T"
+ ],
+ "gr00t-n1-5": [
+  "https://github.com/NVIDIA/Isaac-GR00T"
+ ],
+ "gr00t-n1-6": [
+  "https://github.com/NVIDIA/Isaac-GR00T"
+ ],
+ "being-h0": [
+  "https://github.com/BeingBeyond/Being-H0"
+ ],
+ "uh-1": [
+  "https://github.com/sihengz02/UH-1"
+ ],
+ "egovla": [
+  "https://github.com/RchalYang/EgoVLA_Release"
+ ],
+ "hat": [
+  "https://github.com/RogerQi/human-policy"
+ ],
+ "humanplus-hst": [
+  "https://github.com/MarkFzp/humanplus"
+ ],
+ "humanplus-hit": [
+  "https://github.com/MarkFzp/humanplus"
+ ],
+ "beyondmimic": [
+  "https://github.com/HybridRobotics/whole_body_tracking"
+ ],
+ "omnih2o": [
+  "https://github.com/LeCAR-Lab/human2humanoid"
+ ],
+ "hover": [
+  "https://github.com/NVlabs/HOVER"
+ ],
+ "idp3": [
+  "https://github.com/YanjieZe/Improved-3D-Diffusion-Policy"
+ ],
+ "exbody2": [
+  "https://github.com/edpsw/exbody2"
+ ],
+ "twist": [
+  "https://github.com/YanjieZe/TWIST"
+ ],
+ "twist2": [
+  "https://github.com/amazon-far/TWIST2"
+ ],
+ "amo": [
+  "https://github.com/OpenTeleVision/AMO"
+ ],
+ "gmt": [
+  "https://github.com/zixuan417/humanoid-general-motion-tracking"
+ ],
+ "sonic": [
+  "https://github.com/NVlabs/GR00T-WholeBodyControl"
+ ],
+ "viral": [
+  "https://github.com/NVlabs/GR00T-VisualSim2Real"
+ ],
+ "bumblebee": [
+  "https://github.com/BeingBeyond/BumbleBee"
+ ],
+ "g0plus": [
+  "https://github.com/OpenGalaxea/GalaxeaVLA"
+ ],
+ "internvla-a1": [
+  "https://github.com/InternRobotics/InternVLA-A-series"
+ ],
+ "spirit-v1-5": [
+  "https://github.com/Spirit-AI-Team/spirit-v1.5"
+ ],
+ "being-h0-5": [
+  "https://github.com/BeingBeyond/Being-H"
+ ],
+ "cosmos-policy": [
+  "https://github.com/NVlabs/cosmos-policy"
+ ],
+ "lingbot-vla": [
+  "https://github.com/robbyant/lingbot-vla"
+ ],
+ "unifolm-vla-0": [
+  "https://github.com/unitreerobotics/unifolm-vla"
+ ],
+ "holobrain-0": [
+  "https://github.com/HorizonRobotics/RoboOrchardLab"
+ ],
+ "g0tiny": [
+  "https://github.com/OpenGalaxea/GalaxeaVLA"
+ ],
+ "xiaomi-robotics-0": [
+  "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+ ],
+ "dreamzero": [
+  "https://github.com/dreamzero0/dreamzero"
+ ],
+ "psi0": [
+  "https://github.com/physical-superintelligence-lab/Psi0"
+ ],
+ "gr00t-n1-7": [
+  "https://github.com/NVIDIA/Isaac-GR00T"
+ ],
+ "being-h0-7": [
+  "https://github.com/BeingBeyond/Being-H"
+ ],
+ "molmoact-2": [
+  "https://github.com/allenai/molmoact2"
+ ],
+ "g0-5": [
+  "https://github.com/OpenGalaxea/GalaxeaVLA"
+ ],
+ "syvla": [
+  "https://github.com/sy-vla/syvla"
+ ],
+ "openhlm": [
+  "https://github.com/OpenHLM-project/OpenHLM"
+ ],
+ "internvla-a1-5": [
+  "https://github.com/InternRobotics/InternVLA-A-series"
+ ],
+ "turbovla": [
+  "https://github.com/H-EmbodVis/TurboVLA"
+ ],
+ "gemini-robotics-on-device-2": [
+  "https://github.com/google-deepmind/gemini-robotics-sdk"
+ ],
+ "tidybot": [
+  "https://github.com/jimmyyhwu/tidybot2"
+ ],
+ "ac-dit": [
+  "https://github.com/PKU-HMI-Lab/AC-DiT"
+ ],
+ "harmonicmm": [
+  "https://github.com/RchalYang/harmonic_mobile_manipulation"
+ ],
+ "umi-on-legs": [
+  "https://github.com/real-stanford/umi-on-legs"
+ ],
+ "vbc": [
+  "https://github.com/Ericonaldo/visual_wholebody"
+ ],
+ "helpful-doggybot": [
+  "https://github.com/WooQi57/Helpful-Doggybot"
+ ],
+ "quart-online": [
+  "https://github.com/yuan48/QUART-Online"
+ ],
+ "roboduet": [
+  "https://github.com/locomanip-duet/RoboDuet",
+  "https://github.com/locomanip-duet/RoboDuet_Deployment"
+ ],
+ "omega-0": [
+  "https://github.com/gentlefress/Omega-0"
+ ],
+ "gnm": [
+  "https://github.com/robodhruv/visualnav-transformer",
+  "https://github.com/PrieureDeSion/drive-any-robot"
+ ],
+ "vint": [
+  "https://github.com/robodhruv/visualnav-transformer"
+ ],
+ "nomad": [
+  "https://github.com/robodhruv/visualnav-transformer"
+ ],
+ "crossformer": [
+  "https://github.com/rail-berkeley/crossformer"
+ ],
+ "lelan": [
+  "https://github.com/NHirose/learning-language-navigation"
+ ],
+ "citywalker": [
+  "https://github.com/ai4ce/CityWalker"
+ ],
+ "nwm": [
+  "https://github.com/facebookresearch/nwm"
+ ],
+ "x-mobility": [
+  "https://github.com/NVlabs/X-Mobility"
+ ],
+ "compass": [
+  "https://github.com/NVlabs/COMPASS"
+ ],
+ "omnivla": [
+  "https://github.com/NHirose/OmniVLA"
+ ],
+ "ring": [
+  "https://github.com/Ainaz99/OneRING"
+ ],
+ "navdp": [
+  "https://github.com/InternRobotics/NavDP"
+ ],
+ "navid": [
+  "https://github.com/jzhzhang/NaVid-VLN-CE"
+ ],
+ "uni-navid": [
+  "https://github.com/jzhzhang/Uni-NaVid"
+ ],
+ "navila": [
+  "https://github.com/AnjieCheng/NaVILA",
+  "https://github.com/yang-zj1026/legged-loco"
+ ],
+ "streamvln": [
+  "https://github.com/InternRobotics/StreamVLN"
+ ],
+ "internvla-n1": [
+  "https://github.com/InternRobotics/InternNav"
+ ],
+ "trackvla": [
+  "https://github.com/wsakobe/TrackVLA"
+ ],
+ "vln-r1": [
+  "https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1"
+ ],
+ "abot-n0": [
+  "https://github.com/amap-cvlab/ABot-Navigation"
+ ],
+ "tic-vla": [
+  "https://github.com/ucla-mobility/TIC-VLA"
+ ],
+ "futurenav": [
+  "https://github.com/linglingxiansen/FutureNav"
+ ],
+ "uni-lavira": [
+  "https://github.com/NJU-R-L-Group-Embodied-Lab/uni-lavira-code"
+ ],
+ "lightnav-0": [
+  "https://github.com/lightorigins/LightNav-0"
+ ],
+ "qwen-vla": [
+  "https://github.com/QwenLM/Qwen-VLA"
+ ],
+ "qwen-robotnav": [
+  "https://github.com/QwenLM/Qwen-RobotNav"
+ ]
+}

@@ -216,7 +216,9 @@ def build(l):
         src = m.get("src")
         if src and src != p.get("u") and "arxiv.org" not in src:
             lab = "GitHub" if "github" in src else "Hugging Face" if "huggingface.co" in src else tx("모델 카드 PDF") if src.lower().endswith(".pdf") else tx("공식 페이지")
-            acts.append('<a href="%s" rel="noopener">%s ↗</a>' % (e(src), e(lab)))
+            if src not in m["hf"] and not any(src == g or src.startswith(g + "/") for g in m["gh"]): acts.append('<a href="%s" rel="noopener">%s ↗</a>' % (e(src), e(lab)))
+        if m["gh"]: acts.append('<a href="%s" rel="noopener">GitHub ↗</a>' % e(m["gh"][0]))
+        if m["hf"]: acts.append('<a href="%s" rel="noopener">Hugging Face ↗</a>' % e(m["hf"][0]))
         h.append('<div class="acts">%s</div>\n' % "".join(acts))
         h.append("<h2>%s</h2>\n<p class=\"paper\">" % e(tx("논문")))
         if p.get("u"):
@@ -227,6 +229,12 @@ def build(l):
                 r = m["prel"]
                 h.append(" · %s<a href=\"%s\" rel=\"noopener\">%s</a>" % (e(tx("관련 ")), e(r["u"]), e(r["t"])))
         h.append("</p>\n")
+        if m["gh"]:
+            h.append('<h2>GitHub</h2>\n<p class="paper">%s</p>\n' % "<br>".join(
+                '<a href="%s" rel="noopener">%s</a>' % (e(u), e(u[19:])) for u in m["gh"]))
+        if m["hf"]:
+            h.append('<h2>Hugging Face</h2>\n<p class="paper">%s</p>\n' % "<br>".join(
+                '<a href="%s" rel="noopener">%s</a>' % (e(u), e(u.split("huggingface.co/")[1])) for u in m["hf"]))
         for sk, rs in rows(m):
             rs = [(k, v) for k, v in rs if v not in (None, "")]
             if not rs: continue

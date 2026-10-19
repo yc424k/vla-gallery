@@ -4644,5 +4644,8 @@
 "하위 정책 백본": "Low-level policy backbone",
 "하위 정책 약 30 Hz 제어 루프로 청크 실행, 상위 정책은 비동기 워커가 약 1초마다 하위 과제 갱신; 추론 GPU·지연 미기재(LIBERO 예시 서버 환경 RTX 4090, 10행동 예측 중 8 실행)": "Low-level policy executes chunks in an about 30 Hz control loop; high-level policy updates the subtask about every 1 s via an asynchronous worker; inference GPU·latency not stated (LIBERO example server environment RTX 4090, 8 of 10 predicted actions executed)",
 "현재·미래 쿼리 증류": "Current·future query distillation",
-"현재·미래(청크 길이 T 뒤) 쿼리 증류: LingBot-Depth 깊이 토큰 + DINO-Video 특징(학습 시 보조 과제, 추론에 교사 미사용)": "Current·future (chunk length T ahead) query distillation: LingBot-Depth depth tokens + DINO-Video features (auxiliary task during training; teachers not used at inference)"
+"현재·미래(청크 길이 T 뒤) 쿼리 증류: LingBot-Depth 깊이 토큰 + DINO-Video 특징(학습 시 보조 과제, 추론에 교사 미사용)": "Current·future (chunk length T ahead) query distillation: LingBot-Depth depth tokens + DINO-Video features (auxiliary task during training; teachers not used at inference)",
+"Hugging Face 공개": "On Hugging Face",
+"카드의 ‘HF’ 줄은 모델 저자·개발사가 Hugging Face에 올린 공식 가중치 저장소입니다. 제3자 파인튜닝·재업로드·양자화본과 데이터셋만 있는 저장소는 넣지 않았습니다(2026-10-17 확인). ‘가중치 공개’ 필터의 ‘Hugging Face 공개’로 모아 볼 수 있습니다.": "The ‘HF’ line on each card lists the official weight repositories that the model’s authors or developer published on Hugging Face. Third-party fine-tunes, re-uploads, quantized copies and dataset-only repositories are excluded (checked 2026-10-17). Use ‘On Hugging Face’ in the ‘Open weights’ filter to see them together.",
+"카드의 ‘GitHub’ 줄은 모델 저자·개발사가 공개한 공식 코드 저장소입니다. 제3자 재구현과 프로젝트 소개 페이지용 저장소는 넣지 않았습니다(2026-10-17 확인).": "The ‘GitHub’ line on each card lists the official code repositories released by the model’s authors or developer. Third-party reimplementations and project-website repositories are excluded (checked 2026-10-17)."
 }

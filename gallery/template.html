@@ -247,6 +247,8 @@ h1,h2,h3,.lead,.sec-lead,.factor p,.note,.sum,.eyebrow,.chart-cap,footer dd{word
 .pt{font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
 .pm{display:block;font-size:12px;color:var(--ink-2);margin-top:1px;word-break:keep-all;overflow-wrap:anywhere}
 .pm .pid{font-family:var(--font-data);font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+.hf{display:flex;flex-wrap:wrap;gap:2px 12px;font-family:var(--font-data);font-size:12px}
+.hf a{overflow-wrap:anywhere}
 .pc{display:block;white-space:nowrap;font-family:var(--font-data);font-size:12px}
 .bp{display:inline-block;font-size:11px;font-weight:600;border:1px solid var(--ink-2);border-radius:4px;padding:0 6px;line-height:1.55;vertical-align:1px;white-space:nowrap;margin:0 3px 2px 0;color:var(--ink)}
 .bp.fx{color:var(--ink-3);border-color:var(--line);font-weight:500}
@@ -632,7 +634,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
         <div class="field"><label for="f-size">총 파라미터</label><select id="f-size"><option value="">전체</option><option value="s1">1B 미만</option><option value="s2">1–4B</option><option value="s3">4–10B</option><option value="s4">10B 이상</option><option value="s0">미공개</option></select></div>
         <div class="field"><label for="f-fam">백본 LLM 계열</label><select id="f-fam"></select></div>
         <div class="field"><label for="f-hk">액션 헤드</label><select id="f-hk"></select></div>
-        <div class="field"><label for="f-open">가중치 공개</label><select id="f-open"><option value="">전체</option><option>예</option><option>일부</option><option>아니오</option><option>미확인</option></select></div>
+        <div class="field"><label for="f-open">가중치 공개</label><select id="f-open"><option value="">전체</option><option>예</option><option>일부</option><option>아니오</option><option>미확인</option><option value="hf">Hugging Face 공개</option></select></div>
         <div class="field"><label for="f-inf">추론 정보</label><select id="f-inf"><option value="">전체</option><option value="hw">장치·속도 공개</option><option value="mem">메모리 보고값 있음</option><option value="edge">임베디드·탑재 실행</option></select></div>
         <div class="field"><label for="f-rl">강화학습</label><select id="f-rl"></select></div>
         <div class="field"><label for="f-fit">내 장치 기준 <small id="f-fit-dev" style="color:var(--ink-3)"></small></label><select id="f-fit"><option value="">전체</option><option value="ok">사용 가능 모델만</option><option value="fit">메모리에 올라가는 모델</option></select></div>
@@ -669,6 +671,8 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
       <dt>구조도</dt><dd>논문·README의 서술을 블록으로 정리한 요약도입니다. 층 수·연결 방식까지 그대로 옮긴 그림은 아닙니다.</dd>
       <dt>논문</dt><dd>카드의 ‘논문’은 그 모델을 처음 소개한 논문으로, arXiv 초록 페이지로 연결하고 제목은 원문 그대로 적었습니다. 한 논문이 두 모델을 함께 소개하면(RT-1-X·RT-2-X 등) 같은 논문을 달았습니다. 블로그·모델 카드로만 공개된 모델은 ‘논문 없음’으로 두고, 공식 페이지가 전작·기반 논문을 밝힌 경우에만 ‘관련’ 논문을 함께 달았습니다. ‘보고서’는 arXiv 논문 없이 개발사가 낸 기술 보고서입니다.</dd>
       <dt>모델별 페이지</dt><dd><a href="m/">모델별 사양 페이지 목록</a></dd>
+      <dt>GitHub</dt><dd>카드의 ‘GitHub’ 줄은 모델 저자·개발사가 공개한 공식 코드 저장소입니다. 제3자 재구현과 프로젝트 소개 페이지용 저장소는 넣지 않았습니다(2026-10-17 확인).</dd>
+      <dt>Hugging Face</dt><dd>카드의 ‘HF’ 줄은 모델 저자·개발사가 Hugging Face에 올린 공식 가중치 저장소입니다. 제3자 파인튜닝·재업로드·양자화본과 데이터셋만 있는 저장소는 넣지 않았습니다(2026-10-17 확인). ‘가중치 공개’ 필터의 ‘Hugging Face 공개’로 모아 볼 수 있습니다.</dd>
       <dt>출처</dt><dd>카드의 ‘논문’과 ‘공식 페이지’ 링크가 1차 출처입니다. 전체 수치와 출처 725건은 함께 드린 엑셀 비교표에 있습니다.</dd>
     </dl>
   </div>
@@ -831,13 +835,16 @@ function paperBlock(m){
     '<span class="pm"><span class="pid">' + pidText(p) + " ↗</span>" + (p.n ? " · " + esc(p.n) : "") + "</span></span>";
   else h += '<span class="pk x">' + T('논문 없음') + '</span><span class="pv pm">' + esc(p.n) + "</span>";
   if (r) h += '<span class="pk x">' + T('관련') + '</span><span class="pv">' + ext(r.u, esc(r.t), "pt", r.t) + '<span class="pm"><span class="pid">' + pidText(r) + " ↗</span> · " + esc(r.why) + "</span></span>";
+  if (m.gh.length) h += '<span class="pk">GitHub</span><span class="pv hf">' + m.gh.map(u => ext(u, esc(u.slice(19)) + " ↗", "", u)).join("") + "</span>";
+  if (m.hf.length) h += '<span class="pk">HF</span><span class="pv hf">' + m.hf.map(u => ext(u, esc(hfName(u)) + " ↗", "", u)).join("") + "</span>";
   return h + "</div>";
 }
+const hfName = u => u.replace(/^https:\/\/huggingface\.co\//, "");
 function srcLabel(u){ return /github/.test(u) ? "GitHub" : /huggingface\.co/.test(u) ? "Hugging Face" : /\.pdf$/i.test(u) ? T("모델 카드 PDF") : T("공식 페이지"); }
 function paperBtns(m){
   const p = m.paper; let h = "";
   if (p.u) h += ext(p.u, esc(p.k) + " ↗", "mb");
-  if (m.src && m.src !== p.u && !/arxiv\.org/.test(m.src)) h += ext(m.src, srcLabel(m.src) + " ↗", "mb");
+  if (m.src && m.src !== p.u && !/arxiv\.org/.test(m.src) && !m.hf.includes(m.src) && !m.gh.some(g => m.src === g || m.src.startsWith(g + "/"))) h += ext(m.src, srcLabel(m.src) + " ↗", "mb");
   return h;
 }
 function paperText(m){
@@ -1259,7 +1266,7 @@ function match(m){
   if (st.size && sizeKey(m) !== st.size) return false;
   if (st.fam && m.fam !== st.fam) return false;
   if (st.hk && m.hk !== st.hk) return false;
-  if (st.open && m.open !== st.open) return false;
+  if (st.open && (st.open === "hf" ? !m.hf.length : m.open !== st.open)) return false;
   if (st.inf === "hw" && !hasInfer(m)) return false;
   if (st.inf === "mem" && !m.mem) return false;
   if (st.inf === "edge" && !(m.tiers || []).includes("임베디드·탑재")) return false;
@@ -1267,7 +1274,7 @@ function match(m){
   if (st.paper && (st.paper === "rel" ? !m.prel : m.paper.k !== st.paper)) return false;
   if (st.base){ if (st.base === "any"){ if (!isMobile(m)) return false; } else if (st.base === "fixed"){ if (isMobile(m)) return false; } else if (st.base.startsWith("t:")){ if (!m.base.types.includes(st.base.slice(2))) return false; } else if (m.base.cat !== st.base.slice(2)) return false; }
   if (st.fit){ const r = FIT[m.id]; if (!r) return false; if (st.fit === "ok" ? r.v !== "ok" : !(r.v === "ok" || r.v === "slow")) return false; }
-  if (st.q){ const hay = [m.name, m.org, m.llm, m.vis, m.head, m.hk, m.group, m.infer, (m.tags || []).join(" "), m.trunk, m.params, m.rlcat, m.rlwhere, m.paper.t, m.paper.id, m.prel && m.prel.t, m.prel && m.prel.id, m.base.types.join(" "), m.base.cat, m.base.how].join(" ").toLowerCase();
+  if (st.q){ const hay = [m.name, m.org, m.llm, m.vis, m.head, m.hk, m.group, m.infer, (m.tags || []).join(" "), m.trunk, m.params, m.rlcat, m.rlwhere, m.paper.t, m.paper.id, m.prel && m.prel.t, m.prel && m.prel.id, m.base.types.join(" "), m.base.cat, m.base.how, m.hf.join(" "), m.gh.join(" ")].join(" ").toLowerCase();
     if (!st.q.toLowerCase().split(/\s+/).filter(Boolean).every(t => hay.includes(t))) return false; }
   return true;
 }

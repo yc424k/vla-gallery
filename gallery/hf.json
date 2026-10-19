@@ -1,0 +1,332 @@
+{
+ "hpt": [
+  "https://huggingface.co/liruiw/hpt-base",
+  "https://huggingface.co/liruiw/hpt-small",
+  "https://huggingface.co/liruiw/hpt-large",
+  "https://huggingface.co/liruiw/hpt-xlarge"
+ ],
+ "scaledp": [
+  "https://huggingface.co/lesjie/scale_dp_h",
+  "https://huggingface.co/lesjie/scale_dp_l"
+ ],
+ "data-scaling-laws": [
+  "https://huggingface.co/Fanqi-Lin/Task-Models"
+ ],
+ "carp": [
+  "https://huggingface.co/zhefeigong/carp"
+ ],
+ "chain-of-action": [
+  "https://huggingface.co/Solomonz/Chain-of-Action"
+ ],
+ "octo": [
+  "https://huggingface.co/rail-berkeley/octo-base-1.5",
+  "https://huggingface.co/rail-berkeley/octo-small-1.5",
+  "https://huggingface.co/rail-berkeley/octo-base",
+  "https://huggingface.co/rail-berkeley/octo-small"
+ ],
+ "openvla": [
+  "https://huggingface.co/openvla/openvla-7b",
+  "https://huggingface.co/openvla/openvla-7b-prismatic"
+ ],
+ "openvla-oft": [
+  "https://huggingface.co/moojink/openvla-7b-oft-finetuned-libero-spatial-object-goal-10",
+  "https://huggingface.co/moojink/openvla-7b-oft-finetuned-libero-spatial"
+ ],
+ "minivla": [
+  "https://huggingface.co/collections/Stanford-ILIAD/minivla",
+  "https://huggingface.co/Stanford-ILIAD/minivla-vq-bridge-prismatic",
+  "https://huggingface.co/Stanford-ILIAD/minivla-libero90-prismatic"
+ ],
+ "ecot": [
+  "https://huggingface.co/Embodied-CoT/ecot-openvla-7b-bridge",
+  "https://huggingface.co/Embodied-CoT/ecot-openvla-7b-oxe"
+ ],
+ "llara": [
+  "https://huggingface.co/variante/llava-1.5-7b-llara-D-inBC-Aux-B-VIMA-80k",
+  "https://huggingface.co/variante/llava-1.5-7b-llara-D-inBC-VIMA-80k"
+ ],
+ "3d-vla": [
+  "https://huggingface.co/anyeZHY/3dvla-diffusion",
+  "https://huggingface.co/anyeZHY/3dvla-diffusion-depth",
+  "https://huggingface.co/anyeZHY/3dvla-diffusion-pointcloud"
+ ],
+ "roboflamingo": [
+  "https://huggingface.co/robovlms/RoboFlamingo"
+ ],
+ "spatialvla": [
+  "https://huggingface.co/IPEC-COMMUNITY/spatialvla-4b-224-pt",
+  "https://huggingface.co/IPEC-COMMUNITY/spatialvla-4b-mix-224-pt"
+ ],
+ "lapa": [
+  "https://huggingface.co/latent-action-pretraining/LAPA-7B-openx"
+ ],
+ "univla": [
+  "https://huggingface.co/qwbu/univla-7b",
+  "https://huggingface.co/qwbu/univla-latent-action-model"
+ ],
+ "magma": [
+  "https://huggingface.co/microsoft/Magma-8B"
+ ],
+ "tracevla": [
+  "https://huggingface.co/furonghuang-lab/tracevla_7b",
+  "https://huggingface.co/furonghuang-lab/tracevla_phi3v"
+ ],
+ "nora": [
+  "https://huggingface.co/collections/declare-lab/nora",
+  "https://huggingface.co/declare-lab/nora",
+  "https://huggingface.co/declare-lab/nora-long"
+ ],
+ "molmoact": [
+  "https://huggingface.co/collections/allenai/molmoact",
+  "https://huggingface.co/allenai/MolmoAct-7B-D-0812",
+  "https://huggingface.co/allenai/MolmoAct-7B-O-0812"
+ ],
+ "worldvla": [
+  "https://huggingface.co/Alibaba-DAMO-Academy/WorldVLA"
+ ],
+ "univla-2": [
+  "https://huggingface.co/Yuqi1997/UniVLA"
+ ],
+ "moto": [
+  "https://huggingface.co/TencentARC/Moto"
+ ],
+ "villa-x": [
+  "https://huggingface.co/microsoft/villa-x"
+ ],
+ "vla-0": [
+  "https://huggingface.co/ankgoyal/vla0-libero"
+ ],
+ "vla-adapter": [
+  "https://huggingface.co/VLA-Adapter/LIBERO-Spatial-Pro",
+  "https://huggingface.co/VLA-Adapter/LIBERO-Long-Pro",
+  "https://huggingface.co/VLA-Adapter/CALVIN-ABC-Pro",
+  "https://huggingface.co/VLA-Adapter/LIBERO-Spatial"
+ ],
+ "rdt-1b": [
+  "https://huggingface.co/robotics-diffusion-transformer/rdt-1b"
+ ],
+ "rdt2": [
+  "https://huggingface.co/robotics-diffusion-transformer/RDT2-VQ",
+  "https://huggingface.co/robotics-diffusion-transformer/RDT2-FM"
+ ],
+ "cogact": [
+  "https://huggingface.co/CogACT/CogACT-Base",
+  "https://huggingface.co/CogACT/CogACT-Small",
+  "https://huggingface.co/CogACT/CogACT-Large"
+ ],
+ "dexvla": [
+  "https://huggingface.co/lesjie/scale_dp_h",
+  "https://huggingface.co/lesjie/scale_dp_l"
+ ],
+ "smolvla": [
+  "https://huggingface.co/lerobot/smolvla_base"
+ ],
+ "x-vla": [
+  "https://huggingface.co/collections/2toINF/x-vla",
+  "https://huggingface.co/2toINF/X-VLA-Pt"
+ ],
+ "flower": [
+  "https://huggingface.co/collections/mbreuss/flower-vla",
+  "https://huggingface.co/mbreuss/flower_vla_pret"
+ ],
+ "internvla-m1": [
+  "https://huggingface.co/InternRobotics/InternVLA-M1",
+  "https://huggingface.co/InternRobotics/InternVLA-M1-Pretrain-RT-1-Bridge"
+ ],
+ "wall-oss": [
+  "https://huggingface.co/x-square-robot/wall-oss-flow",
+  "https://huggingface.co/x-square-robot/wall-oss-fast"
+ ],
+ "eo-1": [
+  "https://huggingface.co/IPEC-COMMUNITY/EO-1-3B",
+  "https://huggingface.co/collections/IPEC-COMMUNITY/eo-robotics"
+ ],
+ "graspvla": [
+  "https://huggingface.co/vegebirrd/GraspVLA"
+ ],
+ "evo-1": [
+  "https://huggingface.co/MINT-SJTU/Evo-1",
+  "https://huggingface.co/MINT-SJTU/Evo1_LIBERO",
+  "https://huggingface.co/MINT-SJTU/Evo1_MetaWorld",
+  "https://huggingface.co/MINT-SJTU/Evo1_SO100"
+ ],
+ "nora-1-5": [
+  "https://huggingface.co/declare-lab/nora-1.5"
+ ],
+ "f1-vla": [
+  "https://huggingface.co/InternRobotics/F1-VLA"
+ ],
+ "go-1": [
+  "https://huggingface.co/agibot-world/GO-1"
+ ],
+ "genie-envisioner": [
+  "https://huggingface.co/agibot-world/Genie-Envisioner-v1.0",
+  "https://huggingface.co/agibot-world/Genie-Envisioner-Sim-v2.0"
+ ],
+ "galaxea-g0": [
+  "https://huggingface.co/OpenGalaxea/G0-VLA"
+ ],
+ "gigabrain-0": [
+  "https://huggingface.co/open-gigaai/GigaBrain-0-3.5B-Base"
+ ],
+ "rynnvla-001": [
+  "https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-001-7B-Base",
+  "https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-001-7B-Trajectory"
+ ],
+ "unifolm-wma-0": [
+  "https://huggingface.co/unitreerobotics/UnifoLM-WMA-0-Base",
+  "https://huggingface.co/unitreerobotics/UnifoLM-WMA-0-Dual"
+ ],
+ "gr00t-n1": [
+  "https://huggingface.co/nvidia/GR00T-N1-2B"
+ ],
+ "gr00t-n1-5": [
+  "https://huggingface.co/nvidia/GR00T-N1.5-3B"
+ ],
+ "gr00t-n1-6": [
+  "https://huggingface.co/nvidia/GR00T-N1.6-3B"
+ ],
+ "being-h0": [
+  "https://huggingface.co/collections/BeingBeyond/being-h0",
+  "https://huggingface.co/BeingBeyond/Being-H0-8B-2508",
+  "https://huggingface.co/BeingBeyond/Being-H0"
+ ],
+ "uh-1": [
+  "https://huggingface.co/USC-PSI-Lab/UH-1"
+ ],
+ "egovla": [
+  "https://huggingface.co/rchal97/egovla",
+  "https://huggingface.co/rchal97/ego_vla_human_video_pretrained",
+  "https://huggingface.co/rchal97/egovla_base_vlm"
+ ],
+ "sonic": [
+  "https://huggingface.co/nvidia/GEAR-SONIC"
+ ],
+ "g0plus": [
+  "https://huggingface.co/OpenGalaxea/G0-VLA"
+ ],
+ "internvla-a1": [
+  "https://huggingface.co/InternRobotics/InternVLA-A1-3B",
+  "https://huggingface.co/InternRobotics/InternVLA-A1-3B-RoboTwin"
+ ],
+ "spirit-v1-5": [
+  "https://huggingface.co/Spirit-AI-robotics/Spirit-v1.5"
+ ],
+ "being-h0-5": [
+  "https://huggingface.co/collections/BeingBeyond/being-h05",
+  "https://huggingface.co/BeingBeyond/Being-H05-2B"
+ ],
+ "cosmos-policy": [
+  "https://huggingface.co/collections/nvidia/cosmos-policy",
+  "https://huggingface.co/nvidia/Cosmos-Policy-LIBERO-Predict2-2B",
+  "https://huggingface.co/nvidia/Cosmos-Policy-ALOHA-Predict2-2B"
+ ],
+ "lingbot-vla": [
+  "https://huggingface.co/robbyant/lingbot-vla-4b",
+  "https://huggingface.co/robbyant/lingbot-vla-4b-depth"
+ ],
+ "unifolm-vla-0": [
+  "https://huggingface.co/unitreerobotics/UnifoLM-VLA-Base",
+  "https://huggingface.co/unitreerobotics/UnifoLM-VLM-Base",
+  "https://huggingface.co/unitreerobotics/UnifoLM-VLA-Libero"
+ ],
+ "holobrain-0": [
+  "https://huggingface.co/HorizonRobotics/HoloBrain_v0.0_Qwen",
+  "https://huggingface.co/HorizonRobotics/HoloBrain_v0.0_GD"
+ ],
+ "g0tiny": [
+  "https://huggingface.co/OpenGalaxea/G0-VLA"
+ ],
+ "xiaomi-robotics-0": [
+  "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-0-Pretrain",
+  "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-0"
+ ],
+ "dreamzero": [
+  "https://huggingface.co/GEAR-Dreams/DreamZero-DROID",
+  "https://huggingface.co/GEAR-Dreams/DreamZero-AgiBot"
+ ],
+ "psi0": [
+  "https://huggingface.co/USC-PSI-Lab/psi-model"
+ ],
+ "gr00t-n1-7": [
+  "https://huggingface.co/nvidia/GR00T-N1.7-3B"
+ ],
+ "molmoact-2": [
+  "https://huggingface.co/collections/allenai/molmoact2-models",
+  "https://huggingface.co/allenai/MolmoAct2",
+  "https://huggingface.co/allenai/MolmoAct2-Think"
+ ],
+ "g0-5": [
+  "https://huggingface.co/OpenGalaxea/G05"
+ ],
+ "syvla": [
+  "https://huggingface.co/Zuyu3/pretrained_syvla"
+ ],
+ "openhlm": [
+  "https://huggingface.co/OpenHLM/OpenHLM-ckpts"
+ ],
+ "internvla-a1-5": [
+  "https://huggingface.co/collections/InternRobotics/internvla-a15",
+  "https://huggingface.co/InternRobotics/InternVLA-A1.5-base"
+ ],
+ "turbovla": [
+  "https://huggingface.co/H-EmbodVis/TurboVLA"
+ ],
+ "quart-online": [
+  "https://huggingface.co/Tong314/Quart-Online"
+ ],
+ "omega-0": [
+  "https://huggingface.co/keycharon/Omega-zero"
+ ],
+ "crossformer": [
+  "https://huggingface.co/rail-berkeley/crossformer"
+ ],
+ "citywalker": [
+  "https://huggingface.co/ai4ce/citywalker"
+ ],
+ "nwm": [
+  "https://huggingface.co/facebook/nwm"
+ ],
+ "x-mobility": [
+  "https://huggingface.co/nvidia/X-Mobility"
+ ],
+ "compass": [
+  "https://huggingface.co/nvidia/COMPASS"
+ ],
+ "omnivla": [
+  "https://huggingface.co/NHirose/omnivla-original",
+  "https://huggingface.co/NHirose/omnivla-edge"
+ ],
+ "ring": [
+  "https://huggingface.co/AinazEftekhar/OneRING"
+ ],
+ "navid": [
+  "https://huggingface.co/Jzzhang/NaVid"
+ ],
+ "uni-navid": [
+  "https://huggingface.co/Jzzhang/Uni-NaVid"
+ ],
+ "navila": [
+  "https://huggingface.co/a8cheng/navila-llama3-8b-8f",
+  "https://huggingface.co/a8cheng/navila-siglip-llama3-8b-v1.5-pretrain"
+ ],
+ "streamvln": [
+  "https://huggingface.co/mengwei0427/StreamVLN_Video_qwen_1_5_r2r_rxr_envdrop_scalevln_v1_3",
+  "https://huggingface.co/mengwei0427/StreamVLN_Video_qwen_1_5_r2r_rxr_envdrop_scalevln"
+ ],
+ "internvla-n1": [
+  "https://huggingface.co/InternRobotics/InternVLA-N1-DualVLN",
+  "https://huggingface.co/InternRobotics/InternVLA-N1-w-NavDP",
+  "https://huggingface.co/InternRobotics/InternVLA-N1-System2",
+  "https://huggingface.co/InternRobotics/InternVLA-N1-Preview"
+ ],
+ "tic-vla": [
+  "https://huggingface.co/datasets/handsomeYun/TIC-VLA"
+ ],
+ "futurenav": [
+  "https://huggingface.co/llxs/FutureNav"
+ ],
+ "lightnav-0": [
+  "https://huggingface.co/LightOriginsHQ/LightNav-0"
+ ]
+}
