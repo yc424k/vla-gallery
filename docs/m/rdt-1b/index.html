@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RDT-1B — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery</title>
+<title>RDT-1B — Architecture, Backbone LLM, Training &amp; Inference Memory | Robot VLA Gallery</title>
 <meta name="description" content="RDT-1B (Tsinghua University (thu-ml), 2024-10) — Diffusion policy trained jointly on 46 heterogeneous robot datasets through a unified action space.">
 <link rel="canonical" href="https://vla-gallery.is-a.dev/m/rdt-1b/">
 <link rel="alternate" hreflang="en" href="https://vla-gallery.is-a.dev/m/rdt-1b/">
@@ -11,8 +11,8 @@
 <link rel="alternate" hreflang="ja" href="https://vla-gallery.is-a.dev/ja/m/rdt-1b/">
 <link rel="alternate" hreflang="zh-Hans" href="https://vla-gallery.is-a.dev/zh/m/rdt-1b/">
 <link rel="alternate" hreflang="x-default" href="https://vla-gallery.is-a.dev/m/rdt-1b/">
-<meta property="og:type" content="article"><meta property="og:site_name" content="VLA Gallery">
-<meta property="og:title" content="RDT-1B — Architecture, Backbone LLM, Training &amp; Inference Memory | VLA Gallery"><meta property="og:description" content="RDT-1B (Tsinghua University (thu-ml), 2024-10) — Diffusion policy trained jointly on 46 heterogeneous robot datasets through a unified action space.">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Robot VLA Gallery">
+<meta property="og:title" content="RDT-1B — Architecture, Backbone LLM, Training &amp; Inference Memory | Robot VLA Gallery"><meta property="og:description" content="RDT-1B (Tsinghua University (thu-ml), 2024-10) — Diffusion policy trained jointly on 46 heterogeneous robot datasets through a unified action space.">
 <meta property="og:url" content="https://vla-gallery.is-a.dev/m/rdt-1b/"><meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://vla-gallery.is-a.dev/assets/og-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,12 +20,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/model.css">
 <script>(function(){try{var t=localStorage.getItem("vla-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RDT-1B — Architecture, Backbone LLM, Training & Inference Memory", "description": "RDT-1B (Tsinghua University (thu-ml), 2024-10) — Diffusion policy trained jointly on 46 heterogeneous robot datasets through a unified action space.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/rdt-1b/", "dateModified": "2026-10-19", "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "RDT-1B", "creator": {"@type": "Organization", "name": "Tsinghua University (thu-ml)"}}, "citation": {"@type": "ScholarlyArticle", "name": "RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation", "url": "https://arxiv.org/abs/2410.07864"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "RDT-1B", "item": "https://vla-gallery.is-a.dev/m/rdt-1b/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "RDT-1B — Architecture, Backbone LLM, Training & Inference Memory", "description": "RDT-1B (Tsinghua University (thu-ml), 2024-10) — Diffusion policy trained jointly on 46 heterogeneous robot datasets through a unified action space.", "inLanguage": "en", "url": "https://vla-gallery.is-a.dev/m/rdt-1b/", "dateModified": "2026-10-20", "isPartOf": {"@type": "WebSite", "name": "Robot VLA Gallery", "url": "https://vla-gallery.is-a.dev/"}, "about": {"@type": "SoftwareSourceCode", "name": "RDT-1B", "creator": {"@type": "Organization", "name": "Tsinghua University (thu-ml)"}}, "citation": {"@type": "ScholarlyArticle", "name": "RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation", "url": "https://arxiv.org/abs/2410.07864"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Robot VLA Gallery", "item": "https://vla-gallery.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "All models", "item": "https://vla-gallery.is-a.dev/m/"}, {"@type": "ListItem", "position": 3, "name": "RDT-1B", "item": "https://vla-gallery.is-a.dev/m/rdt-1b/"}]}]}</script>
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="brand" href="/">VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rdt-1b/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rdt-1b/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rdt-1b/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rdt-1b/" hreflang="zh-Hans">简体中文</a></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="/">Robot VLA Gallery</a><a href="/m/">All models</a><a href="/#gallery">Gallery</a><nav class="langs" aria-label="Language"><a href="https://vla-gallery.is-a.dev/m/rdt-1b/" hreflang="en" aria-current="true">English</a><a href="https://vla-gallery.is-a.dev/ko/m/rdt-1b/" hreflang="ko">한국어</a><a href="https://vla-gallery.is-a.dev/ja/m/rdt-1b/" hreflang="ja">日本語</a><a href="https://vla-gallery.is-a.dev/zh/m/rdt-1b/" hreflang="zh-Hans">简体中文</a></nav></div></header>
 <main class="wrap">
-<p class="crumb"><a href="/">VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
+<p class="crumb"><a href="/">Robot VLA Gallery</a> / <a href="/m/">All models</a> / Flow·Diffusion VLA</p>
 <h1>RDT-1B</h1>
 <p class="by">Tsinghua University (thu-ml) · 2024-10</p>
 <p class="kv"><span>VLA</span><span>Flow·Diffusion VLA</span><span>1.2B</span><span>diffusion</span></p>
@@ -52,6 +52,6 @@
 <section class="rel"><h2>Other models in this category</h2><ul><li><a href="/m/rdt2/">RDT2</a><small>2025-09</small></li><li><a href="/m/cogact/">CogACT</a><small>2024-11</small></li><li><a href="/m/divla/">DiVLA (Diffusion-VLA)</a><small>2024-12</small></li><li><a href="/m/dexvla/">DexVLA</a><small>2025-02</small></li><li><a href="/m/hybridvla/">HybridVLA</a><small>2025-03</small></li><li><a href="/m/dita/">Dita</a><small>2024-10†</small></li><li><a href="/m/smolvla/">SmolVLA</a><small>2025-06</small></li><li><a href="/m/x-vla/">X-VLA</a><small>2025-10</small></li><li><a href="/m/flower/">FLOWER</a><small>2025-09</small></li><li><a href="/m/internvla-m1/">InternVLA-M1</a><small>2025-10</small></li><li><a href="/m/wall-oss/">WALL-OSS</a><small>2025-09</small></li><li><a href="/m/eo-1/">EO-1</a><small>2025-08</small></li><li><a href="/m/graspvla/">GraspVLA</a><small>2025-05</small></li><li><a href="/m/evo-1/">Evo-1</a><small>2025-11†</small></li><li><a href="/m/nora-1-5/">NORA-1.5</a><small>2025-11</small></li><li><a href="/m/f1-vla/">F1-VLA</a><small>2025-09</small></li><li><a href="/m/dexgraspvla/">DexGraspVLA</a><small>2025-02</small></li></ul></section>
 <nav class="pn"><a href="/m/rtc/"><small>← Previous</small>학습시 RTC</a><a class="nx" href="/m/rdt2/"><small>Next →</small>RDT2</a></nav>
 </main>
-<footer><div class="wrap">VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-19</div></footer>
+<footer><div class="wrap">Robot VLA Gallery · <a href="/">vla-gallery.is-a.dev</a> · 2026-10-20</div></footer>
 </body>
 </html>

@@ -1,4 +1,6 @@
-# 로봇 VLA 아키텍처 갤러리
+# 로봇 VLA 아키텍처 갤러리 (Robot VLA Gallery)
+
+**Robot Vision-Language-Action (VLA) model comparison** — 215 robot VLA/VA models (2022–2026) with architecture diagrams, backbone LLMs, action heads, training GPUs and inference memory: https://vla-gallery.is-a.dev/
 
 2022~2026년 로봇 VA·VLA 모델 215개를 구조도 카드로 비교하는 정적 웹페이지와 엑셀 비교표입니다. 매니퓰레이션, 휴머노이드 전신 제어, 모바일 매니퓰레이션, 내비게이션 모델을 다룹니다.
 

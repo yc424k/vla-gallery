@@ -176,7 +176,6 @@
 "200,000 스텝, global 배치 256, bf16, cosine lr 1e-4→2.5e-6": "200,000 steps, global batch 256, bf16, cosine lr 1e-4→2.5e-6",
 "200K iter, global 배치 1024, bf16, lr 1e-4, wd 0.01": "200K iter, global batch 1024, bf16, lr 1e-4, wd 0.01",
 "200K steps, 글로벌 배치 128, 최대 시퀀스 4200; Molmo2-ER 1단계 20K + 1.5K steps": "200K steps, global batch 128, max sequence 4200; Molmo2-ER stage 1 20K + 1.5K steps",
-"2022~2026 로봇 VA·VLA 모델 215개의 구조도, 논문 링크, 백본 LLM, 학습 GPU·시간, 데이터, 추론 자원, 강화학습 사용처, 모바일 베이스 제어 방식을 카드로 비교하는 갤러리": "A gallery comparing 215 robot VA and VLA models from 2022–2026 as cards: architecture diagrams, paper links, backbone LLMs, training GPUs and time, data, inference resources, reinforcement learning use, and mobile base control methods",
 "2023 이전": "2023 and earlier",
 "2023-11 발표로 2024~2025 범위 밖이지만 배정 모델이라 포함했다. 이산 토큰이 아닌 연속 회귀 VLA이며, 파라미터(B)는 최대 변형 9B 기준이다.": "Announced 2023-11, outside the 2024~2025 range, but included as an assigned model. A continuous regression VLA rather than discrete tokens; parameters (B) are based on the largest 9B variant.",
 "2024 이전 참고 기준(anchor). 과제별 별도 정책이며 언어·목표 입력 없음. 시각 인코더는 ViT(DINOv2)지만 정책 트렁크가 GRU라 비트랜스포머로 분류. 실로봇 문손잡이 파지는 휴리스틱 보조. 코드 공개(GitHub), 체크포인트 미제공. IROS 2024 Best Paper on Mobile Manipulation.": "Pre-2024 reference baseline (anchor). A separate policy per task with no language or goal input. The vision encoder is a ViT (DINOv2) but the policy trunk is a GRU, so classified as non-Transformer. Real-robot door handle grasping is heuristic-assisted. Code released (GitHub), no checkpoints. IROS 2024 Best Paper on Mobile Manipulation.",
@@ -1767,7 +1766,7 @@
 "VLA 2 Hz · 하위 컨트롤러 10 Hz 이상": "VLA 2 Hz · low-level controller ≥ 10 Hz",
 "VLA 20,000 스텝 · 배치 1,024; LAM 30,000 스텝 · 배치 256": "VLA 20,000 steps · batch 1,024; LAM 30,000 steps · batch 256",
 "VLA RL 사후학습": "VLA RL post-training",
-"VLA 갤러리": "VLA Gallery",
+"로봇 VLA 갤러리": "Robot VLA Gallery",
 "VLA 별도 미세조정 없음; RL 보행 정책은 Isaac Lab PPO, RTX 4090 1장에서 60K FPS 이상 처리량 (학습 시간 미공개)": "No separate VLA fine-tuning; RL locomotion policy via Isaac Lab PPO, 60K+ FPS throughput on 1 RTX 4090 (training time not disclosed)",
 "VLA 아래에 RL로 학습한 제어기를 둠": "RL-trained controller under the VLA",
 "VLA 약 1 FPS (RTX 4090)": "VLA about 1 FPS (RTX 4090)",
@@ -2457,8 +2456,6 @@
 "로봇 1.6M 궤적(223.5M 프레임) + 사람 영상 3.6M 클립": "Robot 1.6M trajectories (223.5M frames) + human video 3.6M clips",
 "로봇 6종 3,600회 평가(RT-1-X와 공동); 창발 스킬 RT-2 대비 약 3배": "3,600 evaluations on 6 robot types (jointly with RT-1-X); emergent skills about 3× RT-2",
 "로봇 6종 3,600회 평가; 소규모 데이터 도메인 평균 성공률이 원 방법·RT-1보다 50% 높음": "3,600 evaluations on 6 robot types; average success in small-data domains 50% higher than the original methods·RT-1",
-"로봇 VA·VLA 모델 비교표 · 2026년 10월 14일 기준": "Robot VA/VLA model comparison · as of October 14, 2026",
-"로봇 VLA 모델 비교 갤러리 · Vision-Language-Action 215종 | VLA Gallery": "Robot VLA Model Comparison Gallery · 215 Vision-Language-Action models | VLA Gallery",
 "로봇 VLA 아키텍처 갤러리": "Robot VLA Architecture Gallery",
 "로봇 궤적 약 200M 타임스텝; VL 샘플 80M 이상; 사내 과제 데이터 Lego 338시간·수건 400시간": "Robot trajectories about 200M timesteps; VL samples 80M+; in-house task data Lego 338 hours·towel 400 hours",
 "로봇 궤적, 웹 비전-언어 데이터, VR 사람 궤적을 함께 학습해 새 물체·지시로 일반화한다.": "Co-trains on robot trajectories, web vision-language data and VR human trajectories to generalize to new objects·instructions.",
@@ -4830,5 +4827,8 @@
 "총 파라미터·LLM 크기를 밝히지 않았거나, 백본과 분리된 flow·diffusion 액션 헤드가 없거나 헤드 크기를 알 수 없는 모델입니다.": "These models disclose neither total parameters nor LLM size, have no flow/diffusion action head separate from the backbone, or have an unknown head size.",
 "총 파라미터와 LLM 크기를 모두 밝히지 않은 모델입니다(산업계 모델·전신 제어기 다수).": "These models disclose neither total parameters nor LLM size (mostly industry models and whole-body controllers).",
 "추정 방법: GPU당 메모리는 전체 파인튜닝이 파라미터 1B당 16 GB(bf16 가중치·기울기, fp32 사본, Adam 상태 2개)를 GPU 수로 나눈 값, LoRA는 bf16 가중치 2 GB/B와 어댑터(파라미터의 1%) 상태, QLoRA는 4비트 가중치 0.55 GB/B와 어댑터 상태, 액션 헤드만은 동결 백본 bf16과 헤드 16 GB/B입니다. 여기에 활성값을 배치 ‘작게’는 2 GB + 1.5 GB/B, ‘보통’은 4 GB + 5 GB/B로 더했고, 이 값은 openpi π0(LoRA 22.5 GB·전체 70 GB 이상), OpenVLA LoRA(배치 1 약 27 GB), GO-1(전체 약 70 GB) 보고값에 맞춘 것입니다. 시간은 샘플당 연산을 전체 6 × 파라미터 × 토큰, LoRA 4 ×(QLoRA는 1.3배), 동결 백본 2 ×로 잡고 BF16 연산의 35%(Jetson은 23%), GPU 여러 장은 90% 효율로 나눴습니다. 영상 world model은 시간을 계산하지 않습니다. 이미지 수·해상도·청크 길이·DeepSpeed offload 여부에 따라 실제 값은 2배 넘게 달라질 수 있으니 ‘공개된 파인튜닝 자원’ 열의 원문 값을 함께 보세요.": "Method: memory per GPU is 16 GB per 1B parameters for full fine-tuning (bf16 weights and gradients, an fp32 copy, two Adam states) divided by the GPU count; for LoRA, 2 GB/B of bf16 weights plus adapter (1% of parameters) states; for QLoRA, 0.55 GB/B of 4-bit weights plus adapter states; for action head only, the frozen bf16 backbone plus 16 GB/B for the head. Activations are added as 2 GB + 1.5 GB/B for a ‘Small’ batch and 4 GB + 5 GB/B for ‘Normal’, fitted to reported values from openpi π0 (LoRA 22.5 GB, full 70 GB or more), OpenVLA LoRA (about 27 GB at batch 1), and GO-1 (full about 70 GB). Time takes per-sample compute as 6 × parameters × tokens for full training, 4 × for LoRA (1.3× for QLoRA), and 2 × for a frozen backbone, divided by 35% of BF16 compute (23% on Jetson) and 90% efficiency across multiple GPUs. Time is not calculated for video world models. Actual values can differ by more than 2× with image count, resolution, chunk length, and DeepSpeed offload, so check the original figures in the ‘Disclosed fine-tuning resources’ column.",
-"내 GPU로 파인튜닝할 수 있는 모델과 예상 시간": "Models I can fine-tune on my GPU, with estimated time"
+"내 GPU로 파인튜닝할 수 있는 모델과 예상 시간": "Models I can fine-tune on my GPU, with estimated time",
+"로봇 VLA 모델 비교 · Vision-Language-Action 모델 215종 | Robot VLA Gallery": "Robot VLA Models Compared · 215 Vision-Language-Action Models | Robot VLA Gallery",
+"로봇 Vision-Language-Action(VLA) 모델 비교표 · 2026년 10월 14일 기준": "Robot vision-language-action (VLA) model comparison · as of October 14, 2026",
+"2022~2026 로봇 VLA(Vision-Language-Action)·VA 모델 215개의 구조도, 논문 링크, 백본 LLM, 학습 GPU·시간, 데이터, 추론 자원, 강화학습 사용처, 모바일 베이스 제어 방식을 카드로 비교하는 갤러리": "A gallery comparing 215 robot vision-language-action (VLA) and VA models from 2022–2026 as cards: architecture diagrams, paper links, backbone LLMs, training GPUs and time, data, inference resources, reinforcement learning use, and mobile base control methods"
 }

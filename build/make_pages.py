@@ -21,7 +21,7 @@ TPL = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "galle
 PL = {
     "suffix": ("구조·백본 LLM·학습·추론 메모리", "Architecture, Backbone LLM, Training & Inference Memory",
                "構造・バックボーンLLM・学習・推論メモリ", "架构、骨干LLM、训练与推理内存"),
-    "home": ("VLA 갤러리", "VLA Gallery", "VLA ギャラリー", "VLA 图库"),
+    "home": ("로봇 VLA 갤러리", "Robot VLA Gallery", "ロボット VLA ギャラリー", "机器人 VLA 图库"),
     "list": ("모델 목록", "All models", "モデル一覧", "模型列表"),
     "view": ("갤러리에서 구조도 보기", "View architecture diagram in the gallery", "ギャラリーで構造図を見る", "在图库中查看架构图"),
     "same": ("같은 분류의 모델", "Other models in this category", "同じ分類のモデル", "同类其他模型"),
@@ -33,7 +33,7 @@ PL = {
     "s_inf": ("추론", "Inference", "推論", "推理"),
     "s_rl": ("강화학습 · 베이스", "Reinforcement learning & base", "強化学習・ベース", "强化学习与底盘"),
     "s_note": ("비고", "Notes", "備考", "备注"),
-    "list_title": ("로봇 VA·VLA 모델 {0}개 목록", "{0} Robot VA/VLA Models", "ロボット VA・VLA モデル {0} 件一覧", "{0} 个机器人 VA/VLA 模型列表"),
+    "list_title": ("로봇 VLA(Vision-Language-Action)·VA 모델 {0}개 목록", "{0} Robot Vision-Language-Action (VLA) Models", "ロボット VLA（Vision-Language-Action）・VA モデル {0} 件一覧", "{0} 个机器人 VLA（Vision-Language-Action）/VA 模型列表"),
     "list_desc": ("2022~2026 로봇 VA·VLA 모델 {0}개의 개별 사양 페이지. 백본 LLM, 액션 헤드, 학습 GPU·데이터, 추론 장치·메모리, 강화학습, 베이스 제어를 모델마다 정리했다.",
                   "Spec pages for {0} robot VA/VLA models (2022–2026): backbone LLM, action head, training GPUs and data, inference device and memory, RL usage and base control.",
                   "2022〜2026年のロボット VA・VLA モデル {0} 件の個別仕様ページ。バックボーンLLM、アクションヘッド、学習GPU・データ、推論デバイス・メモリ、強化学習、ベース制御をまとめた。",
@@ -165,7 +165,7 @@ def build(l):
                 '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
                 "<title>%s</title>\n<meta name=\"description\" content=\"%s\">\n"
                 '<link rel="canonical" href="%s">\n%s'
-                '<meta property="og:type" content="%s"><meta property="og:site_name" content="VLA Gallery">\n'
+                '<meta property="og:type" content="%s"><meta property="og:site_name" content="Robot VLA Gallery">\n'
                 '<meta property="og:title" content="%s"><meta property="og:description" content="%s">\n'
                 '<meta property="og:url" content="%s"><meta property="og:locale" content="%s">\n'
                 '<meta property="og:image" content="%sassets/og-%s.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n'
@@ -182,7 +182,7 @@ def build(l):
                 '<a href="%s#gallery">%s</a><nav class="langs" aria-label="Language">%s</nav></div></header>\n') % (
             base_of(l), e(P("home")), base_of(l), e(P("list")), base_of(l), e(tx("갤러리")), langs)
 
-    foot = '<footer><div class="wrap">VLA Gallery · <a href="%s">%s</a> · %s</div></footer>\n</body>\n</html>\n' % (
+    foot = '<footer><div class="wrap">Robot VLA Gallery · <a href="%s">%s</a> · %s</div></footer>\n</body>\n</html>\n' % (
         base_of(l), SITE.replace("https://", "").rstrip("/"), today)
 
     out_root = os.path.join(docs, "m") if l == DEFAULT else os.path.join(docs, l, "m")
@@ -194,14 +194,14 @@ def build(l):
     for i, m in enumerate(D):
         nm, full = short(m["name"])
         summ = tx(m.get("summary") or m.get("feature") or "")
-        title = "%s — %s | VLA Gallery" % (nm, P("suffix"))
+        title = "%s — %s | Robot VLA Gallery" % (nm, P("suffix"))
         desc = clip("%s (%s, %s) — %s" % (nm, m["org"].split(";")[0].split("·")[0].strip(), m["date"], summ))
         url = page_url(l, m["id"])
         alt_urls = {x: page_url(x, m["id"]) for x in LANGS}
         p = m["paper"]
         ld = {"@context": "https://schema.org", "@graph": [
             {"@type": "TechArticle", "headline": "%s — %s" % (nm, P("suffix")), "description": desc, "inLanguage": l,
-             "url": url, "dateModified": today, "isPartOf": {"@type": "WebSite", "name": "VLA Gallery", "url": SITE},
+             "url": url, "dateModified": today, "isPartOf": {"@type": "WebSite", "name": "Robot VLA Gallery", "url": SITE},
              "about": {"@type": "SoftwareSourceCode" if m["open"] == "예" else "CreativeWork", "name": m["name"],
                        "creator": {"@type": "Organization", "name": m["org"]}},
              **({"citation": {"@type": "ScholarlyArticle", "name": p["t"], "url": p["u"]}} if p.get("u") else {})},
@@ -258,7 +258,7 @@ def build(l):
         open(os.path.join(d, "index.html"), "w", encoding="utf-8").write("".join(h))
 
     # 모델 목록
-    title = P("list_title", len(D)) + " | VLA Gallery"
+    title = P("list_title", len(D)) + " | Robot VLA Gallery"
     desc = P("list_desc", len(D))
     alt_urls = {x: page_url(x) for x in LANGS}
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": P("list_title", len(D)), "description": desc,

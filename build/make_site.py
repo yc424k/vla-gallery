@@ -10,6 +10,10 @@ LOCALE = {"ko": "ko_KR", "en": "en_US", "ja": "ja_JP", "zh": "zh_CN"}
 DEFAULT = "en"  # 사이트 맨 위(/)에 놓는 기본 언어. 나머지는 /ko/ 같은 하위 폴더
 url_of = lambda l: SITE if l == DEFAULT else SITE + l + "/"
 URL = url_of(lang)
+BRAND = "Robot VLA Gallery"  # 전파망원경 VLA(Very Large Array)와 헷갈리지 않게 "Robot"을 붙인다
+# 검색엔진이 주제를 알아보게 위키백과 항목과 이어 준다
+ABOUT = {"@type": "Thing", "name": "Vision-language-action model", "alternateName": "VLA model",
+         "sameAs": "https://en.wikipedia.org/wiki/Vision-language-action_model"}
 OG = SITE + "assets/og-%s.png" % lang  # 링크 미리보기 이미지(build/make_og.py가 찍는다)
 s = open(src, encoding="utf-8").read()
 # 본문 시작: 첫 화면 위 진행 막대·메뉴가 있으면 거기서, 없으면 히어로에서 자른다
@@ -23,18 +27,19 @@ title = s[s.index("<title>") + 7:s.index("</title>")]
 desc_at = s.index('<meta name="description" content="') + 34
 desc = H.unescape(s[desc_at:s.index('"', desc_at)])
 today = datetime.date.today().isoformat()
-KW_KO = ["VLA", "Vision-Language-Action", "로봇 파운데이션 모델", "robot foundation model",
+KW_KO = ["VLA", "Vision-Language-Action", "VLA 모델", "로봇 VLA", "VLA 모델 비교", "로봇 파운데이션 모델", "robot foundation model",
          "로봇 매니퓰레이션", "휴머노이드", "모바일 매니퓰레이션", "로봇 내비게이션",
          "액션 헤드", "flow matching", "diffusion policy", "추론 메모리"]
-KW_EN = ["VLA", "Vision-Language-Action", "robot foundation model", "robot manipulation", "humanoid",
+KW_EN = ["VLA", "Vision-Language-Action", "VLA model", "robot VLA", "VLA model comparison", "embodied AI", "robot foundation model", "robot manipulation", "humanoid",
          "mobile manipulation", "robot navigation", "action head", "flow matching", "diffusion policy", "inference memory"]
 ld = {
     "@context": "https://schema.org",
     "@graph": [
-        {"@type": "WebSite", "name": title, "alternateName": "VLA Gallery", "url": URL, "inLanguage": lang},
+        {"@type": "WebSite", "name": title, "alternateName": [BRAND, "Robot VLA Model Gallery", "Vision-Language-Action Model Gallery"],
+         "url": URL, "inLanguage": lang, "about": ABOUT},
         {"@type": "Dataset", "name": "로봇 VA·VLA 모델 비교표 (Robot Vision-Language-Action model comparison)" if lang == "ko" else title,
          "description": desc, "url": URL, "inLanguage": lang, "dateModified": today,
-         "temporalCoverage": "2022/2026", "isAccessibleForFree": True,
+         "temporalCoverage": "2022/2026", "about": ABOUT, "isAccessibleForFree": True,
          "keywords": KW_KO if lang == "ko" else KW_EN},
     ],
 }
@@ -44,7 +49,7 @@ seo = ("<link rel=\"canonical\" href=\"%s\">\n" % URL + alts
        + meta("name", "google-site-verification", "Sdh4f6GJQFA6JrVspVS-Lcn_mAKMHdw-4H8wNxJZg2A")
        + meta("name", "robots", "index, follow, max-image-preview:large")
        + meta("name", "keywords", ", ".join(KW_KO + ["OpenVLA", "pi0", "GR00T", "RT-2"]) if lang == "ko" else ", ".join(KW_EN + ["OpenVLA", "pi0", "GR00T", "RT-2"]))
-       + meta("property", "og:type", "website") + meta("property", "og:site_name", "VLA Gallery")
+       + meta("property", "og:type", "website") + meta("property", "og:site_name", BRAND)
        + meta("property", "og:title", title) + meta("property", "og:description", desc)
        + meta("property", "og:url", URL) + meta("property", "og:locale", LOCALE[lang])
        + "".join(meta("property", "og:locale:alternate", LOCALE[l]) for l in LANGS if l != lang)
