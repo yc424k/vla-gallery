@@ -1,0 +1,162 @@
+{
+ "minivla": {
+  "url": "https://ai.stanford.edu/blog/minivla/",
+  "title": "",
+  "len": 0
+ },
+ "pi0-6": {
+  "url": "https://website.pi-asset.com/pi06star/PI06_model_card.pdf",
+  "title": "",
+  "len": 705723
+ },
+ "gemini-robotics-on-device": {
+  "url": "https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/",
+  "title": "Gemini Robotics On-Device brings AI to local robotic devices — Google DeepMind",
+  "len": 166623
+ },
+ "rfm-1": {
+  "url": "https://covariant.ai/insights/introducing-rfm-1-giving-robots-human-like-reasoning-capabilities/",
+  "title": "Page not found",
+  "len": 3437
+ },
+ "skild-brain": {
+  "url": "https://www.skild.ai/blogs/building-the-general-purpose-robotic-brain",
+  "title": "Building the general-purpose robotic brain",
+  "len": 34302
+ },
+ "dyna-1": {
+  "url": "https://www.dyna.co/research/dyna-1",
+  "title": "Dynamism v1 (Dyna-1) Model: A Breakthrough in Performance and Production-Ready Embodied AI — DYNA",
+  "len": 293339
+ },
+ "gen-0": {
+  "url": "https://generalistai.com/blog/nov-04-2025-GEN-0",
+  "title": "GEN-0 - Generalist AI",
+  "len": 84786
+ },
+ "unifolm-wma-0": {
+  "url": "https://github.com/unitreerobotics/unifolm-world-model-action",
+  "title": "",
+  "len": 378
+ },
+ "gr00t-n1-5": {
+  "url": "https://research.nvidia.com/labs/gear/gr00t-n1_5/",
+  "title": "GR00T N1.5",
+  "len": 25283
+ },
+ "gr00t-n1-6": {
+  "url": "https://research.nvidia.com/labs/gear/gr00t-n1_6/",
+  "title": "GR00T N1.6",
+  "len": 21224
+ },
+ "figure-helix": {
+  "url": "https://www.figure.ai/news/helix",
+  "title": "Helix: A Vision-Language-Action Model for Generalist Humanoid Control",
+  "len": 90551
+ },
+ "atlas-lbm": {
+  "url": "https://bostondynamics.com/blog/large-behavior-models-atlas-find-new-footing/",
+  "title": "Large Behavior Models and Atlas Find New Footing | Boston Dynamics",
+  "len": 166266
+ },
+ "1x-redwood-ai": {
+  "url": "https://www.1x.tech/discover/redwood-ai",
+  "title": "Redwood AI | 1X",
+  "len": 430379
+ },
+ "tesla-optimus": {
+  "url": "https://www.tesla.com/AI",
+  "title": "Access Denied",
+  "len": 369
+ },
+ "figure-rl": {
+  "url": "https://www.figure.ai/news/reinforcement-learning-walking",
+  "title": "Natural Humanoid Walk Using Reinforcement Learning",
+  "len": 43085
+ },
+ "g0plus": {
+  "url": "https://github.com/OpenGalaxea/GalaxeaVLA",
+  "title": "",
+  "len": 378
+ },
+ "1x-world-model": {
+  "url": "https://www.1x.tech/discover/world-model-self-learning",
+  "title": "1X World Model | From Video to Action: A New Way Robots Learn",
+  "len": 587094
+ },
+ "spirit-v1-5": {
+  "url": "https://huggingface.co/Spirit-AI-robotics/Spirit-v1.5",
+  "title": "Spirit-AI-robotics/Spirit-v1.5 · Hugging Face",
+  "len": 113846
+ },
+ "rho-alpha": {
+  "url": "https://www.microsoft.com/en-us/research/?p=1159224",
+  "title": "Introducing Rho-alpha, the new robotics model from Microsoft",
+  "len": 197873
+ },
+ "helix-02": {
+  "url": "https://www.figure.ai/news/helix-02",
+  "title": "Introducing Helix 02: Full-Body Autonomy",
+  "len": 72476
+ },
+ "unifolm-vla-0": {
+  "url": "https://raw.githubusercontent.com/unitreerobotics/unifolm-vla/main/README.md",
+  "title": "",
+  "len": 12407
+ },
+ "g0tiny": {
+  "url": "https://github.com/OpenGalaxea/GalaxeaVLA",
+  "title": "",
+  "len": 378
+ },
+ "gr00t-n1-7": {
+  "url": "https://huggingface.co/nvidia/GR00T-N1.7-3B",
+  "title": "nvidia/GR00T-N1.7-3B · Hugging Face",
+  "len": 183481
+ },
+ "gen-1": {
+  "url": "https://generalistai.com/blog/apr-02-2026-GEN-1",
+  "title": "GEN-1: Scaling Embodied Foundation Models to Mastery - Generalist",
+  "len": 90693
+ },
+ "go-2": {
+  "url": "https://agibot.com/article/231/detail/56.html",
+  "title": "The Unity of Reasoning and Action: AGIBOT Unveils Genie Operator-AGIBOT Innovation (Shanghai) Technology Co., Ltd.",
+  "len": 101340
+ },
+ "gemini-robotics-2": {
+  "url": "https://storage.googleapis.com/deepmind-media/gemini-robotics/Gemini-Robotics-2-Safety.pdf",
+  "title": "",
+  "len": 5495912
+ },
+ "gemini-robotics-on-device-2": {
+  "url": "https://deepmind.google/models/model-cards/gemini-robotics-on-device-2/",
+  "title": "Gemini Robotics On-Device 2 - Model Card — Google DeepMind",
+  "len": 143837
+ },
+ "dyna-2": {
+  "url": "https://www.dyna.co/dyna-2",
+  "title": "Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models — DYNA",
+  "len": 2089187
+ },
+ "skild-s1": {
+  "url": "https://www.skild.ai/blogs/s1",
+  "title": "Introducing S1: In-Context Learning for Robotics",
+  "len": 172545
+ },
+ "gen-1-5": {
+  "url": "https://generalistai.com/blog/gen-1.5",
+  "title": "GEN-1.5: Embodied Foundation Models are One-Shot Learners - Generalist",
+  "len": 111053
+ },
+ "act-1": {
+  "url": "https://www.sunday.ai/blog/no-robot-data",
+  "title": "ACT-1: A Robot Foundation Model Trained on Zero Robot Data | Sunday Robotics | The helpful robotics company",
+  "len": 360531
+ },
+ "internvla-n1": {
+  "url": "https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf",
+  "title": "",
+  "len": 2425840
+ }
+}

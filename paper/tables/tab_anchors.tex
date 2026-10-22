@@ -1,0 +1,51 @@
+\begin{longtable}{@{}p{3.3cm} p{3.6cm} l r r r@{}}
+\caption{Published latency measurements (anchors) used to calibrate and validate the estimator, with the calibrated estimate. Ratio = estimate/measurement. The video world-model policy (Cosmos Policy) has no estimate because its denoising cost is not modelled.\label{tab:anchors}}\\
+\toprule
+\textbf{Model} & \textbf{Device} & \textbf{Prec.} & \textbf{Meas. (ms)} & \textbf{Est. (ms)} & \textbf{Ratio}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Model} & \textbf{Device} & \textbf{Prec.} & \textbf{Meas. (ms)} & \textbf{Est. (ms)} & \textbf{Ratio}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+OpenVLA~\cite{ax240609246} & RTX 4090 & bf16 & 167 & 279 & 1.67\\
+OpenVLA-OFT~\cite{ax250219645} & A100 80GB SXM & bf16 & 72.9 & 49 & 0.67\\
+MiniVLA~\cite{web-minivla} & L40S & bf16 & 80 & 65 & 0.81\\
+TinyVLA~\cite{ax240912514} & RTX A6000 & bf16 & 14 & 71 & 5.05\\
+SpatialVLA~\cite{ax250115830} & RTX 4090 & bf16 & 50 & 233 & 4.67\\
+VLA-0~\cite{ax251013054} & RTX 5090 & bf16 & 250 & 100 & 0.40\\
+$\pi_0$~\cite{ax241024164} & RTX 4090 & bf16 & 73 & 90 & 1.24\\
+$\pi_0$~\cite{ax241024164} & Jetson AGX Orin 64GB & bf16 & 1280 & 349 & 0.27\\
+$\pi_0$-FAST~\cite{ax250109747} & RTX 4090 & bf16 & 750 & 667 & 0.89\\
+$\pi_{0.5}$~\cite{ax250416054} & RTX 4090 & bf16 & 76 & 82 & 1.08\\
+$\pi_{0.6}$~\cite{web-pi0-6} & H100 SXM & bf16 & 63 & 62 & 0.98\\
+RDT-1B~\cite{ax241007864} & RTX 4090 & bf16 & 167 & 39 & 0.23\\
+CogACT~\cite{ax241119650} & RTX A6000 & bf16 & 181 & 145 & 0.80\\
+FLOWER~\cite{ax250904996} & RTX 4090 & bf16 & 52 & 26 & 0.51\\
+Evo-1~\cite{ax251104555} & RTX 4090 & bf16 & 61 & 57 & 0.94\\
+Octo~\cite{ax240512213} & RTX 4090 & bf16 & 77 & 88 & 1.15\\
+GR00T N1~\cite{ax250314734} & L40 & bf16 & 63.9 & 46 & 0.71\\
+GR00T N1.5~\cite{web-gr00t-n1-5} & H100 SXM & bf16 & 47.88 & 27 & 0.56\\
+GR00T N1.6~\cite{web-gr00t-n1-6} & RTX 5090 & bf16 & 37 & 48 & 1.30\\
+GR00T N1.6~\cite{web-gr00t-n1-6} & H100 SXM & bf16 & 38 & 27 & 0.70\\
+GR00T N1.6~\cite{web-gr00t-n1-6} & RTX 4090 & bf16 & 44 & 57 & 1.29\\
+GR00T N1.6~\cite{web-gr00t-n1-6} & Jetson AGX Thor (T5000) & bf16 & 105 & 101 & 0.97\\
+GR00T N1.7~\cite{web-gr00t-n1-7} & H100 SXM & bf16 & 27.9 & 27 & 0.96\\
+GR00T N1.7~\cite{web-gr00t-n1-7} & RTX PRO 6000 Blackwell & bf16 & 27.9 & 33 & 1.18\\
+GR00T N1.7~\cite{web-gr00t-n1-7} & Jetson AGX Thor (T5000) & bf16 & 93.8 & 101 & 1.08\\
+Cosmos Policy~\cite{ax260116163} & H100 SXM & bf16 & 610 & -- & --\\
+Xiaomi-Robotics-0~\cite{ax260212684} & RTX 4090 & bf16 & 80 & 82 & 1.03\\
+MolmoAct 2~\cite{ax260502881} & H100 SXM & bf16 & 180 & 56 & 0.31\\
+TurboVLA~\cite{ax260727205} & RTX 4090 & bf16 & 31.2 & 5 & 0.15\\
+Uni-NaVid~\cite{ax241206224} & A100 80GB SXM & bf16 & 200 & 178 & 0.89\\
+NaVILA~\cite{ax241204453} & RTX 4090 & bf16 & 594.6 & 490 & 0.82\\
+NaVILA~\cite{ax241204453} & RTX 4090 & int4 & 367.8 & 331 & 0.90\\
+StreamVLN~\cite{ax250705240} & RTX 4090 & bf16 & 270 & 369 & 1.37\\
+TrackVLA~\cite{ax250523189} & RTX 4090 & bf16 & 100 & 217 & 2.17\\
+ABot-N0~\cite{ax260211598} & Jetson Orin NX 16GB & bf16 & 500 & 1673 & 3.35\\
+VLingNav~\cite{ax260108665} & RTX 4090 & bf16 & 300 & 216 & 0.72\\
+LightNav-0~\cite{ax260830935} & Jetson AGX Thor (T5000) & bf16 & 268 & 621 & 2.32\\
+LightNav-0~\cite{ax260830935} & Jetson AGX Thor (T5000) & int8/fp8 & 178 & 399 & 2.24\\
+\end{longtable}

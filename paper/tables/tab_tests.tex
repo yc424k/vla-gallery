@@ -1,0 +1,22 @@
+\begin{table}[H]
+\caption{Disclosure of each item by industry-only models versus all other models (academic-only and mixed teams; two models with unknown affiliation excluded). OR: odds ratio from Fisher's exact test; $p_\text{Holm}$: Holm-adjusted $p$-value over the 12 items.\label{tab:tests}}
+\small
+\begin{tabularx}{\textwidth}{@{}X r r r r@{}}
+\toprule
+\textbf{Item} & \textbf{Industry (n = 74)} & \textbf{Other (n = 139)} & \textbf{OR} & $\boldsymbol{p}_\textbf{Holm}$\\
+\midrule
+Parameter count & 36 (49\%) & 77 (55\%) & 0.76 & 0.39\\
+Backbone (V)LM & 54 (73\%) & 133 (96\%) & 0.12 & <0.001\\
+Action-head type & 50 (68\%) & 137 (99\%) & 0.03 & <0.001\\
+Training accelerator & 14 (19\%) & 87 (63\%) & 0.14 & <0.001\\
+Training duration & 7 (9\%) & 52 (37\%) & 0.17 & <0.001\\
+GPU/TPU-hours & 5 (7\%) & 33 (24\%) & 0.23 & 0.01\\
+Training data scale & 53 (72\%) & 131 (94\%) & 0.15 & <0.001\\
+Control rate & 25 (34\%) & 63 (45\%) & 0.62 & 0.22\\
+Inference hardware & 30 (41\%) & 80 (58\%) & 0.50 & 0.07\\
+Inference memory & 4 (5\%) & 24 (17\%) & 0.27 & 0.07\\
+Open weights & 29 (39\%) & 88 (63\%) & 0.37 & 0.005\\
+Code repository & 33 (45\%) & 118 (85\%) & 0.14 & <0.001\\
+\bottomrule
+\end{tabularx}
+\end{table}

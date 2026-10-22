@@ -1,0 +1,17 @@
+\begin{table}[H]
+\caption{Accuracy of estimator variants on the published latency anchors. Fold error is $\max(\hat L/L, L/\hat L)$; bias is the geometric mean of $\hat L/L$ (values below 1 mean underestimation). The first three variants use the calibrated efficiency constants; ``peak specifications'' uses $\beta=\varphi=\gamma=1$ and no fixed overheads.\label{tab:variants}}
+\small
+\begin{tabularx}{\textwidth}{@{}X r r r r r@{}}
+\toprule
+\textbf{Variant} & \textbf{n} & \textbf{Median fold error} & \textbf{$\le$1.5$\times$} & \textbf{$\le$2$\times$} & \textbf{Bias}\\
+\midrule
+Memory-bound only (weights read once) & 37 & 9.35$\times$ & 0 & 2 & 0.09\\
+Compute-bound only ($2Pn$ FLOPs) & 37 & 2.46$\times$ & 8 & 15 & 0.26\\
+Single-pass roofline, no head structure & 37 & 2.14$\times$ & 10 & 18 & 0.39\\
+Structured roofline, peak specifications & 37 & 2.99$\times$ & 7 & 7 & 0.28\\
+Structured roofline, calibrated (this work) & 37 & 1.37$\times$ & 23 & 26 & 0.95\\
+Structured roofline, leave-one-out & 37 & 1.49$\times$ & 19 & 23 & 0.87\\
+Cross-device transfer from a measured anchor & 13 & 1.09$\times$ & 10 & 11 & 0.93\\
+\bottomrule
+\end{tabularx}
+\end{table}

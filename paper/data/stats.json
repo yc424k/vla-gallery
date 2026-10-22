@@ -1,0 +1,1624 @@
+{
+ "n_models": 215,
+ "by_year": {
+  "2022": 2,
+  "2023": 14,
+  "2024": 60,
+  "2025": 91,
+  "2026": 48
+ },
+ "by_type": {
+  "VA": 58,
+  "VLA": 135,
+  "기타": 22
+ },
+ "by_domain": {
+  "Mobile manipulation": 34,
+  "Manipulation": 111,
+  "Humanoid": 41,
+  "Navigation": 29
+ },
+ "by_sector": {
+  "Industry": 74,
+  "Mixed": 73,
+  "Academic": 66,
+  "Unknown": 2
+ },
+ "by_group": {
+  "참고 기준(2024 이전)": 8,
+  "VA": 17,
+  "자기회귀·잠재 액션 VLA": 24,
+  "π 계열": 9,
+  "Flow·Diffusion VLA": 18,
+  "산업계 모델": 24,
+  "휴머노이드 VLA": 14,
+  "휴머노이드 전신 제어기": 18,
+  "2026 신규": 38,
+  "모바일 매니퓰레이션": 17,
+  "내비게이션": 28
+ },
+ "year_domain": {
+  "2022": {
+   "Mobile manipulation": 1,
+   "Navigation": 1
+  },
+  "2023": {
+   "Mobile manipulation": 3,
+   "Manipulation": 9,
+   "Navigation": 2
+  },
+  "2024": {
+   "Mobile manipulation": 11,
+   "Manipulation": 29,
+   "Humanoid": 10,
+   "Navigation": 10
+  },
+  "2025": {
+   "Manipulation": 48,
+   "Mobile manipulation": 13,
+   "Humanoid": 22,
+   "Navigation": 8
+  },
+  "2026": {
+   "Manipulation": 25,
+   "Humanoid": 9,
+   "Mobile manipulation": 6,
+   "Navigation": 8
+  }
+ },
+ "open": {
+  "예": 100,
+  "아니오": 59,
+  "일부": 17,
+  "미확인": 39
+ },
+ "n_hf": 89,
+ "n_gh": 153,
+ "paper_kind": {
+  "논문": 182,
+  "없음": 30,
+  "보고서": 3
+ },
+ "verify": {
+  "확인": 145,
+  "수정 반영": 58,
+  "미검증": 11,
+  "확인불가": 1
+ },
+ "open_by_sector": {
+  "Industry": {
+   "예": 26,
+   "아니오": 37,
+   "일부": 3,
+   "미확인": 8
+  },
+  "Mixed": {
+   "예": 37,
+   "아니오": 9,
+   "일부": 11,
+   "미확인": 16
+  },
+  "Academic": {
+   "아니오": 13,
+   "일부": 3,
+   "예": 37,
+   "미확인": 13
+  },
+  "Unknown": {
+   "미확인": 2
+  }
+ },
+ "paper_by_sector": {
+  "Industry": {
+   "논문": 43,
+   "없음": 29,
+   "보고서": 2
+  },
+  "Mixed": {
+   "논문": 73
+  },
+  "Academic": {
+   "논문": 64,
+   "없음": 1,
+   "보고서": 1
+  },
+  "Unknown": {
+   "논문": 2
+  }
+ },
+ "n_secondary": 18,
+ "n_dagger": 27,
+ "head": {
+  "이산 토큰": 41,
+  "잠재 액션": 6,
+  "flow matching": 36,
+  "diffusion": 33,
+  "하이브리드": 9,
+  "회귀": 26,
+  "CVAE": 4,
+  "RL 정책": 18,
+  "영상 world model": 7,
+  "기타": 7,
+  "미공개": 28
+ },
+ "fam": {
+  "Qwen": 45,
+  "Llama": 19,
+  "Gemma": 17,
+  "Gemini": 8,
+  "PaLI·PaLM": 4,
+  "SmolLM": 3,
+  "InternLM": 2,
+  "Phi": 1,
+  "Mamba": 1,
+  "기타": 9,
+  "없음": 79,
+  "미공개": 27
+ },
+ "arch": {
+  "트랜스포머": 172,
+  "비트랜스포머(비교용)": 22,
+  "미공개": 17,
+  "해당 없음": 1,
+  "미확인": 3
+ },
+ "head_by_year": {
+  "2023": {
+   "이산 토큰": 6,
+   "CVAE": 1,
+   "diffusion": 4,
+   "회귀": 4,
+   "RL 정책": 1
+  },
+  "2024": {
+   "CVAE": 2,
+   "diffusion": 15,
+   "회귀": 11,
+   "이산 토큰": 16,
+   "잠재 액션": 2,
+   "flow matching": 1,
+   "기타": 2,
+   "미공개": 2,
+   "RL 정책": 8,
+   "영상 world model": 1
+  },
+  "2025": {
+   "회귀": 8,
+   "diffusion": 13,
+   "이산 토큰": 15,
+   "잠재 액션": 4,
+   "flow matching": 18,
+   "하이브리드": 8,
+   "미공개": 10,
+   "기타": 3,
+   "영상 world model": 2,
+   "CVAE": 1,
+   "RL 정책": 9
+  },
+  "2026": {
+   "미공개": 16,
+   "flow matching": 17,
+   "영상 world model": 4,
+   "기타": 2,
+   "하이브리드": 1,
+   "이산 토큰": 4,
+   "diffusion": 1,
+   "회귀": 3
+  }
+ },
+ "fam_by_year": {
+  "2023": {
+   "없음": 11,
+   "PaLI·PaLM": 3,
+   "기타": 2
+  },
+  "2024": {
+   "없음": 39,
+   "Llama": 9,
+   "Qwen": 2,
+   "기타": 3,
+   "Mamba": 1,
+   "Gemma": 1,
+   "PaLI·PaLM": 1,
+   "미공개": 3,
+   "Gemini": 1
+  },
+  "2025": {
+   "없음": 25,
+   "Llama": 10,
+   "Gemma": 12,
+   "Qwen": 19,
+   "기타": 4,
+   "미공개": 12,
+   "SmolLM": 2,
+   "InternLM": 2,
+   "Gemini": 5
+  },
+  "2026": {
+   "미공개": 12,
+   "Qwen": 24,
+   "없음": 4,
+   "Phi": 1,
+   "SmolLM": 1,
+   "Gemma": 4,
+   "Gemini": 2
+  }
+ },
+ "n_vla": 135,
+ "vla_fam": {
+  "PaLI·PaLM": 3,
+  "없음": 16,
+  "Llama": 19,
+  "Qwen": 44,
+  "기타": 9,
+  "Gemma": 15,
+  "미공개": 17,
+  "Mamba": 1,
+  "SmolLM": 3,
+  "InternLM": 2,
+  "Gemini": 5,
+  "Phi": 1
+ },
+ "vla_head": {
+  "이산 토큰": 34,
+  "회귀": 14,
+  "diffusion": 16,
+  "잠재 액션": 5,
+  "flow matching": 35,
+  "하이브리드": 8,
+  "미공개": 18,
+  "CVAE": 1,
+  "영상 world model": 1,
+  "기타": 2,
+  "RL 정책": 1
+ },
+ "vla_fam_by_year": {
+  "2023": {
+   "PaLI·PaLM": 2,
+   "없음": 1,
+   "기타": 2
+  },
+  "2024": {
+   "Llama": 9,
+   "Qwen": 2,
+   "기타": 3,
+   "Mamba": 1,
+   "Gemma": 1,
+   "없음": 6,
+   "PaLI·PaLM": 1,
+   "미공개": 1,
+   "Gemini": 1
+  },
+  "2025": {
+   "Llama": 10,
+   "Gemma": 10,
+   "Qwen": 19,
+   "기타": 4,
+   "미공개": 6,
+   "SmolLM": 2,
+   "없음": 9,
+   "InternLM": 2,
+   "Gemini": 3
+  },
+  "2026": {
+   "미공개": 10,
+   "Qwen": 23,
+   "Phi": 1,
+   "SmolLM": 1,
+   "Gemma": 4,
+   "Gemini": 1
+  }
+ },
+ "vla_head_by_year": {
+  "2023": {
+   "이산 토큰": 3,
+   "회귀": 2
+  },
+  "2024": {
+   "이산 토큰": 12,
+   "diffusion": 5,
+   "잠재 액션": 1,
+   "회귀": 3,
+   "flow matching": 1,
+   "CVAE": 1,
+   "미공개": 1,
+   "기타": 1
+  },
+  "2025": {
+   "회귀": 6,
+   "이산 토큰": 15,
+   "잠재 액션": 4,
+   "flow matching": 17,
+   "하이브리드": 7,
+   "diffusion": 10,
+   "미공개": 4,
+   "영상 world model": 1,
+   "RL 정책": 1
+  },
+  "2026": {
+   "미공개": 13,
+   "flow matching": 17,
+   "기타": 1,
+   "하이브리드": 1,
+   "이산 토큰": 4,
+   "diffusion": 1,
+   "회귀": 3
+  }
+ },
+ "llm_size": {
+  "n": 81,
+  "median": 4,
+  "min": 0.5,
+  "max": 72,
+  "counts": {
+   "0.5": 5,
+   "1.5": 1,
+   "1.8": 2,
+   "2": 12,
+   "2.8": 1,
+   "3": 11,
+   "4": 10,
+   "7": 26,
+   "8": 7,
+   "8.5": 1,
+   "32": 3,
+   "70": 1,
+   "72": 1
+  }
+ },
+ "params": {
+  "n": 113,
+  "median": 3.3,
+  "min": 0.0014,
+  "max": 72,
+  "by_year": {
+   "2023": {
+    "n": 14,
+    "median": 0.0975
+   },
+   "2024": {
+    "n": 32,
+    "median": 1.25
+   },
+   "2025": {
+    "n": 43,
+    "median": 4.1
+   },
+   "2026": {
+    "n": 24,
+    "median": 4.0
+   }
+  },
+  "by_type": {
+   "VLA": 5,
+   "VA": 0.093,
+   "기타": 3
+  },
+  "largest": [
+   [
+    72,
+    "DiVLA (Diffusion-VLA)"
+   ],
+   [
+    55,
+    "RT-H"
+   ],
+   [
+    55,
+    "RT-2-X"
+   ],
+   [
+    55,
+    "RT-2"
+   ],
+   [
+    14,
+    "DreamZero"
+   ]
+  ],
+  "lt1": 30,
+  "b1_4": 28,
+  "b4_10": 48,
+  "ge10": 7
+ },
+ "params_vla_median": 5,
+ "chunk": {
+  "none": 20,
+  "chunked": 92,
+  "undisclosed": 103
+ },
+ "hz": {
+  "n": 83,
+  "median": 20.0,
+  "ge30": 36,
+  "ge10": 58,
+  "lt5": 18,
+  "by_head": {
+   "이산 토큰": 3.0,
+   "flow matching": 30.0,
+   "diffusion": 10.0,
+   "회귀": 10.0,
+   "CVAE": 50.0,
+   "RL 정책": 50.0,
+   "영상 world model": 30.0,
+   "미공개": 150.0
+  }
+ },
+ "hz_disclosed": 88,
+ "n_pipe": 49,
+ "tg_models": 109,
+ "tg_records": 145,
+ "tg_stage": {
+  "과제별 학습": 16,
+  "사전학습": 76,
+  "파인튜닝": 30,
+  "사후학습": 2,
+  "시뮬 RL": 21
+ },
+ "tg_acc_family": {
+  "Workstation/consumer (RTX, L40, A40, A10)": 28,
+  "TPU": 9,
+  "V100": 7,
+  "A100/A800": 46,
+  "Hopper-class (H100/H800/H200)": 44,
+  "Not disclosed": 9,
+  "Blackwell (GB200)": 2
+ },
+ "tg_pre_acc_family": {
+  "V100": 4,
+  "TPU": 8,
+  "A100/A800": 23,
+  "Hopper-class (H100/H800/H200)": 26,
+  "Not disclosed": 9,
+  "Workstation/consumer (RTX, L40, A40, A10)": 4,
+  "Blackwell (GB200)": 2
+ },
+ "tg_pre_n": {
+  "n": 59,
+  "median": 32,
+  "max": 1024,
+  "min": 1,
+  "ge64": 21,
+  "le8": 23
+ },
+ "tg_pre_h": {
+  "n": 36,
+  "median": 94.47580015448901,
+  "max": 5760,
+  "min": 14
+ },
+ "tg_ft_n": {
+  "n": 45,
+  "median": 8,
+  "le1": 10,
+  "le8": 39
+ },
+ "tg_ft_h": {
+  "n": 30,
+  "median": 24.0
+ },
+ "tg_simrl_n": {
+  "n": 20,
+  "median": 1.0,
+  "acc": {
+   "Hopper-class (H100/H800/H200)": 3,
+   "Workstation/consumer (RTX, L40, A40, A10)": 15,
+   "V100": 3
+  }
+ },
+ "gpuh": {
+  "n": 38,
+  "median": 1856.0,
+  "min": 23.57,
+  "max": 50000,
+  "q1": 704.0,
+  "q3": 9932.0,
+  "top": [
+   [
+    50000,
+    "GR00T N1"
+   ],
+   [
+    34560,
+    "RDT-1B"
+   ],
+   [
+    30720,
+    "GR00T N1.7"
+   ],
+   [
+    21500,
+    "OpenVLA"
+   ],
+   [
+    21000,
+    "SONIC (Supersizing Motion Tracking for Natural Humanoid Whole-Body Control)"
+   ],
+   [
+    15360,
+    "Ψ0 (Psi-Zero)"
+   ]
+  ],
+  "bottom": [
+   [
+    23.57,
+    "HOVER"
+   ],
+   [
+    60,
+    "CityWalker"
+   ],
+   [
+    96,
+    "GMT (General Motion Tracking)"
+   ],
+   [
+    200,
+    "FLOWER"
+   ]
+  ],
+  "ge10k": 10,
+  "lt1k": 13
+ },
+ "gpuh_vs_params": {
+  "n": 30,
+  "spearman": -0.17888843708375898
+ },
+ "gpuh_vs_date": {
+  "n": 38,
+  "spearman": 0.15812842641137062
+ },
+ "gpuh_vs_dhours": {
+  "n": 12,
+  "spearman": 0.6363636363636364
+ },
+ "dhours": {
+  "n": 54,
+  "median": 1522.0,
+  "max": 1000000,
+  "ge10k": 16
+ },
+ "dtype": {
+  "Real-robot teleoperation": 145,
+  "Web vision-language": 45,
+  "Simulation/synthetic": 94,
+  "Human video": 54,
+  "Other": 8,
+  "Motion capture": 19,
+  "Not disclosed": 8
+ },
+ "disclosure_items": [
+  "Parameter count",
+  "Backbone (V)LM",
+  "Action-head type",
+  "Training accelerator",
+  "Training duration",
+  "GPU/TPU-hours",
+  "Training data scale",
+  "Control rate",
+  "Inference hardware",
+  "Inference memory",
+  "Open weights",
+  "Code repository"
+ ],
+ "disclosure_overall": {
+  "Parameter count": 113,
+  "Backbone (V)LM": 188,
+  "Action-head type": 187,
+  "Training accelerator": 101,
+  "Training duration": 59,
+  "GPU/TPU-hours": 38,
+  "Training data scale": 184,
+  "Control rate": 88,
+  "Inference hardware": 110,
+  "Inference memory": 28,
+  "Open weights": 117,
+  "Code repository": 153
+ },
+ "disclosure_by_sector": {
+  "Academic": {
+   "Parameter count": 34,
+   "Backbone (V)LM": 65,
+   "Action-head type": 65,
+   "Training accelerator": 37,
+   "Training duration": 22,
+   "GPU/TPU-hours": 14,
+   "Training data scale": 64,
+   "Control rate": 35,
+   "Inference hardware": 40,
+   "Inference memory": 12,
+   "Open weights": 40,
+   "Code repository": 57,
+   "_n": 66
+  },
+  "Mixed": {
+   "Parameter count": 43,
+   "Backbone (V)LM": 68,
+   "Action-head type": 72,
+   "Training accelerator": 50,
+   "Training duration": 30,
+   "GPU/TPU-hours": 19,
+   "Training data scale": 67,
+   "Control rate": 28,
+   "Inference hardware": 40,
+   "Inference memory": 12,
+   "Open weights": 48,
+   "Code repository": 61,
+   "_n": 73
+  },
+  "Industry": {
+   "Parameter count": 36,
+   "Backbone (V)LM": 54,
+   "Action-head type": 50,
+   "Training accelerator": 14,
+   "Training duration": 7,
+   "GPU/TPU-hours": 5,
+   "Training data scale": 53,
+   "Control rate": 25,
+   "Inference hardware": 30,
+   "Inference memory": 4,
+   "Open weights": 29,
+   "Code repository": 33,
+   "_n": 74
+  }
+ },
+ "disclosure_by_year": {
+  "2023": {
+   "Parameter count": 14,
+   "Backbone (V)LM": 16,
+   "Action-head type": 16,
+   "Training accelerator": 4,
+   "Training duration": 3,
+   "GPU/TPU-hours": 2,
+   "Training data scale": 15,
+   "Control rate": 11,
+   "Inference hardware": 8,
+   "Inference memory": 0,
+   "Open weights": 10,
+   "Code repository": 12,
+   "_n": 16
+  },
+  "2024": {
+   "Parameter count": 32,
+   "Backbone (V)LM": 57,
+   "Action-head type": 58,
+   "Training accelerator": 34,
+   "Training duration": 22,
+   "GPU/TPU-hours": 10,
+   "Training data scale": 58,
+   "Control rate": 30,
+   "Inference hardware": 35,
+   "Inference memory": 8,
+   "Open weights": 33,
+   "Code repository": 50,
+   "_n": 60
+  },
+  "2025": {
+   "Parameter count": 43,
+   "Backbone (V)LM": 79,
+   "Action-head type": 81,
+   "Training accelerator": 48,
+   "Training duration": 28,
+   "GPU/TPU-hours": 20,
+   "Training data scale": 74,
+   "Control rate": 32,
+   "Inference hardware": 47,
+   "Inference memory": 16,
+   "Open weights": 48,
+   "Code repository": 62,
+   "_n": 91
+  },
+  "2026": {
+   "Parameter count": 24,
+   "Backbone (V)LM": 36,
+   "Action-head type": 32,
+   "Training accelerator": 15,
+   "Training duration": 6,
+   "GPU/TPU-hours": 6,
+   "Training data scale": 37,
+   "Control rate": 15,
+   "Inference hardware": 20,
+   "Inference memory": 4,
+   "Open weights": 26,
+   "Code repository": 29,
+   "_n": 48
+  }
+ },
+ "disclosure_by_domain": {
+  "Manipulation": {
+   "Parameter count": 65,
+   "Backbone (V)LM": 97,
+   "Action-head type": 93,
+   "Training accelerator": 54,
+   "Training duration": 34,
+   "GPU/TPU-hours": 18,
+   "Training data scale": 91,
+   "Control rate": 32,
+   "Inference hardware": 54,
+   "Inference memory": 19,
+   "Open weights": 67,
+   "Code repository": 83,
+   "_n": 111
+  },
+  "Humanoid": {
+   "Parameter count": 13,
+   "Backbone (V)LM": 32,
+   "Action-head type": 34,
+   "Training accelerator": 17,
+   "Training duration": 10,
+   "GPU/TPU-hours": 8,
+   "Training data scale": 32,
+   "Control rate": 20,
+   "Inference hardware": 15,
+   "Inference memory": 0,
+   "Open weights": 14,
+   "Code repository": 26,
+   "_n": 41
+  },
+  "Mobile manipulation": {
+   "Parameter count": 15,
+   "Backbone (V)LM": 30,
+   "Action-head type": 31,
+   "Training accelerator": 10,
+   "Training duration": 6,
+   "GPU/TPU-hours": 1,
+   "Training data scale": 33,
+   "Control rate": 16,
+   "Inference hardware": 17,
+   "Inference memory": 4,
+   "Open weights": 15,
+   "Code repository": 18,
+   "_n": 34
+  },
+  "Navigation": {
+   "Parameter count": 20,
+   "Backbone (V)LM": 29,
+   "Action-head type": 29,
+   "Training accelerator": 20,
+   "Training duration": 9,
+   "GPU/TPU-hours": 11,
+   "Training data scale": 28,
+   "Control rate": 20,
+   "Inference hardware": 24,
+   "Inference memory": 5,
+   "Open weights": 21,
+   "Code repository": 26,
+   "_n": 29
+  }
+ },
+ "disclosure_score": {
+  "median": 6,
+  "by_sector": {
+   "Academic": 7.0,
+   "Mixed": 7,
+   "Industry": 4.5
+  }
+ },
+ "n_count_and_duration": 54,
+ "n_est": 128,
+ "est_kind": {
+  "single": 28,
+  "ar": 35,
+  "iter": 62,
+  "null": 87,
+  "wm": 3
+ },
+ "est_src": {
+  "pb": 105,
+  "null": 87,
+  "lb": 23
+ },
+ "rl": {
+  "미사용": 132,
+  "사용": 31,
+  "일부": 28,
+  "미공개": 24
+ },
+ "rlcat": {
+  "미사용": 132,
+  "VLA RL 사후학습": 13,
+  "보상·선호 최적화": 2,
+  "미공개": 24,
+  "RL 하위 제어기 결합": 19,
+  "RL 제어기 학습": 18,
+  "RL 데이터 활용": 6,
+  "가치 학습·계획": 1
+ },
+ "rl_by_year": {
+  "2023": {
+   "미사용": 14,
+   "사용": 1,
+   "일부": 1
+  },
+  "2024": {
+   "미사용": 40,
+   "미공개": 2,
+   "일부": 9,
+   "사용": 9
+  },
+  "2025": {
+   "미사용": 56,
+   "사용": 14,
+   "일부": 10,
+   "미공개": 11
+  },
+  "2026": {
+   "미사용": 22,
+   "미공개": 11,
+   "일부": 8,
+   "사용": 7
+  }
+ },
+ "rlcat_by_domain": {
+  "Manipulation": {
+   "미사용": 87,
+   "VLA RL 사후학습": 4,
+   "보상·선호 최적화": 2,
+   "미공개": 15,
+   "가치 학습·계획": 1,
+   "RL 데이터 활용": 2
+  },
+  "Humanoid": {
+   "미사용": 8,
+   "RL 하위 제어기 결합": 12,
+   "미공개": 7,
+   "RL 제어기 학습": 13,
+   "RL 데이터 활용": 1
+  },
+  "Mobile manipulation": {
+   "미사용": 20,
+   "미공개": 2,
+   "RL 데이터 활용": 2,
+   "RL 제어기 학습": 5,
+   "RL 하위 제어기 결합": 4,
+   "VLA RL 사후학습": 1
+  },
+  "Navigation": {
+   "미사용": 17,
+   "RL 데이터 활용": 1,
+   "RL 하위 제어기 결합": 3,
+   "VLA RL 사후학습": 8
+  }
+ },
+ "rl_by_domain": {
+  "Manipulation": {
+   "미사용": 87,
+   "사용": 4,
+   "일부": 5,
+   "미공개": 15
+  },
+  "Humanoid": {
+   "미사용": 8,
+   "일부": 13,
+   "미공개": 7,
+   "사용": 13
+  },
+  "Mobile manipulation": {
+   "미사용": 20,
+   "미공개": 2,
+   "일부": 6,
+   "사용": 6
+  },
+  "Navigation": {
+   "미사용": 17,
+   "일부": 4,
+   "사용": 8
+  }
+ },
+ "vla_rl_post": [
+  "π*0.6 (RECAP)",
+  "GR-RL",
+  "GEN-1",
+  "SyVLA",
+  "MoRE",
+  "COMPASS",
+  "RING (The One RING)",
+  "VLN-R1",
+  "ABot-N0",
+  "VLingNav",
+  "TIC-VLA",
+  "LightNav-0",
+  "Qwen-VLA"
+ ],
+ "base_types": {
+  "바퀴형": 45,
+  "고정": 136,
+  "시뮬 전용": 4,
+  "사족보행": 32,
+  "휴머노이드 보행": 40,
+  "비행": 5
+ },
+ "n_mobile": 98,
+ "base_cat": {
+  "베이스 속도·자세 직접 출력": 23,
+  "이산 이동 행동": 7,
+  "형식 미기재": 8,
+  "명령·잠재 → RL 보행 제어기": 21,
+  "전신 관절·자세 직접 출력": 3,
+  "RL 정책이 직접 구동": 16,
+  "계획·최적화로 이동 결정": 2,
+  "웨이포인트 → 추종 제어기": 18
+ },
+ "base_cat_by_type": {
+  "바퀴형": {
+   "베이스 속도·자세 직접 출력": 23,
+   "형식 미기재": 5,
+   "명령·잠재 → RL 보행 제어기": 1,
+   "계획·최적화로 이동 결정": 1,
+   "RL 정책이 직접 구동": 1,
+   "웨이포인트 → 추종 제어기": 12,
+   "이산 이동 행동": 2
+  },
+  "사족보행": {
+   "명령·잠재 → RL 보행 제어기": 8,
+   "RL 정책이 직접 구동": 3,
+   "웨이포인트 → 추종 제어기": 14,
+   "베이스 속도·자세 직접 출력": 3,
+   "이산 이동 행동": 4
+  },
+  "휴머노이드 보행": {
+   "명령·잠재 → RL 보행 제어기": 15,
+   "전신 관절·자세 직접 출력": 3,
+   "형식 미기재": 3,
+   "RL 정책이 직접 구동": 12,
+   "베이스 속도·자세 직접 출력": 2,
+   "웨이포인트 → 추종 제어기": 5
+  },
+  "비행": {
+   "웨이포인트 → 추종 제어기": 5
+  },
+  "시뮬 전용": {
+   "이산 이동 행동": 2,
+   "계획·최적화로 이동 결정": 1,
+   "웨이포인트 → 추종 제어기": 1
+  }
+ },
+ "base_checked": 48,
+ "deploy": {
+  "jetson-orin-nano-super|2|5": {
+   "ok": 27,
+   "oom": 89,
+   "na": 89,
+   "slow": 10
+  },
+  "jetson-orin-nano-super|2|10": {
+   "ok": 19,
+   "oom": 89,
+   "slow": 18,
+   "na": 89
+  },
+  "jetson-orin-nano-super|1|5": {
+   "ok": 30,
+   "oom": 64,
+   "na": 89,
+   "slow": 32
+  },
+  "jetson-orin-nano-super|1|10": {
+   "ok": 23,
+   "oom": 64,
+   "slow": 39,
+   "na": 89
+  },
+  "jetson-orin-nano-super|0.5|5": {
+   "ok": 32,
+   "oom": 44,
+   "na": 89,
+   "slow": 50
+  },
+  "jetson-orin-nano-super|0.5|10": {
+   "ok": 24,
+   "oom": 44,
+   "na": 89,
+   "slow": 58
+  },
+  "jetson-orin-nx-16|2|5": {
+   "ok": 27,
+   "oom": 54,
+   "na": 89,
+   "slow": 45
+  },
+  "jetson-orin-nx-16|2|10": {
+   "ok": 20,
+   "oom": 54,
+   "slow": 52,
+   "na": 89
+  },
+  "jetson-orin-nx-16|1|5": {
+   "ok": 30,
+   "oom": 12,
+   "na": 89,
+   "slow": 84
+  },
+  "jetson-orin-nx-16|1|10": {
+   "ok": 24,
+   "oom": 12,
+   "slow": 90,
+   "na": 89
+  },
+  "jetson-orin-nx-16|0.5|5": {
+   "ok": 33,
+   "oom": 8,
+   "na": 89,
+   "slow": 85
+  },
+  "jetson-orin-nx-16|0.5|10": {
+   "ok": 26,
+   "oom": 8,
+   "na": 89,
+   "slow": 92
+  },
+  "jetson-agx-orin-64|2|5": {
+   "ok": 32,
+   "oom": 6,
+   "na": 90,
+   "slow": 87
+  },
+  "jetson-agx-orin-64|2|10": {
+   "ok": 24,
+   "oom": 6,
+   "slow": 95,
+   "na": 90
+  },
+  "jetson-agx-orin-64|1|5": {
+   "ok": 35,
+   "oom": 6,
+   "na": 90,
+   "slow": 84
+  },
+  "jetson-agx-orin-64|1|10": {
+   "ok": 26,
+   "oom": 6,
+   "na": 90,
+   "slow": 93
+  },
+  "jetson-agx-orin-64|0.5|5": {
+   "ok": 37,
+   "slow": 85,
+   "na": 90,
+   "oom": 3
+  },
+  "jetson-agx-orin-64|0.5|10": {
+   "ok": 29,
+   "slow": 93,
+   "na": 90,
+   "oom": 3
+  },
+  "jetson-agx-thor|2|5": {
+   "ok": 66,
+   "oom": 6,
+   "na": 90,
+   "slow": 53
+  },
+  "jetson-agx-thor|2|10": {
+   "ok": 28,
+   "oom": 6,
+   "slow": 91,
+   "na": 90
+  },
+  "jetson-agx-thor|1|5": {
+   "ok": 78,
+   "slow": 45,
+   "na": 90,
+   "oom": 2
+  },
+  "jetson-agx-thor|1|10": {
+   "ok": 39,
+   "slow": 84,
+   "na": 90,
+   "oom": 2
+  },
+  "jetson-agx-thor|0.5|5": {
+   "ok": 84,
+   "slow": 41,
+   "na": 90
+  },
+  "jetson-agx-thor|0.5|10": {
+   "ok": 46,
+   "slow": 79,
+   "na": 90
+  },
+  "rtx-4060-laptop|2|5": {
+   "ok": 34,
+   "oom": 79,
+   "na": 89,
+   "slow": 13
+  },
+  "rtx-4060-laptop|2|10": {
+   "ok": 30,
+   "oom": 79,
+   "na": 89,
+   "slow": 17
+  },
+  "rtx-4060-laptop|1|5": {
+   "ok": 41,
+   "oom": 54,
+   "na": 89,
+   "slow": 31
+  },
+  "rtx-4060-laptop|1|10": {
+   "ok": 32,
+   "oom": 54,
+   "na": 89,
+   "slow": 40
+  },
+  "rtx-4060-laptop|0.5|5": {
+   "ok": 41,
+   "oom": 22,
+   "na": 89,
+   "slow": 63
+  },
+  "rtx-4060-laptop|0.5|10": {
+   "ok": 33,
+   "oom": 22,
+   "na": 89,
+   "slow": 71
+  },
+  "rtx-4090-laptop|2|5": {
+   "ok": 72,
+   "oom": 44,
+   "na": 89,
+   "slow": 10
+  },
+  "rtx-4090-laptop|2|10": {
+   "ok": 39,
+   "oom": 44,
+   "na": 89,
+   "slow": 43
+  },
+  "rtx-4090-laptop|1|5": {
+   "ok": 81,
+   "oom": 8,
+   "na": 89,
+   "slow": 37
+  },
+  "rtx-4090-laptop|1|10": {
+   "ok": 42,
+   "oom": 8,
+   "na": 89,
+   "slow": 76
+  },
+  "rtx-4090-laptop|0.5|5": {
+   "ok": 82,
+   "oom": 6,
+   "na": 90,
+   "slow": 37
+  },
+  "rtx-4090-laptop|0.5|10": {
+   "ok": 43,
+   "oom": 6,
+   "na": 90,
+   "slow": 76
+  },
+  "rtx-4090|2|5": {
+   "ok": 87,
+   "oom": 10,
+   "na": 89,
+   "slow": 29
+  },
+  "rtx-4090|2|10": {
+   "ok": 68,
+   "oom": 10,
+   "na": 89,
+   "slow": 48
+  },
+  "rtx-4090|1|5": {
+   "ok": 97,
+   "oom": 6,
+   "na": 90,
+   "slow": 22
+  },
+  "rtx-4090|1|10": {
+   "ok": 74,
+   "oom": 6,
+   "na": 90,
+   "slow": 45
+  },
+  "rtx-4090|0.5|5": {
+   "ok": 103,
+   "oom": 6,
+   "na": 90,
+   "slow": 16
+  },
+  "rtx-4090|0.5|10": {
+   "ok": 76,
+   "oom": 6,
+   "na": 90,
+   "slow": 43
+  },
+  "rtx-5090|2|5": {
+   "ok": 101,
+   "oom": 8,
+   "na": 89,
+   "slow": 17
+  },
+  "rtx-5090|2|10": {
+   "ok": 78,
+   "oom": 8,
+   "na": 89,
+   "slow": 40
+  },
+  "rtx-5090|1|5": {
+   "ok": 108,
+   "oom": 6,
+   "na": 90,
+   "slow": 11
+  },
+  "rtx-5090|1|10": {
+   "ok": 83,
+   "oom": 6,
+   "na": 90,
+   "slow": 36
+  },
+  "rtx-5090|0.5|5": {
+   "ok": 109,
+   "oom": 6,
+   "na": 90,
+   "slow": 10
+  },
+  "rtx-5090|0.5|10": {
+   "ok": 83,
+   "oom": 6,
+   "na": 90,
+   "slow": 36
+  },
+  "rtx-pro-6000|2|5": {
+   "ok": 114,
+   "oom": 6,
+   "na": 90,
+   "slow": 5
+  },
+  "rtx-pro-6000|2|10": {
+   "ok": 89,
+   "oom": 6,
+   "na": 90,
+   "slow": 30
+  },
+  "rtx-pro-6000|1|5": {
+   "ok": 116,
+   "slow": 6,
+   "na": 90,
+   "oom": 3
+  },
+  "rtx-pro-6000|1|10": {
+   "ok": 91,
+   "slow": 31,
+   "na": 90,
+   "oom": 3
+  },
+  "rtx-pro-6000|0.5|5": {
+   "ok": 117,
+   "slow": 8,
+   "na": 90
+  },
+  "rtx-pro-6000|0.5|10": {
+   "ok": 106,
+   "slow": 19,
+   "na": 90
+  },
+  "a100-80|2|5": {
+   "ok": 112,
+   "oom": 6,
+   "na": 90,
+   "slow": 7
+  },
+  "a100-80|2|10": {
+   "ok": 85,
+   "oom": 6,
+   "na": 90,
+   "slow": 34
+  },
+  "a100-80|1|5": {
+   "ok": 115,
+   "oom": 6,
+   "na": 90,
+   "slow": 4
+  },
+  "a100-80|1|10": {
+   "ok": 86,
+   "oom": 6,
+   "na": 90,
+   "slow": 33
+  },
+  "a100-80|0.5|5": {
+   "ok": 116,
+   "slow": 9,
+   "na": 90
+  },
+  "a100-80|0.5|10": {
+   "ok": 95,
+   "slow": 30,
+   "na": 90
+  },
+  "h100-sxm|2|5": {
+   "ok": 118,
+   "oom": 6,
+   "na": 89,
+   "slow": 2
+  },
+  "h100-sxm|2|10": {
+   "ok": 105,
+   "oom": 6,
+   "na": 89,
+   "slow": 15
+  },
+  "h100-sxm|1|5": {
+   "ok": 118,
+   "oom": 6,
+   "na": 90,
+   "slow": 1
+  },
+  "h100-sxm|1|10": {
+   "ok": 113,
+   "oom": 6,
+   "na": 90,
+   "slow": 6
+  },
+  "h100-sxm|0.5|5": {
+   "ok": 119,
+   "slow": 6,
+   "na": 90
+  },
+  "h100-sxm|0.5|10": {
+   "ok": 114,
+   "slow": 11,
+   "na": 90
+  }
+ },
+ "deploy_devices": [
+  {
+   "id": "jetson-orin-nano-super",
+   "name": "Jetson Orin Nano Super 8GB",
+   "tier": "임베디드",
+   "mem": 8,
+   "bw": 102,
+   "tf": 17
+  },
+  {
+   "id": "jetson-orin-nx-16",
+   "name": "Jetson Orin NX 16GB",
+   "tier": "임베디드",
+   "mem": 16,
+   "bw": 102.4,
+   "tf": 19
+  },
+  {
+   "id": "jetson-agx-orin-64",
+   "name": "Jetson AGX Orin 64GB",
+   "tier": "임베디드",
+   "mem": 64,
+   "bw": 204.8,
+   "tf": 43
+  },
+  {
+   "id": "jetson-agx-thor",
+   "name": "Jetson AGX Thor (T5000)",
+   "tier": "임베디드",
+   "mem": 128,
+   "bw": 273,
+   "tf": 258.5
+  },
+  {
+   "id": "rtx-4060-laptop",
+   "name": "RTX 4060 Laptop",
+   "tier": "노트북",
+   "mem": 8,
+   "bw": 256,
+   "tf": 29.1
+  },
+  {
+   "id": "rtx-4090-laptop",
+   "name": "RTX 4090 Laptop",
+   "tier": "노트북",
+   "mem": 16,
+   "bw": 576,
+   "tf": 79.4
+  },
+  {
+   "id": "rtx-4090",
+   "name": "RTX 4090",
+   "tier": "데스크톱",
+   "mem": 24,
+   "bw": 1008,
+   "tf": 165.2
+  },
+  {
+   "id": "rtx-5090",
+   "name": "RTX 5090",
+   "tier": "데스크톱",
+   "mem": 32,
+   "bw": 1792,
+   "tf": 209.5
+  },
+  {
+   "id": "rtx-pro-6000",
+   "name": "RTX PRO 6000 Blackwell",
+   "tier": "워크스테이션",
+   "mem": 96,
+   "bw": 1792,
+   "tf": 503.8
+  },
+  {
+   "id": "a100-80",
+   "name": "A100 80GB SXM",
+   "tier": "데이터센터",
+   "mem": 80,
+   "bw": 2039,
+   "tf": 312
+  },
+  {
+   "id": "h100-sxm",
+   "name": "H100 SXM",
+   "tier": "데이터센터",
+   "mem": 80,
+   "bw": 3350,
+   "tf": 989.5
+  }
+ ],
+ "n_devices": 24,
+ "n_anchor_models": 30,
+ "n_anchors": 38,
+ "anchor_devices": 11,
+ "tune": {
+  "rtx-4090|1|full": {
+   "ok": 19,
+   "closed": 42,
+   "na": 87,
+   "oom": 67,
+   "med_hrs": 0.060214458664821856,
+   "max_P": 0.77
+  },
+  "rtx-4090|1|lora": {
+   "ok": 30,
+   "closed": 42,
+   "na": 87,
+   "oom": 56,
+   "med_hrs": 0.12652907490679888,
+   "max_P": 2.37
+  },
+  "rtx-4090|1|qlora": {
+   "ok": 44,
+   "closed": 42,
+   "na": 87,
+   "oom": 42,
+   "med_hrs": 2.812152965140859,
+   "max_P": 3
+  },
+  "rtx-4090|1|head": {
+   "na": 153,
+   "ok": 33,
+   "closed": 19,
+   "oom": 10,
+   "med_hrs": 4.420154502478959,
+   "max_P": 5.1
+  },
+  "rtx-5090|1|full": {
+   "ok": 24,
+   "closed": 42,
+   "na": 87,
+   "oom": 62,
+   "med_hrs": 0.09077395158540745,
+   "max_P": 1.1
+  },
+  "rtx-5090|1|lora": {
+   "ok": 46,
+   "closed": 42,
+   "na": 87,
+   "oom": 40,
+   "med_hrs": 1.7057744440656137,
+   "max_P": 3.3
+  },
+  "rtx-5090|1|qlora": {
+   "ok": 53,
+   "closed": 42,
+   "na": 87,
+   "oom": 33,
+   "med_hrs": 3.8188097132249883,
+   "max_P": 4.2
+  },
+  "rtx-5090|1|head": {
+   "na": 153,
+   "ok": 37,
+   "closed": 19,
+   "oom": 6,
+   "med_hrs": 4.067371292192296,
+   "max_P": 7.6
+  },
+  "a100-80|1|full": {
+   "ok": 45,
+   "closed": 42,
+   "na": 87,
+   "oom": 41,
+   "med_hrs": 1.6849816849816852,
+   "max_P": 3.2
+  },
+  "a100-80|1|lora": {
+   "ok": 83,
+   "closed": 42,
+   "na": 87,
+   "oom": 3,
+   "med_hrs": 5.337240537240538,
+   "max_P": 9
+  },
+  "a100-80|1|qlora": {
+   "ok": 83,
+   "closed": 42,
+   "na": 87,
+   "oom": 3,
+   "med_hrs": 6.9384126984127,
+   "max_P": 9
+  },
+  "a100-80|1|head": {
+   "na": 153,
+   "ok": 42,
+   "closed": 19,
+   "oom": 1,
+   "med_hrs": 2.535775335775336,
+   "max_P": 8.45
+  },
+  "h100-sxm|8|full": {
+   "ok": 83,
+   "closed": 42,
+   "na": 87,
+   "oom": 3,
+   "med_hrs": 0.35060195545289036,
+   "max_P": 9
+  },
+  "h100-sxm|8|lora": {
+   "ok": 83,
+   "closed": 42,
+   "na": 87,
+   "oom": 3,
+   "med_hrs": 0.23373463696859353,
+   "max_P": 9
+  },
+  "h100-sxm|8|qlora": {
+   "ok": 83,
+   "closed": 42,
+   "na": 87,
+   "oom": 3,
+   "med_hrs": 0.3038550280591716,
+   "max_P": 9
+  },
+  "h100-sxm|8|head": {
+   "na": 153,
+   "ok": 42,
+   "closed": 19,
+   "oom": 1,
+   "med_hrs": 0.1110496188818574,
+   "max_P": 8.45
+  },
+  "jetson-agx-thor|1|full": {
+   "ok": 53,
+   "closed": 42,
+   "na": 87,
+   "oom": 33,
+   "med_hrs": 5.356617850234874,
+   "max_P": 4.2
+  },
+  "jetson-agx-thor|1|lora": {
+   "ok": 83,
+   "closed": 42,
+   "na": 87,
+   "oom": 3,
+   "med_hrs": 9.662779773418073,
+   "max_P": 9
+  },
+  "jetson-agx-thor|1|qlora": {
+   "ok": 85,
+   "closed": 42,
+   "na": 87,
+   "oom": 1,
+   "med_hrs": 13.17773970710141,
+   "max_P": 14
+  },
+  "jetson-agx-thor|1|head": {
+   "na": 153,
+   "ok": 42,
+   "closed": 19,
+   "oom": 1,
+   "med_hrs": 4.590881458966566,
+   "max_P": 8.45
+  }
+ },
+ "n_open_est": 86
+}

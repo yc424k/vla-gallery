@@ -1,0 +1,12 @@
+# LaTeX build files (rebuild with ./build_paper.sh)
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.blg
+*.bbl
+*.synctex.gz
+figures/src/*.pdf
+# Python cache
+__pycache__/

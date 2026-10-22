@@ -1,0 +1,447 @@
+{
+ "current": {
+  "n": 37,
+  "median_x": 1.3676136005075112,
+  "within2": 26,
+  "within1_5": 23,
+  "bias_gm": 0.9544994455185862,
+  "max_x": 6.693303064699205,
+  "consts": {
+   "em": 0.6,
+   "ec": 0.6,
+   "c0": 4.0,
+   "ct": 4.0,
+   "emb": 1.5
+  }
+ },
+ "nominal": {
+  "n": 37,
+  "median_x": 2.98963466236128,
+  "within2": 7,
+  "within1_5": 7,
+  "bias_gm": 0.2751112141645179,
+  "max_x": 78.62400000000004
+ },
+ "refit_median": {
+  "n": 37,
+  "median_x": 1.2865030449776214,
+  "within2": 24,
+  "within1_5": 23,
+  "bias_gm": 0.8871894298297621,
+  "max_x": 9.185046728971964,
+  "consts": {
+   "em": 1.0,
+   "ec": 0.5,
+   "c0": 3.0,
+   "ct": 6.0,
+   "emb": 1.75
+  }
+ },
+ "loo": {
+  "n": 37,
+  "median_x": 1.4916579223504722,
+  "within2": 23,
+  "within1_5": 19,
+  "bias_gm": 0.8729676527805896,
+  "max_x": 9.185046728971964
+ },
+ "ablation": {
+  "memory_only": {
+   "nominal": {
+    "n": 37,
+    "median_x": 15.577499999999997,
+    "within2": 0,
+    "within1_5": 0,
+    "bias_gm": 0.051798215793735725,
+    "max_x": 417.2903225806452
+   },
+   "calibrated": {
+    "n": 37,
+    "median_x": 9.3465,
+    "within2": 2,
+    "within1_5": 0,
+    "bias_gm": 0.09219744575898249,
+    "max_x": 250.37419354838715
+   }
+  },
+  "compute_only": {
+   "nominal": {
+    "n": 37,
+    "median_x": 4.09283,
+    "within2": 5,
+    "within1_5": 3,
+    "bias_gm": 0.14361580215897904,
+    "max_x": 1068.5819892473112
+   },
+   "calibrated": {
+    "n": 37,
+    "median_x": 2.455698,
+    "within2": 15,
+    "within1_5": 8,
+    "bias_gm": 0.25562676101454745,
+    "max_x": 641.1491935483868
+   }
+  },
+  "single_pass": {
+   "nominal": {
+    "n": 37,
+    "median_x": 4.09283,
+    "within2": 5,
+    "within1_5": 3,
+    "bias_gm": 0.16295245809514272,
+    "max_x": 417.2903225806452
+   },
+   "calibrated": {
+    "n": 37,
+    "median_x": 2.142233142233142,
+    "within2": 18,
+    "within1_5": 10,
+    "bias_gm": 0.3935268440273414,
+    "max_x": 20.95816733067729
+   }
+  }
+ },
+ "transfer": {
+  "n": 13,
+  "median_x": 1.0927018403266286,
+  "within2": 11,
+  "within1_5": 10,
+  "bias_gm": 0.9266166033873086,
+  "max_x": 4.539720728628728
+ },
+ "per_anchor": [
+  {
+   "model": "openvla",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 167.0,
+   "predicted_ms": 278.7827997489014,
+   "kind": "ar",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "openvla-oft",
+   "device": "a100-80",
+   "bytes": 2.0,
+   "measured_ms": 72.9,
+   "predicted_ms": 48.871794871794876,
+   "kind": "single",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "minivla",
+   "device": "l40s",
+   "bytes": 2.0,
+   "measured_ms": 80.0,
+   "predicted_ms": 64.53027172087616,
+   "kind": "ar",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "tinyvla",
+   "device": "rtx-a6000",
+   "bytes": 2.0,
+   "measured_ms": 14.0,
+   "predicted_ms": 70.70280200258398,
+   "kind": "iter",
+   "tier": "워크스테이션"
+  },
+  {
+   "model": "spatialvla",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 50.0,
+   "predicted_ms": 233.2617702448211,
+   "kind": "ar",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "vla-0",
+   "device": "rtx-5090",
+   "bytes": 2.0,
+   "measured_ms": 250.0,
+   "predicted_ms": 99.70211813842482,
+   "kind": "ar",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "pi0",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 73.0,
+   "predicted_ms": 90.24024751143395,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "pi0",
+   "device": "jetson-agx-orin-64",
+   "bytes": 2.0,
+   "measured_ms": 1280.0,
+   "predicted_ms": 348.54451308139534,
+   "kind": "iter",
+   "tier": "임베디드"
+  },
+  {
+   "model": "pi0-fast",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 750.0,
+   "predicted_ms": 666.7481840193705,
+   "kind": "ar",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "pi0-5",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 76.0,
+   "predicted_ms": 81.76567124024753,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "pi0-6",
+   "device": "h100-sxm",
+   "bytes": 2.0,
+   "measured_ms": 63.0,
+   "predicted_ms": 61.85483899351148,
+   "kind": "iter",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "rdt-1b",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 167.0,
+   "predicted_ms": 39.07936507936508,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "cogact",
+   "device": "rtx-a6000",
+   "bytes": 2.0,
+   "measured_ms": 181.0,
+   "predicted_ms": 144.90419089147284,
+   "kind": "iter",
+   "tier": "워크스테이션"
+  },
+  {
+   "model": "flower",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 52.0,
+   "predicted_ms": 26.494708994708994,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "evo-1",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 61.0,
+   "predicted_ms": 57.367747287238814,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "octo",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 77.0,
+   "predicted_ms": 88.39153439153439,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "gr00t-n1",
+   "device": "l40",
+   "bytes": 2.0,
+   "measured_ms": 63.9,
+   "predicted_ms": 45.618306790634875,
+   "kind": "iter",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "gr00t-n1-5",
+   "device": "h100-sxm",
+   "bytes": 2.0,
+   "measured_ms": 47.88,
+   "predicted_ms": 26.651331518255112,
+   "kind": "iter",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "gr00t-n1-6",
+   "device": "rtx-5090",
+   "bytes": 2.0,
+   "measured_ms": 37.0,
+   "predicted_ms": 48.007799181725204,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "gr00t-n1-6",
+   "device": "h100-sxm",
+   "bytes": 2.0,
+   "measured_ms": 38.0,
+   "predicted_ms": 26.651331518255112,
+   "kind": "iter",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "gr00t-n1-6",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 44.0,
+   "predicted_ms": 56.6559052999731,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "gr00t-n1-6",
+   "device": "jetson-agx-thor",
+   "bytes": 2.0,
+   "measured_ms": 105.0,
+   "predicted_ms": 101.42857142857143,
+   "kind": "iter",
+   "tier": "임베디드"
+  },
+  {
+   "model": "gr00t-n1-7",
+   "device": "h100-sxm",
+   "bytes": 2.0,
+   "measured_ms": 27.9,
+   "predicted_ms": 26.651331518255112,
+   "kind": "iter",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "gr00t-n1-7",
+   "device": "rtx-pro-6000",
+   "bytes": 2.0,
+   "measured_ms": 27.9,
+   "predicted_ms": 32.950681959961436,
+   "kind": "iter",
+   "tier": "워크스테이션"
+  },
+  {
+   "model": "gr00t-n1-7",
+   "device": "jetson-agx-thor",
+   "bytes": 2.0,
+   "measured_ms": 93.8,
+   "predicted_ms": 101.42857142857143,
+   "kind": "iter",
+   "tier": "임베디드"
+  },
+  {
+   "model": "xiaomi-robotics-0",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 80.0,
+   "predicted_ms": 82.22908259348938,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "molmoact-2",
+   "device": "h100-sxm",
+   "bytes": 2.0,
+   "measured_ms": 180.0,
+   "predicted_ms": 56.48482197401069,
+   "kind": "iter",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "turbovla",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 31.2,
+   "predicted_ms": 4.661375661375661,
+   "kind": "single",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "uni-navid",
+   "device": "a100-80",
+   "bytes": 2.0,
+   "measured_ms": 200.0,
+   "predicted_ms": 177.95355943712983,
+   "kind": "ar",
+   "tier": "데이터센터"
+  },
+  {
+   "model": "navila",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 594.6,
+   "predicted_ms": 489.77096224553856,
+   "kind": "ar",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "navila",
+   "device": "rtx-4090",
+   "bytes": 0.5,
+   "measured_ms": 367.8,
+   "predicted_ms": 331.0408035153798,
+   "kind": "ar",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "streamvln",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 270.0,
+   "predicted_ms": 369.25567213702806,
+   "kind": "ar",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "trackvla",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 100.0,
+   "predicted_ms": 216.76863061608827,
+   "kind": "iter",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "abot-n0",
+   "device": "jetson-orin-nx-16",
+   "bytes": 2.0,
+   "measured_ms": 500.0,
+   "predicted_ms": 1673.0106907894738,
+   "kind": "iter",
+   "tier": "임베디드"
+  },
+  {
+   "model": "vlingnav",
+   "device": "rtx-4090",
+   "bytes": 2.0,
+   "measured_ms": 300.0,
+   "predicted_ms": 215.86440677966104,
+   "kind": "single",
+   "tier": "데스크톱"
+  },
+  {
+   "model": "lightnav-0",
+   "device": "jetson-agx-thor",
+   "bytes": 2.0,
+   "measured_ms": 268.0,
+   "predicted_ms": 620.8548614506061,
+   "kind": "ar",
+   "tier": "임베디드"
+  },
+  {
+   "model": "lightnav-0",
+   "device": "jetson-agx-thor",
+   "bytes": 1.0,
+   "measured_ms": 178.0,
+   "predicted_ms": 398.78526438100903,
+   "kind": "ar",
+   "tier": "임베디드"
+  }
+ ]
+}
