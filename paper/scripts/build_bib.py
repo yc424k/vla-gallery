@@ -122,6 +122,13 @@ BACKGROUND = {  # key: arXiv id
 bg = []
 for k, aid in BACKGROUND.items():
     bg.append(arxiv_entry(k, aid))
+for key, author, title, url in [
+        ("repo-openpi", "Physical Intelligence", "openpi (official repository of $\\pi_0$ and $\\pi_{0.5}$), README", "https://github.com/Physical-Intelligence/openpi"),
+        ("repo-openvla", "Kim, Moo Jin and Pertsch, Karl and others", "OpenVLA (official repository), README", "https://github.com/openvla/openvla"),
+        ("repo-go1", "AgiBot World Contributors", "AgiBot World and GO-1 (official repository), README", "https://github.com/OpenDriveLab/AgiBot-World")]:
+    bg.append(f"@www{{{key},\n  author = {{{{{author}}}}},\n  title = {{{{{title}}}}},\n  url = {{{url}}},\n  urldate = {{19 October 2026}}\n}}\n"
+              if "others" not in author else
+              f"@www{{{key},\n  author = {{{author}}},\n  title = {{{{{title}}}}},\n  url = {{{url}}},\n  urldate = {{19 October 2026}}\n}}\n")
 bg.append("""@article{williams2009roofline,
   author = {Williams, Samuel and Waterman, Andrew and Patterson, David},
   title = {{Roofline: An Insightful Visual Performance Model for Multicore Architectures}},

@@ -1,15 +1,15 @@
 \begin{table}[H]
-\caption{Estimated fine-tuning feasibility for the 86 open-weight models with enough size information. Each cell gives the number of models whose estimated per-GPU memory fits (90\% of device memory; 75\% on Jetson) and, in parentheses, the largest such model (total parameters). Memory assumes the ``normal'' activation budget (4~GB + 5~GB per billion parameters per GPU). Head-only applies to the models with a separable flow-matching or diffusion head of known size.\label{tab:tune}}
+\caption{Estimated fine-tuning feasibility for the 89 models with released weights and enough size information. Each cell gives the number of models whose estimated per-GPU memory fits (90\% of device memory; 75\% on Jetson) and, in parentheses, the largest such model (total parameters). Memory assumes the ``normal'' activation budget (4~GB + 5~GB per billion parameters per GPU). Head-only applies to models with a separable flow-matching, diffusion or hybrid head; where the source does not give the head size, the estimator's default is used.\label{tab:tune}}
 \small
 \begin{tabularx}{\textwidth}{@{}X c c c c@{}}
 \toprule
 \textbf{Configuration} & \textbf{Full} & \textbf{LoRA} & \textbf{QLoRA} & \textbf{Head only}\\
 \midrule
-1$\times$ RTX 4090 (24 GB) & 19 ($\le$0.77B) & 30 ($\le$2.4B) & 44 ($\le$3B) & 33 ($\le$5.1B)\\
-1$\times$ RTX 5090 (32 GB) & 24 ($\le$1.1B) & 46 ($\le$3.3B) & 53 ($\le$4.2B) & 37 ($\le$7.6B)\\
-1$\times$ A100 (80 GB) & 45 ($\le$3.2B) & 83 ($\le$9B) & 83 ($\le$9B) & 42 ($\le$8.4B)\\
-8$\times$ H100 (80 GB) & 83 ($\le$9B) & 83 ($\le$9B) & 83 ($\le$9B) & 42 ($\le$8.4B)\\
-Jetson AGX Thor (128 GB) & 53 ($\le$4.2B) & 83 ($\le$9B) & 85 ($\le$14B) & 42 ($\le$8.4B)\\
+1$\times$ RTX 4090 (24 GB) & 20 ($\le$0.77B) & 32 ($\le$2.37B) & 46 ($\le$3B) & 34 ($\le$5.1B)\\
+1$\times$ RTX 5090 (32 GB) & 26 ($\le$1.1B) & 48 ($\le$3.3B) & 56 ($\le$4.2B) & 39 ($\le$7.6B)\\
+1$\times$ A100 (80 GB) & 47 ($\le$3.2B) & 86 ($\le$9B) & 86 ($\le$9B) & 44 ($\le$8.45B)\\
+8$\times$ H100 (80 GB) & 86 ($\le$9B) & 86 ($\le$9B) & 86 ($\le$9B) & 44 ($\le$8.45B)\\
+Jetson AGX Thor (128 GB) & 56 ($\le$4.2B) & 86 ($\le$9B) & 88 ($\le$14B) & 44 ($\le$8.45B)\\
 \bottomrule
 \end{tabularx}
 \end{table}

@@ -72,6 +72,15 @@
   "일부": 17,
   "미확인": 39
  },
+ "open_hf_reconciled": [
+  "scaledp",
+  "chain-of-action",
+  "uh-1",
+  "egovla",
+  "syvla",
+  "turbovla"
+ ],
+ "n_weights_open": 123,
  "n_hf": 89,
  "n_gh": 153,
  "paper_kind": {
@@ -107,6 +116,24 @@
   "Unknown": {
    "미확인": 2
   }
+ },
+ "weights_open_by_sector": {
+  "Industry": [
+   29,
+   74
+  ],
+  "Mixed": [
+   54,
+   73
+  ],
+  "Academic": [
+   40,
+   66
+  ],
+  "Unknown": [
+   0,
+   2
+  ]
  },
  "paper_by_sector": {
   "Industry": {
@@ -424,8 +451,26 @@
  "params_vla_median": 5,
  "chunk": {
   "none": 20,
-  "chunked": 92,
-  "undisclosed": 103
+  "chunked": 91,
+  "undisclosed": 104
+ },
+ "chunk_share_by_year": {
+  "2023": [
+   7,
+   13
+  ],
+  "2024": [
+   26,
+   36
+  ],
+  "2025": [
+   39,
+   42
+  ],
+  "2026": [
+   19,
+   20
+  ]
  },
  "hz": {
   "n": 83,
@@ -456,22 +501,24 @@
   "시뮬 RL": 21
  },
  "tg_acc_family": {
-  "Workstation/consumer (RTX, L40, A40, A10)": 28,
+  "Workstation / consumer GPU (RTX)": 18,
   "TPU": 9,
   "V100": 7,
-  "A100/A800": 46,
-  "Hopper-class (H100/H800/H200)": 44,
+  "Other data-centre GPU (L40, L40S, A40, A10)": 10,
+  "A100 / A800": 46,
+  "Hopper (H100/H800/H200)": 44,
   "Not disclosed": 9,
   "Blackwell (GB200)": 2
  },
  "tg_pre_acc_family": {
   "V100": 4,
   "TPU": 8,
-  "A100/A800": 23,
-  "Hopper-class (H100/H800/H200)": 26,
+  "A100 / A800": 23,
+  "Hopper (H100/H800/H200)": 26,
   "Not disclosed": 9,
-  "Workstation/consumer (RTX, L40, A40, A10)": 4,
-  "Blackwell (GB200)": 2
+  "Workstation / consumer GPU (RTX)": 3,
+  "Blackwell (GB200)": 2,
+  "Other data-centre GPU (L40, L40S, A40, A10)": 1
  },
  "tg_pre_n": {
   "n": 59,
@@ -497,12 +544,19 @@
   "n": 30,
   "median": 24.0
  },
+ "tg_simrl_family": {
+  "Hopper (H100/H800/H200)": 3,
+  "Other data-centre GPU (L40, L40S, A40, A10)": 6,
+  "Workstation / consumer GPU (RTX)": 9,
+  "V100": 3
+ },
  "tg_simrl_n": {
   "n": 20,
   "median": 1.0,
   "acc": {
-   "Hopper-class (H100/H800/H200)": 3,
-   "Workstation/consumer (RTX, L40, A40, A10)": 15,
+   "Hopper (H100/H800/H200)": 3,
+   "Other data-centre GPU (L40, L40S, A40, A10)": 6,
+   "Workstation / consumer GPU (RTX)": 9,
    "V100": 3
   }
  },
@@ -576,7 +630,25 @@
   "n": 54,
   "median": 1522.0,
   "max": 1000000,
-  "ge10k": 16
+  "ge10k": 16,
+  "by_year": {
+   "2023": {
+    "n": 3,
+    "median": 80
+   },
+   "2024": {
+    "n": 5,
+    "median": 240.3
+   },
+   "2025": {
+    "n": 24,
+    "median": 1522.0
+   },
+   "2026": {
+    "n": 22,
+    "median": 2773.7
+   }
+  }
  },
  "dtype": {
   "Real-robot teleoperation": 145,
@@ -612,7 +684,7 @@
   "Control rate": 88,
   "Inference hardware": 110,
   "Inference memory": 28,
-  "Open weights": 117,
+  "Open weights": 123,
   "Code repository": 153
  },
  "disclosure_by_sector": {
@@ -642,7 +714,7 @@
    "Control rate": 28,
    "Inference hardware": 40,
    "Inference memory": 12,
-   "Open weights": 48,
+   "Open weights": 54,
    "Code repository": 61,
    "_n": 73
   },
@@ -689,7 +761,7 @@
    "Control rate": 30,
    "Inference hardware": 35,
    "Inference memory": 8,
-   "Open weights": 33,
+   "Open weights": 35,
    "Code repository": 50,
    "_n": 60
   },
@@ -704,7 +776,7 @@
    "Control rate": 32,
    "Inference hardware": 47,
    "Inference memory": 16,
-   "Open weights": 48,
+   "Open weights": 50,
    "Code repository": 62,
    "_n": 91
   },
@@ -719,7 +791,7 @@
    "Control rate": 15,
    "Inference hardware": 20,
    "Inference memory": 4,
-   "Open weights": 26,
+   "Open weights": 28,
    "Code repository": 29,
    "_n": 48
   }
@@ -736,7 +808,7 @@
    "Control rate": 32,
    "Inference hardware": 54,
    "Inference memory": 19,
-   "Open weights": 67,
+   "Open weights": 71,
    "Code repository": 83,
    "_n": 111
   },
@@ -751,7 +823,7 @@
    "Control rate": 20,
    "Inference hardware": 15,
    "Inference memory": 0,
-   "Open weights": 14,
+   "Open weights": 16,
    "Code repository": 26,
    "_n": 41
   },
@@ -785,6 +857,434 @@
    "Code repository": 26,
    "_n": 29
   }
+ },
+ "disclosure_trend_by_sector": {
+  "2023": {
+   "Industry": {
+    "Parameter count": [
+     3,
+     4
+    ],
+    "Backbone (V)LM": [
+     4,
+     4
+    ],
+    "Action-head type": [
+     4,
+     4
+    ],
+    "Training accelerator": [
+     0,
+     4
+    ],
+    "Training duration": [
+     0,
+     4
+    ],
+    "GPU/TPU-hours": [
+     0,
+     4
+    ],
+    "Training data scale": [
+     3,
+     4
+    ],
+    "Control rate": [
+     2,
+     4
+    ],
+    "Inference hardware": [
+     1,
+     4
+    ],
+    "Inference memory": [
+     0,
+     4
+    ],
+    "Open weights": [
+     2,
+     4
+    ],
+    "Code repository": [
+     2,
+     4
+    ]
+   },
+   "Other": {
+    "Parameter count": [
+     11,
+     12
+    ],
+    "Backbone (V)LM": [
+     12,
+     12
+    ],
+    "Action-head type": [
+     12,
+     12
+    ],
+    "Training accelerator": [
+     4,
+     12
+    ],
+    "Training duration": [
+     3,
+     12
+    ],
+    "GPU/TPU-hours": [
+     2,
+     12
+    ],
+    "Training data scale": [
+     12,
+     12
+    ],
+    "Control rate": [
+     9,
+     12
+    ],
+    "Inference hardware": [
+     7,
+     12
+    ],
+    "Inference memory": [
+     0,
+     12
+    ],
+    "Open weights": [
+     8,
+     12
+    ],
+    "Code repository": [
+     10,
+     12
+    ]
+   }
+  },
+  "2024": {
+   "Industry": {
+    "Parameter count": [
+     4,
+     7
+    ],
+    "Backbone (V)LM": [
+     4,
+     7
+    ],
+    "Action-head type": [
+     5,
+     7
+    ],
+    "Training accelerator": [
+     1,
+     7
+    ],
+    "Training duration": [
+     1,
+     7
+    ],
+    "GPU/TPU-hours": [
+     0,
+     7
+    ],
+    "Training data scale": [
+     6,
+     7
+    ],
+    "Control rate": [
+     4,
+     7
+    ],
+    "Inference hardware": [
+     4,
+     7
+    ],
+    "Inference memory": [
+     1,
+     7
+    ],
+    "Open weights": [
+     1,
+     7
+    ],
+    "Code repository": [
+     1,
+     7
+    ]
+   },
+   "Other": {
+    "Parameter count": [
+     28,
+     53
+    ],
+    "Backbone (V)LM": [
+     53,
+     53
+    ],
+    "Action-head type": [
+     53,
+     53
+    ],
+    "Training accelerator": [
+     33,
+     53
+    ],
+    "Training duration": [
+     21,
+     53
+    ],
+    "GPU/TPU-hours": [
+     10,
+     53
+    ],
+    "Training data scale": [
+     52,
+     53
+    ],
+    "Control rate": [
+     26,
+     53
+    ],
+    "Inference hardware": [
+     31,
+     53
+    ],
+    "Inference memory": [
+     7,
+     53
+    ],
+    "Open weights": [
+     34,
+     53
+    ],
+    "Code repository": [
+     49,
+     53
+    ]
+   }
+  },
+  "2025": {
+   "Industry": {
+    "Parameter count": [
+     15,
+     33
+    ],
+    "Backbone (V)LM": [
+     25,
+     33
+    ],
+    "Action-head type": [
+     25,
+     33
+    ],
+    "Training accelerator": [
+     9,
+     33
+    ],
+    "Training duration": [
+     4,
+     33
+    ],
+    "GPU/TPU-hours": [
+     2,
+     33
+    ],
+    "Training data scale": [
+     23,
+     33
+    ],
+    "Control rate": [
+     11,
+     33
+    ],
+    "Inference hardware": [
+     16,
+     33
+    ],
+    "Inference memory": [
+     1,
+     33
+    ],
+    "Open weights": [
+     12,
+     33
+    ],
+    "Code repository": [
+     13,
+     33
+    ]
+   },
+   "Other": {
+    "Parameter count": [
+     28,
+     56
+    ],
+    "Backbone (V)LM": [
+     53,
+     56
+    ],
+    "Action-head type": [
+     56,
+     56
+    ],
+    "Training accelerator": [
+     39,
+     56
+    ],
+    "Training duration": [
+     24,
+     56
+    ],
+    "GPU/TPU-hours": [
+     18,
+     56
+    ],
+    "Training data scale": [
+     51,
+     56
+    ],
+    "Control rate": [
+     21,
+     56
+    ],
+    "Inference hardware": [
+     31,
+     56
+    ],
+    "Inference memory": [
+     15,
+     56
+    ],
+    "Open weights": [
+     38,
+     56
+    ],
+    "Code repository": [
+     47,
+     56
+    ]
+   }
+  },
+  "2026": {
+   "Industry": {
+    "Parameter count": [
+     14,
+     30
+    ],
+    "Backbone (V)LM": [
+     21,
+     30
+    ],
+    "Action-head type": [
+     16,
+     30
+    ],
+    "Training accelerator": [
+     4,
+     30
+    ],
+    "Training duration": [
+     2,
+     30
+    ],
+    "GPU/TPU-hours": [
+     3,
+     30
+    ],
+    "Training data scale": [
+     21,
+     30
+    ],
+    "Control rate": [
+     8,
+     30
+    ],
+    "Inference hardware": [
+     9,
+     30
+    ],
+    "Inference memory": [
+     2,
+     30
+    ],
+    "Open weights": [
+     14,
+     30
+    ],
+    "Code repository": [
+     17,
+     30
+    ]
+   },
+   "Other": {
+    "Parameter count": [
+     10,
+     18
+    ],
+    "Backbone (V)LM": [
+     15,
+     18
+    ],
+    "Action-head type": [
+     16,
+     18
+    ],
+    "Training accelerator": [
+     11,
+     18
+    ],
+    "Training duration": [
+     4,
+     18
+    ],
+    "GPU/TPU-hours": [
+     3,
+     18
+    ],
+    "Training data scale": [
+     16,
+     18
+    ],
+    "Control rate": [
+     7,
+     18
+    ],
+    "Inference hardware": [
+     11,
+     18
+    ],
+    "Inference memory": [
+     2,
+     18
+    ],
+    "Open weights": [
+     14,
+     18
+    ],
+    "Code repository": [
+     12,
+     18
+    ]
+   }
+  }
+ },
+ "industry_share_by_year": {
+  "2023": [
+   4,
+   16
+  ],
+  "2024": [
+   7,
+   60
+  ],
+  "2025": [
+   33,
+   91
+  ],
+  "2026": [
+   30,
+   48
+  ]
  },
  "disclosure_score": {
   "median": 6,
@@ -920,6 +1420,11 @@
   "LightNav-0",
   "Qwen-VLA"
  ],
+ "vla_rl_post_by_year": {
+  "2025": 5,
+  "2026": 7,
+  "2024": 1
+ },
  "base_types": {
   "바퀴형": 45,
   "고정": 136,
@@ -974,394 +1479,341 @@
   }
  },
  "base_checked": 48,
+ "n_assess": 125,
+ "est_none_nosize": 78,
+ "est_none_nokind": [
+  "rfm-1",
+  "gen-0",
+  "v-jepa-2-ac",
+  "g0plus",
+  "spirit-v1-5",
+  "holobrain-0",
+  "g0tiny",
+  "being-h0-7",
+  "internvla-a1-5"
+ ],
  "deploy": {
   "jetson-orin-nano-super|2|5": {
    "ok": 27,
-   "oom": 89,
-   "na": 89,
+   "oom": 88,
    "slow": 10
   },
   "jetson-orin-nano-super|2|10": {
    "ok": 19,
-   "oom": 89,
-   "slow": 18,
-   "na": 89
+   "oom": 88,
+   "slow": 18
   },
   "jetson-orin-nano-super|1|5": {
    "ok": 30,
-   "oom": 64,
-   "na": 89,
+   "oom": 63,
    "slow": 32
   },
   "jetson-orin-nano-super|1|10": {
    "ok": 23,
-   "oom": 64,
-   "slow": 39,
-   "na": 89
+   "oom": 63,
+   "slow": 39
   },
   "jetson-orin-nano-super|0.5|5": {
    "ok": 32,
-   "oom": 44,
-   "na": 89,
+   "oom": 43,
    "slow": 50
   },
   "jetson-orin-nano-super|0.5|10": {
    "ok": 24,
-   "oom": 44,
-   "na": 89,
+   "oom": 43,
    "slow": 58
   },
   "jetson-orin-nx-16|2|5": {
    "ok": 27,
-   "oom": 54,
-   "na": 89,
+   "oom": 53,
    "slow": 45
   },
   "jetson-orin-nx-16|2|10": {
    "ok": 20,
-   "oom": 54,
-   "slow": 52,
-   "na": 89
+   "oom": 53,
+   "slow": 52
   },
   "jetson-orin-nx-16|1|5": {
    "ok": 30,
-   "oom": 12,
-   "na": 89,
+   "oom": 11,
    "slow": 84
   },
   "jetson-orin-nx-16|1|10": {
    "ok": 24,
-   "oom": 12,
-   "slow": 90,
-   "na": 89
+   "oom": 11,
+   "slow": 90
   },
   "jetson-orin-nx-16|0.5|5": {
    "ok": 33,
-   "oom": 8,
-   "na": 89,
+   "oom": 7,
    "slow": 85
   },
   "jetson-orin-nx-16|0.5|10": {
    "ok": 26,
-   "oom": 8,
-   "na": 89,
+   "oom": 7,
    "slow": 92
   },
   "jetson-agx-orin-64|2|5": {
    "ok": 32,
    "oom": 6,
-   "na": 90,
    "slow": 87
   },
   "jetson-agx-orin-64|2|10": {
    "ok": 24,
    "oom": 6,
-   "slow": 95,
-   "na": 90
+   "slow": 95
   },
   "jetson-agx-orin-64|1|5": {
    "ok": 35,
    "oom": 6,
-   "na": 90,
    "slow": 84
   },
   "jetson-agx-orin-64|1|10": {
    "ok": 26,
    "oom": 6,
-   "na": 90,
    "slow": 93
   },
   "jetson-agx-orin-64|0.5|5": {
    "ok": 37,
    "slow": 85,
-   "na": 90,
    "oom": 3
   },
   "jetson-agx-orin-64|0.5|10": {
    "ok": 29,
    "slow": 93,
-   "na": 90,
    "oom": 3
   },
   "jetson-agx-thor|2|5": {
    "ok": 66,
    "oom": 6,
-   "na": 90,
    "slow": 53
   },
   "jetson-agx-thor|2|10": {
    "ok": 28,
    "oom": 6,
-   "slow": 91,
-   "na": 90
+   "slow": 91
   },
   "jetson-agx-thor|1|5": {
    "ok": 78,
    "slow": 45,
-   "na": 90,
    "oom": 2
   },
   "jetson-agx-thor|1|10": {
    "ok": 39,
    "slow": 84,
-   "na": 90,
    "oom": 2
   },
   "jetson-agx-thor|0.5|5": {
    "ok": 84,
-   "slow": 41,
-   "na": 90
+   "slow": 41
   },
   "jetson-agx-thor|0.5|10": {
    "ok": 46,
-   "slow": 79,
-   "na": 90
+   "slow": 79
   },
   "rtx-4060-laptop|2|5": {
    "ok": 34,
-   "oom": 79,
-   "na": 89,
+   "oom": 78,
    "slow": 13
   },
   "rtx-4060-laptop|2|10": {
    "ok": 30,
-   "oom": 79,
-   "na": 89,
+   "oom": 78,
    "slow": 17
   },
   "rtx-4060-laptop|1|5": {
    "ok": 41,
-   "oom": 54,
-   "na": 89,
+   "oom": 53,
    "slow": 31
   },
   "rtx-4060-laptop|1|10": {
    "ok": 32,
-   "oom": 54,
-   "na": 89,
+   "oom": 53,
    "slow": 40
   },
   "rtx-4060-laptop|0.5|5": {
    "ok": 41,
-   "oom": 22,
-   "na": 89,
+   "oom": 21,
    "slow": 63
   },
   "rtx-4060-laptop|0.5|10": {
    "ok": 33,
-   "oom": 22,
-   "na": 89,
+   "oom": 21,
    "slow": 71
   },
   "rtx-4090-laptop|2|5": {
    "ok": 72,
-   "oom": 44,
-   "na": 89,
+   "oom": 43,
    "slow": 10
   },
   "rtx-4090-laptop|2|10": {
    "ok": 39,
-   "oom": 44,
-   "na": 89,
+   "oom": 43,
    "slow": 43
   },
   "rtx-4090-laptop|1|5": {
    "ok": 81,
-   "oom": 8,
-   "na": 89,
+   "oom": 7,
    "slow": 37
   },
   "rtx-4090-laptop|1|10": {
    "ok": 42,
-   "oom": 8,
-   "na": 89,
+   "oom": 7,
    "slow": 76
   },
   "rtx-4090-laptop|0.5|5": {
    "ok": 82,
    "oom": 6,
-   "na": 90,
    "slow": 37
   },
   "rtx-4090-laptop|0.5|10": {
    "ok": 43,
    "oom": 6,
-   "na": 90,
    "slow": 76
   },
   "rtx-4090|2|5": {
    "ok": 87,
-   "oom": 10,
-   "na": 89,
+   "oom": 9,
    "slow": 29
   },
   "rtx-4090|2|10": {
    "ok": 68,
-   "oom": 10,
-   "na": 89,
+   "oom": 9,
    "slow": 48
   },
   "rtx-4090|1|5": {
    "ok": 97,
    "oom": 6,
-   "na": 90,
    "slow": 22
   },
   "rtx-4090|1|10": {
    "ok": 74,
    "oom": 6,
-   "na": 90,
    "slow": 45
   },
   "rtx-4090|0.5|5": {
    "ok": 103,
    "oom": 6,
-   "na": 90,
    "slow": 16
   },
   "rtx-4090|0.5|10": {
    "ok": 76,
    "oom": 6,
-   "na": 90,
    "slow": 43
   },
   "rtx-5090|2|5": {
    "ok": 101,
-   "oom": 8,
-   "na": 89,
+   "oom": 7,
    "slow": 17
   },
   "rtx-5090|2|10": {
    "ok": 78,
-   "oom": 8,
-   "na": 89,
+   "oom": 7,
    "slow": 40
   },
   "rtx-5090|1|5": {
    "ok": 108,
    "oom": 6,
-   "na": 90,
    "slow": 11
   },
   "rtx-5090|1|10": {
    "ok": 83,
    "oom": 6,
-   "na": 90,
    "slow": 36
   },
   "rtx-5090|0.5|5": {
    "ok": 109,
    "oom": 6,
-   "na": 90,
    "slow": 10
   },
   "rtx-5090|0.5|10": {
    "ok": 83,
    "oom": 6,
-   "na": 90,
    "slow": 36
   },
   "rtx-pro-6000|2|5": {
    "ok": 114,
    "oom": 6,
-   "na": 90,
    "slow": 5
   },
   "rtx-pro-6000|2|10": {
    "ok": 89,
    "oom": 6,
-   "na": 90,
    "slow": 30
   },
   "rtx-pro-6000|1|5": {
    "ok": 116,
    "slow": 6,
-   "na": 90,
    "oom": 3
   },
   "rtx-pro-6000|1|10": {
    "ok": 91,
    "slow": 31,
-   "na": 90,
    "oom": 3
   },
   "rtx-pro-6000|0.5|5": {
    "ok": 117,
-   "slow": 8,
-   "na": 90
+   "slow": 8
   },
   "rtx-pro-6000|0.5|10": {
    "ok": 106,
-   "slow": 19,
-   "na": 90
+   "slow": 19
   },
   "a100-80|2|5": {
    "ok": 112,
    "oom": 6,
-   "na": 90,
    "slow": 7
   },
   "a100-80|2|10": {
    "ok": 85,
    "oom": 6,
-   "na": 90,
    "slow": 34
   },
   "a100-80|1|5": {
    "ok": 115,
    "oom": 6,
-   "na": 90,
    "slow": 4
   },
   "a100-80|1|10": {
    "ok": 86,
    "oom": 6,
-   "na": 90,
    "slow": 33
   },
   "a100-80|0.5|5": {
    "ok": 116,
-   "slow": 9,
-   "na": 90
+   "slow": 9
   },
   "a100-80|0.5|10": {
    "ok": 95,
-   "slow": 30,
-   "na": 90
+   "slow": 30
   },
   "h100-sxm|2|5": {
    "ok": 118,
    "oom": 6,
-   "na": 89,
-   "slow": 2
+   "slow": 1
   },
   "h100-sxm|2|10": {
    "ok": 105,
    "oom": 6,
-   "na": 89,
-   "slow": 15
+   "slow": 14
   },
   "h100-sxm|1|5": {
    "ok": 118,
    "oom": 6,
-   "na": 90,
    "slow": 1
   },
   "h100-sxm|1|10": {
    "ok": 113,
    "oom": 6,
-   "na": 90,
    "slow": 6
   },
   "h100-sxm|0.5|5": {
    "ok": 119,
-   "slow": 6,
-   "na": 90
+   "slow": 6
   },
   "h100-sxm|0.5|10": {
    "ok": 114,
-   "slow": 11,
-   "na": 90
+   "slow": 11
   }
  },
  "deploy_devices": [
@@ -1460,88 +1912,88 @@
  "anchor_devices": 11,
  "tune": {
   "rtx-4090|1|full": {
-   "ok": 19,
-   "closed": 42,
+   "ok": 20,
+   "closed": 39,
    "na": 87,
-   "oom": 67,
-   "med_hrs": 0.060214458664821856,
+   "oom": 69,
+   "med_hrs": 0.06847918828548369,
    "max_P": 0.77
   },
   "rtx-4090|1|lora": {
-   "ok": 30,
-   "closed": 42,
+   "ok": 32,
+   "closed": 39,
    "na": 87,
-   "oom": 56,
+   "oom": 57,
    "med_hrs": 0.12652907490679888,
    "max_P": 2.37
   },
   "rtx-4090|1|qlora": {
-   "ok": 44,
-   "closed": 42,
+   "ok": 46,
+   "closed": 39,
    "na": 87,
-   "oom": 42,
-   "med_hrs": 2.812152965140859,
+   "oom": 43,
+   "med_hrs": 1.6859679465006345,
    "max_P": 3
   },
   "rtx-4090|1|head": {
    "na": 153,
-   "ok": 33,
-   "closed": 19,
-   "oom": 10,
+   "ok": 34,
+   "closed": 17,
+   "oom": 11,
    "med_hrs": 4.420154502478959,
    "max_P": 5.1
   },
   "rtx-5090|1|full": {
-   "ok": 24,
-   "closed": 42,
+   "ok": 26,
+   "closed": 39,
    "na": 87,
-   "oom": 62,
-   "med_hrs": 0.09077395158540745,
+   "oom": 63,
+   "med_hrs": 0.09310148880554611,
    "max_P": 1.1
   },
   "rtx-5090|1|lora": {
-   "ok": 46,
-   "closed": 42,
+   "ok": 48,
+   "closed": 39,
    "na": 87,
-   "oom": 40,
-   "med_hrs": 1.7057744440656137,
+   "oom": 41,
+   "med_hrs": 1.3329999621169075,
    "max_P": 3.3
   },
   "rtx-5090|1|qlora": {
-   "ok": 53,
-   "closed": 42,
+   "ok": 56,
+   "closed": 39,
    "na": 87,
    "oom": 33,
-   "med_hrs": 3.8188097132249883,
+   "med_hrs": 3.8005288479751496,
    "max_P": 4.2
   },
   "rtx-5090|1|head": {
    "na": 153,
-   "ok": 37,
-   "closed": 19,
+   "ok": 39,
+   "closed": 17,
    "oom": 6,
    "med_hrs": 4.067371292192296,
    "max_P": 7.6
   },
   "a100-80|1|full": {
-   "ok": 45,
-   "closed": 42,
+   "ok": 47,
+   "closed": 39,
    "na": 87,
-   "oom": 41,
-   "med_hrs": 1.6849816849816852,
+   "oom": 42,
+   "med_hrs": 1.0002442002442007,
    "max_P": 3.2
   },
   "a100-80|1|lora": {
-   "ok": 83,
-   "closed": 42,
+   "ok": 86,
+   "closed": 39,
    "na": 87,
    "oom": 3,
    "med_hrs": 5.337240537240538,
    "max_P": 9
   },
   "a100-80|1|qlora": {
-   "ok": 83,
-   "closed": 42,
+   "ok": 86,
+   "closed": 39,
    "na": 87,
    "oom": 3,
    "med_hrs": 6.9384126984127,
@@ -1549,31 +2001,31 @@
   },
   "a100-80|1|head": {
    "na": 153,
-   "ok": 42,
-   "closed": 19,
+   "ok": 44,
+   "closed": 17,
    "oom": 1,
    "med_hrs": 2.535775335775336,
    "max_P": 8.45
   },
   "h100-sxm|8|full": {
-   "ok": 83,
-   "closed": 42,
+   "ok": 86,
+   "closed": 39,
    "na": 87,
    "oom": 3,
    "med_hrs": 0.35060195545289036,
    "max_P": 9
   },
   "h100-sxm|8|lora": {
-   "ok": 83,
-   "closed": 42,
+   "ok": 86,
+   "closed": 39,
    "na": 87,
    "oom": 3,
    "med_hrs": 0.23373463696859353,
    "max_P": 9
   },
   "h100-sxm|8|qlora": {
-   "ok": 83,
-   "closed": 42,
+   "ok": 86,
+   "closed": 39,
    "na": 87,
    "oom": 3,
    "med_hrs": 0.3038550280591716,
@@ -1581,44 +2033,44 @@
   },
   "h100-sxm|8|head": {
    "na": 153,
-   "ok": 42,
-   "closed": 19,
+   "ok": 44,
+   "closed": 17,
    "oom": 1,
    "med_hrs": 0.1110496188818574,
    "max_P": 8.45
   },
   "jetson-agx-thor|1|full": {
-   "ok": 53,
-   "closed": 42,
+   "ok": 56,
+   "closed": 39,
    "na": 87,
    "oom": 33,
-   "med_hrs": 5.356617850234874,
+   "med_hrs": 5.330975407571154,
    "max_P": 4.2
   },
   "jetson-agx-thor|1|lora": {
-   "ok": 83,
-   "closed": 42,
+   "ok": 86,
+   "closed": 39,
    "na": 87,
    "oom": 3,
    "med_hrs": 9.662779773418073,
    "max_P": 9
   },
   "jetson-agx-thor|1|qlora": {
-   "ok": 85,
-   "closed": 42,
+   "ok": 88,
+   "closed": 39,
    "na": 87,
    "oom": 1,
-   "med_hrs": 13.17773970710141,
+   "med_hrs": 12.561613705443493,
    "max_P": 14
   },
   "jetson-agx-thor|1|head": {
    "na": 153,
-   "ok": 42,
-   "closed": 19,
+   "ok": 44,
+   "closed": 17,
    "oom": 1,
    "med_hrs": 4.590881458966566,
    "max_P": 8.45
   }
  },
- "n_open_est": 86
+ "n_open_est": 89
 }

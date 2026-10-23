@@ -93,6 +93,47 @@ for a in V:
     pred = o[3] * est_latency(m, dev, a[2]) / est_latency(m, DEVBY[o[1]], o[2])
     tr.append(math.log(pred / a[3]))
 out["transfer"] = summary(np.array(tr))
+# memory equation (1) against reported inference memory: exact bf16/fp16 figures plus reported quantised figures
+from estimator import mem_need
+from corpus import D as CORPUS
+QB = {"int8": 1.0, "int4": 0.5, "4-bit": 0.5, "W4A16": 0.5}
+mem_rows = []
+for m in CORPUS:
+    if m["mg"] is not None and m["est"] and not m["mge"] and m["mc"] is not False:
+        mem_rows.append(dict(model=m["id"], bytes=2.0, reported_gb=m["mg"], predicted_gb=mem_need(m, 2)))
+        for lab, gb in m["mq"]:
+            if lab in QB:
+                mem_rows.append(dict(model=m["id"], bytes=QB[lab], reported_gb=gb, predicted_gb=mem_need(m, QB[lab])))
+me = np.array([math.log(r["predicted_gb"] / r["reported_gb"]) for r in mem_rows])
+out["memory"] = summary(me); out["memory"]["n_bf16"] = sum(r["bytes"] == 2 for r in mem_rows); out["memory_rows"] = mem_rows
+
+# which term dominates the estimate (calibrated constants)
+def terms(m, dev, b):
+    e = m["est"]; bw, tf = dev["bw_gbs"] * EST["em"], dev["bf16_tflops"] * EST["ec"]
+    tm = lambda p: 1000 * p * b / bw
+    tc = lambda p, n: 2 * p * n / tf
+    if e["kind"] == "ar":
+        return {"prefill": max(tm(e["P"]), tc(e["P"], e["n_in"])), "decode": e["n_tok"] * tm(e["P"]), "overhead": EST["c0"] + e["n_tok"] * EST["ct"]}, tc(e["P"], e["n_in"]) > tm(e["P"])
+    if e["kind"] == "iter":
+        pb = max(e["P"] - e["Ph"], 0.01)
+        return {"backbone": max(tm(pb), tc(pb, e["n_in"])), "head": e["K"] * max(tm(e["Ph"]), tc(e["Ph"], 50)), "overhead": EST["c0"] * (1 + e["K"])}, tc(e["Ph"], 50) > tm(e["Ph"])
+    return {"pass": max(tm(e["P"]), tc(e["P"], e["n_in"])), "overhead": EST["c0"]}, tc(e["P"], e["n_in"]) > tm(e["P"])
+brk = {}
+for a in V:
+    t, cb = terms(BYID[a[0]], DEVBY[a[1]], a[2])
+    k = BYID[a[0]]["est"]["kind"]
+    brk.setdefault(k, {"n": 0, "largest": {}, "compute_bound_flag": 0})
+    brk[k]["n"] += 1
+    big = max(t, key=t.get)
+    brk[k]["largest"][big] = brk[k]["largest"].get(big, 0) + 1
+    brk[k]["compute_bound_flag"] += int(cb)  # ar/single: prefill compute-bound; iter: head pass compute-bound
+out["breakdown"] = brk
+
+# a published measurement that meets the anchor criteria but was not used for calibration
+ALOHA = ("aloha-unleashed", "rtx-4090", 2.0, 43.0)
+pa = est_latency(BYID[ALOHA[0]], DEVBY[ALOHA[1]], ALOHA[2])
+out["holdout"] = dict(model=ALOHA[0], device=ALOHA[1], measured_ms=ALOHA[3], predicted_ms=pa, ratio=pa / ALOHA[3])
+
 out["per_anchor"] = [dict(model=a[0], device=a[1], bytes=a[2], measured_ms=a[3], predicted_ms=float(est_latency(BYID[a[0]], DEVBY[a[1]], a[2])),
                           kind=BYID[a[0]]["est"]["kind"], tier=DEVBY[a[1]]["tier"]) for a in V]
 json.dump(out, open("../data/calibration.json", "w"), indent=1, ensure_ascii=False)

@@ -1,5 +1,5 @@
 \begin{longtable}{@{}r p{3.55cm} l l l r l l c r@{}}
-\caption{All 215 models in the corpus, ordered by release month. Domain: Manip.\ = manipulation, Hum.\ = humanoid, MoMa = mobile manipulation, Nav.\ = navigation. Params: total parameters in billions (n/d = not disclosed). LM: language-model family of the backbone. Head: action-head family. W: weights released (Y = yes, P = partially, N = no, ? = unverified). GPU-h: pretraining GPU/TPU-hours where both accelerator count and duration are reported.\label{tab:models}}\\
+\caption{All 215 models in the corpus, ordered by release month. Domain: Manip.\ = manipulation, Hum.\ = humanoid, MoMa = mobile manipulation, Nav.\ = navigation. Params: total parameters in billions (n/d = not disclosed). LM: language-model family of the backbone. Head: action-head family. W: weights released (Y = yes, P = partially, N = no, ? = unverified; Y* = official Hugging Face weights listed although the record marks availability as unverified). GPU-h: pretraining GPU/TPU-hours as reported, or computed from accelerator count and duration.\label{tab:models}}\\
 \toprule
 \textbf{\#} & \textbf{Model} & \textbf{Date} & \textbf{Domain} & \textbf{Type} & \textbf{Params} & \textbf{LM} & \textbf{Head} & \textbf{W} & \textbf{GPU-h}\\
 \midrule
@@ -56,7 +56,7 @@
 44 & HPT~\cite{ax240920537} & 2024-09 & Manip. & VA & 1.1 & none & regression & P & \\
 45 & InterACT~\cite{ax240907914} & 2024-09 & Manip. & VA & n/d & none & regression & ? & \\
 46 & Robot Utility Models (RUM)~\cite{ax240905865} & 2024-09 & MoMa & VA & n/d & none & tokens & Y & \\
-47 & ScaleDP~\cite{ax240914411} & 2024-09 & Manip. & VA & 1 & none & diffusion & ? & \\
+47 & ScaleDP~\cite{ax240914411} & 2024-09 & Manip. & VA & 1 & none & diffusion & Y* & \\
 48 & TinyVLA~\cite{ax240912514} & 2024-09 & Manip. & VLA & 1.3 & other & diffusion & P & \\
 49 & ALOHA Unleashed~\cite{ax241013126} & 2024-10 & Manip. & VA & 0.217 & none & diffusion & ? & \\
 50 & Challenging-Terrain Transformer~\cite{ax241003654} & 2024-10 & Hum. & VA & 0.0014 & none & RL policy & ? & \\
@@ -84,7 +84,7 @@
 72 & QUART-Online~\cite{ax241215576} & 2024-12 & MoMa & VLA & 8 & other & tokens & Y & \\
 73 & RING (The One RING)~\cite{ax241214401} & 2024-12 & Nav. & VLA & n/d & none & tokens & Y & \\
 74 & TraceVLA~\cite{ax241210345} & 2024-12 & Manip. & VLA & 7 & Llama & tokens & Y & \\
-75 & UH-1 (Humanoid-X)~\cite{ax241214172} & 2024-12 & Hum. & Other & n/d & none & tokens & ? & 440\\
+75 & UH-1 (Humanoid-X)~\cite{ax241214172} & 2024-12 & Hum. & Other & n/d & none & tokens & Y* & 440\\
 76 & Uni-NaVid~\cite{ax241206224} & 2024-12 & Nav. & VLA & 7 & Llama & tokens & Y & 1,400\\
 77 & SLIM~\cite{ax250109905} & 2025-01 & MoMa & VLA & 0.019 & none & RL policy & N & \\
 78 & SpatialVLA~\cite{ax250115830} & 2025-01 & Manip. & VLA & 3.5 & Gemma & tokens & Y & 15,360\\
@@ -92,7 +92,7 @@
 80 & COMPASS~\cite{ax250216372} & 2025-02 & Nav. & VA & n/d & none & RL policy & P & \\
 81 & DexGraspVLA~\cite{ax250220900} & 2025-02 & Manip. & VLA & n/d & Qwen & diffusion & Y & \\
 82 & DexVLA~\cite{ax250205855} & 2025-02 & Manip. & VLA & n/d & Qwen & diffusion & P & \\
-83 & Figure Helix~\cite{web-figure-helix} & 2025-02 & Hum. & VLA & 7.1 & n/d & regression & N & \\
+83 & Figure Helix~\cite{web-figure-helix} & 2025-02 & Hum. & VLA & 7.08 & n/d & regression & N & \\
 84 & Hi Robot~\cite{ax250219417} & 2025-02 & Manip. & VLA & n/d & Gemma & flow & N & \\
 85 & Humanoid-VLA~\cite{ax250214795} & 2025-02 & Hum. & VLA & n/d & Llama & tokens & ? & 1,728\\
 86 & Magma~\cite{ax250213130} & 2025-02 & Manip. & VLA & 8.6 & Llama & tokens & Y & \\
@@ -108,7 +108,7 @@
 96 & HAT~\cite{ax250313441} & 2025-03 & Hum. & VA & n/d & none & CVAE & ? & \\
 97 & HybridVLA~\cite{ax250310631} & 2025-03 & Manip. & VLA & 7 & Llama & hybrid & Y & 10,000\\
 98 & MoManipVLA~\cite{ax250313446} & 2025-03 & MoMa & VLA & 7 & Llama & tokens & N & \\
-99 & MoRE~\cite{ax250308007} & 2025-03 & MoMa & VLA & 9.8 & other & tokens & N & 800\\
+99 & MoRE~\cite{ax250308007} & 2025-03 & MoMa & VLA & 9.82 & other & tokens & N & 800\\
 100 & NORA~\cite{ax250419854} & 2025-04 & Manip. & VLA & 3 & Qwen & tokens & Y & 4,000\\
 101 & $\pi_{0.5}$~\cite{ax250416054} & 2025-04 & MoMa & VLA & n/d & Gemma & flow & P & \\
 102 & AMO~\cite{ax250503738} & 2025-05 & Hum. & VA & n/d & none & RL policy & P & \\
@@ -121,25 +121,25 @@
 109 & $\pi_{0.5}$ + KI~\cite{ax250523705} & 2025-05 & Manip. & VLA & n/d & Gemma & hybrid & P & \\
 110 & 1X Redwood AI~\cite{web-1x-redwood-ai} & 2025-06 & Hum. & VLA & 0.16 & none & diffusion & N & \\
 111 & BumbleBee~\cite{ax250612779} & 2025-06 & Hum. & VA & n/d & n/d & n/d & ? & \\
-112 & Chain-of-Action~\cite{ax250609990} & 2025-06 & Manip. & VA & n/d & none & regression & ? & \\
+112 & Chain-of-Action~\cite{ax250609990} & 2025-06 & Manip. & VA & n/d & none & regression & Y* & \\
 113 & DYNA-1~\cite{web-dyna-1} & 2025-06 & Manip. & Other & n/d & n/d & n/d & N & \\
 114 & Gemini Robotics On-Device~\cite{web-gemini-robotics-on-device} & 2025-06 & Manip. & VLA & n/d & Gemini & n/d & N & \\
 115 & GMT (General Motion Tracking)~\cite{ax250614770} & 2025-06 & Hum. & VA & n/d & none & RL policy & Y & 96\\
 116 & LeVERB~\cite{ax250613751} & 2025-06 & Hum. & VLA & n/d & none & latent & ? & \\
 117 & LeVERB-A (LeVERB System 1)~\cite{ax250613751} & 2025-06 & Hum. & VA & n/d & none & RL policy & ? & \\
 118 & Real-Time Chunking (inference-time)~\cite{ax250607339} & 2025-06 & Manip. & Other & n/d & Gemma & flow & N & \\
-119 & SmolVLA~\cite{ax250601844} & 2025-06 & Manip. & VLA & 2.2 & SmolLM & flow & Y & \\
+119 & SmolVLA~\cite{ax250601844} & 2025-06 & Manip. & VLA & 2.25 & SmolLM & flow & Y & \\
 120 & UniVLA (BAAI)~\cite{ax250619850} & 2025-06 & Manip. & VLA & 8.5 & other & tokens & Y & \\
 121 & V-JEPA 2-AC~\cite{ax250609985} & 2025-06 & Manip. & VA & 1.2 & none & other & Y & \\
 122 & VLN-R1~\cite{ax250617221} & 2025-06 & Nav. & VLA & 7 & Qwen & tokens & N & 288\\
 123 & WorldVLA~\cite{ax250621539} & 2025-06 & Manip. & VLA & n/d & other & tokens & Y & \\
 124 & AC-DiT~\cite{ax250701961} & 2025-07 & MoMa & VLA & n/d & none & diffusion & N & \\
 125 & Being-H0~\cite{ax250715597} & 2025-07 & Hum. & VLA & 14 & n/d & tokens & Y & \\
-126 & EgoVLA~\cite{ax250712440} & 2025-07 & Hum. & VLA & n/d & n/d & regression & ? & \\
+126 & EgoVLA~\cite{ax250712440} & 2025-07 & Hum. & VLA & n/d & n/d & regression & Y* & \\
 127 & GR-3~\cite{ax250715493} & 2025-07 & MoMa & VLA & 4 & Qwen & flow & ? & \\
-128 & InternVLA-N1~\cite{web-internvla-n1} & 2025-07 & Nav. & VLA & 8.4 & Qwen & diffusion & Y & \\
+128 & InternVLA-N1~\cite{web-internvla-n1} & 2025-07 & Nav. & VLA & 8.39 & Qwen & diffusion & Y & \\
 129 & Skild Brain~\cite{web-skild-brain} & 2025-07 & MoMa & Other & n/d & n/d & n/d & N & \\
-130 & StreamVLN~\cite{ax250705240} & 2025-07 & Nav. & VLA & 8 & Qwen & tokens & Y & 1,500\\
+130 & StreamVLN~\cite{ax250705240} & 2025-07 & Nav. & VLA & 8.03 & Qwen & tokens & Y & 1,500\\
 131 & TRI LBM 1.0~\cite{ax250705331} & 2025-07 & Manip. & VLA & n/d & none & diffusion & ? & \\
 132 & villa-X~\cite{ax250723682} & 2025-07 & Manip. & VLA & n/d & n/d & flow & P & 6,144\\
 133 & Atlas LBM~\cite{web-atlas-lbm} & 2025-08 & Hum. & VLA & 0.45 & none & flow & N & \\
@@ -210,16 +210,16 @@
 198 & Galbot AstraBrain family~\cite{web-galbot-astrabrain} & 2026-06 & Hum. & Other & n/d & n/d & n/d & ? & \\
 199 & OpenHLM~\cite{ax260622174} & 2026-06 & Hum. & VLA & n/d & Gemma & flow & Y & \\
 200 & Qwen-RobotNav~\cite{ax260618112} & 2026-06 & Nav. & VLA & 8 & Qwen & regression & N & 2,816\\
-201 & SyVLA~\cite{ax260609009} & 2026-06 & Manip. & VLA & n/d & Qwen & flow & ? & 1,152\\
+201 & SyVLA~\cite{ax260609009} & 2026-06 & Manip. & VLA & n/d & Qwen & flow & Y* & 1,152\\
 202 & Gemini Robotics 2~\cite{web-gemini-robotics-2} & 2026-07 & Hum. & VLA & n/d & Gemini & n/d & N & \\
 203 & Gemini Robotics On-Device 2~\cite{web-gemini-robotics-on-device-2} & 2026-07 & Manip. & VLA & n/d & Gemma & n/d & N & \\
 204 & InternVLA-A1.5~\cite{ax260704988} & 2026-07 & Manip. & VLA & n/d & Qwen & n/d & Y & \\
-205 & LingBot-VLA 2.0~\cite{ax260706403} & 2026-07 & MoMa & VLA & 6.4 & Qwen & flow & Y & \\
-206 & TurboVLA~\cite{ax260727205} & 2026-07 & Manip. & VLA & 0.2 & n/d & n/d & ? & \\
+205 & LingBot-VLA 2.0~\cite{ax260706403} & 2026-07 & MoMa & VLA & 6.38 & Qwen & flow & Y & \\
+206 & TurboVLA~\cite{ax260727205} & 2026-07 & Manip. & VLA & 0.2 & n/d & n/d & Y* & \\
 207 & Xiaomi-Robotics-1~\cite{ax260715330} & 2026-07 & MoMa & VLA & 5.1 & Qwen & flow & Y & \\
 208 & DYNA-2~\cite{web-dyna-2} & 2026-08 & Manip. & Other & n/d & none & video WM & N & \\
 209 & GEN-1.5~\cite{web-gen-1-5} & 2026-08 & Manip. & VLA & n/d & n/d & n/d & N & \\
-210 & LightNav-0~\cite{ax260830935} & 2026-08 & Nav. & VLA & 4.8 & Qwen & tokens & Y & 1,120\\
+210 & LightNav-0~\cite{ax260830935} & 2026-08 & Nav. & VLA & 4.85 & Qwen & tokens & Y & 1,120\\
 211 & PanoVLA~\cite{ax260802257} & 2026-08 & MoMa & VLA & n/d & Gemma & flow & ? & \\
 212 & Skild S1~\cite{web-skild-s1} & 2026-08 & Manip. & VA & n/d & n/d & n/d & N & \\
 213 & $\tau_0$-VLA~\cite{ax260816885} & 2026-08 & MoMa & VLA & 3 & Qwen & flow & Y & \\

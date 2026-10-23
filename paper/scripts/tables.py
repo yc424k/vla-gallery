@@ -1,6 +1,6 @@
 """LaTeX tables generated from the data (../tables/*.tex)."""
 import json, math, re
-from corpus import D, TG, en, year, macro_domain, sector
+from corpus import D, TG, en, year, macro_domain, sector, weights_open
 from estimator import DEVICES, DEVBY, ANCHORS, BYID, est_latency
 
 KEYS = json.load(open("../data/bibkeys.json"))
@@ -36,8 +36,6 @@ def fmt_p(p):
         return "n/d"
     if p >= 10:
         return f"{p:.0f}"
-    if p >= 1:
-        return f"{p:.1f}".rstrip("0").rstrip(".")
     return f"{p:.3g}"
 
 
@@ -52,14 +50,14 @@ OPEN = {"예": "Y", "일부": "P", "아니오": "N", "미확인": "?"}
 def models_table():
     rows = sorted(D, key=lambda m: (m["date"][:7], m["name"].lower()))
     out = [r"\begin{longtable}{@{}r p{3.55cm} l l l r l l c r@{}}",
-           r"\caption{All 215 models in the corpus, ordered by release month. Domain: Manip.\ = manipulation, Hum.\ = humanoid, MoMa = mobile manipulation, Nav.\ = navigation. Params: total parameters in billions (n/d = not disclosed). LM: language-model family of the backbone. Head: action-head family. W: weights released (Y = yes, P = partially, N = no, ? = unverified). GPU-h: pretraining GPU/TPU-hours where both accelerator count and duration are reported.\label{tab:models}}\\",
+           r"\caption{All 215 models in the corpus, ordered by release month. Domain: Manip.\ = manipulation, Hum.\ = humanoid, MoMa = mobile manipulation, Nav.\ = navigation. Params: total parameters in billions (n/d = not disclosed). LM: language-model family of the backbone. Head: action-head family. W: weights released (Y = yes, P = partially, N = no, ? = unverified; Y* = official Hugging Face weights listed although the record marks availability as unverified). GPU-h: pretraining GPU/TPU-hours as reported, or computed from accelerator count and duration.\label{tab:models}}\\",
            r"\toprule", r"\textbf{\#} & \textbf{Model} & \textbf{Date} & \textbf{Domain} & \textbf{Type} & \textbf{Params} & \textbf{LM} & \textbf{Head} & \textbf{W} & \textbf{GPU-h}\\", r"\midrule", r"\endfirsthead",
            r"\toprule", r"\textbf{\#} & \textbf{Model} & \textbf{Date} & \textbf{Domain} & \textbf{Type} & \textbf{Params} & \textbf{LM} & \textbf{Head} & \textbf{W} & \textbf{GPU-h}\\", r"\midrule", r"\endhead",
            r"\bottomrule", r"\endfoot"]
     for i, m in enumerate(rows, 1):
         g = f"{m['gpuh']:,.0f}" if m["gpuh"] is not None else ""
         out.append(f"{i} & {tname(m)}~\\cite{{{KEYS[m['id']]}}} & {m['date'][:7]} & {DOM[macro_domain(m)]} & {TYP[m['type']]} & {fmt_p(m['pb'])} & "
-                   f"{FAM.get(m['fam'], m['fam'])} & {HEAD[m['hk']]} & {OPEN[m['open']]} & {g}\\\\")
+                   f"{FAM.get(m['fam'], m['fam'])} & {HEAD[m['hk']]} & {'Y*' if m['open'] == '미확인' and weights_open(m) else OPEN[m['open']]} & {g}\\\\")
     out.append(r"\end{longtable}")
     open("../tables/tab_models.tex", "w").write("\n".join(out) + "\n")
 
@@ -111,7 +109,7 @@ def variants_table():
     rows = [("Memory-bound only (weights read once)", ab["memory_only"]["calibrated"]), ("Compute-bound only ($2Pn$ FLOPs)", ab["compute_only"]["calibrated"]),
             ("Single-pass roofline, no head structure", ab["single_pass"]["calibrated"]), ("Structured roofline, peak specifications", CAL["nominal"]),
             ("Structured roofline, calibrated (this work)", CAL["current"]), ("Structured roofline, leave-one-out", CAL["loo"]),
-            ("Cross-device transfer from a measured anchor", CAL["transfer"])]
+            ("Transfer from another measurement of the same model", CAL["transfer"])]
     out = [r"\begin{table}[H]", r"\caption{Accuracy of estimator variants on the published latency anchors. Fold error is $\max(\hat L/L, L/\hat L)$; bias is the geometric mean of $\hat L/L$ (values below 1 mean underestimation). The first three variants use the calibrated efficiency constants; ``peak specifications'' uses $\beta=\varphi=\gamma=1$ and no fixed overheads.\label{tab:variants}}",
            r"\small", r"\begin{tabularx}{\textwidth}{@{}X r r r r r@{}}", r"\toprule",
            r"\textbf{Variant} & \textbf{n} & \textbf{Median fold error} & \textbf{$\le$1.5$\times$} & \textbf{$\le$2$\times$} & \textbf{Bias}\\", r"\midrule"]
@@ -125,7 +123,7 @@ def tune_table():
     T = ST["tune"]
     cfg = [("rtx-4090|1", "1$\\times$ RTX 4090 (24 GB)"), ("rtx-5090|1", "1$\\times$ RTX 5090 (32 GB)"), ("a100-80|1", "1$\\times$ A100 (80 GB)"),
            ("h100-sxm|8", "8$\\times$ H100 (80 GB)"), ("jetson-agx-thor|1", "Jetson AGX Thor (128 GB)")]
-    out = [r"\begin{table}[H]", r"\caption{Estimated fine-tuning feasibility for the " + str(ST["n_open_est"]) + r" open-weight models with enough size information. Each cell gives the number of models whose estimated per-GPU memory fits (90\% of device memory; 75\% on Jetson) and, in parentheses, the largest such model (total parameters). Memory assumes the ``normal'' activation budget (4~GB + 5~GB per billion parameters per GPU). Head-only applies to the models with a separable flow-matching or diffusion head of known size.\label{tab:tune}}",
+    out = [r"\begin{table}[H]", r"\caption{Estimated fine-tuning feasibility for the " + str(ST["n_open_est"]) + r" models with released weights and enough size information. Each cell gives the number of models whose estimated per-GPU memory fits (90\% of device memory; 75\% on Jetson) and, in parentheses, the largest such model (total parameters). Memory assumes the ``normal'' activation budget (4~GB + 5~GB per billion parameters per GPU). Head-only applies to models with a separable flow-matching, diffusion or hybrid head; where the source does not give the head size, the estimator's default is used.\label{tab:tune}}",
            r"\small", r"\begin{tabularx}{\textwidth}{@{}X c c c c@{}}", r"\toprule",
            r"\textbf{Configuration} & \textbf{Full} & \textbf{LoRA} & \textbf{QLoRA} & \textbf{Head only}\\", r"\midrule"]
     def cell(k):

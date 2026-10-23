@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
-from corpus import D, TG, en, year, macro_domain, sector
+from corpus import D, TG, en, year, macro_domain, sector, weights_open, acc_family, ACC_FAMILIES
 from estimator import DEVBY, BYID
 
 OUT = "../figures/"
@@ -72,9 +72,13 @@ def fig_composition():
     a.set_title("Models per release year and domain", loc="left")
     panel(a, "a")
     secs = ["Academic", "Mixed", "Industry"]
+    def okind(m):
+        if m["open"] == "미확인" and weights_open(m):
+            return "예"  # official Hugging Face weights listed although the record says unverified
+        return m["open"]
     keys = [("예", "Open"), ("일부", "Partially open"), ("아니오", "Closed"), ("미확인", "Unverified")]
     cols = [SLOT[0], "#86b6ef", SLOT[1], GRAY_LIGHT]
-    series = [(lab, [sum(1 for m in D if sector(m) == s and m["open"] == k) for s in secs]) for k, lab in keys]
+    series = [(lab, [sum(1 for m in D if sector(m) == s and okind(m) == k) for s in secs]) for k, lab in keys]
     n = [sum(1 for m in D if sector(m) == s) for s in secs]
     stacked_bars(b, secs, series, cols, horizontal=True, pct=True, width=0.6)
     b.set_yticks(range(3), [f"{s}\n(n = {k})" for s, k in zip(secs, n)])
@@ -155,16 +159,6 @@ def fig_size():
 
 
 # ---------------------------------------------------------------- Fig 5 training compute
-ACC_FOLD = [("Hopper (H100/H800/H200)", r"H100|H800|H200|MI300"), ("A100 / A800", r"A100|A800"), ("Blackwell (GB200)", r"GB200"), ("TPU", r"TPU"),
-            ("V100", r"V100"), ("Workstation / consumer GPU", r"RTX|A4000|A5000|A6000|L40|A40|A10"), ("Not disclosed", r".*")]
-
-
-def acc_fold(a):
-    for lab, rx in ACC_FOLD:
-        if re.search(rx, a):
-            return lab
-
-
 def fig_training():
     fig, (a, b) = plt.subplots(1, 2, figsize=(W_FULL, 4.6), gridspec_kw=dict(width_ratios=[1.0, 1.05], wspace=0.75))
     rows = sorted([(m["gpuh"], m) for m in D if m["gpuh"] is not None], key=lambda x: x[0])
@@ -181,11 +175,11 @@ def fig_training():
     a.set_title(f"Reported compute ({len(rows)} of {len(D)} models)", loc="left"); panel(a, "a")
     stages = [("사전학습", "Pretraining"), ("사후학습", "Post-training"), ("파인튜닝", "Fine-tuning"), ("과제별 학습", "Per-task training"), ("시뮬 RL", "Simulation RL")]
     recs = [r for rs in TG.values() for r in rs]
-    series = [(lab, [sum(1 for r in recs if r["st"] == s and acc_fold(r["acc"]) == lab) for s, _ in stages]) for lab, _ in ACC_FOLD]
-    tot = stacked_bars(b, [l for _, l in stages], series, SLOT[:6] + [GRAY_LIGHT], horizontal=True, width=0.6)
+    series = [(lab, [sum(1 for r in recs if r["st"] == s and acc_family(r["acc"]) == lab) for s, _ in stages]) for lab in ACC_FAMILIES]
+    tot = stacked_bars(b, [l for _, l in stages], series, SLOT[:7] + [GRAY_LIGHT], horizontal=True, width=0.6)
     b.set_yticks(range(len(stages)), [f"{l}\n(n = {int(t)})" for (_, l), t in zip(stages, tot)])
     b.invert_yaxis(); b.set_xlabel("Training records"); grid(b, "x")
-    b.legend(loc="upper center", bbox_to_anchor=(0.42, -0.13), ncol=2, fontsize=6.6, handlelength=1.0, columnspacing=0.8)
+    b.legend(loc="upper center", bbox_to_anchor=(0.35, -0.13), ncol=2, fontsize=6.3, handlelength=1.0, columnspacing=0.8)
     b.set_title("Accelerator family by training stage", loc="left"); panel(b, "b")
     save(fig, "fig5_training")
 
@@ -249,7 +243,7 @@ def fig_estimator():
     ab = cal["ablation"]
     bars = [("Memory-bound only", ab["memory_only"]["calibrated"]), ("Compute-bound only", ab["compute_only"]["calibrated"]),
             ("Single-pass roofline", ab["single_pass"]["calibrated"]), ("Structured, peak specs", cal["nominal"]),
-            ("Structured, calibrated", cal["current"]), ("Structured, leave-one-out", cal["loo"]), ("Cross-device transfer*", cal["transfer"])]
+            ("Structured, calibrated", cal["current"]), ("Structured, leave-one-out", cal["loo"]), ("Transfer, same model*", cal["transfer"])]
     y = list(range(len(bars)))
     vals = [v["median_x"] for _, v in bars]
     cols = [GRAY_DARK] * 4 + [SLOT[0]] * 2 + [SLOT[0]]
@@ -278,7 +272,7 @@ def fig_deploy():
     j = st["deploy"][f"{devs[0]['id']}|2|10"]
     judged = sum(v for kk, v in j.items() if kk != "na")
     ax.axhline(judged, color=MUTED, linewidth=0.8)
-    ax.text(len(devs) - 0.5, judged + 2, f"models with enough size information to judge ({judged})", ha="right", va="bottom", fontsize=6.6, color=INK2)
+    ax.text(len(devs) - 0.5, judged + 2, f"models with a latency estimate ({judged})", ha="right", va="bottom", fontsize=6.6, color=INK2)
     LBL = {"jetson-orin-nano-super": "Jetson\nOrin Nano S.", "jetson-orin-nx-16": "Jetson\nOrin NX", "jetson-agx-orin-64": "Jetson\nAGX Orin",
            "jetson-agx-thor": "Jetson\nAGX Thor", "rtx-4060-laptop": "RTX 4060\nLaptop", "rtx-4090-laptop": "RTX 4090\nLaptop", "rtx-4090": "RTX\n4090",
            "rtx-5090": "RTX\n5090", "rtx-pro-6000": "RTX PRO\n6000", "a100-80": "A100\nSXM", "h100-sxm": "H100\nSXM"}

@@ -109,6 +109,189 @@
   "bias_gm": 0.9266166033873086,
   "max_x": 4.539720728628728
  },
+ "memory": {
+  "n": 23,
+  "median_x": 1.1285714285714286,
+  "within2": 23,
+  "within1_5": 21,
+  "bias_gm": 1.0921497075148459,
+  "max_x": 1.7197510822510822,
+  "n_bf16": 18
+ },
+ "memory_rows": [
+  {
+   "model": "openvla",
+   "bytes": 2.0,
+   "reported_gb": 15,
+   "predicted_gb": 17.1
+  },
+  {
+   "model": "openvla",
+   "bytes": 1.0,
+   "reported_gb": 10.2,
+   "predicted_gb": 10.1
+  },
+  {
+   "model": "openvla",
+   "bytes": 0.5,
+   "reported_gb": 7.0,
+   "predicted_gb": 6.6
+  },
+  {
+   "model": "openvla-oft",
+   "bytes": 2.0,
+   "reported_gb": 16,
+   "predicted_gb": 17.1
+  },
+  {
+   "model": "ecot",
+   "bytes": 2.0,
+   "reported_gb": 16,
+   "predicted_gb": 17.1
+  },
+  {
+   "model": "ecot",
+   "bytes": 0.5,
+   "reported_gb": 5,
+   "predicted_gb": 6.6
+  },
+  {
+   "model": "spatialvla",
+   "bytes": 2.0,
+   "reported_gb": 8.5,
+   "predicted_gb": 9.05
+  },
+  {
+   "model": "magma",
+   "bytes": 2.0,
+   "reported_gb": 17,
+   "predicted_gb": 20.779999999999998
+  },
+  {
+   "model": "magma",
+   "bytes": 0.5,
+   "reported_gb": 7,
+   "predicted_gb": 7.879999999999999
+  },
+  {
+   "model": "nora",
+   "bytes": 2.0,
+   "reported_gb": 8.3,
+   "predicted_gb": 7.9
+  },
+  {
+   "model": "rdt2",
+   "bytes": 2.0,
+   "reported_gb": 16,
+   "predicted_gb": 20.435
+  },
+  {
+   "model": "flower",
+   "bytes": 2.0,
+   "reported_gb": 1.848,
+   "predicted_gb": 3.1781
+  },
+  {
+   "model": "internvla-m1",
+   "bytes": 2.0,
+   "reported_gb": 12,
+   "predicted_gb": 10.43
+  },
+  {
+   "model": "eo-1",
+   "bytes": 2.0,
+   "reported_gb": 6,
+   "predicted_gb": 7.9
+  },
+  {
+   "model": "graspvla",
+   "bytes": 2.0,
+   "reported_gb": 9,
+   "predicted_gb": 6.4510000000000005
+  },
+  {
+   "model": "evo-1",
+   "bytes": 2.0,
+   "reported_gb": 2.3,
+   "predicted_gb": 2.771
+  },
+  {
+   "model": "go-1",
+   "bytes": 2.0,
+   "reported_gb": 7,
+   "predicted_gb": 7.9
+  },
+  {
+   "model": "molmoact-2",
+   "bytes": 2.0,
+   "reported_gb": 12,
+   "predicted_gb": 12.5
+  },
+  {
+   "model": "turbovla",
+   "bytes": 2.0,
+   "reported_gb": 0.9,
+   "predicted_gb": 1.46
+  },
+  {
+   "model": "navila",
+   "bytes": 2.0,
+   "reported_gb": 18.5,
+   "predicted_gb": 19.4
+  },
+  {
+   "model": "navila",
+   "bytes": 0.5,
+   "reported_gb": 8.6,
+   "predicted_gb": 7.4
+  },
+  {
+   "model": "navfom",
+   "bytes": 2.0,
+   "reported_gb": 19.1,
+   "predicted_gb": 17.1
+  },
+  {
+   "model": "internvla-n1",
+   "bytes": 2.0,
+   "reported_gb": 20,
+   "predicted_gb": 20.297
+  }
+ ],
+ "breakdown": {
+  "ar": {
+   "n": 11,
+   "largest": {
+    "decode": 6,
+    "overhead": 1,
+    "prefill": 4
+   },
+   "compute_bound_flag": 11
+  },
+  "single": {
+   "n": 3,
+   "largest": {
+    "pass": 2,
+    "overhead": 1
+   },
+   "compute_bound_flag": 2
+  },
+  "iter": {
+   "n": 23,
+   "largest": {
+    "overhead": 13,
+    "backbone": 10
+   },
+   "compute_bound_flag": 0
+  }
+ },
+ "holdout": {
+  "model": "aloha-unleashed",
+  "device": "rtx-4090",
+  "measured_ms": 43.0,
+  "predicted_ms": 46.354497354497354,
+  "ratio": 1.0780115663836594
+ },
  "per_anchor": [
   {
    "model": "openvla",

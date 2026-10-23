@@ -5,6 +5,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 D = json.load(open(os.path.join(ROOT, "gallery", "data.json")))
 TG = json.load(open(os.path.join(ROOT, "gallery", "train_gpu.json")))
 EN = json.load(open(os.path.join(ROOT, "i18n", "en.json")))
+HF = json.load(open(os.path.join(ROOT, "gallery", "hf.json")))
 
 
 def en(s):
@@ -84,3 +85,40 @@ def hz_value(m):
 
 HEAD_ORDER = ["이산 토큰", "잠재 액션", "flow matching", "diffusion", "하이브리드", "회귀", "CVAE", "RL 정책", "영상 world model", "기타", "미공개"]
 FAM_ORDER = ["Qwen", "Llama", "Gemma", "Gemini", "PaLI·PaLM", "SmolLM", "InternLM", "Phi", "Mamba", "기타", "없음", "미공개"]
+
+
+def weights_open(m):
+    """Weights released (fully or partly). Records marked 'unverified' count as released when hf.json lists an
+    official Hugging Face weight repository for them (six models)."""
+    return m["open"] in ("예", "일부") or (m["open"] == "미확인" and bool(HF.get(m["id"])))
+
+
+def chunk_kind(m):
+    s = m["chunk"]
+    if s.startswith(("미공개", "미확인", "미기재")):
+        return "undisclosed"
+    if s.startswith("없음"):
+        return "none"
+    return "chunked"
+
+
+ACC_FAMILIES = ["Hopper (H100/H800/H200)", "A100 / A800", "Blackwell (GB200)", "TPU", "V100", "Other data-centre GPU (L40, L40S, A40, A10)",
+                "Workstation / consumer GPU (RTX)", "Not disclosed"]
+
+
+def acc_family(a):
+    if "TPU" in a:
+        return "TPU"
+    if re.search(r"GB200|B200", a):
+        return "Blackwell (GB200)"
+    if re.search(r"H100|H800|H200|MI300", a):
+        return "Hopper (H100/H800/H200)"
+    if re.search(r"A100|A800", a):
+        return "A100 / A800"
+    if "V100" in a:
+        return "V100"
+    if re.search(r"\bL40S?\b|\bA40\b|\bA10G?\b", a):
+        return "Other data-centre GPU (L40, L40S, A40, A10)"
+    if re.search(r"RTX|A4000|A5000|A6000", a):
+        return "Workstation / consumer GPU (RTX)"
+    return "Not disclosed"

@@ -12,6 +12,7 @@ python3 build_bib.py > /dev/null  # references.bib (uses cached arXiv metadata i
 cd ..
 latexmk -pdf -interaction=nonstopmode -quiet manuscript.tex
 python3 scripts/make_docx.py
+pandoc submission/cover_letter.md -o submission/cover_letter.docx
 rm -f submission/latex_source.zip   # LaTeX source bundle for the MDPI submission system
 zip -q -r submission/latex_source.zip manuscript.tex stats.tex references.bib manuscript.bbl Definitions figures/*.pdf figures/src/fig1_anatomy.tex tables/*.tex -x "Definitions/*.eps"
 echo "done: manuscript.pdf, submission/manuscript.docx, submission/latex_source.zip"
