@@ -463,5 +463,11 @@
  ],
  "qwen-robotnav": [
   "https://github.com/QwenLM/Qwen-RobotNav"
+ ],
+ "airoa-0": [
+  "https://github.com/airoa-org/AIRoA-0"
+ ],
+ "neo-vla": [
+  "https://github.com/EvolvingLMMs-Lab/NEO"
  ]
 }

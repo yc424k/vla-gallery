@@ -328,5 +328,15 @@
  ],
  "lightnav-0": [
   "https://huggingface.co/LightOriginsHQ/LightNav-0"
+ ],
+ "liber-0": [
+  "https://huggingface.co/LiberAI/Liber0-Preview-Robodojo",
+  "https://huggingface.co/LiberAI/Liber0-Lite-Robodojo"
+ ],
+ "airoa-0": [
+  "https://huggingface.co/airoa-org/AIRoA-0"
+ ],
+ "neo-vla": [
+  "https://huggingface.co/weepiess2383/NEO-VLA"
  ]
 }
