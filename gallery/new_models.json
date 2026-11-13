@@ -6992,5 +6992,1082 @@ null
 }
 ],
 "_src": "manual_2026-10-19"
+},
+{
+"row": {
+"모델": "Gemini Robotics 2.5",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "휴머노이드·양팔 정교 매니퓰레이션(산업 키팅 포함)",
+"발표": "2026-11",
+"기관": "Google DeepMind",
+"가중치 공개": "아니오",
+"아키텍처": "미공개",
+"백본·액션 표현": "미공개; 시각·언어 입력을 모터 제어로 바꾸는 VLA로만 설명(행동 전 사고 후 실행). 산업 파일럿에서는 Gemini Robotics ER이 워크플로를 추적하고 GR 2.5 행동 모델이 손·팔을 제어하는 2단 구성; 백본 LLM·액션 헤드·청크·제어 주파수 미기재",
+"핵심 특징": "Gemini Robotics 2의 후속 VLA로, 집게·피펫·리본 묶기 같은 도구 사용·변형체 조작을 포함한 200개 과제에서 이전 기준 대비 성공률을 과제 유형별 30~100% 높이고 수행 시간을 20~30% 줄였다. Gemini 4 Argon이 실제 카메라 장면에서 디지털 트윈과 수천 개 시뮬레이션 연습을 만들어 개발을 가속했고, Mercedes-Benz 생산 라인 개념 검증에서 Apollo 2가 부품 키팅을 96% 성공률로 수행했다.",
+"파라미터": "미공개",
+"파라미터(B)": null,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (가속기·기간 미공개)",
+"파인튜닝 가속기·시간": "Apollo 2 사후학습 '수 주'(Apptronik CEO 인용, 블로그); 가속기·스텝·데이터 양 미공개",
+"추론": "추론 시점 추론 가이던스(inference-time reasoning guidance)로 물리 위험을 실시간 회피; 실행 위치(클라우드·온보드)·지연·제어 Hz·장치 미기재",
+"태스크·벤치마크": "200개 과제 평가: 이전 기준 대비 성공률 30~100%↑(과제 유형별)·수행 시간 20~30%↓; 블로그 그래프(GR 2→GR 2.5) 탁상 집기·놓기 예: 고무 오리 86%→100%(Duo)·디스크 드라이브 빼기 0%→100%(Duo)·라임 선반 올리기 0%→100%(Apollo+Sharpa)·주방 믹서 정리 0%→60%; 도구·변형체 예: 집게로 페이스트리 담기 5%→100%·리본 풀기 0%→70%·카디건 걸기 0%→62%·바지 개기 0%→40%; 다단계·접촉 과제 예: 공구함 닫기 0%→93%·머그 내리기 29%→75%·쓰레받기 쓸기 0%→52%·밥솥 포장 0%→40%; Mercedes-Benz 키팅 개념 검증 96%; 안전 가이던스로 장애물 주변 안전 완료 33%↑·사람 주변 43%↑",
+"로봇·엠바디먼트": "Apptronik Apollo 2 휴머노이드(SharpaWave 5지 22-DoF 손), Franka FR3 Duo(2지 평행 그리퍼)",
+"데이터 종류": "실로봇 시연 / 시뮬레이션·합성",
+"데이터 규모": "미공개(실제 학습 시연 + Gemini 4 Argon이 만든 디지털 트윈·수천 개 시뮬레이션 연습 실행을 결합했다고만 기술)",
+"데이터 시간(h)": null,
+"주요 데이터셋": "미공개",
+"비고": "2026-11-10 블로그(Carolina Parada); 기술 보고서·모델 카드·전용 안전 보고서 없음(2026-11-13 확인, 블로그의 'agentic robotics evaluations' 링크는 Gemini 4 안전 보고서 5.7절로 GR 2.5가 아닌 Gemini 4·ER 2 비교). 로보틱스 파트너(Agile Robots·Apptronik·Boston Dynamics)에 순차 배포, 얼리 액세스 대기자 명단; API·가격 미기재. Mercedes-Benz 파일럿은 Kecskemét(헝가리)·Sindelfingen(독일) 라인, 시행 횟수·기간 미기재. ASIMOV-Jailbreak 공개(GR 2.5가 아닌 Gemini 4 Argon 99.5% vs ER 2 82%); 규모는 영어판 'hundreds of prompts… dozens of scenes' vs 한국어판 프롬프트 1,500개·장면 100개 A/B. 개발 기간 약 4개월(2차, Humanoids Daily). 모델 페이지는 발끝~손끝 전신 제어·균형(걷기·웅크리기)을 기능으로 명시하나 블로그 실험은 팔·손 조작 위주. 전작: Gemini Robotics 2 (2026-07, 블로그) — 이번 그래프의 비교 기준이며 전신 제어 능력을 이어받음(블로그 명시); ER 2·On-Device 2는 이번에 갱신되지 않음",
+"검증": "부분 확인",
+"1차 출처 URL": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+"fields": {
+"v": "미공개",
+"l": "미공개(Gemini Robotics 계열; 백본 명시 없음)",
+"lb": null,
+"fam": "Gemini",
+"t": "미공개",
+"h": "미공개(시각·언어 → 모터 제어)",
+"hk": "미공개",
+"ck": "미공개",
+"dep": "미공개(파트너 로봇 배포)",
+"inp": "카메라 영상 · 언어 지시",
+"pipe": [
+[
+"in",
+"카메라 · 언어 지시",
+""
+],
+[
+"txt",
+"Gemini Robotics ER",
+"워크플로 추적(산업 파일럿)"
+],
+[
+"llm",
+"Gemini Robotics 2.5 VLA",
+"구조 미공개 · 사고 후 행동"
+],
+[
+"out",
+"팔·손(전신) 모터 제어",
+"Apollo 2 · Franka FR3 Duo"
+]
+],
+"tags": [
+"System 1/2",
+"정교 손",
+"휴머노이드",
+"산업 현장",
+"sim 데이터"
+]
+},
+"rl": [
+"미공개",
+"미공개",
+"학습 방식 세부 미공개(Argon 시뮬레이션 연습 실행을 실제 시연과 결합했다고만 기술, RL 언급 없음)",
+null
+],
+"paper": {
+"k": "없음",
+"id": null,
+"t": null,
+"u": null,
+"n": "공식 블로그·모델 페이지로만 공개(기술 보고서·모델 카드 없음)"
+},
+"prel": null,
+"base": {
+"types": [
+"고정",
+"휴머노이드 보행"
+],
+"how": "모델 페이지: Apollo 2 전신을 발끝~손끝까지 제어하며 무게중심 균형을 잡고 걷기·웅크리기·숙이기 수행; 출력 형식·별도 보행 제어기 여부 미기재. Mercedes 파일럿은 손·팔 제어, Franka FR3 Duo는 고정 양팔",
+"cat": "형식 미기재"
+},
+"evidence": [
+{
+"field": "유형",
+"quote": "Today, we are introducing Gemini Robotics 2.5, our most capable vision-language-action (VLA) model to date.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Compared to previous baselines, Gemini Robotics 2.5 achieves a 30% to 100% higher success rate depending on the type of task, while completing tasks 20% to 30% faster.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "We evaluated the model across 200 distinct tasks — such as serving food with tongs, tying a bow on a gift box, and pipetting a liquid.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "highlighting specific tasks like packing pastries with tongs (increasing from 5% to 100%), untying ribbon bows (0% to 70%), hanging a cardigan (0% to 62%), and folding pants (0% to 40%)",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "including Apptronik’s Apollo 2 humanoid robot (featuring the five-finger, 22 degree-of-freedom SharpaWave hand) and the Franka Duo platform with two-fingered parallel grippers.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "백본·액션 표현",
+"quote": "Using our embodied reasoning model (Gemini Robotics ER) to keep track of the workflow, and the Gemini Robotics 2.5 actions model to control its hands and arms",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "our models helped Apptronik’s Apollo 2 humanoid pick and pack automotive parts with a 96% success rate.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "we saw the models improve dramatically in just a few weeks of post-training and carry over to Mercedes-Benz production with very little drop-off.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "데이터 규모",
+"quote": "Argon can generate thousands of varied, simulated practice runs from a real-world camera scene and build a realistic digital twin. Combined with real training demonstrations",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "추론",
+"quote": "Gemini Robotics 2.5 uses inference-time reasoning guidance to steer around physical hazards in real-time.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "this capability boosted safe task completion around obstacles by 33% and around nearby people by 43%.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "비고",
+"quote": "Argon achieves a 99.5% jailbreak resistance — a significant improvement over the 82% rate of our previous baseline, Gemini Robotics ER 2.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "비고",
+"quote": "100개의 장면에 걸쳐 안전하지 않은 요청을 위장한 1,500개의 프롬프트로 구성된 새로운 오픈소스 벤치마크",
+"url": "https://blog.google/intl/ko-kr/company-news/technology/gemini-robotics-2-5-kr/"
+},
+{
+"field": "가중치 공개",
+"quote": "Gemini Robotics 2.5 is rolling out to our robotics partners.",
+"url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+},
+{
+"field": "base",
+"quote": "Controls entire humanoid bodies from feet to fingertips. Dynamically balances a robot’s centre of gravity – so, instead of simply reaching from a static position, a robot can safely step, squat, and bend",
+"url": "https://deepmind.google/models/gemini-robotics/vla/"
+}
+],
+"_src": "manual_2026-11-13"
+},
+{
+"row": {
+"모델": "GR00T 2",
+"구분": "2026 신규",
+"유형": "기타",
+"도메인": "매니퓰레이션(평행 그리퍼·양팔 정교 손) + 휴머노이드 전신 로코매니퓰레이션(Turbo)",
+"발표": "2026-11",
+"기관": "NVIDIA (GEAR)",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Cosmos-Predict2.5-2B 영상 diffusion transformer에서 초기화한 단일 2B 트랜스포머가 영상·상태·행동 토큰을 한 시퀀스로 처리: 동결 Wan 2.1 VAE(시간 4×·공간 8×, 224×320에서 잠재 프레임·카메라당 토큰 280개, 최대 4카메라·5 fps·0.8초 이력) + 동결 Cosmos-Reason1 텍스트 인코더(교차 어텐션) + 엠바디먼트별 상태·행동 MLP와 행동 디코더 → 미래 영상 잠재와 행동 청크를 flow matching으로 공동 생성(행동 토큰이 생성 중인 미래 프레임까지 어텐션), 배포 시 영상 1~2·행동 2~4 디노이징 스텝; 행동 청크 48스텝(1.6초@30 Hz, YAM·Dexter), G1 Turbo는 80스텝",
+"핵심 특징": "사람 1인칭 영상·UMI 시연·여러 로봇 텔레옵으로 미래 다시점 영상과 행동을 함께 예측하도록 사전학습한 2B world action model로, 시연이 없는 로봇에도 사람·UMI 시연의 기술을 옮기는 X-Adapt를 보인다. Dexter-50 미학습 과제에서 제로샷 40%, 시연 1개 71%·5개 95%(RTX 5090 1장 LoRA 약 30분)를 기록했고, 실로봇 GRPO 사후학습으로 접촉 과제 성공률을 88~98%로 올렸다.",
+"파라미터": "2B 트랜스포머(Cosmos-Predict2.5-2B 기반); 동결 Wan 2.1 VAE·Cosmos-Reason1 텍스트 인코더·엠바디먼트별 MLP는 별도, 총합 미기재. Turbo도 2B 트랜스포머 유지(백서) / '더 작은 트랜스포머'(프로젝트 페이지) A/B",
+"파라미터(B)": 2,
+"사전학습 가속기": "NVIDIA GB300 NVL72, 주 사전학습 1,024 GPU(클러스터 28랙 2,016 GPU 중), DeepSpeed ZeRO-2 데이터 병렬, GPU당 배치 16",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "3단계(1 단일 시점 영상 사전학습 → 2 다시점 영상·행동 공동 학습 → 3 로봇 데이터 가중); 스텝 수 미공개, GPU당 배치 16(×1,024 GPU), 32,768토큰 행 가변 길이 패킹",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (사전학습 기간 미공개; 장수 1,024만 기재)",
+"파인튜닝 가속기·시간": "Dexter-50 소수샷: rank-32 LoRA(트랜스포머 전 선형층, 나머지 동결) RTX 5090 1장 약 30분; DexUMI 사후학습 60k 스텝(lr 3e-5), 시각 조향 mid-training 20k 스텝(YAM GB300 32장·배치 320, Dexter GB300 64장·배치 448), noisy-prefix RTC 5k 스텝; 시뮬 RoboCasa365 GRPO 40+40 GPU(기종 미기재) 8라운드 14.1→8.8시간; 실로봇 온라인 RL은 H100·GB300·L40/L40S 혼합 풀(장수 미기재)",
+"추론": "클라이언트-서버, 청크 버퍼 실행 중 다음 청크 요청 + noisy-prefix RTC; 중앙값 예측 지연(TensorRT·CUDA graph·FP8 등 최적화): GR00T 2 Dexter RTX 5090 152.78 ms·DGX Station GB300 48.47 ms, YAM RTX 5090 179.79 ms·GB300 54.00 ms; GR00T 2 Turbo G1 RTX 5090 38.40 ms·Jetson Thor(120 W) 123.97 ms(1v2a, 1.6초 청크를 약 1 Hz로 계획, SONIC이 50 Hz 실행); eager BF16 대비 2.94~7.15배",
+"태스크·벤치마크": "Dexter-50(미학습 50과제) 제로샷 40%·1샷 71%·5샷 95%; YAM 장기 6과제 평균 SR 71.7%(Turbo 65.0%, π0.5 12.5%); 정교 손 장기 7과제 평균 SR 68.6%(Turbo 34.3%, GR00T 1.7 0.7%); 실로봇 RL 4과제 88·98·94·96%(SFT 40~76%); RoboCasa365 67.2%(1위); RoboDojo SR 35.52%·점수 41.73(SR 1위); RoboLab 47.4%; MolmoSpaces 45.12%(2위); G1 Factory 84.7%(GR00T 1.7 69.4%); GearArena Elo π0.5 대비 +236·GR00T 1.7 대비 +95; G1 팝콘 서빙 48/48(Turbo)",
+"로봇·엠바디먼트": "YAM 양팔 평행 그리퍼, Dexter(Tianji 7-DoF 양팔 + Sharpa 22-DoF 손 2개), Wuji 손(Tianji 팔), XHAND(DexUMI), Unitree G1 휴머노이드(Turbo + SONIC), Franka Panda(DROID); 시뮬 RoboCasa365·RoboDojo(ARX-X5)·RoboLab·MolmoSpaces·G1 Factory",
+"데이터 종류": "사람 영상 / UMI 핸드헬드 시연 / 실로봇 텔레옵 / 시뮬레이션·합성",
+"데이터 규모": "사전학습 약 436,414시간: Human-1M에서 거른 1인칭 사람 영상 402,730시간(에피소드 약 1,375만, 수집자 5.15만 명 이상, 장면 12.3만; 로봇 정렬 스튜디오 데이터 약 3,000시간 포함) + UMI-10K 10,184시간(94.2만 에피소드, 2,897과제) + 텔레옵 23.5k시간(116만 에피소드: YAM 18.7k(ABC-130k 3.6k 포함)·Sharpa 2.9k·Wuji 1.3k·G1 275·DROID 350); 로더 측정 혼합 25개 저장소·1,560만 에피소드·462억 타임스텝",
+"데이터 시간(h)": 436414,
+"주요 데이터셋": "Human-1M(공개분 Human-1M-100K); UMI-10K; 사내 YAM·Sharpa·Wuji·G1 텔레옵; ABC-130k; DROID",
+"비고": "GR00T 2 Turbo: Wan 2.2 VAE로 공간 압축 8×→16×(잠재 격자 4배 작음), 행동 청크 길이 동일, YAM V2에서 GR00T 2와 통계적으로 구분되지 않으면서 호출당 약 3배 빠름(RTX 5090 52 vs 171 ms), 정교 손 과제는 68.6%→34.3%로 하락; G1에서는 SONIC(PPO 학습 전신 제어기) 모션 토큰·그리퍼 폭을 출력. 사후학습 RL: 롤아웃 시 행동 디노이징에만 CPS 잡음, 과거 반환을 기억하는 GRPO형 목적(AutoRL 에이전트가 시뮬에서 약 35일 탐색), GRPO 성공 롤아웃 자기모방, 동결 정책 위 residual RL, DreamDojo world model 내 RL. 에이전트용 WAM API(MCP)·code-as-policy·시각 조향 지원, 데이터 주석은 Flora. 코드 '12월 공개 예정'(프로젝트 페이지), 2026-11-13 기준 GitHub NVIDIA/Isaac-GR00T는 N1.7, HF nvidia/에 GR00T 2 가중치 없음. Human-1M-100K는 HF 공개. 2026-11-09 CoRL에서 발표(NVIDIA 블로그 '오픈 frontier world action model'), arXiv 판 미확인",
+"검증": "확인",
+"1차 출처 URL": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+"fields": {
+"v": "동결 Wan 2.1 영상 VAE(시간 4×·공간 8×; Turbo는 Wan 2.2, 16×) + 학습 시점 임베딩",
+"l": "없음 (영상 확산 백본 Cosmos-Predict2.5-2B; 언어는 동결 Cosmos-Reason1 인코더)",
+"lb": null,
+"fam": "없음",
+"t": "단일 2B DiT: 영상 토큰은 시간·카메라 간 어텐션, 행동 토큰은 생성 중인 미래 프레임 포함 전체 영상 토큰에 어텐션, 언어는 교차 어텐션",
+"h": "미래 다시점 영상 잠재 + 행동 청크 flow matching 공동 디노이징(영상 1~2·행동 2~4스텝), 엠바디먼트별 행동 디코더",
+"hk": "영상 world model",
+"ck": "48스텝(1.6초@30 Hz, YAM·Dexter); G1 Turbo 80스텝",
+"dep": "추론 서버(RTX 5090·DGX Station GB300) – 로봇 클라이언트; Turbo는 G1 탑재 Jetson Thor",
+"inp": "RGB 최대 4시점(머리·양 손목, 224×320, 5 fps, 0.8초 이력) · 언어 · 고유감각",
+"pipe": [
+[
+"in",
+"다시점 영상 0.8초 · 언어 · 상태",
+"머리·양 손목 224×320"
+],
+[
+"vis",
+"Wan 2.1 VAE(동결)",
+"Turbo: Wan 2.2, 16×"
+],
+[
+"txt",
+"Cosmos-Reason1(동결)",
+"지시문 교차 어텐션"
+],
+[
+"world",
+"Cosmos-Predict2.5-2B DiT",
+"영상·상태·행동 한 시퀀스"
+],
+[
+"head",
+"영상 + 행동 flow matching",
+"영상 1–2 · 행동 2–4스텝"
+],
+[
+"out",
+"행동 청크 48 + 미래 다시점 영상",
+"G1: SONIC 모션 토큰"
+]
+],
+"tags": [
+"world action model",
+"X-Adapt",
+"사람 영상 사전학습",
+"정교 손",
+"휴머노이드",
+"RL 사후학습"
+]
+},
+"rl": [
+"사용",
+"VLA RL 사후학습",
+"실로봇에서 SFT 정책을 CPS 탐색 + GRPO형 목적으로 직접 갱신하고 성공 롤아웃 자기모방, 동결 정책 위 residual RL, DreamDojo world model 안에서 RL; RoboCasa365 시뮬 GRPO. G1에서는 PPO로 학습된 SONIC 전신 제어기에 모션 토큰 전달",
+"https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+],
+"paper": {
+"k": "보고서",
+"id": null,
+"t": "GR00T 2: Scaling Robot Foundation Models for Generalization, Dexterity, and Adaptation",
+"u": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf",
+"n": "NVIDIA 백서(2026-11, 135쪽); arXiv 판 미확인"
+},
+"prel": null,
+"base": {
+"types": [
+"고정",
+"휴머노이드 보행"
+],
+"how": "매니퓰레이션은 고정 양팔(YAM·Dexter); G1에서는 GR00T 2 Turbo가 SONIC 전신 모션 잠재 토큰과 그리퍼 폭을 1.6초 청크로 약 1 Hz 출력하고, SONIC(PPO 학습)이 50 Hz로 관절 위치 목표로 바꿔 보행·전신 동작 실행",
+"cat": "명령·잠재 → RL 보행 제어기"
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "GR00T 2 is built on Cosmos-Predict2.5-2B, a video diffusion transformer pretrained for world simulation",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "백본·액션 표현",
+"quote": "A frozen Wan 2.1 video VAE (Wan Team et al., 2025) compresses each camera stream 4× in time and 8× in each spatial dimension.",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "백본·액션 표현",
+"quote": "A frozen Cosmos-Reason1 vision-language model (NVIDIA et al., 2025b) encodes the instruction",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "hk",
+"quote": "GR00T 2 is trained with flow matching (Lipman et al., 2023) on future video latents and actions together, with one loss for each.",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "비고(Turbo)",
+"quote": "Turbo replaces the video VAE with the Wan 2.2 VAE (Wan Team et al., 2025), increasing spatial compression from 8× to 16× per dimension",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "비고(Turbo)",
+"quote": "A smaller transformer and a more compact video representation make it light enough to run on the Unitree G1 humanoid itself",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2"
+},
+{
+"field": "사전학습 가속기",
+"quote": "The cluster has 2,016 GPUs in 28 racks, and the main pretraining run used 1,024 of them",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "데이터 규모",
+"quote": "GR00T 2 leverages 402,730 hours across approximately 13.75 million episodes",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "데이터 규모",
+"quote": "UMI-10K, recorded with the handheld UMI device (App. E), contributes 942k quality-controlled episodes and 10,184 hours",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "데이터 규모",
+"quote": "The pre-training mixture contains a total of 23.5k hours and 1.16M episodes of teleoperation data",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "Each adaptation is a LoRA fine-tune of about 30 minutes on a single RTX 5090",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "추론",
+"quote": "For the Unitree G1, GR00T 2 Turbo predicts in 38 ms on a GeForce RTX 5090 and in 124 ms on the robot’s onboard Jetson Thor",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "GR00T 2 succeeds 40% of the time zero-shot, 71% with one episode, and 95% with five",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "rl",
+"quote": "We directly optimize GR00T 2 using Group Relative Policy Optimization (GRPO)",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+},
+{
+"field": "가중치 공개",
+"quote": "Code Available in December",
+"url": "https://research.nvidia.com/labs/gear/gr00t-2"
+}
+]
+},
+{
+"row": {
+"모델": "Liber-0",
+"구분": "2026 신규",
+"유형": "기타",
+"도메인": "사람 경험 사전학습 정교 손 매니퓰레이션(world action model)",
+"발표": "2026-11",
+"기관": "LiberAI",
+"가중치 공개": "일부",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "World Action Model: 언어·비전·액션 expert를 Mixture-of-Transformers로 묶어 다중 모달 어텐션으로 미래 프레임과 행동을 함께 예측; 공유 Physical Encoder가 상태·Unified Embodiment Representation(사람·로봇 형태·기구학)·노이즈 행동을 입력; VQA·분할·이미지 편집·영상 이해 의미 공동학습; 다단계 과제는 선택적으로 GPT-6 Astra 같은 추론 에이전트가 중간 목표 계획. 공개 RoboDojo 체크포인트 설정은 velocity 예측(행동·영상 스케줄러 1,000 타임스텝), 추론 10스텝, 행동 청크 32(최대 64)×14차원",
+"핵심 특징": "220만 시간 이상의 사람 경험(웹·1인칭 영상, LiberSense Glove 손 동작, 교차 엠바디먼트 로봇 데이터)으로 시각 예측 → 영상·행동 공동 예측 → 매니퓰레이션 집중의 3단계 사전학습을 거친 world action model이다. 목표 과제용 로봇 시연 없이 GPT-6가 제안한 60과제(600회)에서 성공률 36.0%(PnP 63.5%·짧은 Non-PnP 34.0%·다단계 10.5%)를 냈고, 장갑 데이터 10,000시간이 200배 많은 웹 사람 영상보다 잘 전이된다고 보고했다.",
+"파라미터": "미공개(공개 RoboDojo 체크포인트 model.pt 17.6 GB, context/ Qwen3-VL 구성 가중치 4.26 GB 별도; 총 파라미터 미기재)",
+"파라미터(B)": null,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "미공개(3단계 구성만 공개; RoboDojo Lite 체크포인트 manifest step 72,000)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (가속기·기간 미공개)",
+"파인튜닝 가속기·시간": "로봇 사후학습(자체 PnP·Non-PnP 벤치마크) 데이터 양·가속기·시간 미공개; 시뮬 판은 시뮬 텔레옵 100시간으로 사후학습; 밀크티(Boba tea) 제조 과제 적응 세부 미공개",
+"추론": "공개 RoboDojo 체크포인트: bf16, 추론 10스텝, 행동 청크 32, 입력 영상 240×320(4분할 288×384 카메라 배치); 지연·제어 Hz·장치 미기재. 비교: GPT-6 Astra 단독은 결정당 평균 추론 87.3초",
+"태스크·벤치마크": "GPT-6 제안 60과제 zero-shot(과제당 10회, 600회) 성공률 36.0%(PnP 63.5%·짧은 Non-PnP 34.0%·다단계 Non-PnP 10.5%) vs GPT-6 Astra 단독(180회) 8.3%·5.0%·1.7%; 자체 진행 점수 벤치마크(PnP 60과제·Non-PnP 16과제) 사전학습 체크포인트 81.4·72.3, 로봇 사후학습 후 83.6·73.8(소스별 사전학습 없는 기준 39.3·34.1); 장갑 100%+로봇 25% 75.6 vs 로봇 100% 72.8(8과제); LEO가 Tianji(Marvin M6) 대비 3과제 평균 +28.3점; RoboDojo 시뮬 리더보드 Liber-0 Preview 평균 점수 30.74·성공률 25.52%, Liber-0 Lite 29.24·24.23%",
+"로봇·엠바디먼트": "LEO(LiberAI 자체: 정교 손(WUJI2 손 사용 평가), 회전 3자유도 손목·가는 전완, 각도·높이 조절 허리, 가슴·손목 카메라); 비교 플랫폼 Tianji(Marvin M6 팔); 시뮬 RoboDojo(14차원 상태·행동)",
+"데이터 종류": "사람 영상 / 데이터 장갑 손 동작 / 실로봇 텔레옵 / 교차 엠바디먼트 로봇 데이터 / 웹 비전-언어 / 시뮬레이션·합성",
+"데이터 규모": "사전학습 사람 경험 220만 시간 이상(Glove·Cross-Embodiment Robot Data·OpenEgo·VendorEgo·Web Human Data + VQA·분할·편집·영상 이해 공동학습 데이터); 원천별 시간 구성 미공개(스케일링 실험은 원천별 1·2·5·10k시간, 웹은 100k·2,000k시간까지); 시뮬 사후학습 텔레옵 100시간",
+"데이터 시간(h)": 2200000,
+"주요 데이터셋": "LiberSense Glove 데이터(자체); OpenEgo(공개 1인칭 영상 집계); VendorEgo(외부 수집 1인칭); Web Human Data; 교차 엠바디먼트 로봇 데이터(구성 미기재)",
+"비고": "LiberSense Glove는 두께 0.3 mm·무게 131 g, 1인칭·양 손목 카메라와 손 자세 동기화(접촉·힘은 미측정); 시연자 1→100명(에피소드 수 고정)으로 장갑 전용 진행 점수 12.7→40.1; 'zero-shot'은 목표 과제용 로봇 시연이 없다는 뜻이며 사전학습에는 로봇 데이터 포함; 성능은 모두 자체 보고. 공식 기술 블로그 2026-11-04(보도자료 2026-11-03, ACCESS Newswire), 보도자료의 'GPT-6 Astra 5%'는 블로그상 짧은 Non-PnP 5.0%이고 전체 수치는 블로그에 없음(2차). 가중치: 블로그 모델 자체는 미공개, HF에 RoboDojo 평가 체크포인트 Liber0-Preview-Robodojo(2026-10-14)·Liber0-Lite-Robodojo(2026-10-10, pretrain/ 초기화 가중치 포함) 공개(라이선스 미기재, 두 model.pt sha256 동일); Lite 추론 코드는 개인 계정 XPolicyLab 포크(zhangxiwen1810/XPolicyLab, liber-0 브랜치) 링크(공식 여부 미확인). 기반: World Action Models are Zero-shot Policies (arXiv 2602.15922)·Mixture-of-Transformers (블로그 인용)",
+"검증": "부분 확인",
+"1차 출처 URL": "https://www.liberai.com/blog/liber0/"
+},
+"fields": {
+"v": "비전 expert(구성 미기재; 공개 체크포인트 context/에 Qwen3-VL 비전 24층 구성 포함)",
+"l": "미공개(언어 expert 구성 미기재; 공개 RoboDojo 체크포인트 context/에 Qwen3-VL 구성(text hidden 2048·28층) 가중치 포함, 역할 미기재)",
+"lb": null,
+"fam": "미공개",
+"t": "Mixture-of-Transformers(언어·비전·액션 expert, 다중 모달 어텐션)",
+"h": "미래 프레임·행동 공동 예측(world action modeling); 공개 체크포인트는 velocity 예측·추론 10스텝",
+"hk": "영상 world model",
+"ck": "32스텝×14차원(공개 RoboDojo 체크포인트, 최대 64)",
+"dep": "미기재",
+"inp": "1인칭(가슴)·손목 RGB · 언어 · 상태 · 엠바디먼트 표현",
+"pipe": [
+[
+"in",
+"가슴·손목 RGB · 언어 · 상태",
+"Unified Embodiment Representation"
+],
+[
+"vis",
+"비전 expert",
+"미래 프레임 예측"
+],
+[
+"llm",
+"언어 expert",
+"VQA·영상 이해 공동학습"
+],
+[
+"txt",
+"Physical Encoder",
+"상태·엠바디먼트·노이즈 행동"
+],
+[
+"head",
+"액션 expert(MoT)",
+"프레임·행동 공동 예측"
+],
+[
+"out",
+"LEO 양손·손목·허리",
+"행동 청크"
+]
+],
+"tags": [
+"world action model",
+"사람 영상 활용",
+"데이터 장갑",
+"zero-shot",
+"정교 손"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"3단계 사전학습(시각 예측·영상·행동 공동 예측·매니퓰레이션 집중)과 로봇 사후학습만 기술, 강화학습 언급 없음",
+"https://www.liberai.com/blog/liber0/"
+],
+"paper": {
+"k": "보고서",
+"id": null,
+"t": "Liber-0: Emergent Zero-Shot Capabilities in Multi-Step Manipulation from 2.2 Million-Hour Human Experience",
+"u": "https://www.liberai.com/blog/liber0/",
+"n": "공식 웹 기술 블로그(BibTeX 제공, PDF·arXiv 판 없음)"
+},
+"prel": null,
+"base": {
+"types": [
+"고정"
+],
+"how": "베이스 제어 없음 (LEO는 허리 관절로 상체를 굽히고 높이를 바꾸지만 블로그에 이동 베이스 언급 없음)",
+"cat": null
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "We implement this framework using a Mixture-of-Transformers architecture with dedicated language, vision, and action experts",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "백본·액션 표현",
+"quote": "Language, vision, and action experts interact through multimodal attention to jointly predict future frames and actions. A shared Physical Encoder incorporates state, embodiment context, and noisy actions.",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "백본·액션 표현",
+"quote": "For multi-step tasks, Liber-0 can optionally integrate with a reasoning agent, such as GPT-6 Astra, to plan intermediate goals and guide execution.",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "데이터 규모",
+"quote": "we pretrain Liber-0 on over 2.2 million hours of human experience using a three-stage strategy",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "데이터 규모",
+"quote": "We separately pretrain models on five sources: Glove, Cross-Embodiment Robot Data, OpenEgo, VendorEgo, and Web Human Data",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Liber-0 achieves success rates of 63.5% on PnP, 34.0% on short Non-PnP, and 10.5% on challenging multi-step Non-PnP tasks, with an overall success rate of 36.0%",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "Astra-only achieves success rates of 8.3%, 5.0%, and 1.7% on PnP, short Non-PnP, and challenging multi-step Non-PnP tasks, respectively.",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "By Stage 3, the pretrained checkpoint reaches progress scores of 81.4 on PnP and 72.3 on Non-PnP, with robot post-training further improving these scores to 83.6 and 73.8",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "open:c(6.68,5.33),average:c(30.74,25.52)",
+"url": "https://robodojo-benchmark.com/"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "After post-training Liber-0 on 100 hours of simulated teleoperation data, users can upload custom objects",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "evaluated on eight tasks using LEO equipped with WUJI2 hands",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "비고",
+"quote": "it is only 0.3 mm thick and weighs 131 g",
+"url": "https://www.liberai.com/blog/liber0/"
+},
+{
+"field": "추론",
+"quote": "action_horizon: 32",
+"url": "https://huggingface.co/LiberAI/Liber0-Preview-Robodojo/blob/main/config.yaml"
+},
+{
+"field": "추론",
+"quote": "num_inference_steps: 10",
+"url": "https://huggingface.co/LiberAI/Liber0-Preview-Robodojo/blob/main/config.yaml"
+},
+{
+"field": "가중치 공개",
+"quote": "RoboDojo evaluation checkpoint.",
+"url": "https://huggingface.co/LiberAI/Liber0-Preview-Robodojo"
+}
+]
+},
+{
+"row": {
+"모델": "AIRoA-0",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "핸드헬드 그리퍼 데이터 기반 양팔 장기·정밀 매니퓰레이션(교차 엠바디먼트)",
+"발표": "2026-11",
+"기관": "AI Robot Association (AIRoA)",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "π0.5 백본(SigLIP So400m/14 + Gemma 2B VLM + 300M flow matching 행동 전문가, π0.5 base 체크포인트 초기화) + 지시문 조건 시각 예산 게이트(이미지 토큰별 유지 확률로 토큰 크기 조절) → 그리퍼 기준 anchored 행동(관측 시점 그리퍼 자세 대비 목표 자세, 팔당 이동 3 + 6D 회전 6 + 그리퍼 1 = 20차원) 청크(사전학습 32개·사후학습 20개, 20 Hz 격자); 사후학습에 단계(stage) 분류 헤드(예측 단계를 텍스트로 행동 전문가에 조건)·고유감각 메모리(과거 상태 10개 → 메모리 토큰 4개) 추가",
+"핵심 특징": "로봇 데이터 없이 오픈소스 핸드헬드 그리퍼 YUBI로 모은 16,151시간 양팔 시연만으로 사전·사후학습하고, 양 손목 카메라 두 대만으로 학습 데이터가 없는 장소에서 장기·정밀 과제를 수행하는 π0.5 기반 VLA다. 시각 예산 게이트·단계 예측·고유감각 메모리·비균일 스트리밍 디코딩을 더해 Franka 10과제 평균 성공률 78%(π0.5·XR-1·GR00T N1.7·MolmoAct2 중 최고 27%)를 냈고, 같은 가중치가 TX-G2·OpenArm·UR에서도 돈다.",
+"파라미터": "3.36B(모델 카드; SigLIP So400m/14 + Gemma 2B + 행동 전문가 300M + 시각 예산 게이트·단계 헤드·고유감각 메모리)",
+"파라미터(B)": 3.36,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "300,000 스텝, 배치 2,048(백본과 시각 예산 게이트 공동 학습)",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (사전학습 가속기·기간 미공개)",
+"파인튜닝 가속기·시간": "과제별 사후학습: 8×H200 단일 노드에서 4시간 미만, 20,000 업데이트·배치 64, AdamW, 학습률 5e-6(warmup 500), EMA 0.99; 과제당 시연 3.3~25.8시간; CPU 코어 32개 이상 권장(README)",
+"추론": "비균일 스트리밍 디코딩(슬롯 2개, 잡음 수준 (0.1, 1)): 관측 1회 인코딩 + 정상 상태에서 행동 전문가 2회 평가(표준 flow 디코딩은 10회), 질의 1회 약 60 ms(H200); 단계 확률 EMA로 단계 평활; 질의 주기 5~15 Hz 범위 대응(고유감각 이력 학습 범위), 제어 Hz 미기재",
+"태스크·벤치마크": "양팔 Franka 10과제(학습 데이터 없는 장소, 과제당 15회, 부분 점수) 평균 성공률 78% vs π0.5 27%·XR-1 23%·GR00T N1.7 16%·MolmoAct2 14%(비교 모델은 과제별 최적 설정); 과제별 예: Colour sorting 97%·Fuel bracket 93%·Orange pyramid 90%·Earbuds 30%; TX-G2 4과제·OpenArm 3과제·UR 2과제 시연(정량 미기재); 사전학습 데이터 6.25~100% 스케일링에서 사후학습 손실 L = 0.063 D^-0.035(R² 0.98)",
+"로봇·엠바디먼트": "YUBI 그리퍼와 손목 카메라를 끝단으로 단 로봇: 양팔 Franka(주 평가), TX-G2(논문 'humanoid', 프로젝트 페이지 'semi-humanoid' A/B), OpenArm, UR 산업용 팔 2대; 머리·장면 카메라 없이 양 손목 카메라 2대",
+"데이터 종류": "사람 영상(YUBI 핸드헬드 그리퍼 시연)",
+"데이터 규모": "YUBI 양팔 시연 16,151시간(100개 이상 과제), 하위과제 구간 1,065만 개(평균 5.5초), 30 Hz 타임스텝 17.4억 개, 구간마다 과제·하위과제 지시문; 텔레옵·시뮬·로봇 데이터 없음",
+"데이터 시간(h)": 16151,
+"주요 데이터셋": "YUBI 핸드헬드 시연 코퍼스(AIRoA, 공개 예정)",
+"비고": "사전학습 목표는 See Less, Specify More(S2): flow matching 행동 손실 + 시각 예산 손실 + 하위과제 텍스트 예측 보조 손실(학습 전용), 과제·하위과제 지시문 두 수준 조건; 상태는 한 그리퍼 기준 다른 그리퍼 자세 + 양 그리퍼 개폐(11차원)로 로봇 기저·관절·월드 좌표를 쓰지 않음; 사후학습 손실은 행동 + 0.1×예산 + 0.1×단계 + 0.01×하위과제; 가중치는 HF 게이트(Gemma Terms of Use) 공개 — pretrained + 사후학습 예시 3개(orange_pyramid·towel_folding·letter_blocks, 20k 스텝 EMA), 체크포인트당 약 12 GB(bf16 약 6.7 GB); 사후학습 코드 GitHub(Apache-2.0, OpenPI 기반, JAX); 16,151시간 데이터셋은 공개 발표했으나 프로젝트 페이지 'Coming soon'(2026-11-13 확인); 텔레옵·강화학습·로봇 현장 보정·시뮬 미사용 명시; NEDO 과제 JPNP25015. 기반: π0.5: a Vision-Language-Action Model with Open-World Generalization (arXiv 2504.16054) — π0.5 base 체크포인트에서 초기화해 백본을 그대로 씀(논문 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2611.03815"
+},
+"fields": {
+"v": "SigLIP So400m/14(양 손목 224²) + 지시문 조건 시각 예산 게이트",
+"l": "Gemma 2B (PaliGemma, π0.5 base 초기화)",
+"lb": 2,
+"fam": "Gemma",
+"t": "π0.5 VLM + 300M 행동 전문가, 사후학습 때 행동→이미지 어텐션에 게이트 기반 사전(prior) 추가",
+"h": "flow matching 행동 전문가 300M(비균일 스트리밍 디코딩, 질의당 2회 평가) + 단계 분류 헤드",
+"hk": "flow matching",
+"ck": "사후학습 20개 anchored 행동(20 Hz), 사전학습 32개; NUF 설정은 청크 8 × 버퍼 2(README)",
+"dep": "GPU 1장 질의 약 60 ms(H200), 로봇 쪽 추론 하니스(단계 EMA·스트리밍 버퍼)",
+"inp": "양 손목 RGB 2대 · 과제 지시문 · 그리퍼 상태(11차원) · 과거 상태 10개",
+"pipe": [
+[
+"in",
+"양 손목 RGB · 지시문 · 그리퍼 상태",
+"과거 상태 10개"
+],
+[
+"vis",
+"SigLIP So400m/14",
+"시각 예산 게이트"
+],
+[
+"llm",
+"Gemma 2B (π0.5)",
+"하위과제 예측(학습 전용)"
+],
+[
+"txt",
+"단계 헤드 · 고유감각 메모리",
+"단계 텍스트 + 메모리 토큰 4"
+],
+[
+"head",
+"flow matching 행동 전문가 300M",
+"비균일 스트리밍, 2회 평가"
+],
+[
+"out",
+"양 그리퍼 anchored 자세",
+"20차원 청크 20 · 20 Hz"
+]
+],
+"tags": [
+"핸드헬드 데이터",
+"교차 엠바디먼트",
+"양팔",
+"flow matching",
+"π0.5 기반",
+"장기 과제"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"사전·사후학습 모두 핸드헬드 시연 모방학습(flow matching + 보조 손실); 논문이 강화학습·텔레옵·로봇 현장 보정을 쓰지 않는다고 명시",
+"https://arxiv.org/abs/2611.03815"
+],
+"paper": {
+"k": "보고서",
+"id": "2611.03815",
+"t": "AIRoA-0: Long-Horizon, Precise, Cross-Embodiment Manipulation from Handheld Data",
+"u": "https://arxiv.org/abs/2611.03815",
+"n": "AIRoA 기술 보고서(techreport), arXiv v1 2026-11-02"
+},
+"prel": null,
+"base": {
+"types": [
+"고정"
+],
+"how": "고정 양팔(Franka·UR·OpenArm) 끝단 그리퍼 자세만 출력, TX-G2도 팔만 구동; 이동 베이스 제어 없음",
+"cat": null
+},
+"evidence": [
+{
+"field": "발표",
+"quote": "arXiv:2611.03815v1 [cs.RO] 2 Nov 2026",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "a SigLIP So400m/14 image encoder, a Gemma 2B vision-language backbone and a 300M action expert trained by flow matching, initialised from the public π0.5 base checkpoint",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "backbone and gate are trained together on the corpus for 300,000 steps at a batch size of 2,048.",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "in pre-training it outputs a chunk of 32 future actions on a 20 Hz grid.",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "together with the gripper command at i + k: 20 numbers per action. The state is the pose of one gripper in the frame of the other, with the two gripper openings: 11 numbers.",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "a run takes under four hours on a single node of eight H200 GPUs.",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "Updates / batch size 20,000 / 64",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "추론",
+"quote": "in steady state the action expert is evaluated twice, against ten times for standard decoding; a query takes about 60 ms on an H200 GPU.",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "데이터 규모",
+"quote": "Demonstrations 16,151 hours, bimanual, recorded with YUBI",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "데이터 규모",
+"quote": "Subtask segments 10.65 million, 5.5 seconds on average",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "it averages a success rate of 78%, against 27% for the strongest of four other vision-language-action models post-trained on the same task demonstrations.",
+"url": "https://arxiv.org/abs/2611.03815"
+},
+{
+"field": "강화학습",
+"quote": "We collect no teleoperation data and use no reinforcement learning or on-robot corrections, and the robot appears only at test time.",
+"url": "https://arxiv.org/abs/2611.03815"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "Besides the bimanual Franka, three robots do: TX-G2, a humanoid; OpenArm, an open-source bimanual robot; and a pair of UR industrial arms.",
+"url": "https://arxiv.org/pdf/2611.03815v1"
+},
+{
+"field": "파라미터",
+"quote": "Weights in openpi Orbax/OCDBT format (about 12 GB, 3.36 B parameters)",
+"url": "https://huggingface.co/airoa-org/AIRoA-0"
+},
+{
+"field": "비고",
+"quote": "Dataset 16,151 hours of handheld-gripper demonstrations with task and subtask instructions; to our knowledge, the largest open dataset of its kind Coming soon",
+"url": "https://a-0.airoa.io"
+}
+],
+"_src": "manual_2026-11-13"
+},
+{
+"row": {
+"모델": "NEO-VLA",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "범용 매니퓰레이션(단일 팔·양팔, 시뮬·실로봇)",
+"발표": "2026-11",
+"기관": "S-Lab, Nanyang Technological University·SenseTime Research·Ropedia",
+"가중치 공개": "예",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "인코더 없는 NEO-2B(40층 decoder-only 네이티브 VLM, 2단 합성곱 patch embedder stride 32·시점당 시각 토큰 최대 88개, Native RoPE 시간·높이·폭, 시각 토큰 양방향·텍스트 인과 어텐션) + 이전·현재 다시점 이미지·카메라 내부·회전 MLP·구조화 프롬프트·상태 토큰 6개 접두부 → 별도 무작위 초기화 좁은 28층 행동 전문가(skip-28: 백본 40층 중 28층의 KV cache를 층별로 읽음) → flow matching(Euler 10스텝) → 팔 2×30×26(관절 7·EE 증분 6·그리퍼 1·손 관절 12) + 몸체 30×8(베이스 3·몸통 3·머리 2) 청크",
+"핵심 특징": "별도 사전학습 비전 인코더 없이 patch embedder로 픽셀을 백본 토큰 공간에 바로 넣고, flow matching 행동 전문가가 백본의 여러 깊이 층 KV를 직접 읽는 구조적 네이티브 VLA다. 같은 행동 전문가·데이터 조건에서 Qwen3-VL-2B·Gemma-3-4B 백본보다 LIBERO 성공률이 높고(백본 동결 90.9% vs 79.5%·84.5%), LIBERO-plus 89.7·RoboTwin 2.0 Clean2Rand 69.40으로 코드·가중치 공개 모델 중 최고를 보고했다.",
+"파라미터": "미공개(백본 NEO-2B 2B + 28층 행동 전문가; 행동 전문가 크기·총합 미기재)",
+"파라미터(B)": null,
+"사전학습 가속기": "GPU 128장(16노드×8, 기종 미기재; 학습 가이드 기준 형태·HF 체크포인트 meta world_size 128)",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "1단계(백본 동결, 행동 전문가·조건 모듈) 113,400스텝·전역 배치 8,192(GPU당 8×누적 8×128), lr 2e-4; 2단계(전체 해제 + 멀티모달 이해 데이터 공동학습, NTP 0.1) 75,000스텝·배치 8,192, lr 전문가 2e-4·VL 5e-5; AdamW, warmup 2,000, cosine, bf16",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (기간 미공개)",
+"파인튜닝 가속기·시간": "3단계 사내 행동 데이터 전체 파인튜닝 75,000스텝·배치 8,192(GPU·시간 미공개); LIBERO·RoboTwin 2.0 벤치마크별 파인튜닝 GPU·스텝 미공개(LIBERO 결과는 27,500스텝 시점); 실로봇 과제별 50 시연 파인튜닝(공개 코드 기본 30,000스텝·전역 배치 128, 2노드 실행 예시)",
+"추론": "RTX 3090(24 GB) 1장 bf16, 30스텝 청크 1회 질의: 기본 Euler 10스텝 compiled forward 282.5 ms(patch embedder 3.1·백본 접두부 84.8·행동 전문가 163.4 ms), 요청→청크 261.9 ms·IK 후 실행 계획 286.2 ms; 2스텝이면 forward 147.8 ms·질의 178.5 ms; RTC 미사용, 제어 Hz 미기재",
+"태스크·벤치마크": "LIBERO 평균 97.4%(Spatial 98.4·Object 99.4·Goal 95.6·Long 96.2); LIBERO-plus 총점 89.7(Camera 94.5·Language 91.7, π0.5 84.4); LIBERO-Pro 평균 47.9(Semantic 98.0); RoboTwin 2.0 Clean 75.78·Clean2Rand 69.40(π0.5 70.70·46.00); 실로봇 3과제 12/20·17/20·13/20(π0.5 10·14·13, StarVLA 1·2·0)",
+"로봇·엠바디먼트": "실로봇 pika(논문 표기, 기종 상세 미기재) 3과제; 시뮬 LIBERO(Franka)·RoboTwin 2.0; 사전학습 37개 엠바디먼트 키(Franka, AgiBot G1, Galaxea R1 Lite, Unitree G1 등)",
+"데이터 종류": "실로봇 텔레옵 / 시뮬레이션·합성 / 웹 비전-언어",
+"데이터 규모": "사전학습 9개 공개 데이터 계열 2,231,583 에피소드·928.40M 행·약 9,927.7시간(AgiBot-World 2,617.1h·InternData-A1 시뮬 3,646.3h·OXE 1,161.3h·Bimanual YAM 703.5h·RoboCOIN 679.0h·Galaxea 495.0h·RH20T 426.5h·DROID 199.0h·RoboMIND 시간 미기재); 3단계 사내 행동 데이터 규모 미공개; 실로봇 과제당 50 에피소드",
+"데이터 시간(h)": 9927.7,
+"주요 데이터셋": "AgiBot-World; InternData-A1; Open X-Embodiment; Bimanual YAM; RoboCOIN; Galaxea Open-World; RoboMIND; RH20T; DROID",
+"비고": "샘플링 비율 InternData-A1 15% 고정·나머지 행 수^0.43; 손실 그룹 가중치 EE·그리퍼 2, 팔 관절·손 관절·몸체 1; τ=0.999u, u~Beta(1,1.5), CFG 미사용; 층 지도 실험에서 동결 시 first-28 94.9%가 end-28 86.7%보다 높음; 행동만 파인튜닝하면 텍스트 출력이 무너지고 RoboTwin C2R 10.7%(공동학습 69.4%); 표 1 시간 열의 †·‡ 각주 설명 원문 미기재; 코드(GitHub VLAKit, Apache-2.0)·HF 체크포인트 stage1(113,400스텝)·stage2(75,000스텝)·stage2_backbone·stage_libero·stage_rtw 공개, stage_mid_train은 카드 목록에만 있고 파일 없음, 원본 NEOpp-2B-SFT 백본 미공개; 가공 사전학습 데이터 HF 공개(점진 업로드, 미완성). 기반: NEO (Diao et al., ICLR 2026 'From Pixels to Words') — 네이티브 비전-언어 백본을 그대로 씀(논문 명시)",
+"검증": "확인",
+"1차 출처 URL": "https://arxiv.org/abs/2611.06918"
+},
+"fields": {
+"v": "별도 비전 인코더 없음(NEO 2단 합성곱 patch embedder, stride 32, 시점·시간 공유)",
+"l": "NEO-2B (40층 네이티브 VLM, LLM 구성은 Qwen3 구조·hidden 2048)",
+"lb": 2,
+"fam": "Qwen",
+"t": "NEO 백본 40층(시각 양방향·텍스트 인과 어텐션) + 28층 행동 전문가가 백본 28개 층 KV cache를 층별로 읽음(skip-28)",
+"h": "flow matching 행동 전문가(Euler 10스텝, 접두부 KV 고정) → 팔 2×26 + 몸체 8차원",
+"hk": "flow matching",
+"ck": "30스텝(그대로 실행, RTC 미사용)",
+"dep": "RTX 3090 24 GB 1장 bf16 HTTP 정책 서버(torch.compile), 질의당 261.9 ms",
+"inp": "이전·현재 다시점 RGB(최대 3시점) · 카메라 내부·회전 · 구조화 프롬프트(제어 주파수·엠바디먼트·좌표계·지시) · 팔·몸체 상태",
+"pipe": [
+[
+"in",
+"다시점 RGB(이전·현재) · 언어 · 상태",
+"카메라 기하"
+],
+[
+"vis",
+"Patch embedder",
+"합성곱 stride 32 · 비전 인코더 없음"
+],
+[
+"llm",
+"NEO-2B 40층",
+"시각·언어 공동 처리"
+],
+[
+"head",
+"flow matching 행동 전문가",
+"28층 · 층별 KV 읽기 · Euler 10"
+],
+[
+"out",
+"양팔 + 몸체 청크",
+"30스텝 × (2×26 + 8)"
+]
+],
+"tags": [
+"인코더 없음",
+"네이티브 VLM",
+"층별 KV 읽기",
+"flow matching",
+"강건성"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"3단계 모두 flow matching 행동 손실(+멀티모달 이해 NTP 보조 손실)만 사용, 강화학습 언급 없음",
+"https://arxiv.org/abs/2611.06918"
+],
+"paper": {
+"k": "논문",
+"id": "2611.06918",
+"t": "From Pixels to Actions – Towards Native Vision-Language-Action Policies",
+"u": "https://arxiv.org/abs/2611.06918",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"고정"
+],
+"how": "고정 팔(실로봇 pika·LIBERO·RoboTwin) 평가; 행동 공간에 몸체 슬롯(베이스 3·몸통 3·머리 2)이 있으나 이동 베이스 실험 없음",
+"cat": null
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "We introduce NEO-VLA, a structurally encoder-free vision-language-action framework.",
+"url": "https://arxiv.org/abs/2611.06918"
+},
+{
+"field": "백본·액션 표현",
+"quote": "a lightweight two-stage convolutional embedder with an overall stride of 32",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "Each target {\\bm{a}} contains an arm chunk in \\mathbb{R}^{2\\times 30\\times 26} and a shared body chunk in \\mathbb{R}^{30\\times 8} .",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "파라미터",
+"quote": "we train the 40-layer encoder-free vision-language backbone with 2B parameters through three-stage training.",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "추론",
+"quote": "During inference, we solve the learned flow from \\tau=0 to 1 using 10 Euler steps while keeping the prefix KV cache fixed.",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "추론",
+"quote": "With 10 steps, a compiled forward pass takes 282.5 ms.",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "추론",
+"quote": "with the policy served on a single NVIDIA RTX 3090 (24 GB) in bf16.",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "This stage uses 113,400 optimizer steps, a global batch size of 8192",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "we continue the full-parameter finetune initialized from stage-2 with our in-house action data for another 75,000 steps",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "사전학습 가속기",
+"quote": "113,400 steps x 8,192 samples (8 per GPU x accumulation 8 x 128 GPUs)",
+"url": "https://github.com/EvolvingLMMs-Lab/NEO/blob/main/VLAKit/docs/training.md"
+},
+{
+"field": "사전학습 가속기",
+"quote": "The reference shape of stages 1 and 2 is 16 nodes x 8 GPUs.",
+"url": "https://github.com/EvolvingLMMs-Lab/NEO/blob/main/VLAKit/docs/training.md"
+},
+{
+"field": "데이터 규모",
+"quote": "Nine public dataset families contribute 2,231,583 episodes and 9,927 hours.",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "In Table 7, NEO-VLA reaches an average success rate of 97.4.",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "NEO-VLA achieves 75.78 on the clean split and retains 69.40 under Clean2Rand evaluation.",
+"url": "https://arxiv.org/html/2611.06918v1"
+},
+{
+"field": "가중치 공개",
+"quote": "Checkpoints for From Pixels to Actions – Towards Native Vision-Language-Action Policies.",
+"url": "https://huggingface.co/weepiess2383/NEO-VLA"
+}
+]
+},
+{
+"row": {
+"모델": "Leap-VLA",
+"구분": "2026 신규",
+"유형": "VLA",
+"도메인": "테이블탑·양팔 매니퓰레이션(저주파 VLM·고주파 제어 분리)",
+"발표": "2026-10",
+"기관": "Leapmotor (Embodied Algorithm Group, Automation PBU)",
+"가중치 공개": "아니오",
+"아키텍처": "트랜스포머",
+"백본·액션 표현": "Qwen2.5-VL-2B 저주파 의미 앵커(명령·카메라만 입력, 상태는 프롬프트에서 제외, 짧은 CoT 영역 LM 감독) → 캐시 컨텍스트 C(층별 KV 또는 교차 어텐션, 배포 구성은 2블록마다 참조) + 동결 약 23M 움직임 인식 인코더(이중 프레임, 카메라당 토큰 196) → 폭 1536·32블록 flow matching 행동 전문가(AdaRMS로 flow 시간·캐시 나이 τ 조건화, 고유감각 토큰) → 청크 H=20, Euler 4스텝",
+"핵심 특징": "VLM은 0.5~2초마다 갱신하는 의미 캐시로만 돌리고, 행동 전문가는 측정된 캐시 나이와 새 저지연 영상 토큰으로 50 ms 주기 제어를 맡도록 한 VLA다. 실제 에피소드 이력에서 뽑은 캐시 나이와 나이에 비례한 픽셀 가림으로 학습해 LIBERO-Spatial 2초 갱신 성공률을 61.4%에서 95.5%로 회복했고, 전방 계산만 쓰는 청크 경계 보정(soft-nudge)으로 매 제어 스텝 재계획에서 97.1%를 냈다.",
+"파라미터": "미공개(Qwen2.5-VL-2B + 폭 1536·32블록 행동 전문가 + 약 23M 고속 영상 인코더; 총합 미기재)",
+"파라미터(B)": null,
+"사전학습 가속기": "미공개",
+"사전학습 기간": "미공개",
+"사전학습 스텝·배치": "LIBERO 4개 스위트 공유 체크포인트 600k 스텝; 배치 미공개",
+"사전학습 GPU·TPU-시간": null,
+"시간 근거·단위": "산출 불가 (가속기·기간 미공개)",
+"파인튜닝 가속기·시간": "LIBERO-Spatial 비동기 학습 변형은 4개 스위트 체크포인트에서 파인튜닝(스텝 미기재); 무비용 부정 에피소드 15k 스텝; 학습 쪽 prefix 보정 시도 15k·6k 스텝; 가속기·시간 미공개",
+"추론": "단일 RTX 4090D(배치 1, 백본 bf16·고속 루프·전문가 fp32, 디노이즈 루프 graph capture): 요청당 행동 지연 p50 26.7 ms(동일 주파수 73.9 ms), 의미 비용 1:4 분할 포함 요청당 연산 38.5 ms, 단일 스트림 최대 재계획 26 Hz(동일 주파수 13.5 Hz), 0.05 s 재계획 시 GPU 점유 56%(동일 주파수 148%로 불가); 제어 주기 50 ms, 재계획 0.5 s(R=10), 의미 갱신 0.2~2 s; 고속 인코더 카메라 1/2/3대 1.3/1.8/2.3 ms",
+"태스크·벤치마크": "LIBERO 4개 스위트 평균 96.3%(Goal 97.2·Spatial 97.5·Object 98.0·Long 92.4, 1:1), 의미 갱신 1 s 95.2%·2 s 94.5%; LIBERO-Spatial 2 s 갱신 61.4%→95.5%, 1 s 95.9%, 0.05 s 재계획 + soft-nudge 97.1%; LIBERO-plus 제로샷 합계 69.2%(Camera 77.2·Robot 68.4·Noise 82.6); LIBERO-PRO 평균 50.1%(Task 20.4%); 실로봇 4개 플랫폼 7과제 각 50회 성공률 0.70~1.00",
+"로봇·엠바디먼트": "시뮬 LIBERO(robosuite); 실로봇 Realman 양팔 워크스테이션, Galaxea 양팔 워크스테이션, Dobot Atom 이동형 양팔 휴머노이드, 사내 휴머노이드 상체",
+"데이터 종류": "실로봇 텔레옵 / 시뮬레이션·합성 / 오픈소스 로봇 데이터",
+"데이터 규모": "행동 학습은 LIBERO 4개 스위트(시연 수 미기재) + 무비용 부정 에피소드 240개(불일치 명령 27개, 120쌍); 고속 영상 인코더 사전학습 62개 로봇 데이터셋 약 319k 에피소드·약 73M 프레임(자체 다중 카메라 9개 약 63.5k 에피소드·45M 프레임 + OXE 53개 약 256k 에피소드·28M 프레임); 실로봇 학습 데이터 규모 미기재",
+"데이터 시간(h)": null,
+"주요 데이터셋": "LIBERO; Open X-Embodiment(OXE 53개 원천); 자체 다중 카메라 로봇 데이터 9개(비공개)",
+"비고": "고속 인코더는 마스크 복원(약 49% 띠 마스크) + WAFT 광류 + Depth Anything V2 깊이 교사로 사전학습 후 동결, 프레임 간격 δ=0.2 s; 캐시 나이는 log(1+τ) 사인 임베딩을 0 초기화 투영으로 주입, Δmax=2 s; 캐시 갱신은 주기·이벤트(프레임 차·그리퍼·하위 과제)·에피소드 리셋(보고 실험은 주기·리셋만); soft-nudge는 RTC guidance의 Jacobian 전치를 항등으로 바꾼 전방 전용 보정으로 TensorRT/NPU 내보내기 그래프를 바꾸지 않음; CoT verdict 게이트가 명령-장면 불일치 166/180 에피소드를 막고 가능 과제 20/20 유지; 실로봇은 의미 갱신 1:4; 비동기 평가 프로토콜 공개 언급만 있고 코드·가중치 링크 없음; 이름이 같은 MERL의 LEAP-VLA(InternVL3-1B, GitHub AndersonYu7/LEAP-VLA)와는 별개 모델. 기반: π0 (arXiv 2410.24164) — VLM prefix와 flow matching 행동 전문가의 공유 어텐션 결합을 따름(논문 명시)",
+"검증": "부분 확인",
+"1차 출처 URL": "https://arxiv.org/abs/2611.01011"
+},
+"fields": {
+"v": "Qwen2.5-VL 내장 비전(저주파) + 동결 약 23M 움직임 인식 인코더(합성곱 stem + 트랜스포머 3층, 이중 프레임 6채널, 224²/패치 16)",
+"l": "Qwen2.5-VL-2B (동결·LoRA·전체 파인튜닝 중 과제별 선택)",
+"lb": 2,
+"fam": "Qwen",
+"t": "폭 1536·32블록 행동 전문가 트랜스포머, 캐시 컨텍스트 교차 참조(배포 구성 2블록마다) + 고속 영상 토큰 시퀀스 연결",
+"h": "flow matching 행동 전문가(Euler 4스텝, AdaRMS로 flow 시간·캐시 나이 조건화) + soft-nudge 청크 경계 보정",
+"hk": "flow matching",
+"ck": "20스텝(50 ms 주기, 0.5 s마다 재계획해 10스텝 실행; R=1 매 스텝 재계획도 평가)",
+"dep": "단일 RTX 4090D에서 저주파 VLM·고주파 전문가가 장치 잠금으로 GPU 공유, 비동기 서버-클라이언트",
+"inp": "RGB(VLM용 스냅샷 + 카메라별 이중 프레임) · 언어 · 고유감각 · 캐시 나이 τ",
+"pipe": [
+[
+"in",
+"RGB · 언어 · 상태",
+"이중 프레임(δ=0.2 s)"
+],
+[
+"llm",
+"Qwen2.5-VL-2B",
+"저주파 캐시 · CoT 영역"
+],
+[
+"vis",
+"움직임 인식 인코더",
+"약 23M · 카메라당 196 토큰"
+],
+[
+"txt",
+"캐시 나이 τ",
+"AdaRMS 조건화"
+],
+[
+"head",
+"flow matching 전문가",
+"32블록 · Euler 4스텝"
+],
+[
+"out",
+"행동 청크",
+"H=20 · 50 ms 주기"
+]
+],
+"tags": [
+"이중 주기",
+"캐시 재사용",
+"flow matching",
+"비동기 추론",
+"CoT"
+]
+},
+"rl": [
+"미사용",
+"미사용",
+"flow matching 모방학습과 CoT 언어 모델링 손실만 사용, 부정 에피소드도 정지 행동 지도학습; 강화학습 언급 없음",
+null
+],
+"paper": {
+"k": "논문",
+"id": "2611.01011",
+"t": "Leap-VLA: High-Rate Robot Control from a Low-Rate VLM Backbone",
+"u": "https://arxiv.org/abs/2611.01011",
+"n": null
+},
+"prel": null,
+"base": {
+"types": [
+"고정"
+],
+"how": "고정 양팔 워크스테이션·휴머노이드 상체 중심; Dobot Atom 이동형 양팔 휴머노이드는 제자리 집기·놓기만 평가했고 베이스 제어 방식 미기재",
+"cat": null
+},
+"evidence": [
+{
+"field": "백본·액션 표현",
+"quote": "The slow loop runs a Qwen2.5-VL-2B VLM",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "The expert is a 1536-wide, 32-block transformer; with 4 Euler steps it leaves ample headroom for control periods of 50 ms and below",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "백본·액션 표현",
+"quote": "the flow-matching chunk (H=20 action tokens plus a proprioceptive state token)",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "파라미터",
+"quote": "A ~23M-parameter encoder: a convolutional stem with four downsampling stages followed by three wide transformer layers",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "데이터 규모",
+"quote": "pretraining draws from 62 robot datasets totalling ~319k episodes and ~73M frames",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "사전학습 스텝·배치",
+"quote": "The evaluated checkpoint is the shared four-suite LIBERO model (600k steps), trained only on the original LIBERO suites",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "파인튜닝 가속기·시간",
+"quote": "This yields 240 episodes over 27 mismatched prompts (120 pairs), 23% of fine-tuning exposure, trained for 15k steps",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "추론",
+"quote": "Waiting for one action request costs the same-frequency system 73.9 ms (semantic refresh plus fast loop, serialized on the critical path) and the decoupled system 26.7 ms",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "추론",
+"quote": "the re-planning clock a single stream can serve extends from 13.5 to 26 Hz",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "추론",
+"quote": "Deployment cost on a single RTX 4090D (batch 1, the stack of Sec. IV-D: bf16 semantic backbone, fp32 fast loop and action expert",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "on LIBERO-Spatial, 61.4% to 95.5% at a 2 s semantic refresh (95.9% at 1 s, within 1.6 points of the frequency-matched anchor)",
+"url": "https://arxiv.org/abs/2611.01011"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "averaged over the four LIBERO suites, the deployed policy holds 95.2% at a 1 s refresh and 94.5% at 2 s against a 96.3% matched anchor",
+"url": "https://arxiv.org/abs/2611.01011"
+},
+{
+"field": "태스크·벤치마크",
+"quote": "At 69.2% total, the model lands in the first tier of the group trained without LIBERO-plus data",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "로봇·엠바디먼트",
+"quote": "two dual-arm workstations (Realman, Galaxea), the Dobot Atom mobile dual-arm humanoid, and our in-house humanoid upper body",
+"url": "https://arxiv.org/html/2611.01011v1"
+},
+{
+"field": "기관",
+"quote": "Affiliation: Embodied Algorithm Group, Automation PBU, Leapmotor.",
+"url": "https://arxiv.org/html/2611.01011v1"
+}
+]
 }
 ]
