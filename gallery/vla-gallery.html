@@ -441,6 +441,15 @@ main>section,#notes{border-bottom:0;min-height:calc(100vh - 52px);padding-block:
 .jump .brand{font-family:var(--font-display);font-weight:700;color:var(--ink);margin-right:6px;padding-left:0}
 .jump .brand::after{display:none}
 .jump .brand:hover{background:transparent;color:var(--accent)}
+.mindex{margin:0 0 4px;border-bottom:1px solid var(--line)}
+.mindex>div{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 22px;padding:9px 2px 10px;border-top:1px solid var(--line)}
+.mindex dt{font-size:13px;color:var(--ink-2);word-break:keep-all}
+.mindex dt span{font-family:var(--font-data);color:var(--ink-3);margin-left:6px}
+.mindex dd{margin:0;font-size:13px;line-height:1.75}
+.mindex dd a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);margin-right:12px;white-space:nowrap}
+.mindex dd a:hover{border-bottom-color:var(--ink)}
+.mindex-all{margin:8px 0 0;font-size:13px}
+@media (max-width:640px){.mindex>div{grid-template-columns:1fr}}
 .toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:0 22px;margin:0 0 6px}
 .toc a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 10px;align-items:baseline;padding:10px 2px 11px;border-top:1px solid var(--line);
   text-decoration:none;transition:border-color .15s}
@@ -487,7 +496,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">로봇 Vision-Language-Action(VLA) 모델 비교표 · 2026년 10월 14일 기준</p>
+    <p class="eyebrow">로봇 Vision-Language-Action(VLA) 모델 비교표 · 2026년 11월 13일 기준</p>
     <h1>로봇 <span class="hl">VLA</span> 아키텍처 갤러리</h1>
     <p class="lead">트랜스포머 이후 로봇 제어에 쓰인 VA·VLA 모델, 휴머노이드 전신 제어기, 모바일 매니퓰레이션·내비게이션 모델을 구조도 카드로 모았습니다. 카드마다 논문 링크, 백본 LLM, 액션 헤드, 학습 GPU·시간, 학습 데이터, 추론 장치·속도·메모리, 강화학습, 베이스 제어 방식을 적었습니다.</p>
     <ul class="stats" id="stats"></ul>
@@ -496,6 +505,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
       <a class="btn" href="#fit">내 장치로 쓸 수 있는 모델</a>
       <a class="btn" href="#tune">내 장치로 학습할 수 있는 모델</a>
       <a class="btn" href="#compare">두 모델 비교</a>
+      <a class="btn" href="m/">모델별 사양 페이지</a>
       <a class="btn star" href="https://github.com/yc424k/vla-gallery" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9z"/></svg>GitHub에서 Star 주기</a>
     </div>
     <p class="strip-h">페이지</p>
@@ -503,6 +513,219 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
     <p class="strip-h">대표 구조 7선</p>
     <div class="strip" id="strip"></div>
     <ul class="legend" id="legend"></ul>
+    <p class="strip-h">모델별 사양 페이지</p>
+    <dl class="mindex"><div><dt>참고 기준(2024 이전)<span>8</span></dt><dd><a href="m/rt-1/">RT-1</a>
+<a href="m/rt-2/">RT-2</a>
+<a href="m/rt-1-x/">RT-1-X</a>
+<a href="m/rt-2-x/">RT-2-X</a>
+<a href="m/act/">ACT</a>
+<a href="m/diffusion-policy/">Diffusion Policy (CNN)</a>
+<a href="m/diffusion-policy-2/">Diffusion Policy (Transformer)</a>
+<a href="m/gr-1/">GR-1</a></dd></div><div><dt>VA<span>17</span></dt><dd><a href="m/mobile-aloha/">Mobile ALOHA</a>
+<a href="m/aloha-unleashed/">ALOHA Unleashed</a>
+<a href="m/hpt/">HPT</a>
+<a href="m/baku/">BAKU</a>
+<a href="m/vq-bet/">VQ-BeT</a>
+<a href="m/scaledp/">ScaleDP</a>
+<a href="m/umi/">UMI</a>
+<a href="m/dp3/">DP3</a>
+<a href="m/data-scaling-laws/">Data Scaling Laws</a>
+<a href="m/rise/">RISE</a>
+<a href="m/robot-utility-models/">Robot Utility Models (RUM)</a>
+<a href="m/egomimic/">EgoMimic</a>
+<a href="m/interact/">InterACT</a>
+<a href="m/carp/">CARP</a>
+<a href="m/dense-policy/">Dense Policy</a>
+<a href="m/chain-of-action/">Chain-of-Action</a>
+<a href="m/brs/">BRS (WB-VIMA)</a></dd></div><div><dt>자기회귀·잠재 액션 VLA<span>24</span></dt><dd><a href="m/octo/">Octo</a>
+<a href="m/openvla/">OpenVLA</a>
+<a href="m/openvla-oft/">OpenVLA-OFT</a>
+<a href="m/minivla/">MiniVLA</a>
+<a href="m/tinyvla/">TinyVLA</a>
+<a href="m/ecot/">ECoT (Embodied Chain-of-Thought)</a>
+<a href="m/llara/">LLaRA</a>
+<a href="m/3d-vla/">3D-VLA</a>
+<a href="m/roboflamingo/">RoboFlamingo</a>
+<a href="m/spatialvla/">SpatialVLA</a>
+<a href="m/lapa/">LAPA</a>
+<a href="m/univla/">UniVLA (OpenDriveLab)</a>
+<a href="m/magma/">Magma</a>
+<a href="m/tracevla/">TraceVLA</a>
+<a href="m/cot-vla/">CoT-VLA</a>
+<a href="m/nora/">NORA</a>
+<a href="m/molmoact/">MolmoAct</a>
+<a href="m/worldvla/">WorldVLA</a>
+<a href="m/univla-2/">UniVLA (BAAI)</a>
+<a href="m/moto/">Moto</a>
+<a href="m/villa-x/">villa-X</a>
+<a href="m/vla-0/">VLA-0</a>
+<a href="m/vla-adapter/">VLA-Adapter</a>
+<a href="m/robomamba/">RoboMamba</a></dd></div><div><dt>π 계열<span>9</span></dt><dd><a href="m/pi0/">π0</a>
+<a href="m/pi0-fast/">π0-FAST (FAST 토크나이저)</a>
+<a href="m/hi-robot/">Hi Robot</a>
+<a href="m/pi0-5/">π0.5</a>
+<a href="m/pi0-5-ki/">π0.5 + KI (Knowledge Insulation)</a>
+<a href="m/real-time-chunking/">Real-Time Chunking (추론시 RTC)</a>
+<a href="m/pi0-6/">π0.6</a>
+<a href="m/pistar0-6/">π*0.6 (RECAP)</a>
+<a href="m/rtc/">학습시 RTC (Training-time RTC, π0.6)</a></dd></div><div><dt>Flow·Diffusion VLA<span>18</span></dt><dd><a href="m/rdt-1b/">RDT-1B</a>
+<a href="m/rdt2/">RDT2 (RDT2-FM / RDT2-VQ)</a>
+<a href="m/cogact/">CogACT</a>
+<a href="m/divla/">DiVLA (Diffusion-VLA)</a>
+<a href="m/dexvla/">DexVLA</a>
+<a href="m/hybridvla/">HybridVLA</a>
+<a href="m/dita/">Dita</a>
+<a href="m/smolvla/">SmolVLA</a>
+<a href="m/x-vla/">X-VLA</a>
+<a href="m/flower/">FLOWER</a>
+<a href="m/internvla-m1/">InternVLA-M1</a>
+<a href="m/wall-oss/">WALL-OSS</a>
+<a href="m/eo-1/">EO-1 (EmbodiedOneVision)</a>
+<a href="m/graspvla/">GraspVLA</a>
+<a href="m/evo-1/">Evo-1</a>
+<a href="m/nora-1-5/">NORA-1.5</a>
+<a href="m/f1-vla/">F1-VLA</a>
+<a href="m/dexgraspvla/">DexGraspVLA</a></dd></div><div><dt>산업계 모델<span>24</span></dt><dd><a href="m/gemini-robotics/">Gemini Robotics</a>
+<a href="m/gemini-robotics-er/">Gemini Robotics-ER</a>
+<a href="m/gemini-robotics-on-device/">Gemini Robotics On-Device</a>
+<a href="m/gemini-robotics-1-5/">Gemini Robotics 1.5</a>
+<a href="m/gemini-robotics-er-1-5/">Gemini Robotics-ER 1.5</a>
+<a href="m/rt-h/">RT-H</a>
+<a href="m/autort/">AutoRT</a>
+<a href="m/sara-rt/">SARA-RT</a>
+<a href="m/gr-2/">GR-2</a>
+<a href="m/gr-3/">GR-3</a>
+<a href="m/gr-rl/">GR-RL</a>
+<a href="m/gr-dexter/">GR-Dexter</a>
+<a href="m/tri-lbm-1-0/">TRI LBM 1.0</a>
+<a href="m/go-1/">GO-1 (Genie Operator-1)</a>
+<a href="m/genie-envisioner/">Genie Envisioner (GE-Base/GE-Act/GE-Sim)</a>
+<a href="m/rfm-1/">RFM-1</a>
+<a href="m/skild-brain/">Skild Brain</a>
+<a href="m/dyna-1/">DYNA-1</a>
+<a href="m/gen-0/">GEN-0</a>
+<a href="m/galaxea-g0/">Galaxea G0</a>
+<a href="m/gigabrain-0/">GigaBrain-0</a>
+<a href="m/rynnvla-001/">RynnVLA-001</a>
+<a href="m/unifolm-wma-0/">UnifoLM-WMA-0</a>
+<a href="m/v-jepa-2-ac/">V-JEPA 2-AC</a></dd></div><div><dt>휴머노이드 VLA<span>14</span></dt><dd><a href="m/gr00t-n1/">GR00T N1</a>
+<a href="m/gr00t-n1-5/">GR00T N1.5</a>
+<a href="m/gr00t-n1-6/">GR00T N1.6</a>
+<a href="m/figure-helix/">Figure Helix</a>
+<a href="m/atlas-lbm/">Atlas LBM (Large Behavior Model on Atlas)</a>
+<a href="m/1x-redwood-ai/">1X Redwood AI</a>
+<a href="m/tesla-optimus/">Tesla Optimus</a>
+<a href="m/being-h0/">Being-H0</a>
+<a href="m/humanoid-vla/">Humanoid-VLA</a>
+<a href="m/leverb/">LeVERB (Latent Vision-Language-Encoded Robot Behavior)</a>
+<a href="m/uh-1/">UH-1 (Humanoid-X)</a>
+<a href="m/egovla/">EgoVLA</a>
+<a href="m/hat/">HAT (Humanoid Policy ~ Human Policy, PH²D)</a>
+<a href="m/wholebodyvla/">WholeBodyVLA</a></dd></div><div><dt>휴머노이드 전신 제어기<span>18</span></dt><dd><a href="m/humanplus-hst/">HumanPlus HST (Humanoid Shadowing Transformer)</a>
+<a href="m/humanplus-hit/">HumanPlus HIT (Humanoid Imitation Transformer)</a>
+<a href="m/humanoid-locomotion-as-next-token-prediction/">Humanoid Locomotion as Next Token Prediction</a>
+<a href="m/challenging-terrain-transformer/">Challenging-Terrain Transformer (Learning Humanoid Locomotion over Challenging Terrain)</a>
+<a href="m/beyondmimic/">BeyondMimic</a>
+<a href="m/leverb-a/">LeVERB-A (LeVERB System 1)</a>
+<a href="m/omnih2o/">OmniH2O</a>
+<a href="m/hover/">HOVER</a>
+<a href="m/idp3/">iDP3 (Improved 3D Diffusion Policy)</a>
+<a href="m/exbody2/">ExBody2</a>
+<a href="m/twist/">TWIST (Teleoperated Whole-Body Imitation System)</a>
+<a href="m/twist2/">TWIST2</a>
+<a href="m/amo/">AMO (Adaptive Motion Optimization)</a>
+<a href="m/gmt/">GMT (General Motion Tracking)</a>
+<a href="m/sonic/">SONIC (Supersizing Motion Tracking for Natural Humanoid Whole-Body Control)</a>
+<a href="m/viral/">VIRAL (Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation)</a>
+<a href="m/bumblebee/">BumbleBee</a>
+<a href="m/figure-rl/">Figure RL 보행 제어기 (Reinforcement Learning Walking)</a></dd></div><div><dt>모바일 매니퓰레이션<span>17</span></dt><dd><a href="m/tidybot/">TidyBot++ (diffusion policy)</a>
+<a href="m/momanipvla/">MoManipVLA</a>
+<a href="m/ac-dit/">AC-DiT</a>
+<a href="m/sg-vla/">SG-VLA</a>
+<a href="m/panovla/">PanoVLA</a>
+<a href="m/harmonicmm/">HarmonicMM</a>
+<a href="m/act-1/">ACT-1</a>
+<a href="m/umi-on-legs/">UMI on Legs</a>
+<a href="m/vbc/">VBC (Visual Whole-Body Control)</a>
+<a href="m/helpful-doggybot/">Helpful DoggyBot</a>
+<a href="m/quar-vla/">QUAR-VLA (QUART)</a>
+<a href="m/quart-online/">QUART-Online</a>
+<a href="m/more/">MoRE</a>
+<a href="m/roboduet/">RoboDuet</a>
+<a href="m/learning-visual-quadrupedal-loco-manipulation-from-demonstrations/">Learning Visual Quadrupedal Loco-Manipulation from Demonstrations</a>
+<a href="m/slim/">SLIM</a>
+<a href="m/xiaomi-robotics-1/">Xiaomi-Robotics-1</a></dd></div><div><dt>내비게이션<span>28</span></dt><dd><a href="m/gnm/">GNM</a>
+<a href="m/vint/">ViNT</a>
+<a href="m/nomad/">NoMaD</a>
+<a href="m/crossformer/">CrossFormer</a>
+<a href="m/lelan/">LeLaN</a>
+<a href="m/citywalker/">CityWalker</a>
+<a href="m/nwm/">NWM (Navigation World Models)</a>
+<a href="m/x-mobility/">X-Mobility</a>
+<a href="m/compass/">COMPASS</a>
+<a href="m/omnivla/">OmniVLA</a>
+<a href="m/ring/">RING (The One RING)</a>
+<a href="m/navdp/">NavDP</a>
+<a href="m/navid/">NaVid</a>
+<a href="m/uni-navid/">Uni-NaVid</a>
+<a href="m/navila/">NaVILA</a>
+<a href="m/mobility-vla/">Mobility VLA</a>
+<a href="m/streamvln/">StreamVLN</a>
+<a href="m/navfom/">NavFoM</a>
+<a href="m/internvla-n1/">InternVLA-N1</a>
+<a href="m/trackvla/">TrackVLA</a>
+<a href="m/vln-r1/">VLN-R1</a>
+<a href="m/abot-n0/">ABot-N0</a>
+<a href="m/vlingnav/">VLingNav</a>
+<a href="m/tic-vla/">TIC-VLA</a>
+<a href="m/futurenav/">FutureNav</a>
+<a href="m/uni-lavira/">Uni-LaViRA</a>
+<a href="m/lightnav-0/">LightNav-0</a>
+<a href="m/qwen-robotnav/">Qwen-RobotNav</a></dd></div><div><dt>2026 신규<span>44</span></dt><dd><a href="m/g0plus/">G0Plus</a>
+<a href="m/internvla-a1/">InternVLA-A1</a>
+<a href="m/1x-world-model/">1X World Model (1XWM) 정책</a>
+<a href="m/spirit-v1-5/">Spirit v1.5</a>
+<a href="m/being-h0-5/">Being-H0.5</a>
+<a href="m/cosmos-policy/">Cosmos Policy</a>
+<a href="m/rho-alpha/">Rho-alpha (ρα)</a>
+<a href="m/lingbot-vla/">LingBot-VLA</a>
+<a href="m/helix-02/">Helix 02</a>
+<a href="m/unifolm-vla-0/">UnifoLM-VLA-0</a>
+<a href="m/holobrain-0/">HoloBrain-0</a>
+<a href="m/g0tiny/">G0Tiny</a>
+<a href="m/xiaomi-robotics-0/">Xiaomi-Robotics-0</a>
+<a href="m/dreamzero/">DreamZero</a>
+<a href="m/egoscale/">EgoScale</a>
+<a href="m/psi0/">Ψ0 (Psi-Zero)</a>
+<a href="m/gr00t-n1-7/">GR00T N1.7</a>
+<a href="m/gen-1/">GEN-1</a>
+<a href="m/go-2/">GO-2 (Genie Operator-2)</a>
+<a href="m/being-h0-7/">Being-H0.7</a>
+<a href="m/pi0-7/">π0.7</a>
+<a href="m/molmoact-2/">MolmoAct 2</a>
+<a href="m/g0-5/">G0.5</a>
+<a href="m/syvla/">SyVLA</a>
+<a href="m/openhlm/">OpenHLM</a>
+<a href="m/galbot-astrabrain/">Galbot AstraBrain(银河星脑) 계열</a>
+<a href="m/internvla-a1-5/">InternVLA-A1.5</a>
+<a href="m/turbovla/">TurboVLA</a>
+<a href="m/gemini-robotics-2/">Gemini Robotics 2</a>
+<a href="m/gemini-robotics-on-device-2/">Gemini Robotics On-Device 2</a>
+<a href="m/dyna-2/">DYNA-2</a>
+<a href="m/skild-s1/">Skild S1</a>
+<a href="m/gen-1-5/">GEN-1.5</a>
+<a href="m/omega-0/">ω-0 (OMEGA-0)</a>
+<a href="m/qwen-vla/">Qwen-VLA</a>
+<a href="m/lingbot-vla-2-0/">LingBot-VLA 2.0</a>
+<a href="m/tau0-vla/">τ0-VLA (tau-0)</a>
+<a href="m/spark-0/">Spark-0</a>
+<a href="m/gemini-robotics-2-5/">Gemini Robotics 2.5</a>
+<a href="m/gr00t-2/">GR00T 2</a>
+<a href="m/liber-0/">Liber-0</a>
+<a href="m/airoa-0/">AIRoA-0</a>
+<a href="m/neo-vla/">NEO-VLA</a>
+<a href="m/leap-vla/">Leap-VLA</a></dd></div></dl>
+    <p class="mindex-all"><a href="m/">전체 모델 목록 보기</a></p>
   </div>
 </header>
 

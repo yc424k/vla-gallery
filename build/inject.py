@@ -19,6 +19,16 @@ if lang != "ko":
     s = translate(s, tr)
 assert s.count("__LANG__") == 1 and s.count("__I18N__") == 1
 s = s.replace("__LANG__", lang).replace("__I18N__", json.dumps(tr, ensure_ascii=False).replace("</", "<\\/"))
+# 홈의 모델별 사양 페이지 목록: JS 없이도 검색엔진이 모델 페이지(m/<id>/)를 따라가게 정적 링크로 넣는다
+import html as H
+groups = []
+for m in sorted(d, key=lambda m: m["gi"]):
+    if m["group"] not in [g for g, _ in groups]: groups.append((m["group"], []))
+    groups[[g for g, _ in groups].index(m["group"])][1].append(m)
+links = "".join('<div><dt>%s<span>%d</span></dt><dd>%s</dd></div>' % (H.escape(tr.get(g, g)), len(ms),
+                '\n'.join('<a href="m/%s/">%s</a>' % (m["id"], H.escape(tr.get(m["name"], m["name"]))) for m in ms)) for g, ms in groups)
+assert s.count("__MODEL_LINKS__") == 1
+s = s.replace("__MODEL_LINKS__", links)
 js = json.dumps(d, ensure_ascii=False).replace("</", "<\\/")
 assert s.count("__DATA__") == 1
 s = s.replace("__DATA__", js)

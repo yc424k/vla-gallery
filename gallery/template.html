@@ -441,6 +441,15 @@ main>section,#notes{border-bottom:0;min-height:calc(100vh - 52px);padding-block:
 .jump .brand{font-family:var(--font-display);font-weight:700;color:var(--ink);margin-right:6px;padding-left:0}
 .jump .brand::after{display:none}
 .jump .brand:hover{background:transparent;color:var(--accent)}
+.mindex{margin:0 0 4px;border-bottom:1px solid var(--line)}
+.mindex>div{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 22px;padding:9px 2px 10px;border-top:1px solid var(--line)}
+.mindex dt{font-size:13px;color:var(--ink-2);word-break:keep-all}
+.mindex dt span{font-family:var(--font-data);color:var(--ink-3);margin-left:6px}
+.mindex dd{margin:0;font-size:13px;line-height:1.75}
+.mindex dd a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);margin-right:12px;white-space:nowrap}
+.mindex dd a:hover{border-bottom-color:var(--ink)}
+.mindex-all{margin:8px 0 0;font-size:13px}
+@media (max-width:640px){.mindex>div{grid-template-columns:1fr}}
 .toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:0 22px;margin:0 0 6px}
 .toc a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 10px;align-items:baseline;padding:10px 2px 11px;border-top:1px solid var(--line);
   text-decoration:none;transition:border-color .15s}
@@ -487,7 +496,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">로봇 Vision-Language-Action(VLA) 모델 비교표 · 2026년 10월 14일 기준</p>
+    <p class="eyebrow">로봇 Vision-Language-Action(VLA) 모델 비교표 · 2026년 11월 13일 기준</p>
     <h1>로봇 <span class="hl">VLA</span> 아키텍처 갤러리</h1>
     <p class="lead">트랜스포머 이후 로봇 제어에 쓰인 VA·VLA 모델, 휴머노이드 전신 제어기, 모바일 매니퓰레이션·내비게이션 모델을 구조도 카드로 모았습니다. 카드마다 논문 링크, 백본 LLM, 액션 헤드, 학습 GPU·시간, 학습 데이터, 추론 장치·속도·메모리, 강화학습, 베이스 제어 방식을 적었습니다.</p>
     <ul class="stats" id="stats"></ul>
@@ -496,6 +505,7 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
       <a class="btn" href="#fit">내 장치로 쓸 수 있는 모델</a>
       <a class="btn" href="#tune">내 장치로 학습할 수 있는 모델</a>
       <a class="btn" href="#compare">두 모델 비교</a>
+      <a class="btn" href="m/">모델별 사양 페이지</a>
       <a class="btn star" href="https://github.com/yc424k/vla-gallery" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9z"/></svg>GitHub에서 Star 주기</a>
     </div>
     <p class="strip-h">페이지</p>
@@ -503,6 +513,9 @@ html:is(:lang(ja),:lang(zh)) *{word-break:normal!important;line-break:strict}
     <p class="strip-h">대표 구조 7선</p>
     <div class="strip" id="strip"></div>
     <ul class="legend" id="legend"></ul>
+    <p class="strip-h">모델별 사양 페이지</p>
+    <dl class="mindex">__MODEL_LINKS__</dl>
+    <p class="mindex-all"><a href="m/">전체 모델 목록 보기</a></p>
   </div>
 </header>
 
