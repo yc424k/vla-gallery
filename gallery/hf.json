@@ -338,5 +338,40 @@
  ],
  "neo-vla": [
   "https://huggingface.co/weepiess2383/NEO-VLA"
+ ],
+ "praxis-1": [
+  "https://huggingface.co/runwayml/praxis-1-base",
+  "https://huggingface.co/runwayml/praxis-1-droid",
+  "https://huggingface.co/runwayml/praxis-1-yam",
+  "https://huggingface.co/runwayml/praxis-1-so101",
+  "https://huggingface.co/runwayml/praxis-1-droid-nvfp4",
+  "https://huggingface.co/runwayml/praxis-1-yam-nvfp4",
+  "https://huggingface.co/runwayml/praxis-1-so101-nvfp4",
+  "https://huggingface.co/runwayml/praxis-1-base-lerobot",
+  "https://huggingface.co/runwayml/praxis-1-droid-lerobot",
+  "https://huggingface.co/runwayml/praxis-1-yam-lerobot"
+ ],
+ "rho": [
+  "https://huggingface.co/microsoft/rho-base",
+  "https://huggingface.co/microsoft/rho-yam-box",
+  "https://huggingface.co/microsoft/rho-ur-ai-trainer",
+  "https://huggingface.co/microsoft/rho-fr3-duo",
+  "https://huggingface.co/microsoft/rho-libero",
+  "https://huggingface.co/microsoft/rho-roboeval"
+ ],
+ "kuavo-vla-1-0": [
+  "https://huggingface.co/LejuRobotics/LET-KUAVO-VLA-1.0-models"
+ ],
+ "minicpm-robotmanip": [
+  "https://huggingface.co/openbmb/MiniCPM-RobotManip"
+ ],
+ "rldx-1": [
+  "https://huggingface.co/RLWRLD/RLDX-1-PT",
+  "https://huggingface.co/RLWRLD/RLDX-1-PT-IMG",
+  "https://huggingface.co/RLWRLD/RLDX-1-MT-ALLEX",
+  "https://huggingface.co/RLWRLD/RLDX-1-MT-DROID",
+  "https://huggingface.co/RLWRLD/RLDX-1-VLM",
+  "https://huggingface.co/RLWRLD/RLDX-1.1-PT",
+  "https://huggingface.co/RLWRLD/RLDX-1.1-PT-IMG"
  ]
 }
