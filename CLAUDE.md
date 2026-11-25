@@ -152,5 +152,10 @@
 - claude.ai Docs의 초기 보고서에는 강화학습, 논문, 모바일 베이스, 내 장치 내용이 반영되지 않았다.
 - 새 모델을 추가할 때:
   1. `research/mobile/SPEC.md` 형식의 레코드를 `gallery/new_models.json`에 덧붙인다. `build_data.py`가 166번 이후 행으로 붙인다.
-  2. 근거 링크는 `parts/sources_w8.md`에 추가한다.
-  3. `./build.sh`로 다시 만든다.
+  2. 근거 링크는 `parts/sources_w8.md`에 추가한다. 공식 저장소·가중치·학습 GPU가 있으면 `gallery/github.json`·`hf.json`·`train_gpu.json`에도 넣는다(키는 `build_data.py`의 `slug()`로 만든 모델 id).
+  3. 기준일을 새 모델을 추가한 날짜로 바꾼다. 자동으로 바뀌지 않는다.
+     - 홈 첫 화면: `gallery/template.html`의 '로봇 Vision-Language-Action(VLA) 모델 비교표 · YYYY년 M월 D일 기준'. 이 문구는 번역 사전의 키이므로 `i18n/en·ja·zh.json`의 같은 키와 번역문의 날짜도 함께 바꾼다.
+     - 엑셀: `build/make_xlsx2.py`의 '기준일' 행.
+     - 이 문서 '한눈에'의 기준일 목록에 추가한 모델과 날짜를 한 줄 더한다.
+  4. 모델 수를 바꾼다. `gallery/template.html` 맨 위 `<title>`·`description`(번역 사전 키도 함께), `README.md`, 이 문서의 '모델 N개'와 각 json 파일 개수, sitemap 주소 수(모델 1개당 4개).
+  5. `./build.sh`로 다시 만들고, `[en 번역] FIX NEEDED`가 나오면 위 '다국어' 절차대로 번역을 채운 뒤 다시 빌드한다.
