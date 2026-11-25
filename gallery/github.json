@@ -469,5 +469,23 @@
  ],
  "neo-vla": [
   "https://github.com/EvolvingLMMs-Lab/NEO"
+ ],
+ "praxis-1": [
+  "https://github.com/runwayml/praxis-1-oss"
+ ],
+ "scalevla": [
+  "https://github.com/GalaxyGeneralRobotics/ScaleVLA"
+ ],
+ "rho": [
+  "https://github.com/microsoft/rhobotics"
+ ],
+ "kuavo-vla-1-0": [
+  "https://github.com/LejuRobotics/LeTools-Learning"
+ ],
+ "minicpm-robotmanip": [
+  "https://github.com/OpenBMB/MiniCPM-Robot"
+ ],
+ "rldx-1": [
+  "https://github.com/RLWRLD/RLDX-1"
  ]
 }
